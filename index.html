@@ -63,8 +63,20 @@
     margin-bottom:2.2rem;
     padding-bottom:0.9rem;
     border-bottom:1px solid var(--rule);
+    flex-wrap:wrap;
+    gap:0.5rem;
   }
   .pub-name span.tag{color:var(--stamp-red);}
+  .pub-name a.substack-link{
+    color:var(--stamp-red);
+    text-decoration:none;
+    border-bottom:1px solid var(--stamp-red);
+    padding-bottom:1px;
+  }
+  .pub-name a.substack-link:hover{
+    color:var(--ink);
+    border-bottom-color:var(--ink);
+  }
   h1.headline{
     font-family:'Libre Caslon Text', 'Source Serif 4', serif;
     font-weight:700;
@@ -199,7 +211,7 @@
 <header class="masthead">
   <div class="pub-name">
     <span>The Weber County Hive <span class="tag">// Transparency</span></span>
-    <span>Public Records</span>
+    <span>Public Records &nbsp;·&nbsp; <a class="substack-link" href="https://webercountyhive.substack.com">Read on Substack</a></span>
   </div>
   <p class="eyebrow">Cross-Official Accountability &amp; Enforcement</p>
   <h1 class="headline">Transparency</h1>
