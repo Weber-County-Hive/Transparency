@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Transparency | The Weber County Hive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #ece6d8;
+    --paper-dim: #e2dbc9;
+    --folder: #d9d0b8;
+    --ink: #1f2a24;
+    --ink-soft: #3d473f;
+    --ink-faint: #6b7268;
+    --rule: #c3b99e;
+    --stamp-red: #a63a2e;
+    --brass: #8c7a4e;
+    --brass-dim: #8c7a4e22;
+  }
+  *{box-sizing:border-box;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:
+      radial-gradient(ellipse at top left, #f2ecdd 0%, transparent 55%),
+      radial-gradient(ellipse at bottom right, #e0d8c2 0%, transparent 55%);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--stamp-red);}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--brass); outline-offset:2px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+
+  header.masthead{
+    max-width:920px;
+    margin:0 auto;
+    padding:3.5rem 1.5rem 2.5rem;
+    border-bottom:3px double var(--ink);
+  }
+  .pub-name{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--ink);
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:2.2rem;
+    padding-bottom:0.9rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .pub-name span.tag{color:var(--stamp-red);}
+  h1.headline{
+    font-family:'Libre Caslon Text', 'Source Serif 4', serif;
+    font-weight:700;
+    font-size:clamp(2rem, 5.5vw, 3.1rem);
+    line-height:1.08;
+    margin:0 0 1rem;
+    letter-spacing:-0.01em;
+  }
+  .subhead{
+    font-size:1.15rem;
+    font-style:italic;
+    color:var(--ink-soft);
+    max-width:640px;
+    margin:0 0 1.6rem;
+  }
+  .byline-row{
+    display:flex;
+    gap:1.5rem;
+    flex-wrap:wrap;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--ink-faint);
+  }
+
+  main{max-width:920px; margin:0 auto; padding:2.5rem 1.5rem 4rem;}
+  main > p.intro-line{max-width:640px; font-size:1.05rem; color:var(--ink-soft); margin:0 0 2.2rem;}
+
+  h2.section-title{
+    font-family:'Libre Caslon Text', serif;
+    font-size:1.3rem;
+    margin:0 0 1.2rem;
+    padding-bottom:0.4rem;
+    border-bottom:2px solid var(--ink);
+  }
+
+  .docket{display:flex; flex-direction:column; gap:1.4rem;}
+  .docket-card{
+    position:relative;
+    background:var(--folder);
+    border:1px solid var(--rule);
+    box-shadow: 4px 4px 0 rgba(31,42,36,0.08);
+    padding:1.7rem 1.8rem 1.6rem;
+    text-decoration:none;
+    color:inherit;
+    display:block;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .docket-card::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:6px;
+    background:repeating-linear-gradient(90deg, var(--ink) 0 10px, transparent 10px 16px);
+    opacity:0.15;
+  }
+  .docket-card:hover, .docket-card:focus-visible{
+    transform:translate(-2px,-2px);
+    box-shadow:6px 6px 0 rgba(31,42,36,0.12);
+  }
+  .docket-card .case-tab{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-bottom:0.35rem;
+    display:flex;
+    justify-content:space-between;
+    gap:1rem;
+    flex-wrap:wrap;
+  }
+  .docket-card .status-pill{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.66rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--stamp-red);
+    border:1.5px solid var(--stamp-red);
+    border-radius:3px;
+    padding:0.12rem 0.45rem;
+  }
+  .docket-card .case-name{
+    font-family:'Libre Caslon Text', serif;
+    font-size:1.4rem;
+    font-weight:700;
+    margin:0 0 0.6rem;
+  }
+  .docket-card p.teaser{margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.98rem;}
+  .docket-card .officials-row{
+    display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1rem;
+  }
+  .docket-card .officials-row span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:0.25rem 0.5rem;
+    border-radius:2px;
+    color:var(--ink-soft);
+  }
+  .docket-card .open-link{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.76rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--brass);
+  }
+  .docket-card .open-link::after{content:" \2192"; }
+
+  .placeholder-card{
+    border:1px dashed var(--rule);
+    background:transparent;
+    box-shadow:none;
+    padding:1.5rem 1.8rem;
+    color:var(--ink-faint);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+  }
+
+  footer.meta{
+    max-width:920px;
+    margin:0 auto;
+    padding:2rem 1.5rem 4rem;
+    border-top:3px double var(--ink);
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="pub-name">
+    <span>The Weber County Hive <span class="tag">// Transparency</span></span>
+    <span>Public Records</span>
+  </div>
+  <p class="eyebrow">Cross-Official Accountability &amp; Enforcement</p>
+  <h1 class="headline">Transparency</h1>
+  <p class="subhead">Case files that compare what happened when Utah officials were flagged, reported, or referred&mdash;and what came of it.</p>
+  <div class="byline-row">
+    <span>THE WEBER COUNTY HIVE</span>
+    <span>WE REPORT PUBLIC RECORDS. YOU DECIDE.</span>
+  </div>
+</header>
+
+<main>
+  <p class="intro-line">Each entry below tracks a documented complaint, referral, or state/county response involving a Utah public official&mdash;sourced to news reporting, not original allegations. Click a case to open its full file.</p>
+
+  <h2 class="section-title">Case Docket</h2>
+
+  <div class="docket">
+    <a class="docket-card" href="weber-hive-enforcement-gap.html">
+      <div class="case-tab">
+        <span>Campaign Finance &amp; Ethics</span>
+        <span class="status-pill">3 officials · Updated Aug 19, 2026</span>
+      </div>
+      <h3 class="case-name">Utah's Campaign-Finance Enforcement Gap</h3>
+      <p class="teaser">Complaints are filed. Reports are corrected. Meaningful penalties are rare&mdash;a comparison across three separate oversight channels.</p>
+      <div class="officials-row">
+        <span>Stuart Adams</span>
+        <span>Mike Schultz</span>
+        <span>Gage Froerer</span>
+      </div>
+      <span class="open-link">Open the case file</span>
+    </a>
+
+    <div class="docket-card placeholder-card">
+      Next case file: TBD &mdash; add new entries here as more officials with a documented state or county response are identified.
+    </div>
+  </div>
+</main>
+
+<footer class="meta">
+  <p>The Weber County Hive welcomes corrections supported by original records, complete campaign disclosures, government correspondence, meeting recordings or final agency decisions.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utah's Campaign-Finance Enforcement Gap | The Weber County Hive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #ece6d8;
+    --paper-dim: #e2dbc9;
+    --folder: #d9d0b8;
+    --ink: #1f2a24;
+    --ink-soft: #3d473f;
+    --ink-faint: #6b7268;
+    --rule: #c3b99e;
+    --stamp-red: #a63a2e;
+    --stamp-red-dim: #a63a2e33;
+    --brass: #8c7a4e;
+    --brass-dim: #8c7a4e22;
+    --consequence-green: #3f5a44;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--paper);
+    background-image:
+      radial-gradient(ellipse at top left, #f2ecdd 0%, transparent 55%),
+      radial-gradient(ellipse at bottom right, #e0d8c2 0%, transparent 55%);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--stamp-red);}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--brass); outline-offset:2px;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+  }
+
+  /* ===== MASTHEAD / HERO ===== */
+  header.masthead{
+    max-width:920px;
+    margin:0 auto;
+    padding:3.5rem 1.5rem 2.5rem;
+    border-bottom:3px double var(--ink);
+  }
+  .pub-name{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--ink);
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    margin-bottom:2.2rem;
+    padding-bottom:0.9rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .pub-name span.tag{color:var(--stamp-red);}
+  h1.headline{
+    font-family:'Libre Caslon Text', 'Source Serif 4', serif;
+    font-weight:700;
+    font-size:clamp(2.1rem, 5.5vw, 3.4rem);
+    line-height:1.08;
+    margin:0 0 1rem;
+    letter-spacing:-0.01em;
+  }
+  .subhead{
+    font-size:1.2rem;
+    font-style:italic;
+    color:var(--ink-soft);
+    max-width:640px;
+    margin:0 0 1.6rem;
+  }
+  .byline-row{
+    display:flex;
+    gap:1.5rem;
+    flex-wrap:wrap;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--ink-faint);
+  }
+
+  /* ===== CENTRAL QUESTION BAND ===== */
+  .central-q{
+    max-width:920px;
+    margin:2.5rem auto;
+    padding:0 1.5rem;
+  }
+  .central-q blockquote{
+    margin:0;
+    padding:1.6rem 1.8rem;
+    background:var(--paper-dim);
+    border-left:4px solid var(--stamp-red);
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--ink-soft);
+  }
+
+  /* ===== START HERE / INTERACTIVE EXPLAINER ===== */
+  section.start-here{
+    max-width:920px;
+    margin:0 auto;
+    padding:2.2rem 1.5rem 2.6rem;
+    border-bottom:3px double var(--ink);
+  }
+  .start-here-inner{
+    background:var(--paper-dim);
+    border:1px solid var(--rule);
+    padding:1.8rem 1.8rem 1.7rem;
+  }
+  .start-here-inner h2{
+    font-family:'Libre Caslon Text', serif;
+    font-size:1.35rem;
+    margin:0.3rem 0 0.9rem;
+  }
+  .start-here-inner > p{margin:0 0 1rem; font-size:1rem;}
+
+  .glossary{display:flex; flex-wrap:wrap; gap:0.5rem; margin:0.9rem 0 0;}
+  .glossary-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.76rem;
+    background:var(--paper);
+    border:1px solid var(--brass);
+    color:var(--ink);
+    padding:0.45rem 0.75rem;
+    border-radius:3px;
+    cursor:pointer;
+  }
+  .glossary-btn[aria-expanded="true"]{background:var(--brass); color:var(--paper);}
+  .glossary-def{
+    display:none;
+    background:var(--paper);
+    border-left:3px solid var(--brass);
+    padding:0.85rem 1.1rem;
+    margin:0.7rem 0 0;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+  }
+  .glossary-def.open{display:block;}
+
+  .stepper{margin:1.5rem 0 0;}
+  .stepper-buttons{display:flex; flex-wrap:wrap; gap:0.4rem;}
+  .step-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:0.55rem 0.6rem;
+    cursor:pointer;
+    color:var(--ink-soft);
+    flex:1 1 auto;
+    text-align:center;
+  }
+  .step-btn.active{background:var(--stamp-red); border-color:var(--stamp-red); color:var(--paper);}
+  .step-panel{
+    margin-top:0.9rem;
+    background:var(--paper);
+    border:1px solid var(--rule);
+    border-left:4px solid var(--stamp-red);
+    padding:1rem 1.2rem;
+    font-size:0.93rem;
+    color:var(--ink-soft);
+  }
+  .step-panel .step-row{margin:0 0 0.5rem;}
+  .step-panel .step-row:last-child{margin-bottom:0;}
+  .step-panel .step-row strong{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--ink);
+    display:inline-block;
+    min-width:5.4rem;
+  }
+
+  .quick-nav{display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:1.5rem;}
+  .quick-nav-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    background:transparent;
+    border:1px solid var(--ink);
+    color:var(--ink);
+    padding:0.5rem 0.8rem;
+    cursor:pointer;
+  }
+  .quick-nav-btn:hover{background:var(--ink); color:var(--paper);}
+
+  /* ===== ARTICLE BODY ===== */
+  main{max-width:720px; margin:0 auto; padding:0 1.5rem 2rem;}
+  .intro p{font-size:1.08rem;}
+  .intro p:first-of-type::first-letter{
+    font-family:'Libre Caslon Text', serif;
+    font-size:3.4rem;
+    font-weight:700;
+    float:left;
+    line-height:0.85;
+    padding:0.05em 0.08em 0 0;
+    color:var(--stamp-red);
+  }
+  h2.section-title{
+    font-family:'Libre Caslon Text', serif;
+    font-size:1.5rem;
+    margin:3rem 0 1rem;
+    padding-bottom:0.4rem;
+    border-bottom:2px solid var(--ink);
+  }
+  h3.subsection-title{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.95rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+    margin:2rem 0 0.75rem;
+  }
+  ol.numbered{padding-left:1.2rem;}
+  ol.numbered li{margin-bottom:0.4rem;}
+  blockquote.pull{
+    font-style:italic;
+    font-size:1.05rem;
+    border-left:3px solid var(--brass);
+    padding-left:1rem;
+    margin:1.2rem 0;
+    color:var(--ink-soft);
+  }
+
+  /* ===== CASE FILE CARDS ===== */
+  .case-file{
+    position:relative;
+    margin:1.5rem 0 3rem;
+    background:var(--folder);
+    border:1px solid var(--rule);
+    box-shadow: 4px 4px 0 rgba(31,42,36,0.08);
+    padding:2rem 1.8rem 1.8rem;
+    overflow:hidden;
+  }
+  .case-file::before{
+    content:"";
+    position:absolute;
+    top:0; left:0; right:0;
+    height:6px;
+    background:repeating-linear-gradient(90deg, var(--ink) 0 10px, transparent 10px 16px);
+    opacity:0.15;
+  }
+  .case-tab{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin-bottom:0.3rem;
+  }
+  .case-name{
+    font-family:'Libre Caslon Text', serif;
+    font-size:1.5rem;
+    font-weight:700;
+    margin:0 0 0.6rem;
+  }
+  .case-teaser{margin:0 0 1rem; color:var(--ink-soft); font-size:0.98rem;}
+  .case-toggle{
+    display:inline-flex;
+    align-items:center;
+    gap:0.5rem;
+    background:none;
+    border:1px solid var(--brass);
+    color:var(--brass);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.74rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    padding:0.5rem 0.8rem;
+    cursor:pointer;
+    border-radius:3px;
+  }
+  .case-toggle:hover{background:var(--brass); color:var(--paper);}
+  .case-toggle-chevron{
+    display:inline-block;
+    transition:transform 0.2s ease;
+  }
+  .case-toggle[aria-expanded="true"] .case-toggle-chevron{transform:rotate(180deg);}
+  .case-body{margin-top:1.2rem;}
+  .case-body[hidden]{display:none;}
+  .stamp{
+    position:absolute;
+    top:1.6rem;
+    right:1.6rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:0.85rem;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--stamp-red);
+    border:3px solid var(--stamp-red);
+    border-radius:4px;
+    padding:0.35rem 0.6rem;
+    transform:rotate(6deg);
+    opacity:0.85;
+    background:rgba(166,58,46,0.05);
+    line-height:1.15;
+    text-align:center;
+  }
+  @media (max-width:600px){
+    .stamp{position:static; display:inline-block; transform:rotate(-2deg); margin-bottom:1rem;}
+  }
+
+  .sequence{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.4rem;
+    margin:1.2rem 0 1.6rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+  }
+  .sequence span{
+    background:var(--paper);
+    border:1px solid var(--rule);
+    padding:0.3rem 0.55rem;
+    border-radius:2px;
+    color:var(--ink-soft);
+  }
+  .sequence span::after{content:" →"; color:var(--ink-faint);}
+  .sequence span:last-child::after{content:"";}
+
+  /* ===== COMPARISON TABLE ===== */
+  .ledger-wrap{overflow-x:auto; margin:1.5rem 0 2.5rem;}
+  table.ledger{
+    width:100%;
+    border-collapse:collapse;
+    font-size:0.92rem;
+    background:var(--paper-dim);
+    min-width:640px;
+  }
+  table.ledger caption{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    text-align:left;
+    color:var(--ink-faint);
+    padding-bottom:0.5rem;
+  }
+  table.ledger th, table.ledger td{
+    border:1px solid var(--rule);
+    padding:0.75rem 0.9rem;
+    text-align:left;
+    vertical-align:top;
+  }
+  table.ledger thead th{
+    background:var(--ink);
+    color:var(--paper);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  table.ledger tbody th{
+    font-family:'Source Serif 4', serif;
+    font-weight:700;
+    background:var(--brass-dim);
+  }
+  .table-toggle-row{display:flex; justify-content:flex-end; margin-bottom:0.6rem;}
+  .table-toggle-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    background:var(--paper);
+    border:1px solid var(--brass);
+    color:var(--brass);
+    padding:0.4rem 0.75rem;
+    cursor:pointer;
+    border-radius:3px;
+  }
+  .table-toggle-btn:hover{background:var(--brass); color:var(--paper);}
+  table.ledger.compact td:nth-child(2), table.ledger.compact th:nth-child(2),
+  table.ledger.compact td:nth-child(3), table.ledger.compact th:nth-child(3){display:none;}
+
+  /* ===== HISTORICAL EXCEPTIONS ===== */
+  .exception-block{
+    border:1px solid var(--consequence-green);
+    background:#3f5a4412;
+    padding:1.4rem 1.6rem;
+    margin:1.2rem 0;
+  }
+  .update-note{
+    margin-top:1.4rem;
+    border:1px solid var(--brass);
+    background:var(--brass-dim);
+    padding:1.1rem 1.3rem;
+  }
+  .update-note .update-tag{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--brass);
+    border:1.5px solid var(--brass);
+    border-radius:3px;
+    padding:0.15rem 0.5rem;
+    margin-bottom:0.6rem;
+  }
+  .update-note p{margin:0.4rem 0 0; font-size:0.95rem;}
+  .exception-block .stamp-inline{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--consequence-green);
+    border:2px solid var(--consequence-green);
+    border-radius:4px;
+    padding:0.2rem 0.5rem;
+    margin-bottom:0.7rem;
+    transform:rotate(-2deg);
+  }
+
+  /* ===== REASONS LIST ===== */
+  .dossier-tabs{margin:1.5rem 0 2.5rem;}
+  .dossier-tab{
+    display:grid;
+    grid-template-columns:2.6rem 1fr;
+    gap:0.9rem;
+    padding:1rem 0;
+    border-bottom:1px solid var(--rule);
+  }
+  .dossier-tab:last-child{border-bottom:none;}
+  .dossier-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:1.3rem;
+    color:var(--brass);
+    font-weight:600;
+  }
+  .dossier-tab h4{margin:0 0 0.3rem; font-family:'Source Serif 4', serif; font-size:1.05rem;}
+  .dossier-tab p{margin:0; color:var(--ink-soft); font-size:0.98rem;}
+
+  /* ===== SOURCES / FOOTER ===== */
+  .sources-section{
+    max-width:720px;
+    margin:0 auto;
+    padding:1rem 1.5rem 3rem;
+  }
+  .sources-section ol{padding-left:1.2rem; font-size:0.92rem; color:var(--ink-soft);}
+  .sources-section li{margin-bottom:0.6rem;}
+  footer.meta{
+    max-width:720px;
+    margin:0 auto;
+    padding:2rem 1.5rem 4rem;
+    border-top:3px double var(--ink);
+  }
+  footer.meta h3{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--ink-faint);
+    margin:1.6rem 0 0.5rem;
+  }
+  footer.meta p, footer.meta ul{font-size:0.9rem; color:var(--ink-soft);}
+  .corrections-box{
+    background:var(--paper-dim);
+    border:1px solid var(--rule);
+    padding:1.2rem 1.4rem;
+    margin-top:1rem;
+    font-size:0.9rem;
+  }
+
+  ::selection{background:var(--stamp-red-dim);}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="pub-name">
+    <span>The Weber County Hive <span class="tag">// Transparency</span></span>
+    <span>Public Records</span>
+  </div>
+  <p class="eyebrow"><a href="index.html" style="color:inherit; text-decoration:none;">&larr; Transparency index</a> &middot; Campaign Finance &amp; Ethics · Case Review</p>
+  <h1 class="headline">Utah's Campaign-Finance Enforcement Gap</h1>
+  <p class="subhead">Complaints are filed. Reports are corrected. Meaningful penalties are rare.</p>
+  <div class="byline-row">
+    <span>THE WEBER COUNTY HIVE</span>
+    <span>WE REPORT PUBLIC RECORDS. YOU DECIDE.</span>
+    <span>UPDATED AUG. 19, 2026</span>
+  </div>
+</header>
+
+<section class="start-here">
+  <div class="start-here-inner">
+    <p class="eyebrow" style="margin-bottom:0.4rem;">New to this? Start here</p>
+    <h2>The basics, in plain language</h2>
+    <p>Utah candidates and political committees have to file public reports showing who gave them money and where it went. When a report looks wrong, someone can file a formal <strong>complaint</strong>. A government office reviews it. Sometimes the report gets corrected. Rarely does anyone get fined. Tap a term below for a plain definition.</p>
+
+    <div class="glossary" id="glossary">
+      <button class="glossary-btn" type="button" data-term="disclosure" aria-expanded="false">Disclosure report</button>
+      <button class="glossary-btn" type="button" data-term="pac" aria-expanded="false">PAC</button>
+      <button class="glossary-btn" type="button" data-term="complaint" aria-expanded="false">Complaint</button>
+      <button class="glossary-btn" type="button" data-term="referral" aria-expanded="false">Referral</button>
+      <button class="glossary-btn" type="button" data-term="sanction" aria-expanded="false">Sanction / penalty</button>
+      <button class="glossary-btn" type="button" data-term="gap" aria-expanded="false">Enforcement gap</button>
+    </div>
+    <div class="glossary-def" id="glossary-def"></div>
+
+    <p style="margin-top:1.7rem;"><strong>Here's the five-step pattern this article found.</strong> Click through to see what each step looked like in all three cases below.</p>
+    <div class="stepper">
+      <div class="stepper-buttons" id="stepper-buttons" role="tablist" aria-label="Enforcement pattern steps">
+        <button class="step-btn active" type="button" data-step="0" aria-selected="true">1. Question raised</button>
+        <button class="step-btn" type="button" data-step="1" aria-selected="false">2. Complaint filed</button>
+        <button class="step-btn" type="button" data-step="2" aria-selected="false">3. Government reviews</button>
+        <button class="step-btn" type="button" data-step="3" aria-selected="false">4. Correction / defense</button>
+        <button class="step-btn" type="button" data-step="4" aria-selected="false">5. Case closes</button>
+      </div>
+      <div class="step-panel" id="step-panel" aria-live="polite"></div>
+    </div>
+
+    <p style="margin-top:1.7rem;"><strong>Jump straight to a case:</strong></p>
+    <div class="quick-nav">
+      <button class="quick-nav-btn" type="button" data-scroll-to="case-adams">Stuart Adams</button>
+      <button class="quick-nav-btn" type="button" data-scroll-to="case-schultz">Mike Schultz</button>
+      <button class="quick-nav-btn" type="button" data-scroll-to="case-froerer">Gage Froerer</button>
+      <button class="quick-nav-btn" type="button" data-scroll-to="case-table">Comparison table</button>
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="intro">
+    <p>Utah requires candidates, political action committees and elected officials to disclose certain financial activity and potential conflicts of interest.</p>
+    <p>But what happens when those disclosures are incomplete, unclear or allegedly inaccurate?</p>
+    <p>A review of several prominent Utah cases reveals a recurring pattern: news coverage raises questions, citizens or advocacy organizations file complaints, government offices review the matter, and the official or political committee submits an explanation or updated disclosure.</p>
+    <p>Then the case ends&mdash;frequently without a fine, public ethics finding or other formal sanction.</p>
+    <p>That does not mean every complaint was valid. A complaint is an allegation, not proof of wrongdoing. Some complaints lack sufficient evidence, while other cases involve conduct that Utah law expressly permits.</p>
+    <p>But in at least two recent campaign-reporting cases, state officials reportedly identified or investigated disclosure problems and still imposed no penalty. A third Weber County case involving a development-related property interest ended with an updated disclosure rather than a public ethics sanction.</p>
+    <p>Together, the cases involving former Senate President Stuart Adams, House Speaker Mike Schultz and Weber County Commissioner Gage Froerer raise a larger question:</p>
+  </div>
+
+  <div class="central-q">
+    <blockquote>Does Utah's disclosure system punish violations&mdash;or primarily give public officials and political committees an opportunity to correct them after someone notices?</blockquote>
+  </div>
+
+  <h2 class="section-title">Stuart Adams: Improper reporting, prospective enforcement</h2>
+  <div class="case-file" id="case-adams">
+    <div class="stamp">No<br>Fine</div>
+    <p class="case-tab">Utah Senate President · Credit-card reporting</p>
+    <h3 class="case-name">Stuart Adams</h3>
+    <p class="case-teaser">Officials acknowledged his reporting method broke the law&mdash;then applied the fix only going forward. No fine, no requirement to amend years of past reports.</p>
+    <button class="case-toggle" type="button" data-toggle="body-adams" aria-expanded="false" aria-controls="body-adams">
+      <span class="toggle-label">Read the full case file</span><span class="case-toggle-chevron">&#9660;</span>
+    </button>
+    <div class="case-body" id="body-adams" hidden>
+    <p>In December 2024, Alliance for a Better Utah filed a complaint alleging that then-Senate President Stuart Adams had improperly reported more than $400,000 in expenditures across his candidate committee and two political action committees.</p>
+    <p>The complaint cited Utah Code &sect;20A-11-101.5 and identified more than 230 expenditures spanning 14 years&mdash;over $400,000 from his candidate committee and nearly $80,000 from the two PACs&mdash;reported to entities such as Bank of America, Mountain America Credit Union and American Express rather than to the actual recipients of the funds.</p>
+    <p>The disputed reports identified credit-card companies as the recipients of campaign expenditures rather than identifying the businesses ultimately paid through those cards.</p>
+    <p>That distinction matters. A payment to a credit-card company does not necessarily show voters what was purchased, which vendor received the money or how the expenditure served a political purpose.</p>
+    <p>Adams denied deliberately concealing expenditures, calling the complaint &ldquo;a blatant falsehood.&rdquo; He said the Lieutenant Governor's Office had confirmed his reporting was compliant after a 2023 inquiry, that a second inquiry opened in fall 2024 initially told him no further action was required while the office reviewed the relevant statutes, and that the office then issued new clarifying guidance the week before the complaint was filed&mdash;guidance he said he would follow going forward.</p>
+    <p>The state's response produced one of the clearest examples of Utah's enforcement gap.</p>
+    <p>According to Utah Political Watch, election officials acknowledged that Adams's reporting method did not comply with state law. But the Lieutenant Governor's Office declined to apply its interpretation retroactively.</p>
+    <p>Adams was not fined. The reporting said he was not required to amend the years of earlier disclosures covered by the complaints.</p>
+    <p>The practical result was unusual: the reporting practice was determined to be improper, but the public official who used it received neither a financial penalty nor an apparent obligation to reconstruct the underlying expenditures.</p>
+    <p>Adams later lost his 2026 Republican primary. That was a political consequence, but the available record does not establish that the campaign-finance dispute caused his defeat.</p>
+
+    <div class="update-note">
+      <span class="update-tag">Update &middot; Aug 19, 2026</span>
+      <p>Adams, now a lame-duck Senate president after losing his primary to Stephanie Hollist, sent letters through his attorneys threatening to sue four critics for defamation: State Auditor Tina Cannon, two podcast hosts, and a political consultant. The letters, dated Aug. 13, demanded retractions within 14 days over statements made about Adams's role in a Box Elder County data center approval, a law change affecting a relative facing criminal charges, the auditor's office relocation, and campaign-finance conduct.</p>
+      <p>Adams's letters specifically deny that he was ever cited for campaign-finance violations. Cannon, one of the recipients, said publicly she would not be bullied into a retraction. Utah's Uniform Public Expression Protection Act, passed in 2023 with Adams's own vote, allows defendants in this kind of suit to seek an expedited dismissal and recovery of attorney fees if the speech concerned a matter of public concern.</p>
+      <p>This development did not change the underlying campaign-disclosure findings above, but it is a new chapter in the same story: a Utah official disputing public criticism of his conduct rather than facing formal sanction for it.</p>
+    </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Mike Schultz: $120,000, a PAC and reported spending questions</h2>
+  <div class="case-file" id="case-schultz">
+    <div class="stamp">No<br>Fine</div>
+    <p class="case-tab">Utah House Speaker · Preserving Utah Values PAC</p>
+    <h3 class="case-name">Mike Schultz</h3>
+    <p class="case-teaser">Schultz gave $120,000 to a PAC that ran visible ads while reporting $0 in spending. Complaints reached the Attorney General&mdash;then the matter closed with no fine.</p>
+    <button class="case-toggle" type="button" data-toggle="body-schultz" aria-expanded="false" aria-controls="body-schultz">
+      <span class="toggle-label">Read the full case file</span><span class="case-toggle-chevron">&#9660;</span>
+    </button>
+    <div class="case-body" id="body-schultz" hidden>
+    <p>House Speaker Mike Schultz became connected to a separate campaign-finance controversy involving Preserving Utah Values PAC.</p>
+    <p>In December 2024, The Salt Lake Tribune reported that Schultz had supplied <strong>$120,000</strong> to the PAC. The organization financed political advertisements targeting Utah candidates and legislators over transgender policy.</p>
+    <p>The advertisements were visible, but questions emerged because the PAC had reported no expenditures during a period when campaign advertising was appearing publicly.</p>
+    <p>The Lieutenant Governor's Office received multiple complaints and referred a group of them to the Utah Attorney General's Office.</p>
+    <p>That referral suggested the questions were serious enough to warrant additional review. It did not, by itself, establish that Schultz or the PAC had violated the law.</p>
+    <p>Approximately a year later, the Tribune reported that the matter had ended without a fine. Lieutenant Governor Deidre Henderson said the PAC maintained that its reports were accurate after amendments or explanations and that officials considered the reporting issues resolved.</p>
+    <p>No public financial penalty or other sanction was reported.</p>
+
+    <p>The sequence closely resembles the Adams case:</p>
+    <div class="sequence">
+      <span>Reporting raised questions</span>
+      <span>Complaints filed</span>
+      <span>Officials reviewed/referred</span>
+      <span>Records amended or defended</span>
+      <span>Matter closed, no fine</span>
+    </div>
+
+    <p>Schultz's $120,000 contribution was not itself illegal. Utah generally does not limit how much a person may contribute to a state candidate or political committee.</p>
+    <p>The important question is narrower: whether the PAC accurately and timely disclosed how the money was spent&mdash;and what consequence followed when complaints alleged that it had not.</p>
+    <p>The publicly reported answer was correction or resolution, not punishment.</p>
+
+    <h4 class="subsection-title" style="margin-top:2rem;">Schultz's larger construction-industry record</h4>
+    <p>The PAC controversy was not the first time Schultz's campaign finances intersected with questions about his legislative work.</p>
+    <p>In 2019, KSL investigators examined 49 construction and development bills introduced between 2016 and 2019. The investigation identified eight legislators who received income directly from the construction, real-estate or development industries.</p>
+    <p>Schultz, then the owner of Castle Creek Homes, sponsored or co-sponsored <strong>20 construction-related bills</strong> during the period&mdash;more than any other legislator identified in the report.</p>
+    <p>KSL also reviewed Schultz's campaign contributions since he entered the Legislature in 2015. It found that <strong>$25,350 of $154,745.68</strong>, or <strong>16.39%</strong>, came from construction, real-estate or development interests.</p>
+    <p>Schultz rejected the suggestion that contributions influenced his decisions.</p>
+    <blockquote class="pull">&ldquo;I make absolutely zero decisions based on who contributes to my campaign,&rdquo; he told KSL.</blockquote>
+    <p>KSL did not report that Schultz had violated campaign-finance law. The donations were disclosed, and Utah ethics rules generally allow legislators to sponsor and vote on legislation affecting their industries if applicable interests are disclosed.</p>
+    <p>That is an essential distinction.</p>
+    <p>The Schultz construction story was not a proven campaign violation. It illustrated how Utah's system relies heavily on transparency instead of contribution limits, mandatory recusals or prohibitions against legislators working on bills involving their professions.</p>
+    <p>Schultz has also used substantial personal or political funds to support other politicians. In 2020, the Tribune identified him as one of Utah's largest political donors. It reported that he contributed approximately <strong>$440,000</strong> to Greg Hughes's gubernatorial campaign and leadership PAC&mdash;$250,000 directly to the campaign and another $190,000 to the PAC.</p>
+    <p>Those contributions were legal under Utah law.</p>
+    <p>The amounts nevertheless demonstrate how a wealthy legislator can become a major financial force in other politicians' campaigns while simultaneously serving in legislative leadership.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title">Gage Froerer: A property interest, recusals and an updated disclosure</h2>
+  <div class="case-file" id="case-froerer">
+    <div class="stamp">Compliant<br>No Sanction</div>
+    <p class="case-tab">Weber County Commissioner · Nordic Valley development</p>
+    <h3 class="case-name">Gage Froerer</h3>
+    <p class="case-teaser">Froerer recused from final votes on a development he had a financial interest in. A citizen complaint reached the County Attorney and State Auditor; he updated his disclosure. No public sanction followed.</p>
+    <button class="case-toggle" type="button" data-toggle="body-froerer" aria-expanded="false" aria-controls="body-froerer">
+      <span class="toggle-label">Read the full case file</span><span class="case-toggle-chevron">&#9660;</span>
+    </button>
+    <div class="case-body" id="body-froerer" hidden>
+    <p>The controversy involving Gage Froerer was not principally a campaign-finance case. It concerned conflict-of-interest disclosure and his participation in Weber County discussions involving land in which he held a partial interest.</p>
+    <p>Froerer served in the Utah House from 2007 through 2018 before becoming a Weber County commissioner. His professional background includes real estate brokerage and business ownership.</p>
+    <p>In 2023, Utah Public Radio reported that Froerer had held a partial interest in former golf-course property associated with the proposed Nordic Valley village development.</p>
+    <p>During an August 2022 County Commission meeting, Froerer disclosed that he had a small interest in the property through a trust and recused himself from a vote concerning a land-use-code amendment.</p>
+    <p>He later recused himself from December votes involving the proposed rezoning and development agreement. The measures passed without his votes.</p>
+    <p>A Weber County resident, however, alleged that recusal from the final votes did not address Froerer's earlier participation in discussions about the development.</p>
+    <p>The resident filed complaints with the Weber County Attorney's Office and the Utah Office of the State Auditor. According to the resulting news report, the state auditor recommended that immediate steps be taken to comply with the disclosure statute if the necessary disclosures had not been filed.</p>
+    <p>Before that communication, the County Attorney's Office had learned of the complaint, met with Froerer and advised him on the disclosure concerns.</p>
+    <p>Froerer filed an updated disclosure in November 2022.</p>
+    <p>The Weber County Attorney's Office subsequently said the updated disclosure satisfied state law. Froerer later filed a handwritten update stating that he no longer held the property interest as of February 2023.</p>
+    <p>The public reporting did not establish precisely how his interest was transferred or disposed of.</p>
+    <p>No public ethics finding, fine, removal recommendation or criminal referral against Froerer was identified.</p>
+
+    <p>Once again, the resolution was compliance after scrutiny:</p>
+    <div class="sequence">
+      <span>A property interest existed</span>
+      <span>Froerer recused on recorded votes</span>
+      <span>A citizen challenged sufficiency/timing</span>
+      <span>County lawyers met with him</span>
+      <span>He updated the disclosure</span>
+      <span>County considered it compliant</span>
+      <span>No punishment followed</span>
+    </div>
+    <p>This does not prove Froerer intentionally violated the law. It does show that disclosure was updated only after the issue came to the attention of county attorneys and the state auditor.</p>
+    </div>
+  </div>
+
+  <h2 class="section-title" id="case-table">Three cases, three oversight channels, similar endings</h2>
+  <div class="table-toggle-row">
+    <button class="table-toggle-btn" type="button" id="table-toggle">Show full detail</button>
+  </div>
+  <div class="ledger-wrap">
+    <table class="ledger compact" id="ledger-table">
+      <caption>Comparison of initial concern, government response, and publicly reported consequence</caption>
+      <thead>
+        <tr><th>Official or entity</th><th>Initial concern</th><th>Government response</th><th>Publicly reported consequence</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Stuart Adams &amp; associated committees</th>
+          <td>Credit-card companies listed instead of underlying expenditure recipients</td>
+          <td>State reportedly determined the reporting method did not comply, but applied its interpretation prospectively</td>
+          <td>No retroactive fine; no reported requirement to amend years of reports</td>
+        </tr>
+        <tr>
+          <th>Preserving Utah Values PAC, funded by Mike Schultz</th>
+          <td>PAC reported no expenditures despite visible political advertising</td>
+          <td>Complaints referred to the Attorney General; PAC amended or defended its reports</td>
+          <td>Issues considered resolved; no fine reported</td>
+        </tr>
+        <tr>
+          <th>Gage Froerer</th>
+          <td>Timing and sufficiency of disclosure involving an interest in Nordic Valley development property</td>
+          <td>County attorneys met with Froerer; disclosure updated after complaint and auditor contact</td>
+          <td>County found compliance; no public ethics sanction</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>The legal systems were different.</p>
+  <p>Adams's case involved state campaign-expenditure reporting. The Schultz-funded PAC controversy involved political-committee reporting. Froerer's case involved local-government conflict-of-interest disclosure.</p>
+  <p>Yet all three followed essentially the same path:</p>
+  <blockquote class="pull"><strong>Question &rarr; complaint &rarr; review &rarr; explanation or correction &rarr; no penalty.</strong></blockquote>
+
+  <h2 class="section-title">The historical exceptions</h2>
+  <p>It would be inaccurate to claim that no Utah politician has ever faced consequences for conduct connected to campaigns.</p>
+
+  <div class="exception-block">
+    <span class="stamp-inline">Consequences Followed</span>
+    <p>Former Utah Rep. Mark Walker is an important exception.</p>
+    <p>While running for state treasurer in 2008, Walker was accused of offering his Republican opponent a government position and a substantial raise if the opponent withdrew from the race. Walker resigned from the Utah House while facing a legislative ethics investigation.</p>
+    <p>He later pleaded guilty to inducing someone not to become a candidate, agreed not to run in the election, completed community service and paid a fine.</p>
+  </div>
+
+  <div class="exception-block">
+    <span class="stamp-inline">Consequences Followed</span>
+    <p>Former Utah Attorney General John Swallow also suffered substantial consequences after campaign-finance, financial-disclosure and corruption allegations. Swallow, who had previously served in the Utah House, resigned as attorney general in 2013 and was later criminally charged.</p>
+    <p>A jury acquitted him in 2017. A federal campaign-finance case was dismissed, and the Utah Legislature subsequently approved $1.5 million to reimburse his legal expenses.</p>
+  </div>
+
+  <p>These cases demonstrate that consequences are possible. They also reveal what usually separates the exceptional cases from routine disclosure controversies: allegations of an independently prosecutable crime, not merely an inaccurate or incomplete public report.</p>
+
+  <h2 class="section-title">Why so little conduct results in punishment</h2>
+
+  <div class="dossier-tabs">
+    <div class="dossier-tab">
+      <span class="dossier-num">01</span>
+      <div>
+        <h4>Utah does not generally limit state campaign contributions</h4>
+        <p>Large contributions may appear troubling to voters, but they are not automatically illegal. Utah remains among the states without general limits on how much individuals, corporations or political committees may contribute to state legislative candidates. A $5,000, $50,000 or even larger contribution may be lawful if it is properly reported.</p>
+      </div>
+    </div>
+    <div class="dossier-tab">
+      <span class="dossier-num">02</span>
+      <div>
+        <h4>Legislators may work on bills affecting their professions</h4>
+        <p>Utah's citizen-legislature model assumes lawmakers bring professional experience into the Capitol. A builder may vote on construction laws; a developer, on land-use legislation; an attorney, on laws affecting the legal system. The principal safeguard is disclosure&mdash;recusal is not automatically required every time legislation affects a lawmaker's general profession or industry.</p>
+      </div>
+    </div>
+    <div class="dossier-tab">
+      <span class="dossier-num">03</span>
+      <div>
+        <h4>Administrative enforcement emphasizes compliance</h4>
+        <p>Utah law provides penalties for late reports and other reporting failures. In practice, the cases examined here suggest election and ethics officials often emphasize bringing reports into compliance. That approach may correct the public record going forward, but when correction replaces punishment, the deterrent value of the original requirement becomes less clear.</p>
+        <p>A February 2025 review by The Utah Investigative Journalism Project found Adams's credit-card reporting practice was not unique: dozens of lawmakers had listed credit cards, banks or payment apps as the recipient of campaign expenditures, totaling nearly $42,000 across the Legislature. Only Adams had a complaint filed against him. If the underlying practice was widespread but only one legislator faced a formal complaint, the difference between who gets a compliance letter and who gets scrutiny may have more to do with who draws attention than with the severity of the reporting problem itself.</p>
+      </div>
+    </div>
+    <div class="dossier-tab">
+      <span class="dossier-num">04</span>
+      <div>
+        <h4>Ethics complaints are procedurally difficult</h4>
+        <p>Utah's ethics systems impose detailed filing, standing and evidentiary requirements. For complaints against local officials, at least two qualified individuals generally must file, and at least one must have actual knowledge of the supporting facts. Publicly disclosing a complaint during the preliminary review period may result in its dismissal. These requirements protect officials against unsupported allegations, but can also make it difficult for an ordinary citizen to obtain a formal hearing.</p>
+      </div>
+    </div>
+    <div class="dossier-tab">
+      <span class="dossier-num">05</span>
+      <div>
+        <h4>The system depends on someone noticing</h4>
+        <p>None of the three principal cases began with a publicly announced routine audit uncovering the problem. They emerged through journalism, advocacy complaints or citizen review of public records&mdash;placing much of the practical enforcement burden on reporters, watchdog organizations and residents outside the agencies responsible for administering the disclosure system.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Reform repeatedly proposed&mdash;and repeatedly rejected</h2>
+  <p>Utah has strengthened portions of its campaign-finance law. In 2010, lawmakers prohibited personal use of campaign funds, restricted lobbyist gifts and expanded financial-disclosure requirements.</p>
+  <p>But proposals to limit campaign contributions have repeatedly failed.</p>
+  <p>Former Rep. Brian King sponsored multiple contribution-limit bills. In 2014, his proposal would have capped contributions at $10,000 for statewide candidates and $5,000 for legislative candidates. The Utah House defeated it 38&ndash;35.</p>
+  <p>Opponents argued that contribution limits restrict political speech and could push money into less transparent outside organizations. Supporters argued that unlimited donations create the appearance or reality of purchased political access.</p>
+  <p>Utah chose unlimited contributions paired with disclosure.</p>
+  <p>That makes the effectiveness of disclosure enforcement especially important. If the state will not limit how much political money can be given, voters must at least be able to see accurately where the money came from and where it went.</p>
+
+  <h2 class="section-title">The enforcement gap</h2>
+  <p>The available cases do not establish that Adams, Schultz or Froerer took official action in exchange for money or personal benefit.</p>
+  <p>They do establish something more limited&mdash;and more documentable:</p>
+  <ol class="numbered">
+    <li>Adams's reporting method was reportedly found inconsistent with the law, but no retroactive penalty followed.</li>
+    <li>A PAC funded with $120,000 from Schultz faced complaints and an attorney-general referral, but the matter closed without a fine.</li>
+    <li>Froerer updated his conflict disclosure after complaints and government review, but no public ethics sanction followed.</li>
+    <li>Large contributions and industry-aligned legislation remain legal when properly disclosed.</li>
+    <li>Contribution-limit bills have repeatedly failed.</li>
+    <li>Serious consequences are unusual unless the alleged conduct extends beyond disclosure and into a separately prosecutable offense.</li>
+  </ol>
+
+  <p>That leads to the central question:</p>
+  <div class="central-q" style="padding:0; margin:1.5rem 0 2.5rem;">
+    <blockquote>If incomplete or improper disclosures can be corrected after discovery without a meaningful consequence, what incentive exists to get them right the first time?</blockquote>
+  </div>
+
+  <p>Utah's campaign-finance system is built around transparency.</p>
+  <p>But transparency only works when reports are complete, oversight is consistent and violations carry consequences strong enough to deter the next one.</p>
+  <p>Otherwise, disclosure becomes less of an enforceable obligation and more of a correction policy.</p>
+</main>
+
+<section class="sources-section">
+  <h3 class="subsection-title" style="margin-top:0;">Sources</h3>
+  <ol>
+    <li>Utah Political Watch, &ldquo;Utah election officials let top GOP lawmaker off the hook over campaign disclosure violations,&rdquo; Jan. 2, 2025. <a href="https://utahpolitics.news/utah-election-officials-give-top-gop-lawmaker-a-pass-over-campaign-disclosure-violations/" target="_blank" rel="noopener">Read the report</a></li>
+    <li>Cassidy Wixom, KSL, &ldquo;Group files complaint alleging Utah Senate President Adams violated financial disclosures rules,&rdquo; Dec. 12, 2024. <a href="https://www.ksl.com/article/news/politics/group-files-complaint-alleging-utah-senate-president-adams-violated-financial-disclosures-rules/51210244" target="_blank" rel="noopener">Read the report</a></li>
+    <li>Sydnee Chapman, The Utah Investigative Journalism Project / Salt Lake City Weekly, &ldquo;Utah lawmakers pulled in $5M in donations&mdash;here's how they're spending the cash,&rdquo; Feb. 25, 2025. <a href="https://www.utahinvestigative.org/utah-lawmakers-pulled-in-5m-in-donations-heres-how-theyre-spending-the-cash/" target="_blank" rel="noopener">Read the report</a></li>
+    <li>The Salt Lake Tribune, &ldquo;Anti-trans PAC attacking lawmakers received key funding from one of Utah's most powerful politicians,&rdquo; Dec. 2, 2024. <a href="https://www.sltrib.com/news/politics/2024/12/02/utah-house-speaker-gave-120k-his/" target="_blank" rel="noopener">Read the report</a></li>
+    <li>The Salt Lake Tribune, &ldquo;A top Utah politician quietly funded anti-trans ads, prompting complaints. A year later, nothing's come of them,&rdquo; Nov. 25, 2025. <a href="https://www.sltrib.com/news/politics/2025/11/25/anti-trans-pacs-campaign-report/" target="_blank" rel="noopener">Read the report</a></li>
+    <li>KSL Investigates, &ldquo;New Construction Laws, Campaign Contributions, Potential Conflicts of Interest,&rdquo; Nov. 14, 2019. <a href="https://www.ksl.com/article/news/features/ksl-investigates/new-construction-laws-campaign-contributions-potential-conflicts-of-interest/51540142" target="_blank" rel="noopener">Read the investigation</a></li>
+    <li>The Salt Lake Tribune, &ldquo;Here's a look at Utah's political megadonors,&rdquo; Sept. 5, 2020. <a href="https://www.sltrib.com/news/politics/2020/09/05/heres-look-utahs/" target="_blank" rel="noopener">Read the report</a></li>
+    <li>Utah Public Radio, &ldquo;A Weber County commissioner's former land ownership draws scrutiny,&rdquo; June 13, 2023. <a href="https://www.upr.org/utah-news/2023-06-13/a-weber-county-commissioners-former-land-ownership-draws-scrutiny" target="_blank" rel="noopener">Read the report</a></li>
+    <li>Deseret News, &ldquo;News analysis: Sheldon Killpack and Mark Walker&mdash;2 friends rise, fall in politics,&rdquo; Jan. 18, 2010. <a href="https://www.deseret.com/2010/1/18/20365274/news-analysis-sheldon-killpack-and-mark-walker-2-friends-rise-fall-in-politics/" target="_blank" rel="noopener">Read the report</a></li>
+    <li>KSL, &ldquo;Attorney General John Swallow resigns,&rdquo; Nov. 21, 2013. <a href="https://www.ksl.com/article/news/utah/attorney-general-john-swallow-resigns/27725792" target="_blank" rel="noopener">Read the report</a></li>
+    <li>KSL, &ldquo;Utah lawmakers end personal use of campaign cash,&rdquo; March 5, 2010. <a href="https://www.ksl.com/article/news/utah/utah-lawmakers-end-personal-use-of-campaign-cash/9904431" target="_blank" rel="noopener">Read the report</a></li>
+    <li>The Salt Lake Tribune, &ldquo;House kills campaign donation limits bill,&rdquo; March 11, 2014. <a href="https://www.sltrib.com/sltrib/politics/57662582-90/limits-candidates-donation-rep.html.csp" target="_blank" rel="noopener">Read the report</a></li>
+    <li>Robert Gehrke, The Salt Lake Tribune, &ldquo;After election loss, Utah Senate president threatens to sue four critics for alleged defamation,&rdquo; Aug. 19, 2026. <a href="https://www.sltrib.com/news/politics/2026/08/19/utah-senate-president-stuart-adams/" target="_blank" rel="noopener">Read the report</a></li>
+    <li>Utah Legislature, Utah Code &sect;20A-11-201&mdash;State office candidate campaign-finance requirements and prohibited personal use. <a href="https://le.utah.gov/xcode/Title20A/Chapter11/20A-11-S201.html" target="_blank" rel="noopener">Read the statute</a></li>
+    <li>Utah Political Subdivisions Ethics Review Commission, complaint requirements and procedures. <a href="https://ethics.utah.gov/political-subdivisions-ethics-review-commission/faqs/" target="_blank" rel="noopener">Read the official FAQ</a></li>
+  </ol>
+</section>
+
+<footer class="meta">
+  <h3>Methodology</h3>
+  <p>This article distinguishes among: a complaint or allegation; a government referral or investigation; a reporting correction; an official finding of a violation; a civil or criminal penalty; and conduct that may appear concerning but remains legal under Utah law.</p>
+  <p>Campaign contributions are not presented as proof of influence, bribery or improper coordination. A relationship between a contributor's industry and a legislator's bill record establishes an overlap&mdash;not causation.</p>
+  <p>Where no public final order or penalty could be located, the article describes the outcome as &ldquo;no publicly documented sanction&rdquo; rather than asserting that no confidential investigation or additional action ever occurred.</p>
+
+  <h3>Corrections Policy</h3>
+  <div class="corrections-box">
+    <p style="margin:0 0 0.6rem;">The Weber County Hive welcomes corrections supported by original records, complete campaign disclosures, government correspondence, meeting recordings or final agency decisions.</p>
+    <p style="margin:0;">Corrections that materially change a finding will be noted transparently with the date, original language and corrected information.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ---- Glossary ----
+  var GLOSSARY = {
+    disclosure: "A public report a candidate or PAC must file, showing every dollar raised and spent and who it went to.",
+    pac: "A political action committee \u2014 a group that raises and spends money to support or oppose candidates or causes.",
+    complaint: "A formal allegation filed with a government office claiming a disclosure rule was broken. It's an accusation, not proof.",
+    referral: "When one office passes a complaint along to another \u2014 for example, the Lieutenant Governor's Office sending a case to the Attorney General for further review.",
+    sanction: "An official finding of wrongdoing with a real consequence attached: a fine, a public reprimand, a removal recommendation, or criminal charges.",
+    gap: "The pattern this article documents: a complaint gets reviewed, a report gets corrected or defended, and the case closes without a sanction."
+  };
+  var glossaryDef = document.getElementById('glossary-def');
+  document.querySelectorAll('.glossary-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var term = btn.getAttribute('data-term');
+      var wasOpen = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.glossary-btn').forEach(function(b){ b.setAttribute('aria-expanded','false'); });
+      if(wasOpen){
+        glossaryDef.classList.remove('open');
+        glossaryDef.textContent = '';
+        return;
+      }
+      btn.setAttribute('aria-expanded','true');
+      glossaryDef.textContent = GLOSSARY[term] || '';
+      glossaryDef.classList.add('open');
+    });
+  });
+
+  // ---- Stepper ----
+  var STEPS = [
+    {
+      adams: "Adams reported $400,000+ in expenses to credit-card companies instead of naming the businesses actually paid.",
+      schultz: "Schultz's PAC ran visible political ads while reporting $0 in expenditures.",
+      froerer: "Froerer held a financial interest in Nordic Valley land the County Commission was voting on."
+    },
+    {
+      adams: "Alliance for a Better Utah filed a complaint with the Lt. Governor's Office, Dec. 2024.",
+      schultz: "Multiple complaints reached the Lt. Governor's Office over the PAC's reporting.",
+      froerer: "A Weber County resident filed complaints with the County Attorney and the State Auditor."
+    },
+    {
+      adams: "The Lt. Governor's Office reviewed the reporting method against state law.",
+      schultz: "The Lt. Governor's Office referred a group of the complaints to the Attorney General.",
+      froerer: "County attorneys met with Froerer; the State Auditor recommended he come into compliance."
+    },
+    {
+      adams: "Officials acknowledged the method didn't comply \u2014 but applied the fix only going forward.",
+      schultz: "The PAC amended or defended its reports; officials called the matter resolved.",
+      froerer: "Froerer filed an updated disclosure in Nov. 2022, then a follow-up in Feb. 2023."
+    },
+    {
+      adams: "No fine. No requirement to amend years of past reports.",
+      schultz: "No fine. No public sanction reported.",
+      froerer: "County found him compliant. No public ethics sanction."
+    }
+  ];
+  var stepPanel = document.getElementById('step-panel');
+  var stepButtons = document.querySelectorAll('.step-btn');
+  function renderStep(i){
+    var s = STEPS[i];
+    stepPanel.innerHTML =
+      '<div class="step-row"><strong>Adams</strong>' + s.adams + '</div>' +
+      '<div class="step-row"><strong>Schultz</strong>' + s.schultz + '</div>' +
+      '<div class="step-row"><strong>Froerer</strong>' + s.froerer + '</div>';
+    stepButtons.forEach(function(b){
+      var active = b.getAttribute('data-step') === String(i);
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  }
+  stepButtons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      renderStep(parseInt(btn.getAttribute('data-step'), 10));
+    });
+  });
+  renderStep(0);
+
+  // ---- Quick nav (scroll, not anchor links) ----
+  document.querySelectorAll('[data-scroll-to]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = document.getElementById(btn.getAttribute('data-scroll-to'));
+      if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
+
+  // ---- Case-file accordions ----
+  document.querySelectorAll('.case-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var body = document.getElementById(btn.getAttribute('data-toggle'));
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      if(body){ body.hidden = expanded; }
+      btn.querySelector('.toggle-label').textContent = expanded ? 'Read the full case file' : 'Collapse case file';
+    });
+  });
+
+  // ---- Comparison table simple/detail toggle ----
+  var table = document.getElementById('ledger-table');
+  var tableToggle = document.getElementById('table-toggle');
+  if(tableToggle && table){
+    tableToggle.addEventListener('click', function(){
+      var compact = table.classList.toggle('compact');
+      tableToggle.textContent = compact ? 'Show full detail' : 'Show simple view';
+    });
+  }
+})();
+</script>
+</body>
+</html>
