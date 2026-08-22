@@ -107,11 +107,10 @@
   h2.section-title{
     font-family:'Libre Caslon Text', serif;
     font-size:1.3rem;
-    margin:2.4rem 0 1.2rem;
+    margin:0 0 1.2rem;
     padding-bottom:0.4rem;
     border-bottom:2px solid var(--ink);
   }
-  h2.section-title:first-of-type{margin-top:0;}
 
   .docket{display:flex; flex-direction:column; gap:1.4rem;}
   .docket-card{
@@ -136,6 +135,13 @@
   .docket-card:hover, .docket-card:focus-visible{
     transform:translate(-2px,-2px);
     box-shadow:6px 6px 0 rgba(31,42,36,0.12);
+  }
+  .docket-card.linked-pair{border-color:var(--brass);}
+  .docket-card .pair-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    color:var(--brass);
+    margin-bottom:0.7rem;
   }
   .docket-card .case-tab{
     font-family:'IBM Plex Mono', monospace;
@@ -187,14 +193,6 @@
   }
   .docket-card .open-link::after{content:" \2192"; }
 
-  .docket-card.linked-pair{border-color:var(--brass);}
-  .docket-card .pair-note{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.68rem;
-    color:var(--brass);
-    margin-bottom:0.7rem;
-  }
-
   .placeholder-card{
     border:1px dashed var(--rule);
     background:transparent;
@@ -236,65 +234,71 @@
 
   <h2 class="section-title">Case Docket</h2>
 
-  <div class="docket">
-    <a class="docket-card" href="weber-hive-enforcement-gap.html">
-      <div class="case-tab">
-        <span>Campaign Finance &amp; Ethics</span>
-        <span class="status-pill">3 officials · Updated Aug 19, 2026</span>
-      </div>
-      <h3 class="case-name">Utah's Campaign-Finance Enforcement Gap</h3>
-      <p class="teaser">Complaints are filed. Reports are corrected. Meaningful penalties are rare&mdash;a comparison across three separate oversight channels.</p>
-      <div class="officials-row">
-        <span>Stuart Adams</span>
-        <span>Mike Schultz</span>
-        <span>Gage Froerer</span>
-      </div>
-      <span class="open-link">Open the case file</span>
-    </a>
-
-    <a class="docket-card linked-pair" href="waldrip-funding-threat.html">
-      <div class="case-tab">
-        <span>State Pressure on Local Government</span>
-        <span class="status-pill">Wasatch County · Updated Aug 22, 2026</span>
-      </div>
-      <div class="pair-note">Paired with &ldquo;One Vote, Four Checks&rdquo; below</div>
-      <h3 class="case-name">Wrong Room, Right Message</h3>
-      <p class="teaser">The Governor's senior housing adviser threatened to cut off Wasatch County's funding&mdash;at a Heber City Council meeting the county wasn't even part of.</p>
-      <div class="officials-row">
-        <span>Steve Waldrip</span>
-        <span>Gov. Spencer Cox</span>
-        <span>Dustin Grabau</span>
-        <span>Yvonne Barney</span>
-      </div>
-      <span class="open-link">Open the case file</span>
-    </a>
-
-    <a class="docket-card linked-pair" href="sb258-preliminary-municipalities.html">
-      <div class="case-tab">
-        <span>Legislation &amp; Campaign Finance</span>
-        <span class="status-pill">SB 258 · Updated Aug 22, 2026</span>
-      </div>
-      <div class="pair-note">Paired with &ldquo;Wrong Room, Right Message&rdquo; above</div>
-      <h3 class="case-name">One Vote, Four Checks</h3>
-      <p class="teaser">A reform bill to give counties a say over the state's "preliminary municipality" law failed by one vote&mdash;four of the no votes went to senators who'd taken checks from a homebuilder using the law right now.</p>
-      <div class="officials-row">
-        <span>Tiara Auxier</span>
-        <span>Kirk Cullimore</span>
-        <span>Ann Millner</span>
-        <span>Ivory Homes</span>
-      </div>
-      <span class="open-link">Open the case file</span>
-    </a>
-
-    <div class="docket-card placeholder-card">
-      Next case file: TBD &mdash; add new entries here as more officials with a documented state or county response are identified.
-    </div>
+  <div class="docket" id="docket">
+    <div class="placeholder-card" id="loading-note">Loading case docket&hellip;</div>
   </div>
 </main>
 
 <footer class="meta">
   <p>The Weber County Hive welcomes corrections supported by original records, complete campaign disclosures, government correspondence, meeting recordings or final agency decisions.</p>
 </footer>
+
+<script src="cases.js"></script>
+<script>
+  (function(){
+    var docket = document.getElementById('docket');
+    var loadingNote = document.getElementById('loading-note');
+
+    if (typeof CASES === 'undefined' || !Array.isArray(CASES) || CASES.length === 0){
+      if (loadingNote) loadingNote.textContent = 'No case files found. Check that cases.js is uploaded alongside this file.';
+      return;
+    }
+
+    var byCaseNumber = {};
+    CASES.forEach(function(c){ byCaseNumber[c.caseNumber] = c; });
+
+    var html = CASES.map(function(c){
+      var pairNote = '';
+      var pairClass = '';
+      if (c.pairWith && byCaseNumber[c.pairWith]){
+        pairClass = ' linked-pair';
+        pairNote = '<div class="pair-note">Paired with &ldquo;' + escapeHtml(byCaseNumber[c.pairWith].title) + '&rdquo;</div>';
+      }
+      var officials = (c.officials || []).map(function(o){
+        return '<span>' + escapeHtml(o) + '</span>';
+      }).join('');
+
+      return (
+        '<a class="docket-card' + pairClass + '" href="' + escapeHtml(c.link) + '">' +
+          '<div class="case-tab">' +
+            '<span>' + escapeHtml(c.category || '') + '</span>' +
+            '<span class="status-pill">' + escapeHtml((c.officials && c.officials.length) ? c.officials.length + ' officials' : '') +
+              (c.updated ? ' &middot; Updated ' + escapeHtml(c.updated) : '') +
+            '</span>' +
+          '</div>' +
+          pairNote +
+          '<h3 class="case-name">' + escapeHtml(c.title) + '</h3>' +
+          '<p class="teaser">' + escapeHtml(c.summary || '') + '</p>' +
+          '<div class="officials-row">' + officials + '</div>' +
+          '<span class="open-link">Open the case file</span>' +
+        '</a>'
+      );
+    }).join('');
+
+    html += '<div class="docket-card placeholder-card">Next case file: TBD &mdash; add a new object to cases.js as more officials with a documented state or county response are identified.</div>';
+
+    docket.innerHTML = html;
+
+    function escapeHtml(str){
+      if (str === undefined || str === null) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+  })();
+</script>
 
 </body>
 </html>
