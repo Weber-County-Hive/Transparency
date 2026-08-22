@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wrong Room, Right Message — The Weber County Hive</title>
+<style>
+  :root{
+    --paper:#f2ede2;
+    --ink:#20241f;
+    --ink-soft:#4a4f45;
+    --line:#c9c0a8;
+    --rule:#8a8265;
+    --flag:#8a2e1f;
+    --flag-soft:#f4e2dc;
+    --stamp:#3c4a3e;
+    --stamp-soft:#e2e8e0;
+    --serif:"Iowan Old Style","Georgia","Times New Roman",serif;
+    --sans:"Helvetica Neue",Arial,sans-serif;
+    --mono:"Courier New",Courier,monospace;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--serif);
+    line-height:1.6;
+  }
+
+  .sheet{
+    max-width:760px;
+    margin:0 auto;
+    padding:56px 28px 120px;
+  }
+
+  .masthead{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    border-bottom:3px double var(--rule);
+    padding-bottom:14px;
+    margin-bottom:6px;
+  }
+  .masthead .name{
+    font-family:var(--sans);
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-size:12px;
+    color:var(--ink-soft);
+  }
+  .masthead .date{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
+  }
+
+  .file-tag{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.08em;
+    color:var(--flag);
+    margin-top:18px;
+    text-transform:uppercase;
+  }
+
+  h1{
+    font-family:var(--serif);
+    font-size:clamp(2rem, 5vw, 2.9rem);
+    line-height:1.12;
+    font-weight:400;
+    margin:14px 0 6px;
+    letter-spacing:-0.01em;
+  }
+
+  .dek{
+    font-family:var(--sans);
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    max-width:58ch;
+    margin:0 0 30px;
+  }
+
+  .byline-row{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:10px 0;
+    margin-bottom:32px;
+  }
+  .byline-row span b{color:var(--ink);font-weight:700;}
+
+  .start-here{
+    border:2px solid var(--stamp);
+    background:var(--stamp-soft);
+    margin-bottom:44px;
+  }
+  .start-here-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 20px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .start-here-head h2{
+    margin:0;
+    padding:0;
+    border:none;
+    font-family:var(--sans);
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--stamp);
+  }
+  .start-here-head .sub{
+    font-family:var(--sans);
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-top:3px;
+    font-weight:400;
+    text-transform:none;
+    letter-spacing:0;
+  }
+  .start-here-toggle{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--stamp);
+    border:1px solid var(--stamp);
+    border-radius:50%;
+    width:26px;
+    height:26px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    transition:transform .2s ease;
+  }
+  .start-here.open .start-here-toggle{transform:rotate(45deg);}
+  .start-here-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s ease;
+  }
+  .start-here.open .start-here-body{max-height:2400px;}
+  .start-here-inner{
+    padding:4px 20px 22px;
+    border-top:1px solid var(--line);
+  }
+
+  .step-list{
+    list-style:none;
+    margin:16px 0 0;
+    padding:0;
+  }
+  .step-item{
+    display:flex;
+    gap:12px;
+    padding:12px 0;
+    border-bottom:1px dashed var(--line);
+    font-family:var(--sans);
+  }
+  .step-item:last-child{border-bottom:none;}
+  .step-num{
+    flex:0 0 auto;
+    width:24px;
+    height:24px;
+    border-radius:50%;
+    background:var(--stamp);
+    color:var(--paper);
+    font-size:11px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .step-text{
+    font-size:13.5px;
+    color:var(--ink);
+    padding-top:2px;
+  }
+
+  .glossary{
+    margin-top:20px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+  }
+  .glossary-label{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .gterm{
+    display:inline-block;
+    font-family:var(--sans);
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--stamp);
+    background:#fff;
+    border:1px solid var(--stamp);
+    border-radius:4px;
+    padding:5px 10px;
+    margin:0 6px 6px 0;
+    cursor:pointer;
+    user-select:none;
+  }
+  .gterm::after{content:" +";font-weight:400;}
+  .gterm.active::after{content:" \2212";}
+  .gdef{
+    display:none;
+    font-family:var(--sans);
+    font-size:13px;
+    color:var(--ink-soft);
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:10px 12px;
+    margin:-2px 0 10px;
+  }
+  .gdef.show{display:block;}
+
+  .routing{
+    margin:0 0 42px;
+    border:1px solid var(--line);
+    background:#e9e2cf;
+    padding:22px 20px 24px;
+  }
+  .routing .cap{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:16px;
+  }
+  .route-track{
+    display:flex;
+    align-items:center;
+    gap:0;
+    font-family:var(--sans);
+  }
+  .stop{
+    flex:1;
+    text-align:center;
+    padding:0 6px;
+  }
+  .stop .who{
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--ink);
+    line-height:1.3;
+  }
+  .stop .what{
+    font-size:10.5px;
+    color:var(--ink-soft);
+    margin-top:3px;
+  }
+  .stop.actual .who{color:var(--flag);}
+  .arrow{
+    flex:0 0 auto;
+    width:34px;
+    text-align:center;
+    color:var(--rule);
+    font-size:16px;
+    transform:translateY(-8px);
+  }
+  .route-note{
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px dashed var(--line);
+    font-family:var(--sans);
+    font-size:12.5px;
+    color:var(--ink-soft);
+    font-style:italic;
+  }
+
+  blockquote{
+    margin:0 0 34px;
+    border-left:3px solid var(--flag);
+    background:var(--flag-soft);
+    padding:16px 20px;
+  }
+  blockquote p{
+    font-family:var(--serif);
+    font-style:italic;
+    font-size:1.18rem;
+    line-height:1.5;
+    margin:0 0 6px;
+    color:var(--ink);
+  }
+  blockquote cite{
+    font-family:var(--sans);
+    font-style:normal;
+    font-size:11px;
+    letter-spacing:0.05em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  .accordion{border-top:2px solid var(--stamp);}
+  .acc-item{border-bottom:1px solid var(--line);}
+  .acc-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    padding:18px 2px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .acc-head h2{
+    margin:0;
+    padding:0;
+    border:none;
+    font-family:var(--sans);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.13em;
+    text-transform:uppercase;
+    color:var(--stamp);
+  }
+  .acc-toggle{
+    font-family:var(--mono);
+    font-size:14px;
+    color:var(--stamp);
+    flex-shrink:0;
+    transition:transform .2s ease;
+  }
+  .acc-item.open .acc-toggle{transform:rotate(45deg);}
+  .acc-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+  }
+  .acc-item.open .acc-body{max-height:3000px;}
+  .acc-inner{padding:0 2px 22px;}
+  .acc-inner p{font-size:1.04rem;margin:0 0 18px;}
+  .acc-inner p:last-child{margin-bottom:0;}
+
+  .stamp-box{
+    border:2px solid var(--stamp);
+    color:var(--stamp);
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    padding:5px 10px;
+    display:inline-block;
+    transform:rotate(-1.4deg);
+    margin:0 0 16px;
+  }
+
+  .divider{
+    text-align:center;
+    color:var(--rule);
+    letter-spacing:0.5em;
+    font-size:11px;
+    margin:30px 0;
+  }
+
+  .analysis{
+    background:#eae4d4;
+    border:1px solid var(--line);
+    padding:22px 24px;
+    margin:24px 0 0;
+  }
+  .analysis .tag{
+    font-family:var(--mono);
+    font-size:10px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:10px;
+  }
+  .analysis p{margin:0 0 14px;}
+  .analysis p:last-child{margin-bottom:0;}
+
+  .pending{
+    font-family:var(--sans);
+    font-size:12.5px;
+    color:var(--ink-soft);
+    border:1px dashed var(--rule);
+    padding:14px 18px;
+    margin-top:8px;
+    background:#e9e2cf;
+  }
+  .pending b{color:var(--ink);}
+
+  footer{
+    margin-top:44px;
+    padding-top:16px;
+    border-top:3px double var(--rule);
+    font-family:var(--sans);
+    font-size:11px;
+    color:var(--ink-soft);
+    display:flex;
+    justify-content:space-between;
+  }
+
+  @media (max-width:560px){
+    .route-track{flex-direction:column;}
+    .arrow{transform:rotate(90deg);margin:2px 0;}
+    .byline-row{flex-wrap:wrap;gap:10px 20px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <div class="name">The Weber County Hive</div>
+    <div class="date">August 2026</div>
+  </div>
+
+  <div class="file-tag">Records &amp; Public Meetings</div>
+  <h1>Wrong Room, Right Message</h1>
+  <p class="dek">The governor's senior housing adviser came to Heber City to talk about state housing policy. Before he left, he threatened to cut off Wasatch County's funding — and said, on the record, that the room he was in wasn't who the message was for.</p>
+
+  <div class="byline-row">
+    <span>Source: <b>Aug. 18, 2026 Heber City Council meeting</b></span>
+    <span>Confirmed via: <b>Park Record, official agenda &amp; staff report</b></span>
+  </div>
+
+  <div class="start-here" id="startHere">
+    <div class="start-here-head" onclick="document.getElementById('startHere').classList.toggle('open')">
+      <div>
+        <h2>Start Here — the 60-second version</h2>
+        <div class="sub">New to this story? Click to open a plain-language walkthrough.</div>
+      </div>
+      <div class="start-here-toggle">+</div>
+    </div>
+    <div class="start-here-body">
+      <div class="start-here-inner">
+        <ol class="step-list">
+          <li class="step-item"><div class="step-num">1</div><div class="step-text">Wasatch County said no to a developer's request, and joined a neighboring county in asking the state to repeal a law that lets small groups of landowners create new towns without county approval.</div></li>
+          <li class="step-item"><div class="step-num">2</div><div class="step-text">A senior adviser to Gov. Cox, Steve Waldrip, was invited to Heber City — a separate city government, not the county — to give a routine presentation on state housing policy.</div></li>
+          <li class="step-item"><div class="step-num">3</div><div class="step-text">Partway through, he delivered a different message: the Governor would cut off Wasatch County's state funding over those two decisions.</div></li>
+          <li class="step-item"><div class="step-num">4</div><div class="step-text">The problem: he wasn't talking to the county. He was talking to the city next door, which has no power over either decision.</div></li>
+          <li class="step-item"><div class="step-num">5</div><div class="step-text">On top of that, the specific road funding he named is distributed to counties by a fixed legal formula — and nothing in that law allows it to be cut off for the reasons he gave.</div></li>
+        </ol>
+
+        <div class="glossary">
+          <div class="glossary-label">Quick glossary — click a term</div>
+          <span class="gterm" data-term="sb258">SB 258 / preliminary municipality</span>
+          <div class="gdef" data-def="sb258">A 2024 Utah law letting up to three landowners petition the state directly to create a brand-new town on their land — without needing approval from the county the land currently sits in.</div>
+
+          <span class="gterm" data-term="bc">B&amp;C road funds</span>
+          <div class="gdef" data-def="bc">"Class B and C" money: a fixed share of state gas-tax revenue that Utah law requires be divided among counties and cities every quarter, using a set formula based on population and road mileage — not a discretionary grant.</div>
+
+          <span class="gterm" data-term="cra">CRA (Community Reinvestment Area)</span>
+          <div class="gdef" data-def="cra">A designated zone where growth in property tax revenue is redirected away from a city's general fund and into a separate account for development — legally meant for blighted areas, though residents at Heber's own hearing argued that label doesn't fit here.</div>
+
+          <span class="gterm" data-term="grama">Records-only reporting</span>
+          <div class="gdef" data-def="grama">This piece is built entirely from public documents and reporting already on the record — meeting minutes, official agendas, statutes, and published news coverage. No one named in this story was contacted for comment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="routing">
+    <div class="cap">Where the message was supposed to go — vs. where it was delivered</div>
+    <div class="route-track">
+      <div class="stop">
+        <div class="who">Gov. Cox</div>
+        <div class="what">origin of the message</div>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="stop">
+        <div class="who">Steve Waldrip</div>
+        <div class="what">senior housing adviser, delivered it</div>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="stop actual">
+        <div class="who">Heber City Council</div>
+        <div class="what">actual audience, Aug. 18 meeting</div>
+      </div>
+      <div class="arrow">&rarr;</div>
+      <div class="stop">
+        <div class="who">Wasatch County</div>
+        <div class="what">stated intended target — never addressed directly</div>
+      </div>
+    </div>
+    <div class="route-note">Wasatch County has no governing overlap with the Heber City Council. The message reached its intended target only by way of local press coverage of a meeting it wasn't part of.</div>
+  </div>
+
+  <p style="font-size:1.06rem;">Steve Waldrip came to the Heber City Council on August 18 to talk about the state's housing plan. He left having threatened to zero out state funding to Wasatch County &mdash; a message he delivered not to the county itself, but to the city next door.</p>
+
+  <div class="accordion" id="accordion">
+
+    <div class="acc-item open">
+      <div class="acc-head"><h2>The Setup</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>Waldrip, the governor's senior adviser for housing strategy and innovation, was the invited speaker for the third session of Heber City's <em>Affordable Housing 101</em> series, a public education program the city started in May 2026. His assigned topic, per the city's own staff report: "State Housing Plans &amp; Legislation&nbsp;&hellip; What is the state's plan for housing?" Co-presenting was Tony Kohler, Heber City's Community Development Director.</p>
+        <p>Nothing in the official agenda or staff report previewed what came next.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item open">
+      <div class="acc-head"><h2>The Threat</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>Partway through the meeting, addressing Heber City Mayor Heidi Franco, Waldrip delivered a message on behalf of Gov. Spencer Cox.</p>
+        <blockquote>
+          <p>"So my message back from our good governor, who cares deeply about these issues is: Your funding as a county is now at risk, meaning none. Anything within my power, I will stop."</p>
+          <cite>Steve Waldrip &middot; Heber City Council, Aug. 18, 2026</cite>
+        </blockquote>
+        <p>He went further: "Without being thoughtful, without having discussions, with just saying we couldn't care less&nbsp;&hellip; That funding is now suspended." Waldrip said Summit and Wasatch counties had "declared war" on the state over growth issues.</p>
+        <p>The trigger, according to Waldrip: Wasatch County's decision not to move forward with a legislative development agreement proposed by Philo Development &mdash; 144 lots on 740 acres of School and Institutional Trust Lands (SITLA), in an area currently zoned for one unit per 160 acres &mdash; and the county's decision to join Summit County in calling for the repeal of Senate Bill 258.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item open">
+      <div class="acc-head"><h2>Wrong Room</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="stamp-box">Not the Named Party</div>
+        <p>There was one problem: Waldrip wasn't talking to Wasatch County. He was talking to Heber City &mdash; a separate municipal government with no authority over the county's decisions on SITLA or SB 258.</p>
+        <p>Wasatch County Manager Dustin Grabau, responding afterward, said the county hadn't broken any law &mdash; only advocated for a policy change. He said the county has reached out to the Governor's Office and hopes to meet the week of August 24, calling the exchange so far "a one-sided conversation." He said he wasn't aware of "any public discourse that conveys the county is defying state law," and called the public threat "a little confusing&nbsp;&hellip; a little bewildering," with "no basis in reality."</p>
+        <p>Heber City Councilmember Yvonne Barney pushed back at the same meeting. She said the friction over the SITLA land was really about the specific developer &mdash; one that had drawn similar pushback in other communities &mdash; not defiance of the state. She said the issue "could have been conflated by media attention or misunderstanding," and added: "if our governor is trying to use the tactics of threats to our community, that doesn't go over well, either."</p>
+        <p>Waldrip also called the counties' opposition to SB 258 "selfish," saying public comments on the issue tend to focus on personal impact: "People have forgotten that they impacted somebody at one point in time, and it was OK." He said the conversation needs to happen "differently" and invited county leaders to contact him directly.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item open">
+      <div class="acc-head"><h2>The Money He Named Is Not Discretionary</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>Class B and C road funds aren't an ordinary grant program the Governor's office can turn on or off at will. Under Utah Code, 30% of qualifying state highway-user tax revenue is appropriated annually for B&amp;C roads, and the statute says the money "shall be apportioned" among counties and municipalities. Each county's share is set by a fixed formula &mdash; half based on population, half on weighted road mileage &mdash; and the Utah Department of Transportation is required to transfer the funds into local accounts at least quarterly.</p>
+        <p>State administrative rules do allow UDOT &mdash; not the Governor's office &mdash; to withhold future allocations, but only for specific compliance failures tied to how the money is used: unauthorized spending, missed audits, inaccurate road mileage reporting, or improperly closing a qualifying road to public travel, among others. Nothing in the statute or the rule identifies opposition to a development agreement, criticism of state housing policy, or advocacy for a law's repeal as grounds for withholding a county's allocation. Neither Cox's office nor Waldrip publicly identified a compliance violation when he told the Heber City Council that Wasatch County's funding was "at risk, meaning none" and had been "suspended."</p>
+        <p>That leaves an open question the statute itself raises: was Waldrip describing an actual UDOT compliance action against Wasatch County &mdash; or asserting a new, informal condition on money the Legislature directed the state to distribute by formula? Nothing reviewed for this story shows the county has been found out of compliance, notified of a violation, or had a quarterly distribution actually withheld.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head"><h2>The Same Night, A Different Fight</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>The Aug. 18 meeting wasn't only about Waldrip. Later that evening, the council took up two resolutions tied to Heber City's own budget fight: Resolution 2026-18, adopting a certified tax rate for fiscal year 2027, and Resolution 2026-20 &mdash; titled, in the city's own agenda language, "Adopting Fiscal Year Final 2027 Budget <strong>Including Heber City CRA</strong>."</p>
+        <p>That wording matters. At the city's Truth in Taxation public hearing two weeks earlier, on August 5, multiple residents connected the city's budget shortfall directly to its Community Reinvestment Area (CRA) &mdash; the mechanism that diverts a portion of property tax growth away from the general fund and into a designated development zone. One speaker, a Midway City Council member, argued the CRA was capturing normal market-value growth that had nothing to do with blight, the condition CRAs are legally meant to address, and cited a valuation error that briefly would have let the CRA capture all of the property's taxable value before it was caught. He asked the council to return the diverted funds, cut the tax rate, and terminate the CRA.</p>
+        <p>City Manager Matt Brower disputed the connection at that hearing, telling residents the CRA was not the reason for the Truth in Taxation process. But the city's own Aug. 18 agenda item &mdash; bundling the CRA explicitly into the same budget resolution &mdash; cuts against that separation.</p>
+
+        <div class="analysis">
+          <div class="tag">Analysis &mdash; a familiar shape</div>
+          <p>There's a pattern worth naming here, separate from the question of who Waldrip's message was actually meant for. A Community Reinvestment Area works by quietly redirecting property tax growth away from a city's general fund and into a separate account, justified under a "blight" designation that residents at Heber City's own Truth in Taxation hearing argued doesn't fit a healthy downtown. The money is still moving &mdash; it's just moving somewhere other than where the average taxpayer assumes it's going, under a label that obscures the mechanism.</p>
+          <p>Waldrip's threat worked the same way, structurally. A message meant for Wasatch and Summit counties was delivered instead to Heber City, dressed up as a routine housing-policy presentation, with Waldrip himself later acknowledging the city wasn't the real target &mdash; it was simply the room where the message would eventually find its way to the people it was meant for. Different money, different actors, same basic move: obscure where the pressure, or the diversion, is actually coming from.</p>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head"><h2>A Pattern, Not an Isolated Incident</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>Wasatch County isn't the only county to describe pressure from the state over a growth-related decision this year. In Box Elder County, commissioners voted in June to approve zoning tied to the Stratos data center project after, according to Commissioner Lee Perry, the Utah Inland Port Authority (MIDA) told them they could support the process &mdash; or the project would continue without them, "and potentially lead to lawsuits from the developer."</p>
+        <p>That is a different mechanism than what Waldrip described to Heber City &mdash; a legal-bypass and litigation threat, not a funding cutoff &mdash; and it should not be conflated with the Wasatch County situation. But together, the two cases describe a broader pattern: county officials in more than one part of the state say they've faced state-level pressure, delivered outside normal channels, tied to development decisions the state wanted to go a different way.</p>
+        <div class="pending">
+          <b>Pending verification:</b> additional detail from the meeting recording &mdash; including Waldrip's stated rationale for Public Infrastructure Districts and further context on what prompted his remarks &mdash; is under review and will be added once confirmed against the recording directly.
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>The Weber County Hive</span>
+    <span>Weber County &amp; Wasatch Back Accountability Reporting</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.gterm').forEach(function(term){
+    term.addEventListener('click', function(){
+      var key = term.getAttribute('data-term');
+      var def = document.querySelector('.gdef[data-def="' + key + '"]');
+      var isOpen = def.classList.contains('show');
+      def.classList.toggle('show', !isOpen);
+      term.classList.toggle('active', !isOpen);
+    });
+  });
+
+  document.querySelectorAll('.acc-head').forEach(function(head){
+    head.addEventListener('click', function(){
+      head.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>
