@@ -3,301 +3,549 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Transparency | The Weber County Hive</title>
+<title>SITLA: The Land Nobody Zones | The Weber County Hive</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --paper: #ece6d8;
-    --paper-dim: #e2dbc9;
-    --folder: #d9d0b8;
-    --ink: #1f2a24;
-    --ink-soft: #3d473f;
-    --ink-faint: #6b7268;
-    --rule: #c3b99e;
-    --stamp-red: #a63a2e;
-    --brass: #8c7a4e;
-    --brass-dim: #8c7a4e22;
+    --paper:#EFE7D2;
+    --paper-2:#E6DAB8;
+    --paper-3:#DDCE9F;
+    --ink:#211F16;
+    --ink-soft:#54503F;
+    --rangeland:#3F5A34;
+    --rangeland-deep:#2C4024;
+    --ochre:#AE5A26;
+    --ochre-deep:#7E3F1B;
+    --brass:#A9791F;
+    --flag:#7C3226;
+    --line:#C7B98D;
+    --max:920px;
   }
   *{box-sizing:border-box;}
-  @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
-  }
+  html{scroll-behavior:auto;}
   body{
     margin:0;
     background:var(--paper);
+    color:var(--ink);
+    font-family:'Newsreader',serif;
+    font-size:18px;
+    line-height:1.62;
     background-image:
-      radial-gradient(ellipse at top left, #f2ecdd 0%, transparent 55%),
-      radial-gradient(ellipse at bottom right, #e0d8c2 0%, transparent 55%);
-    color:var(--ink);
-    font-family:'Source Serif 4', Georgia, serif;
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
+      radial-gradient(circle at 15% 8%, rgba(169,121,31,0.06), transparent 45%),
+      radial-gradient(circle at 85% 92%, rgba(63,90,52,0.07), transparent 40%);
   }
-  a{color:var(--stamp-red);}
-  a:focus-visible, button:focus-visible{outline:3px solid var(--brass); outline-offset:2px;}
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.72rem;
-    letter-spacing:0.16em;
-    text-transform:uppercase;
-    color:var(--ink-faint);
-  }
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+  h1,h2,h3,h4{font-family:'Fraunces',serif; font-weight:700; letter-spacing:-0.01em; color:var(--ink); margin:0;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:var(--ochre-deep);}
+  p{margin:0 0 1em 0;}
+  ::selection{background:var(--brass); color:var(--paper);}
 
-  header.masthead{
-    max-width:920px;
-    margin:0 auto;
-    padding:3.5rem 1.5rem 2.5rem;
-    border-bottom:3px double var(--ink);
-  }
-  .pub-name{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.78rem;
-    letter-spacing:0.22em;
-    text-transform:uppercase;
-    color:var(--ink);
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-    margin-bottom:2.2rem;
-    padding-bottom:0.9rem;
-    border-bottom:1px solid var(--rule);
-    flex-wrap:wrap;
-    gap:0.5rem;
-  }
-  .pub-name span.tag{color:var(--stamp-red);}
-  .pub-name a.substack-link{
-    color:var(--stamp-red);
-    text-decoration:none;
-    border-bottom:1px solid var(--stamp-red);
-    padding-bottom:1px;
-  }
-  .pub-name a.substack-link:hover{
-    color:var(--ink);
-    border-bottom-color:var(--ink);
-  }
-  h1.headline{
-    font-family:'Libre Caslon Text', 'Source Serif 4', serif;
-    font-weight:700;
-    font-size:clamp(2rem, 5.5vw, 3.1rem);
-    line-height:1.08;
-    margin:0 0 1rem;
-    letter-spacing:-0.01em;
-  }
-  .subhead{
-    font-size:1.15rem;
-    font-style:italic;
-    color:var(--ink-soft);
-    max-width:640px;
-    margin:0 0 1.6rem;
-  }
-  .byline-row{
-    display:flex;
-    gap:1.5rem;
-    flex-wrap:wrap;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.78rem;
-    color:var(--ink-faint);
-  }
-
-  main{max-width:920px; margin:0 auto; padding:2.5rem 1.5rem 4rem;}
-  main > p.intro-line{max-width:640px; font-size:1.05rem; color:var(--ink-soft); margin:0 0 2.2rem;}
-
-  h2.section-title{
-    font-family:'Libre Caslon Text', serif;
-    font-size:1.3rem;
-    margin:0 0 1.2rem;
-    padding-bottom:0.4rem;
-    border-bottom:2px solid var(--ink);
-  }
-
-  .docket{display:flex; flex-direction:column; gap:1.4rem;}
-  .docket-card{
+  /* ============ HERO ============ */
+  .hero{
     position:relative;
-    background:var(--folder);
-    border:1px solid var(--rule);
-    box-shadow: 4px 4px 0 rgba(31,42,36,0.08);
-    padding:1.7rem 1.8rem 1.6rem;
-    text-decoration:none;
-    color:inherit;
-    display:block;
-    transition:transform 0.15s ease, box-shadow 0.15s ease;
+    padding:72px 0 56px;
+    border-bottom:3px double var(--ink);
+    overflow:hidden;
   }
-  .docket-card::before{
-    content:"";
-    position:absolute;
-    top:0; left:0; right:0;
-    height:6px;
-    background:repeating-linear-gradient(90deg, var(--ink) 0 10px, transparent 10px 16px);
-    opacity:0.15;
+  .plat-grid{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:64px 64px;
+    opacity:0.35;
+    mask-image:linear-gradient(to bottom, black, transparent 88%);
   }
-  .docket-card:hover, .docket-card:focus-visible{
-    transform:translate(-2px,-2px);
-    box-shadow:6px 6px 0 rgba(31,42,36,0.12);
+  .hero-inner{position:relative; z-index:1;}
+  .eyebrow-row{
+    display:flex; align-items:center; gap:14px; margin-bottom:22px;
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--ink-soft);
   }
-  .docket-card.linked-pair{border-color:var(--brass);}
-  .docket-card .pair-note{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.68rem;
-    color:var(--brass);
-    margin-bottom:0.7rem;
+  .patent-stamp{
+    width:46px; height:46px; border-radius:50%;
+    border:2px solid var(--ochre-deep);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:9px; font-weight:600;
+    color:var(--ochre-deep); text-transform:uppercase; text-align:center;
+    line-height:1.1; flex:none;
+    background:
+      repeating-conic-gradient(from 0deg, rgba(174,90,38,0.08) 0deg 4deg, transparent 4deg 12deg);
   }
-  .docket-card .case-tab{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.7rem;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--ink-faint);
-    margin-bottom:0.35rem;
-    display:flex;
-    justify-content:space-between;
-    gap:1rem;
-    flex-wrap:wrap;
+  .hero h1{font-size:clamp(2.3rem, 5vw, 3.6rem); line-height:1.04; margin-bottom:20px;}
+  .hero h1 em{font-style:italic; color:var(--ochre-deep);}
+  .hero-sub{font-size:1.18rem; color:var(--ink-soft); max-width:640px; margin-bottom:28px;}
+  .hero-meta{
+    display:flex; flex-wrap:wrap; gap:10px 26px;
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ink-soft);
+    border-top:1px solid var(--line); padding-top:16px;
   }
-  .docket-card .status-pill{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.66rem;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    color:var(--stamp-red);
-    border:1.5px solid var(--stamp-red);
-    border-radius:3px;
-    padding:0.12rem 0.45rem;
-  }
-  .docket-card .case-name{
-    font-family:'Libre Caslon Text', serif;
-    font-size:1.4rem;
-    font-weight:700;
-    margin:0 0 0.6rem;
-  }
-  .docket-card p.teaser{margin:0 0 0.9rem; color:var(--ink-soft); font-size:0.98rem;}
-  .docket-card .officials-row{
-    display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1rem;
-  }
-  .docket-card .officials-row span{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.7rem;
-    background:var(--paper);
-    border:1px solid var(--rule);
-    padding:0.25rem 0.5rem;
-    border-radius:2px;
-    color:var(--ink-soft);
-  }
-  .docket-card .open-link{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.76rem;
-    text-transform:uppercase;
-    letter-spacing:0.05em;
-    color:var(--brass);
-  }
-  .docket-card .open-link::after{content:" \2192"; }
+  .hero-meta strong{color:var(--ink); font-weight:600;}
 
-  .placeholder-card{
-    border:1px dashed var(--rule);
-    background:transparent;
-    box-shadow:none;
-    padding:1.5rem 1.8rem;
-    color:var(--ink-faint);
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.85rem;
+  /* ============ NAV STRIP ============ */
+  .navstrip{
+    position:sticky; top:0; z-index:50;
+    background:var(--paper); border-bottom:1px solid var(--line);
+    backdrop-filter:blur(2px);
+  }
+  .navstrip-inner{
+    display:flex; gap:4px; overflow-x:auto; padding:10px 28px;
+    max-width:var(--max); margin:0 auto;
+    scrollbar-width:thin;
+  }
+  .navbtn{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.04em;
+    text-transform:uppercase; white-space:nowrap;
+    background:transparent; border:1px solid transparent; color:var(--ink-soft);
+    padding:7px 11px; border-radius:3px; cursor:pointer; transition:all .15s ease;
+  }
+  .navbtn:hover{border-color:var(--line); color:var(--ink); background:var(--paper-2);}
+
+  /* ============ SECTIONS ============ */
+  section{padding:56px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .sec-label{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:8px;
+  }
+  .sec-num{
+    font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--brass);
+    font-weight:600; letter-spacing:0.02em;
+  }
+  .sec-eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; text-transform:uppercase;
+    letter-spacing:0.12em; color:var(--ink-soft);
+  }
+  .sec-title{font-size:clamp(1.5rem,3vw,2.1rem); margin-bottom:22px; line-height:1.12;}
+  .lede{font-size:1.08rem; color:var(--ink-soft); max-width:680px;}
+
+  /* ============ PRIMER (beginners block) ============ */
+  .primer{
+    background:var(--paper-2); border:1px solid var(--line); border-radius:4px;
+    padding:30px 30px 8px;
+  }
+  .primer-title{
+    font-family:'IBM Plex Mono',monospace; font-size:12px; text-transform:uppercase;
+    letter-spacing:0.12em; color:var(--rangeland-deep); margin-bottom:18px; font-weight:600;
+  }
+  .gloss{display:grid; grid-template-columns:1fr; gap:0;}
+  .gloss dt{
+    font-family:'Fraunces',serif; font-weight:600; font-size:1.05rem; color:var(--rangeland-deep);
+    margin-top:18px;
+  }
+  .gloss dd{margin:4px 0 0; color:var(--ink);}
+  @media(min-width:680px){ .gloss{grid-template-columns:1fr 1fr; column-gap:36px;} }
+
+  .tension-note{
+    margin-top:26px; padding:18px 20px; border-left:3px solid var(--ochre);
+    background:rgba(174,90,38,0.07); border-radius:0 3px 3px 0;
+  }
+  .tension-note p{margin:0; color:var(--ink);}
+  .tension-note strong{color:var(--ochre-deep);}
+
+  /* ============ CHAIN OF TITLE (authority ladder) ============ */
+  .chain{position:relative; margin:38px 0 6px; padding-left:40px;}
+  .chain::before{
+    content:''; position:absolute; left:14px; top:6px; bottom:6px; width:2px;
+    background:repeating-linear-gradient(var(--brass) 0 6px, transparent 6px 11px);
+  }
+  .link{position:relative; padding-bottom:30px;}
+  .link:last-child{padding-bottom:0;}
+  .link::before{
+    content:''; position:absolute; left:-40px; top:2px; width:14px; height:14px;
+    border-radius:50%; background:var(--paper); border:2.5px solid var(--brass);
+  }
+  .link-role{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase;
+    letter-spacing:0.1em; color:var(--brass); margin-bottom:4px; font-weight:600;
+  }
+  .link h4{font-size:1.18rem; margin-bottom:6px;}
+  .link p{color:var(--ink-soft); max-width:620px; font-size:0.98rem;}
+
+  /* ============ TIMELINE (case file) ============ */
+  .timeline{position:relative; margin-top:32px; padding-left:130px;}
+  .tl-item{position:relative; padding-bottom:26px; border-bottom:1px dashed var(--line);}
+  .tl-item:last-child{border-bottom:none; padding-bottom:0;}
+  .tl-item + .tl-item{padding-top:26px;}
+  .tl-year{
+    position:absolute; left:-130px; top:26px; width:84px; text-align:right;
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:var(--ochre-deep);
+    font-weight:600; white-space:nowrap;
+  }
+  .tl-item::before{
+    content:''; position:absolute; left:-30px; top:31px; width:9px; height:9px;
+    border-radius:50%; background:var(--ochre);
+  }
+  .tl-item::after{
+    content:''; position:absolute; left:-26px; top:40px; bottom:-26px; width:1px;
+    background:var(--line);
+  }
+  .tl-item:last-child::after{display:none;}
+  .tl-title{font-family:'Fraunces',serif; font-weight:600; font-size:1.1rem; margin-bottom:5px;}
+  .tl-item p{color:var(--ink-soft); font-size:0.98rem; max-width:600px;}
+  @media(max-width:640px){
+    .timeline{padding-left:96px;}
+    .tl-year{left:-96px; width:62px; font-size:10.5px;}
+    .tl-item::before{left:-24px;}
+    .tl-item::after{left:-20px;}
   }
 
-  footer.meta{
-    max-width:920px;
-    margin:0 auto;
-    padding:2rem 1.5rem 4rem;
-    border-top:3px double var(--ink);
-    font-size:0.9rem;
-    color:var(--ink-soft);
+  /* quote card */
+  .quote{
+    margin:22px 0; padding:20px 24px; background:var(--paper-3);
+    border-radius:4px; position:relative;
   }
+  .quote p{font-family:'Fraunces',serif; font-style:italic; font-size:1.12rem; color:var(--ink); margin:0 0 6px;}
+  .quote cite{font-family:'IBM Plex Mono',monospace; font-style:normal; font-size:11.5px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:0.05em;}
+
+  /* ============ STATUTE CARD ============ */
+  .statute-card{
+    border:1.5px solid var(--ink); border-radius:4px; padding:26px 28px; margin:26px 0;
+    background:var(--paper-2); position:relative;
+  }
+  .statute-card::before{
+    content:'§'; position:absolute; top:-18px; left:24px; background:var(--paper);
+    font-family:'Fraunces',serif; font-weight:800; font-size:1.6rem; color:var(--brass);
+    padding:0 8px;
+  }
+  .statute-num{font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--ochre-deep); font-weight:600; margin-bottom:10px;}
+  .statute-old{font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:var(--ink-soft); text-decoration:line-through; margin-left:10px;}
+  .statute-text{font-family:'IBM Plex Mono',monospace; font-size:14px; line-height:1.7; color:var(--ink); background:var(--paper); border:1px solid var(--line); padding:16px 18px; border-radius:3px;}
+
+  /* ============ COMPARISON TABLES ============ */
+  .tbl-wrap{overflow-x:auto; margin:26px 0;}
+  table{width:100%; border-collapse:collapse; font-size:0.94rem; min-width:520px;}
+  th, td{text-align:left; padding:11px 14px; border-bottom:1px solid var(--line); vertical-align:top;}
+  th{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--ink-soft); font-weight:600; border-bottom:2px solid var(--ink);
+  }
+  td{color:var(--ink);}
+  tr:last-child td{border-bottom:none;}
+  .tbl-highlight td:first-child{font-weight:600; color:var(--rangeland-deep);}
+
+  /* ============ OPEN QUESTION / FLAG BOX ============ */
+  .flagbox{
+    border:1px solid var(--flag); border-left:4px solid var(--flag);
+    background:rgba(124,50,38,0.06); border-radius:0 4px 4px 0;
+    padding:18px 22px; margin:24px 0;
+  }
+  .flagbox-title{font-family:'IBM Plex Mono',monospace; font-size:11.5px; text-transform:uppercase; letter-spacing:0.1em; color:var(--flag); font-weight:600; margin-bottom:8px;}
+  .flagbox p{margin:0; color:var(--ink); font-size:0.97rem;}
+
+  /* ============ TWO COL ============ */
+  .twocol{display:grid; grid-template-columns:1fr; gap:22px; margin:26px 0;}
+  @media(min-width:720px){ .twocol{grid-template-columns:1fr 1fr;} }
+  .col-card{background:var(--paper-2); border:1px solid var(--line); border-radius:4px; padding:22px 24px;}
+  .col-card h4{font-size:1.05rem; margin-bottom:10px; color:var(--rangeland-deep);}
+  .col-card p{font-size:0.96rem; color:var(--ink-soft); margin-bottom:0;}
+
+  /* details */
+  details{margin:18px 0; border:1px solid var(--line); border-radius:4px; background:var(--paper-2);}
+  summary{
+    cursor:pointer; padding:14px 20px; font-family:'IBM Plex Mono',monospace;
+    font-size:12px; text-transform:uppercase; letter-spacing:0.08em; color:var(--rangeland-deep); font-weight:600;
+    list-style:none; display:flex; align-items:center; gap:8px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::before{content:'▸'; transition:transform .15s ease;}
+  details[open] summary::before{transform:rotate(90deg);}
+  .details-body{padding:0 22px 20px; color:var(--ink-soft); font-size:0.97rem;}
+
+  /* footer */
+  footer{padding:48px 0 60px; border-top:3px double var(--ink);}
+  .footer-grid{display:flex; flex-wrap:wrap; gap:10px 28px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-soft); margin-bottom:18px;}
+  footer p{color:var(--ink-soft); font-size:0.92rem; max-width:640px;}
+
+  .cap{font-family:'IBM Plex Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft);}
 </style>
 </head>
 <body>
 
-<header class="masthead">
-  <div class="pub-name">
-    <span>The Weber County Hive <span class="tag">// Transparency</span></span>
-    <span>Public Records &nbsp;·&nbsp; <a class="substack-link" href="https://webercountyhive.substack.com">Read on Substack</a></span>
+<div class="hero">
+  <div class="plat-grid"></div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow-row">
+      <div class="patent-stamp">TRUST<br>LAND</div>
+      <span>The Weber County Hive &nbsp;·&nbsp; Land Authorities Series &nbsp;·&nbsp; Case File 01</span>
+    </div>
+    <h1>The land nobody <em>zones.</em></h1>
+    <p class="hero-sub">Utah's school trust land agency answers to a governor-appointed board, owes its loyalty to school beneficiaries, and — by its own general counsel's own words — sits mostly outside county zoning power. Here's how that chain of authority actually works, and what it looked like when a Utah county said no anyway.</p>
+    <div class="hero-meta">
+      <span><strong>Agency:</strong> School &amp; Institutional Trust Lands Administration (SITLA)</span>
+      <span><strong>Governing statute:</strong> Utah Code §17-79-306</span>
+      <span><strong>Case study:</strong> 740 acres, Wasatch County</span>
+    </div>
   </div>
-  <p class="eyebrow">Cross-Official Accountability &amp; Enforcement</p>
-  <h1 class="headline">Transparency</h1>
-  <p class="subhead">Case files that compare what happened when Utah officials were flagged, reported, or referred&mdash;and what came of it.</p>
-  <div class="byline-row">
-    <span>THE WEBER COUNTY HIVE</span>
-    <span>WE REPORT PUBLIC RECORDS. YOU DECIDE.</span>
+</div>
+
+<div class="navstrip">
+  <div class="navstrip-inner">
+    <button class="navbtn" data-scroll-to="primer">01 Plain-Language</button>
+    <button class="navbtn" data-scroll-to="chain">02 Chain of Authority</button>
+    <button class="navbtn" data-scroll-to="exemption">03 The Exemption</button>
+    <button class="navbtn" data-scroll-to="casefile">04 The Wasatch Case</button>
+    <button class="navbtn" data-scroll-to="vandusen">05 Not the Temple Case</button>
+    <button class="navbtn" data-scroll-to="statewide">06 Statewide Pattern</button>
+    <button class="navbtn" data-scroll-to="stands">07 Where It Stands</button>
   </div>
-</header>
+</div>
 
-<main>
-  <p class="intro-line">Each entry below tracks a documented complaint, referral, or state/county response involving a Utah public official&mdash;sourced to news reporting, not original allegations. Click a case to open its full file.</p>
+<div class="wrap">
 
-  <h2 class="section-title">Case Docket</h2>
+  <!-- 01 PRIMER -->
+  <section id="primer">
+    <div class="sec-label"><span class="sec-num">01</span><span class="sec-eyebrow">New to this</span></div>
+    <h2 class="sec-title">Five terms, plainly, before anything else</h2>
+    <div class="primer">
+      <div class="primer-title">Start here if you're new to trust land</div>
+      <dl class="gloss">
+        <dt>SITLA</dt>
+        <dd>The state agency that manages roughly 3.4 million acres Utah received from the federal government at statehood. It's not a park agency — its job is to make money from that land for schools.</dd>
+        <dt>Trustee</dt>
+        <dd>Utah doesn't own trust land the way it owns a courthouse. The state constitution makes it a trustee — legally obligated to manage the land for the financial benefit of specific beneficiaries, mainly public schools.</dd>
+        <dt>Beneficiary</dt>
+        <dd>Who the money is actually for. Mostly K-12 public schools, plus universities, state hospitals, and a few other named institutions. Not "the public" in general.</dd>
+        <dt>Board of Trustees</dt>
+        <dd>Seven people who approve SITLA's major land deals. The governor appoints all seven, with state Senate confirmation.</dd>
+        <dt>The exemption</dt>
+        <dd>A Utah statute that says county zoning law doesn't automatically apply to land owned by the state — including SITLA trust land. This is the whole story below.</dd>
+      </dl>
+      <div class="tension-note">
+        <p><strong>The tension in one sentence:</strong> SITLA appears to have the legal right to ignore county zoning on its own land — and its own lawyers have said so on the record — but in practice it usually asks counties for permission anyway, and sometimes takes no for an answer. Both things are true at once, and which one wins in any given county is not settled by statute.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="docket" id="docket">
-    <div class="placeholder-card" id="loading-note">Loading case docket&hellip;</div>
+  <!-- 02 CHAIN OF AUTHORITY -->
+  <section id="chain">
+    <div class="sec-label"><span class="sec-num">02</span><span class="sec-eyebrow">Who's actually in charge</span></div>
+    <h2 class="sec-title">The chain of title, in five links</h2>
+    <p class="lede">SITLA looks like an ordinary state agency. It isn't quite. Its obligations run backward through five distinct layers of authority, each with a different job — and each worth knowing before asking "who decided this."</p>
+
+    <div class="chain">
+      <div class="link">
+        <div class="link-role">Link 1 — Federal origin</div>
+        <h4>Congress and the Utah Enabling Act</h4>
+        <p>At statehood, Congress granted Utah designated land in trust for specific purposes — mainly to fund public schools. That federal bargain is the root of everything below it.</p>
+      </div>
+      <div class="link">
+        <div class="link-role">Link 2 — State constitution</div>
+        <h4>Utah becomes a trustee, not an owner</h4>
+        <p>The Utah Constitution locks that federal bargain in. Trust revenue belongs to the beneficiaries — the state can't spend it as ordinary public money, and can't treat trust land as an ordinary public asset either.</p>
+      </div>
+      <div class="link">
+        <div class="link-role">Link 3 — Legislature</div>
+        <h4>Title 53C sets the rules SITLA runs on</h4>
+        <p>State lawmakers wrote the statute that structures SITLA's board, its powers, and its relationship to counties — including the zoning exemption below. Change the statute, and the whole relationship can move.</p>
+      </div>
+      <div class="link">
+        <div class="link-role">Link 4 — Governor and Senate</div>
+        <h4>Who appoints the seven-member board</h4>
+        <p>The governor appoints all seven trustees, six from a nominating list and one at full discretion, all confirmed by the state Senate. Gov. Cox's own senior advisor for community outreach and intergovernmental affairs, Mike Mower, holds a seat on the board himself.</p>
+      </div>
+      <div class="link">
+        <div class="link-role">Link 5 — Staff and director</div>
+        <h4>Where individual parcel deals actually get negotiated</h4>
+        <p>Below the board, SITLA's director and real-estate staff negotiate directly with developers, water providers, and counties. This is the level where a specific 740-acre parcel near Heber becomes a specific deal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 EXEMPTION -->
+  <section id="exemption">
+    <div class="sec-label"><span class="sec-num">03</span><span class="sec-eyebrow">The legal question underneath everything</span></div>
+    <h2 class="sec-title">The statute that may put SITLA land outside county zoning</h2>
+    <p class="lede">One sentence of Utah code does most of the work in this entire story.</p>
+
+    <div class="statute-card">
+      <div class="statute-num">§17-79-306 — State and federal property <span class="statute-old">formerly §17-27a-304, renumbered 11/6/2025</span></div>
+      <div class="statute-text">
+        "Property owned by the state" includes property owned as school and institutional trust land.<br><br>
+        Unless otherwise provided by law, nothing in the county land-use chapter gives a county jurisdiction over property owned by the state or the United States — and this extends to a private developer occupying that land under a permit or lease from the state.
+      </div>
+    </div>
+
+    <p>Utah's counties have known about this for at least a decade, and SITLA's own top lawyer has confirmed it plainly, on the record — while also describing a very different day-to-day practice.</p>
+
+    <div class="twocol">
+      <div class="col-card">
+        <h4>What the statute says</h4>
+        <div class="quote">
+          <p>"When it comes to state lands, counties have no legal basis for asserting a zoning preference."</p>
+          <cite>John Andrews, SITLA General Counsel — Salt Lake Tribune, 2016</cite>
+        </div>
+      </div>
+      <div class="col-card">
+        <h4>What SITLA says it actually does</h4>
+        <div class="quote">
+          <p>"SITLA has gone to as great a length as we can to give local government input on land use... If the county says this is not the place for it, we take no for an answer."</p>
+          <cite>John Andrews, same interview</cite>
+        </div>
+      </div>
+    </div>
+
+    <p>Both statements came from the same lawyer, in the same conversation. Andrews pointed to a real example of the second half: SITLA pulled a Parker Mountain conservation-easement sale after Wayne County objected to it. That's the pattern that makes this genuinely hard to characterize in one sentence — the legal exemption is real, but so is a long practice of not using it.</p>
+
+    <details>
+      <summary>A county that wrote the exemption into its own code</summary>
+      <div class="details-body">
+        <p>Garfield County's planning commission minutes from a May 2024 meeting on the "Promise Rock" SITLA property near Cannonville show the county amending its own zoning ordinance to state that zoning designations on SITLA-owned property are discontinued, and that SITLA parcels are only zoned once they're sold into private ownership. A Utah county formally conceding the point, in an unrelated dispute — one of the clearest real-world confirmations of how the exemption functions in practice.</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>A Utah county that flat out declined to act on this basis</summary>
+      <div class="details-body">
+        <p>A 2016 Salt Lake Tribune story documented a gravel pit proposed on SITLA land near Torrey, in Wayne County. County commissioners were advised that state-owned land is exempt from local zoning — and formally agreed not to act on the rezone request as a result. The Utah Association of Counties intervened to challenge whether counties have zoning jurisdiction over SITLA land at all. As of this writing, no Utah Supreme Court ruling has squarely resolved the question — it remains genuinely unsettled a decade later.</p>
+      </div>
+    </details>
+  </section>
+
+  <!-- 04 CASE FILE -->
+  <section id="casefile">
+    <div class="sec-label"><span class="sec-num">04</span><span class="sec-eyebrow">The parcel this is actually about</span></div>
+    <h2 class="sec-title">740 acres east of Heber, twenty-two years in the making</h2>
+    <p class="lede">A single SITLA parcel outside Heber City shows both halves of the tension above — SITLA negotiating through the ordinary county process for most of two decades, followed by a state official publicly threatening to skip that process altogether.</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">2004</div>
+        <div class="tl-title">First rezone request denied</div>
+        <p>SITLA applies to Wasatch County for a rezone of the parcel. Denied — the first sign this land has long been treated as subject to county review in practice, whatever the statute allows.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2019</div>
+        <div class="tl-title">Second rezone request denied</div>
+        <p>SITLA applies again. Denied again — fifteen years and the same outcome, reinforcing that both sides had, up to this point, been playing by the county's ordinary rules.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Feb 2022</div>
+        <div class="tl-title">A developer approaches SITLA</div>
+        <p>Mountain Venture Studios proposes a development lease on the parcel. SITLA issues a public RFP; no competing offers come in.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Feb 2023</div>
+        <div class="tl-title">Option agreement finalized</div>
+        <p>SITLA finalizes a mutual option covering the 720–740 SITLA acres plus neighboring private land — roughly 4,000 acres of combined project area.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Dec 2024</div>
+        <div class="tl-title">SITLA publicly threatens the override</div>
+        <p>At a joint Heber City/Wasatch County council meeting, SITLA representative Gregg McArthur tells both councils SITLA will move forward on the parcel with or without local support.</p>
+        <div class="quote">
+          <p>"We'll exercise our exemption, and we'll get affordable housing on this property... We're a state entity, and we can put what we want on those lands now."</p>
+          <cite>Gregg McArthur, SITLA — KSL, Dec. 2024</cite>
+        </div>
+        <p>McArthur also ties the project directly to Gov. Cox's housing-supply goals, and puts a number on the incentive: raising density on the parcel could take SITLA's revenue from roughly $3.6 million to more than $15 million.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Aug 2026</div>
+        <div class="tl-title">Wasatch County rejects the deal anyway</div>
+        <p>The county council votes down the negotiated "legislative development agreement" covering the parcel — 144 lots proposed on land currently zoned for roughly one unit per 160 acres. The council cites density and water availability.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">Aug 18, 2026</div>
+        <div class="tl-title">A funding threat, delivered to the wrong room</div>
+        <p>Days later, Gov. Cox's senior housing adviser Steve Waldrip tells the Heber City Council — not the Wasatch County Council that actually voted — that county funding is "at risk, meaning none," citing the SITLA rejection alongside the county's separate opposition to the state's preliminary-municipality law.</p>
+      </div>
+    </div>
+
+    <div class="flagbox">
+      <div class="flagbox-title">Worth stating plainly</div>
+      <p>No public record found yet shows SITLA or the developer formally invoking the §17-79-306 exemption on this specific parcel. McArthur's 2024 remarks are the clearest evidence SITLA is willing to — but as of the county's Aug. 2026 rejection, the exemption itself had not been exercised here. The county's twenty-two-year practice of treating this land as subject to review is real; so is the standing threat to stop doing that.</p>
+    </div>
+  </section>
+
+  <!-- 05 VAN DUSEN -->
+  <section id="vandusen">
+    <div class="sec-label"><span class="sec-num">05</span><span class="sec-eyebrow">A common mix-up, cleared up</span></div>
+    <h2 class="sec-title">The Heber Valley Temple case is not a SITLA case</h2>
+    <p class="lede">Van Dusen v. Wasatch County — the Utah Supreme Court case over the LDS Church's Heber Valley Temple — gets raised alongside this story often enough that it's worth separating clearly. The properties are different, the legal questions are different, and treating them as one case would misstate both.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>Question</th><th>SITLA parcel (this story)</th><th>Temple parcel (Van Dusen)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Owner</td><td>State trust-land system</td><td>The Church, privately, before the project began</td></tr>
+          <tr><td>State-property exemption</td><td>Potentially applies</td><td>Not relevant — never state land</td></tr>
+          <tr><td>County zoning authority</td><td>Legally disputed</td><td>County exercised its authority directly</td></tr>
+          <tr><td>Tool used</td><td>Proposed rezone / development agreement</td><td>Legislative development agreement (Ordinance 23-16)</td></tr>
+          <tr><td>County result</td><td>Rejected, Aug. 2026</td><td>Approved</td></tr>
+          <tr><td>Live litigation</td><td>None identified</td><td>Yes — merits pending at the Utah Supreme Court</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>What Van Dusen actually tests is whether Wasatch County's use of a "legislative development agreement" — a tool to approve a project that departs from existing zoning — was lawful on ordinary, privately owned land. The Utah Supreme Court lifted a construction injunction in February 2026 without ruling on that underlying question; oral argument on the merits is calendared for September 2026. It's a real, worth-tracking test of a tool Wasatch County has also used on the SITLA parcel's own negotiations — but it does not decide anything about SITLA's zoning exemption.</p>
+  </section>
+
+  <!-- 06 STATEWIDE -->
+  <section id="statewide">
+    <div class="sec-label"><span class="sec-num">06</span><span class="sec-eyebrow">Beyond Wasatch County</span></div>
+    <h2 class="sec-title">Three counties, three different answers</h2>
+    <p class="lede">The most useful thing about the Wasatch parcel is that it isn't unique. The same exemption shows up in at least two other Utah counties, and SITLA handles it differently each time.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr><th>County</th><th>What happened</th><th>SITLA's posture</th></tr>
+        </thead>
+        <tbody>
+          <tr class="tbl-highlight">
+            <td>Wayne (2016)</td>
+            <td>Gravel pit proposed on SITLA land; county was advised it lacked zoning jurisdiction and formally declined to act.</td>
+            <td>Exemption asserted, county deferred without a vote</td>
+          </tr>
+          <tr class="tbl-highlight">
+            <td>Millard (Jan. 2026)</td>
+            <td>County approved rezoning 4,400+ acres, much of it SITLA land, for a solar farm tied to AI data-center development, over public opposition on water use.</td>
+            <td>Ordinary county process, no jurisdiction dispute</td>
+          </tr>
+          <tr class="tbl-highlight">
+            <td>Wasatch (2004–2026)</td>
+            <td>SITLA sought county rezoning twice, was denied twice, negotiated a development agreement, and was rejected a third time in Aug. 2026 — despite a 2024 public threat to bypass the county entirely.</td>
+            <td>Negotiated for two decades; exemption threatened, not yet used</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Read together, these three counties show that SITLA's own practice varies by parcel and by moment — it may invoke the exemption, negotiate voluntarily, withdraw after local opposition, or run the ordinary county process start to finish. The statute doesn't predict which one happens next; SITLA's own institutional revenue incentives, and how loudly a county pushes back, appear to matter more.</p>
+  </section>
+
+  <!-- 07 WHERE IT STANDS -->
+  <section id="stands">
+    <div class="sec-label"><span class="sec-num">07</span><span class="sec-eyebrow">The open question</span></div>
+    <h2 class="sec-title">Where this actually stands</h2>
+    <p class="lede" style="max-width:720px;">SITLA is legally independent and owes its loyalty to trust beneficiaries — mainly public schools — not to the counties its land sits inside. Its board is appointed by the governor and confirmed by the Senate. Its powers are written by the Legislature. And state law appears to put real limits on how much say a county gets over what happens on SITLA land.</p>
+    <p class="lede" style="max-width:720px;">On this specific parcel, SITLA has spent twenty-two years choosing negotiation over its own legal leverage. The unanswered question, after the county's third rejection, is whether that choice holds — or whether the exemption a SITLA official has already publicly threatened to use finally gets used.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <span class="cap">The Weber County Hive</span>
+      <span class="cap">Land Authorities Series</span>
+      <span class="cap">§17-79-306 (formerly §17-27a-304)</span>
+    </div>
+    <p>Built from public statute text, on-record statements from SITLA's own general counsel and staff, county meeting coverage, and official Utah Supreme Court case filings. Where a claim rests on a source's own account rather than an independently confirmed record, it's noted as such above.</p>
   </div>
-</main>
-
-<footer class="meta">
-  <p>The Weber County Hive welcomes corrections supported by original records, complete campaign disclosures, government correspondence, meeting recordings or final agency decisions.</p>
 </footer>
 
-<script src="cases.js?v=2"></script>
 <script>
-  (function(){
-    var docket = document.getElementById('docket');
-    var loadingNote = document.getElementById('loading-note');
-
-    if (typeof CASES === 'undefined' || !Array.isArray(CASES) || CASES.length === 0){
-      if (loadingNote) loadingNote.textContent = 'No case files found. Check that cases.js is uploaded alongside this file.';
-      return;
-    }
-
-    var byCaseNumber = {};
-    CASES.forEach(function(c){ byCaseNumber[c.caseNumber] = c; });
-
-    var html = CASES.map(function(c){
-      var pairNote = '';
-      var pairClass = '';
-      if (c.pairWith && byCaseNumber[c.pairWith]){
-        pairClass = ' linked-pair';
-        pairNote = '<div class="pair-note">Paired with &ldquo;' + escapeHtml(byCaseNumber[c.pairWith].title) + '&rdquo;</div>';
-      }
-      var officials = (c.officials || []).map(function(o){
-        return '<span>' + escapeHtml(o) + '</span>';
-      }).join('');
-
-      return (
-        '<a class="docket-card' + pairClass + '" href="' + escapeHtml(c.link) + '">' +
-          '<div class="case-tab">' +
-            '<span>' + escapeHtml(c.category || '') + '</span>' +
-            '<span class="status-pill">' + escapeHtml((c.officials && c.officials.length) ? c.officials.length + ' officials' : '') +
-              (c.updated ? ' &middot; Updated ' + escapeHtml(c.updated) : '') +
-            '</span>' +
-          '</div>' +
-          pairNote +
-          '<h3 class="case-name">' + escapeHtml(c.title) + '</h3>' +
-          '<p class="teaser">' + escapeHtml(c.summary || '') + '</p>' +
-          '<div class="officials-row">' + officials + '</div>' +
-          '<span class="open-link">Open the case file</span>' +
-        '</a>'
-      );
-    }).join('');
-
-    html += '<div class="docket-card placeholder-card">Next case file: TBD &mdash; add a new object to cases.js as more officials with a documented state or county response are identified.</div>';
-
-    docket.innerHTML = html;
-
-    function escapeHtml(str){
-      if (str === undefined || str === null) return '';
-      return String(str)
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    }
-  })();
+  document.querySelectorAll('[data-scroll-to]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = document.getElementById(btn.getAttribute('data-scroll-to'));
+      if(target){ target.scrollIntoView({behavior:'smooth', block:'start'}); }
+    });
+  });
 </script>
 
 </body>
