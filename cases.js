@@ -51,5 +51,16 @@ const CASES = [
     updated: "Aug 23, 2026",
     link: "sitla-county-zoning-exemption.html",
     pairWith: "CASE 2026-WAL-01"
+  },
+  {
+    caseNumber: "CASE 2026-SITLA-02",
+    title: "The Land Nobody Zones",
+    category: "State Institutional Control — Deep Dive",
+    summary: "The full chain of authority behind SITLA's zoning exemption, a statewide comparison across three counties, and why the Heber Valley Temple case doesn't decide any of it.",
+    officials: ["Mike Mower", "Gov. Spencer Cox", "Gregg McArthur", "John Andrews"],
+    status: "documented",
+    updated: "Aug 23, 2026",
+    link: "weber-hive-sitla-explainer.html",
+    pairWith: "CASE 2026-SITLA-01"
   }
 ];
