@@ -8,7 +8,6 @@
 // status: "documented" | "pending" | "disputed"  (controls stamp color/text)
 // pairWith: optional — caseNumber of another entry this one is paired with,
 // shows a "Paired with..." note and a matching border color on both cards.
-
 const CASES = [
   {
     caseNumber: "CASE 2026-ENF-01",
