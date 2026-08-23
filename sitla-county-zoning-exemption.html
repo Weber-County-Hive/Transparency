@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Land Counties Can't Zone — The Weber County Hive</title>
+<style>
+  :root{
+    --paper:#f2ede2;
+    --ink:#20241f;
+    --ink-soft:#4a4f45;
+    --line:#c9c0a8;
+    --rule:#8a8265;
+    --flag:#8a2e1f;
+    --flag-soft:#f4e2dc;
+    --stamp:#3c4a3e;
+    --stamp-soft:#e2e8e0;
+    --gold:#8a6a1f;
+    --gold-soft:#f4ecdc;
+    --serif:"Iowan Old Style","Georgia","Times New Roman",serif;
+    --sans:"Helvetica Neue",Arial,sans-serif;
+    --mono:"Courier New",Courier,monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);line-height:1.6;}
+  .sheet{max-width:760px;margin:0 auto;padding:56px 28px 120px;}
+
+  .masthead{display:flex;justify-content:space-between;align-items:baseline;border-bottom:3px double var(--rule);padding-bottom:14px;margin-bottom:6px;}
+  .masthead .name{font-family:var(--sans);font-weight:700;letter-spacing:0.14em;text-transform:uppercase;font-size:12px;color:var(--ink-soft);}
+  .masthead .date{font-family:var(--mono);font-size:11px;letter-spacing:0.04em;color:var(--ink-soft);}
+  .file-tag{font-family:var(--mono);font-size:11px;letter-spacing:0.08em;color:var(--flag);margin-top:18px;text-transform:uppercase;}
+
+  h1{font-family:var(--serif);font-size:clamp(2rem, 5vw, 2.9rem);line-height:1.12;font-weight:400;margin:14px 0 6px;letter-spacing:-0.01em;}
+  .dek{font-family:var(--sans);font-size:1.08rem;color:var(--ink-soft);max-width:58ch;margin:0 0 24px;}
+
+  .related{font-family:var(--sans);font-size:12px;color:var(--ink-soft);border:1px solid var(--line);background:#eae4d4;padding:10px 16px;margin-bottom:14px;}
+  .related a{color:var(--flag);font-weight:700;text-decoration:none;border-bottom:1px solid var(--flag);}
+
+  .byline-row{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--ink-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px 0;margin-bottom:32px;}
+  .byline-row span b{color:var(--ink);font-weight:700;}
+
+  .start-here{border:2px solid var(--stamp);background:var(--stamp-soft);margin-bottom:44px;}
+  .start-here-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;user-select:none;}
+  .start-here-head h2{margin:0;padding:0;border:none;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--stamp);}
+  .start-here-head .sub{font-family:var(--sans);font-size:11.5px;color:var(--ink-soft);margin-top:3px;font-weight:400;text-transform:none;letter-spacing:0;}
+  .start-here-toggle{font-family:var(--mono);font-size:13px;color:var(--stamp);border:1px solid var(--stamp);border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s ease;}
+  .start-here.open .start-here-toggle{transform:rotate(45deg);}
+  .start-here-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+  .start-here.open .start-here-body{max-height:2400px;}
+  .start-here-inner{padding:4px 20px 22px;border-top:1px solid var(--line);}
+
+  .step-list{list-style:none;margin:16px 0 0;padding:0;}
+  .step-item{display:flex;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line);font-family:var(--sans);}
+  .step-item:last-child{border-bottom:none;}
+  .step-num{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--stamp);color:var(--paper);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .step-text{font-size:13.5px;color:var(--ink);padding-top:2px;}
+
+  .glossary{margin-top:20px;padding-top:16px;border-top:1px solid var(--line);}
+  .glossary-label{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px;}
+  .gterm{display:inline-block;font-family:var(--sans);font-size:12.5px;font-weight:700;color:var(--stamp);background:#fff;border:1px solid var(--stamp);border-radius:4px;padding:5px 10px;margin:0 6px 6px 0;cursor:pointer;user-select:none;}
+  .gterm::after{content:" +";font-weight:400;}
+  .gterm.active::after{content:" \2212";}
+  .gdef{display:none;font-family:var(--sans);font-size:13px;color:var(--ink-soft);background:#fff;border:1px solid var(--line);border-radius:4px;padding:10px 12px;margin:-2px 0 10px;}
+  .gdef.show{display:block;}
+
+  .statute-block{margin:18px 0;border:1px solid var(--line);background:#fff;padding:18px 20px;}
+  .statute-block .cap{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+  .statute-block p{font-family:var(--serif);font-size:1rem;margin:0 0 10px;}
+  .statute-block p:last-child{margin-bottom:0;}
+
+  blockquote{margin:0 0 34px;border-left:3px solid var(--flag);background:var(--flag-soft);padding:16px 20px;}
+  blockquote p{font-family:var(--serif);font-style:italic;font-size:1.1rem;line-height:1.5;margin:0 0 6px;color:var(--ink);}
+  blockquote cite{font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-soft);}
+
+  .accordion{border-top:2px solid var(--stamp);}
+  .acc-item{border-bottom:1px solid var(--line);}
+  .acc-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 2px;cursor:pointer;user-select:none;}
+  .acc-head h2{margin:0;padding:0;border:none;font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;color:var(--stamp);}
+  .acc-toggle{font-family:var(--mono);font-size:14px;color:var(--stamp);flex-shrink:0;transition:transform .2s ease;}
+  .acc-item.open .acc-toggle{transform:rotate(45deg);}
+  .acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+  .acc-item.open .acc-body{max-height:4000px;}
+  .acc-inner{padding:0 2px 22px;}
+  .acc-inner p{font-size:1.04rem;margin:0 0 18px;}
+  .acc-inner p:last-child{margin-bottom:0;}
+  .acc-inner ul{margin:0 0 18px;padding-left:20px;}
+  .acc-inner li{font-size:1.0rem;margin-bottom:8px;}
+
+  .board-strip{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;}
+  .board-box{flex:1;min-width:130px;border:1px solid var(--line);background:#fff;padding:14px 12px;text-align:center;}
+  .board-box .num{font-family:var(--serif);font-size:1.7rem;color:var(--gold);line-height:1;}
+  .board-box .label{font-family:var(--sans);font-size:10px;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px;}
+
+  .timeline{list-style:none;margin:16px 0;padding:0;border-left:2px solid var(--line);}
+  .tl-item{position:relative;padding:2px 0 18px 20px;font-family:var(--sans);}
+  .tl-item::before{content:"";position:absolute;left:-6px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--stamp);}
+  .tl-date{font-family:var(--mono);font-size:11px;color:var(--stamp);letter-spacing:0.03em;display:block;margin-bottom:2px;}
+  .tl-text{font-size:13.5px;color:var(--ink);}
+
+  .caveat{background:#eae4d4;border:1px solid var(--line);padding:18px 20px;margin:24px 0 0;font-family:var(--sans);font-size:13px;color:var(--ink-soft);}
+  .caveat b{color:var(--ink);}
+
+  footer{margin-top:44px;padding-top:16px;border-top:3px double var(--rule);font-family:var(--sans);font-size:11px;color:var(--ink-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+  @media (max-width:560px){
+    .byline-row{flex-wrap:wrap;gap:10px 20px;}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <div class="masthead">
+    <div class="name">The Weber County Hive</div>
+    <div class="date">August 2026</div>
+  </div>
+
+  <div class="file-tag">Records &amp; State Institutional Control</div>
+  <h1>The Land Counties Can't Zone</h1>
+  <p class="dek">A little-known Utah statute puts school trust land outside county zoning entirely — and the Governor's own staff holds a seat on the board that decides how it gets used.</p>
+
+  <div class="related">Companion piece: <a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> — the fast-track incorporation law this same developer used next door to this trust land.</div>
+  <div class="related">Companion piece: <a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> — the Governor's office threatening county funding over the same broader growth fight.</div>
+  <div class="related">Companion piece: <a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb37.html">The Threshold Nobody Noticed</a> — a 2025 bill that reshaped the incorporation statute at the center of that fight.</div>
+
+  <div class="byline-row">
+    <span>Sources: <b>le.utah.gov, trustlands.utah.gov, Utah court records, Park Record</b></span>
+    <span>Method: <b>Public records only, no comment requested</b></span>
+  </div>
+
+  <div class="start-here" id="startHere">
+    <div class="start-here-head" onclick="document.getElementById('startHere').classList.toggle('open')">
+      <div>
+        <h2>Start Here — the 60-second version</h2>
+        <div class="sub">New to this story? Click to open a plain-language walkthrough.</div>
+      </div>
+      <div class="start-here-toggle">+</div>
+    </div>
+    <div class="start-here-body">
+      <div class="start-here-inner">
+        <ol class="step-list">
+          <li class="step-item"><div class="step-num">1</div><div class="step-text">Utah Code §17-27a-304 (counties) and §10-9a-304 (cities) say state-owned property — including SITLA school trust land — is exempt from local zoning entirely, and that exemption extends to any private developer working that land under a permit or lease.</div></li>
+          <li class="step-item"><div class="step-num">2</div><div class="step-text">SITLA is run by a seven-member board. The Governor appoints six from a nominating list, and picks the seventh entirely on his own. The board hires the director "with the consent of the governor."</div></li>
+          <li class="step-item"><div class="step-num">3</div><div class="step-text">One current SITLA trustee, Mike Mower, is also a senior member of Gov. Cox's own staff — in his own words, he "represents the governor" on the board.</div></li>
+          <li class="step-item"><div class="step-num">4</div><div class="step-text">A Utah court has already struck down one case of a city, a developer, and SITLA jointly trying to sidestep a public hearing requirement — but that ruling didn't decide whether SITLA land itself is exempt from zoning jurisdiction, just that the shortcut around procedure was illegal.</div></li>
+          <li class="step-item"><div class="step-num">5</div><div class="step-text">In the one Weber-area-adjacent case this Hive has checked closely — the SITLA parcel next to Wasatch Highlands — SITLA has actually asked the county for a rezone twice before, in 2004 and 2019, and been turned down both times. That history cuts against reading this as a novel bypass attempt.</div></li>
+        </ol>
+
+        <div class="glossary">
+          <div class="glossary-label">Quick glossary — click a term</div>
+          <span class="gterm" data-term="sitla">SITLA</span>
+          <div class="gdef" data-def="sitla">The School and Institutional Trust Lands Administration — manages about 3.3 million acres granted to Utah at statehood, with a constitutional mandate to maximize revenue for public schools and other beneficiaries.</div>
+
+          <span class="gterm" data-term="exemption">The zoning exemption</span>
+          <div class="gdef" data-def="exemption">Utah Code §17-27a-304/§10-9a-304: state-owned property, including SITLA land, is not subject to county or municipal zoning "unless otherwise provided by law" — and that exemption follows a private developer working the land under a SITLA permit or lease.</div>
+
+          <span class="gterm" data-term="contractzoning">Contract zoning</span>
+          <div class="gdef" data-def="contractzoning">An illegal practice where a government body agrees by private contract to treat a project a certain way — skipping a public hearing, for example — instead of through the normal public zoning process.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:1.06rem;">Utah counties zone the land inside their borders — except when they can't. A statute most residents have never heard of puts state-owned trust land, including the acreage SITLA manages on behalf of public schools, outside a county's reach entirely. The same statute follows a private developer who leases or is permitted to use that land. And the board that decides how SITLA's land gets used isn't independent of the Governor's office — one of its members sits there explicitly to represent the Governor.</p>
+
+  <div class="accordion" id="accordion">
+
+    <div class="acc-item open">
+      <div class="acc-head"><h2>The Statute</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>Utah Code §17-27a-304, "State and federal property," governs counties. A matching statute, §10-9a-304, governs cities and towns. Both read, in relevant part:</p>
+        <div class="statute-block">
+          <div class="cap">§17-27a-304, Utah Code</div>
+          <p>(1) As used in this section, "property owned by the state" includes property owned as school and institutional trust land&hellip;</p>
+          <p>(2) Unless otherwise provided by law, nothing contained in this chapter may be construed as giving a county jurisdiction over property owned by the state or the United States.</p>
+          <p>(3) Subsection (2) applies to property owned by the state that is occupied or used by a person under a permit or lease.</p>
+        </div>
+        <p>Subsection (3) is the part that matters most in practice: it isn't just SITLA that's outside county zoning &mdash; it's anyone developing SITLA land under a lease or permit from the agency. A private developer working trust land under such an agreement inherits the same exemption.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item open">
+      <div class="acc-head"><h2>Who Controls The Board</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="board-strip">
+          <div class="board-box"><div class="num">6 of 7</div><div class="label">Trustees from Gov.'s nominating list</div></div>
+          <div class="board-box"><div class="num">1 of 7</div><div class="label">Trustee at Gov.'s sole discretion</div></div>
+          <div class="board-box"><div class="num">1</div><div class="label">Sitting Cox staffer on the board</div></div>
+        </div>
+        <p>SITLA's seven-member Board of Trustees is appointed by the Governor and confirmed by the Senate. Six come from a list supplied by a nominating committee; the seventh the Governor can appoint entirely on his own, with no list required. The board then hires the agency's Executive Director &mdash; but only "with the consent of the governor."</p>
+        <p>One current trustee, Mike Mower, is also Gov. Cox's Senior Advisor for Community Outreach and Intergovernmental Affairs &mdash; a member of the Governor's own senior staff. Asked about the role in a University of Utah law school interview, Mower put it plainly:</p>
+        <blockquote>
+          <p>"I represent the governor on the School and Institutional Trust Lands Administration (SITLA) board, and we deal with a lot of oil and gas law and property law."</p>
+          <cite>Mike Mower, S.J. Quinney College of Law interview</cite>
+        </blockquote>
+        <p>SITLA's own February 2026 board meeting minutes show Mower actively voting and making motions &mdash; this isn't a ceremonial or lapsed appointment.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item open">
+      <div class="acc-head"><h2>Tested In Court Once</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>In <i>Wallingford v. Moab City</i> (2020 UT App 12), a developer's project near Moab needed modifications a local ordinance classified as "major changes" &mdash; requiring a public hearing. The city instead entered a contract with the developer <b>and SITLA</b> agreeing to treat the changes as "minor" and skip the hearing. Citizens sued. The Utah Court of Appeals struck the agreement down as illegal "contract zoning," ruling the city couldn't bargain away its own public-process requirements by private contract.</p>
+        <div class="caveat">
+          <b>What this does and doesn't establish:</b> the ruling shows Utah courts will police procedural shortcuts that route around required public hearings, even when SITLA is a party. It does not decide whether SITLA land itself sits outside county zoning jurisdiction under §17-27a-304 &mdash; that's a different legal question the case didn't reach.
+        </div>
+      </div></div>
+    </div>
+
+    <div class="acc-item open">
+      <div class="acc-head"><h2>What SITLA Says About Itself</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>SITLA's own administrative rule governing development transactions, R850-140, states its purpose is to let the agency "proceed in a more traditional, business-like approach rather than a governmental-like approach" &mdash; not the language of an agency that considers itself bound by the same public process a county follows.</p>
+        <p>But SITLA's own field staff have described a different practice on the ground. Asked about a contested sand-mine lease near Kanab, a SITLA mineral resource specialist told a local paper: "SITLA works with local communities and directs the permittee to go through local planning and zoning."</p>
+        <p>Both can be true. SITLA may not be legally required to defer to a county's zoning &mdash; and may still choose to, as a matter of practice or relationship management, whenever it serves the agency's own interests to do so. That choice can be withdrawn.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item open">
+      <div class="acc-head"><h2>This Exact Parcel, Twice Before</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <p>The clearest real-world test case so far sits next to Wasatch County's Wasatch Highlands preliminary-municipality project, covered in the companion piece above. Philo Development sought a "legislative development agreement" from Wasatch County for 740 acres of adjacent SITLA land &mdash; 144 lots where current zoning allows one unit per 160 acres. The County Council rejected it in August 2026, and developer Greg Whitehead publicly called the denial "retaliation" for the separate preliminary-municipality filing.</p>
+        <div class="timeline">
+          <li class="tl-item"><span class="tl-date">2004</span><div class="tl-text">SITLA applies to Wasatch County for a rezone of this parcel. Denied.</div></li>
+          <li class="tl-item"><span class="tl-date">2019</span><div class="tl-text">SITLA applies again. Denied again.</div></li>
+          <li class="tl-item"><span class="tl-date">Aug 2026</span><div class="tl-text">Philo Development, developing the land for SITLA, seeks a legislative development agreement from the county instead of a rezone. Denied a third time.</div></li>
+        </div>
+        <p>Twice before, SITLA went through the county's normal process rather than asserting the statutory exemption &mdash; a real, 20-year pattern of treating this specific parcel as subject to county review, whatever the bare statute allows. Whether that changes now, with a developer involved and a different political climate, is the open question.</p>
+        <p>Water availability, not zoning authority, was one of the two reasons councilors gave for the August rejection &mdash; a reminder that a county's practical leverage over a project doesn't rise or fall on the zoning-jurisdiction question alone. Wasatch County has also used this same "legislative development agreement" tool itself, twice, to get things it wanted from other developers: a 75-foot community lodge at SkyRidge, and the LDS Church's Heber Valley Temple.</p>
+      </div></div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head"><h2>What This Doesn't Show</h2><div class="acc-toggle">+</div></div>
+      <div class="acc-body"><div class="acc-inner">
+        <div class="caveat">
+          <b>What isn't established here:</b> that the Governor's office, Mike Mower, or SITLA's board has ever deliberately used this statute to override a county's wishes. What's confirmed is the structural pathway &mdash; the exemption exists in state law, the Governor has direct representation on the board that decides how trust land gets used, and courts have already struck down at least one attempt to use SITLA involvement to skip a required public process elsewhere in Utah. Whether that pathway has actually been pulled as a lever, here or anywhere else, is a separate question this file doesn't answer.
+        </div>
+      </div></div>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>The Weber County Hive</span>
+    <span>Weber County &amp; Wasatch Back Accountability Reporting</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.gterm').forEach(function(term){
+    term.addEventListener('click', function(){
+      var key = term.getAttribute('data-term');
+      var def = document.querySelector('.gdef[data-def="' + key + '"]');
+      var isOpen = def.classList.contains('show');
+      def.classList.toggle('show', !isOpen);
+      term.classList.toggle('active', !isOpen);
+    });
+  });
+  document.querySelectorAll('.acc-head').forEach(function(head){
+    head.addEventListener('click', function(){
+      head.parentElement.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>
