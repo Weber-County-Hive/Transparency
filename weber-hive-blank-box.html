@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Blank Box: Three Disclosure Forms, One Pattern</title>
+<style>
+  :root{
+    --paper:#F2EEE3;
+    --paper-2:#E9E3D3;
+    --ink:#1B2430;
+    --ink-soft:#4A5164;
+    --rule:#C9C0A8;
+    --brass:#A67C3D;
+    --brass-dark:#7A5A28;
+    --redact:#8C2E24;
+    --redact-bg:#F1DCD6;
+    --ok:#3C5E45;
+    --ok-bg:#DEE7DD;
+    --max:960px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',Georgia,serif;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height:1.6;
+  }
+  @font-face{font-family:'dummy';src:local('a');}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  header.masthead{
+    background:var(--ink);
+    color:var(--paper);
+    border-bottom:6px solid var(--brass);
+    padding:40px 0 32px;
+  }
+  header.masthead .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.14em;
+    color:var(--brass);
+    margin:0 0 10px;
+  }
+  header.masthead h1{
+    font-family:Georgia,'Times New Roman',serif;
+    font-weight:700;
+    font-size:clamp(28px,4.4vw,44px);
+    margin:0 0 14px;
+    max-width:14ch;
+    line-height:1.12;
+  }
+  header.masthead .dek{
+    font-size:16.5px;
+    color:#D8D3C4;
+    max-width:62ch;
+    margin:0 0 18px;
+  }
+  header.masthead .byline{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:#9B9484;
+  }
+  .topbar{
+    background:var(--paper-2);
+    border-bottom:1px solid var(--rule);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+  }
+  .topbar .wrap{display:flex;gap:22px;padding:10px 24px;flex-wrap:wrap;}
+  .topbar a{color:var(--ink-soft);text-decoration:none;border-bottom:1px dotted var(--ink-soft);}
+  .topbar a:hover{color:var(--brass-dark);border-color:var(--brass-dark);}
+
+  section{padding:44px 0;}
+  section.tight{padding:28px 0;}
+  h2{
+    font-family:Georgia,serif;
+    font-size:26px;
+    margin:0 0 18px;
+    border-bottom:2px solid var(--brass);
+    padding-bottom:10px;
+  }
+  h3{font-family:Georgia,serif;font-size:19px;margin:0 0 8px;}
+  p{margin:0 0 14px;max-width:74ch;}
+  .lede{font-size:17px;color:var(--ink-soft);}
+
+  .startbox{
+    background:var(--paper-2);
+    border:1px solid var(--rule);
+    border-left:5px solid var(--brass);
+    padding:22px 26px;
+    border-radius:2px;
+  }
+  .startbox ol{margin:0;padding-left:22px;}
+  .startbox li{margin-bottom:10px;}
+
+  .filecard{
+    border:1px solid var(--rule);
+    background:#FBF9F2;
+    margin-bottom:18px;
+    border-radius:2px;
+  }
+  .filecard summary{
+    cursor:pointer;
+    list-style:none;
+    padding:16px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    font-family:Georgia,serif;
+    font-size:19px;
+  }
+  .filecard summary::-webkit-details-marker{display:none;}
+  .filecard summary .who{display:flex;align-items:baseline;gap:12px;}
+  .filecard summary .tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+  }
+  .filecard summary .arrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--brass-dark);
+    transition:transform 0.15s ease;
+  }
+  .filecard[open] summary .arrow{transform:rotate(90deg);}
+  .filecard .body{padding:0 22px 22px;border-top:1px solid var(--rule);}
+  .filecard .body h4{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    color:var(--ink-soft);
+    margin:18px 0 8px;
+  }
+  .checkedbox{
+    display:inline-block;
+    background:var(--redact-bg);
+    color:var(--redact);
+    border:1px solid var(--redact);
+    padding:3px 10px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12.5px;
+    border-radius:2px;
+    margin:6px 0 10px;
+  }
+  .missing{margin:0;padding-left:0;list-style:none;}
+  .missing li{
+    padding:9px 12px;
+    border-left:3px solid var(--redact);
+    background:var(--redact-bg);
+    margin-bottom:7px;
+    font-size:14.5px;
+  }
+  .missing li b{display:block;font-size:14.5px;margin-bottom:2px;}
+  .missing li span{color:var(--ink-soft);font-size:13px;}
+  .sourceline{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    color:var(--ink-soft);
+    margin-top:14px;
+    padding-top:12px;
+    border-top:1px dashed var(--rule);
+  }
+
+  table.compare{
+    width:100%;
+    border-collapse:collapse;
+    font-size:14px;
+    background:#FBF9F2;
+    border:1px solid var(--rule);
+  }
+  table.compare th{
+    background:var(--ink);
+    color:var(--paper);
+    text-align:left;
+    padding:10px 12px;
+    font-weight:500;
+    font-size:12.5px;
+    font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.04em;
+  }
+  table.compare td{
+    padding:11px 12px;
+    border-top:1px solid var(--rule);
+    vertical-align:top;
+  }
+  table.compare tr:nth-child(odd) td{background:var(--paper-2);}
+  .status-blank{color:var(--redact);font-weight:600;}
+  .status-partial{color:var(--brass-dark);font-weight:600;}
+
+  .threads{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:16px;
+  }
+  .thread{
+    background:#FBF9F2;
+    border:1px solid var(--rule);
+    border-top:4px solid var(--brass);
+    padding:18px 20px;
+    border-radius:2px;
+  }
+  .thread h3{font-size:16.5px;margin-bottom:8px;}
+  .thread p{font-size:14px;margin:0;}
+
+  footer{
+    background:var(--ink);
+    color:#B9B3A2;
+    padding:30px 0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+  }
+  footer a{color:var(--brass);}
+
+  .sources{background:var(--paper-2);}
+  .sources h2{margin-bottom:8px;}
+  .sources .note{font-size:14px;color:var(--ink-soft);margin-bottom:22px;}
+  .sourcegroup{margin-bottom:22px;}
+  .sourcegroup h4{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:0.08em;
+    color:var(--brass-dark);
+    margin:0 0 10px;
+  }
+  .sourcegroup ol{margin:0;padding-left:20px;}
+  .sourcegroup li{
+    margin-bottom:8px;
+    font-size:14px;
+    padding-left:2px;
+  }
+  .sourcegroup li a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);}
+  .sourcegroup li a:hover{border-color:var(--brass-dark);color:var(--brass-dark);}
+  .sourcegroup li .pubtag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-left:2px;
+  }
+
+  @media (max-width:640px){
+    .filecard summary{flex-direction:column;align-items:flex-start;gap:8px;}
+    table.compare{font-size:12.5px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a href="index.html">&larr; Transparency docket</a>
+    <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">Master index</a>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">WASATCH COUNTY &middot; DISCLOSURE RECORDS</p>
+    <h1>The Blank Box: Three Disclosure Forms, One Pattern</h1>
+    <p class="dek">Three officials in Wasatch County sit on overlapping nonprofit boards. Three separate conflict-of-interest disclosure forms, filed for three separate offices, each ask the same basic question &mdash; and each comes back with the same answer.</p>
+    <p class="byline">The Weber County Hive &middot; Records review</p>
+  </div>
+</header>
+
+<section class="tight">
+  <div class="wrap startbox">
+    <h3>How to read this</h3>
+    <ol>
+      <li>Utah county officials and board members are required to file a conflict-of-interest disclosure &mdash; a short form asking what other boards they sit on, what businesses they own, and where they work.</li>
+      <li>State corporate filings, contract records, and each entity's own paperwork are separate, independent public records &mdash; they don't rely on what any one official chooses to write down.</li>
+      <li>Below, each official's actual disclosure form is compared against what those independent records show. The gap between the two is the story.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Three officials, three forms</h2>
+
+    <details class="filecard" open>
+      <summary>
+        <span class="who">Erik Rowland <span class="tag">Wasatch County Council, Seat C &middot; MIDA board</span></span>
+        <span class="arrow">&#9656;</span>
+      </summary>
+      <div class="body">
+        <h4>Form filed</h4>
+        <p>Wasatch County Conflict of Interest Disclosure Form, submitted as his MIDA board disclosure, dated Jan. 2, 2026.</p>
+        <span class="checkedbox">&#9744; I have no conflict of interest to report</span>
+        <p>All three disclosure lines left blank &mdash; including no mention of a spouse, despite the form's own instructions asking filers to list boards "you (and your spouse) sit on."</p>
+        <h4>Confirmed but not on the form</h4>
+        <ul class="missing">
+          <li><b>CAMS board seat</b><span>Community Alliance for Main Street, Heber City nonprofit</span></li>
+          <li><b>JASE Medical / SignalRx, LLC</b><span>Owner/COO per his own LinkedIn; Member per state LLC filing</span></li>
+          <li><b>TimeMD, inc</b><span>Owner, per his own LinkedIn, active since 2006</span></li>
+          <li><b>Rowland Development LLC</b><span>Sole Member, formed 2022 while already on County Council</span></li>
+          <li><b>Triumph Assurance Group LLC</b><span>Manager, formed 2024, shared address with SignalRx</span></li>
+        </ul>
+        <p style="margin-top:14px">MIDA's own statutory disclosure form &mdash; required under Utah Code &sect;63H-1-304 &mdash; asks explicitly for "each entity or organization&hellip; in which the individual currently serves&hellip; in a paid&nbsp;or unpaid position on a board of directors." Rowland did not file that form; he filed the generic county form instead.</p>
+        <div class="sourceline">Source: Rowland's Jan. 2, 2026 disclosure form; Utah Division of Corporations filings; LinkedIn.</div>
+      </div>
+    </details>
+
+    <details class="filecard">
+      <summary>
+        <span class="who">Dallin Koecher <span class="tag">Wasatch Open Lands Board</span></span>
+        <span class="arrow">&#9656;</span>
+      </summary>
+      <div class="body">
+        <h4>Form filed</h4>
+        <p>Annual Wasatch Open Lands Board Conflict of Interest Disclosure Form, signed Feb. 4, 2026, notarized.</p>
+        <span class="checkedbox">Listed: Heber Valley Chamber of Commerce &mdash; Director</span>
+        <p>That's the only entity named. The lines asking about personal conflicts and other business relationships were left blank.</p>
+        <h4>Confirmed but not on the form</h4>
+        <ul class="missing">
+          <li><b>CAMS board seat</b><span>Director since 2019</span></li>
+          <li><b>Wasatch County Arts Council</b><span>Director and original incorporator since 2016; also the entity's registered agent</span></li>
+          <li><b>Heber Valley Music</b><span>Director and trustee since 2019</span></li>
+          <li><b>Red White and Blue Festival Inc.</b><span>Director</span></li>
+        </ul>
+        <p style="margin-top:14px">Three of those four entities &mdash; CAMS, Wasatch County Arts Council, and Red White and Blue Festival Inc. &mdash; are all registered at the same address: 475 N Main Street, Heber City.</p>
+        <div class="sourceline">Source: Koecher's Feb. 4, 2026 WOLB disclosure form; Utah Division of Corporations filings.</div>
+      </div>
+    </details>
+
+    <details class="filecard">
+      <summary>
+        <span class="who">Rachel Kahler <span class="tag">Wasatch County Council, Seat A candidate</span></span>
+        <span class="arrow">&#9656;</span>
+      </summary>
+      <div class="body">
+        <h4>Form filed</h4>
+        <p>Conflict of Interest Disclosure Form, bundled into her Declaration of Candidacy, filed January 2026.</p>
+        <span class="checkedbox">&#9744; I have no conflict of interest to report</span>
+        <p>All three disclosure lines left blank. Notably, Kahler filed proper disclosures for her original 2019 Heber City Council run &mdash; this is a break from her own prior record, not a first-time omission.</p>
+        <h4>Confirmed but not on the form</h4>
+        <ul class="missing">
+          <li><b>CAMS Executive Director</b><span>Paid position, roughly $40,000/year, three-year Heber City contract</span></li>
+          <li><b>Red White and Blue Festival Inc.</b><span>Director, on a board shared with Matt Brower and Dallin Koecher</span></li>
+          <li><b>5 In The Hive, LLC</b><span>Sole Manager and registered agent. Stated purpose, per its Certificate of Organization: "to acquire, own, sell, and otherwise manage real estate investments"</span></li>
+        </ul>
+        <p style="margin-top:14px">Her campaign financial disclosures &mdash; a separate filing requirement &mdash; are on record and up to date. It is specifically the conflict-of-interest disclosure that shows this gap.</p>
+        <div class="sourceline">Source: Kahler's Declaration of Candidacy / COI disclosure; Heber City contract records; Utah Division of Corporations filings.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Side by side</h2>
+    <table class="compare">
+      <tr>
+        <th>Official</th>
+        <th>Office / seat</th>
+        <th>What the form says</th>
+        <th>Confirmed entities missing</th>
+      </tr>
+      <tr>
+        <td>Erik Rowland</td>
+        <td>County Council Seat C; MIDA board</td>
+        <td class="status-blank">No conflict &mdash; blank</td>
+        <td>CAMS board + at least 4 business entities</td>
+      </tr>
+      <tr>
+        <td>Dallin Koecher</td>
+        <td>Wasatch Open Lands Board</td>
+        <td class="status-partial">One entity listed</td>
+        <td>4 additional nonprofit board seats</td>
+      </tr>
+      <tr>
+        <td>Rachel Kahler</td>
+        <td>County Council Seat A, candidate</td>
+        <td class="status-blank">No conflict &mdash; blank</td>
+        <td>Paid CAMS role, 1 nonprofit board, 1 real estate LLC</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Where the threads connect</h2>
+    <div class="threads">
+      <div class="thread">
+        <h3>One address, three nonprofits</h3>
+        <p>475 N Main Street, Heber City is the registered address for CAMS, Red White and Blue Festival Inc., and Wasatch County Arts Council &mdash; all three tied to Koecher in some capacity.</p>
+      </div>
+      <div class="thread">
+        <h3>A shared board</h3>
+        <p>Kahler, Matt Brower, and Dallin Koecher all sit together on Red White and Blue Festival Inc.'s board &mdash; the same three names tangled in the CAMS disclosure questions.</p>
+      </div>
+      <div class="thread">
+        <h3>CAMS itself is delinquent</h3>
+        <p>The nonprofit's own state corporate registration shows a status of "Delinquent" as of its most recent update &mdash; separate from any individual board member's disclosure gap.</p>
+      </div>
+      <div class="thread">
+        <h3>A disqualification precedent</h3>
+        <p>CAMS board chair Tom Stone was disqualified from a 2024 Wasatch County School Board race for missing a financial disclosure deadline, then sued the county clerk over it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sources">
+  <div class="wrap">
+    <h2>Sources</h2>
+    <p class="note">Public records and reporting used for this piece. Disclosure forms and corporate filings are primary source documents; news coverage is cited for contract terms, meeting outcomes, and background that these records alone don't establish.</p>
+
+    <div class="sourcegroup">
+      <h4>Disclosure forms &amp; candidacy filings</h4>
+      <ol>
+        <li>Erik Rowland, Wasatch County Conflict of Interest Disclosure Form, filed as MIDA board disclosure, Jan. 2, 2026 <span class="pubtag">Wasatch County Clerk/Auditor</span></li>
+        <li>Gary Harter, Military Installation Development Authority 2026 Disclosure Statement, signed Jan. 26, 2026 &mdash; comparison filing showing MIDA's own statutory form <span class="pubtag">MIDA</span></li>
+        <li>Dallin Koecher, Annual Conflict of Interest Disclosure Form, Wasatch Open Lands Board, signed Feb. 4, 2026 <span class="pubtag">Wasatch County Clerk/Auditor</span></li>
+        <li>Rachel Kahler, 2026 Qualified Political Party Declaration of Candidacy &amp; Conflict of Interest Disclosure Form, filed January 2026 <span class="pubtag">Wasatch County Clerk/Auditor</span></li>
+        <li>Rachel Kahler, 2019 municipal disclosure filings (two documents) <a href="https://disclosures.utah.gov/Municipal/wasatch_2019_Heber%20City" target="_blank" rel="noopener">disclosures.utah.gov</a></li>
+        <li>Rachel Kahler, Campaign Financial Disclosures, March 31 and June 2026 <a href="https://www.wasatchcounty.gov/275/Election-Voter-Information" target="_blank" rel="noopener">wasatchcounty.gov</a></li>
+        <li>Wasatch County, Conflict of Interest Disclosure Forms (county index page) <a href="https://www.wasatchcounty.gov/276/Conflict-of-Interest-Disclosure-Forms" target="_blank" rel="noopener">wasatchcounty.gov</a></li>
+        <li>Wasatch County, 2026 Declarations of Candidacy, Election &amp; Voter Information <a href="https://www.wasatchcounty.gov/275/Election-Voter-Information" target="_blank" rel="noopener">wasatchcounty.gov</a></li>
+      </ol>
+    </div>
+
+    <div class="sourcegroup">
+      <h4>Utah Division of Corporations filings</h4>
+      <ol>
+        <li>SignalRx, LLC (formerly JASE Pharmacies, LLC), Entity #13807869-0160 &mdash; Articles of Organization and Amendment to Certificate of Organization</li>
+        <li>Rowland Development LLC, Entity #12862592-0160</li>
+        <li>Triumph Assurance Group LLC, Entity #14072630-0160</li>
+        <li>Community Alliance for Main Street, Inc. (CAMS), Entity #11326836-0140</li>
+        <li>Wasatch County Arts Council, Entity #10156975-0140</li>
+        <li>Heber Valley Music, Entity #11415554-0140</li>
+        <li>Red White and Blue Festival Inc., Entity #13300584-0140</li>
+        <li>5 In The Hive, LLC, Entity #13700891-0160 &mdash; Certificate of Organization</li>
+      </ol>
+    </div>
+
+    <div class="sourcegroup">
+      <h4>Government meeting records</h4>
+      <ol>
+        <li>Heber City Council, Draft Minutes, Jan. 20, 2026 <span class="pubtag">Trina Cooke, City Recorder</span></li>
+        <li>Heber City Council, Amended Agenda, Jan. 20, 2026 <a href="https://www.utah.gov/pmn/files/1380937.pdf" target="_blank" rel="noopener">utah.gov/pmn</a></li>
+      </ol>
+    </div>
+
+    <div class="sourcegroup">
+      <h4>News coverage</h4>
+      <ol>
+        <li>"Heber City ratifies event programming contract in light of state auditor complaint," Park Record, April 24, 2026</li>
+        <li>"Heber City to revisit downtown event contract under specter of state audit," KPCW, April 20, 2026</li>
+        <li>"Heber City narrowly finalizes downtown events contract," KPCW, April 22, 2026</li>
+        <li>"Heber City Council renews city manager's contract after prolonged evaluation, mass civic engagement," Park Record, April 17, 2026</li>
+        <li>"Former Heber City Councilor Rachel Kahler is vying for Wasatch County Council Seat A," Park Record, Jan. 20, 2026</li>
+        <li>"Nine candidates seek Wasatch County Council seats in 2026," KPCW, Jan. 19, 2026</li>
+        <li>"Kahler, Saucier to compete for at-large Wasatch County Council seat," KPCW, July 2, 2026</li>
+        <li>"Wasatch County GOP election results have been finalized," Park Record, July 2, 2026</li>
+        <li>"General election ballots will be mailed in six weeks. Here's what's on Wasatch County's&hellip;," Park Record, Aug. 28, 2026</li>
+        <li>"Here's who filed for elected office in Wasatch County," Park Record, Jan. 9, 2026</li>
+        <li>"Court temporarily blocks certification of Wasatch County race amid disqualification controversy," KSL.com</li>
+        <li>"Meet the Candidates," Heber Valley Life, 2024 &mdash; Tom Stone school board race</li>
+        <li>"Outgoing Heber City Councilmembers reflect on time on office," KPCW, Nov. 29, 2023</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Records reviewed: Wasatch County Clerk/Auditor disclosure filings, Utah Division of Corporations entity records, Heber City Council meeting minutes and agenda records, Wasatch County election filings. This page states what each document says; it does not characterize any finding as a legal violation.
+  </div>
+</footer>
+
+</body>
+</html>

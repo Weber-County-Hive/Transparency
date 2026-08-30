@@ -62,5 +62,15 @@ const CASES = [
     updated: "Aug 23, 2026",
     link: "weber-hive-sitla-explainer.html",
     pairWith: "CASE 2026-SITLA-01"
+  },
+  {
+    caseNumber: "CASE 2026-COI-01",
+    title: "The Blank Box: Three Disclosure Forms, One Pattern",
+    category: "Conflict of Interest",
+    summary: "Three Wasatch County officials sit on overlapping nonprofit boards. Three separate conflict-of-interest disclosures, filed for three separate offices, ask the same basic question — and come back blank or nearly blank.",
+    officials: ["Erik Rowland", "Dallin Koecher", "Rachel Kahler"],
+    status: "documented",
+    updated: "Aug 30, 2026",
+    link: "weber-hive-blank-box.html"
   }
 ];
