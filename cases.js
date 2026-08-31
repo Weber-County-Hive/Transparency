@@ -72,5 +72,15 @@ const CASES = [
     status: "documented",
     updated: "Aug 30, 2026",
     link: "weber-hive-blank-box.html"
+  },
+  {
+    caseNumber: "CASE 2026-WHA-01",
+    title: "In His Portfolio",
+    category: "Conflict of Interest",
+    summary: "A commissioner and his wife both sit on the Housing Authority board. His own colleagues said so on the record the day he was appointed — and called it no conflict at all, in the same breath.",
+    officials: ["Gage Froerer", "Gloria Froerer", "Scott Jenkins", "Jim Harvey"],
+    status: "documented",
+    updated: "Aug 31, 2026",
+    link: "weber-housing-authority.html"
   }
 ];
