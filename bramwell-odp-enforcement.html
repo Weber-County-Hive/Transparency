@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What the Privacy Office Can and Can't Do | The Weber County Hive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Serif+4:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4f0e6;
+    --paper-card:#faf7ef;
+    --paper-card-2:#f0ecdf;
+    --ink:#1c1c1a;
+    --ink-dim:#5b5850;
+    --ink-dimmer:#8c8878;
+    --rust:#c0572e;
+    --amber:#d9a441;
+    --border:#ddd6c4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4', serif;line-height:1.65;font-size:17px;}
+  a{color:var(--rust);}
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px;}
+
+  header{
+    background:linear-gradient(160deg, #232a30 0%, #10151a 100%);
+    padding:64px 24px 50px;
+    border-bottom:4px solid var(--amber);
+  }
+  .header-inner{max-width:780px;margin:0 auto;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px; letter-spacing:3px;
+    color:#9fb0ba; text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  h1{
+    font-family:'Playfair Display', serif;
+    font-weight:800;
+    font-size:clamp(2rem, 5vw, 3rem);
+    color:#f4f0e6;
+    line-height:1.12;
+    max-width:660px;
+  }
+  .dek{
+    font-family:'Inter',sans-serif;
+    font-size:18px;
+    color:#c9d2d6;
+    margin-top:18px;
+    max-width:620px;
+    line-height:1.5;
+  }
+
+  section{padding:10px 0 40px;}
+  h2{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:24px;
+    border-bottom:2px solid var(--amber);
+    padding-bottom:10px;
+    margin-bottom:18px;
+    color:var(--ink);
+  }
+  p{margin-bottom:15px;}
+  ul{margin:0 0 15px 22px;}
+  li{margin-bottom:8px;}
+
+  .qa{
+    background:var(--paper-card);
+    border:1px solid var(--border);
+    margin:0 0 14px;
+  }
+  .qa summary{
+    list-style:none;
+    cursor:pointer;
+    padding:14px 44px 14px 20px;
+    position:relative;
+    font-family:'Inter',sans-serif;
+  }
+  .qa summary::-webkit-details-marker{display:none;}
+  .qa summary::after{
+    content:"+";
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:18px;
+    color:var(--rust);
+  }
+  .qa[open] summary::after{content:"–";}
+  .qa .date{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--ink-dimmer);
+    display:block;
+    margin-bottom:4px;
+  }
+  .qa .q-text{font-size:14.5px;color:var(--ink-dim);}
+  .qa .q-text strong{color:var(--ink);font-weight:600;}
+  .qa .qa-body{border-top:1px solid var(--border);padding:16px 20px 18px;}
+  .qa blockquote{
+    font-style:italic;
+    color:var(--ink);
+    padding:0 0 14px;
+    margin:0;
+  }
+  .qa .note{
+    font-family:'Inter',sans-serif;
+    font-size:13.5px;
+    color:var(--ink-dimmer);
+  }
+
+  details.diagram{border:1px solid var(--border);background:var(--paper-card);margin:16px 0;}
+  details.diagram summary{
+    list-style:none;
+    cursor:pointer;
+    padding:12px 44px 12px 16px;
+    position:relative;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.03em;
+    color:var(--rust);
+  }
+  details.diagram summary::-webkit-details-marker{display:none;}
+  details.diagram summary::after{
+    content:"+";
+    position:absolute;
+    right:16px;
+    top:50%;
+    transform:translateY(-50%);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:16px;
+    color:var(--rust);
+  }
+  details.diagram[open] summary::after{content:"–";}
+  details.diagram[open] summary{border-bottom:1px solid var(--border);}
+  details.diagram svg{display:block;padding:12px 16px 16px;margin:0 !important;}
+
+  details.sources-toggle summary{
+    list-style:none;
+    cursor:pointer;
+    position:relative;
+    padding-right:36px;
+    border-bottom:2px solid var(--amber);
+    padding-bottom:10px;
+    margin-bottom:18px;
+  }
+  details.sources-toggle summary::-webkit-details-marker{display:none;}
+  details.sources-toggle summary::after{
+    content:"+";
+    position:absolute;
+    right:6px;
+    top:0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:20px;
+    color:var(--rust);
+  }
+  details.sources-toggle[open] summary::after{content:"–";}
+  details.sources-toggle[open] summary{margin-bottom:14px;}
+
+  .questions-box{
+    background:#232a30;
+    padding:26px 28px 22px;
+    margin:22px 0;
+    border-left:6px solid var(--rust);
+  }
+  .questions-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:16px;
+  }
+  .questions-list{margin:0;padding:0;counter-reset:q;list-style:none;}
+  .questions-list li{
+    position:relative;
+    padding-left:38px;
+    margin-bottom:16px;
+    font-family:'Source Serif 4',serif;
+    font-size:16.5px;
+    color:#f4f0e6;
+    counter-increment:q;
+  }
+  .questions-list li:last-child{margin-bottom:0;}
+  .questions-list li::before{
+    content:counter(q);
+    position:absolute;
+    left:0;
+    top:0;
+    font-family:'Playfair Display',serif;
+    font-weight:800;
+    font-size:19px;
+    color:var(--amber);
+  }
+
+  .callout{
+    background:var(--paper-card-2);
+    border:1px solid var(--border);
+    padding:18px 22px;
+    margin:20px 0;
+    font-family:'Inter',sans-serif;
+    font-size:14.5px;
+    color:var(--ink-dim);
+  }
+  .callout strong{color:var(--ink);}
+
+  footer{background:#10151a;color:#c9d2d6;padding:36px 0 46px;margin-top:20px;}
+  footer .sub{color:#8b98a0;font-size:13px;margin-top:6px;}
+  footer a{color:var(--amber);}
+
+  @media(max-width:600px){
+    header{padding:44px 18px 34px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">Office of Data Privacy · Enforcement Record</div>
+    <h1>What the Privacy Office Can and Can't Do</h1>
+    <p class="dek">Utah's Chief Privacy Officer, in his own words — plus the finding underneath all of it: the one report that would show who's sharing or selling personal data is shielded from public records requests.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <h2>Start here</h2>
+    <p><strong>What is this?</strong> Utah has an office whose entire job is to protect your personal data when the government collects it — your address, your driver's license info, your kids' school records, whatever an agency has on file. This piece is a record of the man who runs that office, Christopher Bramwell, answering direct questions in his own words about what that office can actually do when something goes wrong.</p>
+    <p><strong>What's the goal?</strong> Not to accuse anyone of wrongdoing. It's to lay out, plainly and in his own words, what protections exist, what gaps he's acknowledged himself, and one thing the law itself sets up: the one report that would show which agencies are sharing or selling your data is filed with the state but off-limits to the public. You can read the record and decide for yourself what it means.</p>
+  </section>
+
+  <style>
+  .glossary{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin:18px 0 8px;}
+  .flip-card{background:transparent;perspective:1000px;height:110px;}
+  .flip-card input{display:none;}
+  .flip-card-inner{position:relative;width:100%;height:100%;text-align:left;transition:transform .5s;transform-style:preserve-3d;cursor:pointer;}
+  .flip-card input:checked ~ .flip-card-inner{transform:rotateY(180deg);}
+  .flip-front{position:absolute;width:100%;height:100%;backface-visibility:hidden;border:1px solid var(--border);padding:12px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;background:var(--paper-card);}
+  .flip-front .acr{font-family:'Playfair Display',serif;font-weight:800;font-size:19px;color:var(--rust);}
+  .flip-front .tap{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-dimmer);margin-top:6px;letter-spacing:.04em;text-transform:uppercase;}
+  .flip-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border:1px solid var(--border);padding:12px;box-sizing:border-box;background:#232a30;color:#e4e0d4;transform:rotateY(180deg);font-family:'Inter',sans-serif;font-size:12.5px;line-height:1.4;overflow-y:auto;-webkit-overflow-scrolling:touch;}
+  .flip-back strong{color:var(--amber);display:block;font-family:'IBM Plex Mono',monospace;font-size:11px;margin-bottom:4px;}
+  </style>
+
+  <section>
+    <h2>Quick reference</h2>
+    <p>This piece uses several acronyms. Tap or click a card to see what it stands for.</p>
+    <div class="glossary">
+      <label class="flip-card"><input type="checkbox"><div class="flip-card-inner">
+        <div class="flip-front"><div class="acr">ODP</div><div class="tap">Tap to reveal</div></div>
+        <div class="flip-back"><strong>Office of Data Privacy</strong>The state office Christopher Bramwell runs, created by the GDPA to help government entities protect personal data.</div>
+      </div></label>
+      <label class="flip-card"><input type="checkbox"><div class="flip-card-inner">
+        <div class="flip-front"><div class="acr">GDPA</div><div class="tap">Tap to reveal</div></div>
+        <div class="flip-back"><strong>Government Data Privacy Act</strong>Utah's 2024 law (HB 491) governing how government entities collect, use, and share personal data.</div>
+      </div></label>
+      <label class="flip-card"><input type="checkbox"><div class="flip-card-inner">
+        <div class="flip-front"><div class="acr">GRAMA</div><div class="tap">Tap to reveal</div></div>
+        <div class="flip-back"><strong>Government Records Access and Management Act</strong>Utah's public records law — governs what records the public can and can't request.</div>
+      </div></label>
+      <label class="flip-card"><input type="checkbox"><div class="flip-card-inner">
+        <div class="flip-front"><div class="acr">HIPAA</div><div class="tap">Tap to reveal</div></div>
+        <div class="flip-back"><strong>Health Insurance Portability and Accountability Act</strong>The federal law governing health records — separate from GDPA, with its own privacy notice requirement.</div>
+      </div></label>
+      <label class="flip-card"><input type="checkbox"><div class="flip-card-inner">
+        <div class="flip-front"><div class="acr">SEDI</div><div class="tap">Tap to reveal</div></div>
+        <div class="flip-back"><strong>State-Endorsed Digital Identity</strong>Utah's digital ID program (SB 275), effective May 6, 2026.</div>
+      </div></label>
+      <label class="flip-card"><input type="checkbox"><div class="flip-card-inner">
+        <div class="flip-front"><div class="acr">UCPA</div><div class="tap">Tap to reveal</div></div>
+        <div class="flip-back"><strong>Utah Consumer Privacy Act</strong>Utah's privacy law for private businesses — different law, different enforcement, than the GDPA.</div>
+      </div></label>
+      <label class="flip-card"><input type="checkbox"><div class="flip-card-inner">
+        <div class="flip-front"><div class="acr">FERPA</div><div class="tap">Tap to reveal</div></div>
+        <div class="flip-back"><strong>Family Educational Rights and Privacy Act</strong>Federal law governing student education records, separate from GDPA and HIPAA.</div>
+      </div></label>
+      <label class="flip-card"><input type="checkbox"><div class="flip-card-inner">
+        <div class="flip-front"><div class="acr">CAO</div><div class="tap">Tap to reveal</div></div>
+        <div class="flip-back"><strong>Chief Administrative Officer</strong>The executive at each governmental entity responsible for its privacy program and complaint intake.</div>
+      </div></label>
+      <label class="flip-card"><input type="checkbox"><div class="flip-card-inner">
+        <div class="flip-front"><div class="acr">GovOps</div><div class="tap">Tap to reveal</div></div>
+        <div class="flip-back"><strong>Department of Government Operations</strong>The state department ODP sits inside, headed by Marvin Dodge.</div>
+      </div></label>
+      <label class="flip-card"><input type="checkbox"><div class="flip-card-inner">
+        <div class="flip-front"><div class="acr">UHIN</div><div class="tap">Tap to reveal</div></div>
+        <div class="flip-back"><strong>Utah Health Information Network</strong>A private nonprofit, not a governmental entity — runs the cHIE. GDPA and ODP don't oversee it.</div>
+      </div></label>
+      <label class="flip-card"><input type="checkbox"><div class="flip-card-inner">
+        <div class="flip-front"><div class="acr">cHIE</div><div class="tap">Tap to reveal</div></div>
+        <div class="flip-back"><strong>Clinical Health Information Exchange</strong>UHIN's system connecting ~90% of Utah hospitals so your records follow you between providers.</div>
+      </div></label>
+    </div>
+  </section>
+
+  <section>
+    <h2>Who he is</h2>
+    <p>Christopher Bramwell was appointed by Gov. Spencer Cox in August 2021 as Utah's inaugural Chief Privacy Officer and serves as Director of the Utah Office of Data Privacy (ODP), leading privacy-program efforts for governmental entities statewide. He worked with the Legislature on the Government Data Privacy Act (HB 491, 2024 General Session) and led the Strategic Privacy Program Plan required under Executive Order 2023-06. Before this role, he spent seven years (2014-2021) as Director of Information Privacy and Security at the Utah Department of Human Services, following earlier information-security work at the U.S. Department of Homeland Security and Idaho State University's National Information Assurance Training and Education Center. He holds an MBA from Idaho State University, completed through the National Science Foundation's CyberCorps program, and a political science degree from Brigham Young University.</p>
+  </section>
+
+  <section>
+    <h2>The office</h2>
+    <p>Per ODP's own staff page (privacy.utah.gov), Bramwell's team consists of Micah Vorwaller (Deputy Chief Privacy Officer), George McEwan (Privacy Architect), Brian Nelson (Privacy Analyst), Shane Paul (Training Director), Lana Taylor (Data Privacy Ombuds), and Kaleena Sedghi (Communication Specialist). The office is based at 4315 South 2700 West, Taylorsville, UT 84129; general contact is officeofdataprivacy@utah.gov, (801) 657-0507.</p>
+    <p>ODP's own site lists its statutory duties as: building a privacy framework for governmental entities to use; reviewing privacy legislation for gaps and conflicts; providing privacy training to government employees; monitoring high-risk data-processing activities; coordinating incident response with the state's Cyber Center; coordinating with the State Archivist on records management; taking public complaints through the Privacy Ombudsperson; and offering expert assistance to entities on high-risk data processing "as resources permit." Enforcement or audit authority isn't listed among them.</p>
+  </section>
+
+  <section>
+    <h2>How a complaint actually moves</h2>
+    <p>Per ODP's own "Privacy for Individuals" page, an individual with a data-privacy complaint submits it first to the Chief Administrative Officer (CAO) of the governmental entity involved. If the CAO can't resolve it, the individual or the entity can then ask the Data Privacy Ombuds to mediate. Mediation is the described outcome — the page doesn't describe an enforcement or penalty step at that stage.</p>
+
+    <details class="diagram">
+      <summary>Show diagram: complaint routing</summary>
+      <svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;margin:14px 0;">
+      <title>How a data privacy complaint is routed</title>
+      <desc>A complaint goes first to the entity's Chief Administrative Officer. If unresolved, it goes to the Data Privacy Ombuds for mediation. Enforcement, when it happens at all, sits with the State Auditor or Attorney General, both independently elected offices — not with ODP.</desc>
+      <defs>
+        <marker id="arr1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M2 1L8 5L2 9" fill="none" stroke="#5b5850" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </marker>
+      </defs>
+      <rect x="0" y="46" width="150" height="60" fill="#faf7ef" stroke="#ddd6c4"/>
+      <text x="75" y="71" font-family="IBM Plex Mono" font-size="10" letter-spacing="1" fill="#8c8878" text-anchor="middle">STEP 1</text>
+      <text x="75" y="90" font-family="Source Serif 4" font-size="14" fill="#1c1c1a" text-anchor="middle">Entity's CAO</text>
+
+      <text x="187" y="40" font-family="IBM Plex Mono" font-size="9" fill="#8c8878" text-anchor="middle">if unresolved</text>
+      <line x1="150" y1="76" x2="225" y2="76" stroke="#5b5850" stroke-width="1.5" marker-end="url(#arr1)"/>
+
+      <rect x="225" y="46" width="150" height="60" fill="#faf7ef" stroke="#ddd6c4"/>
+      <text x="300" y="71" font-family="IBM Plex Mono" font-size="10" letter-spacing="1" fill="#8c8878" text-anchor="middle">STEP 2</text>
+      <text x="300" y="90" font-family="Source Serif 4" font-size="14" fill="#1c1c1a" text-anchor="middle">Data Privacy Ombuds</text>
+
+      <text x="412" y="40" font-family="IBM Plex Mono" font-size="9" fill="#8c8878" text-anchor="middle">mediation only</text>
+      <line x1="375" y1="76" x2="450" y2="76" stroke="#5b5850" stroke-width="1.5" marker-end="url(#arr1)"/>
+
+      <rect x="450" y="46" width="230" height="60" fill="#f0ecdf" stroke="#c0572e" stroke-width="1.5"/>
+      <text x="565" y="71" font-family="IBM Plex Mono" font-size="10" letter-spacing="1" fill="#c0572e" text-anchor="middle">ENFORCEMENT, IF ANY</text>
+      <text x="565" y="90" font-family="Source Serif 4" font-size="13" fill="#1c1c1a" text-anchor="middle">State Auditor or Attorney General</text>
+
+      <text x="0" y="140" font-family="Source Serif 4" font-style="italic" font-size="13" fill="#5b5850">ODP itself does not sit anywhere in this enforcement chain — it builds the framework and templates that precede it.</text>
+      <text x="0" y="185" font-family="IBM Plex Mono" font-size="10" fill="#8c8878">SOURCE: PRIVACY.UTAH.GOV, "PRIVACY FOR INDIVIDUALS"; BRAMWELL'S OWN DIRECT QUOTE, ABOVE</text>
+    </svg>
+    </details>
+  </section>
+
+  <section>
+    <h2>How compliance is measured</h2>
+    <p>Per ODP's own site, the Dec. 31, 2025 privacy-program deadline required each governmental entity to designate its own Chief Administrative Officer, complete its own privacy program report, and run its own self-assessment against ODP's maturity model to gauge how mature its privacy practices are. ODP's role in that process is to provide the framework, templates, and self-assessment tools — the assessment itself is done by the entity, not independently audited by ODP.</p>
+    <p>Separately, under Utah Code § 63A-19-301(5), ODP can grant an individual entity an extension or exemption from certain GDPA duties. When it does, the statute requires ODP to report which entity received it and why — but only to the Utah Privacy Governing Board, not to any enforcement body.</p>
+  </section>
+
+  <section>
+    <h2>Who oversees the office</h2>
+    <p>The Utah Privacy Governing Board is a five-member advisory body that meets at least twice a year. Per its own description, its duties include recommending changes to state privacy policy, approving the Utah Privacy Commission's agenda, addressing issues the Ombudsperson raises, and evaluating the structure and authority of the Office of Data Privacy itself.</p>
+    <p>Its current members, per the board's own page: Marvin Dodge (Chair, Governor's designee), Tina M. Cannon (State Auditor), Rep. David Shallenberger (House Speaker's designee), Sen. Kirk Cullimore (listed as Senate Majority Whip, Senate President's designee — his current Senate title is Majority Leader as of Jan. 2025, so this listing may not be current), and John Dougall (Attorney General's designee).</p>
+    <p>Dodge, who chairs this board, is also the head of the Department of Government Operations — the department ODP sits inside (his title appears as "Commissioner" on the Governor's own cabinet page and as "Executive Director" on ODP's founding presentation; same office, inconsistent title). Per ODP's own founding presentation, Bramwell "reports directly to Marvin Dodge" in that role. The board that evaluates ODP's structure and authority is chaired by the same person Bramwell reports to.</p>
+
+    <details class="diagram">
+      <summary>Show diagram: the reporting loop</summary>
+      <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;margin:14px 0;">
+        <title>The reporting loop between ODP, GovOps, and the Privacy Governing Board</title>
+        <desc>Christopher Bramwell reports to Marvin Dodge, head of the Department of Government Operations. Dodge also chairs the Utah Privacy Governing Board, the body whose job includes evaluating the structure and authority of Bramwell's own office.</desc>
+        <defs>
+          <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="#5b5850" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+
+        <rect x="0" y="20" width="230" height="56" fill="#faf7ef" stroke="#ddd6c4"/>
+        <text x="115" y="45" font-family="Source Serif 4" font-size="14" fill="#1c1c1a" text-anchor="middle">Christopher Bramwell</text>
+        <text x="115" y="64" font-family="IBM Plex Mono" font-size="10" fill="#8c8878" text-anchor="middle">Chief Privacy Officer, ODP</text>
+
+        <line x1="230" y1="48" x2="290" y2="48" stroke="#5b5850" stroke-width="1.5" marker-end="url(#arr2)"/>
+        <text x="260" y="40" font-family="IBM Plex Mono" font-size="9" fill="#8c8878" text-anchor="middle">reports to</text>
+
+        <rect x="290" y="20" width="230" height="56" fill="#f0ecdf" stroke="#c0572e" stroke-width="1.5"/>
+        <text x="405" y="45" font-family="Source Serif 4" font-size="14" fill="#1c1c1a" text-anchor="middle">Marvin Dodge</text>
+        <text x="405" y="64" font-family="IBM Plex Mono" font-size="10" fill="#8c8878" text-anchor="middle">Head, Dept. of Government Ops</text>
+
+        <line x1="405" y1="76" x2="405" y2="130" stroke="#5b5850" stroke-width="1.5" marker-end="url(#arr2)"/>
+        <text x="470" y="106" font-family="IBM Plex Mono" font-size="9" fill="#8c8878" text-anchor="middle">also chairs</text>
+
+        <rect x="175" y="130" width="345" height="56" fill="#faf7ef" stroke="#ddd6c4"/>
+        <text x="347" y="155" font-family="Source Serif 4" font-size="14" fill="#1c1c1a" text-anchor="middle">Utah Privacy Governing Board</text>
+        <text x="347" y="174" font-family="IBM Plex Mono" font-size="10" fill="#8c8878" text-anchor="middle">evaluates ODP's structure and authority</text>
+
+        <path d="M 175 158 Q 100 158 100 118 Q 100 88 115 76" fill="none" stroke="#5b5850" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arr2)"/>
+        <text x="52" y="122" font-family="IBM Plex Mono" font-size="9" fill="#8c8878" text-anchor="middle">oversees</text>
+
+        <text x="0" y="230" font-family="IBM Plex Mono" font-size="10" fill="#8c8878">SOURCE: UTAH PRIVACY GOVERNING BOARD MEMBERSHIP PAGE; ODP'S OWN FOUNDING PRESENTATION (PRIVACY.UTAH.GOV)</text>
+      </svg>
+    </details>
+  </section>
+
+  <section>
+    <h2>The Privacy Commission</h2>
+    <p>A separate body, the Utah Privacy Commission, sets data-privacy guidelines and best practices and reviews governmental technology use related to privacy and security. Its current membership (per privacy.utah.gov) includes David Sonnenreich (Chair), Brandon Greenwood, Don J. Wood, J. Tanner Jensen, Jason B. Shelton, Jeremy Baker, Jeremy Zabriskie, Kent Millington, Ryan Arbon, Sam Smith, Steven McCown, Tyler Reese — and Micah Vorwaller, ODP's own Deputy Chief Privacy Officer, who sits as a Commissioner on the same commission his office answers to.</p>
+    <p>Ryan Arbon is the Weber County Sheriff.</p>
+
+    <div class="callout"><strong>Three bodies, easy to conflate:</strong> ODP is the staffed office that does the day-to-day work. The Privacy Commission (this one) is a larger, ~13-member advisory body that sets guidelines and reviews government technology use — a mix of outside members and ODP staff. The five-member Privacy Governing Board (above) is a smaller, higher-level political body that approves the Commission's agenda and evaluates ODP's own structure and authority. None of the three is a subset of another; they're three separate bodies with different jobs.</div>
+    <p>Per the commission's own May 13, 2026 meeting minutes, the commission is in the process of administratively transitioning its website and communications from the Utah State Auditor's office to GovOps/ODP — moving its day-to-day home from an independently elected office to the department that houses ODP itself. HB 450 (2026 session) is the bill that authorizes this: it explicitly "transfers support of the Utah Privacy Commission from the state auditor's office to the Office of Data Privacy" and restructures the commission's membership. The same May 13 minutes show the Auditor's office maintains dedicated privacy-audit staff (an Assistant State Privacy Auditor and a Privacy Audit Outreach position), who presented on a data breach involving Instructure/Canvas and said a report would follow.</p>
+  </section>
+
+  <section>
+    <h2>The report the public can't read</h2>
+    <p>Every governmental entity is required to file an annual Privacy Program Report with ODP by December 31 each year, under Utah Code § 63A-19-401.3. The report has to include the types of personal data the entity shares, sells, or purchases; the legal justification for those activities; the categories of people or entities involved; any noncompliant data-processing activities found; and the plan to fix them.</p>
+    <p>Per ODP's own description of the report: <strong>"This report is considered a protected record under Utah Code § 63G-2-305 and may be requested by the Office."</strong> The report that would show which agencies are sharing or selling personal data — and to whom — is filed with the state but shielded from ordinary public records requests. ODP itself can request a copy. The public cannot.</p>
+    <p>It isn't the only example. Utah's 2024 breach-notification law (SB 98, amending the Protection of Personal Information Act) added similar language for a different document: when an entity reports a data breach to the Utah Attorney General or the Utah Cyber Center, that notification "may be deemed confidential and classified as a protected record" under certain conditions. So both the annual report on what data an entity shares or sells, and the notification an entity files after a breach, can end up shielded from the same public that was affected.</p>
+  </section>
+
+  <section>
+    <h2>About this record</h2>
+    <p>In spring 2025, Christopher Bramwell — Utah's Chief Privacy Officer and Director of the Office of Data Privacy (ODP) — responded publicly to a series of questions in a Utah County community Facebook group. He answered each question individually, in writing, on the public record. The exchange was screenshotted and timestamped at the time.</p>
+    <p>What follows is a record of what he said, in the order the questions were asked, with the statutory context needed to read each answer accurately. Where something has since changed, that's noted separately at the end.</p>
+  </section>
+
+  <section>
+    <h2>The questions and his answers</h2>
+    <p>Click a question to see his answer.</p>
+
+    <details class="qa">
+      <summary><span class="date">Spring 2025</span><span class="q-text"><strong>Question asked:</strong> What types of public complaints is the Data Privacy Ombudsperson receiving most frequently, and what is the enforcement/resolution mechanism when a public entity violates privacy guidelines?</span></summary>
+      <div class="qa-body">
+      <blockquote>"There are summaries of data privacy complaints on the privacy.utah.gov website. Currently the government data privacy act has the state auditor and the attorney general as the enforcement mechanisms."</blockquote>
+      <div class="note">The Ombudsperson's role is to receive and publish complaints. Enforcement authority under the Government Data Privacy Act sits with the State Auditor and Attorney General, both independently elected offices — not with ODP itself.</div>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="date">Spring 2025</span><span class="q-text"><strong>Question asked:</strong> How does the Office of Data Privacy ensure that state agency privacy guidelines and data classification frameworks are not used by local or state custodians to over-redact or withhold records that are legally public under GRAMA?</span></summary>
+      <div class="qa-body">
+      <blockquote>"We have been creating what we call data governance models, which can be adopted by governmental entities to transparently show how an entity balances privacy, transparency and use of data/records. This would allow the public to have a single place they can go and review to see how data/records are governed, and if there is something wrong with the models, then the public could help to adjust the models by engaging with either the Utah Office of Data Privacy, or the Utah Privacy Commission."</blockquote>
+      <div class="note">The mechanism described is public review after the fact, not a standard ODP applies before a redaction happens.</div>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="date">Spring 2025</span><span class="q-text"><strong>Question asked:</strong> How is your office coordinating with the State Archivist to ensure data minimization practices don't result in premature deletion or shortened retention schedules for public records?</span></summary>
+      <div class="qa-body">
+      <blockquote>"Data minimization is being built into the below mentioned data governance model. Minimization occurs at the point of collection, whereas retention and archiving requirements is what then applies to data/records after is already collected or created. When it comes to personal data entities are still required to meet all applicable records management requirements."</blockquote>
+      <div class="note">Minimization (ODP's area) and retention (the State Archives' area) are described as sequential rather than jointly reviewed — minimization happens at collection, retention rules apply afterward.</div>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="date">Spring 2025</span><span class="q-text"><strong>Question asked:</strong> To what extent are county commissions and municipal entities adopting the state's privacy framework, and what guidance are you giving local entities on managing third-party software and vendor data risks?</span></summary>
+      <div class="qa-body">
+      <blockquote>"The privacy program framework is based off of generally applicable, legal requirements that most cities and counties are already supposed to be following. Many cities and counties have adopted the framework with quite a few counties actually doing so in ordinance. Any third-party contractor that is processing personal data and records on behalf of a governmental entity has the same legal obligations under the government data privacy act as the government entity itself. This applies to software vendors or any other third parties."</blockquote>
+      <div class="note">The answer describes vendors' legal obligations under GDPA but doesn't describe a specific guidance document or vendor-risk process for local entities to follow.</div>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="date">Spring 2025</span><span class="q-text"><strong>Question asked:</strong> How is your office enforcing data-use restrictions on third-party government vendors to ensure contractors don't monetize, train proprietary models on, or resell data collected on behalf of Utah citizens?</span></summary>
+      <div class="qa-body">
+      <blockquote>"Office is NOT an enforcement mechanism, however we are helping to scale the use of standardized contract terms and conditions that ensure third parties are required to meet GDP requirements and cannot use state data or personal data in ways that are against individual Utahns' best interest."</blockquote>
+      <div class="note">ODP's own description of its role here: standardized contract language, not audit or enforcement authority over vendors.</div>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="date">Spring 2025</span><span class="q-text"><strong>Question asked:</strong> Under Utah's GDPA, public agencies are required to report and disclose if they sell or share personal data. What specific criteria does the Office of Data Privacy set to define "selling," and which entities are currently monetizing or licensing public data sets?</span></summary>
+      <div class="qa-body">
+      <blockquote>"The legislature has defined what constitutes selling in the definitions of GDPA. My office will be receiving its first reports of such activities in December 2026. My experience has been that most entities do not have any desire to sell personal data. However, there are multiple places in Utah law where entities are required to make personal data available for a fee or for sale. Keep in mind that there are many public records that also contain personal data so there is a lot of personal data that can be made available at no cost."</blockquote>
+      <div class="note">As of this answer, ODP's first data-monetization reports were not yet due — meaning the office did not yet have its own figures on which entities, if any, were selling personal data.</div>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="date">Spring 2025</span><span class="q-text"><strong>Question asked:</strong> What is the state's official policy on governmental entities monetizing anonymized, aggregated, or bulk public data sets, and what re-identification risks or standards is your office requiring before data can be commercialized?</span></summary>
+      <div class="qa-body">
+      <blockquote>"We have had this discussion a few times in public meetings with the Utah Privacy Commission. My office is also coordinating research on this topic to inform legislative recommendations. Current leading academics have acknowledged that almost any de-identified or anonymized data sets can be re-identified with a small set of data points and artificial intelligence is just making it easier and trivial to do so. I am currently spending time evaluating synthetic data as a possible alternative to de-identified or anonymized data as a possible better option. Because anonymized or de-identified data is trivial to re-identify my personal opinion is that sharing of such data sets should be phased out. My personal opinion is that governments should not sell personal data... The state does not yet have official policy on this topic, the discussions are ongoing."</blockquote>
+      <div class="note">Bramwell distinguishes his personal opinion from state policy explicitly — he states no official policy exists on anonymized data sales as of this answer.</div>
+      </div>
+    </details>
+
+    <details class="qa">
+      <summary><span class="date">Spring 2025</span><span class="q-text"><strong>Question asked:</strong> What specific guardrails or impact assessments is your office implementing regarding government use of AI, automated record processing, or vendor algorithms handling citizen data?</span></summary>
+      <div class="qa-body">
+      <blockquote>"In Utah's government data privacy act there are some foundational guidelines and requirements related to scoring, predictive analytics, and requirements for my office to make recommendations related to automated decision-making. My ODP has published an initial version of a privacy impact assessment and are currently drafting an AI specific tool and AI policy templates that entities can utilize. I hope that in the next legislative session we can establish more clear guardrails in the government data privacy [act] relating to artificial intelligence."</blockquote>
+      <div class="note">As of this answer, AI-specific guardrails and templates were still in draft, with clearer statutory guardrails described as dependent on the next legislative session.</div>
+      </div>
+    </details>
+
+  </section>
+
+  <section>
+    <h2>What's changed since</h2>
+    <p>These answers were given in spring 2025. Several things referenced in them have since moved forward on their own timeline:</p>
+    <p><strong>SEDI</strong> — Utah's State-Endorsed Digital Identity program (SB 275) passed unanimously and took effect May 6, 2026, on the schedule officials described at the time.</p>
+    <p><strong>The AI compliance tool</strong> Bramwell referenced as being drafted was presented publicly the following month: a Utah Valley University student, working with the university's Herbert Institute, built and demonstrated an AI-assisted privacy-compliance tool at the state's May 2025 Data Governance Summit.</p>
+    <p><strong>The December 2026 reporting deadline</strong> he cited for data-monetization activity has not yet arrived as of this writing.</p>
+    <p>A second annual Data Governance Summit was held at UVU on May 21, 2026, where state officials described the privacy program as having moved from writing policy to implementing it.</p>
+    <div class="callout"><strong>Also on the record in December 2025:</strong> in a separate follow-up exchange, Bramwell stated plainly, "ODP does not have the authority some of your questions seem to assume it has," and proposed moving further discussion to a private meeting rather than continuing in writing.</div>
+  </section>
+
+  <section>
+    <h2>What happens if the rules are broken</h2>
+    <p><strong>Worth noting for comparison:</strong> Utah's privacy law for private businesses, the Consumer Privacy Act, spells out a specific penalty — up to $7,500 per violation, enforced by the Attorney General after a 30-day cure period. The Government Data Privacy Act — the one covering the government entities ODP oversees — doesn't appear to specify any comparable penalty amount. It names the State Auditor and Attorney General as the enforcement mechanism, which is exactly what Bramwell told Shauna directly, but without a stated dollar figure or fine structure attached to a violation.</p>
+  </section>
+
+  <section>
+    <h2>What about health records?</h2>
+    <p>Health records aren't covered by the Government Data Privacy Act the way most other personal data is. Per Utah's own "Privacy for Individuals" guidance (publicsafety.utah.gov), an individual's data privacy rights depend on which entity holds the data and what kind it is — GDPA covers general personal data held by governmental entities, but health information specifically falls under the federal Health Insurance Portability and Accountability Act (HIPAA) instead, a separate framework with its own rules.</p>
+    <p>For the University of Utah specifically: University of Utah Health's own patient privacy page states that every patient is given a Notice of Privacy Practices at their first visit — this is the actual document that tells you how your health information is used and shared, including for treatment, billing, health oversight investigations, law enforcement requests, organ donation, approved research, and "specialized government functions such as intelligence and national security." That notice, not a GDPA filing, is where an individual's visibility into health-data sharing comes from.</p>
+    <p>Separately, per the university's own reporting, GDPA still applies to the university as a governmental entity for personal data outside the health-records context — student and administrative records, for instance. The university created a new Chief Information Privacy Officer position in response, held by Jamie Ross, to centralize privacy compliance campus-wide beyond the health system's existing HIPAA program.</p>
+  </section>
+
+  <section>
+    <h2>What happens when your ID gets scanned at the doctor</h2>
+    <p>The scenario you're describing — a hospital or clinic scanning your ID, that visit data flowing through insurance, and ending up in a shared repository that connects hospitals "for continuity of care" — is a real, specific system: the <strong>Clinical Health Information Exchange (cHIE)</strong>, run by the Utah Health Information Network (UHIN).</p>
+    <p>UHIN is a private nonprofit, founded in 1993 — not a governmental entity. Its cHIE connects roughly 90% of Utah's hospitals, 1,300+ providers, and holds records on more than 8 million patients, sending admit/discharge/transfer notifications so a hospital or clinic you visit can see what happened at a different one. That's the "continuity of care" framing your doctor's office would use.</p>
+    <p>Because UHIN isn't a governmental entity, <strong>the GDPA and ODP don't oversee it</strong> — even though the Utah Department of Health and Human Services is a UHIN member and interacts with it directly for Medicaid enrollment. What actually governs your data inside the cHIE is HIPAA, plus UHIN's own participation rules.</p>
+    <p>On opting out: UHIN provides a "CHIE Patient Participation" form — you fill it out, get it notarized, and mail it in to stop your records from being shared through the exchange. That's the individual's actual control point, separate from anything GDPA or ODP administers. Worth noting a shift over time: when the cHIE launched around 2010, participation required patients to actively consent (opt in) before their records were shared; a 2012 state Medicaid rule (R414-8) instead automatically enrolled Medicaid recipients in the cHIE while requiring the Department to notify them of their right to opt out. Current UHIN materials describe the same opt-out framing for patients generally — you're presumed to participate unless you file the form to stop it, a different default than the system started with.</p>
+  </section>
+
+  <section>
+    <h2>Documented incidents</h2>
+    <p>Whatever the policies promise, here's the actual track record at these same institutions, from public news reporting:</p>
+    <p><strong>March 2020:</strong> University of Utah Health disclosed a phishing attack that compromised employee email accounts and infected a workstation with malware. Later reporting put the number of affected patients at roughly 10,000; exposed information included names, birthdates, and clinical information.</p>
+    <p><strong>2023, a wave of separate vendor breaches tied to University of Utah Health Plans (UUHP):</strong> a nationwide vulnerability in the MOVEit file-transfer software used by multiple UUHP vendors led to three distinct incidents in the same year. TMG Health's server was accessed between May 30 and June 2, 2023, exposing roughly 3,900 UUHP member records — names plus, depending on the individual, mailing address, email, phone number, date of birth, Social Security number, medical claims information, banking information, billing information, and medical treatment information. Separately, Virgin Pulse (a UUHP vendor for its HealthyU program) and Delta Dental (administering UUHP's Medicare Advantage dental benefits) each reported their own MOVEit-linked breaches the same year, affecting different groups of UUHP members. The same nationwide MOVEit vulnerability separately exposed University of Utah Advancement records (through vendor TIAA Kaspick) and more than 13,800 current and former university employees' dates of birth and Social Security numbers (through TIAA's own vendor relationship) — four separate breaches at the university traced to the same underlying software flaw.</p>
+    <p><strong>March 2024:</strong> UHIN — the nonprofit running the cHIE described above — was affected by the Change Healthcare cyberattack, a major nationwide incident that disrupted claims and remittance processing across the U.S. health system. UHIN has publicly documented its response efforts; this wasn't a breach of UHIN's own systems, but it illustrates how dependent the state's health-data infrastructure is on a small number of national vendors.</p>
+    <p>In each case reported here, the affected organization stated there was no confirmed evidence the exposed data had been misused, and offered identity-monitoring services to those affected.</p>
+  </section>
+
+  <section>
+    <h2>Is there any way to verify compliance?</h2>
+    <p>Yes — just not through the individual entity reports described above. Separate from ODP entirely, the independently-elected State Auditor's office has its own <strong>State Privacy Auditor</strong>, a position held by Nora Kurzova since her Senate confirmation in February 2025. Her office audits how more than 1,800 government entities handle personal data — and per the Auditor's own site, its reports "are publicly available and no GRAMA request is required to obtain any of this information from the Office." Reports going back at least 10 years are posted directly online.</p>
+    <p>What those audits have actually found, on the record:</p>
+    <p>The State Privacy Officer's FY2023 annual report reviewed 1,617 governmental entities against a basic legal requirement — posting a privacy policy statement on their website — and found only 34% compliant; 66% were not. The same report found that of the entities reviewed in depth, none had an "optimized" or "well-managed" privacy program; every one fell into the lowest ("ad-hoc") maturity category, meaning privacy practices existed only inconsistently and mostly in reaction to complaints or breaches, not as a codified program.</p>
+
+    <details class="diagram">
+      <summary>Show chart: FY2023 compliance findings</summary>
+      <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg" role="img" style="width:100%;height:auto;margin:14px 0;">
+      <title>Website privacy notice compliance, FY2023 State Privacy Officer review</title>
+      <desc>Of 1,617 governmental entities reviewed, 34 percent had posted a compliant privacy notice on their website and 66 percent had not.</desc>
+      <text x="0" y="20" font-family="IBM Plex Mono" font-size="11" letter-spacing="1" fill="#5b5850">1,617 ENTITIES REVIEWED · WEBSITE PRIVACY NOTICE REQUIREMENT</text>
+      <rect x="0" y="40" width="200" height="34" fill="#f0ecdf" stroke="#ddd6c4"/>
+      <rect x="0" y="40" width="68" height="34" fill="#8a9a7e"/>
+      <text x="76" y="62" font-family="Source Serif 4" font-size="14" fill="#1c1c1a">34% compliant</text>
+
+      <rect x="0" y="94" width="440" height="34" fill="#f0ecdf" stroke="#ddd6c4"/>
+      <rect x="0" y="94" width="440" height="34" fill="#c0572e"/>
+      <text x="0" y="146" font-family="Source Serif 4" font-size="14" fill="#1c1c1a">66% not compliant</text>
+      <text x="0" y="170" font-family="IBM Plex Mono" font-size="10" fill="#8c8878">SOURCE: OFFICE OF THE UTAH STATE AUDITOR, STATE PRIVACY OFFICER ANNUAL REPORT, FY2023</text>
+    </svg>
+    </details>
+    <p>More recently, in 2025, a State Auditor's office review — triggered by an internal whistleblower complaint, not a routine audit — found that the Utah Department of Health and Human Services had more than 1,000 users with access to a database covering roughly 6 million records on more than 2 million Utahns, without procedures in place to adequately detect or manage data breaches. State Auditor Tina Cannon presented those findings to the Legislature's Social Services Appropriations Subcommittee.</p>
+    <p>So the verification path exists — it just runs through the Auditor's independent audit function, which produces public findings, rather than through the individual Privacy Program Reports that stay protected under GDPA.</p>
+  </section>
+
+  <section>
+    <h2>What changed</h2>
+    <p>Laid end to end, here's the documented sequence this piece covers:</p>
+    <p>Utah built a statewide privacy framework (GDPA, 2024) and a new office to run it, appointing Bramwell as the state's first Chief Privacy Officer. Two additional oversight bodies were created alongside it — the Utah Privacy Commission and the five-member Privacy Governing Board — with membership drawn from a mix of elected officials, agency heads, and appointees. The entity meant to independently monitor privacy compliance for a specific new venture, the Nucleus Institute, was itself written into a 2025 law exempting it from the state's open-meetings and public-records laws. The annual report that would show which government entities are sharing or selling personal data was classified as a protected record, retrievable by ODP itself but not by the public. A 2026 law then moved the Privacy Commission's own administrative support from the independently elected State Auditor's office into GovOps — the same department that houses ODP and is run by the person Bramwell reports to, who also chairs the Governing Board that evaluates ODP's own authority.</p>
+    <p>None of these changes happened in secret — each is documented in a public bill, a public meeting record, or the agency's own website. Taken together, they raise questions worth asking directly:</p>
+    <div class="questions-box">
+      <div class="questions-label">Questions worth asking</div>
+      <ol class="questions-list">
+        <li>Why does the report showing which government entities share or sell personal data stay closed to the public, when ODP itself can request a copy?</li>
+        <li>Why did the Nucleus Institute — a new venture with public money behind it — get written out of the state's open-meetings and public-records laws in the same bill that created its oversight board?</li>
+        <li>Why move the Privacy Commission's administrative support from an independently elected office to the same department the office it oversees reports into?</li>
+        <li>Should the board that evaluates ODP's structure and authority be chaired by the person ODP's own director reports to?</li>
+        <li>If the answer to any of these is "efficiency" or "coordination," does that explanation hold up against how each change narrows, rather than widens, who gets to check the work?</li>
+      </ol>
+    </div>
+    <p>This record doesn't answer those questions. It documents the sequence that makes them worth asking.</p>
+  </section>
+
+  <section>
+    <details class="sources-toggle">
+      <summary><h2 style="display:inline;border:none;padding:0;">Sources</h2></summary>
+      <p>Christopher Bramwell's public responses, Utah County community Facebook group, spring and December 2025 (screenshots timestamped and retained). Utah's Government Data Privacy Act (HB 491, 2024 General Session), including Utah Code §§ 63A-19-301(5) and 63A-19-401.3, and Utah Code § 63G-2-305. HB 450 (2026 General Session). SB 98 (2024 General Session), Online Data Security and Privacy Amendments, amending the Protection of Personal Information Act (§ 13-44-101 et seq.). Utah SB 275 (State-Endorsed Digital Identity), effective May 6, 2026. Utah Valley University Herbert Institute, 2025 and 2026 Data Governance Summit program materials. Utah Office of Data Privacy staff, "About ODP," "Privacy for Individuals," "Privacy for Governmental Entities," and "Privacy Program Report" pages, and the Utah Privacy Governing Board and Utah Privacy Commission membership pages (privacy.utah.gov). Utah Privacy Commission meeting minutes, May 13, 2026. Utah Department of Public Safety, "Privacy for Individuals" page. University of Utah Health, "Patient Privacy" page. @theU, "Protecting your privacy" and "University of Utah Statement: MOVEit Vendor Data Incidents." UHIN/CHIE, "For Patients" and provider pages, and news/cybersecurity updates (uhin.org). Utah Administrative Rule R414-8, Electronic Personal Medical Records for the Medicaid Program. KSL.com, KSLTV, KUTV, Fox13, Deseret News, SecurityWeek, and Mid-Utah Radio reporting on University of Utah Health data breaches, 2020 and 2023. Office of the Utah State Auditor: "Audit Reports" page, State Privacy Officer Annual Report FY2023, State Privacy Auditor biography page, and news release confirming Nora Kurzova as State Privacy Auditor (Feb. 27, 2025) (auditor.utah.gov). Reporting on the 2025 Utah Department of Health and Human Services data-security audit.</p>
+    </details>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>THE WEBER COUNTY HIVE · TRANSPARENCY</div>
+    <div class="sub">Independent accountability journalism. Public records only. We report; you decide.</div>
+  </div>
+</footer>
+
+</body>
+</html>
