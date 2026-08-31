@@ -82,5 +82,15 @@ const CASES = [
     status: "documented",
     updated: "Aug 31, 2026",
     link: "weber-housing-authority.html"
+  },
+  {
+    caseNumber: "CASE 2026-ODP-01",
+    title: "What the Privacy Office Can and Can't Do",
+    category: "Government Data Privacy & Oversight",
+    summary: "Utah's Chief Privacy Officer, in his own words, on what his office can actually enforce — plus the report that would show who's sharing or selling your data, filed with the state but off-limits to the public.",
+    officials: ["Christopher Bramwell", "Marvin Dodge", "Kirk Cullimore"],
+    status: "documented",
+    updated: "Aug 31, 2026",
+    link: "bramwell-odp-enforcement.html"
   }
 ];
