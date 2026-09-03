@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matt Brower — The Board Seat That Never Came Up | Unelected Power</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3ECE0;
+    --paper-dim:#E9E0D0;
+    --void:#181210;
+    --void-2:#241A17;
+    --maroon:#6E1F2B;
+    --maroon-dim:#8C3B44;
+    --ink:#211714;
+    --ink-soft:#4A3B35;
+    --line:#C9BBA4;
+    --gold:#B4863C;
+    --max:900px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3',sans-serif;
+    font-size:17px;
+    line-height:1.62;
+  }
+  ::selection{background:var(--maroon);color:var(--paper);}
+  a{color:var(--maroon);}
+  a:hover{color:var(--maroon-dim);}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);margin:0;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  .topbar{
+    background:var(--void);
+    color:var(--paper-dim);
+    padding:12px 24px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .topbar a{color:var(--paper-dim);text-decoration:none;opacity:.8;}
+  .topbar a:hover{opacity:1;color:#fff;}
+
+  header.masthead{
+    padding:72px 24px 48px;
+    border-bottom:3px solid var(--void);
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--maroon);
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--maroon);display:inline-block;}
+  h1.title{
+    font-size:clamp(32px,5.4vw,52px);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    max-width:780px;
+  }
+  h1.title em{font-style:italic;color:var(--maroon);}
+  .dek{
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:680px;
+    margin-top:20px;
+    line-height:1.5;
+  }
+  .byline{
+    margin-top:22px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    letter-spacing:.05em;
+    color:var(--ink-soft);
+  }
+
+  section.plain{
+    background:var(--paper-dim);
+    border-bottom:1px solid var(--line);
+    padding:48px 24px 52px;
+  }
+  section.plain .wrap{max-width:var(--max);}
+  section.plain .eyebrow{margin-bottom:24px;}
+  .chain{list-style:none;margin:0;padding:0;counter-reset:step;}
+  .chain li{
+    counter-increment:step;
+    position:relative;
+    padding:0 0 22px 46px;
+    font-size:16.5px;
+    color:var(--ink);
+  }
+  .chain li:last-child{padding-bottom:0;}
+  .chain li::before{
+    content:counter(step);
+    position:absolute;
+    left:0;top:0;
+    width:30px;height:30px;
+    border-radius:50%;
+    background:var(--maroon);
+    color:var(--paper);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .chain li::after{
+    content:"";
+    position:absolute;
+    left:14.5px;top:32px;
+    width:2px;height:calc(100% - 32px);
+    background:var(--line);
+  }
+  .chain li:last-child::after{display:none;}
+  .headline-claim{
+    margin-top:30px;
+    padding:22px 26px;
+    background:var(--void);
+    color:var(--paper);
+    font-family:'Fraunces',serif;
+    font-size:1.25rem;
+    font-style:italic;
+    border-left:5px solid var(--gold);
+  }
+
+  main{max-width:var(--max);margin:0 auto;padding:56px 24px 80px;}
+  section{margin-bottom:56px;}
+  section h2{
+    font-size:1.7rem;
+    border-bottom:2px solid var(--maroon);
+    padding-bottom:12px;
+    margin:0 0 22px;
+  }
+  section h3{
+    font-size:1.15rem;
+    font-family:'Fraunces',serif;
+    color:var(--maroon-dim);
+    margin:28px 0 10px;
+  }
+  p{margin:0 0 16px;}
+  ul{margin:0 0 16px;padding-left:24px;}
+  li{margin-bottom:6px;}
+
+  .fact{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--maroon);
+    padding:18px 22px;
+    margin:0 0 16px;
+    font-size:0.98rem;
+  }
+  .fact strong{color:var(--maroon-dim);}
+
+  table.timeline{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:0.95rem;}
+  table.timeline td{vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line);}
+  table.timeline td.date{white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:0.85rem;color:var(--maroon-dim);width:120px;}
+
+  .quote-card{
+    background:var(--void);
+    color:var(--paper);
+    padding:20px 24px;
+    margin:0 0 16px;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.05rem;
+  }
+  .quote-card cite{
+    display:block;
+    margin-top:12px;
+    font-style:normal;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11.5px;
+    letter-spacing:.03em;
+    color:var(--gold);
+  }
+
+  details{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:16px 20px;
+    margin-bottom:12px;
+  }
+  summary{
+    cursor:pointer;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:0.85rem;
+    letter-spacing:.02em;
+    color:var(--maroon-dim);
+  }
+  details p{margin-top:14px;}
+
+  .support-note{
+    border:1px dashed var(--line);
+    padding:16px 20px;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+
+  .board-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:14px;
+  }
+  @media (max-width:640px){ .board-grid{grid-template-columns:1fr 1fr;} }
+  .flip-card{ perspective:1000px; height:200px; }
+  .flip-inner{
+    position:relative;
+    width:100%;height:100%;
+    transition:transform .5s;
+    transform-style:preserve-3d;
+    cursor:pointer;
+  }
+  .flip-card.is-flipped .flip-inner{transform:rotateY(180deg);}
+  .flip-front,.flip-back{
+    position:absolute;inset:0;
+    backface-visibility:hidden;
+    padding:18px;
+    display:flex;flex-direction:column;
+  }
+  .flip-front{
+    background:var(--void);
+    color:var(--paper);
+    justify-content:center;
+    border-left:4px solid var(--gold);
+  }
+  .flip-front .role-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .flip-front h3.name{
+    font-family:'Fraunces',serif;
+    font-size:1.2rem;
+    font-weight:600;
+    line-height:1.2;
+    color:var(--paper);
+    margin:0;
+  }
+  .flip-front .tap{
+    margin-top:auto;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;
+    color:var(--line);
+  }
+  .flip-back{
+    background:#fff;
+    border:1px solid var(--maroon);
+    border-left:4px solid var(--maroon);
+    transform:rotateY(180deg);
+    overflow-y:auto;
+    font-size:0.8rem;
+    line-height:1.45;
+    color:var(--ink);
+  }
+  .flip-back strong{color:var(--maroon-dim);}
+
+  footer.site-footer{
+    background:var(--void);
+    color:var(--paper-dim);
+    padding:40px 24px 50px;
+  }
+  footer.site-footer .wrap{display:flex;flex-direction:column;gap:14px;}
+  footer.site-footer h3{color:#fff;font-size:20px;}
+  footer.site-footer p{color:#B8A899;font-size:14px;max-width:620px;line-height:1.6;margin:0;}
+  footer.site-footer .links{display:flex;gap:22px;flex-wrap:wrap;margin-top:8px;}
+  footer.site-footer a{color:var(--gold);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.03em;}
+  footer.site-footer a:hover{color:#fff;}
+
+  @media(max-width:600px){
+    header.masthead{padding:48px 18px 32px;}
+    main{padding:40px 18px 60px;}
+    section.plain{padding:36px 18px 40px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>The Weber County Hive · Unelected Power</span>
+  <a href="index.html">← All profiles</a>
+</div>
+
+<header class="masthead">
+  <div class="eyebrow">Case File · Heber City Manager</div>
+  <h1 class="title">The Board Seat That <em>Never Came Up</em></h1>
+  <p class="dek">Heber City's top administrator sits on the board of the nonprofit his own office pays. Here's the paper trail — the plain version first, then every document behind it.</p>
+  <div class="byline mono">THE WEBER COUNTY HIVE</div>
+</header>
+
+<section class="plain">
+  <div class="wrap">
+    <div class="eyebrow">The short version</div>
+    <ol class="chain">
+      <li>Heber City has a City Manager — the person who runs the city day to day. He isn't elected. His name is Matt Brower.</li>
+      <li>Brower also sits on the board of a private nonprofit called CAMS, which runs Heber's downtown events.</li>
+      <li>Brower's own office gave CAMS a city contract worth about $39,900 a year, for three years — nearly $120,000 total.</li>
+      <li>CAMS's board — with Brower on it — voted to approve that deal on January 13, 2026. The City Council approved it a week later, on January 20, with Brower's staff report recommending it.</li>
+      <li>When it came time to sign the final contract, there was no line for the Mayor. Only Brower signed for the City — even though the contract's own wording says the Mayor should.</li>
+      <li>Someone filed a complaint with the Utah State Auditor. The City had to redo part of the paperwork to make the process look proper.</li>
+      <li>Hundreds of Heber Valley residents signed a petition asking the City Council not to renew Brower's contract. The Council renewed it anyway, 4–2.</li>
+    </ol>
+    <div class="headline-claim">The man who runs the city gave nearly $120,000 in public money to a group he sits on the board of — and no one outside that arrangement signed off on it.</div>
+  </div>
+</section>
+
+<main>
+
+  <section>
+    <h2>Who is Matt Brower?</h2>
+    <p>Matt Brower has been Heber City Manager since 2018, appointed — not elected — by the City Council. City Managers in Utah's council-manager form of government run daily operations: staff, budget, contracts, and what makes it onto the Council's own agenda.</p>
+    <p>Before Heber, Brower held city manager posts in Lincoln, California (2015–18), Ocala, Florida (2008–14), and Santa Clara, Utah (2000–08). He describes himself as having "23 years" of city management experience.</p>
+    <div class="fact"><strong>Also on the record:</strong> Brower is a director of the Red White &amp; Blue Festival Inc. (since 2023) and has sat on CAMS's board since 2019 — years before the city contract in question.</div>
+  </section>
+
+  <section>
+    <h2>What is CAMS?</h2>
+    <p>The Community Alliance for Main Street (CAMS) is a Heber City nonprofit that programs downtown events — the Heber Market on Main, Halloween Feast, Old Fashioned Christmas, and more. Its own bylaws describe it, oddly, as "this advisory committee," even though it now operates and contracts as an independent 501(c)(3) corporation.</p>
+    <p>CAMS's board as of January 2026: Tom Stone (Chair), Matt Brower, Dallin Koecher, Jeff Bradshaw (Treasurer), Ryan Fritzsche, Kelsey Berg, Erik Rowland, and Nicole Ferguson. Its one paid employee is Executive Director Rachel Kahler. Tap a card.</p>
+
+    <div class="board-grid">
+
+      <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="role-tag">Chair / President</div>
+            <h3 class="name">Tom Stone</h3>
+            <div class="tap">tap to flip</div>
+          </div>
+          <div class="flip-back">
+            Heber resident since 1986, owns several Main Street commercial buildings, mortgage-industry career. Co-founded CAMS in 2003 with Jeff Bradshaw. Signed CAMS's 2023 bylaws as both President and Chairperson. <strong>Disqualified</strong> from the 2024 Wasatch School Board Seat E race for a late disclosure filing; sued to overturn it and lost (Dec. 2024). Not currently in elected office.
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="role-tag">Executive Member</div>
+            <h3 class="name">Matt Brower</h3>
+            <div class="tap">tap to flip</div>
+          </div>
+          <div class="flip-back">
+            Heber City Manager since 2018 — this whole page is about him. On CAMS's board since 2019, seven years before the City's own contract with CAMS. Sole City signatory on that contract despite sitting on both sides of the deal. See the rest of this page for the full record.
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="role-tag">Executive Member</div>
+            <h3 class="name">Dallin Koecher</h3>
+            <div class="tap">tap to flip</div>
+          </div>
+          <div class="flip-back">
+            Executive Director of the Heber Valley Chamber, Tourism &amp; Economic Development office (aka Heber Valley CVB) since March 2020 — a full-time paid role. Also sits on the Wasatch County Arts Council board and previously Heber City's Board of Adjustments (2019-21). His own posted Wasatch Open Lands Board conflict-of-interest form lists only his Chamber role, omitting CAMS and other confirmed ties. Full profile: <a href="dallin-koecher.html">his own case file</a>.
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="role-tag">Treasurer</div>
+            <h3 class="name">Jeff Bradshaw</h3>
+            <div class="tap">tap to flip</div>
+          </div>
+          <div class="flip-back">
+            Co-founded CAMS with Tom Stone in 2003, following a $15,000 thank-you allocation Heber City received after the 2002 Winter Olympics. Has served as Treasurer through the organization's revival ("CAMS 2.0") beginning around 2018. No other public role or entity confirmed yet.
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="role-tag">Board Member</div>
+            <h3 class="name">Ryan Fritzsche</h3>
+            <div class="tap">tap to flip</div>
+          </div>
+          <div class="flip-back">
+            Owner/Founder of Merchant Solution Services ("MSS Pay") since 2013, a Heber City-based payment-processing company serving e-commerce and high-risk merchants (CBD retail, test-prep sales) via credit/debit, ACH, and crypto payments. Also founder of Pays Advisory Group and Profit Vault Venture Capital. Company address is on the same South Main St. corridor as CAMS's own notice address.
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="role-tag">Board Member</div>
+            <h3 class="name">Kelsey Berg</h3>
+            <div class="tap">tap to flip</div>
+          </div>
+          <div class="flip-back">
+            Currently Government Relations Director for the Utah 2034 Winter Games Organizing Committee. Immediately prior: Vice President of Government Relations, The Larry H. Miller Company. Grew up in Heber Valley; BS Political Science, BYU. Among the most professionally connected people on CAMS's board.
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="role-tag">Board Member</div>
+            <h3 class="name">Erik Rowland</h3>
+            <div class="tap">tap to flip</div>
+          </div>
+          <div class="flip-back">
+            Wasatch County Council Chair (Seat C) since 2023, unopposed in 2026. Also sits on MIDA and the Wasatch Open Lands Board. His county conflict-of-interest disclosure form was filed blank — omitting CAMS and seven other confirmed positions and business entities. Full record: <a href="erik-rowland-seat-c.html">his own case file</a>.
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="role-tag">Board Member</div>
+            <h3 class="name">Nicole Ferguson</h3>
+            <div class="tap">tap to flip</div>
+          </div>
+          <div class="flip-back">
+            Owner of Mountain Refined Furnishings &amp; Flooring, a family business on Main Street she took over from her parents in 2016 — now the largest home-goods showroom in Wasatch County. Has publicly described Heber's Main Street as effectively a highway, not walkable — the exact problem CAMS's own mission is chartered to fix.
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="role-tag">Executive Director (paid staff, not board)</div>
+            <h3 class="name">Rachel Kahler</h3>
+            <div class="tap">tap to flip</div>
+          </div>
+          <div class="flip-back">
+            CAMS's one paid employee, appointed as the City's "special events coordinator" under the Professional Services Agreement. Her 2019 Heber City municipal disclosures are on file, showing she has complied with disclosure rules before — but her 2026 county-level filing shows a gap. Also sits on the North Village Special Service District Admin. Control Board.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>The timeline</h2>
+    <table class="timeline">
+      <tr><td class="date">Oct. 21, 2025</td><td>City Council holds a lengthy discussion about contracting with CAMS for downtown event programming; directs staff to draft an agreement.</td></tr>
+      <tr><td class="date">Jan. 13, 2026</td><td>CAMS's own board — including Brower — unanimously approves the Professional Services Agreement at CAMS's board meeting. One week before the City even votes.</td></tr>
+      <tr><td class="date">Jan. 20, 2026</td><td>City Council approves the agreement 5–0. The staff report, authored under Brower's name, lists him only inside a routine board roster — no standalone conflict-of-interest disclosure. Meeting minutes record "no conflicts disclosed."</td></tr>
+      <tr><td class="date">(undated)</td><td>An undisclosed person files a complaint with the Utah State Auditor, alleging Brower didn't adequately disclose his CAMS seat and that the City didn't strictly follow its own procurement process.</td></tr>
+      <tr><td class="date">April 14, 2026</td><td>City Council votes 4–2 to renew Brower's contract through May 2029, the same day a petition with 300+ signatures asking for non-renewal is submitted.</td></tr>
+      <tr><td class="date">April 21, 2026</td><td>City Council formally ratifies the CAMS agreement a second time, after the City re-noticed it as a "sole source" procurement to address the auditor complaint.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>The signature nobody expected</h2>
+    <p>The final, signed Professional Services Agreement contains a standard recital: "City caused this Agreement to be signed by its <em>mayor</em> and attested by its city recorder."</p>
+    <p>The actual signature block that follows has no line for the Mayor at all. It has one line: <strong>Matt Brower, City Manager.</strong></p>
+    <div class="quote-card">
+      The same person who sits on CAMS's board, who helped approve this deal as a CAMS board member on January 13, and who authored the staff report recommending it to the City Council — is also the only person who signed for the City.
+    </div>
+  </section>
+
+  <section>
+    <h2>What CAMS's own rules say about this</h2>
+    <p>CAMS's bylaws, signed 2023, list among the powers reserved to its full Board of Directors: <strong>"Approve any self-dealing transaction, except as provided pursuant to Law."</strong></p>
+    <p>In other words, CAMS's own governing document anticipated exactly this kind of situation — a board member with a competing interest in a CAMS transaction — and built a required approval step for it. Whether the Heber City contract was ever formally treated and approved as a "self-dealing transaction" under that provision is not shown in any document obtained so far.</p>
+    <details>
+      <summary>What the contract itself pays CAMS</summary>
+      <p>$39,900 per year, paid quarterly, for a term running through 2028–29 with automatic annual renewal, increasing each year by CPI. CAMS also keeps most event-sponsorship revenue, splits Heber Market on Main sponsorships 50/50 with the City, and can pursue additional TAP tax grants on top of the contract. The City throws in police services, insurance, marketing support, and storage space in a former city administration building.</p>
+    </details>
+    <details>
+      <summary>The money that doesn't add up yet</summary>
+      <p>CAMS's 2024 financials show a single expense line — "Main Street Beautification" — that made up roughly 90% of that year's entire budget. That line collapsed to a fraction of its size in 2025. What the 2024 figure actually funded has not yet been identified in any document obtained. Separately, CAMS's "Program Support" line jumped more than 20-fold from 2024 to 2025 — a year total revenue fell sharply.</p>
+    </details>
+  </section>
+
+  <section>
+    <h2>The public response</h2>
+    <p>A petition titled "Petition of No Confidence," submitted April 14, 2026 by resident Bridget Whiting on behalf of "concerned residents of Heber Valley," collected 335 online signatures plus additional paper signatures — north of 300 total. It asked the Council to decline to renew Brower's contract, citing early renewal timing, salary increases, agreements with outside organizations, and declining public confidence. It explicitly did not allege criminal conduct.</p>
+    <p>Public comment emails submitted the same week raised additional, more specific concerns:</p>
+    <div class="quote-card">
+      "Matt's recent statement in Park Record contradicts what was reported in Lincoln CA in regards to his knowledge of fraud."
+      <cite>— Kelli Gomez, public comment, April 14, 2026</cite>
+    </div>
+    <div class="quote-card">
+      "I am aware that Sid Ostergaard has a conflict of interest with any decision made on the City Manager's contract renewal, since Sid personally benefited from a contract awarded by the City Manager a few years ago."
+      <cite>— Tracy Taylor, Wasatch Taxpayers Association, April 14, 2026</cite>
+    </div>
+    <p class="support-note">Not everyone opposed renewal — at least one resident, Larry Saylor, wrote in support, calling Brower "honest and trustworthy and loyal." Opposition was organized and vocal, but not unanimous.</p>
+  </section>
+
+  <section>
+    <h2>What a 501(c)(3) can't do politically</h2>
+    <p>CAMS's own materials describe its work as "community advocacy" — a January 2024 CAMS blog post is titled "CAMS Advocacy Initiatives," and its stated mission includes "community advocacy and education." That word choice matters more than it might seem, because of what CAMS became later that same year.</p>
+    <div class="fact">
+      <strong>As a 501(c)(3)</strong> — the status CAMS holds today — federal law imposes an absolute ban on participating or intervening in any political campaign for or against a candidate for public office. No endorsements, no contributions, no coordination with a campaign, in any form. Violating this risks the organization's tax-exempt status entirely, plus excise taxes on the organization and potentially on individual board members who knowingly approved the activity. Lobbying is allowed, but only in limited amounts — it cannot be a "substantial part" of the organization's activities.
+    </div>
+    <p>CAMS was not always under these rules. Its original classification — a 501(c)(6) business league — has real latitude for political activity: lobbying is essentially unrestricted, and even some campaign-related activity is allowed, so long as it runs through a segregated fund rather than the organization's general treasury. The 2024 conversion to 501(c)(3) status didn't just change CAMS's tax treatment — it fundamentally tightened what the organization is legally permitted to do, and when.</p>
+    <p>Whether CAMS's own "advocacy" activities — under either classification, before or after the 2024 conversion — have ever touched a candidate or a campaign is not addressed in any document obtained so far. It's a fair, specific question: what does "advocacy" mean in practice for an organization whose board includes a sitting City Manager (Matt Brower)?</p>
+  </section>
+
+  <section>
+    <h2>Two entities, not one</h2>
+    <p>CAMS describes itself as "now in its twenty-second year." The state's own corporate records tell a different story.</p>
+    <div class="fact">
+      <strong>Community Alliance for Main Street</strong> — the original entity — was formed June 2, 2005. It was administratively dissolved by the state on October 4, 2006, after failing to renew. It existed as a legal entity for barely 16 months.
+    </div>
+    <div class="fact">
+      <strong>Community Alliance for Main Street, Inc.</strong> — a wholly separate, new entity, with its own entity number — wasn't formed until June 3, 2019, thirteen years later. This is the entity that holds the City's contract today.
+    </div>
+    <p>As of today, September 3, 2026, that current entity's status with the Utah Division of Corporations is listed as <strong>Active, but Delinquent.</strong> This is a live status, checked directly, not historical data.</p>
+    <details>
+      <summary>The missing federal filings</summary>
+      <p>CAMS's history describes years of operation as a 501(c)(6) organization before its 2024 conversion to a 501(c)(3). No federal tax filings from that earlier period turn up anywhere — not on ProPublica's Nonprofit Explorer, not indexed anywhere online. CAMS's first-ever Form 990-EZ, for fiscal year 2024, is marked "Initial Return." That label is consistent with an organization that either never held a formal federal exemption before, or lost one to automatic revocation for failing to file — the IRS automatically revokes tax-exempt status after three consecutive years without a required filing.</p>
+    </details>
+  </section>
+
+  <section>
+    <h2>Questions worth asking directly</h2>
+    <ul>
+      <li>Is CAMS currently in good standing with the Utah Division of Corporations — if not, how long has it been delinquent, and why did the City sign a $119,700 contract with an entity that isn't?</li>
+      <li>CAMS claims "22 years" of continuous existence, but the original 2005 entity was administratively dissolved in 2006 and a wholly new entity wasn't formed until 2019 — which entity actually signed the City's contract, and does the City vet whether its contracted vendors are in good standing?</li>
+      <li>What did the $347,465.54 "Main Street Beautification" expense in 2024 actually pay for, and why isn't it itemized anywhere public?</li>
+      <li>Why did that spending collapse 99% the very next year, the same year CAMS's total income also fell 73%?</li>
+      <li>CAMS's own 990-EZ shows $193,966 in 2024 gross receipts; its own balance sheet shows roughly $387,933 for the same year — which is accurate, and why don't CAMS's own documents agree with each other?</li>
+      <li>Why did CAMS's "Program Support" line increase more than 20-fold in a single year while total revenue was falling?</li>
+      <li>Was the City's contract ever formally reviewed and approved as a "self-dealing transaction" under CAMS's own bylaws, given a sitting City Manager (Matt Brower) sat on both sides of it?</li>
+      <li>The contract states the Mayor was to sign for the City — why does the actual signature page show only the City Manager (Matt Brower), with no Mayor's line at all?</li>
+      <li>CAMS's board approved this contract a week before the City Council did — was that sequencing disclosed to the Council before its own vote?</li>
+      <li>CAMS's current public board list doesn't match the board named in the City's own staff reports one day earlier — has the board actually changed, when, and why wasn't that reported?</li>
+      <li>If CAMS operated as a 501(c)(6) for years before 2024 as it claims, where are its federal tax filings from that period — was its exempt status ever automatically revoked by the IRS for failing to file?</li>
+      <li>Did the City know, when it signed this contract, that CAMS had not yet received IRS 501(c)(3) recognition — and does the City verify tax-exempt status before contracting with nonprofits at all?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What's still unconfirmed</h2>
+    <p>The Sid Ostergaard conflict-of-interest claim, the Park Record/Lincoln CA contradiction claim, what the 2024 CAMS "Beautification" expense actually bought, and whether CAMS's board ever formally treated the City contract as a "self-dealing transaction" under its own bylaws — none of these are resolved by any document obtained so far. They are documented here as claims and open questions, not established facts.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <h3>The Weber County Hive · Unelected Power</h3>
+    <p>Sourced from Heber City Council staff reports and minutes (Jan. 6, 20, and April 21, 2026), the CAMS Professional Services Agreement, CAMS bylaws and financial statements, a public petition, and public comment emails — all public records.</p>
+    <div class="links">
+      <a href="index.html">← All profiles</a>
+      <a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener">webercountyhive.substack.com ↗</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
