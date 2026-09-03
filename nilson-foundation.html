@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ten Days — The Nilson Foundation's 501(c)(3) Claim | Transparency</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F3ECE0; --paper-dim:#E9E0D0; --void:#181210; --void-2:#241A17;
+    --maroon:#6E1F2B; --maroon-dim:#8C3B44; --ink:#211714; --ink-soft:#4A3B35;
+    --line:#C9BBA4; --gold:#B4863C; --max:900px;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Sans 3',sans-serif;font-size:17px;line-height:1.62;}
+  ::selection{background:var(--maroon);color:var(--paper);}
+  a{color:var(--maroon);}
+  a:hover{color:var(--maroon-dim);}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);margin:0;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  .topbar{background:var(--void);color:var(--paper-dim);padding:12px 24px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .topbar a{color:var(--paper-dim);text-decoration:none;opacity:.8;}
+  .topbar a:hover{opacity:1;color:#fff;}
+
+  header.masthead{padding:72px 24px 48px;border-bottom:3px solid var(--void);max-width:var(--max);margin:0 auto;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--maroon);display:inline-block;}
+  h1.title{font-size:clamp(32px,5.4vw,52px);line-height:1.08;letter-spacing:-0.01em;max-width:780px;}
+  h1.title em{font-style:italic;color:var(--maroon);}
+  .dek{font-size:19px;color:var(--ink-soft);max-width:680px;margin-top:20px;line-height:1.5;}
+  .byline{margin-top:22px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.05em;color:var(--ink-soft);}
+
+  section.plain{background:var(--paper-dim);border-bottom:1px solid var(--line);padding:48px 24px 52px;}
+  section.plain .wrap{max-width:var(--max);}
+  section.plain .eyebrow{margin-bottom:24px;}
+  .chain{list-style:none;margin:0;padding:0;counter-reset:step;}
+  .chain li{counter-increment:step;position:relative;padding:0 0 22px 46px;font-size:16.5px;color:var(--ink);}
+  .chain li:last-child{padding-bottom:0;}
+  .chain li::before{content:counter(step);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--maroon);color:var(--paper);font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;}
+  .chain li::after{content:"";position:absolute;left:14.5px;top:32px;width:2px;height:calc(100% - 32px);background:var(--line);}
+  .chain li:last-child::after{display:none;}
+  .headline-claim{margin-top:30px;padding:22px 26px;background:var(--void);color:var(--paper);font-family:'Fraunces',serif;font-size:1.25rem;font-style:italic;border-left:5px solid var(--gold);}
+
+  main{max-width:var(--max);margin:0 auto;padding:56px 24px 80px;}
+  section{margin-bottom:56px;}
+  section h2{font-size:1.7rem;border-bottom:2px solid var(--maroon);padding-bottom:12px;margin:0 0 22px;}
+  section h3{font-size:1.15rem;font-family:'Fraunces',serif;color:var(--maroon-dim);margin:28px 0 10px;}
+  p{margin:0 0 16px;}
+  ul{margin:0 0 16px;padding-left:24px;}
+  li{margin-bottom:6px;}
+
+  .fact{background:#fff;border:1px solid var(--line);border-left:4px solid var(--maroon);padding:18px 22px;margin:0 0 16px;font-size:0.98rem;}
+  .fact strong{color:var(--maroon-dim);}
+
+  .live-badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--void);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    padding:4px 10px;
+    margin-bottom:14px;
+  }
+
+  table.timeline{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:0.95rem;}
+  table.timeline td{vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line);}
+  table.timeline td.date{white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:0.85rem;color:var(--maroon-dim);width:130px;}
+
+  .quote-card{background:var(--void);color:var(--paper);padding:20px 24px;margin:0 0 16px;font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;}
+  .quote-card cite{display:block;margin-top:12px;font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.03em;color:var(--gold);}
+
+  details{background:#fff;border:1px solid var(--line);padding:16px 20px;margin-bottom:12px;}
+  summary{cursor:pointer;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:0.85rem;letter-spacing:.02em;color:var(--maroon-dim);}
+  details p{margin-top:14px;}
+
+  .people-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin:20px 0;}
+  @media(max-width:760px){.people-grid{grid-template-columns:1fr;}}
+  .person-card{background:#fff;border:1px solid var(--line);border-left:4px solid var(--gold);padding:20px 22px;}
+  .person-card .role-tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--maroon);margin-bottom:8px;}
+  .person-card h3{margin:0 0 10px;font-size:1.1rem;}
+  .person-card p{font-size:0.9rem;margin-bottom:10px;}
+  .person-card a.profile-link{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.03em;text-transform:uppercase;}
+
+  .not-illegal{border:1px dashed var(--line);padding:16px 20px;font-size:0.9rem;color:var(--ink-soft);margin-bottom:16px;}
+
+  footer.site-footer{background:var(--void);color:var(--paper-dim);padding:40px 24px 50px;}
+  footer.site-footer .wrap{display:flex;flex-direction:column;gap:14px;}
+  footer.site-footer h3{color:#fff;font-size:20px;}
+  footer.site-footer p{color:#B8A899;font-size:14px;max-width:620px;line-height:1.6;margin:0;}
+  footer.site-footer .links{display:flex;gap:22px;flex-wrap:wrap;margin-top:8px;}
+  footer.site-footer a{color:var(--gold);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.03em;}
+  footer.site-footer a:hover{color:#fff;}
+
+  @media(max-width:600px){header.masthead{padding:48px 18px 32px;}main{padding:40px 18px 60px;}section.plain{padding:36px 18px 40px;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>The Weber County Hive · Transparency</span>
+  <a href="index.html">← All case files</a>
+</div>
+
+<header class="masthead">
+  <div class="eyebrow">Case File · Charitable Solicitation</div>
+  <h1 class="title">Ten Days <em>Too Soon</em> — Still Claiming It Two Months Later</h1>
+  <p class="dek">A new Ogden nonprofit told donors their gifts were tax-deductible before it had any legal basis to say so. Weeks later, the same claim is still live on its own website.</p>
+  <div class="byline mono">THE WEBER COUNTY HIVE</div>
+</header>
+
+<section class="plain">
+  <div class="wrap">
+    <div class="eyebrow">The short version</div>
+    <ol class="chain">
+      <li>A new charity, the Nilson Foundation, was created in Utah on July 21, 2026.</li>
+      <li>Ten days later, it posted a flyer online asking people to donate — furniture, beds, household goods.</li>
+      <li>The flyer had a badge on it that said "501(c)(3) NONPROFIT" and told donors their gifts were "Tax-Deductible."</li>
+      <li>That badge wasn't true yet. Getting real federal tax-exempt status normally takes months, not ten days.</li>
+      <li>A direct IRS records search confirms it: the Nilson Foundation has no federal 501(c)(3) determination at all.</li>
+      <li>Weeks later, the claim is still up — not just on the original flyer, but on the organization's own live website, in two separate places.</li>
+    </ol>
+    <div class="headline-claim">A charity told donors their gifts were tax-deductible before it had any legal basis to say so — and it's still telling them that today.</div>
+  </div>
+</section>
+
+<main>
+
+  <section>
+    <h2>Who's involved</h2>
+    <div class="people-grid">
+      <div class="person-card">
+        <div class="role-tag">President, Nilson Foundation Inc.</div>
+        <h3>Jed Nilson</h3>
+        <p>CEO of Nilson Homes / Nilson & Company, an Ogden-area homebuilder. Has served nearly 30 years as a director of the Utah Association of Realtors' own Housing Opportunity Fund — meaning he has decades of direct experience with how a legitimate affiliated charitable fund is supposed to operate.</p>
+      </div>
+      <div class="person-card">
+        <div class="role-tag">Treasurer, Registered Agent & Incorporator</div>
+        <h3>Mike Ostermiller</h3>
+        <p>CEO of the Northern Wasatch Association of Realtors, a Military Installation Development Authority board member, and a registered Utah lobbyist since 2012 — already profiled in this outlet's Unelected Power series. Personally filed the Foundation's incorporation paperwork at his own home address.</p>
+        <a class="profile-link" href="../Unelected-Power/mike-ostermiller.html">His full profile in Unelected Power →</a>
+      </div>
+      <div class="person-card">
+        <div class="role-tag">Secretary</div>
+        <h3>Anne Dunaway</h3>
+        <p>Owner of an Ogden urban farm, Urban Prairie Agriculture, and a trustee of a separate Utah nonprofit, Eden Streets Inc., since 2020 — six years before the Nilson Foundation was formed. Also has prior nonprofit-sector employment history.</p>
+      </div>
+    </div>
+    <p>Nilson and Ostermiller are also co-directors of a separate, earlier nonprofit, The Healing Collective Utah Inc. (formed August 2025) — this is their second joint nonprofit filing together in under a year.</p>
+  </section>
+
+  <section>
+    <h2>The timeline</h2>
+    <table class="timeline">
+      <tr><td class="date">June 9, 2026</td><td>The domain nilsonfoundation.com is registered — six weeks before the organization is legally formed.</td></tr>
+      <tr><td class="date">July 21, 2026</td><td>Nilson Foundation Inc. incorporated in Utah — Entity #14718161-0140, registered address 1740 Combe Road, Ogden. Its stated purpose is purely generic charitable boilerplate, naming no specific mission.</td></tr>
+      <tr><td class="date">July 31, 2026</td><td>A Facebook post announces the Foundation's "grand opening." A badge on the flyer reads "501(c)(3) NONPROFIT." A companion flyer requesting specific household items states "ALL DONATIONS ARE Tax-Deductible" with "RECEIPTS PROVIDED FOR ALL QUALIFYING DONATIONS."</td></tr>
+      <tr><td class="date">Aug. 31 &amp; Sept. 3, 2026</td><td>A direct search of the IRS Tax Exempt Organization Search confirms: no 501(c)(3) determination exists for the Nilson Foundation, or for any organization under the Nilson name. First checked Aug. 31, 2026; reconfirmed Sept. 3, 2026, the date of this update — same result both times.</td></tr>
+      <tr><td class="date">September 2026</td><td><span class="live-badge">Confirmed still live</span><br>The organization's own website, nilsonfoundation.com, still displays "✓ 501(c)(3) Nonprofit — donations are tax-deductible" on its homepage, and its footer states "A 501(c)(3) nonprofit organization." The site is fully built out — an online donation form, a family assistance request form, and active solicitation of local business sponsorships.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>What the law actually says</h2>
+    <p>Utah changed its charity-registration rules in 2024. It's worth being precise about what changed and what didn't, because there are really two separate questions here — only one of which is actually against the law.</p>
+
+    <h3>What the IRS says</h3>
+    <p>An organization is not legally tax-exempt under 501(c)(3) until the IRS itself issues a determination letter. Until that letter arrives, the organization is treated as a taxable entity for federal purposes. If it files Form 1023 within 27 months of its formation date and is later approved, the exemption applies retroactively back to formation — meaning early donors could eventually claim their deduction. If the application is denied, or never filed, the organization was never exempt, and any donor who already claimed a deduction based on the organization's promise risks having it disallowed by the IRS on audit.</p>
+    <p>The IRS itself has no specific penalty aimed at an organization for prematurely <em>claiming</em> exempt status in its own marketing. Its enforcement mechanism is about the organization's own tax liability, and the donor's deduction — not policing what a charity says in a flyer.</p>
+
+    <h3>What Utah says</h3>
+    <div class="not-illegal">
+      <strong>Not illegal:</strong> soliciting donations right after incorporating. Utah repealed its old pre-registration requirement effective May 1, 2024. A brand-new nonprofit is legally free to start asking for donations immediately — there's no waiting period.
+    </div>
+
+    <div class="fact">
+      <strong>The actual legal problem:</strong> a 2024 Utah law, H.B. 43, added language to the state's Consumer Sales Practices Act making it a "deceptive act or practice" to falsely indicate, in connection with a charitable solicitation, that a donation carries "an additional benefit, including a tax benefit." Utah's separate charitable-solicitation statute independently bars any "false statement of a material fact" in a solicitation. Neither the original flyer nor the current website ever uses a qualifier like "pending" — both flatly claim exempt status outright. <strong>This is where the real, enforceable penalty against the organization actually lives</strong> — not in federal tax law, but in Utah's own consumer-protection statute.
+    </div>
+
+    <h3>What this actually risks for donors</h3>
+    <div class="quote-card">
+      If a donor claims the deduction now, before any determination exists, and the Nilson Foundation's application is ultimately denied — or never filed at all — that donor would be claiming a deduction they were never entitled to. The IRS can disallow it on audit, with penalties and interest. There's no automatic mechanism where the IRS catches up and retroactively grants the credit — it's entirely on the donor to track the organization's status, and to file an amended return themselves if they already claimed it. That's the real exposure for anyone who gave based on the flyer's flat "tax-deductible" claim, rather than being told the status was pending.
+    </div>
+
+    <h3>What compliant language actually looks like</h3>
+    <p>These are the specific claims that are problematic without an actual IRS determination:</p>
+    <ul>
+      <li>"We are an IRS-approved 501(c)(3)."</li>
+      <li>"Your donation is tax-deductible," without explaining that approval is pending and deductibility is uncertain.</li>
+      <li>Displaying an invented determination date or exemption letter.</li>
+      <li>Claiming to appear in the IRS Tax Exempt Organization Search when the organization does not.</li>
+    </ul>
+    <p>The accurate wording an organization in this position should use instead:</p>
+    <div class="quote-card">
+      "We are a Utah nonprofit corporation and have applied for recognition under §501(c)(3). Our application is pending. Donations are not assured to be tax-deductible unless and until the IRS approves our exemption for the relevant period."
+      <cite>— what compliant marketing language looks like</cite>
+    </div>
+    <p>Neither the Nilson Foundation's original flyer nor its current website uses language resembling this. Both state, without qualification, that the organization is a "501(c)(3) Nonprofit" and that donations "are tax-deductible."</p>
+
+    <details>
+      <summary>What penalties actually attach to this</summary>
+      <p>Utah's Division of Consumer Protection can issue citations, cease-and-desist orders, and administrative fines up to $2,500 per violation — or up to $10,000 for a series of violations from the same facts. A court can add fines up to $2,000 per violation, disgorgement, injunctive relief, and civil penalties up to $5,000 for violating an order. Separately, a person who willfully violates Utah's charitable-solicitation law is guilty of a class B misdemeanor, with each day of a continuing violation counted as a separate offense.</p>
+    </details>
+
+    <p>H.B. 43's chief sponsor was Rep. A. Cory Maloy; Senate sponsor was Sen. Curtis Bramble.</p>
+  </section>
+
+  <section>
+    <h2>Why this is being watched closely</h2>
+    <p>This isn't the first time a newly formed, politically-connected Utah nonprofit has drawn scrutiny over how it's funded. Utah Workforce Housing Advocacy — a separate organization formed by politically connected individuals — has previously been reported on for receiving taxpayer funding routed through the Governor's Office of Economic Opportunity (GOEO). Whether the Nilson Foundation follows a similar funding path, or remains privately funded as its founders have said they intend, is an open question this outlet continues to track. Nothing found so far indicates the Foundation has sought or received any public funding — this is a question being asked in advance, not an allegation.</p>
+  </section>
+
+  <section>
+    <h2>What's still unconfirmed</h2>
+    <p>Who specifically administers the Nilson Foundation's Facebook page has not been independently confirmed. Whether the organization has since filed Form 1023 with the IRS is also unconfirmed — the IRS Tax Exempt Organization Search reflects determinations, not pending applications, so a filed-but-not-yet-approved application would not necessarily appear there. Neither gap changes the two facts that are independently confirmed: the "501(c)(3)" and "tax-deductible" claims were made, without qualification, on marketing materials — and continue to be made today.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <h3>The Weber County Hive · Transparency</h3>
+    <p>Sourced from Nilson Foundation Inc.'s Utah Articles of Incorporation and state entity record, its public Facebook solicitation posts, its live website (nilsonfoundation.com), a direct IRS Tax Exempt Organization Search, WHOIS domain registration records, and the text of Utah H.B. 43 (2024).</p>
+    <div class="links">
+      <a href="index.html">← All case files</a>
+      <a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener">webercountyhive.substack.com ↗</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
