@@ -124,5 +124,15 @@ const CASES = [
     updated: "Sep 8, 2026",
     link: "weber-hive-gsl-two-money-pots.html",
     pairWith: "CASE 2026-BSW-01"
+  },
+  {
+    caseNumber: "CASE 2026-STAX-01",
+    title: "A Public Vote, but No Vote by the Public",
+    category: "Public Finance",
+    summary: "Weber County imposed a new 0.20% sales tax without a ballot question or a Truth in Taxation hearing — while committing hundreds of millions in PID and tax-increment revenue across five separate mechanisms the same way, and running documented deficits across multiple county funds in the same period.",
+    officials: ["Gage Froerer", "Weber County Commission"],
+    status: "documented",
+    updated: "Sep 11, 2026",
+    link: "weber-hive-5th5th-sales-tax.html"
   }
 ];
