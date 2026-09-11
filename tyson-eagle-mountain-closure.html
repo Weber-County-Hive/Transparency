@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tyson Leaves Eagle Mountain Five Years After Opening | The Weber County Hive</title>
+<meta name="description" content="What Utah paid Tyson Foods, what went unclaimed, and what taxpayers still don't know after the Eagle Mountain plant's closure.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#FAF7F2;
+    --gold:#D4AF37;
+    --warm-gold:#96723F;
+    --cream:#111008;
+    --gray:#6B6355;
+    --line:rgba(212,175,55,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--black);
+    color:var(--cream);
+    font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--warm-gold);}
+  a:hover{color:var(--gold);}
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+  .masthead{padding:56px 24px 40px;text-align:center;}
+  .hexagon{width:44px;height:44px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;position:relative;}
+  .hexagon svg{width:100%;height:100%;}
+  .lockup{font-family:'Playfair Display', serif;}
+  .lockup .hive{color:var(--gold);font-size:22px;letter-spacing:0.18em;font-weight:700;text-transform:uppercase;}
+  .lockup .county{display:block;color:var(--gray);font-size:12px;letter-spacing:0.32em;text-transform:uppercase;margin-top:4px;}
+  .eyebrow-link{display:inline-block;margin-top:22px;font-family:'Source Serif 4', Georgia, serif;font-style:italic;font-size:14px;color:var(--warm-gold);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;}
+  .eyebrow-link:hover{color:var(--gold);border-color:var(--gold);}
+
+  .article-header{padding:8px 24px 44px;text-align:center;border-bottom:1px solid var(--line);}
+  .kicker{font-family:'Source Serif 4', Georgia, serif;font-style:italic;color:var(--warm-gold);font-size:15px;letter-spacing:0.02em;margin-bottom:18px;}
+  h1{font-family:'Playfair Display', serif;font-weight:700;font-size:clamp(28px, 4.2vw, 44px);line-height:1.18;color:var(--cream);margin:0 0 14px;}
+  .subhead{font-family:'Playfair Display', serif;font-style:italic;font-weight:600;font-size:19px;color:var(--warm-gold);margin:0 0 20px;}
+  .dek{font-family:'Source Serif 4', Georgia, serif;font-style:italic;color:var(--warm-gold);font-size:18px;line-height:1.55;max-width:600px;margin:0 auto;}
+  .byline{margin-top:26px;color:var(--gray);font-size:13px;letter-spacing:0.06em;text-transform:uppercase;}
+  .byline span{color:var(--warm-gold);}
+
+  article{padding:52px 24px 20px;}
+  article p{font-size:18px;color:#242017;margin:0 0 24px;}
+  article h2{font-family:'Playfair Display', serif;font-weight:600;font-style:italic;color:var(--gold);font-size:26px;margin:52px 0 22px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+  article h2:first-of-type{margin-top:8px;}
+  .lede{font-size:20px;color:var(--cream);}
+  .figure-line{margin:32px 0;padding:22px 26px;border-left:2px solid var(--gold);background:rgba(212,175,55,0.05);}
+  .figure-line p{margin:0;font-size:17px;color:var(--cream);}
+  .figure-line p + p{margin-top:12px;}
+  blockquote{margin:32px 0;padding:22px 26px;border-left:2px solid var(--warm-gold);background:rgba(212,175,55,0.05);font-style:italic;font-size:17px;color:var(--cream);}
+  blockquote p{margin:0;font-size:17px;color:var(--cream);}
+  .callout{margin:36px 0;padding:24px 28px;border:1px solid var(--line);background:rgba(212,175,55,0.03);}
+  .callout .label{display:block;color:var(--warm-gold);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:12px;}
+  .callout p{margin:0;font-size:16px;color:#242017;}
+  .callout p + p{margin-top:14px;}
+  .callout ul{margin:0;padding-left:20px;}
+  .callout li{font-size:16px;color:#242017;margin-bottom:8px;}
+  .divider{width:56px;height:1px;background:var(--gold);margin:56px auto;}
+  .closing p{font-size:19px;}
+  .closing p:last-of-type{font-style:italic;color:var(--cream);}
+
+  .sources{padding:20px 24px 8px;border-top:1px solid var(--line);margin-top:20px;}
+  .sources summary{font-family:'Source Serif 4', Georgia, serif;font-style:italic;font-weight:400;cursor:pointer;color:var(--warm-gold);font-size:14px;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 4px;list-style:none;padding:6px 0;display:flex;align-items:center;gap:10px;}
+  .sources summary::-webkit-details-marker{display:none;}
+  .sources summary::before{content:"›";display:inline-block;font-size:18px;color:var(--gold);transform:rotate(0deg);transition:transform 0.18s ease;}
+  .sources[open] summary::before{transform:rotate(90deg);}
+  .sources[open] summary{margin-bottom:18px;}
+  .sources ul{margin:0;padding:0;list-style:none;}
+  .sources li{font-size:14px;color:var(--gray);padding:9px 0;border-bottom:1px solid rgba(0,0,0,0.08);}
+  .sources li:last-child{border-bottom:none;}
+  .method-note{margin-top:20px;font-size:13px;font-style:italic;color:var(--gray);}
+
+  footer{text-align:center;padding:56px 24px 64px;}
+  .footer-line{color:var(--gold);font-size:12px;letter-spacing:0.28em;text-transform:uppercase;margin-bottom:10px;}
+  .footer-url{color:var(--gray);font-size:13px;}
+
+  .viz-block{margin:44px 0;padding:30px 26px;border:1px solid var(--line);background:rgba(212,175,55,0.04);}
+  .viz-title{font-family:'Source Serif 4', Georgia, serif;font-style:italic;color:var(--warm-gold);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;margin:0 0 20px;}
+  .viz-caption{font-size:14px;color:var(--gray);font-style:italic;margin:16px 0 0;}
+  .mermaid{background:transparent;display:flex;justify-content:center;overflow-x:auto;}
+
+  .data-table{width:100%;border-collapse:collapse;margin:0;}
+  .data-table th{text-align:left;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gold);font-weight:400;padding:0 12px 10px 0;border-bottom:1px solid var(--gold);}
+  .data-table td{font-size:15px;color:#242017;padding:12px 12px 12px 0;border-bottom:1px solid rgba(0,0,0,0.08);vertical-align:top;}
+  .data-table td.num{font-family:'Playfair Display', serif;font-weight:700;color:var(--warm-gold);white-space:nowrap;}
+  .data-table tr:last-child td{border-bottom:none;}
+
+  .glossary{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 8px;}
+  .glossary details{border:1px solid var(--line);background:rgba(212,175,55,0.04);}
+  .glossary summary{cursor:pointer;list-style:none;padding:9px 16px;font-size:13px;letter-spacing:0.03em;color:var(--warm-gold);font-family:'Source Serif 4', Georgia, serif;display:flex;align-items:center;gap:6px;}
+  .glossary summary::-webkit-details-marker{display:none;}
+  .glossary summary::before{content:"+";color:var(--gold);font-weight:700;}
+  .glossary details[open] summary::before{content:"−";}
+  .glossary details[open] summary{border-bottom:1px solid var(--line);}
+  .glossary p{margin:0;padding:12px 16px 14px;font-size:14px;color:#242017;line-height:1.6;}
+
+  .quicknav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--line);}
+  .quicknav a{font-size:12px;letter-spacing:0.04em;color:var(--warm-gold);text-decoration:none;border:1px solid var(--line);padding:6px 12px;white-space:nowrap;}
+  .quicknav a:hover{color:var(--gold);border-color:var(--gold);}
+
+  .timeline{display:flex;flex-direction:column;gap:0;margin:8px 0;}
+  .tl-item{display:flex;gap:18px;padding:0 0 26px;position:relative;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{content:"";position:absolute;left:7px;top:22px;bottom:0;width:1px;background:var(--line);}
+  .tl-item:last-child::before{display:none;}
+  .tl-dot{width:16px;height:16px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:2px;}
+  .tl-dot.hollow{background:var(--black);border:2px solid var(--warm-gold);}
+  .hero-stat{padding:8px 24px 44px;text-align:center;max-width:760px;margin:0 auto;}
+  .hs-number{
+    font-family:'Playfair Display', serif;font-weight:700;
+    font-size:clamp(38px,7vw,64px);
+    color:var(--gold);letter-spacing:0.01em;line-height:1.05;
+    margin:0 0 8px;
+  }
+  .hs-sub{
+    font-family:'Playfair Display', serif;font-weight:600;font-style:italic;
+    font-size:clamp(18px,3vw,24px);
+    color:var(--warm-gold);margin:0 0 20px;
+  }
+  .hs-support{
+    font-size:16px;color:#242017;line-height:1.6;
+    max-width:480px;margin:0 auto;
+  }
+  .hs-support strong{color:var(--cream);}
+
+  .tl-year-box{font-family:'Playfair Display', serif;font-weight:700;text-align:center;padding:12px 8px;font-size:15px;color:#1A1408;}
+  .tl-h-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start;margin:8px 0 28px;}
+  .tl-h-grid .yr1{background:#D4AF37;}
+  .tl-h-grid .yr2{background:#C9A575;}
+  .tl-h-grid .yr3{background:#B4863C;color:#FAF7F2;}
+  .tl-h-grid .yr4{background:#F0E4CC;}
+  .tl-connector{width:0;height:20px;margin:0 auto;border-left:2px dashed var(--warm-gold);}
+  .tl-arrow-row{grid-column:1 / -1;position:relative;height:2px;background:var(--gold);margin:2px 0;}
+  .tl-arrow-row::after{content:"";position:absolute;right:-2px;top:-6px;width:0;height:0;border-top:7px solid transparent;border-bottom:7px solid transparent;border-left:10px solid var(--gold);}
+  .tl-detail-stack{display:flex;flex-direction:column;gap:8px;}
+  .tl-detail-box{border:1px solid var(--line);background:rgba(212,175,55,0.05);padding:10px 10px;font-size:13px;text-align:center;color:#242017;line-height:1.4;}
+  .headline-graphic{text-align:center;margin:20px 0 8px;}
+  .headline-graphic .hg-line{font-family:'Playfair Display', serif;font-weight:700;font-size:clamp(18px,3vw,24px);color:var(--cream);line-height:1.4;}
+  .headline-graphic .hg-line em{font-style:italic;color:var(--warm-gold);}
+  @media (max-width:600px){
+    .tl-h-grid{grid-template-columns:repeat(2,1fr);}
+    .tl-arrow-row{display:none;}
+  }
+
+  @media (max-width:520px){
+    article p, .lede{font-size:17px;}
+    .figure-line{padding:18px 18px;}
+    .callout{padding:20px 18px;}
+    .viz-block{padding:22px 16px;}
+  }
+  @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto;}}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="hexagon" aria-hidden="true">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,4 93,27 93,73 50,96 7,73 7,27" stroke="#D4AF37" stroke-width="3" fill="none"/>
+      <circle cx="30" cy="24" r="4" fill="#D4AF37"/>
+    </svg>
+  </div>
+  <div class="lockup">
+    <span class="hive">The Hive</span>
+    <span class="county">Weber County</span>
+  </div>
+  <a class="eyebrow-link" href="index.html">← Transparency: Accountability Case Files</a>
+</div>
+
+<div class="hero-stat">
+  <div class="hs-number">723 JOBS GONE</div>
+  <div class="hs-sub">Five Years After Tyson Opened</div>
+  <div class="hs-support">Utah authorized up to <strong>$5.26 million</strong> in post-performance tax credits.<br>How much was actually paid &mdash; and what happens now?</div>
+</div>
+
+<div class="article-header wrap">
+  <div class="kicker">Transparency · Economic Development Incentives</div>
+  <h1>Tyson Leaves Eagle Mountain Five Years After Opening</h1>
+  <p class="subhead">What Utah paid, what Tyson left unclaimed &mdash; and what taxpayers still don't know</p>
+  <p class="dek">Tyson Foods is closing its Eagle Mountain plant, ending 723 jobs, about seven years into a ten-year state incentive approved in 2019. The unclaimed balance isn't a public loss. What was actually paid out still isn't fully public.</p>
+  <div class="byline">The Weber County Hive <span>&middot;</span> Independent Accountability Journalism</div>
+</div>
+
+<div class="wrap">
+  <details class="sources" style="margin-top:0;">
+    <summary>Explain this simply</summary>
+    <div style="padding-top:4px;">
+      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">Imagine the state offers a factory owner a deal: "Build here, hire people, and pay taxes &mdash; and for ten years, we'll hand back a small slice of the new taxes you generate, but only after you've actually generated them, one year at a time."</p>
+      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">The factory opens in year two of the deal. It hires people. Some years it claims its slice back; some years it claims less than it could have. Then, about seven years into the ten-year agreement, the company closes the factory &mdash; for reasons tied to a national shortage in its industry, not this town.</p>
+      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">The state confirms the company won't get any more of that slice going forward. That part is simple. What's NOT simple, and not yet public: exactly how much of the slice the company already collected, whether the separate infrastructure grant was fully paid out, and whether either agreement has any recovery provisions at all. Nobody has published those numbers yet.</p>
+      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0;">What's real either way: workers looking for new jobs or leaving the state, a big empty building the city has to find a new use for, and a brand-new school district about to inherit a tax base that just changed.</p>
+    </div>
+  </details>
+
+  <div class="glossary">
+    <details><summary>EDTIF</summary><p>Economic Development Tax Increment Financing &mdash; Utah's standard state incentive tool. A company can earn back a share of the new state tax revenue it generates, but only after generating it.</p></details>
+    <details><summary>Post-Performance</summary><p>Utah's incentive structure: credits are earned annually, based on actual results already delivered &mdash; jobs created, taxes paid &mdash; not promised or advanced in cash up front.</p></details>
+    <details><summary>Clawback</summary><p>A contractual mechanism to recover money already paid out if conditions aren't later met. Whether either of Tyson's agreements contains one is not established in the record reviewed for this piece.</p></details>
+    <details><summary>GOEO</summary><p>Governor's Office of Economic Opportunity (formerly GOED) &mdash; the state agency that negotiates and administers Utah's economic development incentive agreements.</p></details>
+  </div>
+
+  <div class="quicknav">
+    <a href="#offered">Timeline &amp; deal</a>
+    <a href="#performance">Post-performance</a>
+    <a href="#local">Local incentive</a>
+    <a href="#received">What Tyson received</a>
+    <a href="#behind">Left behind</a>
+    <a href="#school">School district</a>
+    <a href="#ask">Ask your leaders</a>
+    <a href="#needed">Still needed</a>
+    <a href="#bottomline">Bottom line</a>
+  </div>
+</div>
+
+<article class="wrap">
+
+  <p class="lede">Tyson Foods announced in August 2026 that it will close its Eagle Mountain case-ready meat facility, eliminating 723 Utah jobs effective October 12.</p>
+
+  <p>The plant opened in 2021 &mdash; roughly five years before the closure, and about seven years after Utah approved a ten-year economic-development incentive for the project in 2019.</p>
+
+  <p>Tyson says the decision is part of a national restructuring rather than a problem unique to Utah. The company is operating amid a historic cattle shortage and deep losses in its beef business. As part of the same restructuring, Tyson is ending operations at its Joslin, Illinois beef facility and seeking a buyer for its facility in Pasco, Washington. Processing is being shifted toward larger facilities in Nebraska, Kansas, and Texas.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Tyson's Eagle Mountain Timeline</p>
+    <div class="tl-h-grid">
+      <div class="tl-year-box yr1">2019</div>
+      <div class="tl-year-box yr2">2021</div>
+      <div class="tl-year-box yr3">2026</div>
+      <div class="tl-year-box yr4">Approx. 2029</div>
+
+      <div class="tl-connector"></div>
+      <div class="tl-connector"></div>
+      <div class="tl-connector"></div>
+      <div class="tl-connector"></div>
+
+      <div class="tl-arrow-row"></div>
+
+      <div class="tl-connector"></div>
+      <div class="tl-connector"></div>
+      <div class="tl-connector"></div>
+      <div class="tl-connector"></div>
+
+      <div class="tl-detail-stack">
+        <div class="tl-detail-box">Utah approves 10-year incentive</div>
+        <div class="tl-detail-box">Construction begins</div>
+      </div>
+      <div class="tl-detail-stack">
+        <div class="tl-detail-box">Eagle Mountain plant opens</div>
+      </div>
+      <div class="tl-detail-stack">
+        <div class="tl-detail-box">Closure announced</div>
+        <div class="tl-detail-box">723 jobs affected</div>
+        <div class="tl-detail-box">Operations end October 12</div>
+      </div>
+      <div class="tl-detail-stack">
+        <div class="tl-detail-box">Original incentive term would have ended</div>
+      </div>
+    </div>
+    <div class="headline-graphic">
+      <div class="hg-line">The plant lasted <em>five years.</em></div>
+      <div class="hg-line">The incentive was designed for <em>ten.</em></div>
+    </div>
+  </div>
+
+  <h2 id="offered">What Utah offered</h2>
+
+  <p>In 2019, Utah's Governor's Office of Economic Development &mdash; now the Governor's Office of Economic Opportunity &mdash; authorized Tyson Fresh Meats to earn up to <strong>$5,258,324</strong> through Utah's Economic Development Tax Increment Financing program.</p>
+
+  <p>The agreement permitted Tyson to receive a post-performance credit worth up to 20% of the new state tax revenue attributed to the project over ten years. Utah also authorized a separate <strong>$300,000</strong> post-performance infrastructure grant.</p>
+
+  <div class="figure-line">
+    <p>The state projected the project would produce more than $202 million in new wages and approximately $26 million to $28 million in new state tax revenue over the agreement's life. Contemporary public announcements contain slightly different projected-tax figures, which should not be treated as money Tyson actually generated or received.</p>
+  </div>
+
+  <h2 id="performance">What "post-performance" means</h2>
+
+  <p>Utah did not write Tyson a $5.26 million check when the deal was approved.</p>
+
+  <p>Under the EDTIF program, a participating company must meet contractual requirements and generate eligible new state tax revenue before applying for an annual credit. The $5,258,324 was therefore the maximum Tyson could potentially earn &mdash; not an upfront payment or a guaranteed award.</p>
+
+  <p>Following the closure announcement, GOEO described the mechanism in plain terms: the agency confirmed Tyson's incentive was structured entirely as a post-performance rebate, credits earned and claimed one year at a time rather than advanced in a lump sum. As the agency put it, once the plant stops operating, Tyson:</p>
+
+  <blockquote>
+    <p>"will not be eligible for additional tax credits once operations cease."</p>
+  </blockquote>
+
+  <p>That establishes that Tyson will not continue earning EDTIF credits after the plant closes. It also means the unclaimed portion of the $5.26 million ceiling was never paid and does not need to be recovered. It does <strong>not</strong>, by itself, establish whether credits Tyson already received &mdash; or the separate $300,000 infrastructure grant &mdash; carry any contractual clawback provision of their own. That is a different, unanswered question.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">How Post-Performance Credits Work</p>
+    <div class="mermaid">
+flowchart TD
+    A["Tyson creates eligible jobs"] --> B["Plant generates new state taxes"]
+    B --> C["Tyson documents annual performance"]
+    C --> D["Utah approves an annual credit"]
+    D --> E["Tyson receives part of eligible taxes back"]
+    E -.->|"repeats annually"| A
+    F["Operations cease"] --> G["No additional credits earned"]
+    </div>
+    <p class="viz-caption">The cycle on the left repeats once a year, for as long as the plant operates. Closing the plant doesn't trigger a repayment &mdash; it just stops the cycle on the right.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">The 20% Figure, Reconciled</span>
+    <p>$5,258,324 (the EDTIF ceiling) plus $300,000 (the infrastructure grant) equals $5,558,324 &mdash; almost exactly 20% of $27.8 million in projected new state tax revenue. The 20% cap appears to apply to the combined package, not the EDTIF credit alone, which resolves the earlier discrepancy between the $5.26 million credit figure and the $27.8 million revenue projection.</p>
+  </div>
+
+  <h2 id="local">A separate local incentive, confirmed to exist</h2>
+
+  <p>The state EDTIF package was not the only public assistance Tyson received. Trade press coverage from May 2019 reported that Eagle Mountain City and the Alpine School District had separately approved a Community Reinvestment Project Area specifically to support the plant. Eagle Mountain's own Redevelopment Agency board adopted an official Project Area Plan and Budget for the <strong>Pole Canyon Community Reinvestment Project Area</strong> around the same month &mdash; an 80-acre project area in the same Pole Canyon industrial development where Tyson's plant is located, targeted specifically at industrial project development.</p>
+
+  <div class="figure-line">
+    <p>Two additional details are now confirmed. Utah County's own 2023 tax administration filing lists the county as a participating taxing entity receiving (and forgoing) increment under the Pole Canyon CRA specifically &mdash; which under Utah law generally means the county entered its own interlocal participation agreement, not merely that it's a nearby taxing jurisdiction. Separately, a 2025 Eagle Mountain public notice confirms <strong>Oquirrh Wood Ranch, LLC ("OWR")</strong> as a real entity holding land connected to the site &mdash; the notice describes the city receiving a sanitary sewer easement "from the Tyson plant across its property," consistent with OWR being the underlying landowner/developer for the project area.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">The $12.3 Million Figure, Now Sourced</span>
+    <p>The Lehi Free Press reported at the time, in May 2019, that the Alpine School District and Utah County Commission had jointly approved a $12.3 million tax break tied to the project. That figure is the aggregated total over the ten-year life of the incentive, attributed specifically to those two entities &mdash; not to Eagle Mountain City, which separately administers the Pole Canyon CRA itself.</p>
+  </div>
+
+  <p>The same article quoted Mayor Tom Westmoreland putting the underlying land value in context: the 80-acre parcel Tyson built on had generated roughly $13,000 a year in city tax revenue beforehand. The article drew a similar comparison to Eagle Mountain's other major incentive recipient at the time &mdash; the land under Facebook's data center had brought in only about $60 a year in tax revenue before that project was developed. City officials pointed to both examples as their rationale for offering incentives on largely undeveloped industrial land.</p>
+
+  <div class="callout">
+    <span class="label">What Still Isn't Confirmed</span>
+    <p>The $12.3 million figure now has a named, contemporaneous source, but the underlying CRA document itself &mdash; the Pole Canyon Project Area Plan and Budget &mdash; has not been obtained. That document would confirm the exact rebate percentage and duration terms, whether "4000 North" road and utility infrastructure was specifically funded through it, and which entities actually signed the interlocal agreement. Several comparable Eagle Mountain CRA plans (Sweetwater Industrial Park #2, #3, #4) are publicly posted with this level of detail; the Pole Canyon plan specifically has not yet turned up in the same way.</p>
+  </div>
+
+  <h2 id="received">How much did Tyson actually receive?</h2>
+
+  <p>That question does not yet have a sufficiently precise public answer.</p>
+
+  <p>UtahMoneyWatch, citing reporting by the Salt Lake Tribune, reported that Tyson claimed between 25% and 50% of its authorized state tax credit. Applied to the $5,258,324 ceiling, that produces a wide estimated range &mdash; not a confirmed figure:</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Estimated, Not Confirmed</p>
+    <table class="data-table">
+      <tr><th>Reported share claimed</th><th>Estimated EDTIF credits</th></tr>
+      <tr><td>25%</td><td class="num">~$1,314,581</td></tr>
+      <tr><td>50%</td><td class="num">~$2,629,162</td></tr>
+      <tr><td>Unclaimed balance</td><td class="num">~$2.63M&ndash;$3.94M</td></tr>
+    </table>
+    <p class="viz-caption">These are calculated estimates based on a reported percentage range &mdash; not confirmed annual payment totals from GOEO's own certificates. Described here as "reportedly claimed," not as established fact.</p>
+  </div>
+
+  <p>It also remains unclear from the records reviewed here whether Tyson received the entire separate $300,000 infrastructure grant, and whether either agreement contains provisions allowing Utah to recover previously paid money following an early closure.</p>
+
+  <div class="figure-line">
+    <p>Until the executed agreements and annual credit certificates are reviewed, the defensible conclusion is narrower: Tyson will lose access to future credits, but the exact amount already paid &mdash; and whether any previously paid amount is recoverable &mdash; has not been established publicly.</p>
+  </div>
+
+  <h2 id="behind">What the closure leaves behind</h2>
+
+  <p>The immediate cost is 723 jobs.</p>
+
+  <p>Workers interviewed after the announcement described considering relocation outside Utah. Eagle Mountain's economic development director, Abby Ivory, said the city was working to find a buyer capable of moving into the facility quickly. The Utah County Commission called the closure "a significant loss" and offered support to affected workers.</p>
+
+  <p>The plant's physical future also matters. A major industrial building may retain value and eventually attract another operator, but vacancy can reduce associated employment, economic activity, business-personal-property value, and demand for supporting services. Those effects cannot yet be calculated.</p>
+
+  <h2 id="school">The school-district question</h2>
+
+  <p>The timing overlaps with the breakup of Alpine School District. Eagle Mountain will become part of the new western district when the three successor districts begin operating on July 1, 2027.</p>
+
+  <p>However, the plant closure does not automatically remove the industrial property from the tax base. The land and building remain taxable even without Tyson operating there, though future valuation and taxable business personal property could change.</p>
+
+  <div class="callout">
+    <span class="label">Unanswered, Not Assumed</span>
+    <ul>
+      <li>What is the plant's current taxable value?</li>
+      <li>How much comes from the land and building versus business personal property?</li>
+      <li>How would a prolonged vacancy or sale affect that valuation?</li>
+      <li>Was the property specifically included in the financial projections used to plan the new district?</li>
+    </ul>
+    <p>Without those figures, the closure's effect on the new school district should be presented as a question &mdash; not an established loss.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 id="ask">Questions for readers to ask local leaders</h2>
+
+  <p>The records gaps in this piece aren't just for reporters to chase. Residents can raise these directly at a public meeting or in writing to the offices involved.</p>
+
+  <div class="callout">
+    <span class="label">Eagle Mountain City &amp; Its Redevelopment Agency</span>
+    <ul>
+      <li>Can the Pole Canyon Community Reinvestment Project Area Plan and Budget be made available to the public?</li>
+      <li>What percentage of new property tax revenue does the Pole Canyon CRA rebate, and for how many years?</li>
+      <li>Did Pole Canyon CRA funds pay for any specific road or utility projects, and which ones?</li>
+      <li>Who actually signed the CRA interlocal agreement &mdash; Tyson Fresh Meats itself, Oquirrh Wood Ranch LLC, or both?</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <span class="label">Utah County Commission</span>
+    <ul>
+      <li>What was the county's specific share of the $12.3 million incentive, and has the county tracked how much has actually been rebated to date?</li>
+      <li>Does the county have any mechanism to reassess this commitment now that the plant is closing five years into a ten-year term?</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <span class="label">Alpine School District / New West District Board</span>
+    <ul>
+      <li>What was the district's specific share of the local incentive, and how much of it has been paid out so far?</li>
+      <li>Was this parcel's projected value included in the financial planning for the new West District ahead of the July 2027 split?</li>
+      <li>How would a prolonged vacancy or reduced valuation at this site affect the new district's projected revenue?</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <span class="label">Governor's Office of Economic Opportunity (GOEO)</span>
+    <ul>
+      <li>What is the exact dollar amount of EDTIF credit Tyson claimed in each year, 2021&ndash;2026?</li>
+      <li>Was the separate $300,000 infrastructure grant paid in full, and if so, when?</li>
+      <li>Does either the EDTIF agreement or the infrastructure grant include any provision to recover funds already paid, and under what conditions?</li>
+    </ul>
+  </div>
+
+  <h2 id="needed">What still needs to be obtained</h2>
+
+  <p>Three sets of records would turn this from a strong explanatory article into a definitive accounting:</p>
+
+  <div class="callout">
+    <ul>
+      <li>Tyson's executed EDTIF agreement and any amendments.</li>
+      <li>Every annual tax-credit certificate and the amount actually claimed each year.</li>
+      <li>The $300,000 infrastructure-grant agreement, its payment history, and any clawback terms.</li>
+      <li>The Pole Canyon Community Reinvestment Project Area Plan and Budget itself, which would confirm the exact rebate percentage, duration, infrastructure uses, and signing parties &mdash; the $12.3 million total is now sourced, but these underlying terms are not.</li>
+    </ul>
+    <p>Separate records would be needed to determine whether Utah County or other taxing entities beyond Eagle Mountain City and Alpine School District provided any additional participation in the Pole Canyon project area.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <h2 id="bottomline">The bottom line</h2>
+
+  <div class="closing">
+    <p>Utah did not necessarily lose the entire $5.26 million incentive when Tyson decided to close. Because the EDTIF award was post-performance, Tyson could receive credits only as it met annual requirements, and it will receive no additional credits after operations cease.</p>
+
+    <p>But that does not yet tell taxpayers exactly what the five years of operation cost. The state still needs to disclose how much Tyson actually claimed, whether the infrastructure grant was paid, whether previously issued benefits can be recovered, and what public infrastructure was built specifically to support the facility.</p>
+
+    <p>The incentive's unclaimed balance is not a public loss. The paid portion is a public cost attached to five years of operations &mdash; and its exact amount should be available to the public.</p>
+  </div>
+
+  <details class="sources">
+    <summary>Sources</summary>
+    <ul>
+      <li>Reuters, "Tyson Foods will close or sell three US beef facilities as industry struggles," August 13, 2026.</li>
+      <li>GOEO (formerly GOED), 2019 announcement, "Tyson Fresh Meats to Build Food Production Plant in Utah," business.utah.gov.</li>
+      <li>KSL, "723 jobs being lost as Tyson Foods closes Eagle Mountain facility," August 2026.</li>
+      <li>MEAT+POULTRY, "Tyson Foods selects site for Utah case-ready plant," May 17, 2019 (confirms Eagle Mountain City and Alpine School District approved a Community Reinvestment Project Area for the plant).</li>
+      <li>Eagle Mountain Redevelopment Agency board meeting agenda/minutes, on or around May 7, 2019 (adoption of the Pole Canyon Community Reinvestment Project Area Plan and Budget, 80 acres).</li>
+      <li>Utah County Auditor, 2023 Report 700, Pole Canyon Community Reinvestment Area, Eagle Mountain (filed annual increment figures; Utah County listed as participating entity).</li>
+      <li>Eagle Mountain City public notice, 2025, resolution releasing/retaining a sanitary sewer easement from the Tyson plant across property owned by Oquirrh Wood Ranch, LLC.</li>
+      <li>Lehi Free Press, "Timeline and details announced by Tyson Foods for Eagle Mountain facility," May 30, 2019 (the $12.3 million local tax break figure, attributed to Alpine School District and the Utah County Commission; the $13,000/year prior tax revenue baseline).</li>
+      <li>KUTV, "Eagle Mountain families weigh relocation after Tyson plant closure," August 17&ndash;18, 2026 (Utah County Commission and GOEO statements).</li>
+      <li>UtahMoneyWatch, "Five Years After Opening a $286 Million Plant in Eagle Mountain, Utah, Tyson Foods is Shutting it Down," citing GOED authorization figures and Salt Lake Tribune reporting on the 25&ndash;50% claimed-credit range.</li>
+      <li>Utah Admin. Code R357-3-106, Economic Development Tax Credit Process (GOEO).</li>
+      <li>Alpine School District, successor-district transition materials, alpineschools.org (July 1, 2027 split date).</li>
+      <li>Salt Lake Tribune, "Data centers got tax breaks. Homeowners were asked to pay triple," August 22, 2026 (background only &mdash; connection to Tyson closure not established).</li>
+    </ul>
+    <p class="method-note">Method note: the $27.8 million figure is projected new state tax revenue over the agreement's ten-year term, drawn from later public materials &mdash; not the credit ceiling itself, and not fully reconcilable with the $5,258,324 ceiling at the stated 20% rate. The 25&ndash;50%-claimed figure is reported, not confirmed by GOEO's own annual certificates, and the dollar range calculated from it is this publication's estimate, not an official total.</p>
+  </details>
+
+</article>
+
+<footer>
+  <div class="footer-line">Independent &middot; Accountability &middot; Journalism</div>
+  <div class="footer-url">webercountyhive.substack.com</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      fontFamily: "'Source Serif 4', Georgia, serif",
+      fontSize: '15px',
+      primaryColor: '#F4E9DD',
+      primaryTextColor: '#111008',
+      primaryBorderColor: '#D4AF37',
+      lineColor: '#96723F',
+      secondaryColor: '#FAF7F2',
+      secondaryTextColor: '#111008',
+      tertiaryColor: '#FAF7F2',
+      clusterBkg: '#FAF7F2',
+      clusterBorder: '#D4AF37',
+      edgeLabelBackground: '#FAF7F2'
+    },
+    flowchart: { curve: 'basis', padding: 14 }
+  });
+</script>
+
+</body>
+</html>
