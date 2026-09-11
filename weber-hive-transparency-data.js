@@ -134,5 +134,15 @@ const CASES = [
     status: "documented",
     updated: "Sep 11, 2026",
     link: "weber-hive-5th5th-sales-tax.html"
+  },
+  {
+    caseNumber: "CASE 2026-TYS-01",
+    title: "Tyson Leaves Eagle Mountain Five Years After Opening",
+    category: "Economic Development Incentives",
+    summary: "Tyson Foods is closing its Eagle Mountain plant, ending 723 jobs, about seven years into a ten-year state and local incentive package. What Utah and Eagle Mountain actually paid, what went unclaimed, and what taxpayers still don't know.",
+    officials: ["Tom Westmoreland", "Abby Ivory"],
+    status: "documented",
+    updated: "Sep 11, 2026",
+    link: "tyson-eagle-mountain-closure.html"
   }
 ];
