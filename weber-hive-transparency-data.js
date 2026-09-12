@@ -8,6 +8,13 @@
 // status: "documented" | "pending" | "disputed"  (controls stamp color/text)
 // pairWith: optional — caseNumber of another entry this one is paired with,
 // shows a "Paired with..." note and a matching border color on both cards.
+//
+// NOTE (9/12/26): Two entries formerly here — CASE 2026-CUGHP-01 (Central
+// Utah GOP House PAC) and CASE 2026-CBPAC-01 (Checks & Balances PAC) — have
+// migrated to the new standalone PAC repo, alongside two more PAC case
+// files (CMV PAC, UINPAC) that were built directly there. Their case-file
+// pages should be deleted from this repo once this data file replaces the
+// old one.
 const CASES = [
   {
     caseNumber: "CASE 2026-ENF-01",
@@ -144,15 +151,5 @@ const CASES = [
     status: "documented",
     updated: "Sep 11, 2026",
     link: "tyson-eagle-mountain-closure.html"
-  },
-  {
-    caseNumber: "CASE 2026-CUGHP-01",
-    title: "Two Rosters, One Address",
-    category: "Campaign Finance & Ethics",
-    summary: "A leadership PAC created in 2018 has moved $1,000 checks to dozens of Utah Republicans. It's registered two different ways with two different sets of people in charge — and its own nonprofit-corp directors are among the candidates it paid.",
-    officials: ["Brady Brammer", "Cory Maloy", "Mike McKell", "Bradley Daw", "Jon Hawkins"],
-    status: "documented",
-    updated: "Sep 12, 2026",
-    link: "central-utah-gop-house-pac.html"
   }
 ];
