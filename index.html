@@ -59,7 +59,8 @@
   .card .paired-note{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--gold);margin-bottom:12px;}
   .card .meta-row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;}
   .card .read{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--maroon);}
-  .card .updated{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:#C0392B;font-weight:600;opacity:1;}
+  .card .updated{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft);opacity:.75;}
+  .card .updated-flag{color:#C0392B;font-weight:600;opacity:1;}
 
   .no-results{max-width:var(--max);margin:0 auto;padding:0 24px 60px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);display:none;}
 
@@ -131,6 +132,9 @@
     const pairedNote = c.pairWith && byCaseNumber[c.pairWith]
       ? `<div class="paired-note">↔ Paired with "${byCaseNumber[c.pairWith].title}"</div>`
       : '';
+    const dateLine = c.published && c.updated && c.published !== c.updated
+      ? `Published ${c.published} <span class="updated-flag">· Updated ${c.updated}</span>`
+      : `Published ${c.published || c.updated}`;
     return `
       <a class="card ${c.pairWith ? 'paired' : ''}" href="${c.link}">
         <div class="case-row">
@@ -144,7 +148,7 @@
         ${pairedNote}
         <div class="meta-row">
           <div class="read">Read case →</div>
-          <div class="updated">Updated ${c.updated}</div>
+          <div class="updated">${dateLine}</div>
         </div>
       </a>`;
   }
