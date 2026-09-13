@@ -115,9 +115,9 @@ const CASES = [
     title: "Bills That Did the Opposite",
     category: "Legislative Pattern",
     summary: "Eight bills, 2019–2026, that changed name, scope, or key language somewhere between introduction and law — each time moving away from what the bill promised, not toward it.",
-    officials: ["Mike Schultz", "Scott Sandall", "Keven Stratton", "Timothy Hawkes"],
+    officials: ["Mike Schultz", "Scott Sandall", "Keven Stratton", "Timothy Hawkes", "Rex Shipp"],
     status: "documented",
-    updated: "Sep 8, 2026",
+    updated: "Sep 13, 2026",
     link: "weber-hive-bait-and-switch.html",
     pairWith: "CASE 2026-GSL-01"
   },
