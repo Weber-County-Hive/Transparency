@@ -164,5 +164,17 @@ const CASES = [
     published: "Sep 11, 2026",
     updated: "Sep 11, 2026",
     link: "tyson-eagle-mountain-closure.html"
+  },
+  {
+    caseNumber: "CASE 2026-WFD-01",
+    title: "A New Line on the Bill: Roy and Riverdale's Fire District Annexation",
+    category: "Public Finance",
+    summary: "Weber Fire District says annexing Roy and Riverdale is not a tax increase, but its levy would be a new line on the bill starting in 2027. State law requires each city to cut its rate by what it budgets for fire. Riverdale budgets more for fire ($2.72M) than it collects in general-fund property tax ($1.74M), and the records don't show how the cut will work there.",
+    officials: ["Weber Fire District Board", "Chief Britt Clark", "Roy City Council", "Riverdale City Council"],
+    status: "documented",
+    published: "Sep 24, 2026",
+    updated: "Sep 24, 2026",
+    link: "weber-fire-district-annexation.html",
+    pairWith: "CASE 2026-STAX-01"
   }
 ];
