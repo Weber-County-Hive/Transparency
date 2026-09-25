@@ -176,5 +176,16 @@ const CASES = [
     updated: "Sep 24, 2026",
     link: "weber-fire-district-annexation.html",
     pairWith: "CASE 2026-STAX-01"
+  },
+  {
+    caseNumber: "CASE 2026-JUD-01",
+    title: "Behind the Bench: What Utah Keeps Confidential About Judge and Lawyer Complaints",
+    category: "Courts & Oversight",
+    summary: "Claims that the courts are exempt from open-records law and that complaints vanish, checked against the statutes and the oversight offices' own reports. Complaints stay confidential until a sanction or formal case; only six public sanctions against judges from FY2021 to FY2026, while lawyer complaints topped 1,300 in 2025. Includes the April 2026 release of a dismissed complaint against a Supreme Court justice, and H.B. 186, which now classifies the commission's records as protected.",
+    officials: ["Judicial Conduct Commission", "Office of Professional Conduct", "Jordan Teuscher", "Brady Brammer"],
+    status: "documented",
+    published: "Sep 24, 2026",
+    updated: "Sep 24, 2026",
+    link: "utah-judicial-oversight.html"
   }
 ];
