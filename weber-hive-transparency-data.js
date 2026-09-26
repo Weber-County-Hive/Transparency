@@ -193,7 +193,7 @@ const CASES = [
     caseNumber: "CASE 2026-TNT-01",
     title: "Every Weber County Property Tax Increase Since 2019",
     category: "Public Finance",
-    summary: "59 Truth in Taxation increases proposed by Weber County's county government, school districts, cities and fire, water, sewer and dispatch districts for tax years 2020 through 2026, at least 33 adopted, with sources for each. 2022 was the peak; in 2025 the state denied six. Filter by year, type and outcome.",
+    summary: "59 Truth in Taxation increases proposed by Weber County's county government, school districts, cities and fire, water, sewer and dispatch districts for tax years 2020 through 2026, at least 46 adopted, with sources for each. 2022 was the peak; in 2025 the state denied six. Filter by year, type and outcome.",
     officials: ["Weber County Commission", "Weber School District", "Ogden School District", "Weber Fire District", "North View Fire District"],
     status: "documented",
     published: "Sep 26, 2026",
