@@ -655,7 +655,7 @@
   .ent-row{margin:0 0 16px;}
   .ent-row .top{display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px;gap:10px;}
   .ent-row .top b{font-family:'Playfair Display', serif;}
-  .ent-row.hl .top span:first-child{font-weight:700;color:#7A2020;}
+  .ent-row.hl .top span:first-child{font-weight:700;color:#111008;}
   .toggle{display:inline-flex;border:1px solid var(--line);margin:0 0 18px;}
   .toggle button{font-family:inherit;font-size:13px;padding:6px 12px;border:0;background:transparent;cursor:pointer;color:#242017;}
   .toggle button[aria-pressed="true"]{background:#D4AF37;color:#1A1408;font-weight:600;}
@@ -675,6 +675,49 @@
   .link-card .lk{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-gold);}
   .link-card .lt{display:block;font-family:'Playfair Display', serif;font-size:18px;color:var(--cream);margin-top:4px;}
   .link-card .ld{display:block;font-size:14.5px;color:#4A443A;margin-top:4px;}
+  @media (max-width:640px){
+    table.cardtbl tr:first-child{display:none;}
+    table.cardtbl tr{display:block;padding:12px 0;border-bottom:1px solid var(--line);}
+    table.cardtbl td{display:block;border:none;padding:3px 0;}
+    table.cardtbl td[data-l]:not([data-l=""])::before{content:attr(data-l);display:block;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gold);}
+  }
+  .house-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:640px){.house-grid{grid-template-columns:1fr;}}
+  .house{border:1px solid var(--line);background:#FFFDF8;padding:16px;}
+  .h-name{font-family:'Playfair Display',serif;font-weight:700;font-size:16px;color:#111008;}
+  .h-bill{font-size:14px;color:var(--gray);margin:2px 0 10px;}
+  .h-bar{display:flex;gap:2px;height:44px;}
+  .h-bar .seg{display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:600;border-radius:4px;text-align:center;line-height:1.2;padding:0 4px;}
+  .seg.kept{background:#A07A1A;} .seg.cra{background:#A8392E;}
+  .h-note{font-size:14.5px;color:#242017;margin-top:10px;line-height:1.5;}
+  .yr-chart{display:flex;align-items:flex-end;gap:14px;height:260px;border-bottom:1px solid rgba(0,0,0,0.25);}
+  .yr-col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;cursor:pointer;}
+  .yr-col .val{font-size:13px;font-weight:600;color:#111008;text-align:center;margin-bottom:4px;}
+  .yr-col .stackb{display:flex;flex-direction:column;gap:2px;}
+  .yr-col .stackb div:first-child{border-radius:4px 4px 0 0;}
+  .yr-col:hover .stackb, .yr-col:focus .stackb{outline:2px solid #111008;outline-offset:2px;}
+  .yr-labels{display:flex;gap:14px;margin-top:6px;}
+  .yr-labels div{flex:1;text-align:center;font-size:12.5px;color:var(--gray);line-height:1.35;}
+  .yr-tip{margin-top:12px;font-size:15px;color:#242017;min-height:44px;}
+  .rate-chart{display:flex;align-items:flex-end;gap:10px;height:250px;border-bottom:1px solid rgba(0,0,0,0.25);}
+  .rate-chart .yr-col .val{font-size:12.5px;}
+  .rate-labels{display:flex;gap:10px;margin-top:6px;}
+  .rate-labels div{flex:1;text-align:center;font-size:12px;color:var(--gray);line-height:1.3;}
+  .split-grid.three{grid-template-columns:1fr 1fr 1fr;}
+  @media (max-width:640px){.split-grid.three{grid-template-columns:1fr;}}
+  .hive-field label{display:block;font-size:15px;color:#242017;margin-bottom:6px;}
+  input[type=range]{accent-color:#A07A1A;}
+  .pie-wrap{display:flex;gap:22px;align-items:center;}
+  .pie{flex:0 0 220px;}
+  @media (max-width:640px){.pie-wrap{flex-direction:column;}.pie{flex:none;}}
+  .kid-steps{margin:0;padding-left:20px;font-size:16px;color:#242017;line-height:1.55;}
+  .kid-steps li{margin-bottom:10px;}
+  .kid-steps .sw{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:middle;}
+  .shortv{border:2px solid #D4AF37;background:#FFFDF6;padding:20px 22px;margin:8px 0 26px;}
+  .shortv-h{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;color:#111008;margin-bottom:10px;}
+  .shortv ol{margin:0;padding-left:22px;font-size:16.5px;color:#242017;line-height:1.55;}
+  .shortv li{margin-bottom:8px;}
+  .shortv-f{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:15px;color:#3A3428;}
 </style>
 </head>
 <body>
@@ -696,7 +739,7 @@
 <div class="article-header wrap">
   <div class="kicker">Transparency · Public Finance · CASE 2026-WFD-02</div>
   <h1>Paying for the Next Station: How Weber Fire District Funds Its Growth</h1>
-  <p class="dek">Weber Fire District pays for its growth four ways: its own property tax, a lease revenue bond that needs no election unless voters petition, a share of new tax value it agreed to give up at Nordic Village, and a station a developer is building at Powder Mountain. Here is what has been said about each and what the records show, before Roy and Riverdale decide whether to join.</p>
+  <p class="dek">Weber Fire District pays for growth four ways. Here is each one, what's been said about it, and what the records show, before Roy and Riverdale decide whether to join.</p>
   <div class="byline">The Weber County Hive <span>·</span> Independent Accountability Journalism</div>
 
   <div class="hero-duo" role="img" aria-label="Four ways the district funds growth">
@@ -722,18 +765,30 @@
 </div>
 
 <div class="wrap">
+  <div class="shortv">
+    <div class="shortv-h">The short version</div>
+    <ol>
+      <li><b>Fire districts run on property tax.</b> Weber Fire District's line on your bill pays for firefighters, trucks and stations.</li>
+      <li><b>It raised that line 23.58% for 2026</b> to pay for new stations in West Haven and Hooper and a training center. No public vote was required.</li>
+      <li><b>At Nordic Village, it agreed to take half.</b> For 15 years, half the fire tax from the new buildings goes to the project's roads and pipes instead.</li>
+      <li><b>At Powder Mountain, the resort is building a $6 million station.</b> KSL reported the district will pay more of the running costs as tax money from the area grows, and that money comes from the fire tax everyone pays. No agreement setting the terms was found in the records reviewed.</li>
+      <li><b>Roy and Riverdale may join on Oct. 1.</b> If they do, their owners share in all of this too.</li>
+    </ol>
+    <div class="shortv-f">Hearing: Thursday, Oct. 1, Station 61, Farr West. Riverdale at 6:00 p.m., Roy at 6:01 p.m.</div>
+  </div>
+
   <details class="sources" style="margin-top:0;">
     <summary>Explain this simply</summary>
     <div style="padding-top:4px;">
       <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">A fire district pays for stations, trucks and firefighters mostly with its own line on your property tax bill.</p>
       <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">In 2025, Weber Fire District raised that line to cover lease payments on two new stations and a training facility. The money for the buildings comes from a bond that voters don't vote on unless enough of them sign a petition asking for an election.</p>
-      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">New resorts in Ogden Valley add buildings the district must protect. At Nordic Village, the district agreed to hand half of its new tax money from that area to a county redevelopment agency for 15 years to help pay for the project's roads and utilities. At Powder Mountain, the resort is paying to build a station, and the district is to take over more of the running costs later.</p>
+      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">New resorts in Ogden Valley add buildings the district must protect. At Nordic Village, the district agreed to hand half of its new tax money from that area to a county redevelopment agency for 15 years to help pay for the project's roads and utilities. At Powder Mountain, the resort is paying to build a station, and KSL reported the district will take over more of the running costs later.</p>
       <p style="font-size:17px;color:#242017;line-height:1.75;margin:0;">Everyone inside the district pays the same rate. If Roy and Riverdale join, their owners would help pay for all of this too.</p>
     </div>
   </details>
 
   <div class="glossary">
-    <details><summary>Lease revenue bond</summary><p>Money borrowed through a separate "local building authority." The district leases the new buildings back and pays for them with yearly lease payments instead of a general obligation bond. Utah law requires a notice and hearing, but an election only if enough registered voters petition within 30 days.</p></details>
+    <details><summary>Lease revenue bond</summary><p>A way to borrow for buildings. A separate group the district set up borrows the money, and the district pays it back every year like rent. Voters only get an election if enough of them sign a petition within 30 days.</p></details>
     <details><summary>Local building authority</summary><p>A separate legal entity a local government creates to own and finance public buildings, which it then leases back to that government.</p></details>
     <details><summary>Tax increment</summary><p>The extra property tax that comes from new value in an area after a starting year. Taxing entities can agree to let a redevelopment agency keep part of it for a set number of years.</p></details>
     <details><summary>Community reinvestment agency (CRA)</summary><p>A local agency that collects tax increment in a project area and spends it on things like roads and utilities. Weber County's CRA runs the Nordic Village project area.</p></details>
@@ -745,13 +800,21 @@
     <a href="#said">Said vs. record</a>
     <a href="#streams">Four money streams</a>
     <a href="#nordic">Nordic Village share</a>
+    <a href="#upordown">Up, down or the same?</a>
     <a href="#powder">Powder Mountain</a>
+    <a href="#reach">Who the station reaches</a>
     <a href="#stations">Stations</a>
     <a href="#dates">Key dates</a>
     <a href="#roy">What it means for Roy and Riverdale</a>
+    <a href="#pids">PIDs &amp; general funds</a>
+    <a href="#others">Other project areas</a>
+    <a href="#since2019">The math since 2019</a>
+    <a href="#compare">How it compares</a>
     <a href="#sb206">S.B. 206</a>
     <a href="#grades">Grades</a>
     <a href="#record">What was done, what's open</a>
+    <a href="#questions">Questions to ask</a>
+    <a href="#takepart">How to take part</a>
   </div>
 </div>
 
@@ -781,12 +844,22 @@
 
   <details class="said">
     <summary><span class="who">KSL report</span><span class="q">The $6 million Powder Mountain station is "funded entirely by Powder Mountain."</span></summary>
-    <div class="rec"><b class="v part">True for construction; operating terms not posted</b><br>KSL reported that Powder Mountain pays to build the station and will cover operating costs at first, with Weber Fire District supplementing them as property tax revenue from the area grows. No agreement setting out when or how operating costs shift to the district was found in the records reviewed. Once they shift, they are paid from the district-wide levy. <a href="#powder">See the station details.</a></div>
+    <div class="rec"><b class="v part">True for construction; operating terms not found</b><br>KSL reported that Powder Mountain pays to build the station and will cover operating costs at first, with Weber Fire District supplementing them as property tax revenue from the area grows. No agreement setting out when or how operating costs shift to the district was found in the records reviewed. Once they shift, they are paid from the district-wide levy. <a href="#powder">See the station details.</a></div>
   </details>
 
   <details class="said">
     <summary><span class="who">Common belief</span><span class="q">"Taxpayers never got a say on the new stations."</span></summary>
     <div class="rec"><b class="v part">Partly</b><br>There was no election, and none was required. The district posted a bond notice on Oct. 15, 2025, held a Truth in Taxation hearing on Nov. 11 where seven people spoke, and a bond hearing on Nov. 18. Under Utah law, an election on the bond would have been held only if enough registered voters petitioned within 30 days. The records reviewed show no such petition.</div>
+  </details>
+
+  <details class="said">
+    <summary><span class="who">KSL, Nov. 2024</span><span class="q">Creating the Nordic Village PIDs won't create "financial repercussions or debt obligations for the county."</span></summary>
+    <div class="rec"><b class="v part">True for the PID bonds only. The shared tax money is a separate cost</b><br>The PID bonds are repaid by owners inside the districts, and no county general fund is pledged to them. But a separate agreement has the county, school district, fire district and water district giving up part of their tax money from the same new growth for 15 years. For the fire district alone, that's $5,440,513. Those entities still have to serve the new buildings at full cost. If what they keep doesn't cover that cost, the difference has to come from somewhere, and their main tool is a rate increase on every owner they serve. Separately, the district's notices tied its increases for 2022, 2023 and 2026 (9.96%, 8.5% and 23.58%) to pay, staffing and the west-side stations. Nordic Village sharing begins in 2027. <a href="#pids">See where the costs land.</a></div>
+  </details>
+
+  <details class="said">
+    <summary><span class="who">Common question</span><span class="q">"Why isn't Cache County paying for the Powder Mountain station?"</span></summary>
+    <div class="rec"><b class="v gap">No payment terms published</b><br>Part of the resort sits in Cache County, where Weber Fire District can't levy property tax. The district approved an interlocal agreement with Cache County Fire District in February 2026, and Weber County approved an ordinance in July, but no dollar terms were found in the records reviewed. Cache County's separate sheriff agreement has Cache reimbursing Weber at hourly rates. <a href="#cache">See the Cache County side.</a></div>
   </details>
 
   <h2 id="streams">Four money streams</h2>
@@ -804,7 +877,7 @@
       <h4>The district's own levy</h4>
       <div class="big">+23.58%</div>
       <p class="meta">An additional $2,956,000 a year, starting with 2026 tax bills</p>
-      <p>The district's only general source of revenue is property tax. Its board raised the levy through Truth in Taxation to pay lease payments on the new buildings.</p>
+      <p>The district's main source of general revenue is property tax; it also collects fees, such as for ambulance transport and impact fees. Its board raised the levy through Truth in Taxation to pay lease payments on the new buildings.</p>
       <dl class="kv"><dt>Decided by</dt><dd>District board, 9–1, Dec. 9, 2025</dd><dt>Public process</dt><dd>Mailed notice, Nov. 11 hearing</dd><dt>Who pays</dt><dd>Every owner in the district, same rate</dd><dt>$676,000 home</dt><dd>+$94.95 a year, per the notice</dd></dl>
     </div>
     <div class="tabpanel" role="tabpanel" id="p-bond" aria-labelledby="t-bond" hidden>
@@ -826,7 +899,8 @@
       <div class="big">$6M</div>
       <p class="meta">Built by Powder Mountain · groundbreaking Sept. 24, 2026</p>
       <p>The resort pays to build it and covers operating costs at first. KSL reported the district would supplement operating costs as property tax revenue from the area grows.</p>
-      <dl class="kv"><dt>Decided by</dt><dd>Powder Mountain and the district</dd><dt>Agreement</dt><dd>Not found in records reviewed</dd><dt>Equipment</dt><dd>Ladder truck, ambulance, brush truck</dd><dt>Later cost</dt><dd>Shifts to the district-wide levy</dd></dl>
+      <dl class="kv"><dt>Decided by</dt><dd>Powder Mountain and the district</dd><dt>Agreement</dt><dd>Not found in records reviewed</dd><dt>Equipment</dt><dd>Ladder truck, ambulance, brush truck</dd><dt>Staff</dt><dd>2 to 3 firefighters on duty</dd><dt>Later cost</dt><dd>Running costs move onto the district-wide levy over time, per KSL</dd></dl>
+      <p style="margin-top:12px;">A building costs money once. Running a station costs money every year: the firefighters on duty around the clock, fuel, repairs, and replacing the trucks when they wear out. Powder Mountain pays those costs at first. As the district takes them over, they're paid from the same property tax line every owner in the district pays. <a href="#running">See what "later cost" means.</a></p>
     </div>
   </div>
 
@@ -838,33 +912,171 @@
     <p class="viz-title">Tax increment shared with the county CRA, 15 years</p>
     <div class="toggle" role="group" aria-label="Units">
       <button aria-pressed="true" data-u="usd">Dollars</button>
-      <button aria-pressed="false" data-u="npv">Today's value (6.5%)</button>
+      <button aria-pressed="false" data-u="npv">In today's dollars</button>
     </div>
     <div id="ent-bars"></div>
-    <p class="viz-caption">From the Nordic Village plan's own table. "Today's value" is the plan's net present value at 6.5%. Share = percentage of each entity's increment from the project area.</p>
+    <p class="viz-caption">From the Nordic Village plan's own table. "In today's dollars" is what the future money is worth now, using the plan's own 6.5% discount rate. Share = percentage of each entity's increment from the project area.</p>
+    <div class="split-grid" style="margin:22px 0 0;">
+      <div class="split-col">
+        <h4>Locked in</h4>
+        <ul>
+          <li><b>The shares</b> (75% and 50%) and <b>the 15 years</b> are set by each entity's signed agreement. They change only if the agreement is amended.</li>
+          <li><b>The starting line.</b> Tax on the land's value in the 2024 base year keeps going to each entity as usual. Only the new value above it is shared.</li>
+        </ul>
+      </div>
+      <div class="split-col">
+        <h4>Can change</h4>
+        <ul>
+          <li><b>The dollar amounts are estimates.</b> They depend on how much actually gets built, how fast, and what it's worth. The real totals could come in higher or lower.</li>
+          <li><b>The ceiling.</b> A later agreement, dated April 2, 2026, caps the total at up to $55 million, above the 2024 plan's $48 million projection.</li>
+          <li><b>"Today's dollars"</b> is just another way to show the same estimates.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="viz-caption">Starting in 2027, S.B. 206's annual reports should show how much was actually collected and shared each year.</p>
   </div>
 
   <div class="viz-block">
-    <p class="viz-title">Weber Fire District's increment from Nordic Village, 15 years</p>
-    <div class="seg-bar" aria-hidden="true">
-      <div style="width:50%;background:#F0E4CC;color:#3A2E14;">Kept by district ≈ $5.44M</div>
-      <div style="width:40.8%;background:#D4AF37;color:#1A1408;">To CRA $4.44M</div>
-      <div style="width:9.2%;background:#7A2020;color:#fff;" title="Ladder truck contribution">$1M</div>
+    <p class="viz-title">Nordic Village's fire tax money, 2027&ndash;2041, as one pie</p>
+    <div class="pie-wrap">
+      <div class="pie"><svg viewBox="0 0 220 220" width="220" height="220" role="img" aria-label="A pie cut into 10 slices: 5 slices for the fire district, 4 slices for the Nordic Village project fund, 1 slice for half a ladder truck"><path d="M110,110 L110.0,10.0 A100,100 0 0,1 168.8,29.1 Z" fill="#A07A1A" stroke="#FAF7F2" stroke-width="2"/><path d="M110,110 L168.8,29.1 A100,100 0 0,1 205.1,79.1 Z" fill="#A07A1A" stroke="#FAF7F2" stroke-width="2"/><path d="M110,110 L205.1,79.1 A100,100 0 0,1 205.1,140.9 Z" fill="#A07A1A" stroke="#FAF7F2" stroke-width="2"/><path d="M110,110 L205.1,140.9 A100,100 0 0,1 168.8,190.9 Z" fill="#A07A1A" stroke="#FAF7F2" stroke-width="2"/><path d="M110,110 L168.8,190.9 A100,100 0 0,1 110.0,210.0 Z" fill="#A07A1A" stroke="#FAF7F2" stroke-width="2"/><path d="M110,110 L110.0,210.0 A100,100 0 0,1 51.2,190.9 Z" fill="#A8392E" stroke="#FAF7F2" stroke-width="2"/><path d="M110,110 L51.2,190.9 A100,100 0 0,1 14.9,140.9 Z" fill="#A8392E" stroke="#FAF7F2" stroke-width="2"/><path d="M110,110 L14.9,140.9 A100,100 0 0,1 14.9,79.1 Z" fill="#A8392E" stroke="#FAF7F2" stroke-width="2"/><path d="M110,110 L14.9,79.1 A100,100 0 0,1 51.2,29.1 Z" fill="#A8392E" stroke="#FAF7F2" stroke-width="2"/><path d="M110,110 L51.2,29.1 A100,100 0 0,1 110.0,10.0 Z" fill="#4A443A" stroke="#FAF7F2" stroke-width="2"/><circle cx="110" cy="110" r="52" fill="#F7F2E8"/><text x="110" y="104" text-anchor="middle" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#111008">$10.9M</text><text x="110" y="124" text-anchor="middle" font-family="Georgia,serif" font-size="11.5" fill="#4A443A">over 15 years</text></svg></div>
+      <ol class="kid-steps">
+        <li><b>The whole pie</b> is the fire district tax the new Nordic Village buildings are expected to pay over 15 years: about <b>$10.9 million</b>. Each slice is about $1.1 million.</li>
+        <li><span class="sw" style="background:#A07A1A"></span><b>5 slices go to the fire district</b>, about $5.4 million, to help pay for firefighters, stations and trucks.</li>
+        <li><span class="sw" style="background:#A8392E"></span><b>The other 5 slices go to the county's Nordic Village project fund</b>, which pays for the project's roads, water and sewer.</li>
+        <li><span class="sw" style="background:#4A443A"></span><b>About 1 of those 5 slices, $1 million, is set aside to help buy a ladder truck.</b> It pays for half of the truck. The plan schedules it for 2026, before the sharing years begin; the records reviewed don't explain how that timing works. The plan doesn't say who pays the other half.</li>
+      </ol>
     </div>
-    <div class="legend">
-      <div class="legend-item"><span class="legend-swatch" style="background:#F0E4CC;border:1px solid var(--line);"></span>Kept by the district (Hive calculation: the other 50%)</div>
-      <div class="legend-item"><span class="legend-swatch" style="background:#D4AF37;"></span>To the CRA for project infrastructure</div>
-      <div class="legend-item"><span class="legend-swatch" style="background:#7A2020;"></span>Budgeted in the plan for a ladder truck, "50% Contribution"</div>
+    <div class="callout" style="margin:22px 0 0;">
+      <span class="label">In one sentence</span>
+      <p>Everywhere else in the district, the whole pie goes to the fire district. At Nordic Village, for 15 years, the fire district gets half, and about one slice comes back as half a ladder truck.</p>
     </div>
-    <p class="viz-caption">The $5.44 million shared is from the plan. The kept half is a Hive calculation that assumes the plan's projections hold: at a 50% share, the district keeps about the same amount. Whether the $1 million comes back to the district in cash or in equipment is not stated in the records reviewed.</p>
+    <p class="viz-caption">From the Nordic Village plan and the financing plan review prepared for the district: $5,440,513 kept and $5,440,513 shared, 2027&ndash;2041, about $10.88 million in all. Slices are rounded. Whether the $1 million reaches the district as cash or as a truck isn't stated in the records reviewed.</p>
   </div>
 
   <p>The plan lists one fire item among its infrastructure: "Weber County Fire District Ladder Truck 50% Contribution," $1,000,000, scheduled for 2026. Ladder trucks are what a district needs to reach multi-story buildings like the hotel planned at Nordic Village. The records reviewed don't show whether the other half of the truck's cost comes from the district's levy.</p>
 
-  <div class="callout">
-    <span class="label">Reading the Nordic numbers fairly</span>
-    <p>Sharing increment is a common Utah tool, and the district chose it. The argument for it is that without the project there would be no new value to tax, so half of something is more than all of nothing. The plan's own figures don't test that, so this case file doesn't either.</p>
-    <p>What the figures do show is the tradeoff. For 15 years, the district collects half the usual tax from the new buildings it will protect at Nordic Village, while owners elsewhere in the district pay the full rate.</p>
+  <h3 class="sub" id="tradeoff">The tradeoff, in two pictures</h3>
+
+  <p><b>Picture 1: same bill, different destination.</b> Owners at Nordic Village pay the same fire district rate as everyone else. They don't get a discount. The difference is where their money goes.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Two owners, each paying $500 on the fire district line</p>
+    <div class="house-grid">
+      <div class="house">
+        <div class="h-name">A home in Hooper</div>
+        <div class="h-bill">Pays $500</div>
+        <div class="h-bar" role="img" aria-label="All $500 goes to Weber Fire District">
+          <div class="seg kept" style="width:100%"><span>$500 to fire district</span></div>
+        </div>
+        <div class="h-note">All of it helps pay for stations, trucks and firefighters.</div>
+      </div>
+      <div class="house">
+        <div class="h-name">A new building at Nordic Village, 2027&ndash;2041</div>
+        <div class="h-bill">Pays $500</div>
+        <div class="h-bar" role="img" aria-label="$250 goes to Weber Fire District and $250 goes to the county redevelopment agency">
+          <div class="seg kept" style="width:50%"><span>$250 fire district</span></div>
+          <div class="seg cra" style="width:50%"><span>$250 CRA</span></div>
+        </div>
+        <div class="h-note">Half helps pay for Nordic Village's roads, water and sewer through the county's redevelopment agency.</div>
+      </div>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:#A07A1A;"></span>Goes to Weber Fire District</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#A8392E;"></span>Goes to the county redevelopment agency for Nordic Village</div>
+    </div>
+    <p class="viz-caption">$500 is a round example, not a real bill. The 50/50 split is the fire district's share in the Nordic Village plan. It applies to the new value in the project area, which is almost all new construction, from 2027 through 2041.</p>
+  </div>
+
+  <p><b>Picture 2: what the fire district collects from Nordic Village, year by year.</b> These numbers come from a financing plan review prepared for Weber Fire District itself.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Weber Fire District's yearly tax from the Nordic Village area</p>
+    <div class="yr-chart" id="yr-chart" role="img" aria-label="Yearly fire district tax from Nordic Village: $13,867 before the project; $428,158 kept and $428,158 shared in 2041; $856,315 kept from 2042"></div>
+    <div class="yr-tip" id="yr-tip" aria-live="polite">Tap or hover over a bar for details.</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:#A07A1A;"></span>Kept by the fire district</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#A8392E;"></span>Shared with the redevelopment agency</div>
+    </div>
+    <details class="sources" style="margin:18px 0 0;"><summary>Show as a table</summary>
+      <table class="data-table">
+        <tr><th>Period</th><th>Kept by fire district</th><th>Shared with CRA</th></tr>
+        <tr><td>2024&ndash;2026, before the project, per year</td><td class="num">$13,867</td><td class="num">$0</td></tr>
+        <tr><td>2027&ndash;2041, sharing years, total</td><td class="num">$5,440,513</td><td class="num">$5,440,513</td></tr>
+        <tr><td>2041, last sharing year</td><td class="num">$428,158</td><td class="num">$428,158</td></tr>
+        <tr><td>2042&ndash;2053, per year</td><td class="num">$856,315</td><td class="num">$0</td></tr>
+      </table>
+    </details>
+    <p class="viz-caption">From the "Nordic Village Financing Plan Review" prepared for Weber Fire District (Utah Public Notice Website file 1207807). Projections, not money collected. The chart shows the start, the last sharing year and the years after; it doesn't draw each year from 2027 to 2040.</p>
+  </div>
+
+  <div class="split-grid">
+    <div class="split-col">
+      <h4>The argument for sharing</h4>
+      <ul>
+        <li>Without the project, the district would keep collecting about $13,867 a year from this land</li>
+        <li>With it, the district keeps $5.44 million over the 15 sharing years, then about $856,000 a year</li>
+        <li>So half of something is more than all of nothing</li>
+      </ul>
+    </div>
+    <div class="split-col">
+      <h4>The cost the plan doesn't show</h4>
+      <ul>
+        <li>The district starts protecting the new buildings the day they open, at full cost</li>
+        <li>For 15 years it collects half the tax from them</li>
+        <li>No record reviewed estimates that cost, or whether the half covers it</li>
+        <li>If it doesn't, the difference comes from the levy every owner in the district pays</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>The plan's own figures don't test whether Nordic Village would have been built without the shared increment, so this case file doesn't either. What they do show is when the district gets the full amount: in 2042, the year after sharing ends, its yearly tax from the area doubles.</p>
+
+
+  <h3 class="sub" id="upordown">Will this raise my fire tax, lower it, or leave it the same?</h3>
+
+  <p>It depends on one number that wasn't found in any record reviewed: what it will cost the fire district each year to protect Nordic Village. Compare that cost with what the district keeps from the area, and there are three possible outcomes.</p>
+
+  <div class="split-grid three">
+    <div class="split-col">
+      <h4>Goes up</h4>
+      <ul><li>If protecting Nordic Village costs more than the half the district keeps, the gap has to be covered by a rate increase on every owner in the district, or by cutting service somewhere else.</li></ul>
+    </div>
+    <div class="split-col">
+      <h4>Stays about the same</h4>
+      <ul><li>If the half the district keeps covers the cost, owners elsewhere feel no pressure from Nordic Village. The other half still goes to the project instead of the district's budget.</li></ul>
+    </div>
+    <div class="split-col">
+      <h4>Goes down</h4>
+      <ul><li>Not from this. Growth doesn't automatically lower anyone's rate in Utah. Extra growth money only helps hold rates steady when costs rise, and half of it is committed to the project for 15 years.</li></ul>
+    </div>
+  </div>
+
+  <div class="viz-block city-tool" id="scen">
+    <p class="viz-title">Try it: what if protecting Nordic Village costs...</p>
+    <div class="hive-field">
+      <label for="sc-cost">Yearly cost to the fire district of protecting Nordic Village: <b id="sc-cost-out">$600,000</b></label>
+      <input id="sc-cost" type="range" min="0" max="1500000" step="25000" value="600000" style="width:100%;">
+    </div>
+    <div class="hive-field" style="margin-top:14px;">
+      <label for="sc-home">Your home's market value ($)</label>
+      <input id="sc-home" class="hive-input" type="number" min="0" step="1000" value="676000" inputmode="numeric">
+    </div>
+    <div class="house-grid" style="margin-top:18px;">
+      <div class="house">
+        <div class="h-name">With the 50% sharing (the actual deal)</div>
+        <div class="h-bill" id="sc-a-line"></div>
+        <div class="big" id="sc-a" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;"></div>
+        <div class="h-note" id="sc-a-note"></div>
+      </div>
+      <div class="house">
+        <div class="h-name">If the district kept 100%</div>
+        <div class="h-bill" id="sc-b-line"></div>
+        <div class="big" id="sc-b" style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;"></div>
+        <div class="h-note" id="sc-b-note"></div>
+      </div>
+    </div>
+    <p class="viz-caption">Uses the district's own figures: it keeps $5,440,513 from the area over 2027&ndash;2041, an average of about $362,700 a year, rising to $428,158 by 2041. With no sharing it would keep about $725,400 a year on average. To estimate your bill, we divide any yearly gap by the district's total tax, about $15.5 million for 2026, and apply that share to your home's fire district tax. The cost of protecting Nordic Village is <b>your guess</b> on the slider; no estimate from the district was found in the records reviewed.</p>
   </div>
 
   <h2 id="powder">Powder Mountain's station</h2>
@@ -883,7 +1095,97 @@
 
   <blockquote>"Having this station up here will be a very valuable resource for this entire area as it continues to grow."<br><span style="font-size:14px;font-style:normal;color:var(--gray);">Kevin Ward, Weber Fire District board chair, to the Standard-Examiner</span></blockquote>
 
-  <p>The station serves the resort's Weber and Cache County sides and existing subdivisions nearby. Powder Mountain's master plan adds condominiums, single-family homes, new lifts and a possible multi-story hotel. Developer-built construction means district taxpayers don't borrow for this building. Staffing is a different matter. KSL reported that the district would supplement operating costs "as property tax revenue grows," and no posted agreement says when that happens, how much, or what the district's share would be.</p>
+  <h3 class="sub" id="reach">Who the station can reach</h3>
+
+  <p>The station sits at the top of Powder Mountain Road, SR-158. Chief Clark's own reason for building it there is the road: a 14% grade that ladder trucks can't climb "in a reasonable amount of time." That same road runs the other way, too. A truck based at the top faces the same steep, winding drive down to reach Eden, Nordic Valley or Eden Crossing.</p>
+
+  <div class="split-grid">
+    <div class="split-col">
+      <h4>What the station is built to do</h4>
+      <ul>
+        <li>Be first on scene at the resort and the homes near it on the mountain</li>
+        <li>Put a ladder truck at the top, where the district says one can't arrive in time from below</li>
+        <li>Cover the Cache County side of the resort, reached only through Weber County</li>
+      </ul>
+    </div>
+    <div class="split-col">
+      <h4>What the records don't show</h4>
+      <ul>
+        <li>Whether its crew will answer calls down in the valley, and how long that would take</li>
+        <li>Whether it changes anything for Nordic Village or Eden Crossing, across the valley</li>
+        <li>Response-time goals for the station or for the valley's existing Eden and Huntsville stations</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>The board chair told the Standard-Examiner the station "will be a very valuable resource for this entire area." The district's own reason for it, the grade, points to a station that mainly serves the mountain. The records reviewed don't include response-time data that would show either way.</p>
+
+  <h3 class="sub" id="running">What "later cost" means</h3>
+
+  <p>Building the station is a one-time cost, and Powder Mountain is paying it. Running the station is a cost that comes back every year:</p>
+  <ul>
+    <li><b>People.</b> Two to three firefighters on duty, 24 hours a day, which takes more than one crew to cover every shift.</li>
+    <li><b>Equipment.</b> Fuel, maintenance and eventual replacement for a ladder truck, an ambulance and a brush truck.</li>
+    <li><b>The building.</b> Utilities, repairs and upkeep at the top of a 14% grade.</li>
+  </ul>
+  <p>KSL reported that Powder Mountain covers operating costs at first and that the district would supplement them "as property tax revenue grows."</p>
+
+  <p>When the district's share grows, it comes from the district's budget, and the district's main source of general revenue is its levy. That is the same line on every owner's bill in the district, from Hooper to Huntsville, and in Roy and Riverdale if they join. No document found in the records reviewed gives the yearly operating cost, the schedule for the handoff, or how much new property tax the area must produce first.</p>
+
+
+  <h3 class="sub" id="payitself">How is the station supposed to pay for itself?</h3>
+
+  <p>The idea behind "as property tax revenue grows" is simple: as Powder Mountain builds more condos, homes and a hotel, those new buildings pay the fire district tax, and that new money is supposed to cover the station's running costs. Three things limit how well that works:</p>
+  <ul>
+    <li><b>Only the Weber County side pays the fire district.</b> Buildings on the Cache County side, including the main lodge area, pay their property tax to Cache County entities. Unless the Cache County contract adds money, they add nothing to the fire district's budget.</li>
+    <li><b>Not being in a city doesn't change the fire tax.</b> Powder Mountain's Weber side pays the fire district tax like everyone else in the district. What it doesn't pay is city tax, because it's outside Ogden Valley City. That money would have gone to the city, not to the fire district.</li>
+    <li><b>No schedule has been published.</b> No record reviewed says what the station costs to run each year, when the district starts paying, or what share it pays.</li>
+  </ul>
+  <p>At Powder Mountain, unlike Nordic Village, no agreement sharing the fire district's tax money with a project was found in the records reviewed. So on the Weber side, new buildings should pay the full fire district rate.</p>
+
+  <div class="viz-block city-tool" id="pm">
+    <p class="viz-title">Try it: how much building would it take to cover the station?</p>
+    <div class="hive-field">
+      <label for="pm-cost">Yearly cost to run the station (your guess): <b id="pm-cost-out">$1,000,000</b></label>
+      <input id="pm-cost" type="range" min="250000" max="3000000" step="50000" value="1000000" style="width:100%;">
+    </div>
+    <div class="hive-field" style="margin-top:14px;">
+      <label for="pm-type">Mostly what kind of property?</label>
+      <select id="pm-type" class="hive-input">
+        <option value="full" selected>Second homes, condos, hotel, business (taxed on full value)</option>
+        <option value="res">Primary homes (taxed on 55% of value)</option>
+      </select>
+    </div>
+    <div class="result" style="margin-top:16px;"><div class="k">New property value needed on the Weber County side</div><div class="val" id="pm-need" style="font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#111008;"></div><div class="sub" id="pm-sub" style="font-size:15px;color:#242017;"></div></div>
+    <p class="viz-caption">Hive calculation at the district's 2026 rate, about 0.1338% of taxable value, from its own notice. Resort condos, second homes and businesses are taxed on full value; primary homes on 55%. The yearly running cost is <b>your guess</b>; no figure was found in the records reviewed. KSL reported Powder Mountain covers operating costs at first.</p>
+  </div>
+
+  <h3 class="sub" id="cache">The Cache County side</h3>
+
+  <p>Powder Mountain straddles the county line, and neither side is in a city. </p>
+
+  <p>Its Weber County side is unincorporated county land: the boundary drawn for Ogden Valley City left the resort out, so its property taxes go to Weber County, the fire district, the school district and the other special districts, not to the new city.</p>
+
+  <p>The state's feasibility study for Ogden Valley City placed the resort's main ticket and lodge area and Hidden Lake Lounge in Cache County. That side can only be reached by road through Weber County on SR-158, so Weber crews answer calls there.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Who pays for services on the Cache County side</p>
+    <table class="data-table cardtbl">
+      <tr><th>Service</th><th>Arrangement</th><th>Money terms</th></tr>
+      <tr><td data-l=""><b>Sheriff and search and rescue</b></td><td data-l="Arrangement">Cache County Council Resolution 2026-27, July 28, 2026, 7–0. Three years, replacing a 1994 agreement</td><td data-l="Money terms">Cache County reimburses Weber County at hourly rates, invoiced quarterly</td></tr>
+      <tr><td data-l=""><b>Public health</b></td><td data-l="Arrangement">Bear River and Weber-Morgan health departments, 2026, four years</td><td data-l="Money terms">"No money will be transferred"; permit fees fund the work</td></tr>
+      <tr><td data-l=""><b>Fire and EMS</b></td><td data-l="Arrangement">Fire district Resolution 04-2026, Feb. 10, 2026: interlocal with Cache County Fire District for "automatic aid fire protection and fire and fire/EMS-related emergency services." Weber County ordinance authorizing the district to serve neighboring counties, July 28, 2026</td><td data-l="Money terms">None found in the records reviewed. The county's July 28 announcement said the amount would be set in a final contract "yet to be signed"</td></tr>
+    </table>
+    <p class="viz-caption">From the Cache County Council's July 28, 2026 packet and reports, the fire district's posted resolution, and the Weber County announcement of July 28, 2026.</p>
+  </div>
+
+  <p>The Weber County ordinance is broader than its announcement. Its text doesn't name Powder Mountain, Cache County or any acreage. It says the county "has no objection to and does hereby allow for the provision of fire protection and emergency services by the Weber Fire District within defined areas of neighboring counties as deemed necessary by the Weber Fire District," through interlocal agreements, mutual aid contracts, annexations or other binding arrangements. It says nothing about payment.</p>
+
+  <p>The fire district can levy property tax only inside its own boundaries, and the Cache County side is outside them. A report on the Weber County Commission's first reading said the district had been responding there but "could not collect taxes or fees." The county's announcement put the covered area at about 180 to 220 acres. Property taxes and resort sales taxes from that side go to Cache County entities, not to Weber Fire District.</p>
+
+  <p>The question has come up in Cache County too. At the Cache County Council's May 12, 2026 meeting, minutes record Councilmember Nolan Gunnell asking "if the county will earn more in taxes than it will pay Weber County to service the area," including the fire and EMS agreements. The sheriff's agreement now has a payment structure. No payment terms for the fire agreement were found in the records reviewed. Until they are, the records don't show Cache County or its taxpayers paying the fire district anything for the station or its crews.</p>
+
+  <p>The station serves the resort's Weber and Cache County sides and existing subdivisions nearby. Powder Mountain's master plan adds condominiums, single-family homes, new lifts and a possible multi-story hotel. Developer-built construction means district taxpayers don't borrow for this building. Staffing is a different matter. KSL reported that the district would supplement operating costs "as property tax revenue grows," and no agreement found in the records reviewed says when that happens, how much, or what the district's share would be.</p>
 
   <h2 id="stations">Stations, today and planned</h2>
 
@@ -891,7 +1193,7 @@
     <p class="viz-title">Weber Fire District stations</p>
     <div class="fil" role="group" aria-label="Filter stations">
       <button aria-pressed="true" data-f="all">All</button>
-      <button aria-pressed="false" data-f="valley">Ogden Valley</button>
+      <button aria-pressed="false" data-f="valley">Ogden Valley area</button>
       <button aria-pressed="false" data-f="west">Rest of district</button>
     </div>
     <ul class="stations" id="st-list">
@@ -906,10 +1208,18 @@
       <li data-a="valley"><span><b>Powder Mountain station</b>, 6965 N. Powder Mountain Road</span><span class="st dev">Developer-built</span></li>
       <li data-a="valley"><span><b>Nordic Village / Eden Crossing</b> · no new station found in the records reviewed</span><span class="st open">Open question</span></li>
     </ul>
-    <p class="viz-caption">Current stations from the district's Locations page. Planned sites from the Nov. 11, 2025 hearing minutes and KSL.</p>
+    <p class="viz-caption">The Powder Mountain station sits at the top of SR-158, serving the resort and the homes near it. It is not on the way to Nordic Valley, which is on the other side of the valley near the North Ogden Divide, and the steep grade that is the reason for the station also slows any trip down. Current stations from the district's Locations page. Planned sites from the Nov. 11, 2025 hearing minutes and KSL.</p>
   </div>
 
   <p>Nordic Village is planned to include a multi-story hotel, and the county approved Eden Crossing's mixed-use project, with up to 325 housing units and a hotel, in New Eden. The records reviewed show a ladder truck contribution for Nordic Village and a developer-built station at Powder Mountain. They don't show any plan for more stations or staff in Ogden Valley, what those would cost, or how they would be paid for.</p>
+
+  <p><b>Who is behind Eden Crossing.</b></p>
+  <ul>
+    <li><b>Owners on record:</b> two companies, Eden Crossing LLC and Eden Crossing PWC LLC. Utah Division of Corporations filings list developer John Lewis as registered agent.</li>
+    <li><b>Approval:</b> the County Commission approved the rezone 2&ndash;1 in December 2023, after the Ogden Valley Planning Commission recommended denial, 5&ndash;2.</li>
+    <li><b>PID option:</b> the December 2023 development agreement reserves the option of a PID. No PID formation was found in the records reviewed as of September 2026.</li>
+    <li><b>Tie to Nordic Village:</b> Lewis held a 5% stake in Nordic Village Venture LLC, the Nordic Village developer, according to the project's 2023 Master Development Agreement beneficiary document. That matters here because Nordic Village is where the fire district shares half its tax money, and Eden Crossing is another project the district will have to protect.</li>
+  </ul>
 
   <h2 id="dates">Key dates</h2>
   <ul class="tl">
@@ -927,7 +1237,7 @@
 
   <h2 id="roy">What this means for Roy and Riverdale</h2>
 
-  <p>A fire district charges one rate across its whole territory. If Roy and Riverdale join, their owners would pay the same levy as everyone else, which now includes the lease payments for the West Haven, Hooper and Farr West projects. As Powder Mountain's operating costs shift to the district and Ogden Valley grows, those costs are paid from that same levy.</p>
+  <p>A fire district charges one rate across its whole territory. If Roy and Riverdale join, their owners would pay the same levy as everyone else, which now includes the lease payments for the West Haven, Hooper and Farr West projects. As Powder Mountain's operating costs shift to the district, as KSL reported they will, and as Ogden Valley grows, those costs are paid from that same levy.</p>
 
   <p>This is how any special district works, and it cuts both ways. Roy and Riverdale bring a large existing tax base. Owners there would help cover district-wide costs, and the district would cover their service. The records reviewed don't include a district-wide capital plan that would let a Roy or Riverdale owner see what's coming.</p>
 
@@ -937,11 +1247,177 @@
     <span class="ld">The district's estimates, the rate cut each city must make, and a calculator for your property.</span>
   </a>
 
+  <h2 id="pids">PIDs, general funds and bonds: where the costs land</h2>
+
+  <p>Four financing tools touch this story. The first two are at Nordic Village, and the other two apply county-wide or district-wide. Each is set up by a different document and paid for by a different group, so they're easy to blur together.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Who pays, and who votes</p>
+    <table class="data-table cardtbl">
+      <tr><th>Tool</th><th>Who pays</th><th>Public vote?</th><th>Backed by a general fund?</th></tr>
+      <tr><td data-l=""><b>Nordic Village PIDs</b><br><span style="font-size:13px;color:var(--gray);">3 districts, up to $80M each</span></td><td data-l="Who pays">Owners of property inside the districts only, up to $500 per $100,000 of taxable value a year</td><td data-l="Public vote?">No. Created by the County Commission, Nov. 2024</td><td data-l="Backed by a general fund?">No. KSL reported county officials said the districts create no debt obligation for the county</td></tr>
+      <tr><td data-l=""><b>Nordic Village tax increment</b><br><span style="font-size:13px;color:var(--gray);">County 75%; school, fire, water 50%; 15 years</span></td><td data-l="Who pays">No new tax. The county, school district, fire district and water district collect less from the new growth</td><td data-l="Public vote?">No. Each entity's board approved its own agreement</td><td data-l="Backed by a general fund?">No pledge. But the growth money each entity gives up isn't there to help cover rising costs. If costs outrun what's kept, the gap falls on everyone's rates or on services</td></tr>
+      <tr><td data-l=""><b>Fire district lease bond</b><br><span style="font-size:13px;color:var(--gray);">Up to $40M, west-side stations</span></td><td data-l="Who pays">Every owner in the fire district, through the levy</td><td data-l="Public vote?">Only if voters had petitioned within 30 days</td><td data-l="Backed by a general fund?">Repaid from the district's levy</td></tr>
+      <tr><td data-l=""><b>County "5th 5th" sales tax</b><br><span style="font-size:13px;color:var(--gray);">0.20%, from Oct. 1, 2026</span></td><td data-l="Who pays">Everyone who shops in Weber County</td><td data-l="Public vote?">No. Approved by the County Commission</td><td data-l="Backed by a general fund?">County's share goes to public safety and transportation</td></tr>
+    </table>
+    <p class="viz-caption">PID figures from KSL's Nov. 2024 report on the county's approval. KSL also reported the developers expected to levy about $47 million over 30 to 40 years, well under the $240 million authorized. Sales tax from <a href="weber-hive-5th5th-sales-tax.html">the Hive's sales tax case file</a>.</p>
+  </div>
+
+  <h3 class="sub">Direct cost versus indirect cost</h3>
+
+  <p>No county general fund and no fire district levy is pledged to repay the Nordic Village PID bonds. That's the direct question, and on the record reviewed the answer is no. But "no pledge" doesn't mean "no cost."</p>
+
+  <p>The indirect question is different. When the county, the school district and the fire district agree to share tax increment, each of them collects less from the new buildings for 15 years while still serving them. Chief Clark told KSL, "Service districts can only gain revenue through property taxes." If the fire district's costs of serving growth outpace what it collects, one option is to raise the levy on everyone in the district through Truth in Taxation; another is to cut service.</p>
+
+  <div class="split-grid">
+    <div class="split-col">
+      <h4>What the records show</h4>
+      <ul>
+        <li>The fire district's increase approved in 2025 for 2026 bills was tied to the west-side stations and training facility, not Ogden Valley</li>
+        <li>The notice and hearing minutes reviewed don't mention the Nordic Village share</li>
+        <li>The county's plan published each entity's share and its projected dollars</li>
+        <li>A later interlocal participation agreement, dated April 2, 2026, authorizes up to $55 million in increment in total (see the sales tax case file)</li>
+        <li>S.B. 206 requires every project area to be reported statewide, starting Jan. 1, 2027</li>
+      </ul>
+    </div>
+    <div class="split-col">
+      <h4>What the records don't show</h4>
+      <ul>
+        <li>Any record connecting a past or planned rate increase to increment sharing</li>
+        <li>How much increment the fire district shares each year, shown alongside its budget</li>
+        <li>What serving Nordic Village, Eden Crossing and Powder Mountain is expected to cost the district</li>
+        <li>Whether any future increase notice would say that part of the need comes from shared growth revenue</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="label">The disclosure question</span>
+    <p>A Truth in Taxation notice tells owners how much an entity wants to raise and, in general terms, what for. The notices and minutes reviewed here don't show how much growth revenue the same entity has agreed to share with project areas. The two numbers are published in different documents, if they're published at all.</p>
+    <p>Starting in 2027, S.B. 206's statewide reports should make the shared amounts public each year. Whether the fire district, the county or the school district will put those amounts next to any future increase request is not answered in the records reviewed.</p>
+  </div>
+
+  <h2 id="others">Other project areas that share fire district revenue</h2>
+
+  <p>Nordic Village isn't the only place where part of the fire district's tax money goes to a project instead of its budget. These are the ones found in the records reviewed.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Where fire district tax increment is shared</p>
+    <table class="data-table cardtbl">
+      <tr><th>Project area</th><th>What the fire district agreed to</th><th>Amount in the records</th></tr>
+      <tr><td data-l=""><b>Nordic Village CRA</b><br><span style="font-size:13px;color:var(--gray);">Ogden Valley · county CRA · plan adopted Dec. 2024</span></td><td data-l="What the fire district agreed to">50% of its increment for 15 years, 2027&ndash;2041. Resolution 18-2024</td><td data-l="Amount in the records">$5,440,513 shared</td></tr>
+      <tr><td data-l=""><b>Chromalox CRA</b><br><span style="font-size:13px;color:var(--gray);">county CRA · hearing June 2023</span></td><td data-l="What the fire district agreed to">Share of its increment for 10 years, per the county's April 2025 notice of interlocal agreements</td><td data-l="Amount in the records">About $628,684 requested from the fire district, per the 2023 hearing notice</td></tr>
+      <tr><td data-l=""><b>Farr West Landing CRA</b><br><span style="font-size:13px;color:var(--gray);">Farr West City CRA</span></td><td data-l="What the fire district agreed to">Interlocal approved Aug. 12, 2025, Resolution 12-2025</td><td data-l="Amount in the records">Not found in the records reviewed</td></tr>
+      <tr><td data-l=""><b>Inland Port, West Weber</b><br><span style="font-size:13px;color:var(--gray);">about 8,968 acres near Little Mountain · adopted May 2024</span></td><td data-l="What the fire district agreed to">No separate fire district vote was found in the records reviewed. The area came in through County Commission resolutions and the Inland Port board. The model keeps about 75% of new tax value for the project area over 25 years</td><td data-l="Amount in the records">About $120.3M of a modeled $481.1M passes through to the county, schools, fire and water districts combined. The fire district's own share isn't broken out</td></tr>
+      <tr><td data-l=""><b>Hooper CRA</b><br><span style="font-size:13px;color:var(--gray);">Smith's Marketplace · July 2026</span></td><td data-l="What the fire district agreed to">No fire district interlocal notice was found in the records reviewed as of August 2026</td><td data-l="Amount in the records">Unknown</td></tr>
+    </table>
+    <p class="viz-caption">PIDs are different: they levy their own tax on owners inside them and don't take the fire district's share. The Mount Ogden (Snowbasin), Promontory Commerce Center and Nordic Village PIDs are all in the fire district's area. Inland Port figures from its West Weber project area plan appendix, as reported in <a href="weber-hive-5th5th-sales-tax.html">the Hive's sales tax case file</a>; they are projections, not money collected.</p>
+  </div>
+
+  <p>Each of these adds up in the same place. The fire district serves all of them at full cost, while part of the new tax value in each goes to the project for 10 to 25 years. S.B. 206's statewide filings, due Jan. 1, 2027, should list every one of these project areas, including the fire district's share in each.</p>
+
+  <h2 id="since2019">The math since 2019</h2>
+
+  <p>2019 is the year Utah made public infrastructure districts legal. Here is what the fire district's own notices show about its tax since then, and when the financing tools that share its revenue were added.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Fire district tax on each $100,000 of a home's market value</p>
+    <div class="rate-chart" id="rate-chart" role="img" aria-label="Fire district tax per $100,000 of home value: 2021 $67.16; 2022 $73.87; 2023 before increase $58.90, after $63.91; 2025 before increase $59.57; 2026 $73.61; 2027 annexation estimate $71.56"></div>
+    <div class="yr-tip" id="rate-tip" aria-live="polite">Tap or hover over a bar for details.</div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:#A07A1A;"></span>Year with a tax increase</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#C9B37A;"></span>Before an increase, or an estimate</div>
+    </div>
+    <details class="sources" style="margin:18px 0 0;"><summary>Show as a table</summary>
+      <table class="data-table">
+        <tr><th>Tax year</th><th>Example in the notice or report</th><th>Per $100,000</th></tr>
+        <tr><td>2021</td><td>$300,000 home, $201.47</td><td class="num">$67.16</td></tr>
+        <tr><td>2022, after a 9.96% increase</td><td>$300,000 home, $221.60</td><td class="num">$73.87</td></tr>
+        <tr><td>2023, before increase</td><td>$633,000 home, $372.87</td><td class="num">$58.90</td></tr>
+        <tr><td>2023, after the 8.5% increase in the notice</td><td>$633,000 home, $404.57</td><td class="num">$63.91</td></tr>
+        <tr><td>2025, before increase</td><td>$676,000 home, $402.66</td><td class="num">$59.57</td></tr>
+        <tr><td>2026, after a 23.58% increase</td><td>$676,000 home, $497.61</td><td class="num">$73.61</td></tr>
+        <tr><td>2027, annexation estimate</td><td>$439,000 Roy home, $314.13</td><td class="num">$71.56</td></tr>
+      </table>
+    </details>
+    <p class="viz-caption">Hive calculation: each dollar example from the district's notices and the Standard-Examiner's Dec. 2021 report, divided by the home's value in $100,000s. Notices for 2019, 2020 and 2024 weren't found in the records reviewed; KSL reported the district's last increase before 2025 was approved in 2023; the 8.5% increase proposed in late 2022 took effect for 2023. A primary home is taxed on 55% of its value.</p>
+  </div>
+
+  <p><b>How to read it.</b> When home values go up, the rate goes down on its own, so the district collects about the same money from existing homes. That's why the bars drop before each increase. Each increase pushes the rate back up. For the same $100,000 of home value, the fire district line is about 10% higher in 2026 than in 2021.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Fire district property tax, in dollars</p>
+    <table class="data-table">
+      <tr><th>Year</th><th>Property tax</th><th>What it is</th></tr>
+      <tr><td>2021</td><td class="num">$8.53M</td><td>Collected, per the Standard-Examiner</td></tr>
+      <tr><td>2022</td><td class="num">about $9.38M</td><td>Projected after the 9.96% increase, about $850,000 more</td></tr>
+      <tr><td>2023</td><td class="num">+$860,500</td><td>Added by the 8.5% increase, per the district's Oct. 11, 2022 minutes</td></tr>
+      <tr><td>2024</td><td class="num">about $12M</td><td>Collected, per KSL</td></tr>
+      <tr><td>2026</td><td class="num">about $15.5M</td><td>Hive calculation: about $12.5M before the increase, plus the $2.96M increase</td></tr>
+    </table>
+    <p class="viz-caption">Growth also adds revenue without a rate increase: new buildings pay the same rate and bring new money. That is part of why the dollars rise faster than the rate.</p>
+  </div>
+
+  <h3 class="sub">What each increase was for, and what was added alongside it</h3>
+  <ul class="tl">
+    <li><div class="d">2019</div><div class="txt">S.B. 228 makes public infrastructure districts legal in Utah.</div></li>
+    <li><div class="d">Dec. 2021</div><div class="txt">Fire district raises its tax 9.96% for 2022, "to help bolster district personnel and to boost pay to aid with employee retention," per the Standard-Examiner.</div></li>
+    <li><div class="d">Oct.&ndash;Nov. 2022</div><div class="txt">Fire district proposes an 8.5% increase for 2023, $860,500, with a hearing Nov. 8, including an added inspector and pay adjustments from a wage study, per its minutes. The same month, the County Commission creates the Mount Ogden PIDs for Snowbasin.</div></li>
+    <li><div class="d">2023</div><div class="txt">Promontory Commerce Center PIDs are created in western Weber County.</div></li>
+    <li><div class="d">May 2024</div><div class="txt">The Utah Inland Port Authority adopts its West Weber project area, about 8,968 acres of unincorporated county land. Its model keeps about 75% of new tax value for the project area over 25 years.</div></li>
+    <li><div class="d">Nov.–Dec. 2024</div><div class="txt">Nordic Village PIDs are created, the Nordic Village CRA plan is adopted, and the fire district agrees to share 50% of its increment there for 15 years.</div></li>
+    <li><div class="d">Dec. 2025</div><div class="txt">Fire district board approves a 23.58% increase, $2,956,000 a year, for lease payments on the west-side stations and training facility.</div></li>
+    <li><div class="d">2027</div><div class="txt">Nordic Village sharing begins. S.B. 206's first statewide tax-increment filing is due Jan. 1.</div></li>
+  </ul>
+
+  <div class="callout">
+    <span class="label">What the math shows</span>
+    <p>Owners across the fire district have already paid three increases since 2021: 9.96%, 8.5% and 23.58%. Over the same years, Weber County, the school district, the fire district and the water district committed part of their future growth revenue to Nordic Village, and the Inland Port's West Weber model keeps about 75% of new tax value there for 25 years.</p>
+    <p>Growth revenue is what normally helps an entity keep up with rising costs without raising rates. Growth money committed to a project isn't available for that. If costs rise faster than the money kept, the gap has to be covered by a rate increase or by service cuts.</p>
+    <p>The district's notices gave pay, staffing and the west-side stations as the reasons for its increases. They don't mention sharing, and Nordic Village's sharing doesn't start until 2027.</p>
+    <p>Nordic's sharing starts in 2027 and runs through 2041, when the district's own model shows its yearly tax from the area doubling as soon as the sharing ends. The fire district's share of the West Weber model isn't broken out in the figures reviewed. Once the S.B. 206 reports start in 2027, the amount shared each year can be set next to each year's rate and budget, so owners can see what their increases are covering.</p>
+  </div>
+
+  <h2 id="compare">How Weber Fire District's tax compares</h2>
+
+  <p>Is Weber Fire District's tax high or low? Here it is next to other Utah fire districts and fire service areas, shown the same way: the yearly fire tax on each $100,000 of a primary home's market value.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Yearly fire tax per $100,000 of home value</p>
+    <div id="cmp-bars"></div>
+    <div class="legend">
+      <div class="legend-item"><span class="legend-swatch" style="background:#3A342A;"></span>Weber Fire District</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#A07A1A;"></span>Other fire districts and service areas</div>
+    </div>
+    <details class="sources" style="margin:18px 0 0;"><summary>Show as a table</summary>
+      <table class="data-table">
+        <tr><th>District</th><th>County</th><th>Residents served</th><th>Per $100,000</th></tr>
+        <tr><td>Unified Fire Service Area (2025)</td><td>Salt Lake</td><td>About 474,000 served by Unified Fire Authority</td><td class="num">$90.75</td></tr>
+        <tr><td>North Davis Fire District (2025)</td><td>Davis</td><td>Clearfield, West Point, Sunset</td><td class="num">$85.64</td></tr>
+        <tr><td>Herriman Fire Service Area (2026, proposed)</td><td>Salt Lake</td><td>Not found</td><td class="num">$75.02</td></tr>
+        <tr><td><b>Weber Fire District (2026)</b></td><td>Weber</td><td>About 70,000</td><td class="num">$73.61</td></tr>
+        <tr><td>North View Fire District (2026, proposed)</td><td>Weber</td><td>Harrisville, North Ogden, Pleasant View</td><td class="num">$66.00</td></tr>
+        <tr><td>Riverton Fire Service Area (2025)</td><td>Salt Lake</td><td>Not found</td><td class="num">$62.70</td></tr>
+        <tr><td><b>Weber Fire District (2025)</b></td><td>Weber</td><td>About 70,000</td><td class="num">$59.57</td></tr>
+        <tr><td>South Davis Metro Fire Service Area (2026, proposed)</td><td>Davis</td><td>About 120,000</td><td class="num">$33.44</td></tr>
+      </table>
+    </details>
+    <p class="viz-caption">Hive calculation: each district's tax rate &times; $55,000 (a primary home is taxed on 55% of its value), or its Truth in Taxation example divided by the home's value in $100,000s. 2025 rates from the Utah State Tax Commission's 2025 approved rates report. 2026 "proposed" figures come from each district's notice; whether they were adopted wasn't confirmed. South Davis Metro's member cities also contribute funding, so its rate alone understates its cost. Weber Fire District's 2026 figure is from its own notice.</p>
+  </div>
+
+  <ul>
+    <li><b>Before its increase</b>, Weber Fire District's tax ($59.57 per $100,000 in 2025) was lower than every district on this list except South Davis Metro, which is also funded by its cities.</li>
+    <li><b>After its increase</b>, it sits in the middle: about the same as Herriman, above North View and Riverton, and below North Davis and Unified Fire.</li>
+    <li><b>Increases are common.</b> Unified Fire raised its tax for 2025. North View, Herriman and South Davis Metro all noticed increases for 2026 (about 9.7%, 2.2% and 16%).</li>
+  </ul>
+
+  <p>A tax rate is only part of the picture. It doesn't show ambulance fees, impact fees, how many stations and firefighters each district runs, or how far its crews have to drive. It does show that Weber Fire District's rate, after the 2026 increase, is within the range of its neighbors.</p>
+
   <h2 id="sb206">How S.B. 206 reaches this</h2>
 
   <p>S.B. 206 (2026), "Tax Amendments," does two things that touch this case file.</p>
   <ul>
-    <li>It rewrote Utah Code Section 59-2-924.2, which sets how Roy and Riverdale must cut their rates if they join. The annexation rule kept its wording.</li>
+    <li>It rewrote the law that tells Roy and Riverdale how much to cut their own rates if they join. That rule's wording didn't change.</li>
     <li>It created Utah's first statewide reporting system for tax increment. Every existing project area, including Nordic Village, is to be listed in a filing by Jan. 1, 2027, with annual reports after that. The filings are "for informational purposes only."</li>
   </ul>
   <p>Those filings could show, in one place, how much of Weber Fire District's increment each project area is keeping.</p>
@@ -954,33 +1430,33 @@
 
   <h2 id="grades">Grades</h2>
 
-  <p>Each money stream is graded separately on The Weber County Hive's five standing questions. Grades reflect what the public record shows, not the conduct of any person. Meeting a legal minimum earns a C, not a B.</p>
+  <p>Each money stream is graded separately on The Weber County Hive's five standing questions, from the point of view of the collective: everyone who pays into the district, not only the people nearest a project. Grades reflect what the public record shows, not the conduct of any person. Meeting a legal minimum earns a C, not a B. Where the process and the result differ, both are noted.</p>
 
   <div class="gcard">
     <h4>Levy increase and lease revenue bond</h4>
-    <div class="grow"><span class="c">Power</span><span class="g">C</span><span class="w">No election on $40 million in borrowing unless voters petition. That is what the law allows, and the board, which includes appointed trustees, decided.</span></div>
-    <div class="grow"><span class="c">Transparency</span><span class="g">C+</span><span class="w">Notices, two hearings, published total cost over the bond's life, and minutes recording the comments. The final amount borrowed isn't easy to find.</span></div>
-    <div class="grow"><span class="c">Financial accountability</span><span class="g">C</span><span class="w">Costs and per-home impact were published. There's no district-wide capital plan showing what comes after these stations.</span></div>
-    <div class="grow"><span class="c">Environmental impact</span><span class="g na">Not applicable</span><span class="w"></span></div>
-    <div class="grow"><span class="c">Community impact</span><span class="g">C</span><span class="w">Residents could speak, and seven did. The minutes record concerns about fixed incomes and station use.</span></div>
+    <div class="grow"><span class="c">Power</span><span class="g">C</span><span class="w">The only collective check on $40 million in borrowing was a voter petition within 30 days. That is the legal minimum, and the rate decision rests with a board that is mostly appointed.</span></div>
+    <div class="grow"><span class="c">Transparency</span><span class="g">C</span><span class="w">The notices, two hearings, the bond's total estimated cost and minutes recording public comment are what the law requires. The final amount borrowed isn't easy to find.</span></div>
+    <div class="grow"><span class="c">Financial accountability</span><span class="g">C</span><span class="w">The yearly cost and the per-home impact were published. There's no district-wide capital plan showing what comes after these stations, so owners can't see the next cost coming.</span></div>
+    <div class="grow"><span class="c">Environmental impact</span><span class="g na">Not applicable</span><span class="w">A financing decision for stations on already-developed sites.</span></div>
+    <div class="grow"><span class="c">Community impact</span><span class="g">C</span><span class="w">Residents could speak, and seven did. The minutes record concerns about fixed incomes and how busy stations are. The vote came weeks later, with one trustee opposed.</span></div>
   </div>
 
   <div class="gcard">
     <h4>Nordic Village increment share</h4>
-    <div class="grow"><span class="c">Power</span><span class="g">C−</span><span class="w">A board decision gives up half the district's new revenue from the area for 15 years. The only public check is a 30-day contest period after the agreement is signed.</span></div>
-    <div class="grow"><span class="c">Transparency</span><span class="g">C−</span><span class="w">The district's own notice says only "a percentage." The 50% share and dollar amount appear only in the county's plan.</span></div>
-    <div class="grow"><span class="c">Financial accountability</span><span class="g">C−</span><span class="w">The plan shows $5.44 million shared and $1 million budgeted for a ladder truck. It doesn't show what the district expects it will cost to serve the area.</span></div>
-    <div class="grow"><span class="c">Environmental impact</span><span class="g na">Not applicable</span><span class="w">Graded in the Nordic Village files, not here.</span></div>
-    <div class="grow"><span class="c">Community impact</span><span class="g">C−</span><span class="w">Owners across the district carry the full rate while the new resort area pays half to the district for 15 years.</span></div>
+    <div class="grow"><span class="c">Power</span><span class="g">D+</span><span class="w">A board resolution gave up half the district's new revenue from the area for 15 years. The only public check was a 30-day period to contest the agreement after it was signed. No district-wide hearing on the share was found in the records reviewed, though owners district-wide would carry any gap.</span></div>
+    <div class="grow"><span class="c">Transparency</span><span class="g">C−</span><span class="w">The district's own notice says only "a percentage." In the records reviewed, the 50% share and dollar amount appear only in the county's plan, and a 2026 agreement sets a higher overall ceiling than the 2024 plan's projection without reconciling the two.</span></div>
+    <div class="grow"><span class="c">Financial accountability</span><span class="g">D+</span><span class="w">For 15 years the district receives half of what new buildings in the project area pay, while it receives all of what every other owner pays. The plan shows $5.44 million shared and $1 million back for a ladder truck, but not what serving the area will cost. The shared amount wasn't found in the district documents reviewed.</span></div>
+    <div class="grow"><span class="c">Environmental impact</span><span class="g na">Not applicable</span><span class="w">The fire district's revenue decision. The development's own effects on water and land belong in the Nordic Village files.</span></div>
+    <div class="grow"><span class="c">Community impact</span><span class="g">D+</span><span class="w">The cost of serving new resort growth is spread across the whole district. The owners who would carry any gap, from Hooper to Huntsville, had no separate hearing on the fire district's share in the records reviewed.</span></div>
   </div>
 
   <div class="gcard">
     <h4>Powder Mountain station</h4>
-    <div class="grow"><span class="c">Power</span><span class="g">C</span><span class="w">A private developer and the district set the terms. When operating costs move to the levy, the decision stays with the board.</span></div>
-    <div class="grow"><span class="c">Transparency</span><span class="g">D</span><span class="w">Cost and equipment were announced publicly, but no agreement on operating costs was found in the records reviewed.</span></div>
-    <div class="grow"><span class="c">Financial accountability</span><span class="g">C+</span><span class="w">Taxpayers don't pay for the building. The future operating costs they will pay are undefined.</span></div>
-    <div class="grow"><span class="c">Environmental impact</span><span class="g na">Not applicable</span><span class="w"></span></div>
-    <div class="grow"><span class="c">Community impact</span><span class="g">B−</span><span class="w">A station at the top of a 14% grade shortens response times for the resort and nearby homes.</span></div>
+    <div class="grow"><span class="c">Power</span><span class="g">C−</span><span class="w">A private developer and the district set the terms. When operating costs move to the levy, district taxpayers will pay a cost that had no public hearing in the records reviewed.</span></div>
+    <div class="grow"><span class="c">Transparency</span><span class="g">D</span><span class="w">Cost and equipment were announced to the press, but no agreement on operating costs was found in the records reviewed.</span></div>
+    <div class="grow"><span class="c">Financial accountability</span><span class="g">C</span><span class="w">Process: the terms for shifting costs to the levy are undefined. Result: taxpayers don't pay for the building, which counts in the station's favor.</span></div>
+    <div class="grow"><span class="c">Environmental impact</span><span class="g na">Not applicable</span><span class="w">A station on developed resort land. A brush truck based on the mountain may help with wildland fire, but no record measures that.</span></div>
+    <div class="grow"><span class="c">Community impact</span><span class="g">C+</span><span class="w">Result: Chief Clark told KSL ladder trucks can't reach the area in a reasonable time without it, so the station is expected to shorten response times for the resort and nearby homes. Process: no public hearing found, and KSL reported running costs will shift to the whole district over time.</span></div>
   </div>
 
   <h3 class="sub">What could have been done better for the public</h3>
@@ -988,7 +1464,8 @@
     <table class="data-table">
       <tr><th>What the record shows</th><th>An option that keeps the same goal</th></tr>
       <tr><td>The district's interlocal notice says "a percentage"</td><td>State the percentage and the projected dollars in the district's own notice</td></tr>
-      <tr><td>No posted Powder Mountain operating agreement</td><td>Post the agreement and the date operating costs shift to the levy</td></tr>
+      <tr><td>No Powder Mountain operating agreement found in the records reviewed</td><td>Post the agreement and the date operating costs shift to the levy</td></tr>
+      <tr><td>No fire payment terms with Cache County found in the records reviewed</td><td>Set the amount before, or with, the service authorization, as the sheriff's agreement does</td></tr>
       <tr><td>No district-wide capital plan in the records reviewed</td><td>Publish a five-year station and staffing plan before annexation votes</td></tr>
       <tr><td>Final bond amount hard to find</td><td>Post the closing amount, rate and payment schedule with the budget</td></tr>
       <tr><td>Nordic ladder truck: half from the plan, other half unstated</td><td>Show the truck's full cost and funding sources</td></tr>
@@ -1013,11 +1490,58 @@
       <ul>
         <li>The final amount borrowed on the 2026 lease revenue bond</li>
         <li>The Powder Mountain operating agreement</li>
+        <li>What Cache County will pay for fire and EMS service on its side of the resort</li>
         <li>What serving Nordic Village and Eden Crossing is expected to cost the district</li>
         <li>A district-wide capital plan</li>
         <li>How the other half of the Nordic ladder truck is funded</li>
+        <li>Which station the Nordic ladder truck will be based at, and the expected response time to Nordic Village</li>
       </ul>
     </div>
+  </div>
+
+  <h2 id="questions">Questions readers are asking, and who can answer them</h2>
+
+  <p>Some of these have answers in the public record. Where the record doesn't answer a question, the office that can answer it is listed. Asking at a public hearing or meeting puts the question and the answer on the record.</p>
+
+  <div class="qa">
+    <details open><summary>What will the district build next, and who pays for it?</summary><div class="ans">The 2026 bond covers a new West Haven station, a replacement Station 63 in Hooper, and a training tower and offices in Farr West. The records reviewed don't include a district-wide plan for stations, staff or equipment after that. A fire district charges one rate across its whole area, so everyone in the district shares those costs, including Roy and Riverdale owners if they join.<div class="ask"><b>Ask the Weber Fire District board:</b> "What new stations, staff or equipment do you plan over the next five years, where, and how will they be paid for?"</div></div></details>
+    <details><summary>When does the district start paying to run the Powder Mountain station?</summary><div class="ans">KSL reported that Powder Mountain pays the $6 million to build the station and covers its operating costs at first, with the district supplementing them as property tax revenue from the area grows. No agreement setting out those terms was found in the records reviewed.<div class="ask"><b>Ask the Weber Fire District board:</b> "What is the agreement with Powder Mountain on operating costs, where is it posted, and when does the district start paying?"</div></div></details>
+    <details><summary>How much did the district actually borrow for the new stations?</summary><div class="ans">The bond notice set a maximum of $40 million over up to 25 years, with an estimated total cost of $60,495,732. The Nov. 11, 2025 minutes discuss a revised $35 million. The final amount, rate and payment schedule weren't found in the records reviewed.<div class="ask"><b>Ask the Weber Fire District board:</b> "What did the 2026 lease revenue bond close at: the amount, the interest rate and the yearly payment?"</div></div></details>
+    <details><summary>Is the district getting enough from Nordic Village to serve it?</summary><div class="ans">The county's plan shows the district sharing 50% of its increment from the project area for 15 years, $5,440,513. The district keeps the other half. The records reviewed don't show what the district expects serving Nordic Village, or Eden Crossing, will cost.<div class="ask"><b>Ask the Weber Fire District board:</b> "What do you expect serving Nordic Village and Eden Crossing will cost each year, and does the half you keep cover it?"</div></div></details>
+    <details><summary>Will the Powder Mountain station help anyone down in the valley?</summary><div class="ans">The district built it at the top because trucks can't climb SR-158's 14% grade in time. The same grade applies on the way down. The records reviewed don't say whether its crew will answer calls in Eden, at Nordic Valley or at Eden Crossing, or how long that would take.<div class="ask"><b>Ask the Weber Fire District board:</b> "Will the Powder Mountain crew respond to calls in the valley, and what response times do you expect from it and from the Eden and Huntsville stations?"</div></div></details>
+    <details><summary>Where will the Nordic ladder truck be kept, and how fast can it reach the hotel?</summary><div class="ans">The Nordic Village plan budgets $1,000,000 as a "50% Contribution" toward a ladder truck, and a ladder truck is what reaches the upper floors of a multi-story hotel. The records reviewed don't say which station the truck will be based at. The Powder Mountain station will have its own ladder truck, but it sits up SR-158 on the mountain, not on the way to Nordic Valley on the other side of the valley. No record reviewed sets a response time for Nordic Village or says whether the Nordic-funded truck and the Powder Mountain truck are the same one.<div class="ask"><b>Ask the Weber Fire District board:</b> "Which station will the Nordic Village ladder truck be based at, is it the same truck planned for Powder Mountain, and what response time do you expect for the Nordic Village hotel?"</div></div></details>
+    <details><summary>Who pays the rest of the Nordic Village ladder truck?</summary><div class="ans">The plan lists "Weber County Fire District Ladder Truck 50% Contribution," $1,000,000, scheduled for 2026. The records reviewed don't show where the other half comes from, or whether the $1 million is paid to the district in cash or as equipment.<div class="ask"><b>Ask the Weber County Commission, which serves as the redevelopment agency's board:</b> "Has the ladder truck contribution been paid, in what form, and who is paying the other half?"</div></div></details>
+    <details><summary>How much fire district money has the Nordic project area collected so far?</summary><div class="ans">The plan projects totals over 15 years. The records reviewed don't show how much has actually been collected to date. S.B. 206 requires every tax-increment project area in Utah to be listed in a statewide filing by Jan. 1, 2027, with annual reports after that.<div class="ask"><b>Ask the Weber County Commission:</b> "How much increment has the Nordic Village project area received from each taxing entity so far, and when will the S.B. 206 filing be posted?"</div></div></details>
+    <details><summary>Will the cost of serving new development end up on everyone's bill?</summary><div class="ans">The PID debt stays with owners inside the districts. But the fire district, county and school district share part of their growth revenue from Nordic Village for 15 years, and the fire district's main source of general revenue is its levy. The records reviewed don't show any future increase tied to that sharing, or any plan to show the shared amounts next to an increase request.<div class="ask"><b>Ask the Weber Fire District board and the Weber County Commission:</b> "How much tax increment do you share with project areas each year, and will you show that amount alongside any future tax increase notice?"</div></div></details>
+    <details><summary>Why isn't Cache County paying for the Powder Mountain station?</summary><div class="ans">Part of the resort, including its main lodge area, is in Cache County, outside the fire district's taxing boundaries. The district and Cache County Fire District approved an interlocal agreement in February 2026, and Weber County approved an ordinance in July; the county's announcement said the amount would be set in a final contract. Those dollar terms weren't found in the records reviewed. Cache County's sheriff agreement, by contrast, has Cache reimbursing Weber County at hourly rates.<div class="ask"><b>Ask the Weber Fire District board and the Weber County Commission:</b> "Has the Powder Mountain fire contract with Cache County been signed, what will Cache pay each year, and will it cover the station's crews on the Cache side?"</div><div class="ask"><b>Ask the Cache County Council:</b> "What will Cache County pay Weber Fire District for fire and EMS service on the Cache side of Powder Mountain?"</div></div></details>
+    <details><summary>If Roy and Riverdale join, what happens inside their existing project areas?</summary><div class="ans">Roy and Riverdale have their own redevelopment project areas, and part of both cities sits inside MIDA's Falcon Hill project area. The records reviewed don't say how the fire district's new levy would be treated inside those areas: whether part of it would go to the existing projects, and whether the fire district would be asked to sign new sharing agreements.<div class="ask"><b>Ask the Weber Fire District board and your city council:</b> "If we join, will any of the fire district's levy in our city go to existing CRAs or MIDA's Falcon Hill area, and how much?"</div></div></details>
+    <details><summary>Would Roy and Riverdale get a say in these decisions?</summary><div class="ans">The district board decides its budget, its rate and deals like the Nordic interlocal and the Powder Mountain station. Every city the district serves now appoints one trustee. The records reviewed don't say whether Roy and Riverdale would each get one.<div class="ask"><b>Ask the Weber Fire District board:</b> "Will Roy and Riverdale each appoint a trustee, and when?"</div></div></details>
+    <details><summary>How much would my own city's tax rate drop if we join?</summary><div class="ans">State law requires Roy and Riverdale to cut their rates by what they budgeted for fire, paramedic and emergency services in the prior fiscal year. Neither city has published the amount. <a href="weber-fire-district-annexation.html#questions">The annexation case file</a> covers this in detail.<div class="ask"><b>Ask your city council:</b> "How much will our rate drop, and what is the net change for an average home?"</div></div></details>
+  </div>
+
+  <p class="viz-title" style="margin-top:36px;">Where to direct questions</p>
+  <div class="viz-block" style="margin-top:0;">
+    <table class="data-table">
+      <tr><th>Office</th><th>How to reach</th></tr>
+      <tr><td>Weber Fire District board</td><td>801-782-3580 · district@weberfiredistrict.gov · 2023 W. 1300 N., Farr West · Oct. 1 hearings at Station 61: Riverdale 6:00 p.m., Roy 6:01 p.m.</td></tr>
+      <tr><td>Weber County Commission (also the redevelopment agency's board)</td><td>Weber Center, 2380 Washington Blvd., Ogden · meets Tuesdays, 10:00 a.m., Commission Chambers, 1st floor</td></tr>
+      <tr><td>Cache County Council</td><td>Meeting agendas, packets and minutes at cachecounty.gov</td></tr>
+      <tr><td>Roy City Council</td><td>council@royutah.gov · 801-774-1000 · meets 1st and 3rd Tuesdays, 5:30 p.m.</td></tr>
+      <tr><td>Riverdale City Council</td><td>Members' emails at riverdaleutah.gov/government/city_council.php · meets 1st and 3rd Tuesdays</td></tr>
+    </table>
+    <p class="viz-caption">Contact details from each office's own website and the district's hearing notices.</p>
+  </div>
+
+  <h2 id="takepart">How to take part</h2>
+  <div class="viz-block" style="margin-top:0;">
+    <table class="data-table">
+      <tr><td><b>Hearing</b></td><td>Thursday, Oct. 1, 2026 · Riverdale 6:00 p.m. · Roy 6:01 p.m.</td></tr>
+      <tr><td><b>Where</b></td><td>Weber Fire District Station 61, 2023 W. 1300 N., Farr West, or online at tinyurl.com/WFDAnnexation</td></tr>
+      <tr><td><b>Who can comment</b></td><td>Property owners and registered voters in the annexation area</td></tr>
+      <tr><td><b>Written protests</b></td><td>Within 30 days after the hearing, to district@weberfiredistrict.gov or Weber Fire District, 2023 W. 1300 N., Farr West, UT 84404</td></tr>
+      <tr><td><b>Anyone in the district</b></td><td>Fire board meetings are open to the public; agendas are posted on the Utah Public Notice Website</td></tr>
+    </table>
+    <p class="viz-caption">From the district's hearing notices. For how many protests it takes to force an election, see <a href="weber-fire-district-annexation.html#takepart">the annexation case file</a>.</p>
   </div>
 
   <details class="sources">
@@ -1034,12 +1558,33 @@
       <li>KSL.com, "Powder Mountain, Weber Fire District break ground on mountaintop fire station," September 2026.</li>
       <li>Standard-Examiner, "EMS expansion: Ground broken on new Weber Fire District station at Powder Mountain Ski Resort," Sept. 24, 2026.</li>
       <li>KSL.com, Tim Vandenack, "Weber Fire District proposing 23.6% tax hike; Weber County dispatch center mulling 4.9% bump," Nov. 7, 2025.</li>
-      <li>Weber Fire District, "Locations" page (current stations).</li>
+      <li>"Nordic Village Financing Plan Review," prepared for Weber Fire District, Utah Public Notice Website file 1207807 (base $13,867 a year; $5,440,513 shared and $5,440,513 kept, 2027&ndash;2041; $428,158 in 2041; $856,315 a year, 2042&ndash;2053). Read via text extraction of the posted PDF.</li>
+      <li>Utah State Tax Commission, "2025 Approved Property Tax Rates and Budgets" (Oct. 8, 2025): North Davis Fire District 0.001557; South Davis Metro Fire Service Area 0.000538; Unified Fire Service Area 0.001650; Herriman Fire Service Area 0.001352; Riverton Fire Service Area 0.001140. Read via text extraction.</li>
+      <li>Truth in Taxation notices for 2026: South Davis Metro Fire (proposed 0.000608, +16.07%); North View Fire District ($553,000 home, $332.74 to $364.98, +9.73%); Herriman Fire Service Area ($652,000 home, $478.37 to $489.13, +2.23%). KUTV and Eagle Mountain City on Unified Fire Service Area's 2025 increase. Residents served: Unified Fire Authority homepage; North Salt Lake City page on South Davis Metro Fire; North Davis Fire District FY2024 financial report.</li>
+      <li>Weber Fire District, "Locations" page (current stations), and "Board of Trustees" and "Candidacy Info" pages (four trustees elected at large from unincorporated Weber County; one appointed by each member city).</li>
+      <li>Utah Legislature, S.B. 228 (2019), creating public infrastructure districts; Weber County Commission resolutions creating the Mount Ogden PIDs (Nov. 2022) and Promontory Commerce Center PIDs (2023), as documented in the Hive's PIDS-Utah case files.</li>
+      <li>MIDA, Falcon Hill Project Area page (area touching Clearfield, Riverdale, Roy and Sunset).</li>
+      <li>Weber County Community Reinvestment Agency, notice of public hearing, Chromalox CRA, June 6, 2023 (Weber Fire District, $628,684 estimated), and Weber County notice of interlocal agreements, Chromalox Community Reinvestment Project Area, April 24, 2025 (fire district, 10 years).</li>
+      <li>Weber Fire District, Resolution 12-2025, Aug. 12, 2025 (Farr West Landing CRA interlocal), as cited in the Hive's S.B. 206 case file.</li>
+      <li>Weber County ordinance allowing Weber Fire District service in neighboring counties, "G2 Fire Dist Service Area Ordinance_2026," July 2026 commission packet.</li>
+      <li>Eden Crossing records: Weber County development agreement with Eden Crossing, LLC, Dec. 2023; Weber County Commission vote Dec. 5, 2023; Ogden Valley Planning Commission recommendation Nov. 14, 2023; Utah Division of Corporations filings; and the Nordic Village Master Development Agreement beneficiary document (March and October 2023), from the Hive's prior Ogden Valley case files.</li>
+      <li>Standard-Examiner, "Weber County, sewer and fire district tax hikes will boost bills by 8.13%," Dec. 21, 2021 (9.96%; $8.53 million in 2021; $300,000 home, $201.47 to $221.60).</li>
+      <li>Weber Fire District, notice of proposed tax increase for the Nov. 8, 2022 hearing (8.50%; $633,000 home, $372.87 to $404.57), Utah Public Notice Website file 905203, and board minutes of Oct. 11, 2022 ($860,500; inspector position; wage study), file 910655.</li>
+      <li>KSL.com, Nov. 7, 2025 (about $12 million collected in 2024; last increase approved in 2023).</li>
+      <li>Weber Fire District, Resolution 04-2026, Feb. 10, 2026, interlocal agreement with Cache County Fire District, Utah Public Notice Website file 1388763.</li>
+      <li>Weber County, announcement of ordinance authorizing Weber Fire District service coverage atop Powder Mountain, July 28, 2026 (180 to 220 acres; amount to be set in a final interlocal contract), and Citizen Portal report on the July 21 first reading.</li>
+      <li>Cache County Council, July 28, 2026 meeting packet (Resolution 2026-27, Powder Mountain Law Enforcement and Search and Rescue Interlocal Agreement; Public Health Program &amp; Regulation Interlocal Agreement 2026), and Citizen Portal report on the 7–0 vote and hourly reimbursement.</li>
+      <li>Cache County Council, minutes of May 12, 2026 (Councilmember Nolan Gunnell's question on taxes and service costs).</li>
+      <li>Utah Lieutenant Governor's Office, Ogden Valley incorporation feasibility study (Powder Mountain lodge locations).</li>
+      <li>KSL TV, "Weber County grant Nordic Valley developers taxing authority to aid expansion," November 2024 (three PIDs, up to $80 million each, $240 million total; $500 per $100,000 of taxable value cap; about $47 million expected; county debt statement).</li>
+      <li>The Weber County Hive, "Weber County's New Sales Tax" case file (April 2, 2026 Nordic Village interlocal participation agreement, up to $55 million; 0.20% sales tax).</li>
+      <li>KSL.com, Chief Britt Clark: "Service districts can only gain revenue through property taxes," as quoted in the Hive's annexation case file (CASE 2026-WFD-01).</li>
+      <li>Weber County Commission web page (office address and meeting schedule); Roy City and Riverdale City council web pages (contact information and meeting schedules).</li>
       <li>Utah Code Section 59-2-924.2 (effective Jan. 1, 2026), and S.B. 206 (2026), "Tax Amendments," enrolled version and committee comparison.</li>
       <li>The Weber County Hive, "A New Line on the Bill" (CASE 2026-WFD-01) and the Eden Crossing records already in its case files (up to 325 units and a hotel).</li>
       <li>The Weber County Hive's collective rubric.</li>
     </ul>
-    <p style="font-size:14px;color:var(--gray);font-style:italic;margin:14px 0 0;">The district's kept share of Nordic increment is a Hive calculation from the plan's own figures. Public records only. No comment requested.</p>
+    <p style="font-size:14px;color:var(--gray);font-style:italic;margin:14px 0 0;">Public records only. No comment requested.</p>
   </details>
 
 </article>
@@ -1071,7 +1616,7 @@
   function draw(u){
     var mx=Math.max.apply(null,E.map(function(e){return e[u];}));
     box.innerHTML=E.map(function(e){
-      return '<div class="ent-row'+(e.hl?' hl':'')+'"><div class="top"><span>'+e.n+' · '+e.s+'</span><b>'+fmt(e[u])+'</b></div><div class="bar-track"><div class="bar-fill" style="width:'+(e[u]/mx*100).toFixed(1)+'%;background:'+(e.hl?'#7A2020':'#D4AF37')+'"></div></div></div>';
+      return '<div class="ent-row'+(e.hl?' hl':'')+'"><div class="top"><span>'+e.n+' · '+e.s+'</span><b>'+fmt(e[u])+'</b></div><div class="bar-track"><div class="bar-fill" style="width:'+(e[u]/mx*100).toFixed(1)+'%;background:'+(e.hl?'#3A342A':'#D4AF37')+'"></div></div></div>';
     }).join('');
   }
   var tb=[].slice.call(document.querySelectorAll('.toggle button'));
@@ -1084,6 +1629,99 @@
     fb.forEach(function(o){o.setAttribute('aria-pressed','false');});b.setAttribute('aria-pressed','true');
     li.forEach(function(l){l.hidden=!(b.dataset.f==='all'||l.dataset.a===b.dataset.f);});
   });});
+  // Year chart
+  (function(){
+    var D=[
+      {l:'2024&ndash;26<br>before the project',k:13867,c:0,t:'Before the project: the land produces about $13,867 a year for the fire district.'},
+      {l:'2027&ndash;2040<br>sharing years',k:null,c:null,t:"2027 to 2040: each year's new tax from the area is split 50/50. Over all 15 sharing years, the district keeps $5,440,513 and shares $5,440,513."},
+      {l:'2041<br>last sharing year',k:428158,c:428158,t:'2041, the last sharing year: the district keeps $428,158 and $428,158 goes to the redevelopment agency.'},
+      {l:'2042 on<br>sharing ends',k:856315,c:0,t:'2042 onward: sharing has ended, so the district keeps all $856,315 a year, double what it kept the year before.'}
+    ];
+    var box=document.getElementById('yr-chart'),tip=document.getElementById('yr-tip');
+    if(!box) return;
+    var mx=856315, H=200, html='', lab='<div class="yr-labels">';
+    D.forEach(function(d,i){
+      var inner;
+      if(d.k===null){inner='<div class="val" style="color:var(--gray);font-weight:400;">split 50/50 each year</div>';}
+      else{
+        var vt=d.c?('$'+d.k.toLocaleString('en-US')+' kept<br><span style="font-weight:400">+ $'+d.c.toLocaleString('en-US')+' shared</span>'):('$'+d.k.toLocaleString('en-US'));
+        inner='<div class="val">'+vt+'</div><div class="stackb">'+
+          (d.c?'<div style="height:'+(d.c/mx*H).toFixed(1)+'px;background:#A8392E"></div>':'')+
+          '<div style="height:'+Math.max(3,d.k/mx*H).toFixed(1)+'px;background:#A07A1A"></div></div>';
+      }
+      html+='<div class="yr-col" tabindex="0" data-i="'+i+'">'+inner+'</div>';
+      lab+='<div>'+d.l+'</div>';
+    });
+    box.innerHTML=html; box.insertAdjacentHTML('afterend',lab+'</div>');
+    [].forEach.call(box.querySelectorAll('.yr-col'),function(el){
+      function show(){tip.textContent=D[+el.dataset.i].t;}
+      el.addEventListener('mouseenter',show);el.addEventListener('focus',show);el.addEventListener('click',show);
+    });
+  })();
+  // Rate chart
+  (function(){
+    var D=[
+      {l:'2021',v:67.16,t:'2021: $67.16 per $100,000 of home value ($201.47 on a $300,000 home).',inc:0},
+      {l:'2022<br>+9.96%',v:73.87,t:'2022, after a 9.96% increase for pay and retention: $73.87 per $100,000.',inc:1},
+      {l:'2023<br>before',v:58.90,t:'2023, before the increase: home values rose, so the certified rate came down to $58.90 per $100,000.',inc:0},
+      {l:'2023<br>+8.5%',v:63.91,t:'2023, with the 8.5% increase in the district\'s notice ($860,500): $63.91 per $100,000.',inc:1},
+      {l:'2025<br>before',v:59.57,t:'2025, before the increase: $59.57 per $100,000.',inc:0},
+      {l:'2026<br>+23.58%',v:73.61,t:'2026, after a 23.58% increase ($2,956,000) for the west-side stations: $73.61 per $100,000.',inc:1},
+      {l:'2027<br>est.',v:71.56,t:'2027, the rate implied by the district\'s annexation estimates for Roy and Riverdale: $71.56 per $100,000.',inc:0}
+    ];
+    var box=document.getElementById('rate-chart'),tip=document.getElementById('rate-tip');
+    if(!box) return;
+    var H=200,mx=80,html='',lab='<div class="rate-labels">';
+    D.forEach(function(d,i){
+      html+='<div class="yr-col" tabindex="0" data-i="'+i+'"><div class="val">$'+d.v.toFixed(2)+'</div><div class="stackb"><div style="height:'+(d.v/mx*H).toFixed(1)+'px;background:'+(d.inc?'#A07A1A':'#C9B37A')+'"></div></div></div>';
+      lab+='<div>'+d.l+'</div>';
+    });
+    box.innerHTML=html; box.insertAdjacentHTML('afterend',lab+'</div>');
+    [].forEach.call(box.querySelectorAll('.yr-col'),function(el){
+      function show(){tip.textContent=D[+el.dataset.i].t;}
+      el.addEventListener('mouseenter',show);el.addEventListener('focus',show);el.addEventListener('click',show);
+    });
+  })();
+  // Scenario calculator
+  (function(){
+    var c=document.getElementById('sc-cost'),h=document.getElementById('sc-home');
+    if(!c) return;
+    var KEPT=5440513/15, FULL=KEPT*2, LEVY=15492000, RATE=0.0013383;
+    function m(v){return '$'+Math.round(v).toLocaleString('en-US');}
+    function one(kept,id){
+      var cost=+c.value, gap=cost-kept, home=Math.max(0,+h.value||0), tax=home*0.55*RATE;
+      document.getElementById(id+'-line').textContent='District keeps about '+m(kept)+' a year from the area';
+      var big=document.getElementById(id), note=document.getElementById(id+'-note');
+      if(gap>0){
+        var add=tax*gap/LEVY;
+        big.textContent='+'+m(add)+' a year'; big.style.color='#A8392E';
+        note.textContent='Goes up. A '+m(gap)+' yearly gap is about '+(gap/LEVY*100).toFixed(2)+'% of the levy. On your home that adds about '+m(add)+' to the fire district line, every year the gap lasts.';
+      } else {
+        big.textContent='No added cost'; big.style.color='#3F6B3B';
+        note.textContent='Stays about the same. The district keeps '+m(-gap)+' a year more than the cost, which can help hold rates steady for everyone.';
+      }
+    }
+    function upd(){document.getElementById('sc-cost-out').textContent=m(+c.value);one(KEPT,'sc-a');one(FULL,'sc-b');}
+    c.addEventListener('input',upd);h.addEventListener('input',upd);upd();
+  })();
+  // Comparison bars
+  (function(){
+    var box=document.getElementById('cmp-bars'); if(!box) return;
+    var D=[['Unified Fire Service Area (2025)',90.75,0],['North Davis Fire District (2025)',85.64,0],['Herriman Fire Service Area (2026, proposed)',75.02,0],['Weber Fire District (2026)',73.61,1],['North View Fire District (2026, proposed)',66.00,0],['Riverton Fire Service Area (2025)',62.70,0],['Weber Fire District (2025)',59.57,1],['South Davis Metro (2026, proposed)*',33.44,0]];
+    box.innerHTML=D.map(function(d){return '<div class="ent-row'+(d[2]?' hl':'')+'"><div class="top"><span>'+d[0]+'</span><b>$'+d[1].toFixed(2)+'</b></div><div class="bar-track"><div class="bar-fill" style="width:'+(d[1]/95*100).toFixed(1)+'%;background:'+(d[2]?'#3A342A':'#A07A1A')+';border-radius:0 4px 4px 0"></div></div></div>';}).join('')+'<p style="font-size:13px;color:var(--gray);margin:6px 0 0;">* Member cities also contribute funding.</p>';
+  })();
+  // Powder Mountain calculator
+  (function(){
+    var c=document.getElementById('pm-cost'),t=document.getElementById('pm-type'); if(!c) return;
+    var RATE=0.0013383;
+    function upd(){
+      var cost=+c.value, f=t.value==='res'?0.55:1, need=cost/(RATE*f);
+      document.getElementById('pm-cost-out').textContent='$'+cost.toLocaleString('en-US');
+      document.getElementById('pm-need').textContent=need>=1e9?('About $'+(need/1e9).toFixed(2)+' billion'):('About $'+(need/1e6).toFixed(0)+' million');
+      document.getElementById('pm-sub').textContent='That much new '+(f===1?'full-value property':'primary-home value')+' on the Weber County side would pay about $'+cost.toLocaleString('en-US')+' a year in fire district tax.';
+    }
+    c.addEventListener('input',upd);t.addEventListener('change',upd);upd();
+  })();
 })();
 </script>
 
