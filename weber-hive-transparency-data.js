@@ -173,9 +173,21 @@ const CASES = [
     officials: ["Weber Fire District Board", "Chief Britt Clark", "Roy City Council", "Riverdale City Council"],
     status: "documented",
     published: "Sep 24, 2026",
-    updated: "Sep 24, 2026",
+    updated: "Sep 25, 2026",
     link: "weber-fire-district-annexation.html",
     pairWith: "CASE 2026-STAX-01"
+  },
+  {
+    caseNumber: "CASE 2026-WFD-02",
+    title: "Paying for the Next Station: How Weber Fire District Funds Its Growth",
+    category: "Public Finance",
+    summary: "Four money streams in one place: a 23.58% levy increase, a lease revenue bond of up to $40 million with no election unless voters petition, the district's own agreement to share 50% of its Nordic Village tax increment for 15 years ($5.44M), and a $6M developer-built station at Powder Mountain whose operating terms aren't posted. What's been said, what the records show, and what it means for Roy and Riverdale.",
+    officials: ["Weber Fire District Board", "Chief Britt Clark", "Community Reinvestment Agency of Weber County"],
+    status: "documented",
+    published: "Sep 25, 2026",
+    updated: "Sep 25, 2026",
+    link: "weber-fire-district-growth.html",
+    pairWith: "CASE 2026-WFD-01"
   },
   {
     caseNumber: "CASE 2026-JUD-01",
