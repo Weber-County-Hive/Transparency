@@ -235,5 +235,17 @@ const CASES = [
     published: "Sep 24, 2026",
     updated: "Sep 24, 2026",
     link: "utah-judicial-oversight.html"
+  },
+  {
+    caseNumber: "CASE 2026-WHE-01",
+    title: "No Property Tax, a New Line on the Power Bill: West Haven's 6% Energy Tax",
+    category: "Public Finance",
+    summary: "West Haven has no city property tax. The City Council voted 3–2 to start collecting a 6% tax on electricity and natural gas, the most state law allows, enacted in 1998 and never collected. It starts Oct. 1, 2026, and the city expects about $1.2 million a year.",
+    officials: ["Rob Vanderwood", "Kim Dixon", "Ryan Swapp", "Ryan Saunders", "Carrie Call", "Nina Morse"],
+    status: "documented",
+    published: "Sep 30, 2026",
+    updated: "Sep 30, 2026",
+    link: "west-haven-energy-tax.html",
+    pairWith: "CASE 2026-STAX-01"
   }
 ];
