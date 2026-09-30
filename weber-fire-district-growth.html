@@ -754,6 +754,25 @@
   .conv{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
   @media (max-width:600px){.conv{grid-template-columns:1fr;}}
 </style>
+
+<style>
+  .gantt{position:relative;margin:8px 0 0;}
+  .gantt .g-row{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:10px;margin:0 0 10px;}
+  .gantt .g-lab{font-size:14px;color:#242017;line-height:1.3;}
+  .gantt .g-track{position:relative;height:26px;background:#EFE9DC;}
+  .gantt .g-seg{position:absolute;top:0;height:100%;display:flex;align-items:center;justify-content:center;font-size:12.5px;color:#FFF;white-space:nowrap;overflow:hidden;}
+  .gantt .g-axis{display:grid;grid-template-columns:150px 1fr;gap:10px;font-size:12.5px;color:var(--gray);}
+  .gantt .g-ticks{position:relative;height:18px;}
+  .gantt .g-ticks span{position:absolute;transform:translateX(-50%);}
+  @media (max-width:600px){.gantt .g-row,.gantt .g-axis{grid-template-columns:92px 1fr;}.gantt .g-lab{font-size:12.5px;}}
+  .ph-bars{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:end;height:230px;margin:16px 0 6px;border-bottom:1px solid rgba(0,0,0,.25);}
+  .ph-col{display:flex;flex-direction:column;justify-content:flex-end;height:100%;}
+  .ph-col .seg{width:100%;transition:height .5s ease;}
+  .ph-col .keep{background:#A07A1A;}
+  .ph-col .share{background:#A8392E;}
+  .ph-labs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;font-size:13.5px;color:#242017;text-align:center;}
+  .ph-labs b{display:block;font-family:'Playfair Display',serif;font-size:17px;color:#111008;}
+</style>
 </head>
 <body>
 
@@ -845,6 +864,7 @@
     <a href="#dates">Key dates</a>
     <a href="#roy">What it means for Roy and Riverdale</a>
     <a href="#pids">PIDs &amp; general funds</a>
+    <a href="#savings">What the PID saves</a>
     <a href="#developers">The developers</a>
     <a href="#why2019">Why this route</a>
     <a href="#others">Other project areas</a>
@@ -975,6 +995,40 @@
       </div>
     </div>
     <p class="viz-caption">Starting in 2027, S.B. 206's annual reports should show how much was actually collected and shared each year.</p>
+  </div>
+
+  <div class="viz-block" id="phases">
+    <p class="viz-title">How long each agency shares its new tax money from Nordic Village</p>
+    <p style="font-size:16px;color:#242017;margin:0 0 12px;">For 15 years, 2027 through 2041, each agency hands part of the tax on Nordic Village's new value to the county's redevelopment agency, which uses it for the project's roads, water and sewer and, since April 2026, to back the PID's tax increment revenue bonds. Weber County shares <b>most</b> of its new tax money (75%); the others share half.</p>
+    <div class="gantt" role="img" aria-label="Timeline, 2024 to 2045: each agency shares part of its Nordic Village tax increment from 2027 through 2041, then receives all of it">
+      <div class="g-axis"><span></span><div class="g-ticks" id="g-ticks"></div></div>
+      <div id="g-rows"></div>
+    </div>
+    <div class="legend" style="margin-top:6px;">
+      <div class="legend-item"><span class="legend-swatch" style="background:#C9B37A;"></span>Before new value (2024 base)</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#A8392E;"></span>Sharing years</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#A07A1A;"></span>Agency receives all of it</div>
+    </div>
+
+    <p class="viz-title" style="margin-top:26px;">Before, during and after sharing, per year</p>
+    <div class="toggle" role="group" aria-label="Choose an agency" id="ph-tog">
+      <button aria-pressed="false" data-e="county">Weber County</button>
+      <button aria-pressed="false" data-e="school">School District</button>
+      <button aria-pressed="true" data-e="fire">Fire District</button>
+      <button aria-pressed="false" data-e="water">Weber Basin Water</button>
+    </div>
+    <div class="ph-bars" id="ph-bars"></div>
+    <div class="ph-labs" id="ph-labs"></div>
+    <div class="legend" style="margin-top:10px;">
+      <div class="legend-item"><span class="legend-swatch" style="background:#A07A1A;"></span>The agency keeps</div>
+      <div class="legend-item"><span class="legend-swatch" style="background:#A8392E;"></span>Shared with the county's redevelopment agency</div>
+    </div>
+    <p id="ph-note" style="font-size:15.5px;color:#242017;margin:12px 0 0;"></p>
+    <p class="viz-caption">From the Nordic Village project area plan: "base property tax today" and "property taxes upon TIF conclusion" (Exhibit G) and each agency's total shared over 2027&ndash;2041 (Exhibit H). The middle bar is a yearly average of the 15-year totals, so it is an illustration, not any single year; real amounts start small and grow as buildings are finished. All figures are the plan's estimates and depend on how much is actually built.</p>
+    <div class="callout" style="margin:18px 0 0;">
+      <span class="label">PID tax vs. shared tax money</span>
+      <p>These are two different things. The PID tax is an extra line paid by owners inside the district. The shared tax money is revenue the county, school district, fire district and water district would otherwise collect for their own budgets. It's what the 15-year deferral above shows, and it is the money pledged to the PID's 2026 tax increment revenue bonds.</p>
+    </div>
   </div>
 
   <div class="viz-block">
@@ -1159,6 +1213,8 @@
   </div>
 
   <p>The board chair told the Standard-Examiner the station "will be a very valuable resource for this entire area." The district's own reason for it, the grade, points to a station that mainly serves the mountain. The records reviewed don't include response-time data that would show either way.</p>
+  <p><b>Why Nordic needs its own truck.</b> If the mountaintop ladder truck is there for the mountain, it isn't the answer for Nordic Valley's planned 230-room hotel on the valley floor. That is why the Nordic Village plan budgets $1 million toward half of a second ladder truck, with no record of who pays the other half. Add Roy's 2024 ladder truck if the annexation passes, and the district is taking on three ladder-truck commitments at once.</p>
+  <p><b>The benefit side.</b> KSL reported that once the mountain station opens, the Eden and Huntsville stations will answer fewer calls at the resort, which could leave those crews more available for the valley. No response-time figures were found to measure that.</p>
 
   <h3 class="sub" id="sheriff">The sheriff's office inside the station</h3>
 
@@ -1375,6 +1431,12 @@
   <h2 id="pids">PIDs, general funds and bonds: where the costs land</h2>
 
   <p>Four financing tools touch this story. The first two are at Nordic Village, and the other two apply county-wide or district-wide. Each is set up by a different document and paid for by a different group, so they're easy to blur together.</p>
+  <div class="callout" style="border-color:#7A2020;" id="alreadypaying">
+    <span class="label" style="color:#7A2020;">The public is already paying for growth</span>
+    <p>The fire district's property tax went from <b>$8.53 million in 2021 to about $16.27 million for 2026</b>, nearly double. Part of that is new buildings paying the same rate. But three rate increases since 2019, <b>9.96%, 8.5% and 23.58%</b>, added about $850,000, $860,500 and $2,956,000 a year, <b>about $4.67 million a year in all</b>, paid by every owner in the district. The district tied them to pay, staffing and new stations for a growing district. <a href="#since2019">See the math since 2019.</a></p>
+    <p>Across Weber County, <a href="weber-county-tax-increases-since-2019.html">59 Truth in Taxation increases were proposed for 2020 through 2026, and at least 46 were adopted</a>. Nordic Village's sharing doesn't start until 2027, so it didn't cause these. It adds to them: from 2027 through 2041, the new buildings there send part of their tax to the project while the district, county, schools and water district serve them in full.</p>
+  </div>
+
 
   <div class="viz-block">
     <p class="viz-title">Who pays, and who votes</p>
@@ -1420,6 +1482,90 @@
     <span class="label">The disclosure question</span>
     <p>A Truth in Taxation notice tells owners how much an entity wants to raise and, in general terms, what for. The notices and minutes reviewed here don't show how much growth revenue the same entity has agreed to share with project areas. The two numbers are published in different documents, if they're published at all.</p>
     <p>Starting in 2027, S.B. 206's statewide reports should make the shared amounts public each year. Whether the fire district, the county or the school district will put those amounts next to any future increase request is not answered in the records reviewed.</p>
+  </div>
+
+
+  <h2 id="savings">What the PID saves the developer, and what owners pay</h2>
+
+  <p>Before Utah's 2019 law allowing public infrastructure districts (S.B. 228), a developer usually paid for roads, water and sewer with its own money or private loans and recovered the cost in lot prices. Other tools, such as special assessment areas and redevelopment tax increment, existed before 2019 too. Here is what the Nordic Village records show about who pays for the infrastructure now.</p>
+
+  <div class="viz-block">
+    <table class="data-table cardtbl">
+      <tr><th>Item</th><th>What the records show</th><th>Source</th></tr>
+      <tr><td data-l=""><b>Infrastructure total</b></td><td data-l="Record">About $121 million</td><td data-l="Source">County's adopted project area plan</td></tr>
+      <tr><td data-l=""><b>Paid by the developer</b></td><td data-l="Record">About $80 million</td><td data-l="Source">Same plan</td></tr>
+      <tr><td data-l=""><b>Paid through the PID and shared tax money</b></td><td data-l="Record">About $41 million, about a third</td><td data-l="Source">Same plan</td></tr>
+      <tr><td data-l=""><b>PID bonds on the books</b></td><td data-l="Record">$39.38 million as of March 31, 2026, plus up to $25 million authorized April 15, 2026 (issuance not confirmed)</td><td data-l="Source">PID financial report; bond notice</td></tr>
+      <tr><td data-l=""><b>Yearly interest on the $39.38 million</b></td><td data-l="Record">$1,891,334 paid March 2, 2026, about 4.8%</td><td data-l="Source">PID payment report, first quarter 2026</td></tr>
+    </table>
+    <p class="viz-caption">By the county's own plan, about a third of Nordic Village's infrastructure is paid through the PID and shared public tax money rather than by the developer.</p>
+  </div>
+
+  <div class="viz-block city-tool">
+    <p class="viz-title">Try it: what cheaper borrowing is worth</p>
+    <p style="font-size:16px;color:#242017;margin:0 0 12px;">The PID borrowed at about 4.8%. A developer borrowing privately would likely pay more. Choose how much more, and how many years the debt is carried, to see the interest the PID route avoids for the developer. The rate gap is your choice; it isn't from a record.</p>
+    <div class="conv">
+      <div class="hive-field"><label for="sv-p">Debt carried</label>
+        <select id="sv-p" class="hive-input"><option value="39380000" selected>$39.38 million (issued)</option><option value="64380000">$64.38 million (issued plus the 2026 ceiling)</option></select></div>
+      <div class="hive-field"><label for="sv-y">Years carried: <b id="sv-y-out">10</b></label><input id="sv-y" type="range" min="1" max="30" step="1" value="10" style="width:100%;"></div>
+    </div>
+    <div class="hive-field" style="margin-top:12px;"><label for="sv-g">How much higher a private loan rate would be: <b id="sv-g-out">3.0 points</b></label><input id="sv-g" type="range" min="0" max="6" step="0.5" value="3" style="width:100%;"></div>
+    <div class="result-grid" style="margin-top:14px;">
+      <div class="result"><div class="k">Extra interest avoided per year</div><div class="val" id="sv-yr">&mdash;</div></div>
+      <div class="result"><div class="k">Over the years chosen</div><div class="val" id="sv-tot">&mdash;</div><div class="sub">simple interest, before any principal is repaid</div></div>
+    </div>
+    <p class="viz-caption">A rough illustration: it multiplies the debt by the rate gap and doesn't model repayment schedules. The PID debt itself is repaid by the PID tax and the shared tax money, not by the developer.</p>
+  </div>
+
+  <div class="viz-block city-tool">
+    <p class="viz-title">Try it: two layers on a Nordic Village bill</p>
+    <p style="font-size:16px;color:#242017;margin:0 0 12px;">A Nordic Village owner pays every regular tax at the same rates as everyone else, plus the PID tax. And during 2027&ndash;2041, part of their regular tax on new value goes back to the project instead of to services. This shows the two lines this case file can measure: the PID tax and the fire district line.</p>
+    <div class="conv">
+      <div class="hive-field"><label for="tl-v">Property's market value</label><input id="tl-v" class="hive-input" type="number" min="50000" step="10000" value="800000"></div>
+      <div class="hive-field"><label for="tl-t">Kind of property</label><select id="tl-t" class="hive-input"><option value="0.55">Primary residence (taxed on 55%)</option><option value="1" selected>Second home, rental or business (full value)</option></select></div>
+    </div>
+    <div class="hive-field" style="margin-top:12px;"><label for="tl-r">PID tax rate: <b id="tl-r-out">0.005</b> ($<span id="tl-r-100">500</span> per $100,000 of taxable value)</label><input id="tl-r" type="range" min="0" max="0.01" step="0.0005" value="0.005" style="width:100%;"></div>
+    <div class="result-grid" style="margin-top:14px;">
+      <div class="result"><div class="k">PID tax per year</div><div class="val" id="tl-pid">&mdash;</div><div class="sub">the extra layer</div></div>
+      <div class="result"><div class="k">Fire district line per year</div><div class="val" id="tl-fire">&mdash;</div><div class="sub" id="tl-split"></div></div>
+    </div>
+    <p class="viz-caption">PID rate 0.005 is the cap KSL reported for the Nordic Village PIDs; move the slider if a rate changes. Fire line at the district's final 2026 rate, 0.1301% of taxable value. During sharing, half of the fire tax on value above the project area's 2024 base goes to the county's redevelopment agency; for a new building, nearly all of its value is above the base. County, school and water lines also apply but aren't calculated here.</p>
+  </div>
+
+  <h3 class="sub" id="alltools">Every project in these case files: which public financing tools it uses</h3>
+  <p>Nordic Village isn't the only one. The table below lists each project in this case file and its companions, the tool it uses, and how far it has gone. A PID or IFD adds its own tax on owners inside it; a redevelopment area (CRA) shares part of other agencies' new tax money. Some projects use both.</p>
+  <div class="viz-block">
+    <div class="fil" role="group" aria-label="Filter projects by tool" id="at-fil">
+      <button aria-pressed="true" data-f="all">All</button>
+      <button aria-pressed="false" data-f="pid">PID or IFD</button>
+      <button aria-pressed="false" data-f="cra">Shares tax money (CRA)</button>
+      <button aria-pressed="false" data-f="none">Neither found</button>
+    </div>
+    <table class="data-table cardtbl" id="at" style="margin-top:14px;">
+      <tr><th>Project</th><th>Tool</th><th>Size of the tool</th><th>Status</th></tr>
+      <tr data-f="pid cra"><td data-l=""><b>Nordic Village</b> (Ogden Valley)</td><td data-l="Tool">3 PIDs + county CRA</td><td data-l="Size">PIDs up to $80M each ($240M). CRA: County 75%, school, fire and water 50%, for 15 years, up to $55M</td><td data-l="Status">Issued: $39.38M in bonds. Authorized: up to $25M more (2026). Sharing 2027&ndash;2041</td></tr>
+      <tr data-f="pid"><td data-l=""><b>Snowbasin</b> (Mount Ogden PIDs 1&ndash;3)</td><td data-l="Tool">3 PIDs</td><td data-l="Size">Up to $300M over 40 years</td><td data-l="Status">Authorized; PID No. 1's 2026 draft budget reports no debt</td></tr>
+      <tr data-f="pid"><td data-l=""><b>Eden Crossing</b> (New Eden)</td><td data-l="Tool">PID option</td><td data-l="Size">Reserved in the Dec. 2023 development agreement</td><td data-l="Status">Not formed as of Sept. 6, 2026</td></tr>
+      <tr data-f="pid"><td data-l=""><b>Longhorn</b> (West Weber, Pat Burns / 2020 LLC)</td><td data-l="Tool">Infrastructure financing district</td><td data-l="Size">Engineer's certificate: infrastructure "exceed[s] $1,000,000"</td><td data-l="Status">Created 2025 by owner petition, protest period waived; any borrowing not found</td></tr>
+      <tr data-f="pid"><td data-l=""><b>Promontory Commerce Center</b> (West Weber)</td><td data-l="Tool">3 PIDs</td><td data-l="Size">Not restated here</td><td data-l="Status">Created mid-2023</td></tr>
+      <tr data-f="cra"><td data-l=""><b>Chromalox</b></td><td data-l="Tool">County CRA</td><td data-l="Size">Fire district shares for 10 years; about $628,684 requested from it</td><td data-l="Status">Interlocals noticed April 2025</td></tr>
+      <tr data-f="pid cra"><td data-l=""><b>Farr West Landing</b> (Farr West)</td><td data-l="Tool">City CRA + PID up to 0.006</td><td data-l="Size">Fire district 75% for 15 years, about $1,176,323 (CRA presentation)</td><td data-l="Status">Fire district interlocal approved Aug. 12, 2025</td></tr>
+      <tr data-f="cra"><td data-l=""><b>Inland Port, West Weber</b></td><td data-l="Tool">Inland Port project area</td><td data-l="Size">About 75% of new tax value kept for the project over 25 years (model)</td><td data-l="Status">Adopted May 2024</td></tr>
+      <tr data-f="none"><td data-l=""><b>Powder Mountain</b></td><td data-l="Tool">None found</td><td data-l="Size">Developer paying $6M for the fire station</td><td data-l="Status">No PID or tax-sharing agreement found in the records reviewed; station running costs shift to the district over time</td></tr>
+      <tr data-f="none"><td data-l=""><b>Cobabe Ranch</b></td><td data-l="Tool">None found</td><td data-l="Size">&mdash;</td><td data-l="Status">Not checked in depth</td></tr>
+    </table>
+    <p class="viz-caption">From the Hive's case files and the records cited in them. "None found" means none in the records reviewed, not that none exists. Utah's State Tax Commission also lists Sage Creek, Peak View Plaza and Brook View infrastructure financing districts in Weber County.</p>
+  </div>
+
+  <div class="viz-block">
+    <p class="viz-title">How long the fire district shares its new tax money, project by project</p>
+    <div class="ix-bars">
+      <div class="row"><div class="top"><span>Chromalox CRA</span><b>10 years</b></div><div class="bar-track"><div class="bar-fill" style="width:40%;background:#A8392E;"></div></div></div>
+      <div class="row"><div class="top"><span>Nordic Village CRA &middot; 50%</span><b>15 years (2027&ndash;2041)</b></div><div class="bar-track"><div class="bar-fill" style="width:60%;background:#A8392E;"></div></div></div>
+      <div class="row"><div class="top"><span>Farr West Landing CRA &middot; 75%</span><b>15 years</b></div><div class="bar-track"><div class="bar-fill" style="width:60%;background:#A8392E;"></div></div></div>
+      <div class="row"><div class="top"><span>Inland Port, West Weber &middot; about 75% (all agencies)</span><b>25 years</b></div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#A8392E;"></div></div></div>
+    </div>
+    <p class="viz-caption">Length of each sharing period, on one scale. Start years other than Nordic Village's weren't confirmed in the records reviewed, so these aren't placed on a calendar. The fire district serves all of these areas at full cost throughout.</p>
   </div>
 
   <h2 id="developers">Who the developers are, and why public money is involved</h2>
@@ -1837,6 +1983,9 @@
       <li>Weber County, "Notice of Proposed Tax Increase — Weber Fire District," Oct. 28, 2025 (23.58%; $2,956,000; $676,000 home).</li>
       <li>Weber Fire District Board of Trustees, public hearing minutes (amended), Nov. 11, 2025, Utah Public Notice Website file 1349065: projects listed; $94.95 per year; revised $35 million amount; seven public comments. Read via text extraction of the posted PDF.</li>
       <li>Weber Fire District Board of Trustees, meeting minutes, Dec. 9, 2025 (Resolution 22-2025; 9–1 vote; "an increase of $2,956,000/year in lease payments for the completion of two fire stations, a training facility and offices").</li>
+      <li>Nordic Village project area plan: infrastructure of about $121 million, about $80 million from the developer and about $41 million through the PID and tax increment. From the Hive's Nordic Village files.</li>
+      <li>Nordic Village PID No. 1, first-quarter 2026 payment detail report (Series 2025 bond interest of $1,891,333.89 paid March 2, 2026) and March 31, 2026 balance sheet ($39,380,000 bonds payable). From the Hive's Nordic Village files.</li>
+      <li>Nordic Village project area plan, Exhibit G (p. 23): base property tax today and property taxes upon TIF conclusion by entity: Weber County $24,847 and $1,534,393; Weber School District $68,807 and $4,249,029; Weber Fire District $13,867 and $856,315; Weber Basin Water $2,460 and $151,889; collection period 2027&ndash;2041. Read via summarized capture of the posted PDF.</li>
       <li>Weber County Commission, Ordinance 2024-24 adopting the Nordic Village Community Reinvestment Project Area Plan (first reading Dec. 17, adopted Dec. 31, 2024), and the plan's tax increment table, including each entity's present value at 6.5%: Weber Fire District 50%, 15 years, $5,440,513, present value $3,155,210; total $48,024,217; "Weber County Fire District Ladder Truck 50% Contribution $1,000,000." Read via text extraction of the posted PDF.</li>
       <li>Community Reinvestment Agency of Weber County, notice of interlocal agreements (Weber County, Weber School District, Weber Basin Water Conservancy District, Weber Fire District), Utah Public Notice Website notice 961971, and Resolution CRA06-2024.</li>
       <li>Weber Fire District, notice of execution of interlocal agreement with the Community Reinvestment Agency of Weber County, approved by Resolution 18-2024, Utah Public Notice Website notice 985783, file 1255285.</li>
@@ -2038,5 +2187,60 @@
 })();
 </script>
 
+
+<script>
+(function(){
+  var E={
+    county:{n:'Weber County',s:0.75,base:24847,shared:14622916,after:1534393},
+    school:{n:'Weber School District',s:0.50,base:68807,shared:26995774,after:4249029},
+    fire:{n:'Weber Fire District',s:0.50,base:13867,shared:5440513,after:856315},
+    water:{n:'Weber Basin Water',s:0.50,base:2460,shared:965014,after:151889}
+  };
+  var Y0=2024,Y1=2046,span=Y1-Y0;
+  function pct(y){return ((y-Y0)/span*100).toFixed(2)+'%';}
+  document.getElementById('g-ticks').innerHTML=[2024,2027,2033,2041,2045].map(function(y){return '<span style="left:'+pct(y+(y===2041?1:0))+'">'+(y===2041?'2042':y)+'</span>';}).join('');
+  document.getElementById('g-rows').innerHTML=['county','school','fire','water'].map(function(k){var e=E[k];
+    return '<div class="g-row"><div class="g-lab">'+e.n+'<br><b>'+Math.round(e.s*100)+'% shared</b></div><div class="g-track">'+
+      '<div class="g-seg" style="left:0;width:'+pct(2027)+';background:#C9B37A;"></div>'+
+      '<div class="g-seg" style="left:'+pct(2027)+';width:'+((15)/span*100).toFixed(2)+'%;background:#A8392E;">2027&ndash;2041</div>'+
+      '<div class="g-seg" style="left:'+pct(2042)+';right:0;background:#A07A1A;">all</div></div></div>';}).join('');
+  function m(v){return v>=1e6?'$'+(v/1e6).toFixed(2)+'M':'$'+Math.round(v/1000).toLocaleString()+'K';}
+  var bars=document.getElementById('ph-bars'),labs=document.getElementById('ph-labs'),note=document.getElementById('ph-note');
+  function draw(k){
+    var e=E[k], shY=e.shared/15, keepY=shY/e.s*(1-e.s), mx=Math.max(e.after,shY+keepY);
+    function col(keep,share){return '<div class="ph-col"><div class="seg share" style="height:'+(share/mx*100).toFixed(1)+'%"></div><div class="seg keep" style="height:'+(keep/mx*100).toFixed(1)+'%"></div></div>';}
+    bars.innerHTML=col(e.base,0)+col(keepY,shY)+col(e.after,0);
+    labs.innerHTML='<div>Today<b>'+m(e.base)+'</b>2024 base</div><div>2027&ndash;2041 average<b>'+m(keepY)+' kept</b>'+m(shY)+' shared</div><div>After 2041<b>'+m(e.after)+'</b>plan estimate</div>';
+    note.innerHTML='<b>'+e.n+'</b> shares '+Math.round(e.s*100)+'% of its new tax money from the area for 15 years, about <b>'+m(e.shared)+'</b> in all (plan estimate), while serving the new buildings from the day they open.';
+  }
+  var b=[].slice.call(document.querySelectorAll('#ph-tog button'));
+  b.forEach(function(x){x.addEventListener('click',function(){b.forEach(function(o){o.setAttribute('aria-pressed','false');});x.setAttribute('aria-pressed','true');draw(x.dataset.e);});});
+  draw('fire');
+})();
+</script>
+
+<script>
+(function(){
+  function m(v){return '$'+Math.round(v).toLocaleString('en-US');}
+  var P=document.getElementById('sv-p'),Y=document.getElementById('sv-y'),G=document.getElementById('sv-g');
+  function sv(){var yr=(+P.value)*(+G.value)/100;document.getElementById('sv-y-out').textContent=Y.value;document.getElementById('sv-g-out').textContent=(+G.value).toFixed(1)+' points';
+    document.getElementById('sv-yr').textContent=m(yr);document.getElementById('sv-tot').textContent=m(yr*(+Y.value));}
+  [P,Y,G].forEach(function(e){e.addEventListener('input',sv);});sv();
+  var V=document.getElementById('tl-v'),T=document.getElementById('tl-t'),R=document.getElementById('tl-r');
+  function tl(){var tax=(parseFloat(V.value)||0)*(+T.value),r=+R.value,fire=tax*0.001301;
+    document.getElementById('tl-r-out').textContent=r.toFixed(4);document.getElementById('tl-r-100').textContent=Math.round(r*100000).toLocaleString();
+    document.getElementById('tl-pid').textContent=m(tax*r);document.getElementById('tl-fire').textContent=m(fire);
+    document.getElementById('tl-split').textContent='about '+m(fire/2)+' kept by the district, '+m(fire/2)+' shared during 2027–2041';}
+  [V,T,R].forEach(function(e){e.addEventListener('input',tl);});tl();
+})();
+</script>
+
+<script>
+(function(){
+  var b=[].slice.call(document.querySelectorAll('#at-fil button')),r=[].slice.call(document.querySelectorAll('#at tr[data-f]'));
+  b.forEach(function(x){x.addEventListener('click',function(){b.forEach(function(o){o.setAttribute('aria-pressed','false');});x.setAttribute('aria-pressed','true');
+    r.forEach(function(row){row.hidden=!(x.dataset.f==='all'||row.dataset.f.split(' ').indexOf(x.dataset.f)>-1);});});});
+})();
+</script>
 </body>
 </html>
