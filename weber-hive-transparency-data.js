@@ -173,7 +173,7 @@ const CASES = [
     officials: ["Weber Fire District Board", "Chief Britt Clark", "Roy City Council", "Riverdale City Council"],
     status: "documented",
     published: "Sep 24, 2026",
-    updated: "Sep 25, 2026",
+    updated: "Sep 29, 2026",
     link: "weber-fire-district-annexation.html",
     pairWith: "CASE 2026-STAX-01"
   },
@@ -185,9 +185,33 @@ const CASES = [
     officials: ["Weber Fire District Board", "Chief Britt Clark", "Community Reinvestment Agency of Weber County"],
     status: "documented",
     published: "Sep 25, 2026",
-    updated: "Sep 25, 2026",
+    updated: "Sep 29, 2026",
     link: "weber-fire-district-growth.html",
     pairWith: "CASE 2026-WFD-01"
+  },
+  {
+    caseNumber: "CASE 2026-WFD-03",
+    title: "Then vs. Now: How Ogden Valley's Big Projects Grew",
+    category: "Growth & Land Use",
+    summary: "Nordic Valley went from up to 550 homes and no public financing mentioned (2022) to 637 units, 230 hotel rooms and $240 million in PID authority. Powder Mountain's 2008 record lists an onsite fire station and a second road off the mountain; the station broke ground in 2026, and the road isn't built. Plus Eden Crossing, Longhorn/West Creek and Snowbasin, and the route each later change took.",
+    officials: ["Weber County Commission", "Weber County Planning Commission", "Nordic Village PID Board", "Summit Mountain Holding Group"],
+    status: "documented",
+    published: "Sep 29, 2026",
+    updated: "Sep 29, 2026",
+    link: "weber-hive-then-vs-now.html",
+    pairWith: "CASE 2026-WFD-02"
+  },
+  {
+    caseNumber: "CASE 2026-WTR-01",
+    title: "Wells at the Top: Powder Mountain's Water",
+    category: "Water",
+    summary: "The public district that supplies Powder Mountain asked the state to combine over 600 acre-feet of rights, drill five new mountaintop wells, add snowmaking and cut mitigation water to a downstream user by about 38%. Five neighbors protested; a hearing was held in 2024; no decision is posted. The district's board includes owners in the resort's own development and voted to outsource all operations, with the resort as the expected bidder.",
+    officials: ["Powder Mountain Water and Sewer Improvement District Board", "Utah Division of Water Rights", "Jim Harvey"],
+    status: "pending",
+    published: "Sep 29, 2026",
+    updated: "Sep 29, 2026",
+    link: "weber-hive-powder-mountain-water.html",
+    pairWith: "CASE 2026-WFD-03"
   },
   {
     caseNumber: "CASE 2026-TNT-01",

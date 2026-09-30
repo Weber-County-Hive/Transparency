@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Then vs. Now: How Ogden Valley&#x27;s Big Projects Grew | The Weber County Hive</title>
+<meta name="description" content="What Nordic Valley, Powder Mountain, Eden Crossing, Longhorn and Snowbasin said when first presented, what the records show today, and the route each later change took.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#FAF7F2;
+    --gold:#D4AF37;
+    --warm-gold:#96723F;
+    --cream:#111008;
+    --gray:#6B6355;
+    --line:rgba(212,175,55,0.35);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--black);
+    color:var(--cream);
+    font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--warm-gold);}
+  a:hover{color:var(--gold);}
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+
+  /* Masthead */
+  .masthead{padding:56px 24px 40px;text-align:center;}
+  .hexagon{
+    width:44px;height:44px;margin:0 auto 14px;
+    display:flex;align-items:center;justify-content:center;
+    position:relative;
+  }
+  .hexagon svg{width:100%;height:100%;}
+  .lockup{font-family:'Playfair Display', serif;}
+  .lockup .hive{
+    color:var(--gold);
+    font-size:22px;letter-spacing:0.18em;
+    font-weight:700;text-transform:uppercase;
+  }
+  .lockup .county{
+    display:block;
+    color:var(--gray);
+    font-size:12px;letter-spacing:0.32em;
+    text-transform:uppercase;
+    margin-top:4px;
+  }
+  .eyebrow-link{
+    display:inline-block;margin-top:22px;
+    font-family:'Source Serif 4', Georgia, serif;
+    font-style:italic;font-size:14px;color:var(--warm-gold);
+    text-decoration:none;border-bottom:1px solid var(--line);
+    padding-bottom:2px;
+  }
+  .eyebrow-link:hover{color:var(--gold);border-color:var(--gold);}
+
+  /* Article header */
+  .article-header{padding:8px 24px 44px;text-align:center;border-bottom:1px solid var(--line);}
+  .kicker{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-style:italic;color:var(--warm-gold);
+    font-size:15px;letter-spacing:0.02em;margin-bottom:18px;
+  }
+  h1{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:clamp(30px, 4.4vw, 46px);
+    line-height:1.18;
+    color:var(--cream);
+    margin:0 0 20px;
+  }
+  .dek{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-style:italic;color:var(--warm-gold);
+    font-size:18px;line-height:1.55;
+    max-width:600px;margin:0 auto;
+  }
+  .byline{
+    margin-top:26px;color:var(--gray);
+    font-size:13px;letter-spacing:0.06em;text-transform:uppercase;
+  }
+  .byline span{color:var(--warm-gold);}
+
+  .hero-svg{
+    margin:36px auto 0;max-width:700px;
+    border:1px solid var(--line);
+    background:rgba(212,175,55,0.04);
+    padding:20px 10px;
+  }
+  .hero-svg svg{width:100%;height:auto;display:block;}
+
+  /* Body */
+  article{padding:52px 24px 20px;}
+  article p{
+    font-size:18px;color:#242017;margin:0 0 24px;
+  }
+  article h2{
+    font-family:'Playfair Display', serif;
+    font-weight:600;font-style:italic;
+    color:var(--gold);
+    font-size:26px;
+    margin:52px 0 22px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  article h2:first-of-type{margin-top:8px;}
+  .lede{font-size:20px;color:var(--cream);}
+  .figure-line{
+    margin:32px 0;padding:22px 26px;
+    border-left:2px solid var(--gold);
+    background:rgba(212,175,55,0.05);
+  }
+  .figure-line p{margin:0;font-size:17px;color:var(--cream);}
+  .figure-line p + p{margin-top:12px;}
+  .callout{
+    margin:36px 0;padding:24px 28px;
+    border:1px solid var(--line);
+    background:rgba(212,175,55,0.03);
+  }
+  .callout .label{
+    display:block;color:var(--warm-gold);
+    font-size:12px;letter-spacing:0.18em;text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  .callout p{margin:0;font-size:16px;color:#242017;}
+  .callout p + p{margin-top:14px;}
+  .callout ul{margin:14px 0;padding-left:20px;font-size:16px;color:#242017;}
+  .callout li + li{margin-top:6px;}
+  h3.sub{font-family:'Playfair Display', serif;font-size:20px;color:#242017;margin:36px 0 12px;}
+  .divider{
+    width:56px;height:1px;background:var(--gold);
+    margin:56px auto;
+  }
+  .closing p{font-size:19px;}
+  .closing p:last-of-type{
+    font-style:italic;color:var(--cream);
+  }
+
+  /* Sources */
+  .sources{
+    padding:20px 24px 8px;
+    border-top:1px solid var(--line);
+    margin-top:20px;
+  }
+  .sources h3{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-style:italic;font-weight:400;
+    color:var(--warm-gold);
+    font-size:14px;letter-spacing:0.12em;text-transform:uppercase;
+    margin:0 0 18px;
+  }
+  .sources summary{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-style:italic;font-weight:400;cursor:pointer;
+    color:var(--warm-gold);
+    font-size:14px;letter-spacing:0.12em;text-transform:uppercase;
+    margin:0 0 4px;list-style:none;
+    padding:6px 0;
+    display:flex;align-items:center;gap:10px;
+  }
+  .sources summary::-webkit-details-marker{display:none;}
+  .sources summary::before{
+    content:"›";
+    display:inline-block;
+    font-size:18px;color:var(--gold);
+    transform:rotate(0deg);
+    transition:transform 0.18s ease;
+  }
+  .sources[open] summary::before{transform:rotate(90deg);}
+  .sources[open] summary{margin-bottom:18px;}
+  .sources ul{margin-top:18px;}
+  .sources ul{margin:0;padding:0;list-style:none;}
+  .sources li{
+    font-size:14px;color:var(--gray);
+    padding:9px 0;border-bottom:1px solid rgba(0,0,0,0.08);
+  }
+  .sources li:last-child{border-bottom:none;}
+  .method-note{
+    margin-top:20px;font-size:13px;font-style:italic;
+    color:var(--gray);
+  }
+
+  /* Footer */
+  footer{
+    text-align:center;padding:56px 24px 64px;
+  }
+  .footer-line{
+    color:var(--gold);
+    font-size:12px;letter-spacing:0.28em;text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .footer-url{
+    color:var(--gray);font-size:13px;
+  }
+
+  @media (max-width:520px){
+    article p, .lede{font-size:17px;}
+    .figure-line{padding:18px 18px;}
+    .callout{padding:20px 18px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+  }
+
+  /* Diagrams & charts */
+  .viz-block{
+    margin:44px 0;padding:30px 26px;
+    border:1px solid var(--line);
+    background:rgba(212,175,55,0.04);
+  }
+  .viz-title{
+    font-family:'Source Serif 4', Georgia, serif;
+    font-style:italic;color:var(--warm-gold);
+    font-size:13px;letter-spacing:0.14em;text-transform:uppercase;
+    margin:0 0 20px;
+  }
+  .viz-caption{
+    font-size:14px;color:var(--gray);font-style:italic;
+    margin:16px 0 0;
+  }
+  .mermaid{
+    background:transparent;
+    display:flex;justify-content:center;
+    overflow-x:auto;
+  }
+
+  /* Horizontal bar chart */
+  .bar-chart{margin:0;}
+  .bar-row{margin:0 0 18px;}
+  .bar-row:last-child{margin-bottom:0;}
+  .bar-row .bar-meta{
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-size:14px;color:var(--cream);margin-bottom:6px;
+  }
+  .bar-row .bar-meta .amt{
+    font-family:'Playfair Display', serif;font-weight:700;
+    color:var(--cream);font-size:15px;
+  }
+  .bar-track{
+    width:100%;height:14px;background:rgba(0,0,0,0.06);
+    position:relative;
+  }
+  .bar-fill{height:100%;}
+  .bar-fill.cat-differential{background:#D4AF37;}
+  .bar-fill.cat-bond{background:#8B6F2E;}
+  .bar-fill.cat-infra{background:#C9A575;}
+
+  .legend{
+    display:flex;flex-wrap:wrap;gap:18px;
+    margin-top:24px;padding-top:18px;
+    border-top:1px solid var(--line);
+  }
+  .legend-item{
+    display:flex;align-items:center;gap:8px;
+    font-size:13px;color:var(--gray);
+  }
+  .legend-swatch{width:12px;height:12px;flex-shrink:0;}
+  .legend-swatch.cat-differential{background:#D4AF37;}
+  .legend-swatch.cat-bond{background:#8B6F2E;}
+  .legend-swatch.cat-infra{background:#C9A575;}
+
+  /* Stacked split bar */
+  .split-bar{
+    display:flex;width:100%;height:38px;
+    border:1px solid var(--line);
+  }
+  .split-seg{
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:600;letter-spacing:0.02em;
+  }
+  .split-seg.project-area{
+    width:75%;background:#D4AF37;color:#1A1408;
+  }
+  .split-seg.pass-through{
+    width:25%;background:#F0E4CC;color:#3A2E14;
+  }
+  .split-labels{
+    display:flex;justify-content:space-between;
+    font-size:13px;color:var(--gray);margin-top:10px;
+  }
+
+  .outlier-badge{
+    margin:0 0 26px;padding:18px 22px;
+    border:1px dashed var(--gold);
+    background:rgba(212,175,55,0.06);
+    display:flex;justify-content:space-between;align-items:baseline;
+    flex-wrap:wrap;gap:10px;
+  }
+  .outlier-badge .oname{font-size:15px;color:var(--cream);}
+  .outlier-badge .oamt{
+    font-family:'Playfair Display', serif;font-weight:700;
+    font-size:22px;color:var(--gold);
+  }
+  .status-tag{
+    font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--gray);font-style:italic;
+  }
+  .panel-label{
+    font-size:13px;color:var(--warm-gold);
+    letter-spacing:0.1em;text-transform:uppercase;
+    margin:36px 0 18px;
+  }
+  .panel-label:first-child{margin-top:0;}
+
+  /* Glossary chips */
+  .glossary{
+    display:flex;flex-wrap:wrap;gap:10px;
+    margin:24px 0 8px;
+  }
+  .glossary details{
+    border:1px solid var(--line);
+    background:rgba(212,175,55,0.04);
+  }
+  .glossary summary{
+    cursor:pointer;list-style:none;
+    padding:9px 16px;
+    font-size:13px;letter-spacing:0.03em;
+    color:var(--warm-gold);
+    font-family:'Source Serif 4', Georgia, serif;
+    display:flex;align-items:center;gap:6px;
+  }
+  .glossary summary::-webkit-details-marker{display:none;}
+  .glossary summary::before{content:"+";color:var(--gold);font-weight:700;}
+  .glossary details[open] summary::before{content:"−";}
+  .glossary details[open] summary{border-bottom:1px solid var(--line);}
+  .glossary p{
+    margin:0;padding:12px 16px 14px;
+    font-size:14px;color:#242017;line-height:1.6;
+  }
+
+  /* Quick nav */
+  .quicknav{
+    display:flex;flex-wrap:wrap;gap:8px;
+    margin:20px 0 0;padding:18px 0 0;
+    border-top:1px solid var(--line);
+  }
+  .quicknav a{
+    font-size:12px;letter-spacing:0.04em;
+    color:var(--warm-gold);text-decoration:none;
+    border:1px solid var(--line);
+    padding:6px 12px;
+    white-space:nowrap;
+  }
+  .quicknav a:hover{color:var(--gold);border-color:var(--gold);}
+
+  /* Data table */
+  .data-table{width:100%;border-collapse:collapse;margin:0;}
+  .data-table th{
+    text-align:left;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+    color:var(--warm-gold);font-weight:400;
+    padding:0 12px 10px 0;border-bottom:1px solid var(--gold);
+  }
+  .data-table td{
+    font-size:15px;color:#242017;
+    padding:12px 12px 12px 0;
+    border-bottom:1px solid rgba(0,0,0,0.08);
+    vertical-align:top;
+  }
+  .data-table td.num{
+    font-family:'Playfair Display', serif;font-weight:700;
+    color:var(--warm-gold);white-space:nowrap;
+  }
+  .data-table tr:last-child td{border-bottom:none;}
+
+  /* For/Against grid */
+  .split-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin:36px 0;
+  }
+  .split-col{background:var(--black);padding:24px 22px;}
+  .split-col h4{
+    font-family:'Playfair Display', serif;font-style:italic;font-weight:600;
+    color:var(--gold);font-size:16px;margin:0 0 14px;
+  }
+  .split-col ul{margin:0;padding:0;list-style:none;}
+  .split-col li{
+    font-size:15px;color:#242017;line-height:1.6;
+    padding:0 0 14px 18px;position:relative;
+  }
+  .split-col li:last-child{padding-bottom:0;}
+  .split-col li::before{
+    content:"—";position:absolute;left:0;color:var(--warm-gold);
+  }
+  @media (max-width:560px){
+    .split-grid{grid-template-columns:1fr;}
+  }
+
+  /* Register calculator */
+  .calc-box{
+    display:flex;flex-wrap:wrap;gap:14px;
+    margin:24px 0;
+  }
+  .calc-item{
+    flex:1 1 140px;
+    border:1px solid var(--line);
+    background:rgba(212,175,55,0.04);
+    padding:18px 16px;text-align:center;
+  }
+  .calc-item .spend{font-size:13px;color:var(--gray);margin-bottom:8px;}
+  .calc-item .tax{
+    font-family:'Playfair Display', serif;font-weight:700;
+    font-size:24px;color:var(--gold);
+  }
+
+  @media (max-width:520px){
+    .viz-block{padding:22px 16px;}
+    .bar-row .bar-meta{font-size:13px;}
+  }
+
+  /* ===== Readable-at-any-width components (added Sept. 24, 2026) ===== */
+  .hero-duo{
+    margin:36px auto 0;max-width:700px;
+    display:grid;grid-template-columns:1fr 1fr;gap:1px;
+    background:var(--line);border:1px solid var(--line);
+  }
+  .hero-panel{background:#F6F0E4;padding:24px 22px;text-align:center;}
+  .hero-panel h3{
+    font-family:'Playfair Display', serif;font-weight:700;letter-spacing:0.06em;
+    font-size:19px;color:var(--warm-gold);margin:0 0 14px;
+  }
+  .hero-panel .icon{display:block;margin:0 auto 16px;width:110px;height:64px;}
+  .hero-panel .box{border:1px solid var(--warm-gold);padding:12px 16px;text-align:left;}
+  .hero-panel .box-title{
+    font-style:italic;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--warm-gold);text-align:center;border-bottom:1px solid var(--gold);
+    padding-bottom:8px;margin-bottom:8px;
+  }
+  .hero-panel .row{display:flex;justify-content:space-between;font-size:16px;color:#242017;padding:3px 0;}
+  .hero-panel .row b{color:var(--warm-gold);}
+  .hero-panel .line{font-size:16px;color:#242017;text-align:center;padding:3px 0;}
+  .hero-panel .foot{font-size:15px;color:var(--gray);margin:14px 0 0;}
+
+  .flow{display:flex;flex-direction:column;align-items:stretch;gap:0;}
+  .flow-node{
+    border:1px solid var(--gold);background:#F4E9DD;
+    padding:14px 16px;font-size:16px;color:#111008;text-align:center;line-height:1.5;
+  }
+  .flow-node.q{background:#FFF;border-style:dashed;font-weight:600;}
+  .flow-node.end{background:rgba(122,32,32,0.08);border-color:#7A2020;font-weight:600;}
+  .flow-arrow{text-align:center;color:var(--warm-gold);font-size:22px;line-height:1;padding:6px 0;}
+  .flow-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .flow-col{display:flex;flex-direction:column;}
+  .flow-tag{
+    align-self:center;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;
+    color:#FFF;background:var(--warm-gold);padding:3px 12px;margin-bottom:6px;
+  }
+  .flow-tag.yes{background:#7A2020;}
+
+  .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .tool-card{border:1px solid var(--line);background:#FFF;padding:18px 16px;display:flex;flex-direction:column;}
+  .tool-num{
+    width:34px;height:34px;border-radius:50%;color:#FAF7F2;
+    font-family:'Playfair Display', serif;font-weight:700;font-size:18px;
+    display:flex;align-items:center;justify-content:center;margin-bottom:10px;
+  }
+  .tool-card h4{font-family:'Playfair Display', serif;font-size:18px;margin:0 0 10px;color:#111008;line-height:1.3;}
+  .tool-card svg{width:100%;max-width:150px;height:70px;margin:4px 0 12px;}
+  .tool-card p{font-size:16px;margin:0;color:#242017;line-height:1.55;}
+  .shared-q{
+    margin-top:14px;padding:12px 16px;border:1px solid var(--gold);background:rgba(212,175,55,0.12);
+    font-family:'Playfair Display', serif;font-style:italic;font-weight:700;font-size:17px;text-align:center;color:#111008;
+  }
+
+  .big-split{display:flex;width:100%;min-height:64px;border:1px solid var(--line);}
+  .big-split > div{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:8px 6px;text-align:center;
+  }
+  .big-split .pct{font-family:'Playfair Display', serif;font-weight:700;font-size:24px;line-height:1.1;}
+  .big-split .lbl{font-size:13px;letter-spacing:0.06em;text-transform:uppercase;}
+  .split-figs{display:grid;gap:12px;margin-top:14px;}
+  .split-figs .fig{border-left:4px solid var(--gold);padding:6px 12px;}
+  .split-figs .fig b{font-family:'Playfair Display', serif;font-size:22px;color:#111008;display:block;}
+  .split-figs .fig span{font-size:15px;color:#242017;}
+
+  .dmap-source{
+    border:2px solid var(--warm-gold);background:#F4E9DD;padding:16px;text-align:center;
+    font-size:17px;color:#111008;font-weight:600;
+  }
+  .dmap-source small{display:block;font-weight:400;font-size:15px;color:var(--gray);margin-top:4px;}
+  .dmap-arrow{text-align:center;font-size:15px;color:var(--warm-gold);font-style:italic;padding:10px 0;}
+  .dmap-arrow::after{content:"\2193";display:block;font-size:24px;font-style:normal;line-height:1.1;}
+  .dmap-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .dmap-group{border:1px dashed var(--gold);padding:12px;background:#FFF;}
+  .dmap-group .gname{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gold);margin-bottom:8px;}
+  .dmap-item{border:1px solid var(--line);background:#FAF7F2;padding:10px 12px;font-size:16px;color:#111008;line-height:1.45;}
+  .dmap-item + .dmap-item{margin-top:8px;}
+  .dmap-item .amt{display:block;font-family:'Playfair Display', serif;font-weight:700;font-size:18px;color:var(--warm-gold);}
+  .dmap-item.child{margin-left:14px;border-left:3px solid var(--gold);}
+
+  .window{display:flex;width:100%;border:1px solid var(--line);margin-top:6px;}
+  .window > div{padding:12px;font-size:15px;color:#111008;line-height:1.45;}
+  .window .w1{flex:3;background:#D4AF37;}
+  .window .w2{flex:2;background:#F0E4CC;}
+  .window b{display:block;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;}
+
+  .ctl-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;}
+  .seg-btn{
+    font-family:inherit;font-size:15px;padding:8px 14px;cursor:pointer;
+    border:1px solid var(--warm-gold);background:#FFF;color:var(--warm-gold);
+  }
+  .seg-btn[aria-pressed="true"]{background:var(--warm-gold);color:#FFF;}
+  .seg-btn:focus-visible,.hive-input:focus-visible{outline:3px solid #7A2020;outline-offset:2px;}
+
+  .hbar{display:grid;grid-template-columns:minmax(118px,34%) 1fr;gap:4px 12px;align-items:center;}
+  .hbar .n{font-size:15px;color:#111008;line-height:1.3;}
+  .hbar .t{position:relative;height:28px;background:rgba(0,0,0,0.05);}
+  .hbar .f{height:100%;background:#D4AF37;transition:width .35s ease;}
+  .hbar .f.hl{background:#7A2020;}
+  .hbar .v{
+    position:absolute;top:50%;transform:translateY(-50%);
+    font-family:'Playfair Display', serif;font-weight:700;font-size:15px;color:#111008;white-space:nowrap;
+  }
+  .hbar .na{font-size:14px;color:var(--gray);font-style:italic;}
+
+  .city-tool label{display:block;font-size:15px;color:var(--gray);margin:0 0 6px;}
+  .hive-input{
+    font-family:inherit;font-size:17px;padding:10px 12px;width:100%;
+    border:1px solid var(--warm-gold);background:#FFF;color:#111008;
+  }
+  .city-tool .inputs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
+  .result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+  .result{border:1px solid var(--line);background:#FFF;padding:14px;}
+  .result .k{font-size:14px;color:var(--gray);line-height:1.35;}
+  .result .val{font-family:'Playfair Display', serif;font-weight:700;font-size:26px;color:var(--warm-gold);line-height:1.2;margin-top:4px;}
+  .result .sub{font-size:14px;color:#242017;margin-top:2px;}
+
+  .rate-table td,.rate-table th{font-size:16px;}
+
+  .tl-years{display:flex;gap:4px;align-items:flex-end;margin:0 0 20px;overflow-x:auto;padding-bottom:4px;}
+  .tl-years .yr{flex:1 1 0;min-width:0;text-align:center;}
+  .tl-years .dots{display:flex;flex-direction:column-reverse;align-items:center;gap:3px;min-height:20px;}
+  .tl-years .dot{width:13px;height:13px;border-radius:50%;}
+  .tl-years .lab{font-size:13px;color:var(--gray);margin-top:6px;}
+  .cat-dev{background:#D4AF37;}
+  .cat-tax{background:#7A2020;}
+  .cat-vote{background:#3F5B73;}
+  .tl{position:relative;margin:0;padding:0 0 0 22px;list-style:none;border-left:2px solid var(--line);}
+  .tl li{position:relative;padding:0 0 18px 8px;}
+  .tl li::before{
+    content:"";position:absolute;left:-31px;top:6px;width:14px;height:14px;border-radius:50%;
+    background:var(--c,#D4AF37);border:2px solid #FAF7F2;
+  }
+  .tl .d{font-size:14px;font-weight:600;color:var(--warm-gold);letter-spacing:0.04em;}
+  .tl .tag{
+    display:inline-block;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+    color:#FFF;padding:1px 8px;margin-left:6px;vertical-align:1px;
+  }
+  .tl .txt{font-size:16px;color:#111008;line-height:1.5;margin-top:2px;}
+  .tl li[hidden]{display:none;}
+  .legend-item .legend-swatch{border-radius:50%;}
+
+  .crt .inputs{display:grid;gap:16px;margin-bottom:20px;}
+  .crt input[type=range]{width:100%;accent-color:#96723F;height:28px;}
+  .crt .rv{font-family:'Playfair Display', serif;font-weight:700;color:var(--warm-gold);}
+  .stack-row{margin-bottom:14px;}
+  .stack-row .sl{font-size:15px;color:#111008;margin-bottom:6px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+  .stack{display:flex;height:34px;background:rgba(0,0,0,0.05);}
+  .stack > span{height:100%;transition:width .3s ease;}
+  .s-exist{background:#96723F;}
+  .s-new{background:#D4AF37;}
+  .s-div{background:repeating-linear-gradient(45deg,#7A2020 0 6px,#A04848 6px 12px);}
+
+  .fire-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+  .fire-card{border:1px solid var(--line);background:#FFF;padding:16px;}
+  .fire-card .k{font-size:14px;color:var(--gray);line-height:1.35;}
+  .fire-card .val{font-family:'Playfair Display', serif;font-weight:700;font-size:28px;color:var(--warm-gold);margin:6px 0 2px;}
+  .fire-card .sub{font-size:14px;color:#242017;line-height:1.4;}
+  .fire-card.warn{border-color:#7A2020;}
+  .fire-card.warn .val{color:#7A2020;}
+
+  @media (max-width:640px){
+    .hero-duo{grid-template-columns:1fr;}
+    .tools-grid{grid-template-columns:1fr;}
+    .dmap-grid{grid-template-columns:1fr;}
+    .flow-cols{grid-template-columns:1fr;gap:18px;}
+    .city-tool .inputs{grid-template-columns:1fr;}
+    .fire-cards{grid-template-columns:1fr;}
+    .hbar{grid-template-columns:minmax(104px,38%) 1fr;}
+    .big-split .pct{font-size:20px;}
+    .big-split .lbl{font-size:11px;}
+  }
+  /* minimum label size for readability */
+  .data-table th{font-size:13px;}
+  .status-tag{font-size:13px !important;}
+  .tl .tag{font-size:13px;}
+  .big-split .lbl{font-size:13px;}
+  @media (max-width:640px){ .big-split .lbl{font-size:12.5px;letter-spacing:0.02em;} }
+  blockquote{margin:28px 0;padding:20px 24px;border-left:3px solid var(--warm-gold);background:rgba(212,175,55,0.06);font-style:italic;font-size:17px;color:#242017;line-height:1.7;}
+  .bill{border:1px solid #BFB6A3;background:#FFF;padding:16px 16px 12px;}
+  .bill .bl > span:last-child{text-align:right;white-space:nowrap;font-weight:700;}
+  .bill small{display:block;font-size:14px;line-height:1.4;}
+  .bill h4{font-family:'Source Serif 4',Georgia,serif;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gold);margin:0 0 10px;text-align:center;}
+  .bill .bl{display:flex;justify-content:space-between;gap:10px;font-size:15px;color:#111008;padding:7px 0;border-bottom:1px dashed #D8CFBE;}
+  .bill .bl:last-child{border-bottom:none;}
+  .bill .bl.new{background:rgba(122,32,32,0.07);font-weight:700;}
+  .bill .bl.cut{background:rgba(63,91,115,0.08);}
+  .bill .muted{color:var(--gray);}
+  .bills{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .seats{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .seat{flex:1 1 140px;border:1px solid var(--line);background:#FFF;padding:10px 12px;font-size:15px;color:#111008;}
+  .seat b{display:block;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gold);font-weight:400;}
+  .seat.q{border:2px dashed #7A2020;background:rgba(122,32,32,0.05);}
+  .qa details{border:1px solid var(--line);background:#FFF;margin:0 0 10px;}
+  .qa summary{cursor:pointer;padding:14px 16px;font-size:17px;font-weight:600;color:#111008;list-style:none;}
+  .qa summary::-webkit-details-marker{display:none;}
+  .qa summary::before{content:"+ ";color:var(--warm-gold);}
+  .qa details[open] summary::before{content:"\2212\00a0";}
+  .qa .ans{padding:0 16px 14px;font-size:16px;color:#242017;line-height:1.6;}
+  .qa .ask{margin-top:10px;padding:10px 12px;border-left:3px solid #3F5B73;background:rgba(63,91,115,0.07);font-size:15px;}
+  .qa .ask b{color:#3F5B73;}
+  @media (max-width:640px){ .bills{grid-template-columns:1fr;} }
+  .data-table td{overflow-wrap:anywhere;}
+  .gcard{border:1px solid var(--line);background:#FFF;padding:16px;margin:0 0 16px;}
+  .gcard h4{font-family:'Playfair Display',serif;font-size:19px;margin:0 0 10px;color:#111008;}
+  .grow{display:grid;grid-template-columns:150px 64px 1fr;gap:10px;align-items:start;padding:10px 0;border-top:1px dashed #D8CFBE;}
+  .grow .c{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gold);padding-top:4px;}
+  .grow .g{font-family:'Playfair Display',serif;font-weight:700;font-size:28px;line-height:1;color:#111008;text-align:center;}
+  .grow .g.na{font-size:13px;font-family:inherit;font-weight:400;color:var(--gray);padding-top:6px;}
+  .grow .w{font-size:15.5px;color:#242017;line-height:1.55;}
+  @media (max-width:640px){ .grow{grid-template-columns:1fr 56px;} .grow .w{grid-column:1 / -1;} }
+  /* ===== Growth case file additions ===== */
+  .tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px;}
+  .tabs button{font-family:inherit;font-size:14px;padding:8px 14px;border:1px solid var(--line);background:transparent;color:#242017;cursor:pointer;}
+  .tabs button[aria-selected="true"]{background:#D4AF37;color:#1A1408;border-color:#D4AF37;font-weight:600;}
+  .tabpanel[hidden]{display:none;}
+  .tabpanel h4{font-family:'Playfair Display', serif;font-size:20px;margin:0 0 6px;color:var(--cream);}
+  .tabpanel .big{font-family:'Playfair Display', serif;font-weight:700;font-size:34px;color:var(--warm-gold);line-height:1.1;margin:6px 0 4px;}
+  .tabpanel .meta{font-size:14px;color:var(--gray);margin:0 0 12px;}
+  .tabpanel p{font-size:16px;color:#242017;margin:0 0 12px;}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px;margin:10px 0 0;}
+  .kv dt{color:var(--gray);}
+  .kv dd{margin:0;color:#242017;font-weight:600;}
+  .said{border:1px solid var(--line);margin:0 0 10px;background:#FFFDF8;}
+  .said summary{cursor:pointer;padding:14px 16px;font-size:16px;list-style:none;display:flex;gap:12px;align-items:flex-start;}
+  .said summary::-webkit-details-marker{display:none;}
+  .said summary .who{flex:0 0 auto;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gold);border:1px solid var(--line);padding:2px 6px;margin-top:3px;}
+  .said summary .q{font-style:italic;color:#242017;}
+  .said .rec{padding:0 16px 16px 16px;font-size:15.5px;color:#242017;border-top:1px dashed var(--line);}
+  .said .rec b.v{display:inline-block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:2px 7px;margin:12px 0 6px;color:#fff;}
+  .v.ok{background:#3F6B3B;} .v.part{background:#96723F;} .v.gap{background:#7A2020;}
+  .seg-bar{display:flex;width:100%;height:40px;border:1px solid var(--line);margin:8px 0 6px;}
+  .seg-bar div{display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:600;overflow:hidden;white-space:nowrap;transition:width .4s;}
+  .ent-row{margin:0 0 16px;}
+  .ent-row .top{display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px;gap:10px;}
+  .ent-row .top b{font-family:'Playfair Display', serif;}
+  .ent-row.hl .top span:first-child{font-weight:700;color:#111008;}
+  .toggle{display:inline-flex;border:1px solid var(--line);margin:0 0 18px;}
+  .toggle button{font-family:inherit;font-size:13px;padding:6px 12px;border:0;background:transparent;cursor:pointer;color:#242017;}
+  .toggle button[aria-pressed="true"]{background:#D4AF37;color:#1A1408;font-weight:600;}
+  .stations{list-style:none;margin:0;padding:0;}
+  .stations li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.08);font-size:15px;color:#242017;}
+  .stations li:last-child{border-bottom:none;}
+  .stations li[hidden]{display:none;}
+  .stations .st{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;white-space:nowrap;align-self:flex-start;}
+  .st.now{background:rgba(0,0,0,0.06);color:#4A443A;}
+  .st.new{background:#D4AF37;color:#1A1408;}
+  .st.dev{background:#3F6B3B;color:#fff;}
+  .st.open{border:1px dashed #7A2020;color:#7A2020;}
+  .fil{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;}
+  .fil button{font-family:inherit;font-size:13px;padding:5px 10px;border:1px solid var(--line);background:transparent;cursor:pointer;color:#242017;}
+  .fil button[aria-pressed="true"]{background:#111008;color:#FAF7F2;}
+  .link-card{display:block;border:1px solid var(--gold);padding:16px 18px;margin:14px 0;text-decoration:none;background:rgba(212,175,55,0.06);}
+  .link-card .lk{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-gold);}
+  .link-card .lt{display:block;font-family:'Playfair Display', serif;font-size:18px;color:var(--cream);margin-top:4px;}
+  .link-card .ld{display:block;font-size:14.5px;color:#4A443A;margin-top:4px;}
+  @media (max-width:640px){
+    table.cardtbl tr:first-child{display:none;}
+    table.cardtbl tr{display:block;padding:12px 0;border-bottom:1px solid var(--line);}
+    table.cardtbl td{display:block;border:none;padding:3px 0;}
+    table.cardtbl td[data-l]:not([data-l=""])::before{content:attr(data-l);display:block;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gold);}
+  }
+  .house-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media (max-width:640px){.house-grid{grid-template-columns:1fr;}}
+  .house{border:1px solid var(--line);background:#FFFDF8;padding:16px;}
+  .h-name{font-family:'Playfair Display',serif;font-weight:700;font-size:16px;color:#111008;}
+  .h-bill{font-size:14px;color:var(--gray);margin:2px 0 10px;}
+  .h-bar{display:flex;gap:2px;height:44px;}
+  .h-bar .seg{display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:600;border-radius:4px;text-align:center;line-height:1.2;padding:0 4px;}
+  .seg.kept{background:#A07A1A;} .seg.cra{background:#A8392E;}
+  .h-note{font-size:14.5px;color:#242017;margin-top:10px;line-height:1.5;}
+  .yr-chart{display:flex;align-items:flex-end;gap:14px;height:260px;border-bottom:1px solid rgba(0,0,0,0.25);}
+  .yr-col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;cursor:pointer;}
+  .yr-col .val{font-size:13px;font-weight:600;color:#111008;text-align:center;margin-bottom:4px;}
+  .yr-col .stackb{display:flex;flex-direction:column;gap:2px;}
+  .yr-col .stackb div:first-child{border-radius:4px 4px 0 0;}
+  .yr-col:hover .stackb, .yr-col:focus .stackb{outline:2px solid #111008;outline-offset:2px;}
+  .yr-labels{display:flex;gap:14px;margin-top:6px;}
+  .yr-labels div{flex:1;text-align:center;font-size:12.5px;color:var(--gray);line-height:1.35;}
+  .yr-tip{margin-top:12px;font-size:15px;color:#242017;min-height:44px;}
+  .rate-chart{display:flex;align-items:flex-end;gap:10px;height:250px;border-bottom:1px solid rgba(0,0,0,0.25);}
+  .rate-chart .yr-col .val{font-size:12.5px;}
+  .rate-labels{display:flex;gap:10px;margin-top:6px;}
+  .rate-labels div{flex:1;text-align:center;font-size:12px;color:var(--gray);line-height:1.3;}
+  .split-grid.three{grid-template-columns:1fr 1fr 1fr;}
+  @media (max-width:640px){.split-grid.three{grid-template-columns:1fr;}}
+  .hive-field label{display:block;font-size:15px;color:#242017;margin-bottom:6px;}
+  input[type=range]{accent-color:#A07A1A;}
+  .pie-wrap{display:flex;gap:22px;align-items:center;}
+  .pie{flex:0 0 220px;}
+  @media (max-width:640px){.pie-wrap{flex-direction:column;}.pie{flex:none;}}
+  .kid-steps{margin:0;padding-left:20px;font-size:16px;color:#242017;line-height:1.55;}
+  .kid-steps li{margin-bottom:10px;}
+  .kid-steps .sw{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:middle;}
+  .shortv{border:2px solid #D4AF37;background:#FFFDF6;padding:20px 22px;margin:8px 0 26px;}
+  .shortv-h{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;color:#111008;margin-bottom:10px;}
+  .shortv ol{margin:0;padding-left:22px;font-size:16.5px;color:#242017;line-height:1.55;}
+  .shortv li{margin-bottom:8px;}
+  .shortv-f{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:15px;color:#3A3428;}
+  .rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .rel-grid .link-card{margin:0;}
+  @media (max-width:640px){.rel-grid{grid-template-columns:1fr;}}
+  .pj-chart{display:flex;align-items:flex-end;gap:4px;height:220px;border-bottom:1px solid rgba(0,0,0,0.25);margin-top:14px;}
+  .pj-chart div{flex:1;background:#A07A1A;border-radius:3px 3px 0 0;position:relative;}
+  .pj-chart div:first-child{background:#3A342A;}
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="hexagon" aria-hidden="true">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="50,4 93,27 93,73 50,96 7,73 7,27" stroke="#D4AF37" stroke-width="3" fill="none"/>
+      <circle cx="30" cy="24" r="4" fill="#D4AF37"/>
+    </svg>
+  </div>
+  <div class="lockup">
+    <span class="hive">The Hive</span>
+    <span class="county">Weber County</span>
+  </div>
+  <a class="eyebrow-link" href="index.html">← Transparency: Accountability Case Files</a>
+</div>
+
+
+<div class="article-header wrap">
+  <div class="kicker">Transparency · Growth &amp; Land Use · CASE 2026-WFD-03</div>
+  <h1>Then vs. Now: How Ogden Valley's Big Projects Grew</h1>
+  <p class="dek">Four Ogden Valley projects and one in West Weber, first presentation vs. today. Each grew, and several later changes went through routes with less public input.</p>
+  <div class="byline">The Weber County Hive <span>·</span> Independent Accountability Journalism</div>
+  <div class="byline" style="margin-top:6px;">Published Sep. 29, 2026 <span>·</span> Updated Sep. 29, 2026</div>
+
+  <div class="hero-duo" role="img" aria-label="Nordic Valley then and now">
+    <div class="hero-panel">
+      <h3>NORDIC VALLEY, 2022</h3>
+      <div class="box">
+        <div class="box-title">As first reported</div>
+        <div class="row"><span>Homes</span><b>up to 550</b></div>
+        <div class="row"><span>Hotel rooms</span><b>not stated</b></div>
+        <div class="row"><span>Public financing</span><b>none mentioned</b></div>
+      </div>
+      <p class="foot">Utah Business, April 2022</p>
+    </div>
+    <div class="hero-panel">
+      <h3>NORDIC VALLEY, NOW</h3>
+      <div class="box">
+        <div class="box-title">As reported since 2024</div>
+        <div class="row"><span>Housing units</span><b>637</b></div>
+        <div class="row"><span>Hotel rooms</span><b>230</b></div>
+        <div class="row"><span>PID authority</span><b>$240M</b></div>
+      </div>
+      <p class="foot">KSL, Nov. 2024; Deseret News, March 2026</p>
+    </div>
+  </div>
+
+  <details class="sources" style="margin-top:0;">
+    <summary>Explain this simply</summary>
+    <div style="padding-top:4px;">
+      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">When a big project is first presented, people hear a number: so many homes, one hotel, a price.</p>
+      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">This page lines up those first numbers with what the records show now for five projects.</p>
+      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">Most of them grew. Some of the later changes were approved by staff, by landowners forming their own financing district, or by a vote that overrode the advisory board.</p>
+      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0;">The costs of serving that growth, like fire trucks, roads and water, are shared by the wider public.</p>
+    </div>
+  </details>
+
+  <div class="glossary">
+    <details><summary>Public infrastructure district (PID)</summary><p>A district created at a developer's request that can borrow for roads, water and sewer and repay it with a tax or assessment on property inside the district.</p></details>
+    <details><summary>Development agreement</summary><p>A contract between a county and a developer that sets what can be built, where, and on what terms.</p></details>
+    <details><summary>Concept plan</summary><p>A map inside a development agreement showing where lifts, roads, hotels and homes are planned in each area.</p></details>
+    <details><summary>Slight and inconsequential</summary><p>The standard in Powder Mountain's development agreement for changes county staff can approve without the County Commission.</p></details>
+    <details><summary>Infrastructure financing district (IFD)</summary><p>A district like a PID, created by landowner petition, that finances roads and utilities for new development.</p></details>
+  </div>
+
+  <div class="quicknav">
+    <a href="#nordic">Nordic Valley</a>
+    <a href="#powder">Powder Mountain</a>
+    <a href="#eden">Eden Crossing</a>
+    <a href="#longhorn">Longhorn / West Creek</a>
+    <a href="#snowbasin">Snowbasin</a>
+    <a href="#routes">How changes were decided</a>
+    <a href="#watch">Watch list</a>
+    <a href="#grades">Grades</a>
+    <a href="#record">What was done, what's open</a>
+    <a href="#questions">Questions to ask</a>
+  </div>
+</div>
+
+<article class="wrap">
+
+  <p class="lede">Every large project in Ogden Valley starts with a public presentation: a number of homes, a hotel, a price tag. This case file lines up what four projects said when they were first presented with what the records show today, and the route each later change took.</p>
+
+  <h2 id="nordic">Nordic Valley: 2022 vs. today</h2>
+
+  <p>In April 2022, Utah Business reported the plan for a village at the base of Nordic Valley. By November 2024, when the County Commission created three public infrastructure districts for it, the plan had grown.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Nordic Valley, as first reported and as reported now</p>
+    <table class="data-table cardtbl">
+      <tr><th>Item</th><th>April 2022</th><th>Now</th></tr>
+      <tr><td data-l=""><b>Housing</b></td><td data-l="April 2022">Up to 550 new homes</td><td data-l="Now">428 condominiums, 159 chalets and 50 worker housing units: 637 units</td></tr>
+      <tr><td data-l=""><b>Hotel</b></td><td data-l="April 2022">Hotel space and overnight lodging, no room count</td><td data-l="Now">230 hotel rooms</td></tr>
+      <tr><td data-l=""><b>Commercial</b></td><td data-l="April 2022">More than 38,000 sq. ft. of retail and dining</td><td data-l="Now">56,059 sq. ft.</td></tr>
+      <tr><td data-l=""><b>Land</b></td><td data-l="April 2022">510 acres; 61 developed, about 88% kept as open space</td><td data-l="Now">512 acres; the developed footprint wasn't stated in the records reviewed</td></tr>
+      <tr><td data-l=""><b>Lifts</b></td><td data-l="April 2022">A goal to "eventually triple" skiable acreage</td><td data-l="Now">12 chairlifts and 2 gondolas added to today's 5 chairlifts; $500 million to $1.4 billion (Deseret News, March 2026)</td></tr>
+      <tr><td data-l=""><b>Public financing</b></td><td data-l="April 2022">None mentioned</td><td data-l="Now">Three PIDs, up to $80 million each ($240 million); a county project area sharing up to $55 million of new tax money for 15 years</td></tr>
+    </table>
+    <p class="viz-caption">April 2022: Utah Business. November 2024: KSL. March 2026: Deseret News. Unit, room and commercial figures are the same in the 2024 and 2026 reports.</p>
+  </div>
+
+  <p><b>What was expected, and what has been authorized.</b> When the PIDs were created, KSL reported the developers expected to levy about $47 million over 30 to 40 years, and the county's economic development director said the PID boards "won't create financial repercussions or debt obligation for the county." The first PID's March 31, 2026 financial report shows $39,380,000 in bonds payable. On April 15, 2026, its board authorized up to $25,000,000 more. Together that is up to about $64.4 million in principal, above the $47 million figure. The $25 million is a ceiling; whether all of it was issued wasn't found in the records reviewed.</p>
+
+  <div class="callout">
+    <span class="label">Who pays for Nordic's fire truck?</span>
+    <p>The plan funds only "50%," or $1 million. No record reviewed says who pays the other half. If it comes from the fire district's regular budget, every property owner in the district pays, including Roy and Riverdale if the annexation passes. It's an open question. <a href="weber-fire-district-growth.html#nordic">See the fire district's share.</a></p>
+  </div>
+
+  <h2 id="powder">Powder Mountain: 2008 vs. today</h2>
+
+  <p>At a July 8, 2008 County Commission meeting on a proposed Powder Mountain rezone, under an earlier owner, the minutes record: "Currently, the existing zoning would allow 1,218 units." The proposed agreement "established the maximum density of 3,950 dwelling and hotel units." No action was taken that night. The current owner's development agreement with Weber County was recorded in 2015 and amended in 2019 and 2022; its unit total wasn't found in the records reviewed.</p>
+
+  <div class="viz-block">
+    <p class="viz-title">Powder Mountain, then and now</p>
+    <table class="data-table cardtbl">
+      <tr><th>Item</th><th>Then</th><th>Now</th></tr>
+      <tr><td data-l=""><b>Units, Weber side</b></td><td data-l="Then">1,218 allowed by zoning in 2008; up to 3,950 dwelling and hotel units proposed</td><td data-l="Now">Sept. 8, 2026: two concept-plan changes (The Ridge and Earl's Village) adding hotel and multi-family detail, handled as administrative</td></tr>
+      <tr><td data-l=""><b>Cache side</b></td><td data-l="Then">&mdash;</td><td data-l="Now">Feb. 25, 2025: Cache County Council rezoned 1,621 acres from forest recreation to resort recreation, 4&ndash;3</td></tr>
+      <tr><td data-l=""><b>Fire station</b></td><td data-l="Then">"an onsite fire station" (2008)</td><td data-l="Now">Ground broken Sept. 24, 2026; $6 million, paid by Powder Mountain</td></tr>
+      <tr><td data-l=""><b>Second road off the mountain</b></td><td data-l="Then">Support a "seasonal emergency ingress/egress route" other than SR-158 (2008)</td><td data-l="Now">None built; the county "will continue to inquire" (Sept. 8, 2026)</td></tr>
+      <tr><td data-l=""><b>Water</b></td><td data-l="Then">&mdash;</td><td data-l="Now">Exchange application E6560 (2023): over 600 acre-feet, five new mountaintop wells, snowmaking for the first time. <a href="weber-hive-powder-mountain-water.html">See the water case file.</a></td></tr>
+    </table>
+    <p class="viz-caption">From Weber County Commission minutes (July 8, 2008), the Weber County Planning Commission packet (Sept. 8, 2026), the Herald Journal (Feb. 2025), KSL and the Standard-Examiner.</p>
+  </div>
+
+  <p>At the Cache County vote, Councilmember Keegan Garrity said rezoning more than 1,500 acres when about 100 were needed "feels uncomfortable," and Councilmember Nolan Gunnell asked how Cache and Weber counties would pay for more services, the Herald Journal reported. Weber County's own draft general plan now says Snowbasin and Powder Mountain "hold a combined 5,300 master-planned units that can be built with no further discretionary/legislative approval." That is draft language. <a href="weber-fire-district-growth.html#promises">See the full 2008-vs-2026 record.</a></p>
+
+  <h2 id="eden">Eden Crossing</h2>
+
+  <p>Eden Crossing is a mixed-use project at the New Eden crossroads, reported at up to 325 housing units, commercial space and a possible hotel on 20 acres. On Dec. 5, 2023, the County Commission approved its rezone 2&ndash;1, after the Ogden Valley Planning Commission had recommended denial 5&ndash;2. In September 2025, a county notice set a hearing on adding 8.73 more acres and amending the development agreement's "obligations, benefits, and standards." On Oct. 21, 2025, the County Commission approved the rezone of about 8.73 acres from AV-3 to form-based zoning and the agreement amendment, 3&ndash;0; the minutes say the applicant decided not to increase density. The state denied the project's water application in March 2025; a later exchange application, E6743, had a hearing July 14, 2026.</p>
+
+  <h2 id="longhorn">Longhorn and West Creek, West Weber</h2>
+
+  <p>The same pattern shows up on the west side. On March 26, 2024, Weber County signed the Longhorn Estates development agreement, rezoning the land from agricultural A-2 to R1-15 single-family, with up to 116 lots. A March 17, 2026 county staff report says the 40-acre Longhorn Estates subdivision had preliminary approval for 84 lots, and that the agreement allows unused Longhorn density to be built on Burns's neighboring Meibos project instead: 22 of the 32 remaining lots would move there, bringing Meibos (about 64 acres, requested rezone A-2 to R1-15) to 208 lots and capping Longhorn at 94. Staff recommended approval; the final vote wasn't found in the records reviewed. The Longhorn Infrastructure Financing District, created in 2025, covers Longhorn parcels, a Meibos parcel and the West Creek parcel. It was formed on a petition by the landowners, who waived the statutory protest period; two of its three appointed trustees list Lync Construction email addresses. On Sept. 8, 2026, the Planning Commission's work session listed "West Creek Proposed R-3 Rezone and General Plan Amendment of 30 acres" on parcel 10-35-0072, one of the district's parcels, with Pat Burns. R-3 is a multi-family zone. A work session takes no action, and the outcome wasn't found in the records reviewed.</p>
+
+  <h2 id="snowbasin">Snowbasin</h2>
+
+  <p>In November 2022 the County Commission created the Mount Ogden Public Infrastructure Districts at Snowbasin's request, with up to $300 million in borrowing authority over 40 years. Its 2025 budget showed a $36,000 developer advance and no bonds issued. PID No. 1's 2026 budget, marked "PRELIMINARY DRAFT – SUBJECT TO REVISION" and dated Dec. 9, 2025, says "The district has no debt or leases" and budgets $30,000 in developer advances. That reflects the budget when it was prepared, not later borrowing, and covers PID No. 1 only.</p>
+
+  <h2 id="routes">The route each change took</h2>
+
+  <div class="viz-block">
+    <table class="data-table cardtbl">
+      <tr><th>Project</th><th>Change</th><th>How it was decided</th></tr>
+      <tr><td data-l=""><b>Nordic Valley</b></td><td data-l="Change">Three PIDs, $240 million authority; tax increment sharing</td><td data-l="How">County Commission votes, 3&ndash;0; 100% owner consent (one owner); interlocal agreements with 30-day contest periods</td></tr>
+      <tr><td data-l=""><b>Powder Mountain</b></td><td data-l="Change">New concept plans for The Ridge and Earl's Village</td><td data-l="How">Administrative; changes found "slight and inconsequential" don't go to the County Commission, under a 2022 amendment</td></tr>
+      <tr><td data-l=""><b>Eden Crossing</b></td><td data-l="Change">Rezone, later expansion</td><td data-l="How">County Commission, 2&ndash;1, over the Planning Commission's 5&ndash;2 recommendation to deny</td></tr>
+      <tr><td data-l=""><b>Longhorn</b></td><td data-l="Change">Financing district; density moved to a neighboring project; later a denser rezone request</td><td data-l="How">Owner petition with the protest period waived; appointed board; R-3 request at a work session</td></tr>
+      <tr><td data-l=""><b>Snowbasin</b></td><td data-l="Change">$300 million PID authority</td><td data-l="How">County Commission, unanimous, at the resort's request</td></tr>
+    </table>
+    <p class="viz-caption">Each route is legal under current Utah law. The table shows how much public input each one included, not whether any law was broken.</p>
+  </div>
+
+  <div class="callout">
+    <span class="label">What the records show</span>
+    <p>Each project's scope or financing grew after it was first presented. Several of the later changes went through routes with less public input than the first approval: an administrative finding, an owner petition with the protest period waived, or a vote over the advisory body's recommendation. The services that growth needs, including fire protection, roads and water, are paid for or shared by the wider public.</p>
+  </div>
+
+  <h2 id="watch">Watch list</h2>
+  <p>What's still pending on each project, from the records reviewed. The fire district column shows who would answer calls, and whose levy would carry the cost.</p>
+  <div class="viz-block">
+    <table class="data-table cardtbl">
+      <tr><th>Project</th><th>What to watch</th><th>What the record shows so far</th><th>Fire district</th></tr>
+      <tr><td data-l=""><b>West Creek / Longhorn</b> (Pat Burns, 2020 LLC)</td><td data-l="Watch">Whether an R-3 rezone and general plan amendment is filed on parcel 10-35-0072</td><td data-l="Record">Listed for a Sept. 8, 2026 work session (no action taken). The Longhorn Estates agreement (March 26, 2024) set R1-15 with up to 116 lots; a March 2026 staff report proposed moving 22 of those lots to Burns's Meibos project (208 lots) and capping Longhorn at 94. Whether the Meibos rezone was approved, and whether an R-3 application follows, isn't confirmed.</td><td data-l="Fire">Weber Fire District</td></tr>
+      <tr><td data-l=""><b>Powder Mountain</b></td><td data-l="Watch">Outcome of the Sept. 8 concept-plan items; the state's decision on E6560; the station operating agreement; the final Weber–Cache agreement; the boundary adjustment with Cache County Fire District</td><td data-l="Record">Two concept-plan changes listed as administrative; E6560 in final review since its 2024 hearing; boundary-adjustment intent declared (Resolutions 31-2026 and 38-2026)</td><td data-l="Fire">Weber Fire District</td></tr>
+      <tr><td data-l=""><b>Nordic Valley</b></td><td data-l="Watch">How much of the up to $25 million in 2026 bonds is actually issued (the authorization alone doesn't show it); who pays the other half of the ladder truck; which station will house it</td><td data-l="Record">$39.38 million in bonds payable as of March 31, 2026; the plan funds "50%" of a ladder truck, $1 million</td><td data-l="Fire">Weber Fire District</td></tr>
+      <tr><td data-l=""><b>Eden Crossing</b></td><td data-l="Watch">The state's decision on E6743; the PID option</td><td data-l="Record">The 8.73-acre expansion and agreement amendment were approved 3&ndash;0 on Oct. 21, 2025. E6743 hearing held July 14, 2026; a PID option was reserved in the Dec. 2023 agreement but no PID had been formed as of Sept. 6, 2026</td><td data-l="Fire">Weber Fire District</td></tr>
+      <tr><td data-l=""><b>Cobabe Ranch</b> (Lewis / Dunleavy)</td><td data-l="Watch">Lot sales and build-out</td><td data-l="Record">Active before 2026: on Dec. 10, 2025, the county Planning Division considered final approval of Cobabe Ranch Townhomes Phase 1, an 8-unit subdivision off Wolf Creek Drive. HOAs formed May 21, 2026. Lots are listed for sale by EVO Utah, LLC, which describes a "176-acre master-planned community" allowing short-term rentals; Lot 27 (4.53 acres) was listed Aug. 18, 2026, at $949,000</td><td data-l="Fire">Weber Fire District</td></tr>
+      <tr><td data-l=""><b>Snowbasin</b> (Mount Ogden PIDs 1&ndash;3)</td><td data-l="Watch">Whether any of the $300 million borrowing authority is used</td><td data-l="Record">PID No. 1 2026 draft budget (Dec. 9, 2025): "no debt or leases," $30,000 in developer advances. PIDs 2 and 3 not checked.</td><td data-l="Fire">Weber Fire District</td></tr>
+      <tr><td data-l=""><b>JDC Ranch</b> (Nilson Homes, West Weber)</td><td data-l="Watch">New plats and whether the recorded agreement matches the recommendation</td><td data-l="Record">July 9, 2024, the Western Weber Planning Commission recommended 5&ndash;0: no more than 1,000 total units; units above 725 "attainable," with an initial base price not to exceed $400,000. The townhome cap and the length of the deed restriction should be confirmed in the recorded agreement.</td><td data-l="Fire">Weber Fire District</td></tr>
+      <tr><td data-l=""><b>Willard rezone</b> (Nilson Homes, Box Elder County)</td><td data-l="Watch">Final plat and utility plans</td><td data-l="Record">Willard Planning Commission hearing April 2, 2026, on Nilson Homes' request to rezone about 40.29 acres from A-5 to R-&frac12; (official notice). Then, as reported by Citizen Portal, May 14, 2026, Willard City Council, 4&ndash;0: 40.29 acres at 1561 N. Hargis Hill Road rezoned from A-5 to R-&frac12; (Ordinance 2026-09), with water-pressure and sewer items left to engineering review (as reported by Citizen Portal)</td><td data-l="Fire">Not Weber Fire District</td></tr>
+      <tr><td data-l=""><b>Other Nilson communities in Weber County</b></td><td data-l="Watch">First approvals vs. today</td><td data-l="Record">Nilson lists Creekside, Grove, Harrisville Fields, Orchards, Riverbend Farms, Silver Valley, Stagecoach Estates and Winston Park. Their original approvals haven't been reviewed yet.</td><td data-l="Fire">Varies by city</td></tr>
+    </table>
+    <p class="viz-caption">Updated Sep. 29, 2026. Items will move off this list as decisions are posted.</p>
+  </div>
+
+  <h2 id="grades">Grades</h2>
+
+  <p>Graded on The Weber County Hive's five standing questions, from the point of view of the collective: everyone who pays for and lives with the result, not only the people nearest a project. Grades reflect what the public record shows, not the conduct of any person. Meeting a legal minimum earns a C, not a B.</p>
+
+  <div class="gcard">
+    <h4>The pattern across these projects</h4>
+    <div class="grow"><span class="c">Power</span><span class="g">D</span><span class="w">Later changes moved to routes with less public input: staff-level findings, owner petitions with waived protest periods, and a rezone over the advisory body's recommendation.</span></div>
+    <div class="grow"><span class="c">Transparency</span><span class="g">C</span><span class="w">The records exist, but in separate places. Weber County's own staff say it doesn't have a copy of Cache County's approvals for Powder Mountain.</span></div>
+    <div class="grow"><span class="c">Financial accountability</span><span class="g">D+</span><span class="w">Nordic Village's authorized bonds exceed the amount developers said they expected, while the county said the PIDs carried no county repercussions; the tax increment it shares is a separate cost to the public.</span></div>
+    <div class="grow"><span class="c">Environmental impact</span><span class="g">D</span><span class="w">More units and snowmaking on a mountain whose water district proposes new wells and reduced mitigation flows to a senior downstream user. See the water case file.</span></div>
+    <div class="grow"><span class="c">Community impact</span><span class="g">C−</span><span class="w">Residents could comment on the first approvals. Several later changes had no separate hearing in the records reviewed.</span></div>
+  </div>
+
+  <h2 id="record">What the record shows was done, and what's still open</h2>
+  <div class="split-grid">
+    <div class="split-col">
+      <h4>What the record shows was done</h4>
+      <ul>
+        <li>Each project's first approval had a public vote or hearing</li>
+        <li>Nordic Village's PID, project-area and bond documents are posted</li>
+        <li>The 2008 Powder Mountain commitments are in the county's minutes</li>
+        <li>County staff flagged the need to look at Powder Mountain Road</li>
+      </ul>
+    </div>
+    <div class="split-col">
+      <h4>What the public doesn't have yet</h4>
+      <ul>
+        <li>Powder Mountain's unit total under its 2015 agreement</li>
+        <li>The outcome of the Sept. 8, 2026 Powder Mountain and West Creek items</li>
+        <li>Whether all of the $25 million in 2026 Nordic bonds was issued</li>
+        <li>How the other half of the Nordic ladder truck is funded</li>
+        <li>Cache County's approvals, which Weber County says it doesn't have</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 id="questions">Questions readers are asking, and who can answer them</h2>
+  <div class="qa">
+    <details open><summary>How big can Powder Mountain get without another vote?</summary><div class="ans">Weber County's draft general plan says Snowbasin and Powder Mountain together hold 5,300 master-planned units that can be built without further legislative approval. The Powder Mountain share wasn't broken out in the records reviewed.<div class="ask"><b>Ask the Weber County Planning Division:</b> "How many units remain under Powder Mountain's development agreement, and how many have been built?"</div></div></details>
+    <details><summary>Why did Nordic Village's bonds grow past the $47 million developers expected?</summary><div class="ans">The records reviewed show the amounts, not the reasons.<div class="ask"><b>Ask the Nordic Village PID board:</b> "What is the total borrowed so far, and what is the most the district expects to borrow?"</div></div></details>
+    <details><summary>Did the West Creek rezone go forward?</summary><div class="ans">It was listed for a Sept. 8, 2026 work session, where no action is taken. No later action was found in the records reviewed.<div class="ask"><b>Ask the Weber County Planning Division:</b> "Has an application been filed for the West Creek R-3 rezone, and how does it relate to the Longhorn Estates development agreement's 116-lot cap?"</div></div></details>
+  </div>
+
+  <details class="sources">
+    <summary>Sources</summary>
+    <ul>
+      <li>Utah Business, "Nordic Valley Ski Resort in Eden could get a huge upgrade," April 12, 2022. Read as article text.</li>
+      <li>KSL.com, "Weber County grants Nordic Valley developers taxing authority to aid in expansion plans," Nov. 24, 2024. Read as article text.</li>
+      <li>Deseret News, "Nordic Valley Ski Resort exploring major expansion plans," March 28, 2026. Read as article text.</li>
+      <li>Nordic Village Public Infrastructure District No. 1, financial report as of March 31, 2026, and Resolution 2026-04 (April 15, 2026). From the Hive's Nordic Village files.</li>
+      <li>Weber County, Nordic Village Community Reinvestment Project Area Plan ("Weber County Fire District Ladder Truck 50% Contribution $1,000,000"). Read via text extraction of the posted PDF.</li>
+      <li>Weber County Board of Commissioners, minutes, July 8, 2008 (Powder Mountain). Read via summarized web capture; quoted passages returned verbatim.</li>
+      <li>Weber County Planning Commission, meeting packet and agenda, Sept. 8, 2026 (ZDA2026-04, ZDA2026-05, GPA2026-01, WS1). Read as pasted text of the posted packet and agenda.</li>
+      <li>Herald Journal (hjnews.com), "County Council narrowly approves Powder Mountain rezone," February 2025. Read as article text.</li>
+      <li>Standard-Examiner, April 11, 2026 (Powder Mountain Water and Sewer Improvement District; E6560).</li>
+      <li>Eden Crossing: Weber County Commission vote Dec. 5, 2023; Weber County public notice, Sept. 23, 2025; Utah Division of Water Rights Exchange Application Tracker (E6743). From the Hive's Eden Crossing files.</li>
+      <li>Weber County Commission, minutes, Oct. 21, 2025 (Eden Crossing rezone of about 8.73 acres, AV-3 to FB, and development agreement amendment; 3-0). Read via summarized capture of the posted minutes.</li>
+      <li>Longhorn Infrastructure Financing District certificate of creation, petition and Longhorn Estates development agreement (March 26, 2024). From the Hive's West Weber files.</li>
+      <li>Mount Ogden Public Infrastructure Districts, 2025 budget. From the Hive's Snowbasin files.</li>
+      <li>Western Weber Planning Commission, minutes of July 9, 2024 (JDC Ranch), in the Weber County Planning Division packet of Oct. 8, 2024 (webercountyutah.gov). Read via summarized capture of the posted PDF.</li>
+      <li>Weber County, staff report for ZMA 2024-08 (Meibos, Pat Burns / Lync Development LLC), March 17, 2026 (Longhorn Estates 84 lots preliminary, 116 potential; 22 lots transferred; Longhorn capped at 94; Meibos 208 lots). Read via summarized capture of the posted PDF.</li>
+      <li>Mount Ogden Public Infrastructure District No. 1, 2026 budget, marked preliminary draft, Dec. 9, 2025 (Utah Public Notice Website file 1369283). Read via summarized capture.</li>
+      <li>Weber County Planning Division, agenda, Dec. 10, 2025 (Cobabe Ranch Townhomes Phase 1, 8 units). Utah Public Notice Website notice 1044363.</li>
+      <li>Willard City Planning Commission, public hearing notice, April 2, 2026 (Nilson Homes rezone, 40.29 acres). Utah Public Notice Website notice 1068213.</li>
+      <li>Citizen Portal, "Council approves rezone for Nilson Homes" (Willard City Council, May 14, 2026). Secondary, AI-summarized report.</li>
+      <li>Zillow listing, 5592 E. 3220 N., Eden (Lot 27, Cobabe Ranch), listed Aug. 18, 2026 by EVO Utah, LLC.</li>
+      <li>Nilson Homes, communities page (nilsonhomes.com/communities).</li>
+      <li>The Weber County Hive, "Paying for the Next Station" (CASE 2026-WFD-02) and "A New Line on the Bill" (CASE 2026-WFD-01).</li>
+      <li>The Weber County Hive's collective rubric.</li>
+    </ul>
+    <p style="font-size:14px;color:var(--gray);font-style:italic;margin:14px 0 0;">Public records only. No comment requested.</p>
+  </details>
+
+</article>
+
+<footer>
+  <div class="footer-line">Independent · Accountability · Journalism</div>
+  <div class="footer-url">webercountyhive.substack.com</div>
+</footer>
+
+</body>
+</html>
