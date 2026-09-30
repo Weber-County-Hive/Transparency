@@ -725,6 +725,35 @@
   .pj-chart div{flex:1;background:#A07A1A;border-radius:3px 3px 0 0;position:relative;}
   .pj-chart div:first-child{background:#3A342A;}
 </style>
+
+<style>
+  /* interactive additions */
+  .ix-bars .row{margin:0 0 14px;}
+  .ix-bars .top{display:flex;justify-content:space-between;gap:10px;font-size:15px;color:#242017;margin-bottom:5px;}
+  .ix-bars .top b{font-family:'Playfair Display',serif;color:#111008;white-space:nowrap;}
+  .ix-bars .bar-track{height:20px;}
+  .ix-bars .bar-fill{height:100%;background:#D4AF37;transition:width .6s ease;}
+  .ix-bars .bar-fill.now{background:#7A2020;}
+  .ix-bars .na{font-size:14px;color:var(--gray);font-style:italic;}
+  .stack-bar{display:flex;height:26px;border:1px solid var(--line);background:#FFF;margin:6px 0 4px;}
+  .stack-bar span{display:block;height:100%;}
+  .countdown{border:2px solid #7A2020;background:#FFF;padding:16px 18px;margin:0 0 24px;text-align:center;}
+  .countdown .n{font-family:'Playfair Display',serif;font-weight:700;font-size:44px;color:#7A2020;line-height:1;}
+  .countdown .l{font-size:15px;color:#242017;margin-top:6px;}
+  .wl-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 14px;}
+  .wl-tools input{font-family:inherit;font-size:15px;padding:8px 10px;border:1px solid var(--line);background:#FFF;color:#111008;flex:1 1 220px;min-width:0;}
+  tr[hidden]{display:none;}
+  .wl-count{font-size:14px;color:var(--gray);margin:0 0 10px;}
+  .next-box{border:1px solid var(--line);background:#FFF;padding:18px 20px;margin:0 0 20px;}
+  .next-box h4{font-family:'Playfair Display',serif;font-size:20px;margin:0 0 10px;color:#111008;}
+  .next-box ol{margin:0;padding-left:22px;font-size:16px;color:#242017;}
+  .next-box li + li{margin-top:6px;}
+  .tip-box{border:2px solid #D4AF37;background:rgba(212,175,55,0.08);padding:18px 20px;margin:0 0 28px;text-align:center;}
+  .tip-box p{margin:0;font-size:17px;color:#111008;}
+  .tip-box a{font-weight:600;}
+  .conv{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media (max-width:600px){.conv{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
 
@@ -826,6 +855,7 @@
     <a href="#record">What was done, what's open</a>
     <a href="#questions">Questions to ask</a>
     <a href="#takepart">How to take part</a>
+    <a href="#next">What's next</a>
   </div>
 </div>
 
@@ -1771,6 +1801,21 @@
       <tr><td><b>Anyone in the district</b></td><td>Fire board meetings are open to the public; agendas are posted on the Utah Public Notice Website</td></tr>
     </table>
     <p class="viz-caption">From the district's hearing notices. For how many protests it takes to force an election, see <a href="weber-fire-district-annexation.html#takepart">the annexation case file</a>.</p>
+  </div>
+
+  <h2 id="next">What we're looking at next</h2>
+  <div class="next-box">
+    <h4>Still open on this story</h4>
+    <ol>
+      <li>The Powder Mountain station operating agreement, and when the district starts paying</li>
+      <li>Dollar terms for fire and EMS service on the Cache County side</li>
+      <li>The final amount of the 2026 lease revenue bond</li>
+      <li>Who pays the other half of the Nordic Village ladder truck, and where it will be based</li>
+      <li>The unit total in Powder Mountain's 2015 development agreement</li>
+    </ol>
+  </div>
+  <div class="tip-box">
+    <p>Have a tip on this story, or a record we should see? Email <a href="mailto:webercountyhive@gmail.com">webercountyhive@gmail.com</a>.</p>
   </div>
 
   <details class="sources">

@@ -631,6 +631,35 @@
   .grow .w{font-size:15.5px;color:#242017;line-height:1.55;}
   @media (max-width:640px){ .grow{grid-template-columns:1fr 56px;} .grow .w{grid-column:1 / -1;} }
 </style>
+
+<style>
+  /* interactive additions */
+  .ix-bars .row{margin:0 0 14px;}
+  .ix-bars .top{display:flex;justify-content:space-between;gap:10px;font-size:15px;color:#242017;margin-bottom:5px;}
+  .ix-bars .top b{font-family:'Playfair Display',serif;color:#111008;white-space:nowrap;}
+  .ix-bars .bar-track{height:20px;}
+  .ix-bars .bar-fill{height:100%;background:#D4AF37;transition:width .6s ease;}
+  .ix-bars .bar-fill.now{background:#7A2020;}
+  .ix-bars .na{font-size:14px;color:var(--gray);font-style:italic;}
+  .stack-bar{display:flex;height:26px;border:1px solid var(--line);background:#FFF;margin:6px 0 4px;}
+  .stack-bar span{display:block;height:100%;}
+  .countdown{border:2px solid #7A2020;background:#FFF;padding:16px 18px;margin:0 0 24px;text-align:center;}
+  .countdown .n{font-family:'Playfair Display',serif;font-weight:700;font-size:44px;color:#7A2020;line-height:1;}
+  .countdown .l{font-size:15px;color:#242017;margin-top:6px;}
+  .wl-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 14px;}
+  .wl-tools input{font-family:inherit;font-size:15px;padding:8px 10px;border:1px solid var(--line);background:#FFF;color:#111008;flex:1 1 220px;min-width:0;}
+  tr[hidden]{display:none;}
+  .wl-count{font-size:14px;color:var(--gray);margin:0 0 10px;}
+  .next-box{border:1px solid var(--line);background:#FFF;padding:18px 20px;margin:0 0 20px;}
+  .next-box h4{font-family:'Playfair Display',serif;font-size:20px;margin:0 0 10px;color:#111008;}
+  .next-box ol{margin:0;padding-left:22px;font-size:16px;color:#242017;}
+  .next-box li + li{margin-top:6px;}
+  .tip-box{border:2px solid #D4AF37;background:rgba(212,175,55,0.08);padding:18px 20px;margin:0 0 28px;text-align:center;}
+  .tip-box p{margin:0;font-size:17px;color:#111008;}
+  .tip-box a{font-weight:600;}
+  .conv{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  @media (max-width:600px){.conv{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
 
@@ -685,7 +714,7 @@
     <div style="padding-top:4px;">
       <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">Right now, Roy and Riverdale each run their own fire and ambulance service and pay for it out of the city budget. Part of the city's property tax pays for it.</p>
       <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">If the annexation is approved, Weber Fire District takes over that job. The district charges its own property tax, so a new line would appear on Roy and Riverdale bills.</p>
-      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">To keep people from paying for fire service twice, state law makes each city lower its own tax rate by the amount it had been spending on fire and ambulance service.</p>
+      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">To keep people from paying for fire service twice, state law makes each city lower its own tax rate in the first year, tied to what it budgeted for fire and ambulance service.</p>
       <p style="font-size:17px;color:#242017;line-height:1.75;margin:0;">So the real question for a homeowner is simple: is the new district line bigger or smaller than the amount the city's line goes down? The district's notices show the first number. The second one hasn't been published yet.</p>
     </div>
   </details>
@@ -716,12 +745,13 @@
     <a href="#record">What was done, what's open</a>
     <a href="#questions">Questions to ask</a>
     <a href="#takepart">How to take part</a>
+    <a href="#next">What's next</a>
   </div>
 </div>
 
 <article class="wrap">
 
-  <p class="lede">On Thursday, Oct. 1, 2026, Weber Fire District will hold public hearings on bringing Roy and Riverdale into the district for fire and emergency medical service. Riverdale's hearing begins at 6:00 p.m. and Roy's at 6:01 p.m., at Weber Fire District Station 61, 2023 W. 1300 N. in Farr West.</p>
+  <p class="lede">On Thursday, Oct. 1, 2026, Weber Fire District will hold public hearings on bringing Roy and Riverdale into the district for fire and emergency medical service. Riverdale's hearing begins at 6:00 p.m. and Roy's at 6:01 p.m. or as soon afterward as possible, at Weber Fire District Station 61, 2023 W. 1300 N. in Farr West.</p>
 
   <p>In a public post announcing the hearings, the district said it "is not creating a new tax or proposing a tax increase." If annexation is approved, it said, the district's existing rate would apply in Roy and Riverdale, and each city "would adjust its tax rate as required by Utah law." No decision has been made.</p>
 
@@ -729,14 +759,14 @@
 
   <div class="callout" style="border-color:#7A2020;">
     <span class="label" style="color:#7A2020;">The Question to Ask at the Oct. 1 Hearing</span>
-    <p>Riverdale's own fiscal 2026 budget sets aside <strong>$2,720,065</strong> for its fire department. That is more than the <strong>$1,740,993</strong> the city expects to collect in general-fund property tax that year.</p>
-    <p>State law says a city joining a fire district must cut its property tax rate by what it budgeted for fire service. A city can't cut its property tax by more than it collects, so that rule can't work the simple way in Riverdale. The records reviewed don't explain how it will be applied.</p>
-    <p>It comes straight from the city's own budget, and it is the question most worth asking at the Oct. 1 hearing: <strong>"How will Riverdale's required rate cut be calculated, and what happens to the rest of what the city spends on fire?"</strong></p>
+    <p>In both cities' fiscal 2026 budgets, the fire department costs more than the city's general property tax line: Roy, <strong>$6,052,221</strong> for Fire &amp; Rescue vs. <strong>$5,670,000</strong> in general property taxes; Riverdale, <strong>$2,720,065</strong> for fire vs. <strong>$1,740,993</strong> in current-year general property tax.</p>
+    <p>State law ties each city's required rate cut to "revenue budgeted ... for public safety service." The records reviewed don't show how either city will calculate that amount: which year, which revenue is counted, and what adjustments apply.</p>
+    <p>That is the question most worth asking at the Oct. 1 hearing: <strong>"Will the city publish its calculation, including the year used, the revenue counted, any adjustments, and the resulting rate?"</strong></p>
   </div>
 
   <h2 id="bill">What changes on a Roy tax bill</h2>
 
-  <p>The easiest way to see it is on the bill itself. Here is an average Roy home, valued at $439,000, before and after annexation. Only two lines change.</p>
+  <p>The easiest way to see it is on the bill itself. Here is an average Roy home, valued at $439,000, before and after annexation. This illustration isolates the two lines directly affected by annexation; other rates and values can also change by 2027.</p>
 
   <div class="viz-block">
     <div class="bills">
@@ -774,7 +804,7 @@
       <li style="--c:#7A2020;"><span class="d">Dec. 9, 2025</span><div class="txt">District board approves its 2026 budget 9–1, including the $2,956,000-a-year increase.</div></li>
       <li style="--c:#3F5B73;"><span class="d">July 14, 2026</span><div class="txt">First public hearings on the Roy and Riverdale annexations.</div></li>
       <li style="--c:#3F5B73;"><span class="d">Aug. 12, 2026</span><div class="txt">Roy City Council approves a 34.25% property tax increase, 4–1, after removing about $917,000 in fire department funding from its earlier proposal.</div></li>
-      <li style="--c:#D4AF37;"><span class="d">Oct. 1, 2026</span><div class="txt">Annexation hearings: Riverdale 6:00 p.m., Roy 6:01 p.m. The county's new 0.20% sales tax takes effect the same day.</div></li>
+      <li style="--c:#D4AF37;"><span class="d">Oct. 1, 2026</span><div class="txt">Annexation hearings: Riverdale 6:00 p.m., Roy 6:01 p.m. or as soon afterward as possible. The county's new 0.20% sales tax takes effect the same day.</div></li>
       <li style="--c:#D4AF37;"><span class="d">30 days after Oct. 1</span><div class="txt">Deadline for written protests from property owners and registered voters in each city.</div></li>
       <li style="--c:#96723F;"><span class="d">Aug. 2026</span><div class="txt">The district's annexation update describes its preliminary 2027 budget as "close to balance without a tax increase."</div></li>
       <li style="--c:#96723F;"><span class="d">Dec. 27, 2026</span><div class="txt">Target date for the transition, "on or about December 27, 2026," in the district's July 14 resolutions. KSL reported January 2027 as the earliest effective date.</div></li>
@@ -792,7 +822,7 @@
   </div>
 
   <div class="figure-line">
-    <p>All four estimates work out to the same district rate: <strong>0.1301%</strong> of taxable value (Hive calculation from the district's notices). Homes are taxed on 55% of their value under Utah's residential exemption; businesses are taxed on full value. That consistency means the estimates can be applied to any home value, which the calculator below does.</p>
+    <p>All four estimates work out to the same district rate: <strong>0.1301%</strong> of taxable value (Hive calculation from the district's notices). Qualifying primary residences are taxed on 55% of their value under Utah's residential exemption; businesses are taxed on full value. That consistency means the estimates can be applied to any home value, which the calculator below does.</p>
   </div>
 
   <h2 id="calc">Estimate the district line for your property</h2>
@@ -882,21 +912,21 @@
   <p>Each city's own adopted budget for the year ending June 30, 2026, is the most recent full budget posted on its website. Those budgets show how large the fire department is compared with each city's property tax.</p>
 
   <div class="viz-block">
-    <p class="viz-title">Fire budget vs. general-fund property tax, fiscal year 2026</p>
+    <p class="viz-title">Fire budget vs. general property tax line, fiscal year 2026</p>
     <div class="bar-chart">
-      <div class="bar-row"><div class="bar-meta"><span>Roy — Fire &amp; Rescue budget</span><span class="amt">$6,052,221</span></div><div class="bar-track" style="height:24px;"><div class="bar-fill" style="width:35%;background:#7A2020;"></div></div></div>
-      <div class="bar-row"><div class="bar-meta"><span>Roy — general-fund property tax</span><span class="amt">$17,276,500</span></div><div class="bar-track" style="height:24px;"><div class="bar-fill cat-bond" style="width:100%"></div></div></div>
-      <div class="bar-row" style="margin-top:26px;"><div class="bar-meta"><span>Riverdale — Fire budget</span><span class="amt">$2,720,065</span></div><div class="bar-track" style="height:24px;"><div class="bar-fill" style="width:15.7%;background:#7A2020;"></div></div></div>
-      <div class="bar-row"><div class="bar-meta"><span>Riverdale — general-fund property tax</span><span class="amt">$1,740,993</span></div><div class="bar-track" style="height:24px;"><div class="bar-fill cat-bond" style="width:10.1%"></div></div></div>
+      <div class="bar-row"><div class="bar-meta"><span>Roy — Fire &amp; Rescue budget</span><span class="amt">$6,052,221</span></div><div class="bar-track" style="height:24px;"><div class="bar-fill" style="width:100%;background:#7A2020;"></div></div></div>
+      <div class="bar-row"><div class="bar-meta"><span>Roy — general property taxes (line 10-31-100)</span><span class="amt">$5,670,000</span></div><div class="bar-track" style="height:24px;"><div class="bar-fill cat-bond" style="width:93.7%"></div></div></div>
+      <div class="bar-row" style="margin-top:26px;"><div class="bar-meta"><span>Riverdale — Fire budget</span><span class="amt">$2,720,065</span></div><div class="bar-track" style="height:24px;"><div class="bar-fill" style="width:44.9%;background:#7A2020;"></div></div></div>
+      <div class="bar-row"><div class="bar-meta"><span>Riverdale — current-year general property tax</span><span class="amt">$1,740,993</span></div><div class="bar-track" style="height:24px;"><div class="bar-fill cat-bond" style="width:28.8%"></div></div></div>
     </div>
-    <p class="viz-caption">From each city's FY2026 adopted budget (July 1, 2025 to June 30, 2026). All bars on one scale. Roy also budgeted $1,472,000 in ambulance fees and $500,000 from Weber County for paramedic service; Riverdale budgeted $400,000 in ambulance transport fees.</p>
+    <p class="viz-caption">From each city's FY2026 budget (July 1, 2025 to June 30, 2026). All bars on one scale. Roy's $5,670,000 is its general property tax line (10-31-100), in the same column as the city's $17,276,500 total for all taxes, which also includes sales tax, franchise taxes and motor vehicle fees; a separate column on that line adds $673,978, and which figure reflects the adopted budget should be confirmed. Riverdale's figure is its current-year general property tax. Roy also budgeted $1,472,000 in ambulance fees and $500,000 from Weber County for paramedic service; Riverdale budgeted $400,000 in ambulance transport fees.</p>
   </div>
 
-  <p>Two things stand out. Roy's fire budget, about $6.05 million, is far larger than the roughly $917,000 in fire funding reported as removed from Roy's proposed increase. And Riverdale's fire budget, about $2.72 million, is larger than all the property tax its general fund expected to collect, about $1.74 million. Riverdale, a retail center, budgeted $8,371,887 in general sales tax, about 43% of its $19,317,047 general fund.</p>
+  <p>Two things stand out. Roy's fire budget, about $6.05 million, is far larger than the roughly $917,000 in fire funding reported as removed from Roy's proposed increase. And in both cities, the fire budget is larger than the general property tax line: Roy's by about $380,000, Riverdale's by about $979,000. Neither fact by itself shows how large the required rate cut will be. Riverdale, a retail center, budgeted $8,371,887 in general sales tax, about 43% of its $19,317,047 general fund.</p>
 
   <div class="callout">
     <span class="label">What Is Not Settled Yet</span>
-    <p>The law bases each city's cut on "revenue budgeted ... for public safety service" in the prior fiscal year. The current law says that for a city on a July-to-June budget, it is the prior fiscal year. The records reviewed do not show which fiscal year each city will treat as "prior" for an annexation taking effect in January 2027, whether ambulance fees and county paramedic money are subtracted first, or how the cut works when, as in Riverdale, the fire budget is larger than the city's property tax. Those are questions for each city, listed below. The statute text above is the version in effect beginning Jan. 1, 2026, as amended by S.B. 206.</p>
+    <p>The law bases each city's cut on "revenue budgeted ... for public safety service" in the prior fiscal year. The current law says that for a city on a July-to-June budget, it is the prior fiscal year. The records reviewed do not show which fiscal year each city will treat as "prior" for an annexation taking effect in January 2027, whether ambulance fees and county paramedic money are subtracted first, or how the cut works when, as in both cities, the fire budget is larger than the general property tax line. Those are questions for each city, listed below. The statute text above is the version in effect beginning Jan. 1, 2026, as amended by S.B. 206.</p>
   </div>
 
   <h2 id="after">After the first year</h2>
@@ -904,7 +934,7 @@
   <p>The required cut happens once. Subsection (7)(b) applies "in the first budget year following annexation." Nothing in the section requires a second cut, and nothing in it limits what either the city or the district does in the years after.</p>
 
   <div class="viz-block">
-    <p class="viz-title">Year one is set by law. Later years are not.</p>
+    <p class="viz-title">The annexation rule sets a first-year adjustment. Later years follow the usual tax procedures and limits.</p>
     <div class="flow-cols">
       <div class="flow-col">
         <span class="flow-tag yes">First budget year</span>
@@ -964,7 +994,7 @@
     <p><strong>$917,000</strong> is the fire funding Roy removed from its proposed increase. The state law above ties the required cut to Roy's full budgeted fire, paramedic and emergency spending, which may be a different amount.</p>
   </div>
 
-  <p>Opponents of Roy's increase are gathering about 1,800 voter signatures to put it on the November ballot. That referendum is a separate process from the annexation protest.</p>
+  <p>Opponents of Roy's increase were gathering voter signatures for a referendum on it in September 2026, Fox13 reported. Whether it qualifies, and for which election, wasn't confirmed in the records reviewed. That referendum is a separate process from the annexation protest.</p>
 
   <h2 id="board">Who would make the decisions</h2>
 
@@ -1018,9 +1048,9 @@
 
   <div class="gcard">
     <h4>Roy and Riverdale annexation into Weber Fire District</h4>
-    <div class="grow"><span class="c">Power</span><span class="g">C</span><span class="w">Protests reaching state thresholds can force an election, and state law requires each city to lower its rate. But decisions move from two elected city councils to a district board where neither city has a confirmed seat.</span></div>
-    <div class="grow"><span class="c">Transparency</span><span class="g">C</span><span class="w">Two rounds of hearings, posted notices with mailing certificates, and estimates for an average home and business. But no notice shows the city's required cut or the net effect for a homeowner. The first Roy hearing was held before the individual mailed notice state law requires had been completed, which is why it's being held again (Resolution 40-2026).</span></div>
-    <div class="grow"><span class="c">Financial accountability</span><span class="g">D</span><span class="w">The new district line is published; the offsetting city cut is not. Riverdale's fire budget is larger than its general-fund property tax, and how the required cut works there hasn't been explained. New members would also share existing district commitments, including lease payments for stations elsewhere.</span></div>
+    <div class="grow"><span class="c">Power</span><span class="g">C</span><span class="w">Protests reaching state thresholds can force an election, and state law requires each city to lower its rate. But decisions move from two elected city councils to a district board, and this review has not established the representation terms for Roy and Riverdale.</span></div>
+    <div class="grow"><span class="c">Transparency</span><span class="g">C</span><span class="w">July hearings held and a second round scheduled for Oct. 1, posted notices with mailing certificates, and estimates for an average home and business. But no notice shows the city's required cut or the net effect for a homeowner. The first Roy hearing was held before the individual mailed notice state law requires had been completed, which is why it's being held again (Resolution 40-2026).</span></div>
+    <div class="grow"><span class="c">Financial accountability</span><span class="g">D</span><span class="w">The new district line is published; the offsetting city cut is not. In both cities the fire budget is larger than the general property tax line, and how the required cut will be calculated hasn't been published. New members would also share existing district commitments, including lease payments for stations elsewhere.</span></div>
     <div class="grow"><span class="c">Environmental impact</span><span class="g na">Not applicable</span><span class="w"></span></div>
     <div class="grow"><span class="c">Community impact</span><span class="g">C−</span><span class="w">Residents are asked to comment and decide whether to protest before they have the net numbers, the representation terms, or what happens to their stations and firefighters.</span></div>
   </div>
@@ -1031,8 +1061,8 @@
     <table class="data-table">
       <tr><th>What the record shows</th><th>An option that keeps the same goal</th></tr>
       <tr><td>Notices show the new district line but not the city's required cut</td><td>Publish each city's cut and the net change for an average home alongside the district estimate</td></tr>
-      <tr><td>Riverdale's fire budget exceeds its general-fund property tax</td><td>Explain before the hearing how the required cut will be calculated for Riverdale</td></tr>
-      <tr><td>Neither city has a confirmed board seat</td><td>State representation terms before the vote</td></tr>
+      <tr><td>In both cities the fire budget is larger than the general property tax line</td><td>Publish before the hearing how each city's required cut will be calculated</td></tr>
+      <tr><td>This review has not established representation terms for Roy and Riverdale</td><td>State representation terms before the vote</td></tr>
       <tr><td>Transfer agreements for stations, trucks and firefighters weren't posted before the hearings</td><td>Post any transfer agreement with the hearing notice</td></tr>
       <tr><td>The notices don't say how many protests it takes to force an election</td><td>Include the Utah Code 17B-1-412 thresholds in the notice</td></tr>
       <tr><td>Roy's July hearing came before the required mailed notice was completed</td><td>Complete mailed notice before the first hearing</td></tr>
@@ -1047,7 +1077,7 @@
     <div class="split-col">
       <h4>What the record shows was done</h4>
       <ul>
-        <li>Two rounds of public hearings, July 14 and Oct. 1</li>
+        <li>July 14 hearings held; another round scheduled for Oct. 1</li>
         <li>Hearing notices posted with mailing and posting certificates</li>
         <li>Estimates published for an average home and business in each city</li>
         <li>A 30-day written protest period</li>
@@ -1103,7 +1133,7 @@
     <p class="viz-title">Thursday, Oct. 1, 2026</p>
     <table class="data-table">
       <tr><td>Riverdale hearing</td><td class="num">6:00 p.m.</td></tr>
-      <tr><td>Roy hearing</td><td class="num">6:01 p.m.</td></tr>
+      <tr><td>Roy hearing</td><td class="num">6:01 p.m., or as soon afterward as possible</td></tr>
       <tr><td>Location</td><td>Weber Fire District Station 61, 2023 W. 1300 N., Farr West</td></tr>
       <tr><td>Online</td><td>tinyurl.com/WFDAnnexation</td></tr>
       <tr><td>Written protests</td><td>Within 30 days after the hearing, to district@weberfiredistrict.gov or Weber Fire District, 2023 W. 1300 N., Farr West, UT 84404</td></tr>
@@ -1111,6 +1141,21 @@
       <tr><td>Questions</td><td>801-782-3580</td></tr>
     </table>
     <p class="viz-caption">From the district's hearing notices. Property owners and registered voters in the annexation area may comment at the hearing.</p>
+  </div>
+
+  <h2 id="next">What we're looking at next</h2>
+  <div class="next-box">
+    <h4>Still open on this story</h4>
+    <ol>
+      <li>How much each city will cut its rate, and which year's fire budget it will use</li>
+      <li>Whether ambulance fees and county paramedic money are subtracted before the cut</li>
+      <li>The agreements transferring Roy's and Riverdale's stations, trucks and firefighters</li>
+      <li>Whether Roy and Riverdale will each get a seat on the fire district board</li>
+      <li>Who pays the other half of the Nordic Village ladder truck</li>
+    </ol>
+  </div>
+  <div class="tip-box">
+    <p>Have a tip on this story, or a record we should see? Email <a href="mailto:webercountyhive@gmail.com">webercountyhive@gmail.com</a>.</p>
   </div>
 
   <details class="sources">
@@ -1127,7 +1172,7 @@
       <li>KSL.com, Tim Vandenack, "Roy, Riverdale officials consider shifting fire protection to Weber Fire District," Aug. 21, 2026 (July 14 hearings; January timing; Brooks and Clark quotes).</li>
       <li>KSL.com, "Roy leaders OK scaled-back 34.25% tax hike; foes plan challenge to halt it," August 2026 (4–1 vote; $1.75 million; $388.25 to $521.23; $80.46; about $917,000 in fire funding; referendum).</li>
       <li>KSL.com, Tim Vandenack, "Weber County sales tax taking effect Oct. 1 expected to generate $13.1M a year," Sept. 17, 2026, and Utah State Tax Commission rate charts for July 1 and Oct. 1, 2026.</li>
-      <li>Roy City, "FY2026 Budget Document" (July 1, 2025 to June 30, 2026): Fire &amp; Rescue $6,052,221; ambulance fees $1,472,000; Weber County Paramedic $500,000; general-fund property tax $17,276,500.</li>
+      <li>Roy City, "FY2026 Budget Document" (July 1, 2025 to June 30, 2026): Fire &amp; Rescue $6,052,221; ambulance fees $1,472,000; Weber County Paramedic $500,000; general property taxes (line 10-31-100) $5,670,000; total taxes, all types, $17,276,500. <a href="https://cms7files1.revize.com/roycityut/Departments/finance/FY2026%20Budget%20Document.pdf" target="_blank" rel="noopener">Budget document</a>.</li>
       <li>Riverdale City, FY2026 adopted budget: Fire $2,720,065; ambulance transport fees $400,000; current-year general property tax $1,740,993.</li>
       <li>Weber Fire District, "Board of Trustees" and "Candidacy Info" pages (four elected at-large trustees; seven appointed by member cities).</li>
       <li>Utah Code Title 17B, Chapter 1, Part 4 (special district annexation), Sections 17B-1-403, -409 and -412, as posted on le.utah.gov.</li>
