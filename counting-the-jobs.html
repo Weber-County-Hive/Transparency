@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Counting the Jobs | The Weber County Hive</title>
+<meta name="description" content="Utah's biggest data center deals were promoted on jobs. What the draft agreements require, what public support comes with them, and who the official job numbers leave out.">
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<style>
+  :root{--black:#FAF7F2;--gold:#D4AF37;--warm-gold:#96723F;--cream:#111008;--gray:#6B6355;--line:rgba(212,175,55,0.35);}
+  *{box-sizing:border-box;} html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--black);color:var(--cream);font-family:'Source Serif 4',Georgia,'Times New Roman',serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  a{color:var(--warm-gold);} a:hover{color:var(--gold);}
+  .wrap{max-width:820px;margin:0 auto;padding:0 24px;}
+  .masthead{padding:56px 24px 40px;text-align:center;}
+  .hexagon{width:44px;height:44px;margin:0 auto 14px;}
+  .lockup{font-family:'Playfair Display',serif;}
+  .lockup .hive{color:var(--gold);font-size:22px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;}
+  .lockup .county{display:block;color:var(--gray);font-size:12px;letter-spacing:.32em;text-transform:uppercase;margin-top:4px;}
+  .eyebrow-link{display:inline-block;margin-top:22px;font-style:italic;font-size:14px;color:var(--warm-gold);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;}
+  .hero-stat{padding:8px 24px 44px;text-align:center;max-width:760px;margin:0 auto;}
+  .hs-number{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(38px,7vw,64px);color:var(--gold);line-height:1.05;margin:0 0 8px;}
+  .hs-sub{font-family:'Playfair Display',serif;font-weight:600;font-style:italic;font-size:clamp(18px,3vw,24px);color:var(--warm-gold);margin:0 0 20px;}
+  .hs-support{font-size:17px;color:#242017;line-height:1.6;max-width:520px;margin:0 auto;}
+  .article-header{padding:8px 24px 44px;text-align:center;border-bottom:1px solid var(--line);}
+  .kicker{font-style:italic;color:var(--warm-gold);font-size:15px;margin-bottom:18px;}
+  h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(28px,4.2vw,44px);line-height:1.18;margin:0 0 14px;}
+  .subhead{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:19px;color:var(--warm-gold);margin:0 0 20px;}
+  .dek{font-style:italic;color:var(--warm-gold);font-size:18px;line-height:1.55;max-width:620px;margin:0 auto;}
+  .byline{margin-top:26px;color:var(--gray);font-size:13px;letter-spacing:.06em;text-transform:uppercase;}
+  article{padding:52px 24px 20px;}
+  article p,article li{font-size:18px;color:#242017;}
+  article p{margin:0 0 24px;}
+  article h2{font-family:'Playfair Display',serif;font-weight:600;font-style:italic;color:var(--gold);font-size:27px;margin:52px 0 22px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+  .part-banner{margin:60px 0 10px;padding:18px 22px;background:#111008;color:#FAF7F2;font-family:'Playfair Display',serif;font-size:22px;}
+  .part-banner small{display:block;font-family:'Source Serif 4',serif;font-size:15px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}
+  .lede{font-size:20px;}
+  .figure-line{margin:32px 0;padding:22px 26px;border-left:3px solid var(--gold);background:rgba(212,175,55,.06);}
+  .figure-line p{margin:0;font-size:18px;color:var(--cream);} .figure-line p+p{margin-top:12px;}
+  .callout{margin:36px 0;padding:24px 28px;border:1px solid var(--line);background:rgba(212,175,55,.03);}
+  .callout .label{display:block;color:var(--warm-gold);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;}
+  .callout p{margin:0;font-size:17px;} .callout p+p{margin-top:14px;}
+  .callout ul{margin:0;padding-left:20px;} .callout li{font-size:17px;margin-bottom:8px;}
+  .draft-tag{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--warm-gold);color:var(--warm-gold);padding:1px 8px;margin-left:6px;vertical-align:middle;}
+  .signed-tag{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:#111008;padding:2px 8px;margin-left:6px;vertical-align:middle;}
+  .divider{width:56px;height:1px;background:var(--gold);margin:56px auto;}
+  .viz-block{margin:44px 0;padding:30px 26px;border:1px solid var(--line);background:rgba(212,175,55,.04);}
+  .viz-title{font-style:italic;color:var(--warm-gold);font-size:14px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 20px;}
+  .viz-caption{font-size:15px;color:var(--gray);font-style:italic;margin:16px 0 0;}
+  .mermaid{display:flex;justify-content:center;}
+  .mermaid svg{max-width:100% !important;height:auto;}
+  .data-table{width:100%;border-collapse:collapse;table-layout:fixed;}
+  .data-table th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--warm-gold);font-weight:400;padding:0 12px 10px 0;border-bottom:1px solid var(--gold);}
+  .data-table td{overflow-wrap:anywhere;font-size:16px;color:#242017;padding:12px 12px 12px 0;border-bottom:1px solid rgba(0,0,0,.08);vertical-align:top;}
+  .data-table td.num{font-family:'Playfair Display',serif;font-weight:700;color:var(--warm-gold);}
+  .glossary{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 8px;}
+  .glossary details{border:1px solid var(--line);background:rgba(212,175,55,.04);}
+  .glossary summary{cursor:pointer;list-style:none;padding:9px 16px;font-size:15px;color:var(--warm-gold);}
+  .glossary summary::-webkit-details-marker{display:none;}
+  .glossary summary::before{content:"+ ";color:var(--gold);font-weight:700;}
+  .glossary details[open] summary::before{content:"− ";}
+  .glossary p{margin:0;padding:12px 16px 14px;font-size:15px;color:#242017;max-width:520px;}
+  .quicknav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--line);}
+  .quicknav a{font-size:13px;color:var(--warm-gold);text-decoration:none;border:1px solid var(--line);padding:6px 12px;}
+  .sources{padding:20px 0 8px;border-top:1px solid var(--line);margin-top:20px;}
+  .sources summary{font-style:italic;cursor:pointer;color:var(--warm-gold);font-size:15px;letter-spacing:.12em;text-transform:uppercase;list-style:none;padding:6px 0;}
+  .sources summary::-webkit-details-marker{display:none;}
+  .sources summary::before{content:"› ";color:var(--gold);}
+  .sources ul{margin:12px 0 0;padding:0;list-style:none;}
+  .sources li{font-size:15px;color:var(--gray);padding:9px 0;border-bottom:1px solid rgba(0,0,0,.08);}
+  .method-note{margin-top:20px;font-size:14px;font-style:italic;color:var(--gray);}
+  #map{height:420px;border:1px solid var(--line);}
+  .est{display:grid;gap:18px;}
+  .est label{display:block;font-size:16px;color:#242017;margin-bottom:6px;}
+  .est input[type=range]{width:100%;accent-color:#96723F;}
+  .est-row{display:flex;flex-wrap:wrap;gap:10px;}
+  .est-row button{font-family:inherit;font-size:15px;padding:8px 14px;border:1px solid var(--warm-gold);background:#fff;color:var(--warm-gold);cursor:pointer;}
+  .est-row button.on{background:var(--warm-gold);color:#fff;}
+  .est-out{font-family:'Playfair Display',serif;font-size:30px;color:var(--warm-gold);font-weight:700;}
+  .money-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+  .money-card{border:1px solid var(--line);background:#fff;padding:16px 18px;}
+  .money-card h4{margin:0 0 6px;font-family:'Playfair Display',serif;font-size:18px;color:var(--cream);}
+  .money-card .amt{font-family:'Playfair Display',serif;font-weight:700;font-size:24px;color:var(--warm-gold);}
+  .money-card p{font-size:15px !important;margin:6px 0 0 !important;}
+  .people{display:grid;gap:14px;}
+  .person{border-left:3px solid var(--gold);padding:6px 0 6px 16px;}
+  .person strong{font-size:18px;} .person p{font-size:16px !important;margin:4px 0 0 !important;}
+  footer{text-align:center;padding:56px 24px 64px;}
+  .footer-line{color:var(--gold);font-size:12px;letter-spacing:.28em;text-transform:uppercase;margin-bottom:10px;}
+  .footer-url{color:var(--gray);font-size:13px;}
+  @media (max-width:520px){article p,article li,.lede{font-size:17px;} .callout,.viz-block{padding:20px 16px;} #map{height:340px;}}
+
+  .plus{color:#3F6B3F;font-weight:600;} .minus{color:#8C3B44;font-weight:600;}
+  .bill{border:1px solid var(--line);background:#fff;padding:18px 20px;margin:0 0 16px;}
+  .bill h4{margin:0 0 4px;font-family:'Playfair Display',serif;font-size:20px;color:var(--cream);}
+  .bill .who{font-size:14px;color:var(--gray);margin-bottom:8px;}
+  .bill p{font-size:16px !important;margin:6px 0 0 !important;}
+  .lifespan{display:grid;gap:14px;margin-top:6px;}
+  .ls-row{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:12px;align-items:center;}
+  .ls-label{font-size:16px;color:#242017;line-height:1.3;}
+  .ls-track{position:relative;height:30px;background:rgba(0,0,0,.05);}
+  .ls-bar{position:absolute;top:0;bottom:0;left:0;display:flex;align-items:center;padding-left:10px;font-size:15px;font-weight:600;color:#111008;white-space:nowrap;}
+  .ls-bar.eq{background:#E8D49A;} .ls-bar.bld{background:#C9A575;} .ls-bar.deal{background:#111008;color:#FAF7F2;}
+  .ls-axis{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:12px;font-size:13px;color:var(--gray);}
+  .ls-axis div:last-child{display:flex;justify-content:space-between;}
+  @media(max-width:520px){.ls-row,.ls-axis{grid-template-columns:1fr;gap:4px;} .ls-axis div:first-child{display:none;}}
+  .quick30{margin:36px 0;padding:24px 26px;background:#111008;color:#FAF7F2;}
+  .quick30 .label{display:block;color:var(--gold);font-size:14px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;}
+  .quick30 ol{margin:0;padding-left:22px;} .quick30 li{font-size:18px;color:#FAF7F2;margin-bottom:10px;line-height:1.5;}
+  .draftbox{margin:30px 0;padding:22px 24px;border:2px dashed var(--warm-gold);background:#fff;}
+  .draftbox .label{display:block;color:var(--warm-gold);font-size:14px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px;}
+  .draftbox p{font-size:18px !important;margin:0 0 10px !important;} .draftbox p:last-child{margin:0 !important;}
+  .stack{display:flex;height:64px;border:1px solid var(--line);margin:8px 0 14px;}
+  .stack div{display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:17px;padding:0 4px;line-height:1.15;}
+  .legend{display:grid;gap:8px;} .legend div{display:flex;gap:10px;align-items:center;font-size:17px;color:#242017;}
+  .legend i{display:inline-block;width:18px;height:18px;flex:none;border:1px solid rgba(0,0,0,.2);}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 16px;}
+  .tabs button{font-family:inherit;font-size:16px;padding:10px 14px;border:1px solid var(--warm-gold);background:#fff;color:var(--warm-gold);cursor:pointer;}
+  .tabs button.on{background:var(--warm-gold);color:#fff;}
+  .placecard{display:none;} .placecard.on{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .placecard .half{padding:16px 18px;border:1px solid var(--line);background:#fff;}
+  .placecard .half h4{margin:0 0 8px;font-size:15px;letter-spacing:.12em;text-transform:uppercase;}
+  .placecard .runs h4{color:#3F6B3F;} .placecard .empty h4{color:#8C3B44;}
+  .placecard .runs{border-top:5px solid #3F6B3F;} .placecard .empty{border-top:5px solid #8C3B44;}
+  .placecard p{font-size:17px !important;margin:0 !important;}
+  .tl{position:relative;margin:10px 0 24px;padding-left:40px;}
+  .tl::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;background:var(--gold);}
+  .tl-i{position:relative;margin-bottom:18px;}
+  .mk{display:inline-flex;width:28px;height:28px;border-radius:50%;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex:none;}
+  .tl-i .mk{position:absolute;left:-40px;top:0;}
+  .mk.up{background:#3F6B3F;} .mk.down{background:#8C3B44;} .mk.both{background:#96723F;font-size:11px;} .mk.mid{background:#6B6355;}
+  .tl-i .yr{font-weight:700;font-size:15px;color:var(--warm-gold);letter-spacing:.06em;}
+  .tl-i .nm{font-family:'Playfair Display',serif;font-size:19px;color:var(--cream);}
+  .tl-i .ds{font-size:16px;color:#242017;}
+  .asks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:24px 0;}
+  .ask{background:#fff;border:1px solid var(--line);border-top:5px solid var(--gold);padding:16px;text-align:center;}
+  .ask .ic{font-size:34px;line-height:1;margin-bottom:8px;} .ask strong{display:block;font-size:18px;margin-bottom:4px;} .ask span{font-size:15px;color:var(--gray);}
+  .ok{color:#3F6B3F;font-weight:700;} .no{color:#8C3B44;font-weight:700;} .part{color:#96723F;font-weight:700;}
+  @media(max-width:600px){.placecard.on{grid-template-columns:1fr;} .stack div{font-size:14px;}}
+  /* Utah Hive Politics brand bar and bee footer */
+  .hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+  .hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+  .hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+  .hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+  .hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+  .hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+  .hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+  .hb-foot .hb-name{font-size:14px;}
+  .hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+  @media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+</style>
+</head>
+<body>
+<div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
+<div class="masthead">
+  <div class="hexagon" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 93,27 93,73 50,96 7,73 7,27" stroke="#D4AF37" stroke-width="3"/><circle cx="30" cy="24" r="4" fill="#D4AF37"/></svg></div>
+  <div class="lockup"><span class="hive">The Hive</span><span class="county">Weber County</span></div>
+  <a class="eyebrow-link" href="index.html">← Transparency: Accountability Case Files</a>
+</div>
+
+<div class="hero-stat">
+  <div class="hs-number">2,000 JOBS PROMISED</div>
+  <div class="hs-sub">What the draft measures: 3 gigawatts</div>
+  <div class="hs-support">The Stratos drafts require a power plant within five years. In the sections reviewed, they set no number of jobs, and the yearly job count can be marked confidential.</div>
+</div>
+
+<div class="article-header wrap">
+  <div class="kicker">Transparency · Data Centers · CASE 2026-JOBS-01</div>
+  <h1>Counting the Jobs</h1>
+  <p class="subhead">What Utah's data center deals promise, what the agreements require, and who the official numbers leave out</p>
+  <p class="dek">Part 1 checks the two largest Great Salt Lake data center proposals against their own documents. Part 2 asks who measures whether people can get work at all.</p>
+  <div class="byline">The Weber County Hive · We report public records. You decide.</div>
+</div>
+
+<div class="wrap">
+  <details class="sources" style="margin-top:0;">
+    <summary>Explain this simply</summary>
+    <p style="font-size:18px;color:#242017;">Picture a town that gives a big company a tax deal because it promises lots of jobs. Now picture the written contract. If the contract never says how many jobs, and never says what happens if they don't show up, then the jobs are a hope, not a promise anyone can enforce.</p>
+    <p style="font-size:18px;color:#242017;">That's what this case file checks. It also asks a second question: when people can't get hired, do the official numbers even notice? Often they don't. Someone who gives up looking, or who starts their own business because nobody called back, doesn't show up as unemployed.</p>
+    <p style="font-size:18px;color:#242017;">It also looks ahead. The computer chips inside a data center get replaced every few years, but the deals around the buildings last 25 to 50 years. If the technology changes, what's left is a building, and the question of who pays for it.</p>
+    <p style="font-size:18px;color:#242017;">And it follows the money. Some governments collect more from these projects, some collect less, and some depend on the campus actually running. The "Taxes by place" section shows each one.</p>
+  </details>
+  <div class="glossary">
+    <details><summary>Draft vs. signed</summary><p>MIDA has signed only two Stratos documents. The development agreement, the county agreement and the standards are posted as "draft and unsigned." This page labels every term by which kind it comes from.</p></details>
+    <details><summary>Permanent job</summary><p>A job that lasts after construction ends: technicians, security, managers. Construction jobs end when the buildings are done.</p></details>
+    <details><summary>Clawback</summary><p>A contract term that lets the public take money back if promised jobs or investment don't happen.</p></details>
+    <details><summary>Tax increment</summary><p>Property tax growth in an area. It is collected as usual, then a share is sent to a project or agency instead of the normal taxing entities.</p></details>
+    <details><summary>PID</summary><p>Public Infrastructure District. It borrows money for roads and pipes and repays it from property inside the district, not from general taxpayers.</p></details>
+    <details><summary>LOC payment</summary><p>Under the Stratos draft, computing buildings get a "Letter of Completion" instead of a normal occupancy certificate and pay 1.2% of their value instead of regular property tax. Most of it is paid back out (see the $100 chart).</p></details>
+    <details><summary>Megawatt / gigawatt</summary><p>Units of electric power. A gigawatt is 1,000 megawatts, roughly enough for 750,000 homes. Data centers are sized by how much power they use.</p></details>
+    <details><summary>Grandfathered</summary><p>Allowed to keep going under the old rules after a new law takes effect.</p></details>
+    <details><summary>Decommissioning</summary><p>Shutting a facility down and cleaning up the site: removing equipment, hazardous materials and sometimes the buildings.</p></details>
+    <details><summary>Underemployed</summary><p>Working, but in a job that doesn't use your training, like a college graduate in a job that doesn't require a degree. Counted as employed.</p></details>
+    <details><summary>"But-for" analysis</summary><p>A required explanation of why a project could not happen "but for" the public money. S.B. 206 requires one before new tax increment deals.</p></details>
+    <details><summary>Labor force</summary><p>People who are working or actively looking. Someone who stops looking is "not in the labor force" and isn't counted as unemployed.</p></details>
+  </div>
+  <div class="quicknav">
+    <a href="#intro">Introduction</a><a href="#map-sec">Map</a><a href="#promoted">What was promoted</a><a href="#benchmarks">Benchmarks</a><a href="#estimator">Try the math</a><a href="#require">What the drafts require</a><a href="#support">Public support</a><a href="#techchange">If the tech changes</a><a href="#hundred">Where $100 goes</a><a href="#taxes">Taxes by place</a><a href="#bills">Bills</a><a href="#nocpj">No cost-per-job yet</a><a href="#part2">Part 2: Who's counting</a><a href="#pace">Replacing vs. creating</a><a href="#conclusion">Conclusion</a><a href="#people">People</a><a href="#ask">Questions to ask</a>
+  </div>
+</div>
+
+<article class="wrap">
+
+<h2 id="intro">Introduction</h2>
+<p class="lede">In the spring of 2026, Utahns were told a data center campus in Hansel Valley would bring 2,000 permanent jobs. By summer, the technology those buildings are designed to run had become the reason U.S. employers most often gave for cutting jobs. Both can be true at once.</p>
+<p>Data centers are sold to Utah communities on two promises: tax revenue and jobs. When a community gives up land, water and tax dollars in exchange, the public can fairly ask what it gets in writing.</p>
+<p><strong>Part 1</strong> checks the two largest Great Salt Lake proposals, the Stratos Project in Box Elder County and the Tooele Valley project in Tooele County, against their own documents: what was promoted, what the agreements require, who collects or gives up which taxes, what happens if the technology moves on, and which laws changed the rules. <strong>Part 2</strong> asks who measures whether people can get work at all, how fast technology is replacing jobs compared with creating them, and who the official numbers leave out.</p>
+
+<div class="quick30"><span class="label">The 30-second version</span><ol>
+<li>Stratos was promoted on <strong>2,000 permanent jobs</strong>.</li>
+<li>The draft agreements require a <strong>3-gigawatt power plant</strong> in five years. In the sections reviewed, they set <strong>no number of jobs</strong>.</li>
+<li>The yearly job count must be reported, but it <strong>can be marked confidential</strong>.</li>
+<li>Nothing reviewed says what happens to the buildings <strong>if the campus closes or the technology moves on</strong>.</li>
+<li>Laws since 2020 have pushed <strong>both ways</strong>: more disclosure in some places, new limits and tax breaks in others.</li>
+</ol></div>
+
+<div class="draftbox"><span class="label">What "draft" means on this page</span>
+<p>MIDA's board approved the Stratos agreements in April 2026, but they have not been signed. MIDA says it is waiting because of the referendum. Until they are signed, the terms could still change, or the agreements might never take effect.</p>
+<p>Everything marked <span class="draft-tag">Draft</span> is quoted from the versions MIDA posted publicly. Only two documents are <span class="signed-tag">Signed</span>: the resolution approving the project area and the 0.5% energy tax.</p></div>
+
+<div class="part-banner"><small>Part 1</small>Utah project accountability</div>
+
+<h2 id="map-sec">Where the two projects are</h2>
+<div class="viz-block">
+  <p class="viz-title">Great Salt Lake data center proposals</p>
+  <div id="map" role="img" aria-label="Map of the Stratos project in Hansel Valley and the Tooele Valley project area"></div>
+  <p class="viz-caption">Pins are approximate. Stratos is placed at Hansel Valley (Baxtel's listed center for Phase 1); Tooele Valley at the northern Tooele County project area near I-80. Click a pin for details.</p>
+</div>
+
+<h2 id="promoted">What was promoted</h2>
+<p class="lede">The Stratos Project in Hansel Valley, Box Elder County, is Utah's largest data center proposal. Its developer, O'Leary Digital, has described it in jobs terms from the start.</p>
+<p>In a May 2026 post, Kevin O'Leary said it would bring "10,000 jobs in the first gigawatt in construction, then 2,000 jobs to maintain it," according to ABC4. The Salt Lake Tribune reported 4,000 construction jobs on May 8; Forbes reported 10,000 on June 9. In a later KSL interview he described 4,000 to build and 2,000 to work there, said interested tenants are under nondisclosure agreements, and said the project is now a 10,000-acre campus.</p>
+<table class="data-table">
+<tr><th>Project</th><th>Construction</th><th>Permanent</th><th>Source</th></tr>
+<tr><td>Stratos, Box Elder County</td><td class="num">4,000–10,000</td><td class="num">2,000</td><td>Project statements (ABC4, KSL, Tribune, Forbes)</td></tr>
+<tr><td>Stratos, outside estimate</td><td>—</td><td class="num">~1,350</td><td>USC analysis cited by TechRepublic</td></tr>
+<tr><td>Tooele Valley (Zenith, 500 MW)</td><td>not found</td><td>not found</td><td>Inland Port Authority records reviewed; project paused</td></tr>
+<tr><td>All of Utah by 2030</td><td>—</td><td class="num">2,000–3,250</td><td>GOED, Aug. 19, 2026 (citing Gardner Institute)</td></tr>
+</table>
+
+<div class="viz-block">
+  <p class="viz-title">Permanent jobs: promised vs. estimates</p>
+  <div class="lifespan">
+    <div class="ls-row"><div class="ls-label">Promised ("first gigawatt")</div><div class="ls-track"><div class="ls-bar deal" style="width:90.9%">2,000</div></div></div>
+    <div class="ls-row"><div class="ls-label">USC estimate (whole project)</div><div class="ls-track"><div class="ls-bar bld" style="width:61.4%">~1,350</div></div></div>
+    <div class="ls-row"><div class="ls-label">Industry range at 1 GW</div><div class="ls-track"><div class="ls-bar eq" style="left:9.1%;width:9.1%;padding-left:0"></div><span style="position:absolute;left:20%;top:5px;font-weight:600;font-size:15px">200–400</span></div></div>
+    <div class="ls-row"><div class="ls-label">Industry range at 5.5 GW (full)</div><div class="ls-track"><div class="ls-bar eq" style="left:50%;width:50%">1,100–2,200</div></div></div>
+  </div>
+  <div class="ls-axis" style="margin-top:8px;"><div></div><div><span>0</span><span>550</span><span>1,100</span><span>1,650</span><span>2,200</span></div></div>
+  <p class="viz-caption">Promised figure from O'Leary (ABC4); USC estimate cited by TechRepublic; industry range of 20–40 staff per 100 MW cited by Quartz, which may not count power plant or support staff.</p>
+</div>
+
+<h2 id="benchmarks">What the benchmarks show</h2>
+<p><strong>Forecasts get revised.</strong> Georgia's state audit first projected 28,350 data center construction jobs and 5,471 operations jobs. A January 2026 revision cut them to 8,505 and 1,641, about 30% of the original.</p>
+<p><strong>Big campuses need fewer people per unit of power.</strong> Industry figures cited by Quartz put staffing at the largest, most automated campuses at about 20 to 40 workers per 100 megawatts. For the "first gigawatt," that's about 200 to 400. Stratos plans its own power plants, and those benchmarks may not count power plant crews, security or support staff.</p>
+<div class="figure-line"><p>The point is not that 2,000 is false. No public document the Hive has reviewed shows how the figure was calculated, which phase it covers, or what happens if it isn't reached.</p></div>
+
+<div class="viz-block" id="estimator">
+  <p class="viz-title">Try the math yourself</p>
+  <div class="est">
+    <div>
+      <label>Computing capacity built</label>
+      <div class="est-row" id="gwbtns">
+        <button data-gw="1" class="on">1 GW (first phase)</button>
+        <button data-gw="3">3 GW (draft deadline)</button>
+        <button data-gw="5.5">5.5 GW (full, per Tribune)</button>
+      </div>
+    </div>
+    <div>
+      <label for="staff">Permanent staff per 100 megawatts: <strong id="staffval">30</strong></label>
+      <input type="range" id="staff" min="20" max="40" value="30">
+    </div>
+    <div>
+      <div class="est-out"><span id="estout">300</span> permanent jobs</div>
+      <p class="viz-caption" style="margin-top:4px;">Compared with the 2,000 promised. Benchmark range of 20–40 per 100 MW is from industry figures cited by Quartz; it may not include power plant or support staff. This is an illustration, not a forecast.</p>
+    </div>
+  </div>
+</div>
+
+<h2 id="require">What the agreements require</h2>
+<p>Only two Stratos documents are signed: Resolution 2026-06 adopting the Project Area Plan, and Ordinance 2026-01, the energy tax, both April 24, 2026. MIDA's document page says the development agreement, county agreement and standards were approved "in substantial form" and remain "draft and unsigned out of respect for the current referendum process." The Hive has not found signed versions.</p>
+
+<div class="viz-block">
+  <p class="viz-title">Promise vs. what the drafts require</p>
+  <div class="mermaid">
+flowchart TD
+    A["Promoted:<br/><b>2,000 permanent jobs</b>"] --> B["Draft MDA §4(b) deadline:<br/><b>3-gigawatt energy facility</b><br/>within 5 years"]
+    B --> C["Job number required?<br/><b>None found</b> in sections reviewed"]
+    C --> D["If terms aren't met (§15):<br/>lawsuit to enforce only<br/>no money damages, no termination"]
+    A --> E["Draft interlocal §5(i):<br/>yearly count of employees<br/>reported to county"]
+    E --> F["Count may be marked<br/><b>Confidential</b>"]
+  </div>
+  <p class="viz-caption">All boxes describe draft, unsigned documents as posted by MIDA.</p>
+</div>
+
+<div class="callout"><span class="label">Draft MDA §4(b) <span class="draft-tag">Draft</span></span><p>Within five years the developer must submit the Phase 1 plan and complete an energy facility in Hansel Valley "capable of producing at least three (3) Gigawatts." No hiring number appears in the sections reviewed.</p></div>
+<div class="callout"><span class="label">Draft MDA §15 <span class="draft-tag">Draft</span></span><p>A lawsuit to enforce is the "sole and exclusive remedy." Neither party may terminate or "pursue, claim or collect money damages." No clawback is described in the language reviewed.</p></div>
+<div class="callout"><span class="label">Draft interlocal §5(i) <span class="draft-tag">Draft</span></span><p>MIDA reports yearly to the county the number of temporary construction employees and permanent employees, tied to H.B. 76 (2026). The data "may be marked or otherwise identified as 'Confidential' under Utah Code Ann. §63G-2-309 and shall be classified as such by the County."</p></div>
+<div class="callout"><span class="label">State law</span><p>Utah's sales tax exemption for large data centers, rewritten by S.B. 114 in 2020, has no jobs, wage or investment requirement. The jobs-based credit, EDTIF, pays only after jobs exist at set wages; GOED reports one data center with it, Creekstone near Delta, projected at 106 permanent jobs. <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-sb114.html">S.B. 114 case file →</a></p></div>
+
+<h2 id="support">What public support comes with the projects</h2>
+<p>Each kind of support works differently, so they are shown separately and never added together.</p>
+<div class="viz-block">
+  <p class="viz-title">Stratos · Box Elder County · MIDA</p>
+  <div class="money-grid">
+    <div class="money-card"><h4>Energy tax <span class="signed-tag">Signed</span></h4><div class="amt">0.5%</div><p>Municipal energy sales and use tax across the project area, effective Oct. 1, 2026.</p></div>
+    <div class="money-card"><h4>Property payment <span class="draft-tag">Draft</span></h4><div class="amt">1.2% LOC</div><p>Server payments reimbursed in 30 days; amount above 0.927% reimbursed; remainder 80% developer, 20% MIDA (part to state, rest military).</p></div>
+    <div class="money-card"><h4>Possible PID <span class="draft-tag">Draft</span></h4><div class="amt">80% share</div><p>Developer may ask MIDA to form districts that borrow against its 80% share. None found formed.</p></div>
+    <div class="money-card"><h4>To the county <span class="draft-tag">Draft</span></h4><div class="amt">$30M/yr min</div><p>$10,000 per megawatt each year (at 3,000 MW), plus three $5.4M upfront payments totaling $16.2M. The minimum is met by adjusting the energy tax on power sold, so it depends on power being sold.</p></div>
+  </div>
+</div>
+<div class="viz-block" id="hundred">
+  <p class="viz-title">Where $100 of the building payment goes <span class="draft-tag">Draft</span></p>
+  <div class="stack" role="img" aria-label="Of every 100 dollars: 22.75 back to the company, 61.80 to the developer, 15.45 to MIDA, 0 to the county">
+    <div style="width:22.75%;background:#C9A575;">$22.75</div>
+    <div style="width:61.8%;background:#111008;color:#FAF7F2;">$61.80</div>
+    <div style="width:15.45%;background:#D4AF37;">$15.45</div>
+  </div>
+  <div class="legend">
+    <div><i style="background:#C9A575"></i><span><strong>$22.75 back to the company</strong> that pays it (the amount above Box Elder's 0.927% rate)</span></div>
+    <div><i style="background:#111008"></i><span><strong>$61.80 to the master developer</strong> (80% of the rest)</span></div>
+    <div><i style="background:#D4AF37"></i><span><strong>$15.45 to MIDA</strong> (20% of the rest; part to the state, the rest for military uses)</span></div>
+    <div><i style="background:#fff"></i><span><strong>$0 to Box Elder County</strong> from this payment</span></div>
+  </div>
+  <p class="viz-caption">For servers and chips, the whole payment goes back to the company within 30 days. Hive calculation from draft MDA §13, using the 1.2% LOC rate and the 0.927% county rate stated in the draft. The county's money comes separately (see "To the county" above).</p>
+</div>
+<div class="viz-block">
+  <p class="viz-title">Tooele Valley · Inland Port Authority</p>
+  <div class="money-grid">
+    <div class="money-card"><h4>PID bonds</h4><div class="amt">$33M</div><p>Roads, water and sewer. Repaid from property inside the district.</p></div>
+    <div class="money-card"><h4>Infrastructure loan</h4><div class="amt">$4.875M</div><p>One year, 3.47%, to Zenith Bolinder for water, wastewater, roads and a power plant. Listed as paid off.</p></div>
+    <div class="money-card"><h4>Tax increment</h4><div class="amt">$51.6M</div><p>Projected over 25 years: 75% of property tax growth allocated to the authority.</p></div>
+  </div>
+  <p class="viz-caption">Public benefits on paper: Stratos's upfront and minimum county payments, and Tooele Valley's wetlands set-aside raised from 1% to 3%.</p>
+</div>
+
+<h2 id="techchange">If the technology changes</h2>
+<p class="lede">The equipment inside a data center and the deals around it run on very different clocks.</p>
+<div class="viz-block">
+  <p class="viz-title">How long each piece lasts</p>
+  <div class="lifespan">
+<div class="ls-row"><div class="ls-label">Servers and chips</div><div class="ls-track"><div class="ls-bar eq" style="width:12.0%">3–6 yrs</div></div></div>
+<div class="ls-row"><div class="ls-label">Power and cooling</div><div class="ls-track"><div class="ls-bar eq" style="width:30.0%">10–15 yrs</div></div></div>
+<div class="ls-row"><div class="ls-label">Tooele Valley increment</div><div class="ls-track"><div class="ls-bar deal" style="width:80.0%">25 yrs, up to 40</div></div></div>
+<div class="ls-row"><div class="ls-label">Stratos development agreement (draft)</div><div class="ls-track"><div class="ls-bar deal" style="width:60.0%">30 yrs</div></div></div>
+<div class="ls-row"><div class="ls-label">Stratos county agreement (draft)</div><div class="ls-track"><div class="ls-bar deal" style="width:100.0%">50 yrs</div></div></div>
+<div class="ls-row"><div class="ls-label">Buildings</div><div class="ls-track"><div class="ls-bar bld" style="width:80.0%">decades</div></div></div>
+  </div>
+  <div class="ls-axis" style="margin-top:8px;"><div></div><div><span>0</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50 yrs</span></div></div>
+  <p class="viz-caption">Light bars: equipment. Dark bars: agreements. Equipment ranges from Data Center Knowledge (July 24, 2026) and a Fortune opinion piece cited in the Hive's PID risk case file; some companies now spread GPU costs over 7–8 years. "Decades" for buildings is drawn at 40 years for illustration only.</p>
+</div>
+<p>That gap is where the risk sits. If AI demand slows, or newer chips need different power and cooling than a building was designed for, a campus could shrink or sit partly empty while the agreements around it keep running.</p>
+<div class="callout"><span class="label">What the records say would happen</span><ul>
+<li>The draft Stratos county agreement has no provision for a campus that stops operating, sits empty or shrinks, and no cleanup or removal requirement. <a href="https://weber-county-hive.github.io/PIDS-Utah/who-holds-the-risk.html">Who Holds the Risk? →</a></li>
+<li>Utah's data center sales tax exemption covers replacement parts, so each new round of equipment is also exempt. <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-sb114.html">S.B. 114 →</a></li>
+<li>The county's $10,000-per-megawatt minimum is met by adjusting the 0.5% energy tax on power sold. If little power is sold, raising that rate raises little money.</li>
+</ul></div>
+<div class="callout"><span class="label">What it would mean for jobs</span><p>Large campuses already need few permanent workers per unit of power, and newer ones are designed to need fewer. If a campus scales back, a job count the public can't yet see would shrink with it. Tyson's Eagle Mountain plant is closing about five years into a ten-year state incentive, ending 723 jobs; there, the jobs-based credits simply stopped. The Stratos drafts have no jobs condition to stop. <a href="tyson-eagle-mountain-closure.html">Tyson case file →</a></p></div>
+<table class="data-table">
+<tr><th>Place</th><th>Rule for when a data center closes</th></tr>
+<tr><td>Susquehanna County, Pa.</td><td>Decommission within 12 months of end of life, including hazardous materials, cabling and electrical components</td></tr>
+<tr><td>Smithfield Township, Pa.</td><td>Similar bonding requirements</td></tr>
+<tr><td>Ohio</td><td>Approved data center power pricing calls for financial assurances when a large customer's credit is weak</td></tr>
+<tr><td>Michigan (H.B. 6142, proposed)</td><td>Approved decommissioning plan with money set aside for site restoration, introduced June 25, 2026, in committee</td></tr>
+<tr><td>Utah</td><td>No similar requirement found in state law or in the Stratos or Tooele Valley documents reviewed</td></tr>
+</table>
+<div class="callout"><span class="label">The other side</span><p>An empty data center isn't automatically lost. The land, power connections and fiber have value to a new tenant, and older facilities have been reused. Retired coal plants have been converted into connections for solar and wind farms and into battery storage, and a Columbia Law School climate blog suggests states could do the same with data center sites. Whether that happens here depends on rules no one has written yet.</p></div>
+
+<h2 id="taxes">How taxes change, place by place</h2>
+<p>The same project can help one government's budget and leave another with little. Each kind of money is kept separate. <span class="plus">Green</span> marks money coming in; <span class="minus">red</span> marks money not collected or at risk.</p>
+<div class="viz-block" id="taxcards">
+  <p class="viz-title">Pick a place</p>
+  <div class="tabs" id="placetabs"><button data-i="0" class="on">Box Elder County</button><button data-i="1">Box Elder School District</button><button data-i="2">MIDA and the state</button><button data-i="3">The developer</button><button data-i="4">Sales tax, statewide</button><button data-i="5">Tooele County and local governments</button><button data-i="6">Utah Inland Port Authority</button><button data-i="7">Tooele Valley PID owners and bondholders</button></div>
+  <div class="placecard on" data-i="0"><div class="half runs"><h4>If the campus runs</h4><p>Three $5.4M upfront payments (first due 30 days after the first building permit); at least $10,000 per MW a year (about $30M at 3,000 MW); 25% of property tax on non-computing private land. No share of the 1.2% payment on computing buildings.</p></div><div class="half empty"><h4>If it shrinks or sits empty</h4><p>Upfront payments depend on building starting. The minimum is met by raising the energy tax on power sold, so little power sold means little money.</p></div></div>
+<div class="placecard" data-i="1"><div class="half runs"><h4>If the campus runs</h4><p>The Project Area Plan says revenue will help "support the local school district." The drafts reviewed don't spell out a district share.</p></div><div class="half empty"><h4>If it shrinks or sits empty</h4><p>Same open question.</p></div></div>
+<div class="placecard" data-i="2"><div class="half runs"><h4>If the campus runs</h4><p>20% of what remains of the 1.2% payment (part to the state, rest military); may collect 75% of regular property tax on non-computing buildings for up to 40 years. Projected about $49M a year to MIDA at full build-out.</p></div><div class="half empty"><h4>If it shrinks or sits empty</h4><p>The 1.2% payment is a percentage of value, so an outdated or empty building pays less.</p></div></div>
+<div class="placecard" data-i="3"><div class="half runs"><h4>If the campus runs</h4><p>80% of what remains of the 1.2% payment within 30 days; server and chip payments reimbursed in full.</p></div><div class="half empty"><h4>If it shrinks or sits empty</h4><p>Shrinks with the building's value.</p></div></div>
+<div class="placecard" data-i="4"><div class="half runs"><h4>If the campus runs</h4><p>Not collected on data center equipment, including every round of replacement parts (S.B. 114). The state can't yet say what that costs.</p></div><div class="half empty"><h4>If it shrinks or sits empty</h4><p>Same: the exemption applies whether a campus runs or not.</p></div></div>
+<div class="placecard" data-i="5"><div class="half runs"><h4>If the campus runs</h4><p>25% of property tax growth for 25 years, then all of it. The land paid little before.</p></div><div class="half empty"><h4>If it shrinks or sits empty</h4><p>Less growth to share.</p></div></div>
+<div class="placecard" data-i="6"><div class="half runs"><h4>If the campus runs</h4><p>75% of property tax growth for 25 years, projected $51.6M; 3% to wetlands. Its $4.875M developer loan was repaid.</p></div><div class="half empty"><h4>If it shrinks or sits empty</h4><p>The projected increment shrinks with property value.</p></div></div>
+<div class="placecard" data-i="7"><div class="half runs"><h4>If the campus runs</h4><p>$33M in bonds repaid from property inside the district.</p></div><div class="half empty"><h4>If it shrinks or sits empty</h4><p>Risk falls on bond investors and property owners in the district, not general taxpayers. The district's document says it is not a payment guarantee by the authority.</p></div></div>
+  <p class="viz-caption">Stratos terms are from the draft agreements. Eagle Mountain, where data centers do run, is the comparison: the Meta land paid about $35 a year in taxes before, and the mayor says data centers now fund the city's general budget.</p>
+</div>
+<details class="sources"><summary>See the full table</summary>
+<table class="data-table">
+<tr><th style="width:24%">Who</th><th>If the campus runs</th><th>If it shrinks or sits empty</th></tr>
+<tr><td>Box Elder County <span class="draft-tag">Draft</span></td><td><span class="plus">Three $5.4M upfront payments</span> (first due 30 days after the first building permit); <span class="plus">at least $10,000/MW a year</span> (~$30M at 3,000 MW); 25% of property tax on non-computing private land. <span class="minus">No share</span> of the 1.2% payment on computing buildings.</td><td>Upfront payments depend on building starting. The minimum is met by raising the energy tax on power sold, so <span class="minus">little power sold means little money</span>.</td></tr>
+<tr><td>Box Elder School District</td><td>The Project Area Plan says revenue will help "support the local school district." The draft split for computing buildings names the developer, MIDA, the state and military uses; the drafts reviewed don't spell out a district share.</td><td>Same question.</td></tr>
+<tr><td>MIDA and the state <span class="draft-tag">Draft</span></td><td><span class="plus">20% of the 1.2% payment remainder</span> (part to the state, rest military); may collect 75% of regular property tax on non-computing buildings for up to 40 years. Projected ~$49M a year to MIDA at full build-out (then-director Paul Morris).</td><td>The 1.2% payment is a percentage of taxable value, so <span class="minus">an outdated or empty building pays less</span>.</td></tr>
+<tr><td>Developer <span class="draft-tag">Draft</span></td><td>80% of the 1.2% payment remainder within 30 days; server and chip payments reimbursed in full.</td><td>Shrinks with value.</td></tr>
+<tr><td>State and local sales tax</td><td colspan="2"><span class="minus">Not collected on data center equipment</span>, including every round of replacement parts (S.B. 114). The State Auditor said in July 2026 the cost can't yet be calculated.</td></tr>
+<tr><td>Tooele County, school district and other local governments</td><td><span class="plus">25% of property tax growth</span> for 25 years, all of it after. The land paid little before.</td><td>Less growth to share.</td></tr>
+<tr><td>Utah Inland Port Authority</td><td><span class="plus">75% of property tax growth</span> for 25 years, projected $51.6M; 3% to wetlands. Its $4.875M developer loan was repaid.</td><td>Projected increment shrinks with value.</td></tr>
+<tr><td>Tooele Valley PID owners and bondholders</td><td>$33M in bonds repaid from property inside the district.</td><td><span class="minus">Risk falls on bond investors and property owners in the district</span>, not general taxpayers; the district's document says it is not a payment guarantee by the authority. <a href="https://weber-county-hive.github.io/PIDS-Utah/who-holds-the-risk.html">Who Holds the Risk? →</a></td></tr>
+<tr><td>Eagle Mountain (comparison)</td><td colspan="2"><span class="plus">The upside when a data center runs:</span> the Meta land paid about $35 a year in taxes before the project, and the mayor says data centers now fund the city's general budget. <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-meta-eagle-mountain.html">Meta case file →</a></td></tr>
+</table>
+</details>
+
+<h2 id="bills">Bills that changed the picture</h2>
+<p>Laws passed since 2020 shape what these deals pay, what they must disclose and what happens next. Some move toward more public accountability, some away from it, and some do both. Each comes from a Hive bill case file built from the bill text.</p>
+<div class="viz-block">
+  <p class="viz-title">The bills at a glance</p>
+  <div class="legend" style="margin-bottom:16px"><div><span class="mk up">▲</span> More public accountability</div><div><span class="mk down">▼</span> Less public accountability</div><div><span class="mk both">▲▼</span> Both</div><div><span class="mk mid">●</span> Changed the process</div></div>
+  <div class="tl">
+<div class="tl-i"><div class="mk down">▼</div><div class="yr">2020</div><div class="nm">S.B. 114</div><div class="ds">Sales tax exemption on data center equipment and replacement parts; no jobs requirement.</div></div>
+<div class="tl-i"><div class="mk mid">●</div><div class="yr">2025</div><div class="nm">S.B. 277</div><div class="ds">Records appeals move from a citizen committee to a one-director office.</div></div>
+<div class="tl-i"><div class="mk mid">●</div><div class="yr">2026</div><div class="nm">H.B. 77</div><div class="ds">350% trigger for reviewing non-residential values; rarely reached by large facilities.</div></div>
+<div class="tl-i"><div class="mk both">▲▼</div><div class="yr">2026</div><div class="nm">H.B. 507</div><div class="ds">Limits new local data center incentives from May 2027, but grandfathers earlier deals, adds new incentive zones and a new protected records category.</div></div>
+<div class="tl-i"><div class="mk up">▲</div><div class="yr">2026</div><div class="nm">S.B. 206</div><div class="ds">Public meeting, "but-for" analysis and 40-year comparison before new increment deals; all project areas file their documents by Jan. 1, 2027.</div></div>
+<div class="tl-i"><div class="mk down">▼</div><div class="yr">2026</div><div class="nm">S.B. 225</div><div class="ds">Statewide water limit on Inland Port incentives replaced with local rules; executive director sets when increment payments start.</div></div>
+<div class="tl-i"><div class="mk mid">●</div><div class="yr">2026</div><div class="nm">H.B. 76</div><div class="ds">Data center water reporting; the Stratos draft ties its yearly job count to it.</div></div>
+  </div>
+  <p class="viz-caption">Direction marks are the Hive's read, based on each bill's case file and the collective rubric. Details for each bill follow.</p>
+</div>
+<div class="bill"><h4>S.B. 114 (2020) · Sales tax exemption</h4><div class="who">Sen. Kirk Cullimore (primary sponsor) · Rep. Mike Schultz (House sponsor)</div><p><span class="minus">No sales tax</span> on data center equipment or replacement parts; no jobs, wage or investment requirement. Cost still unknown to the state. <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-sb114.html">Case file →</a></p></div>
+<div class="bill"><h4>H.B. 77 (2026) · Reassessment thresholds</h4><div class="who">Rep. Steve Eliason · Sen. Daniel McCay · signed March 23, 2026</div><p>Flags homes for review at a 150% yearly value jump, non-residential property including data centers at 350%. A large facility would rarely hit that trigger. No separate fiscal estimate. <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-hb77.html">Case file →</a></p></div>
+<div class="bill"><h4>H.B. 507 (2026) · Limits on local data center incentives</h4><div class="who">Rep. Calvin Roberts · Sen. Kirk Cullimore · effective May 6, 2026</div><p><span class="plus">From May 6, 2027</span>, no local incentives for data centers of 150,000 sq ft and 100 MW or more except through a new zone; existing deals can't be extended or increased.</p><p><span class="minus">But</span> deals signed in the year before are grandfathered; new zones can capture up to 60% of property tax growth and up to 100% of personal property tax, with up to 80% used as incentives; an optional energy tax up to 6% can be returned up to 80% as incentives; a new protected records category covers business recruitment information shared among the state economic development office, the Inland Port Authority and MIDA; and the authority's revenue-sharing duty went from "shall" to "may." <a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb507.html">Case file →</a></p></div>
+<div class="bill"><h4>S.B. 206 (2026) · Tax increment disclosure</h4><div class="who">Sen. Wayne A. Harper · Rep. R. Neil Walter · signed March 23, 2026</div><p><span class="plus">Since July 1, 2026</span>, MIDA and the Inland Port Authority must hold a public meeting before a tax increment agreement or bond approval and file a disclosure with a public benefit analysis, a "but-for" analysis and a 40-year comparison of who gets the money. <span class="plus">By Jan. 1, 2027</span>, every existing project area must file its plan, budget, interlocal agreements and maps statewide. Open question: whether signing the Stratos drafts or forming its PIDs triggers the meeting. <a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-sb206.html">Case file →</a></p></div>
+<div class="bill"><h4>S.B. 225 (2026) · Inland Port Authority water and incentives</h4><div class="who">Sen. Jerry W. Stevenson · Rep. Tyler Clancy · effective May 6, 2026</div><p><span class="minus">The 200,000-gallon-a-day limit</span> on using property tax growth as an incentive was replaced, statewide, by each local water provider's own rules. The only recorded public supporter in the Senate committee was the Tooele Valley data center developer. The start date for increment payments is now set by the executive director's written order, not a board resolution. <a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-sb225.html">Case file →</a></p></div>
+<div class="bill"><h4>S.B. 277 (2025) · Records appeals</h4><div class="who">Sen. Mike McKell</div><p>Replaced the seven-member citizen State Records Committee with a single-director Government Records Office. If yearly job counts are marked confidential, an appeal goes there.</p></div>
+<div class="bill"><h4>H.B. 76 (2026) · Data center water reporting</h4><p>The Stratos draft ties its yearly employee and energy reporting to this law.</p></div>
+
+<h2 id="nocpj">Why there's no cost-per-job number yet</h2>
+<div class="figure-line"><p>Cost per job = public support ÷ verified permanent jobs.</p><p>Neither number exists yet for either project. Stratos has no tenant announced and no jobs reported, and Tooele Valley has no job figure on record and is paused. The Hive will run it, with each kind of support kept separate, when real counts are public.</p></div>
+
+<div class="part-banner" id="part2"><small>Part 2</small>Who's counting the people looking for work?</div>
+
+<h2>What employers say about AI</h2>
+<p>Challenger, Gray &amp; Christmas counted 116,175 U.S. job cuts from January to August 2026 where employers named AI as the reason, up from 54,836 in all of 2025. Those are announced reasons, not proven causes. Only 1% of laid-off workers in a Gallup survey said AI was the main reason, and Yale's Budget Lab found job churn still within historical ranges. The Bureau of Labor Statistics attributes no job loss to AI.</p>
+
+<h2 id="pace">Replacing and creating: how fast?</h2>
+<p><strong>Measured so far.</strong> Employers named AI in 54,836 announced U.S. job cuts in all of 2025, and in 116,175 in the first eight months of 2026, more than double in less than a year. Those are announcements, not proven causes. Stanford's 2026 AI Index found employment of software developers aged 22 to 25 down about 20% since 2024.</p>
+<div class="viz-block">
+  <p class="viz-title">U.S. job cuts where employers named AI</p>
+  <div class="lifespan">
+    <div class="ls-row"><div class="ls-label">All of 2025 (12 months)</div><div class="ls-track"><div class="ls-bar bld" style="width:47.2%">54,836</div></div></div>
+    <div class="ls-row"><div class="ls-label">Jan.–Aug. 2026 (8 months)</div><div class="ls-track"><div class="ls-bar deal" style="width:100%">116,175</div></div></div>
+  </div>
+  <p class="viz-caption">Challenger, Gray &amp; Christmas counts of announced cuts. These are reasons employers gave, not proven causes.</p>
+</div>
+<div class="viz-block">
+  <p class="viz-title">Forecast, worldwide, by 2030</p>
+  <div class="lifespan">
+<div class="ls-row"><div class="ls-label">Jobs created</div><div class="ls-track"><div class="ls-bar eq" style="width:100.0%">170 million</div></div></div>
+<div class="ls-row"><div class="ls-label">Jobs displaced</div><div class="ls-track"><div class="ls-bar deal" style="width:54.1%">92 million</div></div></div>
+<div class="ls-row"><div class="ls-label">Net</div><div class="ls-track"><div class="ls-bar bld" style="width:45.9%">78 million</div></div></div>
+  </div>
+  <p class="viz-caption">World Economic Forum, Future of Jobs Report 2025 (survey of 1,000+ employers in 55 economies). A forecast, not a count. In the same survey, 41% of employers said they plan to cut staff because of AI automation.</p>
+</div>
+<div class="callout"><span class="label">Who the new jobs are for</span>
+<p><strong>Growing fastest:</strong> farmworkers, delivery drivers, construction workers, nurses, secondary teachers, AI and renewable energy specialists. <strong>Declining fastest:</strong> cashiers, administrative assistants, graphic designers.</p>
+<p>A net gain worldwide doesn't mean the same people move into the new jobs. An administrative assistant whose job disappears doesn't automatically become a nurse or an AI specialist. PwC's 2026 AI Jobs Barometer found entry-level roles exposed to AI are seven times more likely to ask for senior-level skills.</p></div>
+<p>Data centers follow the same pattern on a small scale: thousands of construction jobs that end, then far fewer permanent, specialized ones. The forecasts are global and long-range. The Hive has not found a Utah agency count of how many jobs AI has replaced or created in the state.</p>
+
+<h2>Where the pressure shows</h2>
+<table class="data-table">
+<tr><th>Group</th><th>Figure</th><th>Source</th></tr>
+<tr><td>Recent grads, 22–27</td><td class="num">5.6% unemployed · 42% underemployed</td><td>NY Fed, Q2 2026</td></tr>
+<tr><td>All workers</td><td class="num">~4.2%</td><td>NY Fed / BLS</td></tr>
+<tr><td>People with a disability</td><td class="num">8.3% (about double)</td><td>BLS, 2025</td></tr>
+<tr><td>All veterans</td><td class="num">3.5%</td><td>BLS, 2025</td></tr>
+<tr><td>Post-9/11 vets rated 60%+ vs. under 30%</td><td class="num">64.7% vs. 85.1% in labor force</td><td>BLS, Aug. 2025</td></tr>
+<tr><td>Applicants disclosing a disability</td><td class="num">26% fewer responses</td><td>Rutgers/Syracuse experiment</td></tr>
+</table>
+
+<div class="viz-block">
+  <p class="viz-title">Who the unemployment rate counts</p>
+  <div class="mermaid">
+flowchart TD
+    A["Qualified person<br/>applies for jobs"] --> B{"Gets a callback?"}
+    B -->|Yes| C["Hired<br/><b>Counted: employed</b>"]
+    B -->|No| D["Keeps applying<br/><b>Counted: unemployed</b>"]
+    D --> E["Stops looking<br/><b>Not counted</b>"]
+    D --> F["Starts own business<br/><b>Counted: employed</b>"]
+    D --> G["Takes a job below training<br/><b>Counted: employed</b>"]
+  </div>
+  <p class="viz-caption">No population-wide count exists of qualified people who applied and never got an interview. More than two-thirds of U.S. entrepreneurs in Babson's 2024 survey named job scarcity as one reason they started a business.</p>
+</div>
+
+<h2>Who is measuring, and who isn't</h2>
+<table class="data-table">
+<tr><th>Question</th><th>Measured?</th></tr>
+<tr><td>Layoffs employers blame on AI</td><td><span class="ok">✓</span> Yes, privately, from announcements</td></tr>
+<tr><td>Whether AI caused them</td><td><span class="no">✗</span> No official measure</td></tr>
+<tr><td>Callbacks for qualified applicants</td><td><span class="part">◐</span> Only in limited experiments</td></tr>
+<tr><td>Veterans who are also disabled, callbacks</td><td><span class="no">✗</span> No study found</td></tr>
+<tr><td>How many Utah data center workers are local</td><td><span class="no">✗</span> No Utah record found (<a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-national-math.html">see Data Centers case file</a>)</td></tr>
+<tr><td>Stratos yearly employee counts</td><td><span class="part">◐</span> Required in draft, can be marked confidential</td></tr>
+</table>
+<div class="callout"><span class="label">The other side</span><ul>
+<li>Some rural officials prefer data centers because they bring tax revenue without large population growth.</li>
+<li>Utah contractors and suppliers have won construction work.</li>
+<li>Eagle Mountain's mayor says data centers fund the city's general budget. <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-meta-eagle-mountain.html">Meta case file →</a></li>
+<li>Brookings found counties gain roughly 100–200 jobs from a first major data center; wages didn't change and home prices rose 2–5%.</li>
+</ul></div>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>The Stratos drafts do several things the public can check: they promise the county upfront and minimum payments, require yearly employee counts and set a hard power deadline. What they don't do, in the language reviewed, is require any number of jobs, allow recovery of money if the jobs don't appear, or say what happens to the buildings if the technology moves on. And the job count they do require can be kept out of public view.</p>
+<p>Laws since 2020 push both ways. S.B. 206 now requires a public meeting and a 40-year comparison before new increment deals, and H.B. 507 limits new local data center incentives from May 2027. But S.B. 114 exempts every round of equipment from sales tax with no jobs condition, H.B. 507 grandfathers deals signed before its limit and adds a new protected records category, and S.B. 225 removed a statewide water limit on Inland Port incentives.</p>
+<p>Nationally, the people most affected by a changing job market are the hardest to see in the numbers. Forecasts say technology will create more jobs than it removes worldwide, but different jobs, often needing different training.</p>
+<div class="figure-line"><p>Whether these campuses become steady employers and taxpayers, or large buildings that outlast the equipment inside them, isn't settled by any document reviewed. The drafts include no job number, no money damages and no cleanup requirement for the developer. The terms that would change that are ones the public can ask for by name: a job number, a way to recover money, public job counts, and a plan for the buildings when the technology moves on.</p></div>
+<div class="asks">
+  <div class="ask"><div class="ic">🔢</div><strong>A job number</strong><span>written into the agreement</span></div>
+  <div class="ask"><div class="ic">↩️</div><strong>A way to recover money</strong><span>if the jobs don't come</span></div>
+  <div class="ask"><div class="ic">📢</div><strong>Public job counts</strong><span>not marked confidential</span></div>
+  <div class="ask"><div class="ic">🏗️</div><strong>A cleanup plan</strong><span>for when the technology moves on</span></div>
+</div>
+
+<div class="divider"></div>
+
+<h2 id="people">People in this record</h2>
+<div class="people">
+  <div class="person"><strong>Kevin O'Leary</strong><p>Investor behind Stratos; public source of the 10,000 / 4,000 construction and 2,000 permanent job figures. <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-stratos-land.html">Stratos case file →</a></p></div>
+  <div class="person"><strong>Sen. J. Stuart Adams</strong><p>Chaired the MIDA board when it unanimously approved the Stratos documents April 24, 2026, and signed the adopted resolution and ordinance. <a href="weber-hive-enforcement-gap.html">Enforcement gap case file →</a></p></div>
+  <div class="person"><strong>Sen. Kirk Cullimore</strong><p>Primary sponsor of S.B. 114 (2020), the data center sales tax exemption with no jobs requirement. <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-sb114.html">S.B. 114 →</a></p></div>
+  <div class="person"><strong>Ben Hart</strong><p>Executive director, Utah Inland Port Authority, which holds the Tooele Valley project area. <a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb507.html">H.B. 507 case file →</a></p></div>
+  <div class="person"><strong>Chuck Akerlow</strong><p>Zenith Development; told the Tribune the Tooele Valley project would not be possible without port authority financing.</p></div>
+</div>
+<p style="margin-top:22px;">Related: <a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> (a jobs-based incentive when the jobs leave) · <a href="https://weber-county-hive.github.io/PIDS-Utah/who-holds-the-risk.html">Who Holds the Risk? PIDs, Tax Breaks and the Public</a></p>
+
+<h2 id="ask">Questions to ask, and to whom</h2>
+<div class="callout"><span class="label">MIDA board and executive director</span><ul><li>Has any version of the Stratos development or interlocal agreement been signed?</li><li>Does any Stratos agreement require a minimum number of permanent jobs? What happens if it isn't met?</li><li>Will yearly employee counts be published, or marked confidential?</li><li>If part of the campus stops operating or sits empty, who is responsible for the buildings and equipment, and who pays for removal?</li><li>Will signing the Stratos agreements or forming its public infrastructure districts trigger S.B. 206's public meeting and 40-year comparison?</li></ul></div>
+<div class="callout"><span class="label">Box Elder County Commission</span><ul><li>Will the county publish the employee numbers MIDA reports?</li><li>How many jobs are expected to go to Box Elder residents?</li><li>If little power is sold, how will the $10,000-per-megawatt minimum be paid?</li></ul></div>
+<div class="callout"><span class="label">Utah Inland Port Authority and Tooele County</span><ul><li>What permanent job figure, if any, was presented for the Tooele Valley data center?</li><li>If financing is reconsidered, will job requirements be part of it?</li></ul></div>
+<div class="callout"><span class="label">Workforce Services and GOEO</span><ul><li>Does Utah track job seekers, including veterans and people with disabilities, who apply without getting interviews?</li><li>Does the 2,000–3,250 forecast count Utah residents or everyone on site?</li></ul></div>
+<div class="callout"><span class="label">Your state legislators and congressional delegation</span><ul><li>Should data center incentives require job numbers, public reporting, where workers live, and recovery of money?</li><li>Should federal labor statistics track whether AI is changing who gets hired?</li><li>Should Utah require decommissioning plans and money set aside for cleanup, as Michigan's H.B. 6142 proposes?</li></ul></div>
+
+<details class="sources">
+<summary>Sources and how they were read</summary>
+<ul>
+<li>ABC4, Kevin O'Leary defends Utah data center, May 2026 — <a href="https://www.abc4.com/news/northern-utah/kevin-oleary-defends-utah-data-center/amp/">abc4.com</a></li>
+<li>KSL, "Kevin O'Leary talks election results, Stratos project timeline with KSL" — <a href="https://www.ksl.com/article/news/business/kevin-oleary-talks-election-results-stratos-project-timeline-with-ksl/51593096">ksl.com</a></li>
+<li>TechRepublic, "Kevin O'Leary's 'Wonder Valley' Data Center Advances as Job Estimates Shift" — <a href="https://www.techrepublic.com/article/news-kevin-oleary-wonder-valley-utah-job-estimates/">techrepublic.com</a></li>
+<li>Salt Lake Tribune, May 8, 2026, and Forbes, June 9, 2026 (construction figures, via the Hive's July 26 research)</li>
+<li>MIDA, Stratos documents: Resolution 2026-06 and Ordinance 2026-01 (signed April 24, 2026); draft Master Development Agreement, draft Interlocal Cooperation Agreement, draft Development Standards (posted "draft and unsigned"). Read in full or relevant part from the posted copies Sept. 4, 2026.</li>
+<li>Salt Lake Tribune, "Utah data center map," Sept. 25, 2026 (Stratos 7.5 GW total / 5.5 GW compute). Read from pasted table capture.</li>
+<li>Baxtel, "O'Leary: Hansel Valley (Stratos Phase 1)" (approximate map location) — <a href="https://baxtel.com/data-center/o-leary-hansel-valley-stratos-phase-1">baxtel.com</a></li>
+<li>GOED, "Data Center Initiatives," EDWS Interim Committee, Aug. 19, 2026, slides 9 and 11 — <a href="https://le.utah.gov/interim/2026/pdf/00003149.pdf">le.utah.gov</a></li>
+<li>Utah Legislature, S.B. 114 (2020) — <a href="https://le.utah.gov/~2020/bills/static/SB0114.html">le.utah.gov</a></li>
+<li>The Weber County Hive, "Who Holds the Risk? PIDs, Tax Breaks and the Public" (Oct. 5, 2026), citing Box Elder County Agreement 26-15 and Fortune (Sept. 18, 2026) — <a href="https://weber-county-hive.github.io/PIDS-Utah/who-holds-the-risk.html">PIDS-Utah repo</a></li>
+<li>Data Center Knowledge, "AI Is Redefining Data Center Ownership," July 24, 2026 — <a href="https://www.datacenterknowledge.com/investing/ai-is-redefining-data-center-ownership-multiple-assets-multiple-timelines">datacenterknowledge.com</a></li>
+<li>Columbia Law School Sabin Center, "Decommissioning Data Centers: Avoiding Stranded Assets," Aug. 6, 2026 — <a href="https://blogs.law.columbia.edu/climatechange/2026/08/06/decommissioning-data-centers-avoiding-stranded-assets/">blogs.law.columbia.edu</a></li>
+<li>Michigan H.B. 6142 (2026) — <a href="https://www.michiganvotes.org/legislation/2026/house/bill-6142">michiganvotes.org</a></li>
+<li>Taft Law, "Decommissioning Security for Data Centers," May 7, 2026 — <a href="https://www.taftlaw.com/news-events/law-bulletins/decommissioning-security-for-data-centers-and-other-commercial-development-five-issues-policymakers-should-consider/">taftlaw.com</a></li>
+<li>Hive bill case files: H.B. 507 and S.B. 206 and S.B. 225 (<a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb507.html">Bill-Tracker</a>); S.B. 114 and H.B. 77 (<a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-sb114.html">Data Centers</a>), each built from the enrolled bill text</li>
+<li>Utah Division of Archives / Salt Lake Tribune (Aug. 20, 2026) on the Government Records Office created by S.B. 277 (2025)</li>
+<li>Salt Lake Tribune, May 8, 2026 (MIDA's projected ~$49M a year, Paul Morris)</li>
+<li>The Current GA, revised Georgia audit, Jan. 15, 2026 — <a href="https://thecurrentga.org/2026/01/15/revised-audit-reveals-georgia-data-centers-economic-impact-overstated/">thecurrentga.org</a></li>
+<li>Quartz, data center jobs and incentives — <a href="https://qz.com/data-center-jobs-employment-investment-economic-development-051326">qz.com</a></li>
+<li>Utah Inland Port Authority: Tooele Valley Project Area Plan Amendment 2 (June 25, 2026); 2024 Annual Report; "Who Qualifies for AIB Loans" — inlandportauthority.utah.gov</li>
+<li>Utah News Dispatch, Sept. 3, 2026 (Tooele Valley paused)</li>
+<li>Challenger, Gray &amp; Christmas figures as summarized by <a href="https://secondtalent.com/resources/ai-impact-job-market/">Second Talent</a> and <a href="https://www.outlookbusiness.com/corporate/ai-overtakes-all-other-reasons-for-us-job-cuts-as-layoffs-surge-in-2026">Outlook Business</a></li>
+<li>Forkast, citing Gallup Q1 2026 — <a href="https://forkast.news/?p=128176">forkast.news</a></li>
+<li>Federal Reserve Bank of New York, Labor Market for Recent College Graduates — <a href="https://www.newyorkfed.org/research/college-labor-market">newyorkfed.org</a></li>
+<li>BLS, People with a Disability: Labor Force Characteristics 2025 — <a href="https://www.bls.gov/news.release/disabl.nr0.htm">bls.gov</a></li>
+<li>BLS, Employment Situation of Veterans 2025 — <a href="https://www.bls.gov/news.release/pdf/vet.pdf">bls.gov</a></li>
+<li>BLS, The Economics Daily, Gulf War-era II veterans with a service-connected disability — <a href="https://www.bls.gov/opub/ted/2026/gulf-war-era-ii-veterans-with-a-service-connected-disability-less-likely-to-participate-in-the-labor-force.htm">bls.gov</a></li>
+<li>Ameri et al., "The Disability Employment Puzzle," NBER w21560 — <a href="https://www.nber.org/papers/w21560">nber.org</a></li>
+<li>Kleykamp (2009), via Syracuse IVMF — <a href="https://ivmf.syracuse.edu/?p=54956">ivmf.syracuse.edu</a></li>
+<li>World Economic Forum, Future of Jobs Report 2025, Jan. 8, 2025 — <a href="https://www.weforum.org/press/2025/01/future-of-jobs-report-2025-78-million-new-job-opportunities-by-2030-but-urgent-upskilling-needed-to-prepare-workforces/">weforum.org</a></li>
+<li>PwC 2026 Global AI Jobs Barometer, as summarized by <a href="https://secondtalent.com/resources/ai-impact-job-market/">Second Talent</a>; Stanford HAI 2026 AI Index, as summarized by <a href="https://alexgoryachev.com/content-clusters/ai-job-loss-statistics">AI Job Loss Statistics</a></li>
+<li>Babson College, GEM 2024 U.S. report — <a href="https://www.newsfilecorp.com/release/246145/New-Global-Entrepreneurship-Monitor-GEM-Report-from-Babson-College-Reveals-U.S.-Entrepreneurial-Activity-at-a-Historic-High">newsfilecorp.com</a></li>
+<li>The Weber County Hive, "The National Math Behind Utah's Data Center Bets" (Brookings, KUTV, Utah Business, Tribune sources) — <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-national-math.html">Data Centers repo</a></li>
+</ul>
+<p class="method-note">Method note: "no job requirement" and "no clawback" describe the sections of the draft agreements the Hive has read, not a word search of every page. Several national figures come through summary sites; the original reports are named so they can be checked. The estimator uses an industry staffing range for illustration only.</p>
+</details>
+</article>
+
+<footer><div class="footer-line">Independent · Accountability · Journalism</div><div class="footer-url">webercountyhive.substack.com · Tips and corrections: webercountyhive@gmail.com</div></footer>
+
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"'Source Serif 4', Georgia, serif",fontSize:'20px',primaryColor:'#F4E9DD',primaryTextColor:'#111008',primaryBorderColor:'#D4AF37',lineColor:'#96723F',secondaryColor:'#FAF7F2',tertiaryColor:'#FAF7F2',edgeLabelBackground:'#FAF7F2'},flowchart:{curve:'basis',padding:16,useMaxWidth:true}});}catch(e){}
+try{
+var map=L.map('map',{scrollWheelZoom:false}).setView([41.25,-112.5],8);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:12,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+L.circleMarker([41.797,-112.611],{radius:12,color:'#96723F',fillColor:'#D4AF37',fillOpacity:.85}).addTo(map).bindPopup('<b>Stratos Project</b><br>Hansel Valley, Box Elder County (approx.)<br>MIDA · O\'Leary Digital<br>2,000 permanent jobs promised<br>Drafts unsigned');
+L.circleMarker([40.72,-112.37],{radius:12,color:'#111008',fillColor:'#6B6355',fillOpacity:.85}).addTo(map).bindPopup('<b>Tooele Valley Project Area</b><br>Northern Tooele County (approx.)<br>Inland Port Authority · Zenith<br>500 MW · paused<br>No job figure found');
+}catch(e){}
+(function(){
+ var gw=1,s=document.getElementById('staff');
+ function upd(){document.getElementById('staffval').textContent=s.value;document.getElementById('estout').textContent=Math.round(gw*10*s.value).toLocaleString();}
+ document.querySelectorAll('#gwbtns button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#gwbtns button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');gw=parseFloat(b.dataset.gw);upd();});});
+ s.addEventListener('input',upd);upd();
+})();
+(function(){
+ var bs=document.querySelectorAll('#placetabs button'),cs=document.querySelectorAll('.placecard');
+ bs.forEach(function(b){b.addEventListener('click',function(){bs.forEach(function(x){x.classList.remove('on')});cs.forEach(function(c){c.classList.toggle('on',c.dataset.i===b.dataset.i)});b.classList.add('on');});});
+})();
+</script>
+</body>
+</html>

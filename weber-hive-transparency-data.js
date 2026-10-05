@@ -258,5 +258,17 @@ const CASES = [
     published: "Oct 5, 2026",
     updated: "Oct 5, 2026",
     link: "https://weber-county-hive.github.io/PIDS-Utah/who-holds-the-risk.html"
+  },
+  {
+    caseNumber: "CASE 2026-JOBS-01",
+    title: "Counting the Jobs",
+    category: "Economic Development Incentives",
+    summary: "Stratos was promoted on 2,000 permanent jobs. Its draft agreements set a 3-gigawatt power deadline, no job number in the sections reviewed, no money damages, and a yearly job count that can be marked confidential. Part 2: who measures whether people can get work at all, from AI-blamed layoffs to disabled veterans the unemployment rate doesn't see.",
+    officials: ["MIDA", "Utah Inland Port Authority", "Stuart Adams", "Kevin O'Leary", "Box Elder County"],
+    status: "documented",
+    published: "Oct 5, 2026",
+    updated: "Oct 5, 2026",
+    link: "counting-the-jobs.html",
+    pairWith: "CASE 2026-TYS-01"
   }
 ];
