@@ -247,5 +247,16 @@ const CASES = [
     updated: "Sep 30, 2026",
     link: "west-haven-energy-tax.html",
     pairWith: "CASE 2026-STAX-01"
+  },
+  {
+    caseNumber: "CASE 2026-PIDR-01",
+    title: "Who Holds the Risk? PIDs, Tax Breaks and the Public",
+    category: "Public Finance",
+    summary: "How special tax districts, tax increment areas and data center tax breaks stack on the same land, what happens if someone stops paying, and what happens if a data center closes. State law keeps PID debt off general taxpayers; the risk falls on bond investors and homeowners inside the districts. No agreement reviewed requires cleanup if a data center closes, and no Utah law spells out how to wind down a failed district. Lives in the PID Research repo.",
+    officials: ["Tina Cannon", "MIDA", "Utah Inland Port Authority", "Box Elder County"],
+    status: "documented",
+    published: "Oct 5, 2026",
+    updated: "Oct 5, 2026",
+    link: "https://weber-county-hive.github.io/PIDS-Utah/who-holds-the-risk.html"
   }
 ];
