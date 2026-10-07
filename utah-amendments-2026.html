@@ -77,6 +77,9 @@
   .filters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px;}
   .filters button{font:inherit;font-size:15px;font-weight:700;border:2px solid var(--navy);background:#fff;color:var(--navy);padding:8px 14px;border-radius:999px;cursor:pointer;min-height:44px;}
   .filters button[aria-pressed="true"]{background:var(--navy);color:#fff;}
+  .tfilters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px;}
+  .tfilters button{font:inherit;font-size:15px;font-weight:700;border:2px solid var(--navy);background:#fff;color:var(--navy);padding:8px 14px;border-radius:999px;cursor:pointer;min-height:44px;}
+  .tfilters button[aria-pressed="true"]{background:var(--navy);color:#fff;}
   .search{width:100%;max-width:440px;padding:12px 14px;font:inherit;font-size:17px;border:2px solid var(--line);margin-top:8px;}
   .search:focus{outline:none;border-color:var(--blue);}
   .count{font-size:15px;color:var(--ink-soft);margin:6px 0 0;}
@@ -237,6 +240,7 @@
     <a href="#timeline">How we got here</a>
     <a href="#comments">Comments &amp; responses</a>
     <a href="#no-vote">What voters don't decide</a>
+    <a href="#tax-tools">Tax tools they created</a>
     <a href="#map-section">Map</a>
     <a href="#people">Who's connected</a>
     <a href="#questions">Questions to ask</a>
@@ -265,7 +269,7 @@
   <h3>Why it is on the ballot</h3>
   <p>In 2024, courts voided two amendments because the newspaper notice was not published:</p>
   <ul>
-    <li><b>2024 Amendment D</b> would have let the Legislature amend or repeal any citizen initiative. The Utah Supreme Court voided it (ruling Sept. 25, 2024; formal opinion Oct. 24, 2024) for two reasons: the newspaper notice was not published, and the ballot language was misleading. Justice Diana Hagen: "We simply cannot read the word 'newspaper' out of the Publication Clause." (FOX 13; KUER)</li>
+    <li><b>2024 Amendment D</b> would have let the Legislature amend or repeal any citizen initiative. The Utah Supreme Court voided it (ruling Sept. 25, 2024; formal opinion Oct. 24, 2024) for two reasons: the newspaper notice was not published, and the ballot language was misleading. Then-Justice Diana Hagen: "We simply cannot read the word 'newspaper' out of the Publication Clause." (FOX 13; KUER)</li>
     <li><b>2024 Amendment A</b> would have removed the requirement that income tax be used only for education and services for children and people with disabilities. District Judge Laura Scott voided it on Oct. 9, 2024 for the same publication failure. It stayed on ballots, but votes were not counted. (KUER)</li>
   </ul>
   <p>The court described the rule this way: "The submission and publication requirements are not mere boxes to be checked before votes can be tallied; they are constitutional safeguards designed to ensure that voters have the information and time necessary to cast an informed vote." (Ballotpedia, March 12, 2025)</p>
@@ -306,12 +310,14 @@
 
 <section id="words">
   <h2>In their words</h2>
-  <p>What supporters and opponents said when S.J.R. 2 was debated, quoted from KSL, Jan. 30, 2025.</p>
+  <p>What supporters and opponents have said, quoted from KSL (Jan. 30, 2025) and Axios (Oct. 7, 2026).</p>
   <div class="words">
     <blockquote>"How easy do you want it to be for your neighbors to raise your taxes?"<cite>Sen. Lincoln Fillmore, primary sponsor (supports)</cite></blockquote>
     <blockquote>A higher bar would "ensure that there is a broad consensus of agreement among the citizens that that's the right thing to do."<cite>Sen. Lincoln Fillmore (supports)</cite></blockquote>
     <blockquote>"Taxes should be hard to raise."<cite>Billy Hesterman, Utah Taxpayers Association (supports)</cite></blockquote>
     <blockquote>"The bar is being raised higher for us, but not for you."<cite>Kael Weston, former congressional candidate (opposes)</cite></blockquote>
+    <blockquote>"If you want to raise your neighbors' taxes, you should have broad support from your neighbors."<cite>Sen. Lincoln Fillmore and Rep. Jason Kyle, sponsors (Axios, Oct. 7, 2026)</cite></blockquote>
+    <blockquote>"Allowing 40% of the population to block some of these policies just doesn't seem right."<cite>Elizabeth Rasmussen, Utahns Protecting Our Constitution (opposes; Axios, Oct. 7, 2026)</cite></blockquote>
   </div>
   <p class="src" style="margin-top:14px;">What the record adds: the Legislature raises taxes by a majority of each house, and PID, MIDA and UIPA boards act with no public vote. See <a href="#chart-votes-needed">What vote does it take?</a></p>
 </section>
@@ -475,7 +481,7 @@ flowchart TD
       <li>Businesses with tax breaks or exemptions (closing a break = 60%), e.g. data centers at 0.5% vs. 6%</li>
       <li>The Legislature: keeps more control over tax policy</li>
       <li>Well-funded campaigns against an initiative</li>
-      <li><b>On record, supports:</b> Utah Taxpayers Association</li>
+      <li><b>On record, supports:</b> Utah Taxpayers Association; Taxpayer Shield PAC, chaired by S.J.R. 2 sponsor Sen. Lincoln Fillmore (Axios, Oct. 7, 2026; state PAC filing)</li>
     </ul></div>
     <div class="hurt"><h4>Could hurt</h4><ul>
       <li>Initiatives that fund a program with a tax: health care (Prop 3), schools, water and the Great Salt Lake, parks, transit, housing</li>
@@ -689,7 +695,8 @@ flowchart TD
       <div class="said">Commenter · post</div>
       <div class="quote">"Medicaid expansion and medical marijuana… Both passed with roughly 53% of the vote."</div>
       <span class="verdict v-fact">Verified</span>
-      <p>Prop 2 (medical cannabis) and Prop 3 (Medicaid) each passed with 53% in 2018 (NORML; Ballotpedia). Only Prop 3 included a tax, so only Prop 3 would have needed 60% under B.</p>
+      <p>Prop 2 (medical cannabis) and Prop 3 (Medicaid) each passed with 53% in 2018 (NORML; Ballotpedia). Prop 3 included a 0.15% sales tax, so it would have needed 60% under B.</p>
+      <p><b>Not settled for Prop 2:</b> KSL and Axios report medical cannabis would also have failed under 60%. Prop 2's own fiscal estimate shows it created fees (about $1.4M a year) and a sales-tax exemption, not a new tax (vote.utah.gov, Medical Cannabis Act files). Whether fees count as a "tax" under S.J.R. 2 is not stated in its text.</p>
     </div>
 
     <div class="claim" data-v="partly">
@@ -739,6 +746,190 @@ flowchart TD
   <p class="src">For balance: Weber County's own commission did not raise its base county rate for 2025 or 2026; the Truth in Taxation hearing for the 2024 increase was held as required.</p>
 </section>
 
+<section id="tax-tools">
+  <h2>Taxes and tax tools the Legislature created</h2>
+  <p class="lede">Amendment B sets a 60% bar for citizen initiatives. These are the taxes and tax tools the Legislature itself created or expanded. Each one passed by a simple majority of each house, and in none of them do voters approve the final tax or zone.</p>
+  <p>Some of these tools come with checks. Some need a review committee or a participation agreement with the affected taxing entities. HOPZ needs a public notice. Many are bonded for decades. Each card says what the record shows.</p>
+  <div class="openq" style="border-color:var(--navy);background:var(--soft);">
+    <div class="tag" style="background:var(--navy);">The short version</div>
+    <p style="margin:0;"><b>TIF (tax increment financing)</b> is the tool most of these share. The value of an area is frozen at a "base year," and the new property or sales tax collected as the area grows goes to the project instead of to schools, the county, cities and special districts for up to 25 to 45 years. A <b>PID</b> is different: it is its own government that bills property owners inside it directly.</p>
+  </div>
+
+  <div class="chart" id="chart-closest-votes">
+    <h3>How close were the votes?</h3>
+    <p class="sub">The closer chamber's vote for each law, as a share of yes and no votes cast. The gold dashed line marks 60%, the bar Amendment B would set for citizen tax initiatives.</p>
+    <div class="bars">
+      <div class="bar-row"><div class="lbl">H.B. 362 (2015) fuel tax · House 44–29</div><div class="bar-track"><div class="bar-fill navy" style="width:60.3%">60.3%</div><div class="mark" style="left:60%;border-left-color:#D4A017;z-index:2;"></div></div><div class="bar-val">44 of 75 House members = 58.7% of the full House</div></div>
+      <div class="bar-row"><div class="lbl">S.B. 2001 (2019) tax restructuring, incl. food tax · House 43–27</div><div class="bar-track"><div class="bar-fill navy" style="width:61.4%">61.4%</div><div class="mark" style="left:60%;border-left-color:#D4A017;z-index:2;"></div></div><div class="bar-val">43 of 75 = 57.3% of the full House · later repealed after a referendum petition</div></div>
+      <div class="bar-row"><div class="lbl">S.B. 217 (2021) HTRZ · Senate 19–9</div><div class="bar-track"><div class="bar-fill navy" style="width:67.9%">67.9%</div><div class="mark" style="left:60%;border-left-color:#D4A017;z-index:2;"></div></div></div>
+      <div class="bar-row"><div class="lbl">H.B. 562 (2024) Fairpark district (UFAIR) · House 51–21</div><div class="bar-track"><div class="bar-fill navy" style="width:70.8%">70.8%</div><div class="mark" style="left:60%;border-left-color:#D4A017;z-index:2;"></div></div></div>
+      <div class="bar-row"><div class="lbl">S.B. 272 (2024) Capital City 0.5% sales tax · House 50–20</div><div class="bar-track"><div class="bar-fill navy" style="width:71.4%">71.4%</div><div class="mark" style="left:60%;border-left-color:#D4A017;z-index:2;"></div></div></div>
+      <div class="bar-row"><div class="lbl">S.B. 268 (2024) First Home Investment Zone · House 55–18</div><div class="bar-track"><div class="bar-fill navy" style="width:75.3%">75.3%</div><div class="mark" style="left:60%;border-left-color:#D4A017;z-index:2;"></div></div></div>
+      <div class="bar-row"><div class="lbl">S.B. 169 (2024) MIDA 15% accommodations tax · Senate 20–4</div><div class="bar-track"><div class="bar-fill navy" style="width:83.3%">83.3%</div><div class="mark" style="left:60%;border-left-color:#D4A017;z-index:2;"></div></div></div>
+      <div class="bar-row"><div class="lbl">S.B. 234 (2018) Inland Port Authority · House 61–11</div><div class="bar-track"><div class="bar-fill navy" style="width:84.7%">84.7%</div><div class="mark" style="left:60%;border-left-color:#D4A017;z-index:2;"></div></div></div>
+    </div>
+    <p class="chart-src">Sources: bill status pages, le.utah.gov. The comparison is not exact: Amendment B counts voters, while a bill needs a majority of all members of each house (38 of 75 House, 15 of 29 Senate).</p>
+  </div>
+
+  <h3 style="margin-top:30px;">Every tool, by type</h3>
+  <div class="tfilters" role="group" aria-label="Filter tax tools">
+    <button type="button" data-t="all" aria-pressed="true">All</button>
+    <button type="button" data-t="tif" aria-pressed="false">TIF zones</button>
+    <button type="button" data-t="district" aria-pressed="false">Districts &amp; authorities</button>
+    <button type="button" data-t="tax" aria-pressed="false">Direct taxes</button>
+    <button type="button" data-t="credit" aria-pressed="false">Tax credits</button>
+    <button type="button" data-t="change" aria-pressed="false">Changes &amp; limits</button>
+  </div>
+  <input type="search" class="search" id="tool-search" placeholder="Search a bill, tool or sponsor (e.g. Fillmore, HTRZ)" aria-label="Search tax tools">
+  <p class="src" id="tool-count" aria-live="polite"></p>
+
+  <div class="claims" id="tool-list">
+    <div class="claim tcard" data-t="district" style="border-left-color:var(--navy);">
+      <div class="said">2007 · S.B. 232 · Killpack / Dee</div>
+      <div class="quote">MIDA (Military Installation Development Authority)</div>
+      <p>As enacted, MIDA may "receive and use up to 75% of tax increment for up to 25 years" and issue bonds. Later bills added more powers (see S.B. 233 and S.B. 169 below).</p>
+      <p><b>Public vote:</b> No. MIDA's board decides. <a href="https://weber-county-hive.github.io/Unelected-Power/">Unelected-Power</a></p>
+    </div>
+    <div class="claim tcard" data-t="credit" style="border-left-color:var(--navy);">
+      <div class="said">2005 · Utah Code 63N-2-104 · bill number not yet confirmed</div>
+      <div class="quote">EDTIF / REDTIF tax credits</div>
+      <p>A refundable state tax credit for companies, paid only after they perform. It is worth up to 30% of the new state revenue a project brings in, and up to 50% under the rural version (REDTIF). Awards are approved by the GO Utah board.</p>
+      <p><b>Public vote:</b> No. For balance, the credit is post-performance: nothing is paid in advance.</p>
+    </div>
+    <div class="claim tcard" data-t="tax" style="border-left-color:var(--navy);">
+      <div class="said">2015 · H.B. 362 · Rep. Johnny Anderson / Sen. Alvin Jackson</div>
+      <div class="quote">Fuel tax increase</div>
+      <p>Changed motor and special fuel taxes to raise transportation money. House 44–29, Senate 20–8. Signed March 27, 2015.</p>
+      <p><b>Public vote:</b> No.</p>
+    </div>
+    <div class="claim tcard" data-t="tif" style="border-left-color:var(--navy);">
+      <div class="said">2016 · Title 17C recodified (Laws of Utah 2016, ch. 350) · bill number not yet confirmed</div>
+      <div class="quote">CRA (Community Reinvestment Area), formerly RDA</div>
+      <p>A city's or county's own TIF tool. The project area plan and the share of increment taken must be approved by the agency board and the local taxing entities. Usually runs 20 to 25 years.</p>
+      <p><b>Public vote:</b> No. Taxing entities' boards approve. Amended again in 2018 by H.B. 15 (Handy / Harper).</p>
+    </div>
+    <div class="claim tcard" data-t="district" style="border-left-color:var(--navy);">
+      <div class="said">2018 · S.B. 234 · Sen. Jerry Stevenson / Rep. Francis Gibson</div>
+      <div class="quote">UIPA (Utah Inland Port Authority)</div>
+      <p>As passed, the authority could "receive up to 100% of the property tax differential for up to 25 years, as determined by the board." Later bills changed the terms; the Tooele Valley project area takes 75%. Senate 23–4, House 61–11. Signed March 16, 2018.</p>
+      <p><b>Public vote:</b> No. <a href="counting-the-jobs.html">Counting the Jobs</a></p>
+    </div>
+    <div class="claim tcard" data-t="tif" style="border-left-color:var(--navy);">
+      <div class="said">2018 · Transportation Reinvestment Zone · bill number not yet confirmed</div>
+      <div class="quote">TRZ (Transportation Reinvestment Zone)</div>
+      <p>Lets governments capture tax increment to pay for transportation projects. Folded into the 2026 investment-zones chapter by S.B. 39.</p>
+      <p><b>Public vote:</b> No.</p>
+    </div>
+    <div class="claim tcard" data-t="district" style="border-left-color:var(--navy);">
+      <div class="said">2019 · S.B. 228 · Sen. Dan McCay / Rep. Jim Dunnigan</div>
+      <div class="quote">PIDs (Public Infrastructure Districts)</div>
+      <p>A development can form its own government, issue bonds and bill property owners inside it. Senate 26–0, House 66–1. Signed April 1, 2019. Statewide: $5.267 billion in PID bonds (State Auditor Tina Cannon, Aug. 7, 2026). S.B. 179 (2020, McCay) let MIDA create PIDs.</p>
+      <p><b>Public vote:</b> No. Cities and counties create them; early boards are usually developer-appointed. <a href="https://weber-county-hive.github.io/PIDS-Utah/">PIDS-Utah</a></p>
+    </div>
+    <div class="claim tcard" data-t="tax" style="border-left-color:var(--navy);">
+      <div class="said">2019 (special session) · S.B. 2001 · Sen. Lyle Hillyard / Rep. Francis Gibson</div>
+      <div class="quote">Tax restructuring, including a higher food tax</div>
+      <p>Senate 20–7, House 43–27, signed Dec. 18, 2019. Repealed after a citizen referendum petition gathered about 152,000 signatures.</p>
+      <p><b>Public vote:</b> Not on the bill itself. Citizens used a referendum to stop it.</p>
+    </div>
+    <div class="claim tcard" data-t="district" style="border-left-color:var(--navy);">
+      <div class="said">2021 · S.B. 233 · Sen. Jerry Stevenson / Rep. Val Peterson</div>
+      <div class="quote">MIDA's PIDs get the power to levy property tax</div>
+      <p>MIDA's subsidiary PIDs may levy property taxes directly. Also added a conflict-of-interest exception and open-meetings and records exceptions. Senate 27–0, House 67–1. Signed March 22, 2021.</p>
+      <p><b>Public vote:</b> No.</p>
+    </div>
+    <div class="claim tcard" data-t="tif" style="border-left-color:var(--navy);">
+      <div class="said">2021 · S.B. 217 · Sen. Wayne Harper / Rep. Stephen Handy</div>
+      <div class="quote">HTRZ (Housing and Transit Reinvestment Zone)</div>
+      <p>Captures up to 80% of the new tax above the base year near transit stations, for up to 25 years within a 45-year window, and "compels participation by other property taxing entities" (GO Utah 2024 chart). Senate 19–9, House 57–10. Signed March 22, 2021. Amended by S.B. 140 (2022, Harper).</p>
+      <p><b>Public vote:</b> No. A state HTRZ committee approves.</p>
+    </div>
+    <div class="claim tcard" data-t="tif" style="border-left-color:var(--navy);">
+      <div class="said">2024 · S.B. 268 · Sen. Wayne Harper / Rep. Calvin Musselman</div>
+      <div class="quote">FHIZ (First Home Investment Zone)</div>
+      <p>Captures up to 60% of each taxing entity's increment for up to 25 years within a 45-year window. Senate 22–4, House 55–18. Signed March 21, 2024.</p>
+      <p><b>Public vote:</b> No. The HTRZ committee approves.</p>
+    </div>
+    <div class="claim tcard" data-t="tif" style="border-left-color:var(--navy);">
+      <div class="said">2024 · S.B. 168 · Sen. Lincoln Fillmore / Rep. Stephen Whyte</div>
+      <div class="quote">HOPZ (Home Ownership Promotion Zone)</div>
+      <p>Created in S.B. 168, "Affordable Building Amendments." Captures up to 60% of each taxing entity's increment for up to 15 years. The city council designates the zone by resolution. Senate 25–0, House 68–1. Signed March 19, 2024.</p>
+      <p><b>Public vote:</b> No. A class A public notice and HTRZ committee approval are required. Sen. Fillmore is also the primary sponsor of S.J.R. 2 (Amendment B).</p>
+    </div>
+    <div class="claim tcard" data-t="district" style="border-left-color:var(--navy);">
+      <div class="said">2024 · H.B. 13 · Rep. Jim Dunnigan / Sen. Kirk Cullimore</div>
+      <div class="quote">IFD (Infrastructure Financing District)</div>
+      <p>Special assessment bonds for infrastructure, with terms of up to 30 years. House 74–0, Senate 24–3. Signed March 19, 2024.</p>
+      <p><b>Public vote:</b> No. Property owners or developers petition, through the city's normal process.</p>
+    </div>
+    <div class="claim tcard" data-t="district" style="border-left-color:var(--navy);">
+      <div class="said">2024 · H.B. 562 · Rep. Ryan Wilcox / Sen. Lincoln Fillmore</div>
+      <div class="quote">UFAIR (Utah Fairpark Area Investment and Restoration District)</div>
+      <p>A new district for the Fairpark and stadium area. It can levy an energy sales and use tax of up to 6%, a telecom tax of up to 3.5%, and an accommodations tax of up to 15%. It can also collect enhanced property tax revenue for up to 35 years. House 51–21, Senate 25–4. Signed March 19, 2024.</p>
+      <p><b>Public vote:</b> No. Sen. Fillmore was the Senate sponsor.</p>
+    </div>
+    <div class="claim tcard" data-t="tax" style="border-left-color:var(--navy);">
+      <div class="said">2024 · S.B. 272 · Sen. Dan McCay / Rep. Jon Hawkins</div>
+      <div class="quote">Capital City Revitalization Zone: up to 0.5% sales tax</div>
+      <p>Lets Salt Lake City levy a sales tax of up to 0.5% for the Delta Center and downtown district. Senate 21–7, House 50–20. Signed March 19, 2024. The city council later approved the zone.</p>
+      <p><b>Public vote:</b> No.</p>
+    </div>
+    <div class="claim tcard" data-t="tax" style="border-left-color:var(--navy);">
+      <div class="said">2024 · S.B. 169 · Sen. Jerry Stevenson / Rep. Val Peterson</div>
+      <div class="quote">MIDA 15% accommodations tax</div>
+      <p>Added a 15% accommodations tax with no end date. Senate 20–4, House 65–2. Signed March 21, 2024.</p>
+      <p><b>Public vote:</b> No.</p>
+    </div>
+    <div class="claim tcard" data-t="tif" style="border-left-color:var(--navy);">
+      <div class="said">2025 · S.B. 26 · Sen. Wayne Harper / Rep. Jim Dunnigan</div>
+      <div class="quote">Convention Center Reinvestment Zone (Salt Palace)</div>
+      <p>Allows 100% of local and county tax increments and 50% of the state sales tax increment for 30 years, to repay Salt Palace bonds (KSL). Rep. Dunnigan said it "wouldn't raise city, county or state taxes." Floor votes not yet read.</p>
+      <p><b>Public vote:</b> No.</p>
+    </div>
+    <div class="claim tcard" data-t="tax" style="border-left-color:var(--navy);">
+      <div class="said">2025 · S.B. 333 · Sen. Jerry Stevenson</div>
+      <div class="quote">Sporting-venue tax vehicle</div>
+      <p>A standalone tax tool for sporting venues. It is being used in Summit County's proposed Impacted Communities Tax. Floor votes are in the Hive case file.</p>
+      <p><b>Public vote:</b> No. <a href="https://weber-county-hive.github.io/Bill-Tracker/">Bill-Tracker</a></p>
+    </div>
+    <div class="claim tcard" data-t="change" style="border-left-color:var(--navy);">
+      <div class="said">2025 · S.B. 316 · Sen. Jerry Stevenson</div>
+      <div class="quote">MIDA may spend project money outside the project area</div>
+      <p>Let MIDA review its own environmental impact and spend project revenue outside the project area. Not a new tax, but it widens where the captured money can go.</p>
+      <p><b>Public vote:</b> No.</p>
+    </div>
+    <div class="claim tcard" data-t="change" style="border-left-color:var(--navy);">
+      <div class="said">2026 · S.B. 39 · Sen. Wayne Harper / Rep. Stephen Whyte</div>
+      <div class="quote">All the investment zones moved into one chapter</div>
+      <p>Moved HTRZ, FHIZ, HOPZ, both convention center zones, the Capital City zone and TRZ into one chapter of code (63N-23). Effective May 6, 2026.</p>
+    </div>
+    <div class="claim tcard" data-t="change" style="border-left-color:var(--navy);">
+      <div class="said">2026 · H.B. 507 · Rep. Calvin Roberts / Sen. Kirk Cullimore</div>
+      <div class="quote">RSDZ created; four zone types closed to new zones after 2027</div>
+      <p>Creates the Regionally Significant Development Zone (RSDZ), which can capture property tax increment. No new HTRZ, FHIZ, convention center zone or HOPZ "may … be created after January 1, 2028"; existing zones keep running. Also creates an optional County Energy Excise Tax (details not yet read), bars local incentives for large data centers with limited exceptions, and requires PID costs to be disclosed when a home is sold.</p>
+      <p><b>For balance:</b> the PID disclosure and the data center limit are new protections.</p>
+    </div>
+    <div class="claim tcard" data-t="change" style="border-left-color:var(--navy);">
+      <div class="said">2026 · S.B. 206 · Sen. Wayne Harper / Rep. R. Neil Walter</div>
+      <div class="quote">New TIF reporting system (STATS)</div>
+      <p>Creates a statewide reporting system for tax increment. The final version lets a TIF entity disclose "within 30 days after" its authorization meeting; an earlier draft required disclosure before.</p>
+    </div>
+    <div class="claim tcard" data-t="tax" style="border-left-color:var(--navy);">
+      <div class="said">2026 · S.B. 242 · Sen. Wayne Harper / Rep. Kay Christofferson</div>
+      <div class="quote">The path to Weber County's 0.20% sales tax</div>
+      <p>Section 9 of this transportation bill amended Utah Code 59-12-2220. Weber County used it to adopt the "5th 5th" 0.20% sales tax, about $13.1 million a year, effective Oct. 1, 2026.</p>
+      <p><b>Public vote:</b> No. The County Commission voted. <a href="weber-hive-5th5th-sales-tax.html">CASE 2026-STAX-01</a></p>
+    </div>
+    <div class="claim tcard" data-t="tax" style="border-left-color:var(--navy);">
+      <div class="said">2026 · H.B. 575 · Rep. Calvin Roberts / Sen. Brady Brammer</div>
+      <div class="quote">Gas tax cut, alternative-fuel tax raised</div>
+      <p>Gas tax was set to a flat $0.319 a gallon for July 1 to Dec. 31, 2026, while the tax on CNG, LNG and hydrogen rose from a 16.5¢ cap to 21.2¢.</p>
+      <p><b>Public vote:</b> No.</p>
+    </div>
+  </div>
+  <p class="src" style="margin-top:16px;">For balance: in the same years the Legislature cut the income tax from 4.95% to 4.45% (2022–2026). Items marked "not yet confirmed" will be updated once the bill is found. <a href="https://weber-county-hive.github.io/Taxation/taxation-for-beginners.html">Taxation for Beginners</a> explains each tool in more depth.</p>
+</section>
+
 <section id="map-section">
   <h2>Map: where these decisions were made</h2>
   <div id="map" role="region" aria-label="Map of decisions on this page"></div>
@@ -749,13 +940,17 @@ flowchart TD
   <h2>Who's connected to the record</h2>
   <div class="people">
     <div class="person"><h3>Rep. Anthony Loubet</h3><p>Primary sponsor of H.J.R. 10 (2025), Amendment A.</p></div>
-    <div class="person"><h3>Sen. Lincoln Fillmore</h3><p>Primary sponsor of S.J.R. 2 (2025), Amendment B.</p><p><a href="amendment-b-myth-vs-fact.html">Amendment B</a> · <a href="https://weber-county-hive.github.io/Bill-Tracker/">Bill-Tracker</a></p></div>
+    <div class="person"><h3>Sen. Lincoln Fillmore</h3><p>Primary sponsor of S.J.R. 2 (2025), Amendment B. Also listed as Chairman of Taxpayer Shield PAC, which is backing the amendment. Primary sponsor of S.B. 168 (2024), which created Home Ownership Promotion Zones, and Senate sponsor of H.B. 562 (2024), the Fairpark district (see <a href="#tax-tools">Tax tools they created</a>). The Utah Taxpayers Association PAC gave his campaign $6,500 (2023–2026).</p><p><a href="amendment-b-myth-vs-fact.html">Amendment B</a> · <a href="https://weber-county-hive.github.io/Bill-Tracker/">Bill-Tracker</a></p></div>
+    <div class="person"><h3>Taxpayer Shield PAC</h3><p>Backing Amendment B (Axios, Oct. 7, 2026). Registered Dec. 1, 2025, Provo. State filing lists Sen. Lincoln Fillmore as Chairman, Russell "Rusty" Cannon (president, Utah Credit Unions Association) as Vice-Chairman, Brian K. Chapman as Executive Director and Treasurer, and Howard Headlee and William "Billy" Hesterman as board members. <b>Money reported</b> (state export downloaded Oct. 7, 2026, five transactions, all in the Primary report): one $2,000 contribution marked as a loan from Brian Chapman, the PAC's treasurer (April 18, 2026); $1,812.66 spent: $1,050 to UTGOP for advertising, $737.66 to BIVIO Resources for supplies and advertising, and $25 to BCR Political for "Association Expense" (Chapman's firm, per the filing's email domain). The export shows no Amendment B spending yet.</p><p class="src">Sources: Taxpayer Shield PAC Statement of Organization and transaction export (DEX), disclosures.utah.gov (folder 1423862).</p></div>
+    <div class="person"><h3>Utah Taxpayers Association PAC</h3><p>Named with Taxpayer Shield PAC as backing Amendment B (Axios, Oct. 7, 2026). Registered Dec. 22, 2008, affiliated with the Utah Taxpayers Association; President and treasurer Billy Hesterman (also a Taxpayer Shield board member), VP Malah Armstrong. <b>Money reported, Nov. 2021 to Oct. 7, 2026</b> (six state exports): $56,135.96 in, $57,125 out. About 38% of what came in was from the association itself ($16,547 in 2023, $5,000 in 2024). The rest came from companies and trade groups, including Rocky Mountain Power, Intermountain Power, Dominion Energy, Enbridge, Chevron, Merit Medical, Maverik, Deer Valley Resort Co. and banks and credit unions. No individual donors are listed.</p><p><b>Given to the amendment sponsors:</b> Sen. Lincoln Fillmore $6,500; Rep. Anthony Loubet $500; Rep. Jason Kyle $200. <b>To sponsors of tax tools on this page:</b> Sen. Dan McCay $3,000; Sen. Kirk Cullimore $1,500; Rep. Ryan Wilcox $1,500; Sen. Wayne Harper $1,000; Rep. Jim Dunnigan $600; Rep. Jon Hawkins $200. Gov. Spencer Cox's campaign received $1,875. The exports show no money to or from Taxpayer Shield PAC and no Amendment B spending.</p><p class="src">Sources: Utah Taxpayers Association PAC Statement of Organization and transaction exports (DEX, 2021–2026), disclosures.utah.gov, downloaded Oct. 7, 2026.</p></div>
+    <div class="person"><h3>Sen. Wayne Harper</h3><p>Primary sponsor of S.B. 217 (2021, HTRZ), S.B. 268 (2024, First Home Investment Zones), S.B. 26 (2025, Convention Center Reinvestment Zone), and S.B. 39, S.B. 206 and S.B. 242 (2026).</p><p><a href="https://weber-county-hive.github.io/utah-senators/">Utah Senators</a> · <a href="https://weber-county-hive.github.io/Bill-Tracker/">Bill-Tracker</a></p></div>
+    <div class="person"><h3>Sen. Jerry Stevenson</h3><p>Primary sponsor of S.B. 234 (2018, Inland Port Authority) and of MIDA bills S.B. 233 (2021), S.B. 169 (2024) and S.B. 316 (2025), plus S.B. 333 (2025). MIDA's Vice Chair.</p><p><a href="https://weber-county-hive.github.io/utah-senators/jerry-stevenson.html">Profile</a></p></div>
     <div class="person"><h3>Rep. Jason B. Kyle</h3><p>House sponsor of S.J.R. 2. Huntsville (Ogden Valley).</p><p><a href="https://weber-county-hive.github.io/candidates2026/">candidates2026</a></p></div>
     <div class="person"><h3>Justice Paige Petersen</h3><p>Wrote the July 11, 2024 opinion on the Prop 4 repeal.</p></div>
-    <div class="person"><h3>Justice Diana Hagen</h3><p>Wrote the Oct. 24, 2024 Amendment D opinion on the newspaper Publication Clause.</p></div>
+    <div class="person"><h3>Then-Justice Diana Hagen</h3><p>Wrote the Oct. 24, 2024 Amendment D opinion on the newspaper Publication Clause.</p></div>
     <div class="person"><h3>Judge Laura Scott</h3><p>District judge who voided 2024 Amendment A on Oct. 9, 2024.</p></div>
     <div class="person"><h3>State Auditor Tina Cannon</h3><p>Source of the $5.267B statewide PID bond figure (Aug. 7, 2026).</p><p><a href="https://weber-county-hive.github.io/PIDS-Utah/">PIDS-Utah</a></p></div>
-    <div class="person"><h3>Sen. Dan McCay</h3><p>Primary sponsor of S.B. 228 (2019), the Public Infrastructure District Act; Senate sponsor of H.B. 422 (2026).</p><p><a href="https://weber-county-hive.github.io/PIDS-Utah/">PIDS-Utah</a></p></div>
+    <div class="person"><h3>Sen. Dan McCay</h3><p>Primary sponsor of S.B. 228 (2019), the Public Infrastructure District Act, S.B. 179 (2020) and S.B. 272 (2024, Capital City 0.5% sales tax); Senate sponsor of H.B. 422 (2026) and H.B. 481 (2025).</p><p><a href="https://weber-county-hive.github.io/PIDS-Utah/">PIDS-Utah</a></p></div>
   </div>
 </section>
 
@@ -767,6 +962,9 @@ flowchart TD
     <li><div class="who">Lt. Governor's office (elections)</div>How was notice of Amendments A and B published for 2026, and where can voters see it?</li>
     <li><div class="who">Sen. Fillmore and Rep. Kyle (Amendment B)</div>Who decides whether an initiative "includes" a tax? When is "current law" measured for Part D?</li>
     <li><div class="who">Your state senator and representative</div>Would you support a 60% bar for tax increases passed by the Legislature, or a public vote before PID bonds?</li>
+    <li><div class="who">Sen. Fillmore and Rep. Kyle</div>If taxes "should be hard to raise," should new TIF zones, districts and local tax powers created by the Legislature also need 60%, or a public vote?</li>
+    <li><div class="who">Utah Taxpayers Association</div>Did the association take a position on S.B. 168, H.B. 562, S.B. 272 or S.B. 26? (Its bill positions and testimony are public.)</li>
+    <li><div class="who">Taxpayer Shield PAC</div>Who is funding the PAC, and how much has it spent for Amendment B? (Check its reports on disclosures.utah.gov.)</li>
     <li><div class="who">Sen. Fillmore and Rep. Kyle</div>Why does the 60% bar apply to citizen initiatives but not to the Legislature's own tax votes? Would you sponsor a public vote before PID bonds and tax-increment deals, as H.B. 422 and H.B. 332 (2026) began to address?</li>
     <li><div class="who">Your county commission and city council</div>When did you last raise a tax, and was there a public vote?</li>
   </ul>
@@ -818,9 +1016,19 @@ flowchart TD
       <li><a href="https://news.ballotpedia.org/2020/01/27/utah-legislature-to-repeal-tax-bill-after-signatures-filed-for-veto-referendum/">Ballotpedia: S.B. 2001 repeal after referendum</a></li>
       <li><a href="https://bondbuyer.com/news/utah-legislature-approves-fuel-tax-increase">Bond Buyer: H.B. 362 (2015) fuel tax</a></li>
       <li><a href="https://house.utleg.gov/taxes/">Utah House: income tax cuts</a></li>
+      <li><a href="https://www.axios.com/local/salt-lake-city/2026/10/07/amendment-b-utah-legislature-taxes-raise-thresehold-ballot-initatives">Axios, Oct. 7, 2026: Utah voters to weigh 60% threshold</a></li>
+      <li><a href="https://www.ksl.com/article/51631261/proposed-amendment-would-raise-the-bar-for-some-utah-ballot-initiatives">KSL: Proposed amendment would raise the bar for some ballot initiatives</a></li>
+      <li><a href="https://vote.utah.gov/wp-content/uploads/2023/09/Utah-Medical-Cannabis-Act-Combined-Files.pdf">vote.utah.gov: Utah Medical Cannabis Act (Prop 2) files and fiscal estimate</a></li>
       <li><a href="https://law.justia.com/constitution/utah/htm/CO_02003.html">Utah Const. Art. I, Sec. 2 (Justia)</a></li>
       <li><a href="https://vote.utah.gov/instructions-for-a-statewide-initiative/">vote.utah.gov: Instructions for a Statewide Initiative</a></li>
       <li><a href="https://budget.utah.gov/power-of-pids/">Governor's Office of Planning and Budget: Power of PIDs</a></li>
+      <li>Utah Taxpayers Association PAC, Statement of Organization (created Dec. 22, 2008) and transaction exports 2021–2026, disclosures.utah.gov</li>
+      <li>le.utah.gov bill status pages: H.B. 362 (2015); S.B. 234 (2018); S.B. 228 (2019); S.B. 2001 (2019 S2); S.B. 217, S.B. 233 (2021); S.B. 168, S.B. 169, S.B. 268, S.B. 272, H.B. 13, H.B. 562 (2024)</li>
+      <li>le.utah.gov bill text: S.B. 232 (2007, enrolled); S.B. 234 (2018, enrolled); H.B. 15 (2018); S.B. 26 (2025, 6th substitute); S.B. 39 and H.B. 507 (2026, enrolled)</li>
+      <li>GO Utah, "Housing Financing Tools 2024 Comparison Chart," business.utah.gov</li>
+      <li>KSL, "Utah passes bill to pave way for Salt Lake to fund $1B downtown revitalization plan" (S.B. 26, 2025)</li>
+      <li>Utah Senate, "Utah Legislature Passes S.B. 272 Capital City Revitalization Zone," senate.utah.gov</li>
+      <li>Taxpayer Shield PAC, Statement of Organization (created Dec. 1, 2025), disclosures.utah.gov folder 1423862</li>
       <li>State Auditor Tina Cannon, public statement Aug. 10, 2026 ($5.267B in PID bonds as of Aug. 7, 2026)</li>
       <li>MIDA–Box Elder County interlocal agreement, §6(a); UIPA Tooele Valley Project Area Plan</li>
     </ul>
@@ -919,6 +1127,18 @@ try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily
     f.addEventListener('click',go);
     f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
   });
+})();
+</script>
+<script>
+(function(){
+  var btns=[].slice.call(document.querySelectorAll('.tfilters button'));
+  var cards=[].slice.call(document.querySelectorAll('#tool-list .tcard'));
+  var q=document.getElementById('tool-search'), cnt=document.getElementById('tool-count'), t='all';
+  function run(){var term=(q.value||'').toLowerCase().trim(),n=0;
+    cards.forEach(function(c){var ok=(t==='all'||c.getAttribute('data-t')===t)&&(!term||c.textContent.toLowerCase().indexOf(term)!==-1);c.style.display=ok?'':'none';if(ok)n++;});
+    cnt.textContent='Showing '+n+' of '+cards.length;}
+  btns.forEach(function(b){b.addEventListener('click',function(){t=b.getAttribute('data-t');btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});run();});});
+  q.addEventListener('input',run);run();
 })();
 </script>
 </body>
