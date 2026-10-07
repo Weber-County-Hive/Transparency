@@ -129,6 +129,74 @@
   .yesno .col{margin-bottom:0;}
   table.fit{min-width:0;font-size:16px;}
   table.fit th,table.fit td{padding:10px 8px;}
+
+  .chart{border:1px solid var(--line);background:#fff;padding:20px 20px 16px;margin:18px 0 26px;}
+  .chart h3{margin:0 0 4px;font-size:24px;}
+  .chart .sub{font-size:17px;color:var(--ink-soft);margin:0 0 16px;}
+  .bars{display:flex;flex-direction:column;gap:14px;}
+  .bar-row .lbl{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:5px;line-height:1.3;}
+  .bar-track{position:relative;background:var(--soft);height:40px;border-radius:4px;overflow:visible;}
+  .bar-fill{height:100%;background:var(--blue);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:10px;color:#fff;font-weight:800;font-size:18px;min-width:56px;box-sizing:border-box;}
+  .bar-fill.navy{background:var(--navy);}
+  .bar-fill.red{background:var(--myth);}
+  .bar-fill.none{background:transparent;color:var(--myth);justify-content:flex-start;padding-left:4px;min-width:0;}
+  .bar-val{font-size:16px;color:var(--ink-soft);margin-top:4px;}
+  .mark{position:absolute;top:-6px;bottom:-6px;border-left:3px dashed var(--navy);}
+  .mark span{position:absolute;top:-26px;left:-24px;font-size:15px;font-weight:800;color:var(--navy);white-space:nowrap;}
+  .split{display:flex;height:40px;border-radius:4px;overflow:hidden;font-weight:800;font-size:17px;color:#fff;}
+  .split div{display:flex;align-items:center;justify-content:center;}
+  .split .y{background:var(--fact);} .split .n{background:var(--myth);} .split .a{background:#9AA6BC;}
+  .chart-src{font-size:14px;color:var(--ink-soft);font-style:italic;margin:14px 0 0;}
+  .hh{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+  .hh > div{padding:16px 18px;border-top:6px solid var(--fact);background:var(--soft);}
+  .hh > div.hurt{border-top-color:var(--myth);}
+  .hh > div.none{grid-column:1/-1;border-top-color:var(--nodoc);}
+  .hh h4{margin:0 0 8px;font-size:20px;font-family:'Source Sans 3',sans-serif;color:var(--navy);}
+  .hh ul{margin:0;padding-left:20px;font-size:17px;}
+  .hh li{margin-bottom:6px;}
+  @media (max-width:640px){.hh{grid-template-columns:1fr;}}
+
+  .ballotq{margin:14px 0;padding:18px 20px;background:var(--soft);border-left:6px solid var(--navy);font-family:'Fraunces',Georgia,serif;font-size:20px;color:var(--navy);}
+  .openq{border:3px solid var(--open);background:#F3F0FF;padding:18px 20px;margin:18px 0;}
+  .openq .tag{display:inline-block;background:var(--open);color:#fff;font-weight:800;font-size:14px;letter-spacing:.08em;padding:4px 10px;margin-bottom:8px;}
+  .example{border:2px dashed var(--line);padding:16px 18px;margin:16px 0;background:#fff;}
+  .example .tag{display:inline-block;background:#D4A017;color:var(--navy);font-weight:800;font-size:13px;letter-spacing:.08em;padding:3px 9px;margin-bottom:8px;}
+  .example table{min-width:0;font-size:16px;}
+  .words{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .words blockquote{margin:0;padding:16px 18px;background:var(--soft);font-family:'Fraunces',Georgia,serif;font-size:20px;color:var(--navy);}
+  .words cite{display:block;font-family:'Source Sans 3',sans-serif;font-size:15px;font-style:normal;color:var(--ink-soft);margin-top:10px;}
+  @media (max-width:640px){.words{grid-template-columns:1fr;}}
+  .tool{border:3px solid var(--blue);padding:20px;margin:18px 0;background:#fff;}
+  .tool h3{margin-top:0;}
+  .tool label{display:flex;gap:12px;align-items:flex-start;font-size:18px;padding:10px 0;border-bottom:1px solid var(--line);cursor:pointer;}
+  .tool input[type=checkbox]{width:26px;height:26px;flex:none;margin-top:2px;}
+  .result{margin-top:16px;padding:16px 18px;font-size:22px;font-weight:800;}
+  .result.maj{background:#E8F5EC;color:#14532D;border-left:8px solid var(--fact);}
+  .result.sixty{background:#FDECEA;color:#7A1A12;border-left:8px solid var(--myth);}
+  .result.leg{background:#FFF7E0;color:#6B4E00;border-left:8px solid #D4A017;}
+  .result small{display:block;font-size:16px;font-weight:400;margin-top:6px;color:var(--ink);}
+  input[type=range]{width:100%;height:40px;}
+  .slider-out{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:10px;}
+  .slider-out div{padding:14px;font-weight:800;font-size:20px;text-align:center;}
+  .pass{background:#E8F5EC;color:#14532D;} .fail{background:#FDECEA;color:#7A1A12;}
+  .big-pct{font-size:44px;font-weight:800;color:var(--navy);text-align:center;font-family:'Fraunces',Georgia,serif;}
+  .toggle{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 14px;}
+  .toggle button{font:inherit;font-size:16px;font-weight:800;border:2px solid #000;background:#fff;color:#000;padding:8px 16px;min-height:44px;cursor:pointer;}
+  .toggle button[aria-pressed="true"]{background:#000;color:#fff;}
+  .flips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+  .flip{perspective:900px;height:150px;cursor:pointer;}
+  .flip .in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d;}
+  .flip.on .in{transform:rotateY(180deg);}
+  .flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;text-align:center;padding:12px;border:2px solid var(--navy);}
+  .flip .f{flex-direction:column;background:var(--navy);color:#fff;font-weight:800;font-size:21px;}
+  .flip .f small{display:block;font-weight:400;font-size:13px;color:#AFC0DA;margin-top:6px;}
+  .flip .b{background:#fff;color:var(--ink);font-size:16px;transform:rotateY(180deg);}
+  @media (max-width:640px){.flips{grid-template-columns:1fr;}}
+  .tl details{border-left:6px solid var(--blue);}
+  .tl summary{font-size:19px;}
+  .notice-tl{list-style:none;padding:0;margin:10px 0 0;}
+  .notice-tl li{padding:12px 0 12px 18px;border-left:4px solid var(--blue);margin-left:8px;position:relative;}
+  .notice-tl li b{color:var(--navy);}
 </style>
 </head>
 <body>
@@ -162,7 +230,10 @@
   <nav class="jump" aria-label="Jump to section">
     <a href="#amend-a">Amendment A</a>
     <a href="#amend-b">Amendment B</a>
+    <a href="#words">In their words</a>
+    <a href="#notice">How you're told</a>
     <a href="#yesno">YES vs. NO</a>
+    <a href="#charts">Charts &amp; tools</a>
     <a href="#timeline">How we got here</a>
     <a href="#comments">Comments &amp; responses</a>
     <a href="#no-vote">What voters don't decide</a>
@@ -176,6 +247,9 @@
 
 <section id="amend-a">
   <h2>Amendment A: How you are told about amendments</h2>
+  <p>The question on your ballot:</p>
+  <div class="ballotq">"Shall the Utah Constitution be amended to change how proposed constitutional amendments are published, requiring publication for 60 days immediately before the general election in a manner established by state law instead of in newspapers?"</div>
+  <p class="src">Ballot text as printed in the Davis County 2026 General Election Notice.</p>
   <p class="lead">H.J.R. 10 (2025). Primary sponsor: Rep. Anthony Loubet. Passed the House 70–0 (Feb. 26, 2025) and the Senate 29–0 (March 7, 2025).</p>
   <div class="tbl-wrap">
     <table class="fit">
@@ -207,12 +281,56 @@
   <h2>Amendment B: 60% for citizen tax initiatives</h2>
   <p class="lead">S.J.R. 2 (2025). Primary sponsor: Sen. Lincoln Fillmore. House sponsor: Rep. Jason B. Kyle. Passed the Senate 21–8 (Feb. 5, 2025) and the House 55–17 (March 6, 2025).</p>
   <p>An initiative needs at least 60% if it "includes" (A) a new tax, (B) an existing tax expanded to more items or transactions, (C) a rate increase, or (D) a property-tax rate that decreases less than current law would. It applies to votes after Nov. 1, 2026, and only to statewide citizen initiatives.</p>
+  <p>The question on your ballot:</p>
+  <div class="ballotq">"Shall the Utah Constitution be amended to require that citizen-proposed laws that increase taxes compared to existing law be approved by at least 60% of voters, instead of a simple majority?"</div>
+  <p class="src">Ballot text as printed in the Davis County 2026 General Election Notice. Note the ballot says "increase taxes"; the constitutional text says "includes."</p>
   <p>Part D note: under Truth in Taxation the certified property-tax rate falls as values rise, so Part D reaches initiatives that keep revenue higher than the falling rate would, not ordinary tax cuts.</p>
+  <div class="example">
+    <span class="tag">WORKED EXAMPLE · ROUND NUMBERS, NOT A REAL DISTRICT</span>
+    <p>A district collects <b>$1,000,000</b> a year on <b>$1 billion</b> of taxable value. Its rate is <b>0.100%</b>.</p>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Next year, values rise 10%</th><th>Rate</th><th>District collects</th></tr></thead>
+      <tbody>
+        <tr><td>Truth in Taxation (current law): rate falls so revenue stays the same</td><td>about 0.091%</td><td>$1,000,000</td></tr>
+        <tr class="changed"><td>A citizen initiative holds the rate at 0.100% to fund schools</td><td>0.100%</td><td>$1,100,000</td></tr>
+      </tbody>
+    </table></div>
+    <p style="margin-top:12px;">The initiative never raises the rate, but the rate "decreases less than current law would." Under Part D it needs <b>60%</b>. A district can collect the same extra $100,000 today by holding a Truth in Taxation hearing, with no public vote.</p>
+  </div>
+  <div class="openq">
+    <span class="tag">OPEN QUESTION</span>
+    <p><b>Who decides whether an initiative "includes" a tax?</b> S.J.R. 2 does not say, and no record reviewed for this page answers it. "Current law" in Part D is also undefined. Both questions go to the sponsors (see <a href="#questions">Questions to ask</a>).</p>
+  </div>
   <p><a href="amendment-b-myth-vs-fact.html"><b>Full text, 23 claims checked, scenarios and related bills → Amendment B: Myth vs. Fact</b></a></p>
+</section>
+
+<section id="words">
+  <h2>In their words</h2>
+  <p>What supporters and opponents said when S.J.R. 2 was debated, quoted from KSL, Jan. 30, 2025.</p>
+  <div class="words">
+    <blockquote>"How easy do you want it to be for your neighbors to raise your taxes?"<cite>Sen. Lincoln Fillmore, primary sponsor (supports)</cite></blockquote>
+    <blockquote>A higher bar would "ensure that there is a broad consensus of agreement among the citizens that that's the right thing to do."<cite>Sen. Lincoln Fillmore (supports)</cite></blockquote>
+    <blockquote>"Taxes should be hard to raise."<cite>Billy Hesterman, Utah Taxpayers Association (supports)</cite></blockquote>
+    <blockquote>"The bar is being raised higher for us, but not for you."<cite>Kael Weston, former congressional candidate (opposes)</cite></blockquote>
+  </div>
+  <p class="src" style="margin-top:14px;">What the record adds: the Legislature raises taxes by a majority of each house, and PID, MIDA and UIPA boards act with no public vote. See <a href="#chart-votes-needed">What vote does it take?</a></p>
+</section>
+
+<section id="notice">
+  <h2>How and when you are told</h2>
+  <ul class="notice-tl">
+    <li><b>Feb.–March 2025:</b> The Legislature passes H.J.R. 10 (A) and S.J.R. 2 (B), about 20 months before the vote (Ballotpedia).</li>
+    <li><b>Today's rule:</b> Proposed amendments must be published "in at least one newspaper in every county… for two months" before the election (Utah Const. Art. XXIII, Sec. 1).</li>
+    <li><b>If A passes:</b> Notice runs "for 60 calendar days immediately preceding the next general election," by a method the Legislature sets by statute.</li>
+    <li><b>Voter information pamphlet:</b> Arguments for and against each amendment are published by the Lt. Governor's office at <a href="https://vote.utah.gov">vote.utah.gov</a>.</li>
+    <li><b>Nov. 3, 2026:</b> General election.</li>
+  </ul>
+  <p class="src">How notice of A and B was actually published for 2026 is not documented on this page; it is listed under Questions to ask.</p>
 </section>
 
 <section id="yesno">
   <h2>In black and white</h2>
+  <div class="toggle" role="group" aria-label="Show YES or NO"><button type="button" data-yn="all" aria-pressed="true">Show both</button><button type="button" data-yn="yes" aria-pressed="false">Only YES</button><button type="button" data-yn="no" aria-pressed="false">Only NO</button></div>
   <div class="yesno">
     <div class="col yes">
       <h3>YES on A</h3>
@@ -249,6 +367,133 @@
   <p class="src">Sources: le.utah.gov, 2026 proposed constitutional amendments; vote.utah.gov, "Instructions for a Statewide Initiative."</p>
 </section>
 
+<section id="charts">
+  <h2>The numbers, in charts</h2>
+  <p>Six charts built only from the records cited on this page.</p>
+  
+<div class="chart" id="chart-votes-needed">
+  <h3>What vote does it take?</h3>
+  <p class="sub">Share of the vote needed to approve, by who is deciding.</p>
+  <div class="bars">
+    <div class="bar-row"><div class="lbl">Citizen tax initiative, today</div><div class="bar-track"><div class="bar-fill " style="width:50%">50% + 1</div></div></div>
+    <div class="bar-row"><div class="lbl">Citizen tax initiative, if Amendment B passes</div><div class="bar-track"><div class="bar-fill red" style="width:60%">60%</div></div></div>
+    <div class="bar-row"><div class="lbl">Legislature passing a tax</div><div class="bar-track"><div class="bar-fill navy" style="width:50%">50% + 1</div></div><div class="bar-val">Majority of each house</div></div>
+    <div class="bar-row"><div class="lbl">Legislature putting an amendment on the ballot</div><div class="bar-track"><div class="bar-fill navy" style="width:66.7%">⅔</div></div><div class="bar-val">Two-thirds of each house</div></div>
+    <div class="bar-row"><div class="lbl">PID, MIDA and UIPA boards: bonds, tax breaks, tax increment</div><div class="bar-track"><div class="bar-fill none">No public vote at all</div></div><div class="bar-val">Appointed or developer-led boards decide</div></div>
+  </div>
+  <p class="chart-src">Sources: S.J.R. 2 (2025); Utah Const. Art. VI and Art. XXIII; S.B. 228 (2019); MIDA–Box Elder interlocal §6(a); UIPA Tooele project area plan.</p>
+</div>
+
+<div class="chart" id="chart-does-it-need-60">
+  <h3>Does a citizen initiative need 60% under Amendment B?</h3>
+  <p class="sub">Follow your initiative down the chart.</p>
+  <div class="mermaid">
+flowchart TD
+  S["Does the initiative<br>include any tax change?"] -->|"No tax at all"| M1["Simple majority"]
+  S -->|"Only cuts a tax"| M2["Simple majority"]
+  S -->|"Cuts one tax,<br>adds another (swap)"| R1["60%"]
+  S -->|"Closes a loophole or<br>ends a tax break"| R2["60%"]
+  S -->|"Makes someone pay<br>the same rate as others"| R3["60%"]
+  S -->|"Keeps a property tax<br>rate from falling"| R4["60%"]
+  S -->|"Costs money but<br>leaves funding out"| L["Simple majority,<br>but the Legislature<br>decides whether to fund it"]
+  classDef red fill:#FDECEA,stroke:#B42318,color:#7A1A12;
+  classDef green fill:#E8F5EC,stroke:#1E7B3C,color:#14532D;
+  class R1,R2,R3,R4 red;
+  class M1,M2,L green;
+  </div>
+  <p class="chart-src">Source: S.J.R. 2 (2025), items A–D ("includes" a new tax, an expansion to more items or transactions, a rate increase, or a property-tax rate that decreases less than current law would). Who decides whether an initiative "includes" a tax is not stated in S.J.R. 2.</p>
+</div>
+
+<div class="tool" id="test-initiative">
+  <h3>Test an initiative</h3>
+  <p>Tick everything your initiative would do.</p>
+  <label><input type="checkbox" data-k="cut"> Cuts a tax</label>
+  <label><input type="checkbox" data-k="new"> Adds a new tax (including a swap)</label>
+  <label><input type="checkbox" data-k="exp"> Taxes something that isn't taxed now, or closes a loophole or tax break</label>
+  <label><input type="checkbox" data-k="rate"> Raises a tax rate, or makes someone pay the same rate as everyone else</label>
+  <label><input type="checkbox" data-k="hold"> Keeps a property-tax rate from falling</label>
+  <label><input type="checkbox" data-k="cost"> Costs money, with no funding source in the initiative</label>
+  <div class="result maj" id="test-result" aria-live="polite">Simple majority<small>No tax change selected.</small></div>
+  <p class="chart-src">Based on S.J.R. 2 (2025), items A–D. Who makes the official call is not stated in S.J.R. 2.</p>
+</div>
+
+<div class="chart" id="chart-prop3">
+  <h3>Prop 3 (2018) against the line</h3>
+  <p class="sub">Medicaid expansion, paid for with a 0.15% sales tax.</p>
+  <div class="bars">
+    <div class="bar-row"><div class="lbl">Yes vote</div>
+      <div class="bar-track" style="margin-top:28px;">
+        <div class="bar-fill" style="width:53%">53%</div>
+        <div class="mark" style="left:50%"><span>50% today</span></div>
+        <div class="mark" style="left:60%;border-color:var(--myth)"><span style="color:var(--myth);top:48px;">60% under B</span></div>
+      </div>
+      <div class="bar-val" style="margin-top:30px;">Passes today. Would fail under Amendment B.</div>
+    </div>
+  </div>
+  <p class="chart-src">Sources: Ballotpedia; Salt Lake Tribune, Nov. 7, 2018. The Legislature changed Prop 3 with S.B. 96 (Feb. 11, 2019).</p>
+</div>
+
+<div class="tool" id="vote-slider">
+  <h3>Slide the vote</h3>
+  <p>Drag to set the share of voters who vote yes on a citizen tax initiative.</p>
+  <div class="big-pct" id="slider-pct">53%</div>
+  <input type="range" id="slider" min="40" max="70" step="0.5" value="53" aria-label="Yes vote percentage">
+  <div class="slider-out"><div id="today-out" class="pass">Today: PASSES</div><div id="b-out" class="fail">Under B: FAILS</div></div>
+  <p class="chart-src">Starts at 53%, Prop 3's 2018 result (Ballotpedia).</p>
+</div>
+
+<div class="chart" id="chart-no-vote-money">
+  <h3>Decided with no public vote</h3>
+  <p class="sub">Total debt or tax money committed by boards and officials. Bars are drawn to the same scale.</p>
+  <div class="bars">
+    <div class="bar-row"><div class="lbl">PID bonds issued statewide (as of Aug. 7, 2026)</div><div class="bar-track"><div class="bar-fill " style="width:100.0%">$5.267 billion</div></div></div>
+    <div class="bar-row"><div class="lbl">Alpine School District lease revenue bonds, after S.B. 188 (2025)</div><div class="bar-track"><div class="bar-fill" style="width:3.816214163660528%;min-width:8px;padding:0"></div><span style="position:absolute;left:calc(3.816214163660528% + 10px);top:8px;font-weight:800;font-size:18px;color:var(--navy)">$201 million</span></div></div>
+    <div class="bar-row"><div class="lbl">UIPA Tooele Valley: tax increment to the project (projected)</div><div class="bar-track"><div class="bar-fill" style="width:1.2%;min-width:8px;padding:0"></div><span style="position:absolute;left:calc(1.2% + 10px);top:8px;font-weight:800;font-size:18px;color:var(--navy)">~$51.6 million</span></div></div>
+  </div>
+  <p class="bar-val" style="margin-top:14px;"><b>Separate, yearly:</b> Weber County 0.20% sales tax, about $13.1 million a year, imposed by County Commission vote. (A yearly amount isn't drawn on the same scale as total debt.)</p>
+  <p class="chart-src">Sources: State Auditor Tina Cannon, public statement Aug. 10, 2026; S.B. 188 (2025) and Alpine School District bond records; UIPA Tooele Valley Project Area Plan; CASE 2026-STAX-01. Amendment B changes none of these.</p>
+</div>
+
+<div class="chart" id="chart-leg-votes">
+  <h3>How lawmakers voted to put A and B on your ballot</h3>
+  <p class="sub"><span style="color:var(--fact);font-weight:800;">■ Yes</span> &nbsp; <span style="color:var(--myth);font-weight:800;">■ No</span> &nbsp; <span style="color:#6B778C;font-weight:800;">■ Absent / not voting</span></p>
+  <div class="bars">
+    <div class="bar-row"><div class="lbl">Amendment B (S.J.R. 2), Senate, Feb. 5, 2025</div><div class="split"><div class="y" style="flex:1">21 yes</div><div class="n" style="width:27.586206896551722%">8</div></div></div>
+    <div class="bar-row"><div class="lbl">Amendment B (S.J.R. 2), House, March 6, 2025</div><div class="split"><div class="y" style="flex:1">55 yes</div><div class="n" style="width:22.666666666666664%">17</div><div class="a" style="width:4.0%">3</div></div></div>
+    <div class="bar-row"><div class="lbl">Amendment A (H.J.R. 10), House, Feb. 26, 2025</div><div class="split"><div class="y" style="flex:1">70 yes</div><div class="a" style="width:6.666666666666667%">5</div></div></div>
+    <div class="bar-row"><div class="lbl">Amendment A (H.J.R. 10), Senate, March 7, 2025</div><div class="split"><div class="y" style="flex:1">29 yes</div></div></div>
+  </div>
+  <p class="chart-src">Source: Ballotpedia, March 10 and March 12, 2025; Ballotpedia measure page for H.J.R. 10. Amendment B: all 76 yes votes were Republicans; 6 Republicans and 19 Democrats voted no.</p>
+</div>
+
+<div class="chart" id="chart-helps-hurts">
+  <h3>Who Amendment B could help, and who it could hurt</h3>
+  <p class="sub">Effects of how the rule works, not anyone's motives. Only the two named groups have taken a public position.</p>
+  <div class="hh">
+    <div><h4>Could help</h4><ul>
+      <li>Anyone opposing a new tax: 40% + 1 now blocks a citizen tax initiative</li>
+      <li>Businesses with tax breaks or exemptions (closing a break = 60%), e.g. data centers at 0.5% vs. 6%</li>
+      <li>The Legislature: keeps more control over tax policy</li>
+      <li>Well-funded campaigns against an initiative</li>
+      <li><b>On record, supports:</b> Utah Taxpayers Association</li>
+    </ul></div>
+    <div class="hurt"><h4>Could hurt</h4><ul>
+      <li>Initiatives that fund a program with a tax: health care (Prop 3), schools, water and the Great Salt Lake, parks, transit, housing</li>
+      <li>People those programs serve</li>
+      <li>"Fair share" and loophole-closing measures, even when most residents' taxes go down</li>
+      <li>Small, volunteer initiative campaigns</li>
+      <li><b>On record, opposes:</b> Utahns Protecting Our Constitution</li>
+    </ul></div>
+    <div class="none"><h4>Not affected</h4><ul>
+      <li>The Legislature, county commissions, city councils, school boards, PID, MIDA and UIPA boards</li>
+      <li>Initiatives with no tax, and initiatives that only cut a tax</li>
+    </ul></div>
+  </div>
+  <p class="chart-src">Sources: S.J.R. 2 (2025); KSL, Jan. 30, 2025 (Utah Taxpayers Association); state campaign filings (Utahns Protecting Our Constitution); MIDA–Box Elder interlocal §6(a); Ballotpedia (Prop 3).</p>
+</div>
+
+</section>
+
 <section id="timeline">
   <h2>How we got here</h2>
   <p>Part 1: what happened to the 2018 initiatives.</p>
@@ -269,6 +514,18 @@ flowchart TD
   I --> J["Nov. 3, 2026<br>Amendments A and B<br>on your ballot"]
   </div>
   <p class="diagram-note">Sources: KJZZ; FOX 13; KUER; Ballotpedia, March 2025 and Aug. 29, 2025.</p>
+  <h3>Tap a year for the record</h3>
+  <div class="tl">
+    <details><summary>2018: Voters pass Props 2, 3 and 4</summary><p>Prop 2 (medical cannabis) and Prop 3 (Medicaid, 0.15% sales tax) each passed with 53%. Prop 4 created an independent redistricting commission. (NORML; Ballotpedia; KJZZ)</p></details>
+    <details><summary>Dec. 2018 – 2020: Lawmakers change all three</summary><p>H.B. 3001 replaced Prop 2 and removed home growing (Dec. 3, 2018). S.B. 96 changed Prop 3 (signed Feb. 11, 2019). S.B. 200 replaced Prop 4 (2020).</p></details>
+    <details><summary>Dec. 2019 – Jan. 2020: A citizen referendum stops a tax increase</summary><p>S.B. 2001 raised the sales tax on food. Citizens filed 152,000 referendum signatures; lawmakers repealed it Jan. 27, 2020. (Ballotpedia)</p></details>
+    <details><summary>July 11, 2024: Supreme Court rules on Prop 4</summary><p>Unanimous: reform initiatives are protected from unlimited repeal. Justice Paige Petersen: "When Utahns exercise their right to reform the government through a citizen initiative, their exercise of these rights is protected from government infringement." (KJZZ)</p></details>
+    <details><summary>Sept.–Oct. 2024: Amendments D and A voided</summary><p>Newspaper notice was not published as the Constitution requires. Amendment D's ballot language was also found misleading. (FOX 13; KUER)</p></details>
+    <details><summary>Feb.–March 2025: A and B referred to the 2026 ballot</summary><p>H.J.R. 10 passed 70–0 and 29–0. S.J.R. 2 passed 21–8 and 55–17. (Ballotpedia)</p></details>
+    <details><summary>Aug. 2025: Prop 4 repeal ruled unconstitutional</summary><p>A district court struck the 2021 congressional map. (Ballotpedia, Aug. 29, 2025)</p></details>
+    <details><summary>Nov. 3, 2026: Amendments A and B on your ballot</summary><p>Both need a simple majority of voters to pass.</p></details>
+  </div>
+
   <h3>The citizen side of the ledger</h3>
   <ul>
     <li><b>2019:</b> The Legislature passed S.B. 2001 (Dec. 12, 2019), raising the sales tax on food. Citizens turned in 152,000 referendum signatures, and the Legislature repealed the law on Jan. 27, 2020. (Ballotpedia)</li>
@@ -397,6 +654,29 @@ flowchart TD
       <p>Reported figure: 35 entities, $49.87M denied in 2025 under S.B. 29 / S.B. 202 rules. Those were process denials, not public votes.</p>
     </div>
 
+
+    <div class="claim" data-v="partly">
+      <div class="said">Commenter · comment</div>
+      <div class="quote">"Harder for people to raise your taxes = good. Vote yes."</div>
+      <span class="verdict v-partly">Partly true</span>
+      <p>B makes it harder only for citizens using a statewide initiative (S.J.R. 2). The Legislature (H.B. 362, 2015 fuel tax; S.B. 2001, 2019 food tax), Weber County (7.25%, 2024) and Weber Fire District (23.58% levy) raise taxes without a public vote, and B changes none of that.</p>
+    </div>
+
+    <div class="claim" data-v="myth">
+      <div class="said">Commenter · comment</div>
+      <div class="quote">"Data centers… that's a local county issue, not a state issue."</div>
+      <span class="verdict v-myth">Not supported</span>
+      <p>The Stratos and Tooele data center terms come from MIDA and UIPA, state authorities created by state law with state-appointed boards (Utah Code Title 63H; MIDA–Box Elder interlocal §6(a); UIPA project area plan). Changing that law takes the Legislature or a statewide initiative.</p>
+      <p><b>Unverified in the same comment:</b> "data centers are a 70/30 issue." No poll was found to support or contradict it.</p>
+    </div>
+
+    <div class="claim" data-v="fact">
+      <div class="said">S.M. · response</div>
+      <div class="quote">"What about lowering taxes?"</div>
+      <span class="verdict v-fact">Verified (as explained)</span>
+      <p>A plain tax cut still needs a simple majority. A cut paired with a new tax (swap), a loophole closing, a "same rate for everyone" measure, or a property-tax rate held steady needs 60%, because the initiative "includes" one of S.J.R. 2's items A–D. Try it in <a href="#test-initiative">Test an initiative</a>.</p>
+    </div>
+
   </div>
 </section>
 
@@ -448,9 +728,11 @@ flowchart TD
   <h2>Questions to ask, and whom to ask</h2>
   <ul class="qa">
     <li><div class="who">Rep. Anthony Loubet (Amendment A)</div>If A passes, what statute will set the notice method, and can a future Legislature change it without a statewide vote?</li>
+    <li><div class="who">Rep. Anthony Loubet and your state legislators</div>A constitutional change gets 60 days of public notice under Amendment A, and two months today. Would you support a longer notice period for constitutional amendments, for example starting when the Legislature passes them, with notice mailed to every voter?</li>
     <li><div class="who">Lt. Governor's office (elections)</div>How was notice of Amendments A and B published for 2026, and where can voters see it?</li>
     <li><div class="who">Sen. Fillmore and Rep. Kyle (Amendment B)</div>Who decides whether an initiative "includes" a tax? When is "current law" measured for Part D?</li>
     <li><div class="who">Your state senator and representative</div>Would you support a 60% bar for tax increases passed by the Legislature, or a public vote before PID bonds?</li>
+    <li><div class="who">Sen. Fillmore and Rep. Kyle</div>Why does the 60% bar apply to citizen initiatives but not to the Legislature's own tax votes? Would you sponsor a public vote before PID bonds and tax-increment deals, as H.B. 422 and H.B. 332 (2026) began to address?</li>
     <li><div class="who">Your county commission and city council</div>When did you last raise a tax, and was there a public vote?</li>
   </ul>
 </section>
@@ -468,12 +750,17 @@ flowchart TD
 
 <section id="glossary">
   <h2>Words to know</h2>
-  <details><summary>Publication Clause</summary><p>The part of Article XXIII, Sec. 1 that says how proposed amendments must be published before the vote. Amendment A rewrites it.</p></details>
-  <details><summary>Statute</summary><p>An ordinary law passed by the Legislature and signed by the governor. Easier to change than the Constitution.</p></details>
-  <details><summary>Initiative</summary><p>A law proposed by citizens and adopted by voters.</p></details>
-  <details><summary>Referendum</summary><p>A citizen challenge to a law already passed, put to voters by petition.</p></details>
-  <details><summary>Voided</summary><p>Ruled invalid by a court, so the votes do not take effect.</p></details>
-  <details><summary>PID</summary><p>Public Infrastructure District: a district that can levy assessments and issue bonds inside its boundary.</p></details>
+  <p>Tap a card to flip it.</p>
+  <div class="flips">
+    <div class="flip" tabindex="0" role="button" aria-label="Define Publication Clause"><div class="in"><div class="f">Publication Clause<small>tap to define</small></div><div class="b">The part of Article XXIII, Sec. 1 that says how proposed amendments must be published before the vote. Amendment A rewrites it.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Define Statute"><div class="in"><div class="f">Statute<small>tap to define</small></div><div class="b">An ordinary law passed by the Legislature and signed by the governor. Easier to change than the Constitution.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Define Initiative"><div class="in"><div class="f">Initiative<small>tap to define</small></div><div class="b">A law proposed by citizens and adopted by voters.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Define Referendum"><div class="in"><div class="f">Referendum<small>tap to define</small></div><div class="b">A citizen challenge to a law already passed, put to voters by petition.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Define Voided"><div class="in"><div class="f">Voided<small>tap to define</small></div><div class="b">Ruled invalid by a court, so the votes do not take effect.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Define PID"><div class="in"><div class="f">PID<small>tap to define</small></div><div class="b">Public Infrastructure District: a district that can levy assessments and issue bonds inside its boundary.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Define Truth in Taxation"><div class="in"><div class="f">Truth in Taxation<small>tap to define</small></div><div class="b">Utah's process: when values rise, the property-tax rate falls automatically unless the taxing body holds a public hearing to keep more revenue. No public vote.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Define Tax increment (TIF)"><div class="in"><div class="f">Tax increment (TIF)<small>tap to define</small></div><div class="b">New property tax from rising values inside a project area, redirected to that project instead of the usual taxing bodies.</div></div></div>
+  </div>
 </section>
 
 <section id="sources-section">
@@ -559,6 +846,44 @@ try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily
   }); });
   search.addEventListener('input', apply);
   apply();
+})();
+</script>
+
+<script>
+(function(){
+  // YES/NO toggle
+  var cols=[].slice.call(document.querySelectorAll('#yesno .col'));
+  var tb=[].slice.call(document.querySelectorAll('#yesno .toggle button'));
+  tb.forEach(function(b){b.addEventListener('click',function(){
+    var m=b.getAttribute('data-yn');
+    tb.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    cols.forEach(function(c){var isNo=c.classList.contains('no');c.style.display=(m==='all'||(m==='no')===isNo)?'':'none';});
+  });});
+  // Test an initiative
+  var boxes=[].slice.call(document.querySelectorAll('#test-initiative input'));
+  var out=document.getElementById('test-result');
+  function test(){
+    var on={};boxes.forEach(function(b){on[b.getAttribute('data-k')]=b.checked;});
+    var trig=on.new||on.exp||on.rate||on.hold;
+    if(trig){out.className='result sixty';out.innerHTML='Needs 60% under Amendment B<small>The initiative "includes" a new tax, an expansion, a rate increase or a property-tax rate that falls less than current law would. Today it would need a simple majority.</small>';}
+    else if(on.cost){out.className='result leg';out.innerHTML='Simple majority, but the Legislature decides whether to fund it<small>Leaving the funding out keeps the simple majority. The money then depends on lawmakers.</small>';}
+    else if(on.cut){out.className='result maj';out.innerHTML='Simple majority<small>A plain tax cut is not one of S.J.R. 2\'s triggers.</small>';}
+    else{out.className='result maj';out.innerHTML='Simple majority<small>No tax change selected.</small>';}
+  }
+  boxes.forEach(function(b){b.addEventListener('change',test);});
+  // Slider
+  var sl=document.getElementById('slider'),pct=document.getElementById('slider-pct'),t=document.getElementById('today-out'),bo=document.getElementById('b-out');
+  function slide(){var v=parseFloat(sl.value);pct.textContent=v+'%';
+    var p1=v>50,p2=v>=60;
+    t.className=p1?'pass':'fail';t.textContent='Today: '+(p1?'PASSES':'FAILS');
+    bo.className=p2?'pass':'fail';bo.textContent='Under B: '+(p2?'PASSES':'FAILS');}
+  if(sl){sl.addEventListener('input',slide);slide();}
+  // Flip cards
+  [].slice.call(document.querySelectorAll('.flip')).forEach(function(f){
+    function go(){f.classList.toggle('on');}
+    f.addEventListener('click',go);
+    f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go();}});
+  });
 })();
 </script>
 </body>
