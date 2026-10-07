@@ -68,6 +68,14 @@
   .yesno li{margin-bottom:10px;}
   @media (max-width:640px){.yesno{grid-template-columns:1fr;}}
 
+  .termcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:12px;}
+  .tcard2{border:2px solid var(--line);background:#fff;padding:16px 18px;}
+  .tcard2.hl{border:3px solid var(--myth);background:#FFF8E6;}
+  .tcard2 h4{margin:0 0 4px;font-size:22px;color:var(--navy);font-family:'Source Sans 3',sans-serif;}
+  .tcard2 .td{margin:0 0 10px;font-size:17px;color:var(--ink-soft);}
+  .tcard2 dl{margin:0;} .tcard2 dt{font-weight:800;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px;}
+  .tcard2 dd{margin:2px 0 0;font-size:17px;}
+  @media (max-width:640px){.termcards{grid-template-columns:1fr;}}
   .tbl-wrap{overflow-x:auto;border:1px solid var(--line);margin-top:10px;}
   table{border-collapse:collapse;width:100%;min-width:560px;font-size:17px;}
   th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
@@ -235,6 +243,7 @@
     <a href="#amend-b">Amendment B</a>
     <a href="#words">In their words</a>
     <a href="#notice">How you're told</a>
+    <a href="#terms">Initiative vs. referendum</a>
     <a href="#yesno">YES vs. NO</a>
     <a href="#charts">Charts &amp; tools</a>
     <a href="#timeline">How we got here</a>
@@ -277,7 +286,7 @@
   <ul>
     <li><b>Changes:</b> the newspaper requirement leaves the Constitution, and the notice method becomes something the Legislature sets and can later change by ordinary bill.</li>
     <li><b>Doesn't change:</b> amendments still need two-thirds of each house to reach the ballot and a majority of voters to pass.</li>
-    <li><b>Not yet known from the record here:</b> the specific statute that would set the new method. Check le.utah.gov before relying on any description of it.</li>
+    <li><b>The statute that would set the new method (found Oct. 7, 2026):</b> H.B. 481 (2025, Loubet/McCay). If A passes, the Lt. Governor publishes the full text of each proposed amendment as a "class A notice" for the 60 days before the election. It takes effect Jan. 1, 2027, only if A passes. See <a href="#where-notice">Where the notice would run</a>.</li>
   </ul>
 </section>
 
@@ -332,6 +341,20 @@
     <li><b>Nov. 3, 2026:</b> General election.</li>
   </ul>
   <p class="src">How notice of A and B was actually published for 2026 is not documented on this page; it is listed under Questions to ask.</p>
+  <h3 id="where-notice" style="margin-top:26px;">Where the notice would run</h3>
+  <div class="tbl-wrap">
+    <table class="fit">
+      <thead><tr><th></th><th>Today (Constitution)</th><th>If A passes (H.B. 481)</th></tr></thead>
+      <tbody>
+        <tr class="changed"><td>Who publishes</td><td>Set by the Constitution; the Lt. Governor's office handles election notices</td><td>The Lt. Governor</td></tr>
+        <tr class="changed"><td>Where</td><td>"in at least one newspaper in every county of the state, where a newspaper is published"</td><td>A "class A notice": (1) the Utah Public Notice Website (utah.gov/pmn), (2) the Lt. Governor's official website, and (3) a physical posting in a public place "reasonably likely to be seen"</td></tr>
+        <tr><td>Newspaper?</td><td>Required</td><td>Not required by the class A notice law. Newspapers can ask for an automatic feed of Public Notice Website postings (S.B. 201, 2024).</td></tr>
+        <tr class="changed"><td>How long</td><td>"for two months"</td><td>"for 60 calendar days immediately preceding the next general election"</td></tr>
+        <tr><td>What is published</td><td>The proposed amendment</td><td>"the entire text of the proposed constitutional amendment"</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Sources: Utah Const. Art. XXIII, Sec. 1; H.B. 481 (2025) enrolled text; Utah Code 63G-30-102 (class A notice); Utah League of Cities and Towns summary of S.B. 201 (2024). The class A notice law ties website posting to public bodies with an operating budget of $250,000 or more.</p>
 </section>
 
 <section id="yesno">
@@ -356,7 +379,7 @@
     <div class="col yes">
       <h3>YES on B</h3>
       <ul>
-        <li>A citizen initiative that includes a tax change needs 60%.</li>
+        <li>A citizen initiative that includes a tax increase, as S.J.R. 2 defines it, needs 60%: a new tax, a tax on more items, a higher rate, or a property-tax rate that falls less than current law would. Plain tax cuts still need a simple majority.</li>
         <li>Initiatives with no tax still need a simple majority.</li>
         <li>Lawmakers, counties, cities and districts are unchanged.</li>
       </ul>
@@ -366,11 +389,12 @@
       <ul>
         <li>Every statewide citizen initiative keeps the simple-majority rule.</li>
         <li>The existing checks stay: legal review, cost estimate, 7 hearings, ~140,000 signatures from 26 of 29 Senate districts.</li>
-        <li>The Legislature can still amend any initiative afterward.</li>
+        <li>The Legislature can still amend initiatives afterward. Since July 2024, a change that impairs an initiative that reforms government must be narrowly tailored to a compelling government interest (Utah Supreme Court).</li>
       </ul>
     </div>
   </div>
-  <p class="src">Sources: le.utah.gov, 2026 proposed constitutional amendments; vote.utah.gov, "Instructions for a Statewide Initiative."</p>
+  <p class="src">Sources: le.utah.gov, 2026 proposed constitutional amendments; S.J.R. 2 (2025); vote.utah.gov, "Instructions for a Statewide Initiative"; League of Women Voters v. Utah Legislature, Utah Supreme Court, July 11, 2024.</p>
+  <p class="src" style="margin-top:12px;"><b>Corrected Oct. 7, 2026, after a reader comment:</b> the YES column said "tax change," which could suggest tax cuts need 60%; it now says "tax increase, as S.J.R. 2 defines it." The NO column said the Legislature can amend "any initiative"; it now notes the 2024 limit on changes that impair government-reform initiatives.</p>
 </section>
 
 <section id="charts">
@@ -395,7 +419,7 @@
   <p class="sub">Follow your initiative down the chart.</p>
   <div class="mermaid">
 flowchart TD
-  S["Does the initiative<br>include any tax change?"] -->|"No tax at all"| M1["Simple majority"]
+  S["Does the initiative<br>include a tax increase<br>or new tax?"] -->|"No tax at all"| M1["Simple majority"]
   S -->|"Only cuts a tax"| M2["Simple majority"]
   S -->|"Cuts one tax,<br>adds another (swap)"| R1["60%"]
   S -->|"Closes a loophole or<br>ends a tax break"| R2["60%"]
@@ -419,7 +443,7 @@ flowchart TD
   <label><input type="checkbox" data-k="rate"> Raises a tax rate, or makes someone pay the same rate as everyone else</label>
   <label><input type="checkbox" data-k="hold"> Keeps a property-tax rate from falling</label>
   <label><input type="checkbox" data-k="cost"> Costs money, with no funding source in the initiative</label>
-  <div class="result maj" id="test-result" aria-live="polite">Simple majority<small>No tax change selected.</small></div>
+  <div class="result maj" id="test-result" aria-live="polite">Simple majority<small>No tax increase selected.</small></div>
   <p class="chart-src">Based on S.J.R. 2 (2025), items A–D. Who makes the official call is not stated in S.J.R. 2.</p>
 </div>
 
@@ -541,6 +565,7 @@ flowchart TD
 
 <section id="comments">
   <h2>Comments and responses, checked</h2>
+  <p class="src">Private tips are logged without names on the <a href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html">Tips we checked</a> page, where you can also send one.</p>
   <p>Claims from public Facebook debates in October 2026. Commenters are identified by initials only, and only when a name was available. Where a response was posted, its record-based points are summarized.</p>
   <div class="filters" role="group" aria-label="Filter by verdict">
     <button type="button" data-f="all" aria-pressed="true">All</button>
@@ -553,6 +578,23 @@ flowchart TD
   <p class="count" id="claim-count"></p>
 
   <div class="claims" id="claim-list">
+    <div class="claim" data-v="fact">
+      <div class="said">Commenter · question</div>
+      <div class="quote">"If the Legislature tried to increase the food tax, they could do so by a simple majority… unless it got vetoed, in which case they would need a 60% supermajority to override… and we could gather signatures to put an initiative to remove this tax on the ballot… we would only need 50%, right? What am I missing?"</div>
+      <span class="verdict v-fact">Mostly right</span>
+      <p><b>Right:</b> the Legislature raises taxes by a majority of each house, with or without B. An initiative that only removes a tax is not one of S.J.R. 2's four items, so it would still need a simple majority.</p>
+      <p><b>One correction:</b> overriding a veto takes two-thirds of each house, not 60% (Utah Const. Art. VII, Sec. 8).</p>
+      <p><b>What's missing:</b> the 2019 food tax increase (S.B. 2001) was stopped by a <i>referendum</i>, not an initiative, and B doesn't change referendums. The Legislature repealed the law itself in January 2020 after the referendum qualified. An initiative that removes a tax can also be changed later by the Legislature, since only government-reform initiatives got the 2024 court's protection. And if a tax-cut initiative replaced the lost money with another tax, it would need 60%. See <a href="#terms">Words that sound alike</a>.</p>
+    </div>
+
+    <div class="claim" data-v="partly">
+      <div class="said">Commenter · on the YES/NO graphic</div>
+      <div class="quote">"YES on B should say 'tax increase' not 'tax change'; NO on B should say 'The Legislature can only amend initiatives that do not alter or reform government afterward.'"</div>
+      <span class="verdict v-partly">Partly right; page corrected</span>
+      <p><b>Tax increase:</b> right that "tax change" was too broad. Plain tax cuts still need a simple majority. The ballot question says "increase taxes," and S.J.R. 2 covers a new tax, a tax on more items, a higher rate, or a property-tax rate that falls less than current law would. The graphic now says "tax increase, as S.J.R. 2 defines it."</p>
+      <p><b>Amending initiatives:</b> partly right. The Utah Supreme Court (July 11, 2024) held the Legislature "can" amend a government-reform initiative with changes that "facilitate or support the reform, or at least do not impair" it, and that changes that do impair it survive only if "narrowly tailored to advance a compelling government interest." So the Legislature can still amend reform initiatives in limited ways, and the ruling does not limit amending other initiatives, such as a tax initiative. The NO column now names that limit.</p>
+    </div>
+
 
     <div class="claim" data-v="fact">
       <div class="said">B.W. · post</div>
@@ -629,7 +671,7 @@ flowchart TD
       <div class="said">News page · post</div>
       <div class="quote">"Traditional bills face months of strict legislative vetting, while citizen initiatives bypass this policy-filtering process."</div>
       <span class="verdict v-partly">Partly true</span>
-      <p>Initiatives don't go through committees, but they do go through a legal review, an official cost estimate, 7 public hearings and ~140,000 verified signatures, and the Legislature can amend them afterward (vote.utah.gov; S.B. 96).</p>
+      <p>Initiatives don't go through committees, but they do go through a legal review, an official cost estimate, 7 public hearings and ~140,000 verified signatures, and the Legislature can amend them afterward, within the limits the Utah Supreme Court set in 2024 for government-reform initiatives (vote.utah.gov; S.B. 96; League of Women Voters v. Utah Legislature).</p>
     </div>
 
     <div class="claim" data-v="fact">
@@ -981,6 +1023,62 @@ flowchart TD
   </ul>
 </section>
 
+<section id="terms">
+  <h2>Initiative, referendum, amendment: words that sound alike, but aren't</h2>
+  <p>Initiatives, referendums, amendments and bills all end up as "votes," but they start in different places and need different numbers to pass. Amendment B changes only one row.</p>
+  <div class="termcards">
+  <div class="tcard2"><h4>Bill (statute)</h4><p class="td">An ordinary law.</p><dl><dt>Who starts it</dt><dd>A legislator</dd><dt>How it's decided</dt><dd>Both houses vote, then the governor signs or vetoes</dd><dt>Vote needed</dt><dd>Majority of each house</dd><dt>Does Amendment B change it?</dt><dd>No</dd><dt>Can the Legislature change it later?</dt><dd>Yes, by another bill</dd></dl></div>
+  <div class="tcard2"><h4>Veto override</h4><p class="td">Passing a bill again after the governor rejects it.</p><dl><dt>Who starts it</dt><dd>The Legislature</dd><dt>How it's decided</dt><dd>Both houses vote again</dd><dt>Vote needed</dt><dd>Two-thirds of each house (Utah Const. Art. VII, Sec. 8)</dd><dt>Does Amendment B change it?</dt><dd>No</dd><dt>Can the Legislature change it later?</dt><dd>—</dd></dl></div>
+  <div class="tcard2 hl"><h4>Citizen initiative</h4><p class="td">A new law written by citizens.</p><dl><dt>Who starts it</dt><dd>Citizens</dd><dt>How it's decided</dt><dd>Signatures from 8% of active voters in 26 of 29 Senate districts (about 140,000), then a statewide vote</dd><dt>Vote needed</dt><dd>Simple majority today. 60% if B passes and it includes a tax increase as S.J.R. 2 defines it. Wildlife initiatives: two-thirds.</dd><dt>Does Amendment B change it?</dt><dd>YES. This is the only one it changes.</dd><dt>Can the Legislature change it later?</dt><dd>Yes. Since July 2024, a change that impairs a government-reform initiative must be narrowly tailored to a compelling government interest.</dd></dl></div>
+  <div class="tcard2"><h4>Referendum</h4><p class="td">Citizens challenge a law the Legislature just passed.</p><dl><dt>Who starts it</dt><dd>Citizens</dd><dt>How it's decided</dt><dd>Signatures from 8% of active voters statewide and in 15 of 29 Senate districts, filed within 40 days after the session; then a statewide vote</dd><dt>Vote needed</dt><dd>Simple majority</dd><dt>Does Amendment B change it?</dt><dd>No</dd><dt>Can the Legislature change it later?</dt><dd>Yes. In January 2020 the Legislature repealed its own 2019 tax law (S.B. 2001), including the higher food tax, after a referendum qualified.</dd></dl></div>
+  <div class="tcard2"><h4>Constitutional amendment</h4><p class="td">A change to the Utah Constitution. Amendments A and B are these.</p><dl><dt>Who starts it</dt><dd>Only the Legislature</dd><dt>How it's decided</dt><dd>Two-thirds of each house puts it on the ballot; then a statewide vote</dd><dt>Vote needed</dt><dd>Simple majority of voters</dd><dt>Does Amendment B change it?</dt><dd>B is one</dd><dt>Can the Legislature change it later?</dt><dd>Only with another amendment and another statewide vote</dd></dl></div>
+</div>
+  <p class="src">Sources: vote.utah.gov, "Instructions for a Statewide Initiative" and "Instructions for a Statewide Referendum"; Utah Const. Art. VI, Art. VII Sec. 8, Art. XXIII; S.J.R. 2 (2025); League of Women Voters v. Utah Legislature (July 11, 2024).</p>
+  <h3>Every tool, and who gets to use it</h3>
+  <div class="hh">
+    <div><h4>Tools voters and citizens have</h4><ul>
+      <li><b>Statewide initiative:</b> write a new law and put it to a vote. The only tool Amendment B changes.</li>
+      <li><b>Statewide referendum:</b> challenge a law the Legislature just passed. Majority vote.</li>
+      <li><b>Local initiative and referendum:</b> the same tools for city and county laws, with signature counts based on local voters. Amendment B covers statewide initiatives only.</li>
+      <li><b>Voting on constitutional amendments:</b> every amendment, including A and B, needs voter approval.</li>
+      <li><b>Bond elections:</b> general obligation bonds go to voters. Lease revenue bonds and PID bonds do not.</li>
+      <li><b>Truth in Taxation hearings:</b> residents can speak before a property-tax increase. It's a hearing, not a vote.</li>
+    </ul></div>
+    <div class="hurt"><h4>Tools the Legislature and local governments have</h4><ul>
+      <li><b>Pass a bill:</b> majority of each house, including tax increases.</li>
+      <li><b>Override a veto:</b> two-thirds of each house.</li>
+      <li><b>Propose a constitutional amendment:</b> two-thirds of each house, then voters decide.</li>
+      <li><b>Call itself into special session:</b> two-thirds of each house for a "persistent fiscal crisis, war, natural disaster, or emergency in the affairs of the state" (2018 amendment; used Aug. 2024).</li>
+      <li><b>Amend or repeal an initiative afterward:</b> by majority, with the 2024 limit for government-reform initiatives.</li>
+      <li><b>Repeal its own law before a referendum vote:</b> as with the 2019 tax law in January 2020.</li>
+      <li><b>Local governments:</b> raise property tax after a Truth in Taxation hearing, adopt some sales taxes by council or commission vote, and create PIDs, CRAs and other zones (see <a href="#tax-tools">Tax tools</a>).</li>
+    </ul></div>
+  </div>
+  <p class="src">Sources: vote.utah.gov; Utah Const. Art. VII Sec. 8, Art. XXIII; KUER, April 22, 2025, and Utah News Dispatch, Aug. 2024, on special sessions; CASE 2026-STAX-01 (Weber County 0.20% sales tax).</p>
+  <h3 id="examples">How each tool has been used in Utah, and why that route</h3>
+  <p>Real examples from the record. "Why this route" uses the reasons stated at the time; where no reason was stated, it explains what the rules required.</p>
+  <div class="termcards">
+    <div class="tcard2"><div style="font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);">Bill</div><h4>H.B. 362 (2015): fuel tax increase</h4><dl><dt>What happened</dt><dd>Passed House 44–29, Senate 20–8; signed March 27, 2015.</dd><dt>Why this route</dt><dd>Raising a tax is the Legislature's own power, so it only needed a majority of each house. The bill's title was "Transportation Infrastructure Funding."</dd></dl><p class="src" style="margin:8px 0 0;">le.utah.gov</p></div>
+    <div class="tcard2"><div style="font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);">Veto override</div><h4>H.B. 11 (2022): transgender students in school sports</h4><dl><dt>What happened</dt><dd>Gov. Cox vetoed it; the Legislature met in a veto override session on March 25, 2022 and overrode it, House 56–18, Senate 21–8.</dd><dt>Why this route</dt><dd>An override was the only way to make it law after the veto. Reported reasons for the veto included concern for transgender students' welfare and legal costs for school districts.</dd></dl><p class="src" style="margin:8px 0 0;">le.utah.gov, 2022 Veto Override Session; AP via 10News, March 25, 2022</p></div>
+    <div class="tcard2"><div style="font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);">Citizen initiative</div><h4>Props 2, 3 and 4 (2018): medical cannabis, Medicaid expansion, independent redistricting</h4><dl><dt>What happened</dt><dd>All three passed: Prop 2 about 53%, Prop 3 about 53%, Prop 4 50.34%.</dd><dt>Why this route</dt><dd>Supporters wrote these laws themselves and took them straight to voters instead of waiting for the Legislature to pass them.</dd></dl><p class="src" style="margin:8px 0 0;">vote.utah.gov canvass; Ballotpedia</p></div>
+    <div class="tcard2"><div style="font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);">Legislature amends an initiative</div><h4>Prop 2 → H.B. 3001 (Dec. 3, 2018); Prop 3 → S.B. 96 (Feb. 2019); Prop 4 → S.B. 200 (2020)</h4><dl><dt>What happened</dt><dd>Prop 2 was replaced in a special session four weeks after the vote (Senate 22–4). Prop 3 was changed in the next session.</dd><dt>Why this route</dt><dd>Prop 2: supporters and opponents agreed in October 2018 to a compromise law that would pass "regardless of the outcome" (Marijuana Policy Project, via KUTV). Prop 3: the stated reason was cost; Sen. Allen Christensen said the sales tax would raise $88 million in year one against $105 million needed (KSL). Prop 4: the Utah Supreme Court ruled in 2024 that government-reform initiatives are protected from unlimited repeal.</dd></dl><p class="src" style="margin:8px 0 0;">KUTV, Dec. 3, 2018; KSL, Jan. 2019; KJZZ</p></div>
+    <div class="tcard2"><div style="font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);">Referendum</div><h4>S.B. 2001 (2019): tax restructuring, including a higher food tax</h4><dl><dt>What happened</dt><dd>Passed in a December 2019 special session. A referendum gathered enough signatures; the Legislature repealed the law itself in January 2020, before the vote.</dd><dt>Why this route</dt><dd>The law had already passed, so citizens used a referendum, the tool for challenging a new law, instead of an initiative.</dd></dl><p class="src" style="margin:8px 0 0;">le.utah.gov; KSL, Jan. 28, 2020</p></div>
+    <div class="tcard2"><div style="font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);">Referendum</div><h4>H.B. 267 (2025): ban on public-employee collective bargaining</h4><dl><dt>What happened</dt><dd>Campaign reported more than 320,000 signers. The Legislature repealed the law in a special session on Dec. 9, 2025 (House 60–9, Senate 26–1) instead of facing a November 2026 vote.</dd><dt>Why this route</dt><dd>Primary sponsor Rep. Jordan Teuscher said the bill "has been overshadowed by misinformation and unnecessary division" and the repeal would "lower the temperature."</dd></dl><p class="src" style="margin:8px 0 0;">Ballotpedia News, Dec. 11, 2025; KPCW</p></div>
+    <div class="tcard2"><div style="font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);">Constitutional amendment</div><h4>2018 Amendment C: lets the Legislature call itself into special session</h4><dl><dt>What happened</dt><dd>Passed with about 63% of the vote; took effect Jan. 1, 2019.</dd><dt>Why this route</dt><dd>Changing the balance between the Legislature and the governor required changing the Constitution. Then-Speaker Brad Wilson said it put "an equal branch of government on equal footing"; Gov. Herbert opposed it, warning lawmakers "can define 'emergency' themselves."</dd></dl><p class="src" style="margin:8px 0 0;">KUER, Nov. 23, 2018</p></div>
+    <div class="tcard2"><div style="font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);">Special session the Legislature called itself</div><h4>August 2024: placing 2024 Amendment D on the ballot</h4><dl><dt>What happened</dt><dd>Two-thirds of each house agreed to convene, using the 2018 Amendment C power. Amendment D was later voided by the Utah Supreme Court.</dd><dt>Why this route</dt><dd>The session came after the July 2024 Prop 4 ruling limited the Legislature's power over reform initiatives; an amendment was the route to change that limit.</dd></dl><p class="src" style="margin:8px 0 0;">Utah News Dispatch, Aug. 2024; FOX 13</p></div>
+    <div class="tcard2"><div style="font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);">Bond election</div><h4>Weber County jail bond, 2023</h4><dl><dt>What happened</dt><dd>Voters turned down a $98 million general obligation bond.</dd><dt>Why this route</dt><dd>General obligation bonds must go to voters. For contrast: Alpine School District issued $201 million in lease revenue bonds in 2025 with no vote, after S.B. 188.</dd></dl><p class="src" style="margin:8px 0 0;">CASE 2026-STAX-01; Bill-Tracker</p></div>
+    <div class="tcard2"><div style="font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);">Truth in Taxation hearing</div><h4>Weber County 7.25% property-tax increase (for 2024)</h4><dl><dt>What happened</dt><dd>Hearing held Nov. 28, 2023; the commission adopted the increase. No public vote.</dd><dt>Why this route</dt><dd>A property-tax increase above the certified rate requires notice and a hearing, not an election. Coverage at the time described it as about $3.9 million for worker pay and inflation.</dd></dl><p class="src" style="margin:8px 0 0;">Weber County Commission minutes; KSL NewsRadio, Oct. 25, 2023</p></div>
+    <div class="tcard2"><div style="font-size:14px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);">Local sales tax by commission vote</div><h4>Weber County 0.20% "5th 5th" sales tax (2026)</h4><dl><dt>What happened</dt><dd>Adopted unanimously by the County Commission; about $13.1 million a year, effective Oct. 1, 2026.</dd><dt>Why this route</dt><dd>State law (amended by S.B. 242, 2026) lets the county adopt it by vote. Commissioner Gage Froerer called it "an alternative to relying solely on property taxes."</dd></dl><p class="src" style="margin:8px 0 0;">Weber County, July 1, 2026 release; CASE 2026-STAX-01</p></div>
+  </div>
+  <p class="src">Local initiative and local referendum examples are being added.</p>
+  <h3>The numbers, side by side</h3>
+  <div class="bars">
+    <div class="bar-row"><div class="lbl">Simple majority (more than half of votes cast)</div><div class="bar-track"><div class="bar-fill" style="width:50%">50% + 1</div></div><div class="bar-val">Bills, referendums, constitutional amendments at the ballot, most initiatives</div></div>
+    <div class="bar-row"><div class="lbl">Amendment B's bar</div><div class="bar-track"><div class="bar-fill red" style="width:60%">60%</div></div><div class="bar-val">Only citizen initiatives that include a tax increase</div></div>
+    <div class="bar-row"><div class="lbl">Supermajority</div><div class="bar-track"><div class="bar-fill navy" style="width:66.7%">⅔</div></div><div class="bar-val">Veto overrides; putting an amendment on the ballot; wildlife initiatives</div></div>
+  </div>
+</section>
+
 <section id="glossary">
   <h2>Words to know</h2>
   <p>Tap a card to flip it.</p>
@@ -993,6 +1091,10 @@ flowchart TD
     <div class="flip" tabindex="0" role="button" aria-label="Define PID"><div class="in"><div class="f">PID<small>tap to define</small></div><div class="b">Public Infrastructure District: a district that can levy assessments and issue bonds inside its boundary.</div></div></div>
     <div class="flip" tabindex="0" role="button" aria-label="Define Truth in Taxation"><div class="in"><div class="f">Truth in Taxation<small>tap to define</small></div><div class="b">Utah's process: when values rise, the property-tax rate falls automatically unless the taxing body holds a public hearing to keep more revenue. No public vote.</div></div></div>
     <div class="flip" tabindex="0" role="button" aria-label="Define Tax increment (TIF)"><div class="in"><div class="f">Tax increment (TIF)<small>tap to define</small></div><div class="b">New property tax from rising values inside a project area, redirected to that project instead of the usual taxing bodies.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Define Class A notice"><div class="in"><div class="f">Class A notice<small>tap to define</small></div><div class="b">Utah's standard public notice: posted on the Utah Public Notice Website, on the agency's website, and in a public place. No newspaper required.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Define Veto override"><div class="in"><div class="f">Veto override<small>tap to define</small></div><div class="b">When the Legislature passes a bill again after the governor rejects it. Takes two-thirds of each house in Utah.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Define Supermajority"><div class="in"><div class="f">Supermajority<small>tap to define</small></div><div class="b">Any required vote higher than a simple majority, such as 60% or two-thirds.</div></div></div>
+    <div class="flip" tabindex="0" role="button" aria-label="Define Government-reform initiative"><div class="in"><div class="f">Government-reform initiative<small>tap to define</small></div><div class="b">An initiative that changes how government works, like Prop 4's redistricting commission. Since 2024, the Legislature can't impair one without a compelling reason.</div></div></div>
   </div>
 </section>
 
@@ -1111,7 +1213,7 @@ try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily
     if(trig){out.className='result sixty';out.innerHTML='Needs 60% under Amendment B<small>The initiative "includes" a new tax, an expansion, a rate increase or a property-tax rate that falls less than current law would. Today it would need a simple majority.</small>';}
     else if(on.cost){out.className='result leg';out.innerHTML='Simple majority, but the Legislature decides whether to fund it<small>Leaving the funding out keeps the simple majority. The money then depends on lawmakers.</small>';}
     else if(on.cut){out.className='result maj';out.innerHTML='Simple majority<small>A plain tax cut is not one of S.J.R. 2\'s triggers.</small>';}
-    else{out.className='result maj';out.innerHTML='Simple majority<small>No tax change selected.</small>';}
+    else{out.className='result maj';out.innerHTML='Simple majority<small>No tax increase selected.</small>';}
   }
   boxes.forEach(function(b){b.addEventListener('change',test);});
   // Slider

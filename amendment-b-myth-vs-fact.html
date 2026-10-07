@@ -187,6 +187,7 @@
     <a href="#now-after">Now vs. after</a>
     <a href="#charts">Charts</a>
     <a href="#claims">Myth vs. fact</a>
+    <a href="#cut-and-raised">Cut here, raised there</a>
     <a href="#process">How initiatives work</a>
     <a href="#history">History</a>
     <a href="#map-section">Map</a>
@@ -254,7 +255,7 @@
     <table>
       <thead><tr><th>Who decides a tax</th><th>Now</th><th>If B passes</th></tr></thead>
       <tbody>
-        <tr class="changed"><td>Citizen initiative that includes a tax change</td><td>Simple majority</td><td>60%</td></tr>
+        <tr class="changed"><td>Citizen initiative that includes a tax increase (as S.J.R. 2 defines it)</td><td>Simple majority</td><td>60%</td></tr>
         <tr><td>Citizen initiative, no tax</td><td>Simple majority</td><td>Same</td></tr>
         <tr><td>Wildlife initiative</td><td>Two-thirds</td><td>Same</td></tr>
         <tr><td>Citizen referendum on a law the Legislature passed</td><td>Simple majority</td><td>Same</td></tr>
@@ -291,7 +292,7 @@
   <p class="sub">Follow your initiative down the chart.</p>
   <div class="mermaid">
 flowchart TD
-  S["Does the initiative<br>include any tax change?"] -->|"No tax at all"| M1["Simple majority"]
+  S["Does the initiative<br>include a tax increase<br>or new tax?"] -->|"No tax at all"| M1["Simple majority"]
   S -->|"Only cuts a tax"| M2["Simple majority"]
   S -->|"Cuts one tax,<br>adds another (swap)"| R1["60%"]
   S -->|"Closes a loophole or<br>ends a tax break"| R2["60%"]
@@ -453,6 +454,14 @@ flowchart TD
       <div class="quote">"Tax cuts never happen."</div>
       <span class="verdict v-myth">Myth</span>
       <p>The Legislature cut the state income-tax rate five times since 2018, from 4.95% to 4.45%. <span class="src">(Utah House, "Tax Cut Streak," house.utleg.gov)</span> On a median household income of $104,000, the 2026 cut of 0.05 points is about $52 a year. <span class="src">(Census via FRED, 2024)</span></p>
+      <p><b>Added Oct. 7, 2026:</b> in the same years, other taxes went up or new ones were allowed: a higher fuel-tax rate under automatic indexing, a higher alternative-fuel tax, new sales, energy and lodging taxes for special districts, Weber County's 0.20% sales tax, and dozens of local property-tax increases. See <a href="#cut-and-raised">Cut here, raised there</a>.</p>
+    </article>
+
+    <article class="claim" data-v="partly">
+      <div class="said">Claim</div>
+      <div class="quote">"The Legislature keeps cutting taxes, so our taxes are going down."</div>
+      <span class="verdict v-partly">Partly</span>
+      <p>The state income-tax rate went down every year from 2022 to 2026, worth about $101 million a year in 2026 alone. <span class="src">(Utah House, "Tax Cut Streak")</span> In 2026, 67 cities, districts and other local taxing entities sought $93.58 million in property-tax increases, eight of them in Weber County. <span class="src">(KSL, Aug. 4, 2026, citing the Utah Taxpayers Association)</span> Weber County's new 0.20% sales tax adds about $13.1 million a year. <span class="src">(<a href="weber-hive-5th5th-sales-tax.html">CASE 2026-STAX-01</a>)</span> Whether a household pays less overall depends on where it lives and what it buys. See <a href="#cut-and-raised">Cut here, raised there</a>.</p>
     </article>
 
     <article class="claim" data-v="fact">
@@ -467,7 +476,7 @@ flowchart TD
       <div class="said">Claim</div>
       <div class="quote">"Ruling by initiative is what got California into trouble."</div>
       <span class="verdict v-partly">Different system</span>
-      <p>California lets citizens amend its state constitution by initiative. Utah does not; it allows statutory initiatives only, and the Legislature can amend them afterward. The last statewide citizen initiatives to reach Utah's ballot were in 2018. <span class="src">(State Democracy Research Initiative; Ballotpedia)</span></p>
+      <p>California lets citizens amend its state constitution by initiative. Utah does not; it allows statutory initiatives only, and the Legislature can amend them afterward, with limits since 2024 on changes that impair government-reform initiatives. The last statewide citizen initiatives to reach Utah's ballot were in 2018. <span class="src">(State Democracy Research Initiative; Ballotpedia)</span></p>
     </article>
 
     <article class="claim" data-v="myth">
@@ -494,6 +503,37 @@ flowchart TD
   </div>
 </section>
 
+<section id="cut-and-raised">
+  <h2>Cut here, raised there: 2022–2026</h2>
+  <p class="lede">The state income-tax rate came down every year from 2022 to 2026. This table shows, year by year, what went up or was newly allowed during the same period. It lists only items found in the records cited.</p>
+
+  <div class="chart" id="chart-cut-vs-raised">
+    <h3>2026: one state cut next to local increases</h3>
+    <p class="sub">Dollars per year. The local figures were proposed, and not every increase is approved; they also fall on different taxpayers.</p>
+    <div class="bars">
+      <div class="bar-row"><div class="lbl">State income-tax cut, 4.50% to 4.45% (S.B. 60)</div><div class="bar-track"><div class="bar-fill" style="width:88.5%">$101M less</div></div></div>
+      <div class="bar-row"><div class="lbl">Local property-tax increases sought by 67 entities</div><div class="bar-track"><div class="bar-fill red" style="width:82%">$93.58M more</div></div><div class="bar-val">Proposed; Truth in Taxation hearings ran through Aug. 27, 2026</div></div>
+      <div class="bar-row"><div class="lbl">Weber County's new 0.20% sales tax</div><div class="bar-track"><div class="bar-fill red" style="width:11.5%;min-width:96px;">$13.1M</div></div><div class="bar-val">Adopted by the County Commission; effective Oct. 1, 2026</div></div>
+    </div>
+    <p class="chart-src">Sources: Utah House, "Utah's Tax Cut Streak" (house.utleg.gov); KSL, Aug. 4, 2026; Weber County, July 1, 2026 release (CASE 2026-STAX-01).</p>
+  </div>
+
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Year</th><th>Cut by the Legislature</th><th>Went up, or newly allowed</th></tr></thead>
+      <tbody>
+        <tr><td><b>2022</b></td><td>Income tax 4.95% to 4.85% (S.B. 59); state earned income tax credit created</td><td>None found in the records reviewed for this page.</td></tr>
+        <tr><td><b>2023</b></td><td>Income tax 4.85% to 4.65% (H.B. 54); child tax credit created; gas tax cut for July–Dec. from 36.4¢ to 34.5¢ a gallon</td><td>Weber County approved a 7.25% property-tax increase for 2024 after a Truth in Taxation hearing (Nov. 28, 2023), its first general-fund increase since 2016</td></tr>
+        <tr><td><b>2024</b></td><td>Income tax 4.65% to 4.55% (S.B. 69, $167M a year)</td><td>Salt Lake City allowed a sales tax of up to 0.5% for the Delta Center district (S.B. 272) · Fairpark district (UFAIR) allowed energy tax up to 6%, telecom up to 3.5% and accommodations up to 15% (H.B. 562) · MIDA 15% accommodations tax with no end date (S.B. 169) · new zones keeping up to 60% of property-tax growth (S.B. 268, S.B. 168)</td></tr>
+        <tr><td><b>2025</b></td><td>Income tax 4.55% to 4.50% (H.B. 106, $103M a year)</td><td>Gas tax rose 2¢, from 36.5¢ to 38.5¢ a gallon, on Jan. 1, 2025, under automatic indexing set by H.B. 362 (2015) · Salt Palace zone may keep 100% of local and 50% of state sales-tax growth for 30 years (S.B. 26) · Weber Fire District 23.58% increase proposed at a November 2025 hearing</td></tr>
+        <tr><td><b>2026</b></td><td>Income tax 4.50% to 4.45% (S.B. 60, $101M a year); gas tax set to 31.9¢ for July–Dec. (H.B. 575)</td><td>Alternative-fuel tax (CNG, LNG, hydrogen) rose from a 16.5¢ cap to 21.2¢ (H.B. 575) · Weber County 0.20% sales tax, about $13.1M a year · optional County Energy Excise Tax created (H.B. 507) · 67 local entities sought $93.58M in property-tax increases, including Roy 54.9%, Ogden Valley 512.6%, North View Fire 9.7%, Weber Basin Water 7% and South Ogden 10.3% (its fourth straight year)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src" style="margin-top:12px;"><b>For balance:</b> in 2025, the State Tax Commission denied property-tax increases from 35 cities, school districts and other entities ($49.87 million) for not following new procedure rules (S.B. 202 and S.B. 29). <span class="src">(Deseret News, Oct. 2, 2025)</span> The Legislature also expanded the Social Security tax credit each year from 2021 to 2025. <span class="src">(Utah House)</span> Amendment B would not change any item in the right-hand column; it applies only to statewide citizen initiatives.</p>
+  <p class="src">The full list of tax tools the Legislature created is on the <a href="utah-amendments-2026.html#tax-tools">amendments page</a>.</p>
+</section>
+
 <section id="process">
   <h2>How a citizen initiative gets to your ballot</h2>
   <p>Every step below exists today. Amendment B changes only the last box, for tax initiatives.</p>
@@ -507,8 +547,8 @@ flowchart TD
   F --> G["Voter pamphlet:<br>arguments for<br>and against"]
   G --> H{"Vote needed<br>to pass"}
   H -->|"No tax"| I["Simple majority"]
-  H -->|"Includes a tax change"| J["Today: simple majority<br>If B passes: 60%"]
-  I --> K["Legislature can still<br>amend it afterward"]
+  H -->|"Includes a tax increase"| J["Today: simple majority<br>If B passes: 60%"]
+  I --> K["Legislature can still amend it<br>(limits on government-reform<br>initiatives since 2024)"]
   J --> K
   </div>
   <p class="diagram-note">Sources: vote.utah.gov, "Instructions for a Statewide Initiative"; S.B. 73 (2025); S.J.R. 2 (2025).</p>
@@ -570,7 +610,7 @@ flowchart TD
     <table>
       <thead><tr><th>Bill / measure</th><th>What it did</th><th>Outcome</th></tr></thead>
       <tbody>
-        <tr><td>S.J.R. 2 (2025) — Fillmore / Kyle</td><td>Amendment B: 60% for citizen initiatives that include tax changes</td><td>Passed Senate 21–8, House 55–17–3; on Nov. 3, 2026 ballot</td></tr>
+        <tr><td>S.J.R. 2 (2025) — Fillmore / Kyle</td><td>Amendment B: 60% for citizen initiatives that include a tax increase, as S.J.R. 2 defines it</td><td>Passed Senate 21–8, House 55–17–3; on Nov. 3, 2026 ballot</td></tr>
         <tr><td>S.B. 73 (2025) — Fillmore</td><td>Initiatives must describe funding and any new tax; added publication rules (est. ~$1.4M) from 2027</td><td>Signed March 24, 2025</td></tr>
         <tr><td>Earlier 60% resolutions (2023, 2024)</td><td>Same idea as S.J.R. 2</td><td>Failed (KSL, Jan. 30, 2025)</td></tr>
         <tr><td>H.B. 3001 (2018 special session)</td><td>Replaced Prop 2, medical cannabis</td><td>Signed, Dec. 2018</td></tr>
@@ -645,6 +685,11 @@ flowchart TD
   <details class="sources">
     <summary>Sources (click to open)</summary>
     <ul>
+      <li><a href="https://house.utleg.gov/?p=16222">Utah House, "Utah's Tax Cut Streak: Six Years and $1.5 Billion"</a></li>
+      <li><a href="https://www.ksl.com/article/51606015/67-utah-taxing-entities-seeking-9358m-in-tax-hikes-between-them-taxpayers-group-says">KSL, "67 Utah taxing entities seeking $93.58M in tax hikes between them," Aug. 4, 2026</a></li>
+      <li><a href="https://www.deseret.com/utah/2025/10/02/utah-tax-officials-deny-tax-hikes-from-35-cities-school-districts-and-other-entities/">Deseret News, "Utah tax officials deny tax hikes from 35 cities, school districts and other entities," Oct. 2, 2025</a></li>
+      <li><a href="https://landline.media/magazine/fuel-tax-rate-changes-now-in-effect-across-the-country/">Land Line, fuel tax rate changes (Utah 36.5¢ to 38.5¢, Jan. 1, 2025)</a></li>
+      <li><a href="https://le.utah.gov/interim/2026/pdf/00001609.pdf">Office of Legislative Research, S.B. 247 (2026) analysis: fuel-tax indexing and 2023 temporary cut</a></li>
       <li><a href="https://le.utah.gov/Session/2025/bills/enrolled/SJR002.pdf">S.J.R. 2 (2025) enrolled text, le.utah.gov</a> (includes current Art. VI, Sec. 1 text)</li>
       <li><a href="https://le.utah.gov/constitutionalAmendment/2026/constitutionalamendments.pdf">2026 proposed constitutional amendments, le.utah.gov</a></li>
       <li><a href="https://le.utah.gov/xcode/constitution.html">Utah Constitution, le.utah.gov</a></li>
