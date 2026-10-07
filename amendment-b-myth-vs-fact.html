@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amendment B: Myth vs. Fact — The Weber County Hive</title>
+<meta name="description" content="Utah's Amendment B on the Nov. 3, 2026 ballot: what the text says, what a YES or NO vote does, and the most common claims checked against public records.">
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<style>
+  :root{
+    --bg:#FFFFFF; --soft:#F2F5FA; --soft-2:#E6ECF5;
+    --navy:#0F1F3D; --ink:#14213D; --ink-soft:#3E4C66;
+    --blue:#1D4ED8; --blue-dark:#1E3A8A; --line:#D5DCEA;
+    --myth:#B42318; --fact:#1E7B3C; --partly:#9A6700; --open:#5B4BB5; --nodoc:#5B6B87;
+    --max:880px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Source Sans 3',sans-serif;font-size:19px;line-height:1.6;}
+  a{color:var(--blue);}
+  a:hover{color:var(--blue-dark);}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif;color:var(--navy);margin:0;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  .topbar{background:var(--navy);color:#DCE4F2;padding:12px 20px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+  .topbar a{color:#DCE4F2;text-decoration:none;}
+  .topbar a:hover{color:#fff;}
+
+  header.mast{background:var(--navy);color:#fff;padding:44px 0 40px;border-bottom:6px solid var(--blue);}
+  .case-label{font-family:'IBM Plex Mono',monospace;font-size:14px;letter-spacing:.08em;color:#93C5FD;margin-bottom:12px;}
+  header.mast h1{color:#fff;font-size:clamp(34px,6vw,54px);line-height:1.08;margin-bottom:16px;}
+  .dek{font-size:21px;color:#DCE4F2;max-width:62ch;margin:0;}
+  .meta{margin-top:18px;font-size:15px;color:#AFC0DA;}
+
+  section{padding:44px 0;border-top:1px solid var(--line);}
+  section:first-of-type{border-top:none;}
+  h2{font-size:clamp(26px,4vw,34px);line-height:1.15;margin-bottom:14px;}
+  h3{font-size:22px;margin:22px 0 8px;}
+  p{margin:0 0 16px;}
+  .lead{font-size:20px;color:var(--ink-soft);}
+  .src{font-size:15px;color:var(--ink-soft);font-style:italic;}
+
+  .start-here{background:var(--soft);border-left:6px solid var(--blue);padding:22px 24px;margin:28px 0 0;}
+  .start-here h2{font-size:24px;margin-bottom:10px;}
+  .start-here p:last-child{margin-bottom:0;}
+  .kinder{background:#fff;border:2px dashed var(--line);padding:18px 20px;margin-top:16px;}
+  .kinder b{color:var(--blue-dark);}
+
+  .jump{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+  .jump a{font-size:15px;font-weight:700;text-decoration:none;background:var(--soft-2);color:var(--navy);padding:8px 14px;border-radius:999px;min-height:40px;display:inline-flex;align-items:center;}
+  .jump a:hover{background:var(--blue);color:#fff;}
+
+  blockquote.text{margin:16px 0;padding:20px 22px;background:var(--soft);border-left:6px solid var(--navy);font-size:19px;}
+  blockquote.text mark{background:#FDE68A;color:var(--ink);padding:0 3px;}
+  ol.triggers{margin:10px 0 0;padding-left:26px;}
+  ol.triggers li{margin-bottom:8px;}
+
+  .yesno{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:10px;}
+  .yesno .col{border:3px solid #000;padding:20px 22px;background:#fff;color:#000;}
+  .yesno .col.no{background:#000;color:#fff;}
+  .yesno h3{margin:0 0 12px;font-size:30px;color:inherit;font-family:'Source Sans 3',sans-serif;font-weight:800;letter-spacing:.02em;}
+  .yesno ul{margin:0;padding-left:20px;}
+  .yesno li{margin-bottom:10px;}
+  @media (max-width:640px){.yesno{grid-template-columns:1fr;}}
+
+  .tbl-wrap{overflow-x:auto;border:1px solid var(--line);margin-top:10px;}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:17px;}
+  th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
+  th{background:var(--navy);color:#fff;font-weight:700;}
+  tr.changed td{background:#FEF3C7;font-weight:700;}
+
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 6px;}
+  .filters button{font:inherit;font-size:15px;font-weight:700;border:2px solid var(--navy);background:#fff;color:var(--navy);padding:8px 14px;border-radius:999px;cursor:pointer;min-height:44px;}
+  .filters button[aria-pressed="true"]{background:var(--navy);color:#fff;}
+  .search{width:100%;max-width:440px;padding:12px 14px;font:inherit;font-size:17px;border:2px solid var(--line);margin-top:8px;}
+  .search:focus{outline:none;border-color:var(--blue);}
+  .count{font-size:15px;color:var(--ink-soft);margin:6px 0 0;}
+
+  .claims{display:flex;flex-direction:column;gap:16px;margin-top:16px;}
+  .claim{border:1px solid var(--line);border-left:8px solid var(--nodoc);background:#fff;padding:18px 20px;}
+  .claim[data-v="myth"]{border-left-color:var(--myth);}
+  .claim[data-v="fact"]{border-left-color:var(--fact);}
+  .claim[data-v="partly"]{border-left-color:var(--partly);}
+  .claim[data-v="open"]{border-left-color:var(--open);}
+  .claim .said{font-size:15px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px;}
+  .claim .quote{font-family:'Fraunces',Georgia,serif;font-size:22px;line-height:1.3;color:var(--navy);margin-bottom:10px;}
+  .verdict{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:4px 10px;margin-bottom:10px;}
+  .v-myth{background:var(--myth);} .v-fact{background:var(--fact);} .v-partly{background:var(--partly);} .v-open{background:var(--open);} .v-nodoc{background:var(--nodoc);}
+  .claim p{margin:0 0 10px;}
+  .claim p:last-child{margin-bottom:0;}
+
+  .mermaid{display:flex;justify-content:center;margin:18px 0;}
+  .mermaid svg{max-width:100% !important;height:auto;}
+  .diagram-note{font-size:15px;color:var(--ink-soft);text-align:center;}
+
+  #map{height:460px;border:1px solid var(--line);margin-top:12px;}
+  .map-key{font-size:15px;color:var(--ink-soft);margin-top:8px;}
+
+  .hypo{border:3px solid var(--navy);padding:18px 20px;margin-bottom:16px;}
+  .hypo .tag{display:inline-block;background:#D4A017;color:var(--navy);font-weight:800;font-size:14px;letter-spacing:.08em;padding:4px 10px;margin-bottom:8px;}
+
+  .people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .person{background:var(--soft);padding:16px 18px;border-top:4px solid var(--blue);}
+  .person h3{margin:0 0 6px;font-size:20px;}
+  .person p{font-size:17px;margin:0 0 8px;}
+  @media (max-width:640px){.people{grid-template-columns:1fr;}}
+
+  .qa{list-style:none;padding:0;margin:0;}
+  .qa li{padding:14px 0;border-bottom:1px solid var(--line);}
+  .qa .who{font-size:15px;font-weight:700;color:var(--blue-dark);text-transform:uppercase;letter-spacing:.05em;}
+
+  .sides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .sides > div{background:var(--soft);padding:16px 18px;}
+  @media (max-width:640px){.sides{grid-template-columns:1fr;}}
+
+  details{border:1px solid var(--line);padding:12px 16px;margin-bottom:10px;background:#fff;}
+  details summary{font-weight:700;cursor:pointer;min-height:32px;}
+  details.sources{background:var(--soft);}
+  details.sources ul{padding-left:20px;font-size:16px;}
+  details.sources li{margin-bottom:6px;}
+
+  footer{background:var(--navy);color:#AFC0DA;padding:28px 0;font-size:15px;}
+  footer a{color:#DCE4F2;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="index.html">← Transparency Docket</a>
+  <span>The Weber County Hive</span>
+</div>
+
+<header class="mast">
+  <div class="wrap">
+    <div class="case-label">CASE 2026-AMB-01 · ELECTIONS &amp; BALLOT MEASURES · UPDATED OCT. 6, 2026</div>
+    <h1>Amendment B: Myth vs. Fact</h1>
+    <p class="dek">What the amendment on your Nov. 3 ballot actually says, what a YES or a NO vote does, and the claims people are making about it, checked against the public record.</p>
+    <p class="meta">Built from the enrolled text of S.J.R. 2 (2025), the Utah Constitution, state election records and the questions readers raised. Commenters' names are not included.</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="start">
+  <div class="start-here">
+    <h2>Start here</h2>
+    <p>Today, a statewide <b>citizen initiative</b>, a law proposed by voters, passes with a simple majority. Amendment B would change the Utah Constitution so that an initiative that <b>includes</b> certain tax changes needs <b>at least 60%</b> of the vote instead.</p>
+    <p>It does not change the vote the Legislature needs to pass a tax, and it does not change any other kind of initiative.</p>
+    <div class="kinder">
+      <p><b>The very simple version:</b> Think of Utah as a classroom. The teachers (lawmakers) make rules if more than half of them agree. The students (voters) can also suggest a rule and pass it if more than half of them vote yes. Amendment B says that if the students' rule has anything to do with taxes, more than half isn't enough anymore: it takes 6 out of every 10 students. The teachers' rule stays the same.</p>
+    </div>
+  </div>
+  <nav class="jump" aria-label="Jump to section">
+    <a href="#text">The text</a>
+    <a href="#yesno">YES vs. NO</a>
+    <a href="#now-after">Now vs. after</a>
+    <a href="#claims">Myth vs. fact</a>
+    <a href="#process">How initiatives work</a>
+    <a href="#history">History</a>
+    <a href="#map-section">Map</a>
+    <a href="#scenarios">Scenarios</a>
+    <a href="#bills">Related bills</a>
+    <a href="#people">Who's connected</a>
+    <a href="#questions">Questions to ask</a>
+    <a href="#sources-section">Sources</a>
+  </nav>
+</section>
+
+<section id="text">
+  <h2>What the amendment actually says</h2>
+  <p>The question on your ballot:</p>
+  <blockquote class="text">"Shall the Utah Constitution be amended to require that citizen-proposed laws that increase taxes compared to existing law be approved by at least 60% of voters, instead of a simple majority?"</blockquote>
+  <p>The constitutional text it adds to Article VI, Section 1:</p>
+  <blockquote class="text">"…initiated legislation that is subject to a vote that occurs after November 1, 2026, shall be adopted upon approval of at least 60% of those voting on the legislation if the initiated legislation <mark>includes</mark>:
+    <ol class="triggers" type="A">
+      <li>the imposition of a new tax;</li>
+      <li>an expansion of an existing tax to include additional items or transactions subject to the tax;</li>
+      <li>an increase in an existing tax rate; or</li>
+      <li>for a property tax, a change to the tax rate that causes the tax rate to decrease less than it would under <mark>current law</mark>."</li>
+    </ol>
+  </blockquote>
+  <p>Two words carry a lot of weight. <b>"Includes"</b> means the rule turns on whether any of the four items appear in the initiative, not on whether taxes go up overall. <b>"Current law"</b> is not defined, and the text does not say when it is measured.</p>
+  <p>If approved by a simple majority of voters, it takes effect <b>Nov. 23, 2026</b>.</p>
+  <p class="src">Sources: S.J.R. 2 (2025) enrolled text, le.utah.gov; Lt. Governor's ballot certification.</p>
+</section>
+
+<section id="yesno">
+  <h2>If you vote YES. If you vote NO.</h2>
+  <p class="lead">Black and white: what each vote does, from the text.</p>
+  <div class="yesno">
+    <div class="col yes">
+      <h3>YES</h3>
+      <ul>
+        <li>The Utah Constitution is changed.</li>
+        <li>A statewide citizen initiative that <b>includes</b> a new tax, an expanded tax, a higher tax rate, or a property-tax rate that falls less than current law would, needs <b>at least 60%</b> to pass.</li>
+        <li>Applies to votes after Nov. 1, 2026. Takes effect Nov. 23, 2026.</li>
+        <li>Other initiatives still pass with a simple majority. Wildlife initiatives still need two-thirds.</li>
+        <li>The Legislature still passes taxes with a majority of each house.</li>
+        <li>Local property-tax increases, PIDs, MIDA and UIPA are not affected.</li>
+        <li>To change it later, the Legislature must propose a new amendment with two-thirds of each house, and voters must approve it.</li>
+      </ul>
+    </div>
+    <div class="col no">
+      <h3>NO</h3>
+      <ul>
+        <li>The Utah Constitution stays as it is.</li>
+        <li>Every statewide citizen initiative, including tax initiatives, still passes with a simple majority.</li>
+        <li>Wildlife initiatives still need two-thirds.</li>
+        <li>The Legislature still passes taxes with a majority of each house.</li>
+        <li>Local property-tax increases, PIDs, MIDA and UIPA are not affected.</li>
+        <li>A NO vote does not put any new limit on the Legislature.</li>
+        <li>The Legislature could propose a similar amendment again in a future session.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src" style="margin-top:14px;">Sources: S.J.R. 2 (2025) enrolled text; Utah Const. Art. VI, Secs. 1 and 22; Art. XXIII; State Democracy Research Initiative, Univ. of Wisconsin Law.</p>
+</section>
+
+<section id="now-after">
+  <h2>Now vs. after: one row changes</h2>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Who decides a tax</th><th>Now</th><th>If B passes</th></tr></thead>
+      <tbody>
+        <tr class="changed"><td>Citizen initiative that includes a tax change</td><td>Simple majority</td><td>60%</td></tr>
+        <tr><td>Citizen initiative, no tax</td><td>Simple majority</td><td>Same</td></tr>
+        <tr><td>Wildlife initiative</td><td>Two-thirds</td><td>Same</td></tr>
+        <tr><td>Citizen referendum on a law the Legislature passed</td><td>Simple majority</td><td>Same</td></tr>
+        <tr><td>Legislature passes a tax</td><td>Majority of each house, plus the governor</td><td>Same</td></tr>
+        <tr><td>Legislature amends a voter-passed initiative</td><td>Majority (limited for government-reform initiatives since July 2024)</td><td>Same</td></tr>
+        <tr><td>City, county or school district property-tax increase</td><td>Public notice and hearing, no vote</td><td>Same</td></tr>
+        <tr><td>County option sales tax (Weber County's 0.20%)</td><td>Commission vote, no ballot question</td><td>Same</td></tr>
+        <tr><td>PID, MIDA or UIPA board decisions</td><td>Board action, no public vote</td><td>Same</td></tr>
+        <tr><td>Local general obligation bond</td><td>Voter approval</td><td>Same</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src" style="margin-top:12px;">Sources: Utah Const. Art. VI, Secs. 1 and 22; S.J.R. 2; Utah Supreme Court, July 2024 (Prop 4 case); Truth in Taxation law; this docket's <a href="weber-hive-5th5th-sales-tax.html">CASE 2026-STAX-01</a>; MIDA and UIPA project-area records.</p>
+</section>
+
+<section id="claims">
+  <h2>Myth vs. fact</h2>
+  <p class="lead">Claims made in public discussion of Amendment B, from both sides, checked against the record. Names are left out; the claims are paraphrased or quoted as posted.</p>
+  <div class="filters" role="group" aria-label="Filter by verdict">
+    <button type="button" data-f="all" aria-pressed="true">All</button>
+    <button type="button" data-f="myth" aria-pressed="false">Myth</button>
+    <button type="button" data-f="fact" aria-pressed="false">Fact</button>
+    <button type="button" data-f="partly" aria-pressed="false">Partly true</button>
+    <button type="button" data-f="open" aria-pressed="false">Open question</button>
+    <button type="button" data-f="nodoc" aria-pressed="false">Not documented</button>
+  </div>
+  <label for="claim-search" class="mono" style="font-size:14px;">Search the claims</label><br>
+  <input id="claim-search" class="search" type="search" placeholder="Try: hunting, rural, California, MIDA">
+  <p class="count" id="claim-count"></p>
+
+  <div class="claims" id="claim-list">
+
+    <article class="claim" data-v="partly">
+      <div class="said">Claim</div>
+      <div class="quote">"Amendment B only applies to initiatives that raise taxes."</div>
+      <span class="verdict v-partly">Partly true</span>
+      <p>The 60% rule applies if an initiative <b>includes</b> any of four items. That covers tax increases, but it can also reach an initiative that lowers taxes overall if it includes a new tax, and a property-tax rate that goes down "less than it would under current law." The text never uses the word "net." <span class="src">(S.J.R. 2, items A and D)</span></p>
+    </article>
+
+    <article class="claim" data-v="myth">
+      <div class="said">Claim</div>
+      <div class="quote">"Amendment B puts a 60% requirement on all citizen initiatives."</div>
+      <span class="verdict v-myth">Myth</span>
+      <p>It applies only to initiatives that include one of the four tax changes. Every other statewide initiative still passes with a simple majority. <span class="src">(S.J.R. 2 enrolled text)</span></p>
+    </article>
+
+    <article class="claim" data-v="myth">
+      <div class="said">Claim</div>
+      <div class="quote">"We already require 60% for initiatives that change hunting."</div>
+      <span class="verdict v-myth">Myth</span>
+      <p>The bar for wildlife initiatives is higher than 60%. The Constitution says initiated legislation to "allow, limit, or prohibit the taking of wildlife" is adopted "upon approval of two-thirds of those voting." Amendment B leaves that in place. <span class="src">(Utah Const. Art. VI, Sec. 1, as printed in S.J.R. 2)</span></p>
+    </article>
+
+    <article class="claim" data-v="myth">
+      <div class="said">Claim</div>
+      <div class="quote">"There is no check on initiatives."</div>
+      <span class="verdict v-myth">Myth</span>
+      <p>Before signatures: Lt. Governor legal review; a cost estimate by the Office of the Legislative Fiscal Analyst; 7 public hearings in 7 regions with at least an hour of public comment each. Then signatures from 8% of active voters in at least 26 of 29 Senate districts, verified by county clerks. <span class="src">(vote.utah.gov)</span> Since 2025, sponsors must also explain funding and whether a new tax is needed. <span class="src">(S.B. 73)</span></p>
+      <p>After passage, the Legislature can amend or replace an initiative, as it did with Prop 2 (H.B. 3001, Dec. 2018) and Prop 3 (S.B. 96, Feb. 2019). Courts can also strike down an initiative like any statute. <span class="src">(KUTV; Ballotpedia)</span></p>
+    </article>
+
+    <article class="claim" data-v="partly">
+      <div class="said">Claim</div>
+      <div class="quote">"Bills go through many steps to fine-tune them. Initiatives don't."</div>
+      <span class="verdict v-partly">Partly true</span>
+      <p>True that initiatives don't get committee hearings or floor amendments, and voters must take the whole package YES or NO. But they do get the pre-ballot checks above, and the Legislature can amend any section after passage. <span class="src">(vote.utah.gov; KUTV; Ballotpedia)</span></p>
+    </article>
+
+    <article class="claim" data-v="myth">
+      <div class="said">Claim</div>
+      <div class="quote">"It's not the role of the people to legislate. Initiatives go against our Constitution."</div>
+      <span class="verdict v-myth">Myth</span>
+      <p>Utah's Constitution says: "The Legislative power of the State shall be vested in: (a) a Senate and House of Representatives… and (b) the people of the State of Utah." Initiatives are written into it. Amendment B itself keeps initiatives; it changes only the vote needed for tax measures. <span class="src">(Utah Const. Art. VI, Sec. 1; S.J.R. 2)</span></p>
+    </article>
+
+    <article class="claim" data-v="fact">
+      <div class="said">Claim</div>
+      <div class="quote">"Voting NO does not create more restriction on the Legislature."</div>
+      <span class="verdict v-fact">Fact</span>
+      <p>Correct. Rejecting B leaves the Legislature's threshold where it is. Neither amendment on the 2026 ballot changes the Legislature's vote requirement. <span class="src">(Utah News Dispatch, Sept. 28, 2026; Utah Const. Art. VI, Sec. 22)</span></p>
+    </article>
+
+    <article class="claim" data-v="fact">
+      <div class="said">Claim</div>
+      <div class="quote">"The Legislature's standard for raising taxes isn't changing."</div>
+      <span class="verdict v-fact">Fact</span>
+      <p>Correct. Bills pass with a majority of the members elected to each house, plus the governor or a veto override. B does not change that. <span class="src">(Utah Const. Art. VI, Sec. 22; S.J.R. 2)</span></p>
+    </article>
+
+    <article class="claim" data-v="myth">
+      <div class="said">Claim</div>
+      <div class="quote">"We can work on a supermajority for the Legislature later."</div>
+      <span class="verdict v-myth">Not as simple as it sounds</span>
+      <p>The Legislature's vote requirement is in the Constitution. Changing it takes a constitutional amendment, and in Utah only the Legislature can put one on the ballot, with two-thirds of each house. Citizens cannot start one. <span class="src">(Utah Const. Art. XXIII; State Democracy Research Initiative)</span></p>
+    </article>
+
+    <article class="claim" data-v="partly">
+      <div class="said">Claim</div>
+      <div class="quote">"It also makes it harder to reverse tax increases."</div>
+      <span class="verdict v-partly">Partly true</span>
+      <p>An initiative that simply repeals or cuts a tax is not on the list, so it still passes with a simple majority. The exceptions: a cut that also adds a new tax (a swap), or a property-tax cut smaller than current law would give. <span class="src">(S.J.R. 2, items A and D)</span></p>
+    </article>
+
+    <article class="claim" data-v="open">
+      <div class="said">Claim</div>
+      <div class="quote">"Replacing one tax with a smaller one isn't a 'new tax.'"</div>
+      <span class="verdict v-open">Open question</span>
+      <p>The text says the 60% applies if an initiative "includes… the imposition of a new tax." It does not say "net increase." If the replacement is a different kind of tax, it reads as a new tax on its face. How a court would treat a swap has not been decided. <span class="src">(S.J.R. 2)</span></p>
+    </article>
+
+    <article class="claim" data-v="open">
+      <div class="said">Claim</div>
+      <div class="quote">"When is 'current law' measured: at filing, at signatures, at qualification or on Election Day?"</div>
+      <span class="verdict v-open">Open question</span>
+      <p>The amendment does not define "current law" or say when it is measured. That matters if the Legislature changes a tax while an initiative is underway. <span class="src">(S.J.R. 2 enrolled text)</span></p>
+    </article>
+
+    <article class="claim" data-v="myth">
+      <div class="said">Claim</div>
+      <div class="quote">"Raising the bar to 60% makes sure it really is the will of the majority."</div>
+      <span class="verdict v-myth">Not what the math shows</span>
+      <p>Under 60%, a measure with 59% support fails, so 41% of voters decide the outcome. Example: if 1 million people voted, a simple majority is 500,001; 60% is 600,000, about 100,000 more yes votes. <span class="src">(S.J.R. 2; the 1 million figure is an illustration, not a turnout estimate)</span></p>
+    </article>
+
+    <article class="claim" data-v="fact">
+      <div class="said">Claim</div>
+      <div class="quote">"Outside groups fund, write and market initiatives."</div>
+      <span class="verdict v-fact">Fact, on both sides</span>
+      <p>Prop 2 (2018) was backed by the national Marijuana Policy Project. <span class="src">(KUTV, Dec. 2018)</span> Paid signature firms also work for candidates: circulators for Gathering Inc. and others were charged in 2025 over 2024 candidate petitions. <span class="src">(Utah AG, March 2025)</span> In-state institutions shape outcomes too: in 2018, Church leaders opposed Prop 2 and backed a compromise that the Legislature adopted. <span class="src">(Religion News Service; Salt Lake Tribune)</span></p>
+      <p>Donors to initiative campaigns are public at disclosures.utah.gov. Amendment B does not address where money comes from: a well-funded campaign can still reach 60%, and a grassroots one faces the same bar.</p>
+    </article>
+
+    <article class="claim" data-v="nodoc">
+      <div class="said">Claim</div>
+      <div class="quote">"Outside groups oppose B because they have tax initiatives planned."</div>
+      <span class="verdict v-nodoc">Not documented</span>
+      <p>No specific planned statewide tax initiative was found. Every statewide initiative must be filed with the Lt. Governor's office, so a planned one would be public record. The main group opposing B, Utahns Protecting Our Constitution, reported about $593,000 raised as of September 2026; its donors are public. <span class="src">(Utah News Dispatch, Sept. 28, 2026; vote.utah.gov)</span></p>
+    </article>
+
+    <article class="claim" data-v="partly">
+      <div class="said">Claim</div>
+      <div class="quote">"I don't want the Wasatch Front voting themselves things that rural counties pay for."</div>
+      <span class="verdict v-partly">Partly true</span>
+      <p>Most voters live on the Wasatch Front, and a 60% bar does give rural voters more weight against citizen tax initiatives. But an initiative already can't qualify without signatures from 8% of voters in 26 of 29 Senate districts, and hearings are required in regions including Bear River, Southeast and the Uintah Basin. <span class="src">(vote.utah.gov)</span></p>
+      <p>B does not change the Legislature, or state authorities acting in rural counties. MIDA's Stratos agreement in Box Elder County sets the energy tax at "at least 0.5%" for data center campuses and 6% for other users; UIPA's Tooele Valley plan sends 75% of new property-tax growth to UIPA for up to 40 years. Neither had a public vote. <span class="src">(MIDA–Box Elder interlocal agreement §6(a); UIPA Project Area Plan, Amendment #2)</span></p>
+    </article>
+
+    <article class="claim" data-v="myth">
+      <div class="said">Claim</div>
+      <div class="quote">"Most tax increases go to a vote of the people."</div>
+      <span class="verdict v-myth">Myth</span>
+      <p>Property-tax increases by cities, counties and school districts require a notice and hearing, not a vote. Weber County imposed a 0.20% county sales tax by commission vote, with no ballot question. <span class="src">(<a href="weber-hive-5th5th-sales-tax.html">CASE 2026-STAX-01</a>)</span> Utah PIDs carry about $5.267 billion in debt no voter approved. <span class="src">(State Auditor Tina Cannon)</span> School districts can issue lease revenue bonds without a vote; Alpine issued $201 million after S.B. 188 (2025). General obligation bonds still require a vote.</p>
+    </article>
+
+    <article class="claim" data-v="myth">
+      <div class="said">Claim</div>
+      <div class="quote">"Tax cuts never happen."</div>
+      <span class="verdict v-myth">Myth</span>
+      <p>The Legislature cut the state income-tax rate five times since 2018, from 4.95% to 4.45%. <span class="src">(Utah House, "Tax Cut Streak," house.utleg.gov)</span> On a median household income of $104,000, the 2026 cut of 0.05 points is about $52 a year. <span class="src">(Census via FRED, 2024)</span></p>
+    </article>
+
+    <article class="claim" data-v="fact">
+      <div class="said">Claim</div>
+      <div class="quote">"Citizens have voted for initiatives that carried taxes."</div>
+      <span class="verdict v-fact">Fact</span>
+      <p>In 2018, Medicaid expansion (53.3%) and medical cannabis (52.7%) both passed and both created new tax revenue. Under B, neither would have reached 60%. <span class="src">(2018 canvass, vote.utah.gov; Utah News Dispatch)</span></p>
+    </article>
+
+    <article class="claim" data-v="partly">
+      <div class="said">Claim</div>
+      <div class="quote">"Ruling by initiative is what got California into trouble."</div>
+      <span class="verdict v-partly">Different system</span>
+      <p>California lets citizens amend its state constitution by initiative. Utah does not; it allows statutory initiatives only, and the Legislature can amend them afterward. The last statewide citizen initiatives to reach Utah's ballot were in 2018. <span class="src">(State Democracy Research Initiative; Ballotpedia)</span></p>
+    </article>
+
+    <article class="claim" data-v="myth">
+      <div class="said">Claim</div>
+      <div class="quote">"Amendment B also needs 60% to pass."</div>
+      <span class="verdict v-myth">Myth</span>
+      <p>B needed two-thirds of each house to reach the ballot, and needs only a simple majority of voters to pass. <span class="src">(Ballotpedia, March 2025; S.J.R. 2)</span></p>
+    </article>
+
+    <article class="claim" data-v="myth">
+      <div class="said">Claim</div>
+      <div class="quote">"If it doesn't work, it's easy to undo."</div>
+      <span class="verdict v-myth">Myth</span>
+      <p>It becomes part of the Constitution. Undoing it takes a new amendment, which only the Legislature can propose, with two-thirds of each house, followed by a public vote. <span class="src">(Utah Const. Art. XXIII; State Democracy Research Initiative)</span></p>
+    </article>
+
+    <article class="claim" data-v="partly">
+      <div class="said">Claim</div>
+      <div class="quote">"With 3.5 million people, 1% is a big enough buffer to prove a majority."</div>
+      <span class="verdict v-partly">Right idea, wrong base</span>
+      <p>Utah has about 3.55 million people, but ballot math counts votes cast. Utah has about 1.76 million active voters (140,748 signatures = 8%). At 1 million votes, a 1-point margin is 10,000 votes; B's 60% requires about 100,000 more yes votes than a simple majority. <span class="src">(Gardner Policy Institute via KUTV; vote.utah.gov)</span></p>
+    </article>
+
+  </div>
+</section>
+
+<section id="process">
+  <h2>How a citizen initiative gets to your ballot</h2>
+  <p>Every step below exists today. Amendment B changes only the last box, for tax initiatives.</p>
+  <div class="mermaid">
+flowchart TD
+  A["Sponsors file with<br>the Lt. Governor"] --> B["Legal review<br>(can be rejected)"]
+  B --> C["Official cost estimate<br>by the Legislature's<br>fiscal analyst"]
+  C --> D["7 public hearings<br>in 7 regions"]
+  D --> E["~140,000 signatures<br>in 26 of 29<br>Senate districts"]
+  E --> F["County clerks<br>verify signatures"]
+  F --> G["Voter pamphlet:<br>arguments for<br>and against"]
+  G --> H{"Vote needed<br>to pass"}
+  H -->|"No tax"| I["Simple majority"]
+  H -->|"Includes a tax change"| J["Today: simple majority<br>If B passes: 60%"]
+  I --> K["Legislature can still<br>amend it afterward"]
+  J --> K
+  </div>
+  <p class="diagram-note">Sources: vote.utah.gov, "Instructions for a Statewide Initiative"; S.B. 73 (2025); S.J.R. 2 (2025).</p>
+</section>
+
+<section id="history">
+  <h2>History: initiatives and the Legislature</h2>
+  <div class="mermaid">
+flowchart TD
+  T1["Nov. 2018<br>Voters pass Props 2, 3, 4"] --> T2["Dec. 2018<br>Prop 2 replaced<br>(H.B. 3001)"]
+  T2 --> T3["Feb. 2019<br>Prop 3 replaced<br>(S.B. 96)"]
+  T3 --> T4["2020<br>Prop 4 rewritten<br>(S.B. 200)"]
+  T4 --> T5["Jan. 2020<br>Legislature repeals its<br>own tax reform after a<br>citizen referendum qualifies"]
+  T5 --> T6["2023 and 2024<br>Earlier versions of the<br>60% resolution fail"]
+  T6 --> T7["July 2024<br>Utah Supreme Court limits<br>changes to reform initiatives"]
+  T7 --> T8["Sept. 2024<br>Amendment D voided<br>(misleading ballot language)"]
+  T8 --> T9["March 2025<br>S.B. 73 signed;<br>S.J.R. 2 passes"]
+  T9 --> T10["Nov. 3, 2026<br>Amendment B on the ballot"]
+  </div>
+  <p class="diagram-note">Sources: KUTV; Ballotpedia; Salt Lake Tribune; KSL, Jan. 28, 2020 and Jan. 30, 2025; Utah News Dispatch; le.utah.gov.</p>
+</section>
+
+<section id="map-section">
+  <h2>Where taxes are decided without a public vote</h2>
+  <p>Amendment B raises the bar for citizen tax initiatives. These documented tax decisions in Utah involved no public vote, and B does not change them.</p>
+  <div id="map" role="region" aria-label="Map of Utah tax decisions made without a public vote"></div>
+  <p class="map-key">Click a marker for the record. Locations are approximate.</p>
+</section>
+
+<section id="scenarios">
+  <h2>What the text allows: hypothetical examples</h2>
+  <p class="lead">These are <b>not</b> pending proposals. Each applies the actual wording of S.J.R. 2 to a hypothetical initiative.</p>
+  <div class="hypo"><span class="tag">HYPOTHETICAL</span>
+    <h3 style="margin-top:4px;">Equalizing an energy tax</h3>
+    <p>Citizens propose charging data center campuses the same 6% energy tax other users pay in a MIDA project area, instead of "at least 0.5%." That is "an increase in an existing tax rate" (item C): 60%. <span class="src">(MIDA–Box Elder interlocal agreement §6(a))</span></p>
+  </div>
+  <div class="hypo"><span class="tag">HYPOTHETICAL</span>
+    <h3 style="margin-top:4px;">A tax swap that saves money</h3>
+    <p>An initiative drops a $500 million tax and adds a $400 million one, a $100 million net cut. It "includes" a new tax (item A): it appears to need 60%.</p>
+  </div>
+  <div class="hypo"><span class="tag">HYPOTHETICAL</span>
+    <h3 style="margin-top:4px;">Property-tax relief that isn't "enough"</h3>
+    <p>Citizens propose cutting a property-tax rate by 1% when current law would have cut it 2%. That is a rate that decreases "less than it would under current law" (item D): 60%.</p>
+  </div>
+  <div class="hypo"><span class="tag">HYPOTHETICAL</span>
+    <h3 style="margin-top:4px;">Ending a special exemption</h3>
+    <p>Citizens propose ending a sales-tax exemption that only one industry receives. That applies a tax to "additional items or transactions" (item B): 60%.</p>
+  </div>
+  <div class="sides" style="margin-top:20px;">
+    <div><h3 style="margin-top:0;">What supporters say</h3><p>The primary sponsor, Sen. Lincoln Fillmore, argued that 50.1% of voters shouldn't be able to raise taxes on the other 49.9%, and that lawmakers answer to voters at elections. He and Rep. Jason Kyle said B "leaves the decision with Utah voters while requiring broader agreement." The Utah Taxpayers Association supports it. <span class="src">(Utah News Dispatch, Sept. 28, 2026)</span></p></div>
+    <div><h3 style="margin-top:0;">What opponents say</h3><p>Utahns Protecting Our Constitution calls B an unnecessary, permanent change that weakens a tool citizens use to hold government accountable, noting the Legislature keeps a simple majority. <span class="src">(Utah News Dispatch, Sept. 28, 2026)</span></p></div>
+  </div>
+</section>
+
+<section id="bills">
+  <h2>Related bills and measures</h2>
+  <p>Legislation on initiatives, referendums and voter-approved taxes, from this project's research. Status is as recorded on le.utah.gov unless noted.</p>
+  <div class="tbl-wrap">
+    <table>
+      <thead><tr><th>Bill / measure</th><th>What it did</th><th>Outcome</th></tr></thead>
+      <tbody>
+        <tr><td>S.J.R. 2 (2025) — Fillmore / Kyle</td><td>Amendment B: 60% for citizen initiatives that include tax changes</td><td>Passed Senate 21–8, House 55–17–3; on Nov. 3, 2026 ballot</td></tr>
+        <tr><td>S.B. 73 (2025) — Fillmore</td><td>Initiatives must describe funding and any new tax; added publication rules (est. ~$1.4M) from 2027</td><td>Signed March 24, 2025</td></tr>
+        <tr><td>Earlier 60% resolutions (2023, 2024)</td><td>Same idea as S.J.R. 2</td><td>Failed (KSL, Jan. 30, 2025)</td></tr>
+        <tr><td>H.B. 3001 (2018 special session)</td><td>Replaced Prop 2, medical cannabis</td><td>Signed, Dec. 2018</td></tr>
+        <tr><td>S.B. 96 (2019)</td><td>Replaced Prop 3, Medicaid expansion; kept its sales tax</td><td>Signed, Feb. 2019</td></tr>
+        <tr><td>S.B. 200 (2020)</td><td>Made Prop 4's redistricting commission advisory</td><td>Passed; limited by Utah Supreme Court ruling, July 2024</td></tr>
+        <tr><td>S.B. 181 (2020) — Fillmore</td><td>"Local Referenda Amendments" (text not reviewed)</td><td>Enacting clause struck; died March 12, 2020</td></tr>
+        <tr><td>2019 tax reform law</td><td>Statewide tax changes</td><td>Repealed by the Legislature, Jan. 2020, after a citizen referendum qualified</td></tr>
+        <tr><td>H.B. 23 (2021) — Nelson</td><td>"Voter Referendum Amendments": changed referendum ballot timing and land-use referendum deadlines</td><td>See le.utah.gov</td></tr>
+        <tr><td>Amendment D (2024)</td><td>Would have let the Legislature amend or repeal any initiative</td><td>Voided by courts, Sept. 2024</td></tr>
+        <tr><td>S.B. 100 (2024) — Balderree</td><td>Extended signature window for revenue-bond referendums, 30 to 45 days</td><td>Signed March 19, 2024 (29–0, 70–0–5)</td></tr>
+        <tr><td>H.B. 354 (2024) — Clancy</td><td>Would have required voter approval of property-tax increases</td><td>Outcome not confirmed</td></tr>
+        <tr><td>S.B. 37 (2025) — Fillmore</td><td>Would have routed school districts' minimum basic levy through a state fund</td><td>Vetoed by Gov. Cox</td></tr>
+        <tr><td>S.B. 65 (2026) — Fillmore</td><td>Same idea as S.B. 37</td><td>Passed Senate 18–11; died in House Education unheard</td></tr>
+        <tr><td>S.B. 188 (2025) — Grover</td><td>Exempted reorganized school districts' lease revenue bonds from the cap (no vote)</td><td>Signed March 17, 2025</td></tr>
+        <tr><td>H.B. 332 (2026) — Auxier</td><td>Would have required a vote before school lease revenue bonds</td><td>Enacting clause struck; died March 6, 2026</td></tr>
+        <tr><td>Amendment A (2026)</td><td>Changes how proposed amendments are published</td><td>On Nov. 3, 2026 ballot</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="people">
+  <h2>Who's connected to the record</h2>
+  <div class="people">
+    <div class="person"><h3>Sen. Lincoln Fillmore</h3><p>Primary sponsor of S.J.R. 2 and S.B. 73 (2025); sponsor of S.B. 181 (2020), S.B. 37 (2025) and S.B. 65 (2026).</p><p><a href="https://weber-county-hive.github.io/Bill-Tracker/">Bill-Tracker</a> · <a href="https://weber-county-hive.github.io/Taxation/">Taxation</a></p></div>
+    <div class="person"><h3>Rep. Jason B. Kyle</h3><p>House sponsor of S.J.R. 2. Huntsville (Ogden Valley).</p><p><a href="https://weber-county-hive.github.io/candidates2026/">candidates2026</a></p></div>
+    <div class="person"><h3>Utah Taxpayers Association</h3><p>Supports Amendment B; president Billy Hesterman urged lawmakers to pass it in 2025.</p></div>
+    <div class="person"><h3>Utahns Protecting Our Constitution</h3><p>Political issues committee opposing B; executive director Elizabeth Rasmussen, who also leads Better Boundaries (2018 Prop 4). About $593,000 raised as of Sept. 2026.</p></div>
+    <div class="person"><h3>MIDA</h3><p>State authority with an appointed board; Stratos project area energy-tax terms set without a public vote.</p><p><a href="https://weber-county-hive.github.io/committees/weber-hive-committee-mida-disclosures.html">MIDA disclosures</a> · <a href="https://weber-county-hive.github.io/Unelected-Power/">Unelected-Power</a></p></div>
+    <div class="person"><h3>UIPA (Inland Port)</h3><p>State authority with an appointed board; Tooele Valley project area tax terms set without a public vote.</p><p><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-sb225.html">S.B. 225 water standard</a> · <a href="counting-the-jobs.html">Counting the Jobs</a></p></div>
+    <div class="person"><h3>PIDs</h3><p>About $5.267 billion in statewide debt, none approved by voters (State Auditor Tina Cannon).</p><p><a href="https://weber-county-hive.github.io/PIDS-Utah/">PIDS-Utah</a> · <a href="https://weber-county-hive.github.io/PIDS-Utah/nordic-village-case-file.html">Nordic Village</a></p></div>
+    <div class="person"><h3>Weber County Commission</h3><p>Imposed the 0.20% county sales tax by commission vote, no ballot question.</p><p><a href="weber-hive-5th5th-sales-tax.html">CASE 2026-STAX-01</a> · <a href="weber-county-tax-increases-since-2019.html">Tax increases since 2019</a></p></div>
+  </div>
+</section>
+
+<section id="questions">
+  <h2>Questions to ask, and whom to ask</h2>
+  <ul class="qa">
+    <li><div class="who">Sen. Lincoln Fillmore and Rep. Jason Kyle (sponsors)</div>Does a tax swap that lowers total taxes need 60% under "includes"? When is "current law" measured?</li>
+    <li><div class="who">Your state senator and representative</div>Would you support the same 60% bar for tax increases passed by the Legislature? Would you sponsor that amendment?</li>
+    <li><div class="who">Lt. Governor's office (elections)</div>Are any statewide tax initiatives currently filed or in signature gathering?</li>
+    <li><div class="who">Your county commission or city council</div>When did you last raise property taxes or a local option tax, and was there a public vote?</li>
+    <li><div class="who">Both campaigns</div>Who are your largest donors? (Check disclosures.utah.gov.)</li>
+  </ul>
+</section>
+
+<section id="rubric">
+  <h2>The collective questions</h2>
+  <p>Applied to Amendment B only, from the record above.</p>
+  <ul>
+    <li><b>Power:</b> Raises the vote needed for one kind of citizen lawmaking; the Legislature's and local bodies' thresholds don't change.</li>
+    <li><b>Transparency:</b> The ballot question says "increase taxes compared to existing law"; the text's trigger is "includes," and "current law" is undefined.</li>
+    <li><b>Financial accountability:</b> Adds protection against citizen tax initiatives; no added protection against taxes from the Legislature, local boards, PIDs, MIDA or UIPA.</li>
+    <li><b>Environmental impact:</b> No direct effect; measures funded by a new tax, such as resource protection, would face the 60% bar.</li>
+    <li><b>Community impact:</b> Rural voters gain weight against statewide tax initiatives; statewide majorities between 50% and 59.9% on covered measures would no longer prevail.</li>
+  </ul>
+</section>
+
+<section id="glossary">
+  <h2>Words to know</h2>
+  <details><summary>Initiative</summary><p>A law proposed by citizens, put on the ballot by signature petition, and adopted by voters.</p></details>
+  <details><summary>Referendum</summary><p>A citizen challenge to a law the Legislature or a local body already passed, put to voters by petition.</p></details>
+  <details><summary>Constitutional amendment</summary><p>A change to the Utah Constitution. In Utah, only the Legislature can propose one, with two-thirds of each house; voters then approve it by simple majority.</p></details>
+  <details><summary>Simple majority</summary><p>More than half of the votes cast on the question.</p></details>
+  <details><summary>Truth in Taxation</summary><p>Utah's process requiring notice and a public hearing before a taxing entity collects more property tax than its certified rate would generate. No public vote is required.</p></details>
+  <details><summary>PID</summary><p>Public Infrastructure District: a special district that can levy assessments and issue bonds for infrastructure inside its boundary.</p></details>
+</section>
+
+<section id="sources-section">
+  <details class="sources">
+    <summary>Sources (click to open)</summary>
+    <ul>
+      <li><a href="https://le.utah.gov/Session/2025/bills/enrolled/SJR002.pdf">S.J.R. 2 (2025) enrolled text, le.utah.gov</a> (includes current Art. VI, Sec. 1 text)</li>
+      <li><a href="https://le.utah.gov/constitutionalAmendment/2026/constitutionalamendments.pdf">2026 proposed constitutional amendments, le.utah.gov</a></li>
+      <li><a href="https://le.utah.gov/xcode/constitution.html">Utah Constitution, le.utah.gov</a></li>
+      <li><a href="https://vote.utah.gov/instructions-for-a-statewide-initiative/">vote.utah.gov: Instructions for a Statewide Initiative</a></li>
+      <li><a href="https://statedemocracy.law.wisc.edu/directdemocracy50-state/2023/utah/">State Democracy Research Initiative, Univ. of Wisconsin Law: Utah</a></li>
+      <li><a href="https://www.newsfromthestates.com/article/utah-lawmakers-want-higher-bar-ballot-initiatives-raise-taxes-will-voters-sign">Utah News Dispatch, Sept. 28, 2026</a></li>
+      <li><a href="https://news.ballotpedia.org/2025/03/10/utah-legislature-refers-a-constitutional-amendment-to-2026-ballot-that-would-require-initiatives-making-tax-changes-to-receive-a-60-vote-of-approval/">Ballotpedia, March 10, 2025</a></li>
+      <li><a href="https://news.ballotpedia.org/2025/03/13/utah-voters-to-decide-on-two-constitutional-amendments-regarding-ballot-measure-processes">Ballotpedia, March 13, 2025</a></li>
+      <li><a href="https://www.ksl.com/article/51240758/are-lawmakers-trying-to-balance-lawmaking-power-with-the-voters--or-take-it-away">KSL, Jan. 30, 2025</a></li>
+      <li><a href="https://utahnewsdispatch.com/?p=9457">Utah News Dispatch: S.B. 73 signed</a></li>
+      <li><a href="https://www.kpcw.org/state-regional/2025-03-11/utah-lawmakers-move-to-set-higher-bar-for-ballot-initiatives-but-voters-will-have-a-say-in-2026">KPCW, March 11, 2025</a></li>
+      <li><a href="https://kutv.com/news/local/utah-house-votes-to-replace-prop-2">KUTV: Legislature replaces Prop 2</a></li>
+      <li><a href="https://news.ballotpedia.org/2019/02/12/utah-governor-signs-law-changing-proposition-3-the-medicaid-expansion-initiative-approved-in-november-2018/">Ballotpedia: S.B. 96 replaces Prop 3</a></li>
+      <li><a href="https://sltrib.com/news/politics/2025/08/26/timeline-utahs-gerrymandering">Salt Lake Tribune: Prop 4 timeline</a></li>
+      <li><a href="https://www.newsfromthestates.com/article/amendment-d-ballot-language-was-misleading-voters-utah-supreme-court-affirms">Utah News Dispatch: Amendment D ruling</a></li>
+      <li><a href="https://www.ksl.com/article/46710300/its-official-utah-tax-reform-is-repealed">KSL: Utah tax reform repealed</a></li>
+      <li><a href="https://religionnews.com/2018/08/28/mormon-leaders-oppose-a-medical-marijuana-initiative-will-it-turn-the-tide-for-voters-in-utah/">Religion News Service, Aug. 28, 2018</a></li>
+      <li><a href="https://sltrib.com/news/politics/2018/09/17/lds-church-calls">Salt Lake Tribune, Sept. 17, 2018</a></li>
+      <li><a href="https://www.yahoo.com/news/utah-attorney-general-office-charges-012334352.html">Utah AG charges 11 defendants in signature gathering case</a></li>
+      <li><a href="https://le.utah.gov/~2020/bills/static/SB0181.html">S.B. 181 (2020)</a> · <a href="https://le.utah.gov/~2021/bills/hbillint/HB0023S02.htm">H.B. 23 (2021)</a> · <a href="https://le.utah.gov/~2024/bills/static/SB0100.html">S.B. 100 (2024)</a></li>
+      <li><a href="https://www.heraldextra.com/news/local/2024/jan/27/lawmakers-introduce-bills-on-bond-referendums-requiring-voter-approval-on-property-tax-increases/">Daily Herald, Jan. 27, 2024</a></li>
+      <li><a href="https://kutv.com/news/local/utahs-population-reaches-355-million-as-growth-continues-slowing-trend">KUTV: Utah population 3.55 million</a></li>
+      <li>MIDA–Box Elder County interlocal agreement, §6(a); UIPA Tooele Valley Project Area Plan, Amendment #2 (inlandportauthority.utah.gov)</li>
+      <li>Utah House, "Tax Cut Streak" (house.utleg.gov); State Auditor Tina Cannon on statewide PID debt</li>
+    </ul>
+  </details>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>The Weber County Hive · Independent accountability journalism from public records. This case file explains a ballot measure; it does not tell readers how to vote.</p>
+    <p><a href="index.html">← Back to the Transparency Docket</a></p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"'Source Sans 3', sans-serif",fontSize:'22px',primaryColor:'#F2F5FA',primaryTextColor:'#0F1F3D',primaryBorderColor:'#1D4ED8',lineColor:'#1E3A8A',secondaryColor:'#FFFFFF',tertiaryColor:'#FFFFFF',edgeLabelBackground:'#FFFFFF'},flowchart:{curve:'basis',padding:18,useMaxWidth:true}});}catch(e){}
+</script>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  try{
+    var map = L.map('map',{scrollWheelZoom:false}).setView([40.9,-112.0],8);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+    var pts = [
+      [41.85,-112.45,'MIDA Stratos Project Area (Box Elder County)','Energy tax "at least 0.5%" for data center campuses vs. 6% for other users. Approved by MIDA board (Apr. 24, 2026) and county consent (May 4, 2026). No public vote.'],
+      [40.72,-112.35,'UIPA Tooele Valley Project Area (Tooele County)','75% of new property-tax growth to UIPA for 25 years, extendable to 40 (~$51.6M projected). Board and county resolutions. No public vote. Project paused (Sept. 2026).'],
+      [41.12,-111.97,'MIDA Falcon Hill (Davis and Weber counties)','About $8.9M revenue in FY2025; $300,000 shared with six city and county partners.'],
+      [41.22,-111.97,'Weber County 0.20% sales tax','Imposed by commission vote, about $13.1M a year, with no ballot question (CASE 2026-STAX-01).'],
+      [40.36,-111.93,'Alpine School District lease revenue bonds','$201M issued after S.B. 188 (2025) exempted reorganized districts from the cap. No public vote.'],
+      [40.777,-111.888,'Utah Legislature (State Capitol)','Passes taxes with a majority of each house. Amendment B does not change this.']
+    ];
+    pts.forEach(function(p){
+      L.marker([p[0],p[1]]).addTo(map).bindPopup('<b>'+p[2]+'</b><br>'+p[3]);
+    });
+  }catch(e){ var m=document.getElementById('map'); if(m){m.innerHTML='<p style="padding:16px;">Map could not load. Locations: Box Elder (MIDA Stratos), Tooele (UIPA), Davis/Weber (MIDA Falcon Hill), Weber County (0.20% sales tax), Saratoga Springs/Eagle Mountain (Alpine bonds), State Capitol.</p>';} }
+})();
+
+(function(){
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#claim-list .claim'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.filters button'));
+  var search = document.getElementById('claim-search');
+  var count = document.getElementById('claim-count');
+  var filter = 'all';
+  function apply(){
+    var q = (search.value || '').toLowerCase().trim();
+    var shown = 0;
+    cards.forEach(function(c){
+      var okF = filter === 'all' || c.getAttribute('data-v') === filter;
+      var okQ = !q || c.textContent.toLowerCase().indexOf(q) !== -1;
+      var show = okF && okQ;
+      c.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    count.textContent = 'Showing ' + shown + ' of ' + cards.length + ' claims';
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){
+      filter = b.getAttribute('data-f');
+      buttons.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      apply();
+    });
+  });
+  search.addEventListener('input', apply);
+  apply();
+})();
+</script>
+</body>
+</html>

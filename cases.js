@@ -151,5 +151,25 @@ const CASES = [
     status: "documented",
     updated: "Sep 11, 2026",
     link: "tyson-eagle-mountain-closure.html"
+  },
+  {
+    caseNumber: "CASE 2026-AMB-01",
+    title: "Amendment B: Myth vs. Fact",
+    category: "Elections & Ballot Measures",
+    summary: "What the 60% amendment on the Nov. 3 ballot actually says, what a YES or a NO vote does, and two dozen public claims about it checked against the Constitution, the bill text and state records.",
+    officials: ["Lincoln Fillmore", "Jason B. Kyle"],
+    status: "documented",
+    updated: "Oct 6, 2026",
+    link: "amendment-b-myth-vs-fact.html"
+    },
+  {
+    caseNumber: "CASE 2026-AMD-01",
+    title: "The Amendments on Your Ballot, and How We Got Here",
+    category: "Elections & Ballot Measures",
+    summary: "Amendments A and B on the Nov. 3, 2026 ballot: what each does, YES vs. NO, how the 2018 initiatives, the 2024 court rulings and Amendment D led here, public comments checked against the record, and the tax and debt decisions voters never get to vote on.",
+    officials: ["Anthony Loubet", "Lincoln Fillmore", "Jason B. Kyle"],
+    status: "documented",
+    updated: "Oct 7, 2026",
+    link: "utah-amendments-2026.html"
   }
 ];

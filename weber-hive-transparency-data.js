@@ -270,5 +270,28 @@ const CASES = [
     updated: "Oct 5, 2026",
     link: "counting-the-jobs.html",
     pairWith: "CASE 2026-TYS-01"
+    },
+  {
+    caseNumber: "CASE 2026-AMB-01",
+    title: "Amendment B: Myth vs. Fact",
+    category: "Elections & Ballot Measures",
+    summary: "What the 60% amendment on the Nov. 3 ballot actually says, what a YES or a NO vote does, and two dozen public claims about it checked against the Constitution, the bill text and state records.",
+    officials: ["Lincoln Fillmore", "Jason B. Kyle"],
+    status: "documented",
+    published: "Oct 6, 2026",
+    updated: "Oct 6, 2026",
+    link: "amendment-b-myth-vs-fact.html"
+  },
+  {
+    caseNumber: "CASE 2026-AMD-01",
+    title: "The Amendments on Your Ballot, and How We Got Here",
+    category: "Elections & Ballot Measures",
+    summary: "Amendments A and B on the Nov. 3, 2026 ballot: what each does, YES vs. NO, how the 2018 initiatives, the 2024 court rulings and Amendment D led here, public comments checked against the record, and the tax and debt decisions voters never get to vote on.",
+    officials: ["Anthony Loubet", "Lincoln Fillmore", "Jason B. Kyle"],
+    status: "documented",
+    published: "Oct 7, 2026",
+    updated: "Oct 7, 2026",
+    link: "utah-amendments-2026.html",
+    pairWith: "CASE 2026-AMB-01"
   }
 ];
