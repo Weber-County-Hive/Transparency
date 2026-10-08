@@ -76,6 +76,21 @@
   .tcard2 dl{margin:0;} .tcard2 dt{font-weight:800;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px;}
   .tcard2 dd{margin:2px 0 0;font-size:17px;}
   @media (max-width:640px){.termcards{grid-template-columns:1fr;}}
+  .vvc{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin:12px 0;}
+  .vvc-card{border:2px solid var(--line);background:#fff;padding:16px 18px;}
+  .vvc-card h4{margin:0 0 4px;font-size:22px;color:var(--navy);}
+  .vvc-meta{margin:0 0 8px;font-size:16px;color:var(--ink-soft);}
+  .vvc-card dt{font-weight:800;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);margin-top:10px;}
+  .vvc-card dd{margin:2px 0 0;font-size:18px;}
+  .fof{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));margin:14px 0;}
+  .fof-card{border:2px solid var(--line);background:#fff;padding:16px 18px;}
+  .fof-q{font-size:20px;font-weight:700;margin:0 0 12px;}
+  .fof-n{display:inline-block;min-width:30px;color:var(--ink-soft);font-weight:800;}
+  .fof-btns{display:flex;gap:10px;}
+  .fof-btns button{flex:1;font-size:18px;font-weight:700;padding:10px;border:2px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;}
+  .fof-btns button:disabled{opacity:.5;cursor:default;}
+  .fof-ans{margin-top:12px;} .fof-ans p{font-size:18px;margin:6px 0 0;}
+  .fof-you{margin-left:10px;font-weight:700;}
   .tbl-wrap{overflow-x:auto;border:1px solid var(--line);margin-top:10px;}
   table{border-collapse:collapse;width:100%;min-width:560px;font-size:17px;}
   th,td{padding:12px 14px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;}
@@ -247,6 +262,8 @@
     <a href="#yesno">YES vs. NO</a>
     <a href="#charts">Charts &amp; tools</a>
     <a href="#timeline">How we got here</a>
+    <a href="#voters-vs-changes">What voters passed vs. what changed</a>
+    <a href="#fact-or-fiction">Fact or fiction?</a>
     <a href="#comments">Comments &amp; responses</a>
     <a href="#no-vote">What voters don't decide</a>
     <a href="#tax-tools">Tax tools they created</a>
@@ -556,11 +573,143 @@ flowchart TD
     <details><summary>Nov. 3, 2026: Amendments A and B on your ballot</summary><p>Both need a simple majority of voters to pass.</p></details>
   </div>
 
+  <h3 id="voters-vs-changes">What voters passed vs. what the Legislature changed</h3>
+  <p>Each 2018 initiative: what the law looked like before, what voters approved, and what happened after.</p>
+  <div class="vvc">
+    <div class="vvc-card">
+      <h4>Prop 2: medical cannabis</h4>
+      <p class="vvc-meta">Passed with 53% · No new tax</p>
+      <dl>
+        <dt>Before</dt><dd>2014 law let epilepsy patients possess certain CBD products, but "provided no legal in-state supply source" (NORML). In 2018, H.B. 195 allowed cannabis products for patients with "six months or less to live"; H.B. 197 (state growing) first failed 36–34 because it "needed 38 votes" (KSL), then passed later (NORML).</dd>
+        <dt>Voters passed</dt><dd>Home growing (6 plants) for patients over 100 miles from a dispensary; at least one dispensary per county; edibles; autoimmune disorders and "chronic or debilitating pain" as qualifying conditions. Fees were to cover about $1.4 million of ongoing costs; medical cannabis was exempt from sales tax (FOX 13, citing the Governor's budget office).</dd>
+        <dt>Legislature changed (H.B. 3001, Dec. 3, 2018)</dt><dd>No home growing; 5 licensed "pharmacies" with a pharmacist, plus a state central fill pharmacy; no edibles; flower only in blister packs; autoimmune disorders dropped and pain must last over two weeks without responding to conventional medicine; cities may zone pharmacies out of some areas (KSL; NORML).</dd>
+        <dt>Today</dt><dd>"Medical cannabis products are exempt from taxes, including the state sales tax" (Marijuana Policy Project).</dd>
+      </dl>
+    </div>
+    <div class="vvc-card">
+      <h4>Prop 3: Medicaid expansion</h4>
+      <p class="vvc-meta">Passed with about 53% · 0.15% statewide sales tax</p>
+      <dl>
+        <dt>Before</dt><dd>2015: the House voted down Gov. Herbert's "Healthy Utah" plan. 2016: H.B. 437 covered "a little more than sixteen thousand Utahns" in extreme poverty (KUER, March 8, 2016).</dd>
+        <dt>Voters passed</dt><dd>Coverage up to 138% of the poverty level; federal government pays 90%, Utah 10%; a 0.15% sales tax for Utah's share.</dd>
+        <dt>Legislature changed (S.B. 96, Feb. 11, 2019)</dt><dd>Coverage cut to 100% of the poverty level from April 1, 2019; Utah's share under that plan 30%, not 10% (Jurist); the full 0.15% tax kept (Ballotpedia). Fiscal analysts estimated a "two-year cost of $49 million," about five times Prop 3's projected $10.4 million shortfall (Salt Lake Tribune, Feb. 4, 2019), while giving up $103 million (FY2019) and $407 million (FY2020) in federal funds (S.B. 96 fiscal note).</dd>
+        <dt>After</dt><dd>The federal government rejected the cap and would not pay 90% below 138% (Deseret News, Aug. 22, 2019). Full expansion began January 2020 with a work requirement, suspended April 2020 and later removed (healthinsurance.org). H.B. 15 (2026) ends expansion sooner if the federal share drops below 90% (le.utah.gov).</dd>
+      </dl>
+    </div>
+    <div class="vvc-card">
+      <h4>Prop 4: independent redistricting</h4>
+      <p class="vvc-meta">Passed with 50.34% · No tax</p>
+      <dl>
+        <dt>Voters passed</dt><dd>An independent commission to draw maps and submit them to the Legislature; a ban on partisan gerrymandering.</dd>
+        <dt>Legislature changed (S.B. 200, 2020)</dt><dd>The commission became advisory, so the Legislature can ignore its maps; the partisan-gerrymandering ban was repealed (League of Women Voters).</dd>
+        <dt>After</dt><dd>July 2024: Utah Supreme Court protects government-reform initiatives from unlimited changes. Aug. 2025: district court rules the repeal unconstitutional and strikes the 2021 map (Ballotpedia). 2026: a Utah GOP-led initiative to repeal Prop 4 failed to qualify after signature withdrawals in Senate District 15 (Ballotpedia, March 28, 2026).</dd>
+      </dl>
+    </div>
+  </div>
+  <p class="src">If Amendment B had applied in 2018, only Prop 3 would have needed 60%. B applies to votes after Nov. 1, 2026 and does not reach back.</p>
+
+  <h3>The court in 2026</h3>
+  <ul>
+    <li><b>Jan. 2026:</b> S.B. 134 expands the Utah Supreme Court from 5 to 7 justices. Chief Justice Durrant told lawmakers the court had "essentially no backlog"; the Utah State Bar said the bills would "fundamentally remake the state's judicial system" (Salt Lake Tribune, Jan. 31, 2026).</li>
+    <li><b>April–May 2026:</b> Gov. Cox, Speaker Schultz and President Adams announce an investigation of Justice Diana Hagen, author of the 2024 Amendment D opinion; she resigns in May while the Utah GOP campaigns against her retention (Election Law Blog). Reports differ on the Judicial Conduct Commission's role.</li>
+    <li><b>June 17, 2026:</b> Jay Jorgensen (22–7) and Stephen Dent (25–4) confirmed to the new seats; neither had been a judge (KUER).</li>
+    <li><b>Aug. 2026:</b> Chief Justice Durrant retires Aug. 31. Matthew Bell (district judge since 2017) and Michael Menssen (no judicial experience) nominated Aug. 28 (KUER). With Justice Nielsen (2025), Gov. Cox would have appointed 5 of 7.</li>
+  </ul>
+
   <h3>The citizen side of the ledger</h3>
   <ul>
     <li><b>2019:</b> The Legislature passed S.B. 2001 (Dec. 12, 2019), raising the sales tax on food. Citizens turned in 152,000 referendum signatures, and the Legislature repealed the law on Jan. 27, 2020. (Ballotpedia)</li>
     <li><b>Utah Const. Art. I, Sec. 2:</b> "All political power is inherent in the people; and all free governments are founded on their authority for their equal protection and benefit, and they have the right to alter or reform their government as the public welfare may require." (Justia)</li>
   </ul>
+</section>
+
+<section id="fact-or-fiction">
+  <h2>Fact or fiction?</h2>
+  <p class="lead">Claims we keep seeing in the comments. Pick an answer, then see the record.</p>
+  <p class="count" id="fof-score" aria-live="polite"></p>
+  <div class="fof" id="fof-list">
+    <div class="fof-card" data-a="fiction">
+      <p class="fof-q"><span class="fof-n">1</span>Amendment B applies to every citizen initiative.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-myth">Fiction</span><span class="fof-you"></span><p>Only statewide citizen initiatives that include a tax increase, as S.J.R. 2 defines it. Other initiatives, tax-cut-only initiatives and referendums still need a simple majority.</p></div>
+    </div>
+    <div class="fof-card" data-a="fiction">
+      <p class="fof-q"><span class="fof-n">2</span>If B passes, the Legislature will also need 60% to raise taxes.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-myth">Fiction</span><span class="fof-you"></span><p>B changes nothing for lawmakers. Bills still pass with &quot;the majority of all the members elected to each house&quot; (Utah Const. Art. VI, Sec. 22): 38 of 75 and 15 of 29.</p></div>
+    </div>
+    <div class="fof-card" data-a="fact">
+      <p class="fof-q"><span class="fof-n">3</span>The Legislature needs a majority of all members, not just those present, to pass a bill.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-fact">Fact</span><span class="fof-you"></span><p>Art. VI, Sec. 22. In 2018 a cannabis bill failed 36–34 because it &quot;needed 38 votes, a constitutional majority&quot; (KSL).</p></div>
+    </div>
+    <div class="fof-card" data-a="fiction">
+      <p class="fof-q"><span class="fof-n">4</span>A statewide initiative can be put on a low-turnout, odd-year ballot.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-myth">Fiction</span><span class="fof-you"></span><p>It &quot;must be submitted to voters at a regular, general election&quot; (Utah Code 20A-7-203, -208), held in November of even-numbered years (20A-1-102).</p></div>
+    </div>
+    <div class="fof-card" data-a="fiction">
+      <p class="fof-q"><span class="fof-n">5</span>The governor can veto a law passed by initiative.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-myth">Fiction</span><span class="fof-you"></span><p>&quot;The governor may not veto a law adopted by the people&quot; (Utah Code 20A-7-212). The Legislature can amend it, though, by its normal majority.</p></div>
+    </div>
+    <div class="fof-card" data-a="fact">
+      <p class="fof-q"><span class="fof-n">6</span>The Legislature changed all three initiatives voters passed in 2018.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-fact">Fact</span><span class="fof-you"></span><p>Prop 2 by H.B. 3001 (Dec. 3, 2018), Prop 3 by S.B. 96 (Feb. 11, 2019), Prop 4 by S.B. 200 (2020).</p></div>
+    </div>
+    <div class="fof-card" data-a="fiction">
+      <p class="fof-q"><span class="fof-n">7</span>Prop 2, medical cannabis, raised taxes.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-myth">Fiction</span><span class="fof-you"></span><p>Fees were to cover most costs, and medical cannabis was made exempt from sales tax (Governor&#x27;s budget office fiscal statement, via FOX 13). It is still tax-exempt (Marijuana Policy Project).</p></div>
+    </div>
+    <div class="fof-card" data-a="fact">
+      <p class="fof-q"><span class="fof-n">8</span>The Legislature kept Prop 3&#x27;s full sales tax while cutting its coverage.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-fact">Fact</span><span class="fof-you"></span><p>S.B. 96 kept the 0.15% tax (Ballotpedia) and cut coverage from 138% to 100% of the poverty level until January 2020.</p></div>
+    </div>
+    <div class="fof-card" data-a="fact">
+      <p class="fof-q"><span class="fof-n">9</span>The Legislature&#x27;s Medicaid rewrite was projected to cost the state more at first.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-fact">Fact</span><span class="fof-you"></span><p>Fiscal analysts estimated a &quot;two-year cost of $49 million,&quot; about five times Prop 3&#x27;s projected $10.4 million shortfall (Salt Lake Tribune, Feb. 4, 2019).</p></div>
+    </div>
+    <div class="fof-card" data-a="fiction">
+      <p class="fof-q"><span class="fof-n">10</span>Voting yes on B will undo the 2018 initiatives.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-myth">Fiction</span><span class="fof-you"></span><p>B applies only to votes &quot;after November 1, 2026&quot; (S.J.R. 2 text). It doesn&#x27;t reach back.</p></div>
+    </div>
+    <div class="fof-card" data-a="fiction">
+      <p class="fof-q"><span class="fof-n">11</span>No state requires voters to pass anything by a supermajority.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-myth">Fiction</span><span class="fof-you"></span><p>Arizona&#x27;s Prop 132 (2022) requires 60% for initiatives that create a new tax (AZFamily). Florida has required 60% for constitutional amendments since 2006 (Axios).</p></div>
+    </div>
+    <div class="fof-card" data-a="fiction">
+      <p class="fof-q"><span class="fof-n">12</span>Salt Lake County alone can pass a statewide initiative.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-myth">Fiction</span><span class="fof-you"></span><p>It has about 34.5% of Utah&#x27;s people (USAFacts / U.S. Census, 2025). Initiatives also need signatures in 26 of 29 Senate districts.</p></div>
+    </div>
+    <div class="fof-card" data-a="fact">
+      <p class="fof-q"><span class="fof-n">13</span>Utah once required initiative signatures from 20 of its 29 counties.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-fact">Fact</span><span class="fof-you"></span><p>The Utah Supreme Court struck that rule down in Gallivan v. Walker (2002 UT 89) for diluting urban voters&#x27; power.</p></div>
+    </div>
+    <div class="fof-card" data-a="fiction">
+      <p class="fof-q"><span class="fof-n">14</span>Only Democrats voted against Amendment B in the Legislature.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-myth">Fiction</span><span class="fof-you"></span><p>The no votes included 2 Republican senators and 4 Republican representatives, plus every Democrat (Ballotpedia, March 10, 2025).</p></div>
+    </div>
+    <div class="fof-card" data-a="fiction">
+      <p class="fof-q"><span class="fof-n">15</span>A majority of voters could vote to take your house.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-myth">Fiction</span><span class="fof-you"></span><p>Utah&#x27;s Constitution bars it (Art. I, Sec. 22). Government can take property through eminent domain, for public use with just compensation, with no public vote (Utah Code 78B-6-501).</p></div>
+    </div>
+    <div class="fof-card" data-a="fact">
+      <p class="fof-q"><span class="fof-n">16</span>Utah&#x27;s Supreme Court grew from 5 to 7 justices in 2026.</p>
+      <div class="fof-btns"><button type="button" data-pick="fact">Fact</button><button type="button" data-pick="fiction">Fiction</button></div>
+      <div class="fof-ans" hidden><span class="verdict v-fact">Fact</span><span class="fof-you"></span><p>S.B. 134, signed January 2026 (Ballotpedia), over objections from the chief justice and the Utah State Bar (Salt Lake Tribune).</p></div>
+    </div>
+  </div>
+  <p class="src">Every answer is drawn from the comment cards and sources on this page. <a href="#comments">See the full comments →</a></p>
 </section>
 
 <section id="comments">
@@ -578,13 +727,124 @@ flowchart TD
   <p class="count" id="claim-count"></p>
 
   <div class="claims" id="claim-list">
+    <div class="claim" data-v="partly">
+      <div class="said">Facebook post · Oct. 8, 2026</div>
+      <div class="quote">"I know why Democrats hate Amendment B… Republicans have a supermajority at the legislature… initiatives are another route. Democrats can use out-of-state money, unions, and advocacy groups to sell tax-increasing agendas to Utahns."</div>
+      <span class="verdict v-partly">Partly; the record is broader</span>
+      <p><b>Votes on B:</b> S.J.R. 2 passed the Senate 21–8 and the House 55–17. The no votes included every Democrat plus 2 Republican senators and 4 Republican representatives (Ballotpedia, March 10, 2025).</p>
+      <p><b>Who raises taxes:</b> Democrats last controlled both the Legislature and the governor's office after the 1964 election (Utah History Encyclopedia); the last Democratic governor left office in 1985 (Utah State Capitol). The Legislature has passed at least 9 tax increases or new taxing powers since 2015, among them H.B. 362 (2015 fuel tax and indexing), S.B. 2001 (2019 food tax, repealed after a citizen referendum) and S.B. 169 (2024, 15% MIDA lodging tax). When it rewrote Prop 3 in 2019 it kept the full 0.15% sales tax (Ballotpedia).</p>
+      <p><b>The largest recent tax-increase initiative:</b> Our Schools Now (2018) raised over $2 million for a school tax. Top donors were Utah business leaders, including Gail Miller ($250,000), Vivint ($150,000), and Kem Gardner's family partnership, Zions and Karen Huntsman ($100,000 each); its chairman was a Zions Bank executive (disclosures.utah.gov). It ended in a deal with the Legislature.</p>
+      <p><b>Outside money:</b> out-of-state groups did fund the 2018 initiatives (KUER, Oct. 15, 2018). Outside money also reaches legislative races; see the outside-money card below.</p>
+    </div>
+
+    <div class="claim" data-v="fact">
+      <div class="said">Commenter · replying to another commenter</div>
+      <div class="quote">"In order for the legislature to pass a bill, an ABSOLUTE MAJORITY of the TOTAL MEMBERSHIP of BOTH HOUSES must vote for it… a citizens initiative is passed by a majority of THOSE VOTING… Despite that it still becomes law even though only a minority of Utahns voted for it."</div>
+      <span class="verdict v-fact">Right; context added</span>
+      <p><b>Right:</b> bills need "the majority of all the members elected to each house" (Utah Const. Art. VI, Sec. 22), 38 of 75 and 15 of 29, and a veto override needs two-thirds of each house (Art. VII, Sec. 8). In Feb. 2018 a cannabis bill (H.B. 197) first failed 36–34 because it "needed 38 votes, a constitutional majority" (KSL).</p>
+      <p><b>Context:</b> before any vote, initiative sponsors need signatures from 8% of active voters statewide (140,748 for 2026) and in 26 of 29 Senate districts. A statewide initiative "must be submitted to voters at a regular, general election" (Utah Code 20A-7-203, -208), held in November of even-numbered years (20A-1-102), so it always shares the ballot with a midterm or presidential race. "The governor may not veto a law adopted by the people," but the law takes effect 60 days after the next legislative session, and the Legislature can amend it by its normal majority (Utah Code 20A-7-212).</p>
+    </div>
+
+    <div class="claim" data-v="partly">
+      <div class="said">Commenter · response</div>
+      <div class="quote">"Only 14% of eligible Utah voters participate in odd-year elections… if you get citizen-led legislation on the ballot in an off-year, you only need 7% of eligible voters to side with you… The legislature still requires an absolute majority. Therefore, the standard is higher for them."</div>
+      <span class="verdict v-partly">Absolute-majority point right; off-year math doesn't apply</span>
+      <p><b>Right:</b> the Legislature counts all members elected, absences included; an initiative counts those voting.</p>
+      <p><b>Doesn't apply:</b> statewide initiatives go only on the even-year regular general election ballot (Utah Code 20A-7-203, -208; 20A-1-102), so there is no off-year scenario. Using the commenter's own turnout figures, a midterm initiative needs about 22% of eligible voters at a majority and about 26% at 60%; a presidential-year one about 30% and 36%. The turnout figures themselves were not checked.</p>
+      <p><b>Prop 2 correction:</b> Prop 2 did not raise a tax. Its fiscal statement showed fees covering about $1.4 million of ongoing costs and a sales-tax exemption costing about $1.6 million (FOX 13, citing the Governor's budget office). Medical cannabis is still exempt from sales tax (Marijuana Policy Project). Prop 3 did raise one: 0.15% statewide.</p>
+    </div>
+
+    <div class="claim" data-v="myth">
+      <div class="said">Commenter</div>
+      <div class="quote">"A yes vote will help to stop the horrendous mistake made in 2018."</div>
+      <span class="verdict v-myth">Not supported</span>
+      <p>B applies only to initiatives "subject to a vote that occurs after November 1, 2026" (S.J.R. 2 text, le.utah.gov). It does not reach back. The Legislature already changed all three 2018 initiatives (H.B. 3001, S.B. 96, S.B. 200). Going forward, only Prop 3, which included a tax, would have needed 60%; Prop 4 had no tax. See <a href="#voters-vs-changes">What voters passed vs. what changed</a>.</p>
+    </div>
+
+    <div class="claim" data-v="partly">
+      <div class="said">Commenter · replying to another commenter</div>
+      <div class="quote">"Ballot initiatives end up getting serious push from outside Utah… 50% is just too low a bar."</div>
+      <span class="verdict v-partly">Right for 2018; outside money also reaches candidates</span>
+      <p><b>2018 (KUER, Oct. 15, 2018):</b> Prop 3 raised nearly $2.3 million, "the vast majority" from The Fairness Project (Washington, D.C.). Prop 4 got more than $500,000 from the Texas-based Action Now Initiative. Prop 2 got more than $150,000 from the D.C.-based Marijuana Policy Project; its opponents, Drug Safe Utah, raised about $766,000, mostly from a handful of wealthy Utahns.</p>
+      <p><b>Candidates (disclosures.utah.gov):</b> Meta's PAC, Forge the Future Project, made $270,000 in independent expenditures in one day (June 11, 2026) for two legislative candidates. One New York donor gave $429,500 to Utah politics from 2022 to 2026, including $100,000 to Gov. Cox.</p>
+    </div>
+
+    <div class="claim" data-v="partly">
+      <div class="said">Commenter</div>
+      <div class="quote">"They've also restructured the judiciary last year against the objection of the chief justice and the UT bar association… They've already made ballot initiatives more difficult by requiring a certain number of signatures in 24/29 counties (which ended up sinking their own ballot measure to repeal Prop 4)…"</div>
+      <span class="verdict v-partly">Mostly right; two details off</span>
+      <p><b>Judiciary:</b> confirmed, but this year. S.B. 134 expanded the Supreme Court from 5 to 7 and was signed in January 2026. Chief Justice Matthew Durrant told lawmakers the court had "essentially no backlog," and the Utah State Bar said the bills would "fundamentally remake the state's judicial system" (Salt Lake Tribune, Jan. 31, 2026).</p>
+      <p><b>Signatures:</b> the rule uses Senate districts, not counties: 8% in 26 of 29. A county rule (20 of 29) was struck down in Gallivan v. Walker (2002 UT 89).</p>
+      <p><b>Prop 4 repeal:</b> right that the district rule sank it. The effort, led by Utah GOP chair Rob Axson, turned in over 200,000 signatures (160,000+ verified); withdrawals in Senate District 15 dropped it below 8% there (Ballotpedia, March 28, 2026). It was declared failed in April (Utah News Dispatch). It was a party initiative, not a Legislature measure.</p>
+    </div>
+
+    <div class="claim" data-v="open">
+      <div class="said">Commenter · two replies</div>
+      <div class="quote">"If 50.24% of the population decided it needed your house, do they have the right to take it from you? … I don't believe the government should be able to increase also without 100% tax payer sign off."</div>
+      <span class="verdict v-open">Opinion; records added</span>
+      <p><b>Your house:</b> voters can't take it; the Utah Constitution says "Private property shall not be taken or damaged for public use without just compensation" (Art. I, Sec. 22). Government can, through eminent domain, with no public vote, for uses listed in Utah Code 78B-6-501, including roads "including for access to a development," power lines, pipelines and power-plant sites.</p>
+      <p><b>Your taxes:</b> B adds no limit on the Legislature (majority of members elected) or on local governments, which can raise property taxes through Truth in Taxation hearings with no public vote, as Weber County did for its 7.25% increase. It applies only to citizen initiatives.</p>
+    </div>
+
+    <div class="claim" data-v="myth">
+      <div class="said">Commenter · posted on two threads</div>
+      <div class="quote">"I don't know of any citizen voting that requires a SUPER MAJORITY. It wasn't even a thing in the US Congress until they voted, internally, to change their own rules…"</div>
+      <span class="verdict v-myth">Not supported</span>
+      <p><b>Voter supermajorities exist:</b> Arizona's Prop 132 (2022) requires "any initiative that would create a new tax to receive 60% of the vote" and passed (AZFamily). Florida has required 60% for constitutional amendments since 2006; in 2024 its marijuana and abortion amendments won majorities and failed (Axios).</p>
+      <p><b>Not only rules:</b> the U.S. Constitution itself requires two-thirds to override a veto, ratify a treaty or convict on impeachment, and two-thirds of Congress plus three-fourths of the states to amend it. The Senate filibuster is a rule, as the commenter said.</p>
+    </div>
+
+    <div class="claim" data-v="partly">
+      <div class="said">Commenter · replying to R.B.</div>
+      <div class="quote">"All they'd have to do is say… 'We'd need to add a penny to everyone's annual tax to make this happen, so you need 60%…' The Utah Supreme Court, which they stacked with loyalists this year… Now they've picked 4 of 7 this year alone, and they even picked loyalists who've never even been judges before."</div>
+      <span class="verdict v-partly">Court facts confirmed; the 60% trigger works differently</span>
+      <p><b>Trigger:</b> 60% applies when "the initiated legislation includes" a tax increase (S.J.R. 2). The Legislature cannot add a tax to an initiative's text before the vote. The pressure point is S.B. 73 (2025): sponsors must describe how an initiative is funded, and the Lt. Governor can reject the description after consulting the Legislative Fiscal Analyst. The 60% is of votes, not signatures.</p>
+      <p><b>Court (confirmed):</b> S.B. 134 expanded the court to 7 (Ballotpedia). Justice Hagen resigned in May 2026 after Gov. Cox, Speaker Schultz and President Adams announced an investigation in April; the Utah GOP was campaigning against her retention (Election Law Blog). Chief Justice Durrant retired Aug. 31. Jay Jorgensen and Stephen Dent were confirmed June 17 (25–4, 22–7); neither had been a judge (KUER). Matthew Bell (district judge since 2017) and Michael Menssen (no judicial experience) were nominated Aug. 28 (KUER). Whether any are "loyalists" is a judgment, not a record.</p>
+      <p><b>Not checked:</b> "made up their own court," a second justice "up for retention," and the party-messaging claim.</p>
+    </div>
+
+    <div class="claim" data-v="fact">
+      <div class="said">J.T.'s reply to another commenter</div>
+      <div class="quote">"The wording clearly states 'any citizens initiative which includes new taxes or a raise in current taxes.' It would require a constitutional amendment for the legislature to change the wording."</div>
+      <span class="verdict v-fact">Mostly right; exact text added</span>
+      <p>The text requires "at least 60% of those voting on the legislation if the initiated legislation includes: the imposition of a new tax; an expansion of an existing tax to include additional items or transactions subject to the tax; an increase in an existing tax rate; or for a property tax, a change to the tax rate that causes the tax rate to decrease less than it would under current law" (2026 amendment booklet, le.utah.gov). Changing it would take another amendment: two-thirds of each house, then a majority of voters (Art. XXIII, Sec. 1). "New tax" is not defined in the text.</p>
+    </div>
+
+    <div class="claim" data-v="fact">
+      <div class="said">Commenter</div>
+      <div class="quote">"Misleading. Amendment B is not for every initiative."</div>
+      <span class="verdict v-fact">Right</span>
+      <p>B covers only statewide citizen initiatives that include a tax increase, as S.J.R. 2 defines it. Other initiatives, tax-cut-only initiatives and referendums still need a simple majority. The YES/NO graphic was corrected Oct. 7 (see <a href="#yesno">the dated note</a>).</p>
+    </div>
+
+    <div class="claim" data-v="partly">
+      <div class="said">Commenter</div>
+      <div class="quote">"What I want to see is county-by-county votes on initiatives… As it is Salt Lake County alone can overturn what the other 28 counties vote down."</div>
+      <span class="verdict v-partly">Not alone; a county rule was struck down</span>
+      <p>Salt Lake County has about 1.22 million of Utah's 3.54 million people, about 34.5% (USAFacts / U.S. Census, 2025), so it cannot reach 50% or 60% by itself. Utah once required initiative signatures in 20 of 29 counties; the Utah Supreme Court struck that down in Gallivan v. Walker (2002 UT 89), finding it was "diluting the power of urban registered voters and heightening the power of rural registered voters." Today's rule uses Senate districts, which have roughly equal populations.</p>
+    </div>
+
+    <div class="claim" data-v="open">
+      <div class="said">Commenters · three replies</div>
+      <div class="quote">"I don't trust the initiatives… initiatives need a higher threshold." / "This is a tough one." / "When a minority can VETO a bill that is NOT a democracy."</div>
+      <span class="verdict v-open">Opinions; scope and math added</span>
+      <p><b>Scope:</b> B raises the bar only for initiatives that include a tax increase; other initiatives and referendums are unchanged. Initiatives already face signature, funding-description (S.B. 73) and post-passage amendment checks. Amendment A is about how amendments are published, not initiative thresholds; it passed 70–0 and 29–0.</p>
+      <p><b>Math:</b> under B, 41% of voters could block a tax-increase initiative. Both sides on record: "Allowing 40% of the population to block some of these policies just doesn't seem right" (Utahns Protecting Our Constitution); "If you want to raise your neighbors' taxes, you should have broad support from your neighbors" (Sen. Fillmore and Rep. Kyle). Both in Axios, Oct. 7, 2026.</p>
+    </div>
+
+    <div class="claim" data-v="open">
+      <div class="said">Commenter</div>
+      <div class="quote">"I would like to see any initiative, whether it's citizen led or representative lead, that drives a penny of increase to the public to require 100% in favor… We are taxed to death."</div>
+      <span class="verdict v-open">Opinion; records added</span>
+      <p>No route to that exists on this ballot. A constitutional rule would have to start in the Legislature with two-thirds of each house (Art. XXIII, Sec. 1); citizens can't put amendments on the ballot. A 100% rule would let a single "no" stop any increase. For balance: the Legislature cut the income tax each year from 2022 to 2026 and passed at least 9 tax increases or new taxing powers since 2015 (see <a href="amendment-b-myth-vs-fact.html#cut-and-raised">cuts vs. increases</a>).</p>
+    </div>
     <div class="claim" data-v="fact">
       <div class="said">Follow-up question in the thread</div>
       <div class="quote">"How many tax increases has the Legislature passed?"</div>
       <span class="verdict v-fact">At least 9 since 2015 (not a full count)</span>
       <p>No official running total exists. From bills verified on le.utah.gov for this page, <b>7 raised a tax rate or created a new tax:</b> H.B. 362 (2015, fuel tax plus inflation indexing; House 44–29, Senate 20–8), S.B. 2001 (2019, food tax; repealed Jan. 2020 after a referendum), S.B. 169 (2024, MIDA 15% accommodations tax; Senate 20–4, House 65–2), S.B. 272 (2024, up to 0.5% Salt Lake City sales tax), S.B. 333 (2025, sporting-venue tax tool), S.B. 242 (2026, path to Weber County's 0.20% sales tax) and H.B. 575 (2026, alternative-fuel tax raised while the gas tax was set lower).</p>
       <p><b>2 created new taxing powers:</b> H.B. 562 (2024, UFAIR: energy up to 6%, telecom 3.5%, lodging up to 15%, up to 35 years) and S.B. 233 (2021, MIDA's PIDs may levy property tax).</p>
-      <p>Most other tools on this page (TIF zones, CRAs, PIDs) redirect existing tax money or let a local body decide, so they are not counted here. The same Legislature also cut the income tax each year from 2022 through 2026. See <a href="#tax-tools">Tax tools they created</a> and <a href="#cut-and-raised">cuts vs. increases</a>.</p>
+      <p>Most other tools on this page (TIF zones, CRAs, PIDs) redirect existing tax money or let a local body decide, so they are not counted here. The same Legislature also cut the income tax each year from 2022 through 2026. See <a href="#tax-tools">Tax tools they created</a> and <a href="amendment-b-myth-vs-fact.html#cut-and-raised">cuts vs. increases</a>.</p>
     </div>
 
     <div class="claim" data-v="fact">
@@ -1156,6 +1416,38 @@ flowchart TD
       <li><a href="https://www.ksl.com/article/51631261/proposed-amendment-would-raise-the-bar-for-some-utah-ballot-initiatives">KSL: Proposed amendment would raise the bar for some ballot initiatives</a></li>
       <li><a href="https://vote.utah.gov/wp-content/uploads/2023/09/Utah-Medical-Cannabis-Act-Combined-Files.pdf">vote.utah.gov: Utah Medical Cannabis Act (Prop 2) files and fiscal estimate</a></li>
       <li><a href="https://law.justia.com/constitution/utah/htm/CO_02003.html">Utah Const. Art. I, Sec. 2 (Justia)</a></li>
+      <li><a href="https://law.justia.com/constitution/utah/htm/CO_02023.html">Utah Const. Art. I, Sec. 22 (Justia)</a></li>
+      <li><a href="https://le.utah.gov/xcode/Title78B/Chapter6/C78B-6-P5_1800010118000101.pdf">Utah Code 78B-6, Part 5, Eminent Domain</a></li>
+      <li><a href="https://ebench-dev.greeninfo.org/state/utah/statute/20A-7-212">Utah Code 20A-7-212</a></li>
+      <li><a href="https://statedemocracy.law.wisc.edu/directdemocracy50-state/2023/utah/">UW State Democracy Research Initiative: Utah direct democracy</a></li>
+      <li><a href="https://le.utah.gov/~2022/bills/sbillenr/SB0019.htm">S.B. 19 (2022), Utah Code 20A-1-102 definitions</a></li>
+      <li><a href="https://le.utah.gov/constitutionalAmendment/2026/constitutionalamendments.pdf">Utah Legislature: 2026 Constitutional Amendments</a></li>
+      <li><a href="https://www.lawpipe.com/Utah/Gallivan_v_Walker.html">Gallivan v. Walker, 2002 UT 89 (summary)</a></li>
+      <li><a href="https://usafacts.org/answers/how-many-people-live-in-the-us/county/salt-lake-county-ut/">USAFacts: Salt Lake County population</a></li>
+      <li><a href="https://www.azfamily.com/2022/11/09/election-results-arizonas-10-ballot-measures">AZFamily: Arizona 2022 ballot results (Prop 132)</a></li>
+      <li><a href="https://www.axios.com/local/tampa-bay/2024/11/06/florida-60-percent-constitutional-amendments-weed-abortion">Axios: Why Florida requires 60%</a></li>
+      <li><a href="https://www.sltrib.com/news/politics/2026/01/31/court-packing-utah-gov-cox-gop/">Salt Lake Tribune: Utah to expand its Supreme Court (Jan. 31, 2026)</a></li>
+      <li><a href="https://news.ballotpedia.org/2026/05/27/how-gov-cox-is-reshaping-utahs-highest-court/">Ballotpedia News: How Gov. Cox is reshaping Utah's highest court</a></li>
+      <li><a href="https://www.kuer.org/politics-government/2026-06-17/senate-confirms-2-new-utah-supreme-court-justices-dismissing-experience-arguments">KUER: Senate confirms 2 new justices (June 17, 2026)</a></li>
+      <li><a href="https://www.kuer.org/news/2026-08-28/as-utah-supreme-court-grows-cox-picks-bell-and-menssen-stress-originalism">KUER: Cox picks Bell and Menssen (Aug. 28, 2026)</a></li>
+      <li><a href="https://electionlawblog.org/2026/supreme-court-justice-diana-hagen-resigns-amid-utah-legislatures-investigation/">Election Law Blog: Justice Hagen resigns</a></li>
+      <li><a href="https://news.ballotpedia.org/2026/03/28/utah-redistricting-initiative-to-repeal-proposition-4-will-not-be-on-the-2026-ballot-after-enough-voters-withdraw-their-signatures/">Ballotpedia News: Prop 4 repeal off the 2026 ballot</a></li>
+      <li><a href="https://utahnewsdispatch.com/2026/04/30/effort-to-repeal-prop-4-utah-anti-gerrymandering-law-officially-fails/">Utah News Dispatch: Prop 4 repeal officially fails</a></li>
+      <li><a href="https://www.kuer.org/utah-politics/2018-10-15/big-money-behind-utahs-big-ballot-questions">KUER: Big money behind Utah's big ballot questions (2018)</a></li>
+      <li><a href="https://www.ksl.com/article/news/utah/how-the-medical-marijuana-compromise-bill-differs-from-proposition-2/46401441">KSL: How the compromise bill differs from Prop 2</a></li>
+      <li><a href="https://norml.org/news/2018/04/05/utah-governor-signs-series-of-marijuana-related-bills/">NORML: Utah governor signs marijuana-related bills (2018)</a></li>
+      <li><a href="https://www.ksl.com/article/news/utah/utah-house-passes-right-to-try-bill-rejects-cannabis-growing-dispensing-measure/46257749">KSL: House passes right-to-try bill (2018)</a></li>
+      <li><a href="https://www.fox13now.com/2017/07/25/medical-marijuana-ballot-initiative-would-cost-taxpayers-3-million">FOX 13: Medical marijuana initiative fiscal analysis</a></li>
+      <li><a href="https://www.mpp.org/states/utah/summary-of-utahs-medical-cannabis-law/">Marijuana Policy Project: Utah's medical cannabis law</a></li>
+      <li><a href="https://www.kuer.org/health-care/2016-03-08/utah-senate-approves-limited-medicaid-expansion-sends-legislation-to-governor-herbert">KUER: Limited Medicaid expansion (2016)</a></li>
+      <li><a href="https://www.jurist.org/news/2019/02/utah-limits-medicaid-expansion-despite-voter-referendum">Jurist: Utah limits Medicaid expansion</a></li>
+      <li><a href="https://le.utah.gov/lfa/fnotes/2019/SB0096S04.fn.pdf">S.B. 96 (2019) fiscal note</a></li>
+      <li><a href="https://www.sltrib.com/news/politics/2019/02/04/utah-senate-readies-its/">Salt Lake Tribune: Senate approves Medicaid rewrite (Feb. 4, 2019)</a></li>
+      <li><a href="https://www.deseret.com/utah/2019/8/22/20828699/utah-full-medicaid-expansion-after-latest-federal-government-rejection">Deseret News: Full Medicaid expansion after federal rejection</a></li>
+      <li><a href="https://www.healthinsurance.org/medicaid/utah">healthinsurance.org: Medicaid in Utah</a></li>
+      <li><a href="https://le.utah.gov/Session/2026/bills/enrolled/HB0015.pdf">H.B. 15 (2026) Medicaid Amendments</a></li>
+      <li><a href="https://www.lwv.org/node/941834">League of Women Voters: Utah redistricting case</a></li>
+      <li><a href="https://uen.org/utah_history_encyclopedia/d/DEMOCRATIC_PARTY.shtml">Utah History Encyclopedia: Democratic Party</a></li>
       <li><a href="https://law.justia.com/constitution/utah/htm/CO_16002.html">Utah Const. Art. XXIII, Sec. 1 (Justia)</a></li>
       <li><a href="https://50constitutions.org/ut/constitution/section-22">Utah Const. Art. VI, Sec. 22</a></li>
       <li><a href="https://news.ballotpedia.org/2025/07/02/utah-voters-have-decided-220-ballot-measures-since-1895-beginning-with-constitution-ratification-ahead-of-statehood/">Ballotpedia News: Utah voters have decided 220 ballot measures since 1895</a></li>
@@ -1279,6 +1571,24 @@ try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily
     cnt.textContent='Showing '+n+' of '+cards.length;}
   btns.forEach(function(b){b.addEventListener('click',function(){t=b.getAttribute('data-t');btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});run();});});
   q.addEventListener('input',run);run();
+})();
+</script>
+<script>
+(function(){
+  var cards=document.querySelectorAll('#fof-list .fof-card'),score=document.getElementById('fof-score'),right=0,done=0;
+  function upd(){score.textContent=done?('You got '+right+' of '+done+' answered ('+cards.length+' total).'):cards.length+' claims. Tap Fact or Fiction on each.';}
+  cards.forEach(function(c){
+    c.querySelectorAll('button[data-pick]').forEach(function(b){
+      b.addEventListener('click',function(){
+        var ok=b.getAttribute('data-pick')===c.getAttribute('data-a');
+        c.querySelectorAll('button').forEach(function(x){x.disabled=true;});
+        b.style.background=ok?'var(--fact)':'var(--myth)';b.style.color='#fff';b.style.opacity='1';
+        c.querySelector('.fof-you').textContent=ok?'You got it.':'Not quite.';
+        c.querySelector('.fof-ans').hidden=false;done++;if(ok)right++;upd();
+      });
+    });
+  });
+  upd();
 })();
 </script>
 </body>
