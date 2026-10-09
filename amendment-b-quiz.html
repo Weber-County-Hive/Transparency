@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amendment B Quiz | The Weber County Hive</title>
+<meta name="description" content="Does Amendment B do what you think? 12 quick questions on Utah's 2026 Amendments A and B, each answered from the public record.">
+<meta property="og:title" content="Does Amendment B do what you think? Take the quiz.">
+<meta property="og:description" content="12 quick questions on Utah's 2026 Amendments A and B, each answered from the public record.">
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#FFFFFF;--soft:#F2F5FA;--navy:#0F1F3D;--ink:#14213D;--ink-soft:#3E4C66;--blue:#1D4ED8;--blue-dark:#1E3A8A;--line:#D5DCEA;--myth:#B42318;--fact:#1E7B3C;--max:760px;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Source Sans 3',Arial,sans-serif;font-size:20px;line-height:1.55;}
+  a{color:var(--blue);}
+  h1,h2{font-family:'Fraunces',Georgia,serif;color:var(--navy);margin:0;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 16px;}
+  .topbar{background:var(--navy);color:#DCE4F2;padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.06em;text-transform:uppercase;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+  .topbar a{color:#DCE4F2;text-decoration:none;}
+  header{background:var(--navy);color:#fff;padding:36px 0 32px;border-bottom:6px solid var(--blue);}
+  header h1{color:#fff;font-size:clamp(32px,7vw,48px);line-height:1.1;margin-bottom:12px;}
+  header p{color:#DCE4F2;font-size:21px;margin:0;}
+  main{padding:28px 0 60px;}
+  .progress{height:10px;background:var(--soft);border-radius:6px;overflow:hidden;margin-bottom:8px;}
+  .bar{height:100%;width:0;background:var(--blue);transition:width .3s;}
+  .count{font-family:'IBM Plex Mono',monospace;font-size:14px;color:var(--ink-soft);margin-bottom:18px;}
+  .card{border:2px solid var(--line);border-radius:12px;padding:22px 20px;background:#fff;}
+  .kind{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;}
+  .q{font-size:25px;font-weight:700;line-height:1.3;margin:0 0 18px;}
+  .opts{display:grid;gap:10px;}
+  .opt{display:block;width:100%;text-align:left;font:inherit;font-size:21px;font-weight:600;padding:14px 16px;border:2px solid var(--navy);border-radius:10px;background:#fff;color:var(--navy);cursor:pointer;}
+  .opt:hover:not(:disabled){background:var(--soft);}
+  .opt:disabled{cursor:default;opacity:.55;}
+  .opt.right{background:var(--fact);border-color:var(--fact);color:#fff;opacity:1;}
+  .opt.wrong{background:var(--myth);border-color:var(--myth);color:#fff;opacity:1;}
+  .ans{margin-top:16px;padding:14px 16px;border-left:6px solid var(--blue);background:var(--soft);border-radius:0 8px 8px 0;}
+  .ans .v{font-weight:800;font-size:21px;}
+  .ans p{margin:6px 0 0;}
+  .src{font-size:16px;color:var(--ink-soft);margin-top:6px;}
+  .next{margin-top:18px;font:inherit;font-size:21px;font-weight:800;padding:14px 22px;border:0;border-radius:10px;background:var(--blue);color:#fff;cursor:pointer;}
+  .next:hover{background:var(--blue-dark);}
+  .score{font-family:'Fraunces',Georgia,serif;font-size:56px;color:var(--navy);margin:6px 0;}
+  .compare{display:grid;gap:12px;margin:18px 0;}
+  .box{border:2px solid var(--line);border-radius:10px;padding:14px 16px;}
+  .box b{display:block;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:4px;}
+  .box.truth{border-color:var(--fact);}
+  ul.sum{padding-left:22px;} ul.sum li{margin-bottom:8px;}
+  footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:16px;color:var(--ink-soft);}
+  [hidden]{display:none!important;}
+</style>
+</head>
+<body>
+<div class="topbar"><a href="index.html">The Weber County Hive · Transparency</a><a href="utah-amendments-2026.html">Full case file: Amendments A &amp; B →</a></div>
+<header><div class="wrap">
+  <h1>Does Amendment B do what you think?</h1>
+  <p>12 quick questions. Every answer comes from the public record, with the source named. This quiz explains what the amendments do; it doesn't tell you how to vote.</p>
+</div></header>
+
+<main><div class="wrap">
+  <div class="progress"><div class="bar" id="bar"></div></div>
+  <div class="count" id="count"></div>
+  <div class="card" id="card">
+    <div class="kind" id="kind"></div>
+    <p class="q" id="q"></p>
+    <div class="opts" id="opts"></div>
+    <div class="ans" id="ans" hidden></div>
+    <button class="next" id="next" type="button" hidden>Next →</button>
+  </div>
+
+  <div id="done" hidden>
+    <h2>Your score</h2>
+    <div class="score" id="score"></div>
+    <div class="compare">
+      <div class="box"><b>You thought Amendment B</b><span id="thought"></span></div>
+      <div class="box truth"><b>What Amendment B actually does</b>Requires 60% of voters for a <b style="display:inline;font-family:inherit;letter-spacing:0;text-transform:none;color:inherit;font-size:inherit">statewide citizen initiative that includes a tax increase</b>: a new tax, a tax on more items, a higher rate, or a property-tax rate that falls less than current law would. It applies to votes after Nov. 1, 2026 (S.J.R. 2 text, le.utah.gov).</div>
+    </div>
+    <h2 style="font-size:26px;margin-top:22px">What B doesn't change</h2>
+    <ul class="sum">
+      <li>Initiatives that only cut a tax, or have nothing to do with taxes, still need a simple majority.</li>
+      <li>Referendums still need a simple majority.</li>
+      <li>The Legislature still raises taxes with "the majority of all the members elected to each house" (Utah Const. Art. VI, Sec. 22).</li>
+      <li>Local boards still raise property taxes through Truth in Taxation hearings, with no public vote.</li>
+    </ul>
+    <p><a href="utah-amendments-2026.html#fact-or-fiction"><b>Try Fact or Fiction: 20 claims from the comments →</b></a><br>
+    <a href="utah-amendments-2026.html"><b>Read the full case file →</b></a></p>
+    <button class="next" id="again" type="button">Take it again</button>
+  </div>
+</div></main>
+
+<footer><div class="wrap">
+  Sources: S.J.R. 2 (2025) and H.J.R. 10 (2025), 2026 constitutional amendment text, le.utah.gov; Utah Const. Art. VI, Sec. 22 and Art. XXIII, Sec. 1; H.B. 481 (2025) and Utah Code 63G-30-102; H.B. 362 (2015); S.B. 169 (2024); S.B. 2001 (2019) and Ballotpedia; KSL, Aug. 4, 2026; Prop 3 and Prop 4 (2018), Ballotpedia. No names or personal information are collected. We count only how many people finish and their scores.
+</div></footer>
+
+<script>
+(function(){
+  var PRE={kind:'Before you start',q:'What do you think Amendment B does?',opts:[
+    'Requires 60% for every citizen initiative',
+    'Requires 60% for any initiative that changes taxes, up or down',
+    'Requires 60% for statewide citizen initiatives that include a tax increase',
+    'Also requires the Legislature to get 60% to raise taxes']};
+  var A=['60% of voters','Simple majority of voters','No public vote at all'];
+  var Q=[
+   {k:'Would this need 60%?',q:'A citizen initiative that only cuts the sales tax on groceries.',o:A,c:1,
+    v:'Simple majority.',e:'Cutting a tax isn’t one of the four things that trigger 60%. Only a new tax, a tax on more items, a higher rate, or a smaller property-tax decrease do.',s:'S.J.R. 2 text, le.utah.gov'},
+   {k:'Would this need 60%?',q:'A citizen initiative that expands Medicaid and adds a 0.15% sales tax to pay for it, like Prop 3 in 2018.',o:A,c:0,
+    v:'60%.',e:'It includes a tax-rate increase. Prop 3 passed with about 53%, so under B it would have failed.',s:'Ballotpedia; S.J.R. 2'},
+   {k:'Would this need 60%?',q:'A citizen initiative that keeps a school district’s property-tax rate the same while home values rise.',o:A,c:0,
+    v:'60%. This one surprises people.',e:'Under Truth in Taxation the rate normally falls as values rise. Holding it steady makes it "decrease less than it would under current law," which is Part D of B, even though the rate never goes up.',s:'S.J.R. 2, Part D'},
+   {k:'Would this need 60%?',q:'A citizen initiative creating an independent redistricting commission, with no tax in it, like Prop 4 in 2018.',o:A,c:1,
+    v:'Simple majority.',e:'No tax, so B doesn’t apply. Prop 4 passed with 50.34%.',s:'Ballotpedia; S.J.R. 2'},
+   {k:'Would this need 60%?',q:'A citizen initiative that puts the sales tax on services that aren’t taxed today.',o:A,c:0,
+    v:'60%.',e:'That’s "an expansion of an existing tax to include additional items or transactions," Part B of the amendment.',s:'S.J.R. 2 text'},
+   {k:'Would this need 60%?',q:'A citizen initiative that cuts the income tax and raises the sales tax to replace the money.',o:A,c:0,
+    v:'60%.',e:'The rule asks whether the initiative "includes" a tax increase. A swap includes one, even if the total stays the same.',s:'S.J.R. 2 text'},
+   {k:'How does this tax go up?',q:'The Legislature raises the gas tax.',o:A,c:2,
+    v:'No public vote at all.',e:'Lawmakers decide with a majority of members, 38 House and 15 Senate votes. B doesn’t change that. The 2015 gas-tax law (H.B. 362) passed 44–29 and 20–8.',s:'Utah Const. Art. VI, Sec. 22; le.utah.gov'},
+   {k:'How does this tax go up?',q:'A county raises property taxes at a Truth in Taxation hearing.',o:A,c:2,
+    v:'No public vote at all.',e:'Local boards decide after a public hearing. In 2026, 67 local entities sought $93.58 million this way. B doesn’t touch it.',s:'KSL, Aug. 4, 2026'},
+   {k:'How does this tax go up?',q:'MIDA’s 15% lodging tax, with no end date.',o:A,c:2,
+    v:'No public vote at all.',e:'The Legislature created it in S.B. 169 (2024), passed 20–4 and 65–2.',s:'le.utah.gov'},
+   {k:'What would it take?',q:'Citizens file a referendum to repeal a tax increase the Legislature just passed, like the 2019 food tax.',o:A,c:1,
+    v:'Simple majority.',e:'B doesn’t change referendums. In 2019, 152,000 signatures led the Legislature to repeal the food tax (S.B. 2001) in January 2020.',s:'Ballotpedia'},
+   {k:'Amendment A',q:'If Amendment A passes, where would notice of proposed constitutional amendments be published?',o:['Newspapers in every county, as now','The Utah Public Notice Website, government websites and a physical posting','Nowhere'],c:1,
+    v:'Online and posted, not newspapers.',e:'A says notice runs "in a manner provided by statute" for 60 days. H.B. 481 sets that as a class A notice. It takes effect Jan. 1, 2027, only if A passes.',s:'H.J.R. 10; H.B. 481; Utah Code 63G-30-102'},
+   {k:'Amendment A',q:'If Amendment A passes, who could change how notice is given in the future?',o:['Only voters, by another amendment','The Legislature, by passing a regular law','The courts'],c:1,
+    v:'The Legislature, by regular law.',e:'"By statute" means a regular law, which the Legislature can change by majority. Today the newspaper rule is in the Constitution, which takes two-thirds of each house plus a vote of the people to change.',s:'H.J.R. 10; Utah Const. Art. XXIII, Sec. 1'}
+  ];
+  var i=-1,right=0,pre=null;
+  var $=function(id){return document.getElementById(id);};
+  function show(){
+    var it=i<0?PRE:Q[i];
+    $('kind').textContent=it.kind||it.k;
+    $('q').textContent=it.q;
+    $('count').textContent=i<0?'Warm-up question':'Question '+(i+1)+' of '+Q.length;
+    $('bar').style.width=(i<0?0:(i/Q.length*100))+'%';
+    $('ans').hidden=true;$('next').hidden=true;
+    var box=$('opts');box.innerHTML='';
+    (it.opts||it.o).forEach(function(t,n){
+      var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=t;
+      b.onclick=function(){pick(n,b);};box.appendChild(b);
+    });
+  }
+  function pick(n,btn){
+    var bs=$('opts').querySelectorAll('.opt');bs.forEach(function(x){x.disabled=true;});
+    if(i<0){pre=PRE.opts[n];btn.style.background='var(--navy)';btn.style.color='#fff';btn.style.opacity='1';
+      $('ans').innerHTML='<p>Got it. Let’s see how the record compares.</p>';$('ans').hidden=false;$('next').hidden=false;$('next').textContent='Start the quiz →';return;}
+    var it=Q[i],ok=n===it.c;if(ok)right++;
+    btn.classList.add(ok?'right':'wrong');if(!ok)bs[it.c].classList.add('right');
+    $('ans').innerHTML='<div class="v">'+(ok?'✓ Right: ':'✗ Not quite: ')+it.v+'</div><p>'+it.e+'</p><div class="src">Source: '+it.s+'</div>';
+    $('ans').hidden=false;$('next').hidden=false;$('next').textContent=i===Q.length-1?'See my score →':'Next →';
+  }
+  $('next').onclick=function(){i++;if(i>=Q.length){finish();}else{show();window.scrollTo({top:$('card').offsetTop-20,behavior:'smooth'});}};
+  function finish(){
+    $('card').hidden=true;$('bar').style.width='100%';$('count').textContent='Done';
+    $('done').hidden=false;$('score').textContent=right+' of '+Q.length;$('thought').textContent=pre||'(skipped)';
+    try{if(window.goatcounter&&window.goatcounter.count){window.goatcounter.count({path:'amendment-b-quiz-score-'+right,title:'Amendment B quiz score '+right+' of '+Q.length,event:true});}}catch(e){}
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  $('again').onclick=function(){i=-1;right=0;pre=null;$('done').hidden=true;$('card').hidden=false;show();};
+  show();
+})();
+</script>
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
