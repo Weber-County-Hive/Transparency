@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matt Brower, in Plain Words | Utah Hive Politics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --paper-dim:#F2F5FA;
+    --void:#0F1F3D;
+    --void-2:#1E3A8A;
+    --maroon:#1D4ED8;
+    --maroon-dim:#0F1F3D;
+    --ink:#14213D;
+    --ink-soft:#3E4C66;
+    --line:#D5DCE8;
+    --gold:#93C5FD;
+    --max:900px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3',sans-serif;
+    font-size:19px;
+    line-height:1.62;
+  }
+  ::selection{background:var(--maroon);color:var(--paper);}
+  a{color:var(--maroon);}
+  a:hover{color:var(--maroon-dim);}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);margin:0;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  .topbar{
+    background:var(--void);
+    color:var(--paper-dim);
+    padding:12px 24px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .topbar a{color:var(--paper-dim);text-decoration:none;opacity:.8;}
+  .topbar a:hover{opacity:1;color:#fff;}
+
+  header.masthead{
+    padding:72px 24px 48px;
+    border-bottom:3px solid var(--void);
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--maroon);
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--maroon);display:inline-block;}
+  h1.title{
+    font-size:clamp(32px,5.4vw,52px);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    max-width:780px;
+  }
+  h1.title em{font-style:italic;color:var(--maroon);}
+  .dek{
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:680px;
+    margin-top:20px;
+    line-height:1.5;
+  }
+  .byline{
+    margin-top:22px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.05em;
+    color:var(--ink-soft);
+  }
+
+  section.plain{
+    background:var(--paper-dim);
+    border-bottom:1px solid var(--line);
+    padding:48px 24px 52px;
+  }
+  section.plain .wrap{max-width:var(--max);}
+  section.plain .eyebrow{margin-bottom:24px;}
+  .chain{list-style:none;margin:0;padding:0;counter-reset:step;}
+  .chain li{
+    counter-increment:step;
+    position:relative;
+    padding:0 0 22px 46px;
+    font-size:19px;
+    color:var(--ink);
+  }
+  .chain li:last-child{padding-bottom:0;}
+  .chain li::before{
+    content:counter(step);
+    position:absolute;
+    left:0;top:0;
+    width:30px;height:30px;
+    border-radius:50%;
+    background:var(--maroon);
+    color:var(--paper);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .chain li::after{
+    content:"";
+    position:absolute;
+    left:14.5px;top:32px;
+    width:2px;height:calc(100% - 32px);
+    background:var(--line);
+  }
+  .chain li:last-child::after{display:none;}
+  .headline-claim{
+    margin-top:30px;
+    padding:22px 26px;
+    background:var(--void);
+    color:var(--paper);
+    font-family:'Fraunces',serif;
+    font-size:1.25rem;
+    font-style:italic;
+    border-left:5px solid var(--gold);
+  }
+
+  main{max-width:var(--max);margin:0 auto;padding:56px 24px 80px;}
+  section{margin-bottom:56px;}
+  section h2{
+    font-size:1.7rem;
+    border-bottom:2px solid var(--maroon);
+    padding-bottom:12px;
+    margin:0 0 22px;
+  }
+  section h3{
+    font-size:1.15rem;
+    font-family:'Fraunces',serif;
+    color:var(--maroon-dim);
+    margin:28px 0 10px;
+  }
+  p{margin:0 0 16px;}
+  ul{margin:0 0 16px;padding-left:24px;}
+  li{margin-bottom:6px;}
+
+  .fact{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--maroon);
+    padding:18px 22px;
+    margin:0 0 16px;
+    font-size:0.98rem;
+  }
+  .fact strong{color:var(--maroon-dim);}
+
+  table.timeline{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:0.95rem;}
+  table.timeline td{vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line);}
+  table.timeline td.date{white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:0.85rem;color:var(--maroon-dim);width:120px;}
+
+  .quote-card{
+    background:var(--void);
+    color:var(--paper);
+    padding:20px 24px;
+    margin:0 0 16px;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.05rem;
+  }
+  .quote-card cite{
+    display:block;
+    margin-top:12px;
+    font-style:normal;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.03em;
+    color:var(--gold);
+  }
+
+  details{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:16px 20px;
+    margin-bottom:12px;
+  }
+  summary{
+    cursor:pointer;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:0.85rem;
+    letter-spacing:.02em;
+    color:var(--maroon-dim);
+  }
+  details p{margin-top:14px;}
+
+  .support-note{
+    border:1px dashed var(--line);
+    padding:16px 20px;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+
+  .board-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:14px;
+  }
+  @media (max-width:640px){ .board-grid{grid-template-columns:1fr 1fr;} }
+  .flip-card{ perspective:1000px; height:280px; }
+  .flip-inner{
+    position:relative;
+    width:100%;height:100%;
+    transition:transform .5s;
+    transform-style:preserve-3d;
+    cursor:pointer;
+  }
+  .flip-card.is-flipped .flip-inner{transform:rotateY(180deg);}
+  .flip-front,.flip-back{
+    position:absolute;inset:0;
+    backface-visibility:hidden;
+    padding:18px;
+    display:flex;flex-direction:column;
+  }
+  .flip-front{
+    background:var(--void);
+    color:var(--paper);
+    justify-content:center;
+    border-left:4px solid var(--gold);
+  }
+  .flip-front .role-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .flip-front h3.name{
+    font-family:'Fraunces',serif;
+    font-size:1.2rem;
+    font-weight:600;
+    line-height:1.2;
+    color:var(--paper);
+    margin:0;
+  }
+  .flip-front .tap{
+    margin-top:auto;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--line);
+  }
+  .flip-back{
+    background:#fff;
+    border:1px solid var(--maroon);
+    border-left:4px solid var(--maroon);
+    transform:rotateY(180deg);
+    overflow-y:auto;
+    font-size:0.9rem;
+    line-height:1.45;
+    color:var(--ink);
+  }
+  .flip-back strong{color:var(--maroon-dim);}
+
+  footer.site-footer{
+    background:var(--void);
+    color:var(--paper-dim);
+    padding:40px 24px 50px;
+  }
+  footer.site-footer .wrap{display:flex;flex-direction:column;gap:14px;}
+  footer.site-footer h3{color:#fff;font-size:20px;}
+  footer.site-footer p{color:#C7D2E6;font-size:15px;max-width:620px;line-height:1.6;margin:0;}
+  footer.site-footer .links{display:flex;gap:22px;flex-wrap:wrap;margin-top:8px;}
+  footer.site-footer a{color:var(--gold);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.03em;}
+  footer.site-footer a:hover{color:#fff;}
+
+  @media(max-width:600px){
+    header.masthead{padding:48px 18px 32px;}
+    main{padding:40px 18px 60px;}
+    section.plain{padding:36px 18px 40px;}
+    table.timeline td{padding:10px 8px;}
+    table.timeline td.date{white-space:normal;width:92px;}
+  }
+  @media(max-width:480px){ .board-grid{grid-template-columns:1fr;} .flip-card{height:250px;} }
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
+</style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
+<div class="topbar">
+  <span>The Weber County Hive · Transparency</span>
+  <a href="index.html">← Transparency docket</a>
+</div>
+<header class="masthead">
+  <div class="eyebrow">In plain words · Heber City</div>
+  <h1 class="title">The Board Seat That <em>Never Came Up</em></h1>
+  <p class="dek">The short, simple version of our Matt Brower case file.</p>
+  <p class="hs-date">Plain words · Posted Oct. 17, 2026 · Updated Oct. 17, 2026</p>
+</header>
+<div class="wrap" style="padding-top:22px;">
+<div class="hs-plain">Want every detail and source? <a class="hs-btn" href="matt-brower.html">Read the full case file</a></div>
+<details class="hs-pages"><summary>Transparency pages (26) · tap to open</summary><ol><li><a href="index.html">Transparency docket</a><small>Every case file, searchable</small></li><li><a href="utah-amendments-2026.html">The 2026 Amendments</a> · <a href="utah-amendments-2026-plain.html">plain words</a><small>Amendments A and B on your ballot</small></li><li><a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> · <a href="amendment-b-myth-vs-fact-plain.html">plain words</a><small>Claims checked against the record</small></li><li><a href="amendment-b-quiz.html">Amendment B Quiz</a><small>Test what you know</small></li><li><a href="weber-housing-authority.html">Weber Housing Authority</a> · <a href="weber-housing-authority-plain.html">plain words</a><small>A commissioner, his wife and the authority that pays their company</small></li><li><a href="bramwell-odp-enforcement.html">What the Privacy Office Can and Can't Do</a> · <a href="bramwell-odp-enforcement-plain.html">plain words</a><small>Utah's Chief Privacy Officer</small></li><li><a href="counting-the-jobs.html">Counting the Jobs</a> · <a href="counting-the-jobs-plain.html">plain words</a><small>Job promises and what was reported</small></li><li class=cur><a href="matt-brower.html">Matt Brower</a> · <a href="matt-brower-plain.html">plain words</a><small>The board seat that never came up</small></li><li><a href="nilson-foundation.html">Ten Days</a> · <a href="nilson-foundation-plain.html">plain words</a><small>The Nilson Foundation's 501(c)(3) claim</small></li><li><a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> · <a href="sb258-preliminary-municipalities-plain.html">plain words</a><small>S.B. 258 and preliminary municipalities</small></li><li><a href="sitla-county-zoning-exemption.html">The Land Counties Can't Zone</a> · <a href="sitla-county-zoning-exemption-plain.html">plain words</a><small>Trust land and county zoning</small></li><li><a href="weber-hive-sitla-explainer.html">SITLA: The Land Nobody Zones</a> · <a href="weber-hive-sitla-explainer-plain.html">plain words</a><small>Who answers for trust land</small></li><li><a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> · <a href="tyson-eagle-mountain-closure-plain.html">plain words</a><small>Five years after opening</small></li><li><a href="utah-judicial-oversight.html">Behind the Bench</a> · <a href="utah-judicial-oversight-plain.html">plain words</a><small>Judge and lawyer complaints in Utah</small></li><li><a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> · <a href="waldrip-funding-threat-plain.html">plain words</a><small>A housing adviser in Heber City</small></li><li><a href="weber-county-tax-increases-since-2019.html">Every Weber County Property Tax Increase Since 2019</a> · <a href="weber-county-tax-increases-since-2019-plain.html">plain words</a><small>The full list</small></li><li><a href="weber-fire-district-annexation.html">A New Line on the Bill</a> · <a href="weber-fire-district-annexation-plain.html">plain words</a><small>Roy and Riverdale fire annexation</small></li><li><a href="weber-fire-district-growth.html">Paying for the Next Station</a> · <a href="weber-fire-district-growth-plain.html">plain words</a><small>How Weber Fire District funds growth</small></li><li><a href="weber-hive-5th5th-sales-tax.html">Weber County's New Sales Tax</a> · <a href="weber-hive-5th5th-sales-tax-plain.html">plain words</a><small>A public vote, but no vote by the public</small></li><li><a href="weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> · <a href="weber-hive-bait-and-switch-plain.html">plain words</a><small>Bait and switch, 2018 to 2026</small></li><li><a href="weber-hive-blank-box.html">The Blank Box</a> · <a href="weber-hive-blank-box-plain.html">plain words</a><small>Three disclosure forms, one pattern</small></li><li><a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> · <a href="weber-hive-enforcement-gap-plain.html">plain words</a><small>Complaints filed, few penalties</small></li><li><a href="weber-hive-gsl-two-money-pots.html">One Lake, Two Money Pots</a> · <a href="weber-hive-gsl-two-money-pots-plain.html">plain words</a><small>The Great Salt Lake Trust Council</small></li><li><a href="weber-hive-powder-mountain-water.html">Wells at the Top</a> · <a href="weber-hive-powder-mountain-water-plain.html">plain words</a><small>Powder Mountain's water</small></li><li><a href="weber-hive-then-vs-now.html">Then vs. Now</a> · <a href="weber-hive-then-vs-now-plain.html">plain words</a><small>Earlier plans and later approvals in Ogden Valley</small></li><li><a href="west-haven-energy-tax.html">West Haven's 6% Energy Tax</a> · <a href="west-haven-energy-tax-plain.html">plain words</a><small>A new line on the power bill</small></li></ol></details>
+
+</div>
+<main>
+<section>
+  <h2>Who is he?</h2>
+  <p>Matt Brower runs Heber City day to day. His title is City Manager. The City Council hires him. Voters do not elect him. He has had the job since 2018.</p>
+</section>
+<section>
+  <h2>What is CAMS?</h2>
+  <p>CAMS is short for the Community Alliance for Main Street. It is a nonprofit that runs downtown events in Heber, like the Heber Market on Main. Brower has sat on its board since 2019. Board members are volunteers.</p>
+</section>
+<section>
+  <h2>The contract</h2>
+  <p>Heber City agreed to pay CAMS $39,900 a year for three years. That is nearly $120,000 in all.</p>
+  <p>CAMS's board approved the deal first, on Jan. 13, 2026. Brower is on that board. A week later the City Council approved it, 5 to 0. The staff report that went to the Council was under Brower's name. The minutes say no conflicts were disclosed.</p>
+  <div class="hs-fig"><h3>Who voted on the deal</h3><p class="sub">From the case file's timeline and news reports.</p><div class="hs-bars"><div class="lab">CAMS board, Jan. 13 (all for)</div><div class="tr"><div class="fl alt" style="width:13.2%"></div><span class="v">unanimous</span></div><div class="lab">City Council, Jan. 20: for</div><div class="tr"><div class="fl" style="width:66.0%"></div><span class="v">5</span></div><div class="lab">City Council, Jan. 20: against</div><div class="tr"><div class="fl" style="width:1.0%"></div><span class="v">0</span></div><div class="lab">Council re-vote, April 21: for</div><div class="tr"><div class="fl" style="width:39.6%"></div><span class="v">3</span></div><div class="lab">Council re-vote, April 21: against</div><div class="tr"><div class="fl alt" style="width:26.4%"></div><span class="v">2</span></div></div></div>
+</section>
+<section>
+  <h2>Who signed?</h2>
+  <p>The contract says the Mayor signs for the City. But the signature page has no line for the Mayor. Only one person signed for the City: Brower.</p>
+  <div class="hs-fig"><h3>Both sides of the deal</h3><p class="sub">From the signed agreement and city records.</p>
+  <div class="mermaid">
+flowchart TD
+  MB["Matt Brower"]
+  MB --> C["Sits on the<br>CAMS board"]
+  MB --> H["Runs Heber City<br>as City Manager"]
+  C --> K["Contract:<br>$39,900 a year"]
+  H --> K
+  K --> S["Signed for the City<br>by Brower only"]
+  </div></div>
+</section>
+<section>
+  <h2>What happened next</h2>
+  <p>Someone sent a complaint to the Utah State Auditor. The office confirmed it is looking into it. On April 21, 2026, the City Council approved the contract a second time, 3 to 2, as a "sole source" deal.</p>
+  <p>Hundreds of residents signed a petition asking the Council not to renew Brower's own contract. The Council renewed it anyway, 4 to 2, on April 14. Not everyone opposed him. At least one resident wrote in support.</p>
+</section>
+<section>
+  <h2>Where CAMS stands with the state</h2>
+  <p>When we checked on Sept. 3, 2026, the state business registry listed CAMS as "Active, but Delinquent." That is the state's own label for a filing status. It may have changed since.</p>
+</section>
+<section>
+  <h2>Is this against the law?</h2>
+  <p>This page does not say it is. It puts the records side by side so you can see them for yourself. Some claims made in public comments are still unconfirmed.</p>
+</section>
+<section>
+  <div class="hs-plain">Ready for the details? <a class="hs-btn" href="matt-brower.html">Read the full case file</a> It has the full timeline, the CAMS board cards, the money questions and every source.</div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Sourced from Heber City Council records, the CAMS Professional Services Agreement, CAMS bylaws and financial statements, Utah Division of Corporations records and news reports. This page states what each record says; it does not characterize any finding as a legal violation.</p>
+  </div>
+</footer>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"Arial, sans-serif",fontSize:'22px',primaryColor:'#F2F5FA',primaryTextColor:'#0F1F3D',primaryBorderColor:'#1D4ED8',lineColor:'#1E3A8A',edgeLabelBackground:'#FFFFFF'},flowchart:{curve:'basis',padding:18,useMaxWidth:true}});}catch(e){}</script>
+</body>
+</html>

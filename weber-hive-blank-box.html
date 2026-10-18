@@ -6,17 +6,17 @@
 <title>The Blank Box: Three Disclosure Forms, One Pattern</title>
 <style>
   :root{
-    --paper:#F2EEE3;
-    --paper-2:#E9E3D3;
-    --ink:#1B2430;
-    --ink-soft:#4A5164;
-    --rule:#C9C0A8;
-    --brass:#A67C3D;
-    --brass-dark:#7A5A28;
-    --redact:#8C2E24;
-    --redact-bg:#F1DCD6;
-    --ok:#3C5E45;
-    --ok-bg:#DEE7DD;
+    --paper:#FFFFFF;
+    --paper-2:#F2F5FA;
+    --ink:#14213D;
+    --ink-soft:#3E4C66;
+    --rule:#D5DCE8;
+    --brass:#1D4ED8;
+    --brass-dark:#0F1F3D;
+    --redact:#B42318;
+    --redact-bg:#FDECEA;
+    --ok:#1E7B3C;
+    --ok-bg:#E8F5EC;
     --max:960px;
   }
   *{box-sizing:border-box;}
@@ -27,6 +27,7 @@
     font-family:'IBM Plex Sans',Georgia,serif;
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height:1.6;
+    font-size:19px;
   }
   @font-face{font-family:'dummy';src:local('a');}
   .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
@@ -40,7 +41,7 @@
     font-family:'IBM Plex Mono',monospace;
     font-size:12.5px;
     letter-spacing:0.14em;
-    color:var(--brass);
+    color:#93C5FD;
     margin:0 0 10px;
   }
   header.masthead h1{
@@ -52,15 +53,15 @@
     line-height:1.12;
   }
   header.masthead .dek{
-    font-size:16.5px;
-    color:#D8D3C4;
+    font-size:19px;
+    color:#E6ECF7;
     max-width:62ch;
     margin:0 0 18px;
   }
   header.masthead .byline{
     font-family:'IBM Plex Mono',monospace;
-    font-size:12px;
-    color:#9B9484;
+    font-size:13px;
+    color:#C7D2E6;
   }
   .topbar{
     background:var(--paper-2);
@@ -97,7 +98,7 @@
 
   .filecard{
     border:1px solid var(--rule);
-    background:#FBF9F2;
+    background:#FFFFFF;
     margin-bottom:18px;
     border-radius:2px;
   }
@@ -152,13 +153,13 @@
     border-left:3px solid var(--redact);
     background:var(--redact-bg);
     margin-bottom:7px;
-    font-size:14.5px;
+    font-size:17px;
   }
-  .missing li b{display:block;font-size:14.5px;margin-bottom:2px;}
-  .missing li span{color:var(--ink-soft);font-size:13px;}
+  .missing li b{display:block;font-size:17px;margin-bottom:2px;}
+  .missing li span{color:var(--ink-soft);font-size:16px;}
   .sourceline{
     font-family:'IBM Plex Mono',monospace;
-    font-size:11.5px;
+    font-size:13px;
     color:var(--ink-soft);
     margin-top:14px;
     padding-top:12px;
@@ -168,8 +169,8 @@
   table.compare{
     width:100%;
     border-collapse:collapse;
-    font-size:14px;
-    background:#FBF9F2;
+    font-size:16px;
+    background:#FFFFFF;
     border:1px solid var(--rule);
   }
   table.compare th{
@@ -178,7 +179,7 @@
     text-align:left;
     padding:10px 12px;
     font-weight:500;
-    font-size:12.5px;
+    font-size:14px;
     font-family:'IBM Plex Mono',monospace;
     letter-spacing:0.04em;
   }
@@ -197,27 +198,27 @@
     gap:16px;
   }
   .thread{
-    background:#FBF9F2;
+    background:#FFFFFF;
     border:1px solid var(--rule);
     border-top:4px solid var(--brass);
     padding:18px 20px;
     border-radius:2px;
   }
-  .thread h3{font-size:16.5px;margin-bottom:8px;}
-  .thread p{font-size:14px;margin:0;}
+  .thread h3{font-size:19px;margin-bottom:8px;}
+  .thread p{font-size:17px;margin:0;}
 
   footer{
     background:var(--ink);
     color:#B9B3A2;
     padding:30px 0;
     font-family:'IBM Plex Mono',monospace;
-    font-size:11.5px;
+    font-size:13px;
   }
-  footer a{color:var(--brass);}
+  footer a{color:#93C5FD;}
 
   .sources{background:var(--paper-2);}
   .sources h2{margin-bottom:8px;}
-  .sources .note{font-size:14px;color:var(--ink-soft);margin-bottom:22px;}
+  .sources .note{font-size:16px;color:var(--ink-soft);margin-bottom:22px;}
   .sourcegroup{margin-bottom:22px;}
   .sourcegroup h4{
     font-family:'IBM Plex Mono',monospace;
@@ -229,7 +230,7 @@
   .sourcegroup ol{margin:0;padding-left:20px;}
   .sourcegroup li{
     margin-bottom:8px;
-    font-size:14px;
+    font-size:16px;
     padding-left:2px;
   }
   .sourcegroup li a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--rule);}
@@ -243,12 +244,79 @@
 
   @media (max-width:640px){
     .filecard summary{flex-direction:column;align-items:flex-start;gap:8px;}
-    table.compare{font-size:12.5px;}
+    table.compare{font-size:15px;}
+    table.compare th,table.compare td{padding:8px 7px;}
   }
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
 </style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
 <div class="topbar">
   <div class="wrap">
     <a href="index.html">&larr; Transparency docket</a>
@@ -262,9 +330,22 @@
     <h1>The Blank Box: Three Disclosure Forms, One Pattern</h1>
     <p class="dek">Three officials in Wasatch County sit on overlapping nonprofit boards. Three separate conflict-of-interest disclosure forms, filed for three separate offices, each ask the same basic question &mdash; and each comes back with the same answer.</p>
     <p class="byline">The Weber County Hive &middot; Records review</p>
+    <p class="hs-date">CASE 2026-COI-01 · Posted Aug. 30, 2026 · Updated Oct. 17, 2026</p>
   </div>
 </header>
 
+<div class="wrap" style="padding-top:22px;">
+<div class="hs-plain">New to this? <a class="hs-btn" href="weber-hive-blank-box-plain.html">Read it in plain words</a> About 500 words, with simple charts.</div>
+<div class="hs-short" id="short"><b style="display:block;font-size:1.1rem;margin-bottom:8px;">Short version</b><ul>
+<li>Three Wasatch County officials filed conflict-of-interest forms in 2026 for three different offices.</li>
+<li>Two forms checked "no conflict" with every line blank. The third named one board.</li>
+<li>State corporate filings and other public records show board seats and businesses that are not on those forms: at least 5 for Erik Rowland, 4 for Dallin Koecher and 3 for Rachel Kahler.</li>
+<li>All three are tied to the same downtown nonprofit, the Community Alliance for Main Street (CAMS).</li>
+<li>This page compares what the forms say with what the records show. It does not say any law was broken.</li>
+</ul></div>
+<nav class="hs-toc" aria-label="On this page"><b style="width:100%;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;">On this page</b><a href="#short">Short version</a><a href="#forms">Three officials, three forms</a><a href="#side">Side by side</a><a href="#threads">Where the threads connect</a><a href="#checked">How these forms are checked</a><a href="#updates">Updates since this was posted</a><a href="#words">Words to know</a><a href="#ask">Questions to ask</a><a href="#connected">Connected Hive work</a><a href="#behind">Behind this piece</a><a href="#sources">Sources</a></nav>
+<details class="hs-pages"><summary>Transparency pages (26) · tap to open</summary><ol><li><a href="index.html">Transparency docket</a><small>Every case file, searchable</small></li><li><a href="utah-amendments-2026.html">The 2026 Amendments</a> · <a href="utah-amendments-2026-plain.html">plain words</a><small>Amendments A and B on your ballot</small></li><li><a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> · <a href="amendment-b-myth-vs-fact-plain.html">plain words</a><small>Claims checked against the record</small></li><li><a href="amendment-b-quiz.html">Amendment B Quiz</a><small>Test what you know</small></li><li><a href="weber-housing-authority.html">Weber Housing Authority</a> · <a href="weber-housing-authority-plain.html">plain words</a><small>A commissioner, his wife and the authority that pays their company</small></li><li><a href="bramwell-odp-enforcement.html">What the Privacy Office Can and Can't Do</a> · <a href="bramwell-odp-enforcement-plain.html">plain words</a><small>Utah's Chief Privacy Officer</small></li><li><a href="counting-the-jobs.html">Counting the Jobs</a> · <a href="counting-the-jobs-plain.html">plain words</a><small>Job promises and what was reported</small></li><li><a href="matt-brower.html">Matt Brower</a> · <a href="matt-brower-plain.html">plain words</a><small>The board seat that never came up</small></li><li><a href="nilson-foundation.html">Ten Days</a> · <a href="nilson-foundation-plain.html">plain words</a><small>The Nilson Foundation's 501(c)(3) claim</small></li><li><a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> · <a href="sb258-preliminary-municipalities-plain.html">plain words</a><small>S.B. 258 and preliminary municipalities</small></li><li><a href="sitla-county-zoning-exemption.html">The Land Counties Can't Zone</a> · <a href="sitla-county-zoning-exemption-plain.html">plain words</a><small>Trust land and county zoning</small></li><li><a href="weber-hive-sitla-explainer.html">SITLA: The Land Nobody Zones</a> · <a href="weber-hive-sitla-explainer-plain.html">plain words</a><small>Who answers for trust land</small></li><li><a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> · <a href="tyson-eagle-mountain-closure-plain.html">plain words</a><small>Five years after opening</small></li><li><a href="utah-judicial-oversight.html">Behind the Bench</a> · <a href="utah-judicial-oversight-plain.html">plain words</a><small>Judge and lawyer complaints in Utah</small></li><li><a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> · <a href="waldrip-funding-threat-plain.html">plain words</a><small>A housing adviser in Heber City</small></li><li><a href="weber-county-tax-increases-since-2019.html">Every Weber County Property Tax Increase Since 2019</a> · <a href="weber-county-tax-increases-since-2019-plain.html">plain words</a><small>The full list</small></li><li><a href="weber-fire-district-annexation.html">A New Line on the Bill</a> · <a href="weber-fire-district-annexation-plain.html">plain words</a><small>Roy and Riverdale fire annexation</small></li><li><a href="weber-fire-district-growth.html">Paying for the Next Station</a> · <a href="weber-fire-district-growth-plain.html">plain words</a><small>How Weber Fire District funds growth</small></li><li><a href="weber-hive-5th5th-sales-tax.html">Weber County's New Sales Tax</a> · <a href="weber-hive-5th5th-sales-tax-plain.html">plain words</a><small>A public vote, but no vote by the public</small></li><li><a href="weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> · <a href="weber-hive-bait-and-switch-plain.html">plain words</a><small>Bait and switch, 2018 to 2026</small></li><li class=cur><a href="weber-hive-blank-box.html">The Blank Box</a> · <a href="weber-hive-blank-box-plain.html">plain words</a><small>Three disclosure forms, one pattern</small></li><li><a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> · <a href="weber-hive-enforcement-gap-plain.html">plain words</a><small>Complaints filed, few penalties</small></li><li><a href="weber-hive-gsl-two-money-pots.html">One Lake, Two Money Pots</a> · <a href="weber-hive-gsl-two-money-pots-plain.html">plain words</a><small>The Great Salt Lake Trust Council</small></li><li><a href="weber-hive-powder-mountain-water.html">Wells at the Top</a> · <a href="weber-hive-powder-mountain-water-plain.html">plain words</a><small>Powder Mountain's water</small></li><li><a href="weber-hive-then-vs-now.html">Then vs. Now</a> · <a href="weber-hive-then-vs-now-plain.html">plain words</a><small>Earlier plans and later approvals in Ogden Valley</small></li><li><a href="west-haven-energy-tax.html">West Haven's 6% Energy Tax</a> · <a href="west-haven-energy-tax-plain.html">plain words</a><small>A new line on the power bill</small></li></ol></details>
+</div>
 <section class="tight">
   <div class="wrap startbox">
     <h3>How to read this</h3>
@@ -276,7 +357,7 @@
   </div>
 </section>
 
-<section>
+<section id="forms">
   <div class="wrap">
     <h2>Three officials, three forms</h2>
 
@@ -337,7 +418,7 @@
         <p>All three disclosure lines left blank. Notably, Kahler filed proper disclosures for her original 2019 Heber City Council run &mdash; this is a break from her own prior record, not a first-time omission.</p>
         <h4>Confirmed but not on the form</h4>
         <ul class="missing">
-          <li><b>CAMS Executive Director</b><span>Paid position, roughly $40,000/year, three-year Heber City contract</span></li>
+          <li><b>CAMS Executive Director</b><span>Paid position, roughly $40,000/year, three-year Heber City contract</span><span style="display:block;margin-top:4px;">Added Oct. 17, 2026: the Park Record reported the contract at $39,900 a year, no benefits (April 24, 2026).</span></li>
           <li><b>Red White and Blue Festival Inc.</b><span>Director, on a board shared with Matt Brower and Dallin Koecher</span></li>
           <li><b>5 In The Hive, LLC</b><span>Sole Manager and registered agent. Stated purpose, per its Certificate of Organization: "to acquire, own, sell, and otherwise manage real estate investments"</span></li>
         </ul>
@@ -348,7 +429,7 @@
   </div>
 </section>
 
-<section>
+<section id="side">
   <div class="wrap">
     <h2>Side by side</h2>
     <table class="compare">
@@ -377,10 +458,27 @@
         <td>Paid CAMS role, 1 nonprofit board, 1 real estate LLC</td>
       </tr>
     </table>
+    <div class="hs-fig" style="margin-top:22px;"><h3>Listed on the form vs. found in other records</h3><p class="sub">Board seats and businesses. From each official's 2026 form and Utah Division of Corporations filings.</p>
+<div class="hs-bars"><div class="lab">Rowland: on form</div><div class="tr"><div class="fl" style="width:1.0%"></div><span class="v">0</span></div><div class="lab">Rowland: found, not on form</div><div class="tr"><div class="fl alt" style="width:66.0%"></div><span class="v">5</span></div><div class="lab">Koecher: on form</div><div class="tr"><div class="fl" style="width:13.2%"></div><span class="v">1</span></div><div class="lab">Koecher: found, not on form</div><div class="tr"><div class="fl alt" style="width:52.8%"></div><span class="v">4</span></div><div class="lab">Kahler: on form</div><div class="tr"><div class="fl" style="width:1.0%"></div><span class="v">0</span></div><div class="lab">Kahler: found, not on form</div><div class="tr"><div class="fl alt" style="width:39.6%"></div><span class="v">3</span></div></div></div>
+    <div class="hs-fig"><h3>Where the threads connect</h3><p class="sub">From state corporate filings and the forms above.</p>
+    <div class="mermaid">
+flowchart TD
+  CAMS["CAMS<br>Community Alliance<br>for Main Street"]
+  RW["Erik Rowland<br>CAMS board"] --> CAMS
+  DK["Dallin Koecher<br>CAMS director"] --> CAMS
+  RK["Rachel Kahler<br>CAMS executive director"] --> CAMS
+  DK --> RWB["Red White and Blue<br>Festival Inc."]
+  RK --> RWB
+  MB["Matt Brower"] --> RWB
+  CAMS --> ADDR["One registered address<br>in Heber City"]
+  RWB --> ADDR
+  ART["Wasatch County<br>Arts Council"] --> ADDR
+    </div></div>
+
   </div>
 </section>
 
-<section>
+<section id="threads">
   <div class="wrap">
     <h2>Where the threads connect</h2>
     <div class="threads">
@@ -393,8 +491,8 @@
         <p>Kahler, Matt Brower, and Dallin Koecher all sit together on Red White and Blue Festival Inc.'s board &mdash; the same three names tangled in the CAMS disclosure questions.</p>
       </div>
       <div class="thread">
-        <h3>CAMS itself is delinquent</h3>
-        <p>The nonprofit's own state corporate registration shows a status of "Delinquent" as of its most recent update &mdash; separate from any individual board member's disclosure gap.</p>
+        <h3>CAMS's state registration status: Delinquent (when checked)</h3>
+        <p>The nonprofit's own state corporate registration showed a status of "Delinquent" when it was checked for this page &mdash; separate from any individual board member's disclosure gap. On Sept. 3, 2026, the Hive's <a href="matt-brower.html">Matt Brower</a> page recorded the status as "Active, but Delinquent." The status may have changed since; the Utah Division of Corporations business search shows the current status.</p>
       </div>
       <div class="thread">
         <h3>A disqualification precedent</h3>
@@ -404,9 +502,40 @@
   </div>
 </section>
 
-<section class="sources">
+<section id="checked">
+  <div class="wrap">
+    <h2>How these forms are checked</h2>
+    <p>The official is the only person who fills out the form. A filing office receives it, but no office is required to compare the answers with corporate filings or other records when it is turned in. Questions about accuracy are usually examined only after someone files a complaint. The Hive's <a href="weber-housing-authority.html#checked">Weber Housing Authority</a> page walks through the state law on this, and <a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> shows how earlier complaints ended.</p>
+    <p>That is why this page compares each form with independent records. Those records are public, and anyone can check them.</p>
+  </div>
+</section>
+<section id="updates"><div class="wrap">
+<h2>Updates since this was posted</h2>
+<p>News and records found online after Aug. 30, 2026, with dates.</p>
+<ul class="hs-upd"><li><span class="d">Aug. 31 to Sept. 2, 2026</span>Write-in filing closed Aug. 28. Alex Folmer filed as a write-in for Seat C against Erik Rowland, whose race had been uncontested. In Seat A, Jami Hewlett and Shawn Taylor filed as write-ins against Rachel Kahler. Democrat Patrick Saucier withdrew from Seat A on Aug. 31, and Robert McNeill filed to replace him on Sept. 1.<span class="s">Source: <a href="https://www.kpcw.org/wasatch-county/2026-09-02/write-in-candidates-jump-into-wasatch-county-races">KPCW, Sept. 2, 2026</a>; <a href="https://www.parkrecord.com/2026/09/08/wasatch-county-democrat-withdraws-from-council-race-new-candidate-replaces-him/">Park Record, Sept. 8, 2026</a></span></li><li><span class="d">Sept. 3, 2026</span>The Hive's Matt Brower page recorded CAMS's state status as "Active, but Delinquent," checked directly that day.<span class="s">Source: <a href="matt-brower.html">The Weber County Hive, Matt Brower</a></span></li><li><span class="d">Oct. 17, 2026 (Hive records check)</span>Campaign money reports posted on Wasatch County's election page: Rachel Kahler's March 31 report shows no contributions or expenses. Her primary report, signed June 16 and covering through June 11, shows $4,745 in contributions, $2,854.92 in expenses and an ending balance of $1,890.08. Erik Rowland's March 31 and June reports are posted as scanned images that could not be read for this update. No general-election reports for either race were posted as of Oct. 17.<span class="s">Source: <a href="https://www.wasatchcounty.gov/275/Election-Voter-Information">Wasatch County, Election and Voter Information</a>; <a href="https://www.wasatchcounty.gov/DocumentCenter/View/1320/R-Kahler--June-Campaign-Financial-Disclosure">Kahler June report</a></span></li><li><span class="d">April 24, 2026 (added for context)</span>The Heber City events contract with CAMS pays $39,900 a year with no benefits, for at least 50 days of downtown events a year over three years. The council ratified it 3–2 as a sole-source purchase on April 21 after an anonymous complaint to the State Auditor; the auditor's office confirmed an investigation exists. No outcome of that investigation was found online as of Oct. 17, 2026.<span class="s">Source: <a href="https://www.parkrecord.com/2026/04/24/heber-city-ratifies-event-programming-contract-in-light-of-state-auditor-complaint/">Park Record, April 24, 2026</a>; <a href="https://www.kpcw.org/heber-city/2026-04-22/heber-city-narrowly-finalizes-downtown-events-contract">KPCW, April 22, 2026</a></span></li><li><span class="d">Oct. 6, 2026</span>The Park Record profiled Kahler's Seat A campaign. The article does not mention CAMS or her disclosure form.<span class="s">Source: <a href="https://www.parkrecord.com/2026/10/06/rachel-kahler-wants-to-protect-wasatch-countys-character-as-a-council-member/">Park Record, Oct. 6, 2026</a></span></li><li><span class="d">Oct. 13, 2026</span>The Park Record profiled Rowland, identifying him as County Council chair and liaison to MIDA. The article does not mention CAMS, his businesses or his disclosure form.<span class="s">Source: <a href="https://www.parkrecord.com/2026/10/13/erik-rowland-hopes-to-earn-another-term-on-the-wasatch-county-council/">Park Record, Oct. 13, 2026</a></span></li><li><span class="d">Oct. 15, 2026</span>At a Seat A and Seat C candidate forum hosted by KPCW and the Heber Leadership Academy, MIDA came up repeatedly. News coverage does not report any discussion of disclosure forms or CAMS.<span class="s">Source: <a href="https://www.parkrecord.com/2026/10/16/wasatch-county-council-candidates-debate-growth-taxes-and-preservation/">Park Record, Oct. 16, 2026</a></span></li></ul>
+</div></section>
+<section id="words"><div class="wrap">
+<h2>Words to know</h2>
+<p>Tap a card to see what it means.</p>
+<div class="hs-flips"><button class="hs-flip" aria-expanded="false"><div class="ft">Conflict-of-interest form</div><div class="fh">Tap to see</div><div class="fd">A form an official signs listing jobs, businesses and board seats, so the public can spot overlaps with their public duties.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Delinquent (state registry)</div><div class="fh">Tap to see</div><div class="fd">A status the Utah Division of Corporations shows when an entity's required renewal was not filed on time. It is a filing status, not a debt and not a finding of wrongdoing.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Registered agent</div><div class="fh">Tap to see</div><div class="fd">The person or company named to receive legal papers for a business or nonprofit.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Declaration of candidacy</div><div class="fh">Tap to see</div><div class="fd">The paperwork a person files to get on the ballot. In Wasatch County, the conflict form was bundled into it.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">MIDA</div><div class="fh">Tap to see</div><div class="fd">The Military Installation Development Authority, a state authority with its own required disclosure form for board members.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Notarized</div><div class="fh">Tap to see</div><div class="fd">Signed in front of a notary, who confirms the signer's identity. It does not confirm the answers are complete.</div></button></div>
+</div></section>
+<section id="ask"><div class="wrap">
+<h2>Questions to ask, and whom to ask</h2>
+<div class="hs-qa"><div><b>Wasatch County Clerk/Auditor</b>Does anyone compare conflict-of-interest forms with state corporate filings when they are turned in?</div><div><b>MIDA</b>Which disclosure form does MIDA require from board members appointed by counties, and was the county form accepted in place of MIDA's statutory form?</div><div><b>Heber City Council</b>Was CAMS's state registration status checked before the city approved or ratified its events contract?</div><div><b>Candidates for Seat A and Seat C</b>Will you list every board, business and paid nonprofit role on your conflict-of-interest form?</div><div><b>Your state legislators</b>Should conflict-of-interest forms be checked against public records when they are filed?</div></div>
+</div></section>
+<section id="connected"><div class="wrap">
+<h2>Connected Hive work</h2>
+<div class="hs-cards"><a href="index.html"><b>Transparency docket</b><span>Every Transparency case file</span></a><a href="weber-housing-authority.html"><b>Weber Housing Authority</b><span>Transparency: how these forms are checked under state law</span></a><a href="matt-brower.html"><b>Matt Brower</b><span>Transparency: the board seat that never came up</span></a><a href="https://weber-county-hive.github.io/candidates2026/erik-rowland-seat-c.html"><b>The Wrong Form, Four Times</b><span>candidates2026: Erik Rowland</span></a><a href="https://weber-county-hive.github.io/candidates2026/rowland-folmer-seat-c.html"><b>One Disclosed. One Didn't.</b><span>candidates2026: Seat C, Rowland and Folmer</span></a><a href="https://weber-county-hive.github.io/candidates2026/rachel-kahler-wasatch-seat-a.html"><b>What the Park Email Left Out</b><span>candidates2026: Rachel Kahler</span></a><a href="https://weber-county-hive.github.io/candidates2026/wasatch-seat-a-on-the-record.html"><b>On the Record: Seat A</b><span>candidates2026: Wasatch County Council Seat A</span></a><a href="https://weber-county-hive.github.io/Unelected-Power/dallin-koecher.html"><b>Dallin Koecher</b><span>Unelected-Power</span></a><a href="https://weber-county-hive.github.io/candidates2026/wasatch-2026-voter-guide.html"><b>Wasatch County Voter Guide 2026</b><span>candidates2026</span></a></div>
+</div></section>
+<section id="behind"><div class="wrap">
+<h2>Behind this piece</h2>
+<div class="hs-counter"><div><div class="n">4</div><div class="l">Disclosure forms read (3 officials, plus MIDA's form for comparison)</div></div><div><div class="n">8</div><div class="l">State corporate filings checked</div></div><div><div class="n">2</div><div class="l">City meeting records read</div></div><div><div class="n">13</div><div class="l">News articles cited</div></div><div><div class="n">5</div><div class="l">Articles checked for the Oct. 17 update</div></div><div><div class="n">4</div><div class="l">Campaign money reports checked (2 readable)</div></div><div><div class="n">3</div><div class="l">Searches run for the Oct. 17 update (estimate)</div></div></div>
+<p class="hs-updates">Posted Aug. 30, 2026. Updated Oct. 17, 2026: new layout and colors, a short version, a chart and a connections diagram, a plain-words page, how these forms are checked, updates, words to know, questions to ask and links to related Hive pages. The CAMS heading now says the "Delinquent" status was what the registry showed when checked, since it may have changed. No other facts changed.</p>
+</div></section>
+<section class="sources" id="sources">
   <div class="wrap">
     <h2>Sources</h2>
+    <details><summary style="cursor:pointer;font-family:Arial,sans-serif;font-weight:bold;padding:10px 0;">Show all sources (tap to open)</summary>
     <p class="note">Public records and reporting used for this piece. Disclosure forms and corporate filings are primary source documents; news coverage is cited for contract terms, meeting outcomes, and background that these records alone don't establish.</p>
 
     <div class="sourcegroup">
@@ -463,6 +592,33 @@
         <li>"Outgoing Heber City Councilmembers reflect on time on office," KPCW, Nov. 29, 2023</li>
       </ol>
     </div>
+
+    <div class="sourcegroup">
+      <h4>Links for earlier news sources (added Oct. 17, 2026)</h4>
+      <ol>
+        <li><a href="https://www.parkrecord.com/2026/04/24/heber-city-ratifies-event-programming-contract-in-light-of-state-auditor-complaint/" target="_blank" rel="noopener">Park Record, April 24, 2026</a></li>
+        <li><a href="https://www.kpcw.org/heber-city/2026-04-20/heber-city-to-revisit-downtown-event-contract-under-specter-of-state-audit" target="_blank" rel="noopener">KPCW, April 20, 2026</a></li>
+        <li><a href="https://www.kpcw.org/heber-city/2026-04-22/heber-city-narrowly-finalizes-downtown-events-contract" target="_blank" rel="noopener">KPCW, April 22, 2026</a></li>
+        <li><a href="https://www.parkrecord.com/2026/01/20/former-heber-city-councilor-rachel-kahler-is-vying-for-wasatch-county-council-seat-a/" target="_blank" rel="noopener">Park Record, Jan. 20, 2026</a></li>
+        <li><a href="https://www.kpcw.org/wasatch-county/2026-01-19/nine-candidates-seek-wasatch-county-council-seats-in-2026" target="_blank" rel="noopener">KPCW, Jan. 19, 2026</a></li>
+        <li><a href="https://www.parkrecord.com/2026/07/02/wasatch-county-gop-election-results-have-been-finalized/" target="_blank" rel="noopener">Park Record, July 2, 2026</a></li>
+        <li><a href="https://www.parkrecord.com/2026/08/28/general-election-ballots-will-be-mailed-in-six-weeks-heres-whats-on-wasatch-countys/" target="_blank" rel="noopener">Park Record, Aug. 28, 2026</a></li>
+        <li><a href="https://www.parkrecord.com/2026/01/09/heres-who-filed-for-elected-office-in-wasatch-county/" target="_blank" rel="noopener">Park Record, Jan. 9, 2026</a></li>
+      </ol>
+    </div>
+
+    <div class="sourcegroup">
+      <h4>Added Oct. 17, 2026</h4>
+      <ol>
+        <li><a href="https://www.kpcw.org/wasatch-county/2026-09-02/write-in-candidates-jump-into-wasatch-county-races" target="_blank" rel="noopener">"Write-in candidates jump into Wasatch County races," KPCW, Sept. 2, 2026</a></li>
+        <li><a href="https://www.parkrecord.com/2026/09/08/wasatch-county-democrat-withdraws-from-council-race-new-candidate-replaces-him/" target="_blank" rel="noopener">"Wasatch County Democrat withdraws from council race; new candidate replaces him," Park Record, Sept. 8, 2026</a></li>
+        <li><a href="https://www.parkrecord.com/2026/10/06/rachel-kahler-wants-to-protect-wasatch-countys-character-as-a-council-member/" target="_blank" rel="noopener">"Rachel Kahler wants to protect Wasatch County's character as a council member," Park Record, Oct. 6, 2026</a></li>
+        <li><a href="https://www.parkrecord.com/2026/10/13/erik-rowland-hopes-to-earn-another-term-on-the-wasatch-county-council/" target="_blank" rel="noopener">"Erik Rowland hopes to earn another term on the Wasatch County Council," Park Record, Oct. 13, 2026</a></li>
+        <li><a href="https://www.parkrecord.com/2026/10/16/wasatch-county-council-candidates-debate-growth-taxes-and-preservation/" target="_blank" rel="noopener">"Wasatch County Council candidates debate growth, taxes and preservation," Park Record, Oct. 16, 2026</a></li>
+        <li><a href="matt-brower.html">The Weber County Hive, Matt Brower (CAMS status checked Sept. 3, 2026)</a></li>
+      </ol>
+    </div>
+    </details>
   </div>
 </section>
 
@@ -471,7 +627,12 @@
     Records reviewed: Wasatch County Clerk/Auditor disclosure filings, Utah Division of Corporations entity records, Heber City Council meeting minutes and agenda records, Wasatch County election filings. This page states what each document says; it does not characterize any finding as a legal violation.
   </div>
 </footer>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+
 
 <script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"Arial, sans-serif",fontSize:'22px',primaryColor:'#F2F5FA',primaryTextColor:'#0F1F3D',primaryBorderColor:'#1D4ED8',lineColor:'#1E3A8A',edgeLabelBackground:'#FFFFFF'},flowchart:{curve:'basis',padding:18,useMaxWidth:true}});}catch(e){}</script>
 </body>
 </html>
