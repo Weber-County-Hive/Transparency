@@ -35,7 +35,7 @@ const CASES = [
     officials: ["Steve Waldrip", "Gov. Spencer Cox", "Dustin Grabau", "Yvonne Barney"],
     status: "documented",
     published: "Aug 22, 2026",
-    updated: "Aug 22, 2026",
+    updated: "Oct 17, 2026",
     link: "waldrip-funding-threat.html",
     pairWith: "CASE 2026-SB258-01"
   },
@@ -47,7 +47,7 @@ const CASES = [
     officials: ["Tiara Auxier", "Kirk Cullimore", "Ann Millner", "Ivory Homes"],
     status: "documented",
     published: "Aug 22, 2026",
-    updated: "Aug 22, 2026",
+    updated: "Oct 17, 2026",
     link: "sb258-preliminary-municipalities.html",
     pairWith: "CASE 2026-WAL-01"
   },
@@ -59,7 +59,7 @@ const CASES = [
     officials: ["Mike Mower", "Gov. Spencer Cox", "Greg Whitehead", "Michelle McConkie"],
     status: "documented",
     published: "Aug 23, 2026",
-    updated: "Aug 23, 2026",
+    updated: "Oct 17, 2026",
     link: "sitla-county-zoning-exemption.html",
     pairWith: "CASE 2026-WAL-01"
   },
@@ -71,7 +71,7 @@ const CASES = [
     officials: ["Mike Mower", "Gov. Spencer Cox", "Gregg McArthur", "John Andrews"],
     status: "documented",
     published: "Aug 23, 2026",
-    updated: "Aug 23, 2026",
+    updated: "Oct 17, 2026",
     link: "weber-hive-sitla-explainer.html",
     pairWith: "CASE 2026-SITLA-01"
   },
@@ -83,8 +83,20 @@ const CASES = [
     officials: ["Erik Rowland", "Dallin Koecher", "Rachel Kahler"],
     status: "documented",
     published: "Aug 30, 2026",
-    updated: "Aug 30, 2026",
+    updated: "Oct 17, 2026",
     link: "weber-hive-blank-box.html"
+  },
+  {
+    caseNumber: "CASE 2026-COI-02",
+    title: "The Board Seat That Never Came Up",
+    category: "Conflict of Interest",
+    summary: "Heber City's appointed City Manager sits on the board of the nonprofit CAMS, which the city pays $39,900 a year for three years to run downtown events. He was the only person who signed the contract for the City, and the Council ratified it again after a complaint to the State Auditor.",
+    officials: ["Matt Brower"],
+    status: "documented",
+    published: "Sep 3, 2026",
+    updated: "Oct 17, 2026",
+    link: "matt-brower.html",
+    pairWith: "CASE 2026-COI-01"
   },
   {
     caseNumber: "CASE 2026-WHA-01",
@@ -94,7 +106,7 @@ const CASES = [
     officials: ["Gage Froerer", "Gloria Froerer", "Scott Jenkins", "Jim Harvey"],
     status: "documented",
     published: "Aug 31, 2026",
-    updated: "Aug 31, 2026",
+    updated: "Oct 17, 2026",
     link: "weber-housing-authority.html"
   },
   {
@@ -116,7 +128,7 @@ const CASES = [
     officials: ["Jed Nilson", "Mike Ostermiller", "Anne Dunaway"],
     status: "documented",
     published: "Sept 3, 2026",
-    updated: "Sept 3, 2026",
+    updated: "Oct 17, 2026",
     link: "nilson-foundation.html"
   },
   {
@@ -221,7 +233,7 @@ const CASES = [
     officials: ["Weber County Commission", "Weber School District", "Ogden School District", "Weber Fire District", "North View Fire District"],
     status: "documented",
     published: "Sep 26, 2026",
-    updated: "Sep 26, 2026",
+    updated: "Oct 17, 2026",
     link: "weber-county-tax-increases-since-2019.html",
     pairWith: "CASE 2026-WFD-02"
   },
