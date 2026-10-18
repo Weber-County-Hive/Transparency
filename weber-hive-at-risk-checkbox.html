@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Checkbox | The Weber County Hive</title>
+<meta name="description" content="CASE 2026-COI-03: how Utah's at-risk checkbox removes employer lines from officials' conflict-of-interest forms, and the Oct. 12, 2026 Weber County records appeal.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root{
+  --paper:#FFFFFF; --paper-2:#F2F5FA; --ink:#14213D; --ink-soft:#3E4C66;
+  --band:#0F1F3D; --band-2:#1E3A8A;
+  --accent:#1D4ED8; --line:#D5DCE8;
+  --red:#B42318; --red-bg:#FDECEA; --green:#1E7B3C; --green-bg:#E8F5EC;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',sans-serif;line-height:1.65;font-size:19px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+a{color:var(--accent);}
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--ink);}
+.topbar{background:var(--ink);color:#E6ECF7;padding:10px 0;font-family:'IBM Plex Mono',monospace;font-size:13px;}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}
+.topbar a{color:#E6ECF7;text-decoration:none;}
+header.band{background:linear-gradient(135deg,var(--band),var(--band-2));color:#fff;padding:38px 0 32px;border-bottom:5px solid #93C5FD;}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#93C5FD;margin-bottom:10px;}
+h1.title{font-size:clamp(30px,5vw,44px);color:#fff;line-height:1.18;font-weight:700;}
+.dek{margin-top:14px;font-size:19px;color:#E6ECF7;max-width:680px;}
+.caselabel{display:inline-block;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.08em;color:#0F1F3D;background:#93C5FD;padding:5px 14px;border-radius:20px;}
+.section{max-width:860px;margin:0 auto;padding:36px 24px;border-bottom:1px solid var(--line);}
+.section h2{font-size:28px;margin-bottom:14px;line-height:1.25;}
+.section h3{font-size:22px;margin:22px 0 10px;}
+.section .lead{font-size:19px;color:var(--ink-soft);margin-bottom:16px;}
+.section p{margin:0 0 14px;}
+.section ul.plain{padding-left:24px;margin:0 0 14px;}
+.section ul.plain li{margin-bottom:10px;}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:18px 0;}
+.stat{background:var(--paper-2);border:1px solid var(--line);border-top:4px solid var(--accent);padding:16px 18px;}
+.stat .num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--accent);line-height:1.15;}
+.stat .label{margin-top:6px;font-size:15px;color:var(--ink-soft);}
+blockquote.law{background:var(--paper-2);border-left:6px solid var(--band);padding:20px 24px;margin:18px 0;font-size:21px;line-height:1.6;}
+blockquote.law .cite{display:block;margin-top:12px;font-family:Arial,sans-serif;font-size:15px;color:var(--ink-soft);}
+blockquote.law p{margin:0 0 10px;}
+.quote{border-left:6px solid var(--accent);padding:6px 0 6px 20px;margin:18px 0;font-size:21px;font-style:italic;}
+.quote .cite{display:block;font-style:normal;font-family:Arial,sans-serif;font-size:15px;color:var(--ink-soft);margin-top:8px;}
+table.ledger{width:100%;border-collapse:collapse;margin:16px 0;font-size:18px;}
+table.ledger th{background:var(--band);color:#fff;text-align:left;padding:10px 12px;font-family:Arial,sans-serif;font-size:14px;letter-spacing:.03em;text-transform:uppercase;vertical-align:bottom;}
+table.ledger td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top;overflow-wrap:break-word;hyphens:auto;}
+table.ledger tr:nth-child(even) td{background:var(--paper-2);}
+.pill{display:inline-block;font-family:Arial,sans-serif;font-weight:bold;font-size:15px;padding:3px 10px;border-radius:999px;white-space:nowrap;}
+.pill.red{color:var(--red);background:var(--red-bg);}
+.pill.green{color:var(--green);background:var(--green-bg);}
+.pill.navy{color:#fff;background:var(--band);}
+.pill.soft{color:var(--ink);background:#E6ECF7;}
+.callout{background:var(--paper-2);border-left:5px solid var(--accent);padding:16px 20px;margin:16px 0;font-size:19px;}
+.callout strong{color:var(--band);}
+.flag{background:#fff;border:1px dashed var(--ink-soft);padding:13px 18px;margin:14px 0;font-size:17px;color:var(--ink-soft);}
+.flag .tag{font-family:Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;color:var(--band);}
+.full-sources{border:1px solid var(--line);background:#fff;margin:10px 0 0;}
+.full-sources summary{cursor:pointer;padding:15px 22px;background:var(--paper-2);font-family:Arial,sans-serif;font-weight:bold;font-size:15px;letter-spacing:.05em;text-transform:uppercase;color:var(--band);}
+.full-sources-body{padding:18px 24px 24px;font-size:17px;}
+.full-sources-body h4{font-family:'Playfair Display',serif;font-size:19px;margin:16px 0 6px;padding-top:10px;border-top:1px solid var(--line);}
+.full-sources-body p{margin:0 0 8px;color:var(--ink-soft);}
+footer{padding:28px 0 48px;color:var(--ink-soft);font-size:15px;}
+footer .sub{margin-top:6px;}
+@media(max-width:640px){
+  .section{padding:30px 16px;}
+  .wrap{padding:0 16px;}
+  .section h2{font-size:25px;}
+  table.ledger{font-size:15px;}
+  table.ledger th{font-size:13px;padding:8px 6px;}
+  table.ledger td{padding:9px 6px;}
+  .pill{font-size:13px;padding:2px 7px;white-space:normal;border-radius:10px;}
+  blockquote.law{font-size:19px;padding:16px 16px;}
+  .quote{font-size:19px;}
+}
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-parts{background:#F2F5FA;border:2px solid #1D4ED8;border-radius:6px;padding:14px 16px;margin:0 0 24px;font-family:Arial,sans-serif}
+.hs-parts .lab{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:bold;color:#14213D;margin:0 0 8px}
+.hs-parts ol{margin:0 0 10px;padding-left:24px;font-size:1rem;line-height:1.45}
+.hs-parts li.cur{font-weight:bold}
+.hs-parts li.cur a{color:#14213D;text-decoration:none}
+.hs-parts .nav{display:flex;flex-wrap:wrap;gap:10px}
+.hs-parts .nav a{display:inline-block;background:#1D4ED8;color:#fff;text-decoration:none;font-weight:bold;padding:10px 16px;border-radius:5px;font-size:1rem}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
+</style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
+<div class="topbar"><div class="wrap"><span>TRANSPARENCY · CONFLICT OF INTEREST</span><a href="index.html">&larr; Case Files</a></div></div>
+<header class="band">
+  <div class="wrap">
+    <div class="kicker">Transparency · Conflict of Interest · Weber County</div>
+    <h1 class="title">The Checkbox: Who Decides What Voters See</h1>
+    <p class="dek">A 2025 state law lets officials whose household includes an at-risk government employee have their employer removed from the public copy of their conflict-of-interest form. Here is the law, how it reached Weber County, and what a records appeals board decided on Oct. 13, 2026.</p>
+    <span class="caselabel">Weber County</span>
+    <p class="hs-date">CASE 2026-COI-03 · Posted Oct. 17, 2026 · Updated Oct. 18, 2026</p>
+  </div>
+</header>
+<div class="wrap">
+<div class="hs-plain">New to this? <a class="hs-btn" href="weber-hive-at-risk-checkbox-plain.html">Read it in plain words</a> About 500 words, with a simple diagram and chart.</div>
+<nav class="hs-toc" aria-label="On this page"><b style="width:100%;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;">On this page</b><a href="#short">The short version</a><a href="#what">What the checkbox is</a><a href="#disconnect">An elected official, a list he is not on, and a box no one checks</a><a href="#history">How it got here</a><a href="#appeal">The Oct. 12 appeal and the Oct. 13 decision</a><a href="#form2025">The 2025 form, now released</a><a href="#onoff">What has been on, and off, his forms over the years</a><a href="#news">What the news reported</a><a href="#penalties">What happens when a form is incomplete</a><a href="#who">Who checked the box in Weber County</a><a href="#elsewhere">The same information elsewhere</a><a href="#checked">How these forms are checked</a><a href="#crossref">The out-of-date cross-reference</a><a href="#voters">What this means for voters</a><a href="#ask">Questions to ask, and whom to ask</a><a href="#updates">Updates since Oct. 12</a><a href="#words">Words to know</a><a href="#connected">Connected Hive work</a><a href="#behind">Behind this piece</a><a href="#sources">Sources</a></nav>
+<details class="hs-pages"><summary>Transparency pages (26) · tap to open</summary><ol><li><a href="index.html">Transparency docket</a><small>Every case file, searchable</small></li><li><a href="utah-amendments-2026.html">The 2026 Amendments</a> · <a href="utah-amendments-2026-plain.html">plain words</a><small>Amendments A and B on your ballot</small></li><li><a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> · <a href="amendment-b-myth-vs-fact-plain.html">plain words</a><small>Claims checked against the record</small></li><li><a href="amendment-b-quiz.html">Amendment B Quiz</a><small>Test what you know</small></li><li><a href="weber-housing-authority.html">Weber Housing Authority</a> · <a href="weber-housing-authority-plain.html">plain words</a><small>A commissioner, his wife and the authority that pays their company</small></li><li><a href="bramwell-odp-enforcement.html">What the Privacy Office Can and Can't Do</a> · <a href="bramwell-odp-enforcement-plain.html">plain words</a><small>Utah's Chief Privacy Officer</small></li><li><a href="counting-the-jobs.html">Counting the Jobs</a> · <a href="counting-the-jobs-plain.html">plain words</a><small>Job promises and what was reported</small></li><li><a href="matt-brower.html">Matt Brower</a> · <a href="matt-brower-plain.html">plain words</a><small>The board seat that never came up</small></li><li><a href="nilson-foundation.html">Ten Days</a> · <a href="nilson-foundation-plain.html">plain words</a><small>The Nilson Foundation's 501(c)(3) claim</small></li><li><a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> · <a href="sb258-preliminary-municipalities-plain.html">plain words</a><small>S.B. 258 and preliminary municipalities</small></li><li><a href="sitla-county-zoning-exemption.html">The Land Counties Can't Zone</a> · <a href="sitla-county-zoning-exemption-plain.html">plain words</a><small>Trust land and county zoning</small></li><li><a href="weber-hive-sitla-explainer.html">SITLA: The Land Nobody Zones</a> · <a href="weber-hive-sitla-explainer-plain.html">plain words</a><small>Who answers for trust land</small></li><li><a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> · <a href="tyson-eagle-mountain-closure-plain.html">plain words</a><small>Five years after opening</small></li><li><a href="utah-judicial-oversight.html">Behind the Bench</a> · <a href="utah-judicial-oversight-plain.html">plain words</a><small>Judge and lawyer complaints in Utah</small></li><li><a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> · <a href="waldrip-funding-threat-plain.html">plain words</a><small>A housing adviser in Heber City</small></li><li><a href="weber-county-tax-increases-since-2019.html">Every Weber County Property Tax Increase Since 2019</a> · <a href="weber-county-tax-increases-since-2019-plain.html">plain words</a><small>The full list</small></li><li><a href="weber-fire-district-annexation.html">A New Line on the Bill</a> · <a href="weber-fire-district-annexation-plain.html">plain words</a><small>Roy and Riverdale fire annexation</small></li><li><a href="weber-fire-district-growth.html">Paying for the Next Station</a> · <a href="weber-fire-district-growth-plain.html">plain words</a><small>How Weber Fire District funds growth</small></li><li><a href="weber-hive-5th5th-sales-tax.html">Weber County's New Sales Tax</a> · <a href="weber-hive-5th5th-sales-tax-plain.html">plain words</a><small>A public vote, but no vote by the public</small></li><li><a href="weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> · <a href="weber-hive-bait-and-switch-plain.html">plain words</a><small>Bait and switch, 2018 to 2026</small></li><li><a href="weber-hive-blank-box.html">The Blank Box</a> · <a href="weber-hive-blank-box-plain.html">plain words</a><small>Three disclosure forms, one pattern</small></li><li><a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> · <a href="weber-hive-enforcement-gap-plain.html">plain words</a><small>Complaints filed, few penalties</small></li><li><a href="weber-hive-gsl-two-money-pots.html">One Lake, Two Money Pots</a> · <a href="weber-hive-gsl-two-money-pots-plain.html">plain words</a><small>The Great Salt Lake Trust Council</small></li><li><a href="weber-hive-powder-mountain-water.html">Wells at the Top</a> · <a href="weber-hive-powder-mountain-water-plain.html">plain words</a><small>Powder Mountain's water</small></li><li><a href="weber-hive-then-vs-now.html">Then vs. Now</a> · <a href="weber-hive-then-vs-now-plain.html">plain words</a><small>Earlier plans and later approvals in Ogden Valley</small></li><li><a href="west-haven-energy-tax.html">West Haven's 6% Energy Tax</a> · <a href="west-haven-energy-tax-plain.html">plain words</a><small>A new line on the power bill</small></li></ol></details>
+</div>
+<section class="section" id="short">
+  <h2>The short version</h2>
+  <div class="hs-short"><ul>
+<li>A 2025 state law, H.B. 504, lets an official or candidate ask that their employer information be removed from the public copy of their conflict-of-interest form if they, or their spouse, are an &ldquo;at-risk government employee.&rdquo; It took effect May 7, 2025.</li>
+<li>When the request is made, the filing officer &ldquo;shall redact.&rdquo; Weber County's records appeals board called that &ldquo;mandatory language triggered by receipt of a redaction request.&rdquo; The board's decision does not describe any check of whether the official qualifies. At the Oct. 12, 2026 hearing, the county said it does not check whether an official qualifies, because the statute does not require it. The box was checked, and the county redacted.</li>
+<li>On Oct. 12, 2026, the board heard the Hive publisher's appeal over Commissioner Gage Froerer's forms. Its Oct. 13 decision kept his 2026 employer lines redacted and ordered his 2025 lines released, because the 2025 form was filed before the law existed.</li>
+<li>Of eight 2026 Weber County forms the Hive compared, three had employer lines redacted: Commissioner Froerer, Commissioner Harvey and County Attorney Allred. County attorneys are a named category in the law. County commissioners are not.</li>
+<li>Added Oct. 18, 2026: Froerer's forms have changed over the years. His 2018 House form listed Nordic Valley Land Associates without a percentage; a November 2022 special disclosure, filed after an Ogden Valley resident complained to the county attorney and state auditor, showed a family trust's 16% interest; his 2025 county form listed the company and his 2026 form, filed a week before it was dissolved, did not. His Weber Housing Authority trusteeship was not listed on either county form.</li>
+<li>Added Oct. 18, 2026: Under state law the $100 fine and class B misdemeanor apply when an official does not file, or does not correct a form within seven days after notice. Whether a form is accurate is examined only after a written complaint. In the one review the Hive has documented, in 2022, the result was an updated form and no public penalty.</li>
+<li>The law still points to Section 63G-2-303 for the at-risk definition. The board noted that section was renumbered in 2026 and &ldquo;no longer exists.&rdquo;</li>
+</ul></div>
+  <div class="stat-row">
+    <div class="stat"><div class="num">May 7, 2025</div><div class="label">H.B. 504's redaction rule took effect</div></div>
+    <div class="stat"><div class="num">3&ndash;0</div><div class="label">Appeals board vote, Oct. 12, 2026</div></div>
+    <div class="stat"><div class="num">3 of 8</div><div class="label">2026 Weber County forms compared with employer lines redacted</div></div>
+    <div class="stat"><div class="num">0</div><div class="label">Checks of eligibility described in the board's decision</div></div>
+  </div>
+  <div class="flag"><div class="tag">What this page does and does not say</div>This page reports what the law says, what the county did and what the appeals board decided. It does not say any official acted improperly. The law allows the request, and the board found the county was required to honor it.</div>
+</section>
+<section class="section" id="what">
+  <h2>What the checkbox is</h2>
+  <p class="lead">Elected officials file a conflict-of-interest form so voters can see who pays them and what businesses they are tied to. Since May 7, 2025, part of that form can be removed from the public copy.</p>
+  <p>Item 1 of the form asks for the official's current and recent employers and a short description of the job. Under the 2025 change, an official whose household includes an at-risk government employee can ask the filing officer to take that information out. This is the law, as quoted in the appeals board's decision:</p>
+  <blockquote class="law">
+    <p>&ldquo;(7)(a) In making the disclosure described in Subsection (6)(b) or (h), if a regulated officeholder or regulated officeholder's spouse is an at-risk government employee, as that term is defined in Subsection 63G-2-303(1)(a), the regulated officeholder may request the filing officer to redact from the conflict of interest disclosure: (i) the regulated officeholder's employment information under Subsection (6)(b); and (ii) the regulated officeholder's spouse's name and employment information under Subsection (6)(h).</p>
+    <p>(b) A filing officer who receives a redaction request under Subsection (7)(a) <b>shall redact</b> the disclosures made under Subsection (6)(b) or (h) before the filing officer makes the conflict of interest disclosure available for public inspection.&rdquo;</p>
+    <span class="cite">Utah Code 20A-11-1604(7), as quoted in the <a href="weber-grama-26-1348-decision.pdf">Weber County GRAMA Appeals Board Decision and Order, Oct. 13, 2026</a>, page 2. Same text in the <a href="https://le.utah.gov/xcode/Title20A/Chapter11/C20A-11-S1604_2025050720250507.pdf">state's posted version effective May 7, 2025</a>.</span>
+  </blockquote>
+  <h3>Who counts as &ldquo;at-risk&rdquo;</h3>
+  <p>The definition lists named jobs, then adds a general category. The named jobs are peace officers; state and federal judges and court commissioners; military judges; federal and military prosecutors; and &ldquo;law enforcement officials,&rdquo; a term that includes county attorneys, district attorneys, the attorney general and city prosecutors (Utah Code 53-5a-311). Sheriffs are peace officers under Utah Code 53-13-103. The last item, the one quoted by the board, covers everyone else:</p>
+  <blockquote class="law">
+    <p>&ldquo;(ix) state, federal, or local government employee who, because of the unique nature of the employee's regular work assignments or because of one or more recent credible threats directed to or against the employee, would be at immediate and substantial risk of physical harm if the employee's personal information is disclosed.&rdquo;</p>
+    <span class="cite">Utah Code 63A-19-408(1)(a)(ix), formerly 63G-2-303(1)(a), as quoted in the <a href="weber-grama-26-1348-decision.pdf">Decision and Order</a>, page 3; full list in the <a href="https://le.utah.gov/xcode/Title63A/Chapter19/C63A-19-S408_2026050620260506.pdf">state's posted version effective May 6, 2026</a>.</span>
+  </blockquote>
+  <div class="callout"><strong>In plain words:</strong> a county commissioner is not one of the named jobs. A commissioner could still fit item (ix) if their work or a recent credible threat puts them at real risk of harm. The public copy of the form does not show which part of the definition an official relied on.</div>
+  <p>The bill's own summary says the request is open to candidates too. H.B. 504 permits &ldquo;the candidate or officeholder making the disclosure to request the redaction of certain personally identifiable information from the disclosure if the candidate, officeholder, or the candidate's or officeholder's spouse is an at-risk government employee&rdquo; (<a href="https://le.utah.gov/Session/2025/bills/enrolled/HB0504.pdf">H.B. 504 enrolled copy, highlighted provisions</a>). Because the test is about being a government employee, a candidate who does not work for a government would not qualify.</p>
+</section>
+<section class="section" id="disconnect">
+  <h2>An elected official, a list he is not on, and a box no one checks</h2>
+  <p class="lead">Added Oct. 18, 2026. This is the center of the case, step by step, from the law and the Oct. 13, 2026 decision.</p>
+  <ol class="plain" style="padding-left:26px;margin:0 0 14px;">
+    <li style="margin-bottom:12px;"><b>He holds a county job because voters elected him.</b> His 2025 form lists his current employer as &ldquo;Weber County Corp. 2017 to present&rdquo; and his job as &ldquo;Weber County Commissioner&rdquo; (<a href="froerer-2025-coi-form.pdf">2025 form</a>, Items 1A&ndash;1B). The at-risk definition's named categories are other kinds of jobs: peace officers; state and federal judges and court commissioners; military judges; federal and military prosecutors; and &ldquo;law enforcement officials&rdquo; as defined in Section 53-5a-311 (<a href="https://le.utah.gov/xcode/Title63A/Chapter19/C63A-19-S408_2026050620260506.pdf">Utah Code 63A-19-408(1)(a)(i)&ndash;(viii)</a>, read Oct. 18, 2026).</li>
+    <li style="margin-bottom:12px;"><b>County commissioners are not a named category.</b> The only route is the catch-all in item (ix), which the board quoted in finding 6: a &ldquo;state, federal, or local government employee who, because of the unique nature of the employee's regular work assignments or because of one or more recent credible threats directed to or against the employee, would be at immediate and substantial risk of physical harm if the employee's personal information is disclosed.&rdquo;</li>
+    <li style="margin-bottom:12px;"><b>Both routes depend on facts.</b> Item (ix) needs either unusual work duties or recent credible threats. The 2026 form's box asked him to state that he was &ldquo;an at-risk government employee . . . as that term is defined in Subsection 63G-2-303(1)(a)&rdquo; (finding 7). It does not ask which route. At the Oct. 12, 2026 hearing, the county said it does not check whether an official qualifies, because the statute does not require it. The box was checked, and the county redacted.</li>
+    <li style="margin-bottom:12px;"><b>The checkmark decides it.</b> The board found the filing officer had to redact because the law &ldquo;uses mandatory language triggered by receipt of a redaction request&rdquo; (finding 8); the law says the filing officer &ldquo;shall redact.&rdquo; Separately, the written decision describes no review step. The county, the board and the public do not see what the claim rests on.</li>
+    <li style="margin-bottom:12px;"><b>What is covered is more than the government job.</b> His county job is already public. The redaction covers the full employer lines, including outside employers. On his 2025 form, those lines included &ldquo;Rescom, Inc. and or Gage Froerer &amp; Assoc. Inc. 1977-Present.&rdquo;</li>
+  </ol>
+  <div class="hs-fig"><h3>How one checkmark decides it</h3><p class="sub">From Utah Code 63A-19-408(1)(a), the Oct. 13, 2026 Decision and Order (findings 6&ndash;8) and the county's statement at the Oct. 12 hearing.</p>
+  <div class="mermaid">
+flowchart TD
+  A["Elected by voters<br>county commissioner"] --> B["Not a named job<br>on the at-risk list"]
+  B --> C["Only route: item ix<br>needs unique duties<br>or recent credible threats"]
+  C --> D["Box checked<br>no review<br>employer lines blacked out"]
+  </div></div>
+  <div class="callout"><strong>What the records show:</strong> The records reviewed do not show which part of the definition was relied on, or whether any threat was reported. Nothing in the law as the board read it, in the form, or in the decision requires anyone to find out.</div>
+  <div class="flag"><div class="tag">This is about how the law works</div>Commissioner Harvey also checked the box on his 2026 form (see <a href="#who">Who checked the box</a>). The same steps apply to any official who checks it. Nothing on this page says any official is or is not at risk; the records do not say either way.</div>
+</section>
+<section class="section" id="history">
+  <h2>How it got here</h2>
+  <p class="lead">The checkbox came from H.B. 504 (2025), &ldquo;Financial and Conflict of Interest Disclosures by Candidates Amendments.&rdquo;</p>
+  <p>The primary sponsor was <b>Rep. Lisa Shepherd</b>. The Senate sponsor was <b>Sen. Ronald M. Winterton</b> (both as printed on the <a href="https://le.utah.gov/Session/2025/bills/enrolled/HB0504.pdf">enrolled bill</a>). LegiScan also lists Rep. Paul Cutler as a sponsor. Most of the bill was about something else: it requires county, city and special district candidates to file conflict-of-interest forms when they file for office, and it sets rules for filling midterm vacancies. The at-risk redaction was one item in its list of changes.</p>
+  <table class="ledger"><thead><tr><th>Vote</th><th>Date</th><th>Yes</th><th>No</th><th>Absent</th></tr></thead><tbody><tr><td>House Government Operations Committee</td><td>Feb. 26, 2025</td><td><b>8</b></td><td>0</td><td>5</td></tr><tr><td>House, third reading</td><td>Feb. 28, 2025</td><td><b>65</b></td><td>0</td><td>10</td></tr><tr><td>Senate Government Operations and Political Subdivisions Committee</td><td>Mar. 4, 2025</td><td><b>7</b></td><td>0</td><td>0</td></tr><tr><td>Senate, final passage as amended</td><td>Mar. 6, 2025</td><td><b>26</b></td><td>2</td><td>1</td></tr><tr><td>House concurs with Senate changes</td><td>Mar. 7, 2025</td><td><b>71</b></td><td>0</td><td>4</td></tr></tbody></table>
+  <p style="font-size:16px;color:var(--ink-soft)">Votes from <a href="https://legiscan.com/UT/bill/HB0504/2025">LegiScan's H.B. 504 page</a>. The two Senate no votes were Sens. Blouin and Riebe (<a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">The Weber County Hive, Oct. 13, 2026</a>). Gov. Spencer Cox signed the bill March 24, 2025; it took effect May 7, 2025.</p>
+  <div class="hs-fig"><h3>Every recorded vote on H.B. 504</h3><p class="sub">Yes votes in blue; the only no votes in dark navy. Committee and floor votes have different numbers of members.</p><div class="hs-bars"><div class="lab">House committee, yes</div><div class="tr"><div class="fl" style="width:7.4%"></div><span class="v">8</span></div><div class="lab">House floor, yes</div><div class="tr"><div class="fl" style="width:60.4%"></div><span class="v">65</span></div><div class="lab">Senate committee, yes</div><div class="tr"><div class="fl" style="width:6.5%"></div><span class="v">7</span></div><div class="lab">Senate floor, yes</div><div class="tr"><div class="fl" style="width:24.2%"></div><span class="v">26</span></div><div class="lab">Senate floor, no</div><div class="tr"><div class="fl alt" style="width:1.9%"></div><span class="v">2</span></div><div class="lab">House concurrence, yes</div><div class="tr"><div class="fl" style="width:66.0%"></div><span class="v">71</span></div></div></div>
+  <p>The bill moved through both chambers with public committee hearings and recorded floor votes, the regular process for a Utah bill.</p>
+</section>
+<section class="section" id="appeal">
+  <h2>The Oct. 12 appeal and the Oct. 13 decision</h2>
+  <p class="lead">The Hive's publisher, Shauna Miller, asked Weber County for unredacted copies of Commissioner Gage Froerer's 2025 and 2026 conflict-of-interest forms (records request #26-1348). The county said no. She appealed.</p>
+  <div class="hs-fig"><h3>From the form to the decision</h3><p class="sub">Dates from the Decision and Order and Froerer's 2025 form.</p>
+  <div class="mermaid">
+flowchart TD
+  A["Jan. 24, 2025<br>2025 form filed<br>no at-risk option"] --> B["May 7, 2025<br>H.B. 504 rule<br>takes effect"]
+  B --> C["2026 form<br>at-risk box filled in"]
+  C --> D["Records request 26-1348<br>county denies both<br>unredacted forms"]
+  D --> E["Oct. 12, 2026<br>appeals board hearing"]
+  E --> F["Oct. 13, 2026 decision<br>2026: redaction upheld<br>2025: must be released"]
+  </div></div>
+  <h3>Why the county said no</h3>
+  <p>The county relied on &ldquo;Utah Code Ann. &sect; 20A-11-1604(7)(a) and Utah Code Ann. &sect; 63A-19-408(1),&rdquo; which it said &ldquo;required redaction of information regarding current and previous employment and information regarding other individuals in Commissioner Froerer's household&rdquo; (Decision, finding 2).</p>
+  <p>At the hearing, the county said the 2025 form was first posted unredacted, then redacted after the records request &ldquo;to make them both consistent&rdquo; with the 2026 form (<a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">The Weber County Hive, Oct. 13, 2026</a>).</p>
+  <h3>What the board decided</h3>
+  <p>The board met in closed session twice, for about 40 minutes and then about 15 minutes, and voted 3&ndash;0 (<a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">The Weber County Hive, Oct. 13, 2026</a>). Its written decision, signed by Chair Tanya Strong and dated Oct. 13, 2026, split the request in two.</p>
+  <table class="ledger"><thead><tr><th>Form</th><th>Board's finding</th><th>Result</th></tr></thead><tbody>
+  <tr><td><b>2026 form</b></td><td>Froerer &ldquo;filled in the box, making the request for that information to be redacted&rdquo; (finding 7). The law &ldquo;uses mandatory language triggered by receipt of a redaction request&rdquo; (finding 8).</td><td><span class="pill red">Redaction upheld</span></td></tr>
+  <tr><td><b>2025 form</b></td><td>Dated Jan. 24, 2025, it &ldquo;did not give him the option to request redaction&rdquo; (finding 10). There was &ldquo;no legal basis for the County to apply new &sect; 20A-11-1604(7) retroactively&rdquo; (finding 12).</td><td><span class="pill green">Ordered released</span></td></tr>
+  </tbody></table>
+  <div class="quote">&ldquo;The County's decision to deny access to Commissioner Froerer's 2025 conflict of interest disclosure is reversed, and the County is ordered to provide an unredacted copy of that record to the Appellant promptly after the period to appeal this order has expired.&rdquo;<span class="cite">Decision and Order, Order paragraph 4 (<a href="weber-grama-26-1348-decision.pdf">read the full decision, PDF</a>)</span></div>
+  <p>One board member told the publisher, &ldquo;You make some compelling argument, and I don't disagree with many of the points you're making,&rdquo; but said the board was bound by the statute (<a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">The Weber County Hive, Oct. 13, 2026</a>).</p>
+  <div class="callout"><strong>What the county said at the hearing:</strong> at the Oct. 12, 2026 hearing, the county said it does not check whether an official qualifies as an at-risk government employee, because the statute does not require it. The box was checked, and the county redacted (as reported by the appellant, who attended the public hearing; see also <a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">The Weber County Hive, Oct. 13, 2026</a>).</div>
+  <div class="callout"><strong>What the decision does and does not cover:</strong> the board ruled on what the law required the county to do once the box was filled in. Separately, the written decision does not describe any review of whether Commissioner Froerer is an at-risk government employee, and the law as quoted does not ask the filing officer to make one.</div>
+  <h3>Why the 2025 form was redacted too</h3>
+  <p>Added Oct. 18, 2026. The county redacted the 2025 form because of the 2026 checkbox, so the two would match. In order:</p>
+  <ol class="plain" style="padding-left:26px;margin:0 0 14px;">
+    <li style="margin-bottom:10px;">The 2025 form, dated Jan. 24, 2025, had no at-risk box (finding 10) and was first posted unredacted.</li>
+    <li style="margin-bottom:10px;">After the 2026 box was checked and the records request came in, the county redacted the 2025 form too, &ldquo;to make them both consistent,&rdquo; as the county said at the Oct. 12 hearing (<a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">The Weber County Hive, Oct. 13, 2026</a>).</li>
+    <li style="margin-bottom:10px;">The board found &ldquo;there was no legal basis for the County to apply new &sect; 20A-11-1604(7) retroactively, so it should not have redacted portions of Commissioner Froerer's 2025 conflict of interest disclosure&rdquo; (finding 12), and ordered it released.</li>
+  </ol>
+  <div class="hs-fig"><h3>How the 2025 form came to be redacted, and released</h3><p class="sub">From the Oct. 12, 2026 hearing as reported by the Hive and the Decision and Order, findings 10&ndash;12.</p>
+  <div class="mermaid">
+flowchart TD
+  A["2025 form: no at-risk box<br>first posted unredacted"] --> B["2026 box checked, records request<br>county redacts 2025 form too<br>#quot;to make them both consistent#quot;"]
+  B --> C["Board: no legal basis<br>to apply the law retroactively<br>2025 form ordered released"]
+  </div></div>
+  <h3>Appeal rights</h3>
+  <p>The decision lists three paths: ask the state's government records ombudsman to mediate; appeal to the director of the Utah Government Records Office; or file for review in district court. &ldquo;In most cases, the appeal deadline is 30 days after the date of this order,&rdquo; and the deadline pauses during mediation (Decision, Appeal Rights Information, page 5).</p>
+</section>
+<section class="section" id="form2025">
+  <h2>The 2025 form, now released</h2>
+  <p class="lead">These are Items 1A and 1B of Froerer's 2025 Weber Elections Conflict of Interest form, dated Friday, January 24, 2025 &mdash; the employer lines the board ordered released. The form has no at-risk checkbox, which matches the board's finding 10.</p>
+  <table class="ledger"><thead><tr><th>Item</th><th>What the form says</th></tr></thead><tbody>
+  <tr><td>1A Current Employer(s)</td><td>&ldquo;Weber County Corp. 2017 to present&rdquo;<br>&ldquo;Rescom, Inc. and or Gage Froerer &amp; Assoc. Inc. 1977-Present&rdquo;</td></tr>
+  <tr><td>1A Previous Employer(s)</td><td>&ldquo;State of Utah 2017 to 2018&rdquo;</td></tr>
+  <tr><td>1B Current Employment</td><td>&ldquo;Weber County Commissioner&rdquo;</td></tr>
+  <tr><td>1B Previous Employment</td><td>&ldquo;State of Utah House of Representatives Member&rdquo;</td></tr>
+  </tbody></table>
+  <p><a class="hs-btn" href="froerer-2025-coi-form.pdf">Open the 2025 form (PDF)</a></p>
+  <p>The form's signature line reads: &ldquo;I, the regulated officeholder or candidate, believe this form is true and accurate to the best of my knowledge.&rdquo;</p>
+</section>
+<section class="section" id="onoff">
+  <h2>What has been on, and off, his forms over the years</h2>
+  <p class="lead">Added Oct. 18, 2026. What Commissioner Froerer's conflict-of-interest forms listed, year by year, as shown in the forms the Hive has read and in news reports.</p>
+  <div style="overflow-x:hidden"><table class="ledger"><thead><tr><th>Date</th><th>Form</th><th>What was listed</th><th>What was not listed</th><th>Source</th></tr></thead><tbody><tr><td><b>2018</b></td><td>Utah House conflict-of-interest form</td><td>Nordic Valley Land Associates, LLC</td><td>Its holdings and his share (&ldquo;It didn&rsquo;t specify&rdquo; per UPR)</td><td><a href="https://www.upr.org/utah-news/2023-06-13/a-weber-county-commissioners-former-land-ownership-draws-scrutiny">UPR, June 13, 2023</a>; <a href="https://www.standard.net/news/business/2022/dec/19/as-nordic-valley-ski-village-plans-edge-ahead-froerers-involvement-scrutinized">Standard-Examiner, Dec. 19, 2022</a></td></tr><tr><td><b>Nov. 20, 2022</b></td><td>Special county disclosure</td><td>&ldquo;16% interest in Nordic Valley Land surrounding existing Ski Resort,&rdquo; held by a family trust</td><td>&mdash; (filed after an Ogden Valley resident complained to the county attorney and the state auditor)</td><td><a href="https://www.upr.org/utah-news/2023-06-13/a-weber-county-commissioners-former-land-ownership-draws-scrutiny">UPR</a>; <a href="https://www.standard.net/news/business/2022/dec/19/as-nordic-valley-ski-village-plans-edge-ahead-froerers-involvement-scrutinized">Standard-Examiner</a>; <a href="weber-hive-enforcement-gap.html#sec-froerer">Enforcement Gap</a></td></tr><tr><td><b>March 20, 2023</b></td><td>Handwritten update to that disclosure</td><td>&ldquo;Disclosed no longer owner as of February 2023&rdquo;</td><td>How the interest was transferred (not stated)</td><td><a href="https://www.standard.net/news/government/2023/apr/04/weber-county-commissioner-reports-he-no-longer-holds-stake-in-ski-village-land">Standard-Examiner, Apr. 4, 2023</a>; <a href="https://www.upr.org/utah-news/2023-06-13/a-weber-county-commissioners-former-land-ownership-draws-scrutiny">UPR</a></td></tr><tr><td><b>Jan. 24, 2025</b></td><td>Weber County form</td><td>Item 2A: Nordic Valley Land Assoc. LLC, with six other entities. Item 5A: Weber Basin Water District, Central Weber Sewer District, Weber County Corp. Item 8 (spouse&rsquo;s employer): &ldquo;None.&rdquo;</td><td>Weber Housing Authority trusteeship; MIDA and LMSA seats (per the Housing Authority case). The Hive&rsquo;s Oct. 13 report notes his wife&rsquo;s professional profile lists her as a property manager at the family businesses.</td><td><a href="froerer-2025-coi-form.pdf">2025 form</a> (read as rendered pages); <a href="weber-housing-authority.html#form">Housing Authority case</a>; <a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">Hive, Oct. 13, 2026</a></td></tr><tr><td><b>Jan. 13, 2026</b></td><td>Weber County form</td><td>Item 5A: Weber Basin Water District, Central Weber Sewer District. Employer lines redacted under the at-risk box.</td><td>Nordic Valley Land Associates (dissolved Jan. 20, 2026, seven days later); Weber Housing Authority; MIDA; LMSA</td><td><a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">Hive, Oct. 13, 2026</a>; <a href="weber-housing-authority.html#form">Housing Authority case</a>; <a href="https://weber-county-hive.github.io/followthedeed/weber-hive-nordic-village-froerer.html">Follow the Deed Case 05</a></td></tr></tbody></table></div>
+  <div class="flag"><div class="tag">How this was checked</div>The 2025 form was read as rendered page images on Oct. 18, 2026. The 2018 form and the November 2022 disclosure were not read directly; what they listed comes from the news reports named. The 2026 items come from the Hive's Oct. 13 report and the Housing Authority case's Item 5A table, not a new reading of the 2026 form. <b>Spouse lines on the 2026 form are covered by the at-risk redaction, so blank spouse lines there are not counted as left off.</b> Earlier House forms (2014, 2016) were not found in the sources read for this update and are not included.</div>
+  <p>Two points from the records, side by side. The March 2023 handwritten note said he was no longer an owner as of February 2023 (<a href="https://www.standard.net/news/government/2023/apr/04/weber-county-commissioner-reports-he-no-longer-holds-stake-in-ski-village-land">Standard-Examiner</a>). His January 2025 county form still listed Nordic Valley Land Assoc. LLC in Item 2A, which asks for any entity in which he &ldquo;is an owner or officer, or was an owner or officer during the preceding year.&rdquo; The form does not say whether that listing was as an owner or an officer. Follow the Deed Case 05 reports the company was managed by two entities that listed Froerer as manager, and that it was dissolved Jan. 20, 2026 (<a href="https://weber-county-hive.github.io/followthedeed/weber-hive-nordic-village-froerer.html">Follow the Deed Case 05</a>).</p>
+  <div class="hs-fig"><h3>Key dates, 2018 to 2026</h3><p class="sub">From the news reports, forms and Hive case files listed in the table.</p>
+  <div class="mermaid">
+flowchart TD
+  A["2018 House form<br>lists Nordic Valley Land<br>Associates, no share"] --> B["Aug. 16, 2022<br>recuses from<br>code-change vote"]
+  B --> C["Oct. 2022<br>resident complaint<br>to the state auditor"]
+  C --> D["Nov. 20, 2022<br>special disclosure<br>16% family trust"]
+  D --> E["Jan. 27, 2023<br>land transferred<br>for zero dollars"]
+  E --> F["March 2023 note<br>no longer owner<br>as of February"]
+  F --> G["Jan. 2025 county form<br>lists the company<br>no Housing Authority"]
+  G --> H["Jan. 13, 2026 form<br>company not listed<br>employer redacted"]
+  H --> I["Jan. 20, 2026<br>company dissolved"]
+  </div></div>
+  <h3>Board seats and entities not on the county forms</h3>
+  <ul class="plain">
+    <li><b>Weber Housing Authority</b> (trustee). Not on his 2025 or 2026 county form. The Authority paid $19,623 to two companies bearing the Froerer name, 2023&ndash;2025 (<a href="weber-housing-authority.html#form">What his own form leaves out</a>; <a href="weber-housing-authority.html#payments">What the payments were</a>).</li>
+    <li><b>Military Installation Development Authority (MIDA)</b>. Not listed on his disclosures, per the <a href="weber-housing-authority.html#form">Housing Authority case</a>.</li>
+    <li><b>Little Mountain Service Area (LMSA)</b>. Not listed on his disclosures, per the <a href="weber-housing-authority.html#form">Housing Authority case</a>.</li>
+    <li><b>Highlander NP Housing</b>, a now-dissolved nonprofit he once directed, registered in the same building as the Housing Authority, and <b>C.K.R. Construction LLC</b>, where his wife holds a role (<a href="weber-housing-authority.html#who">Who sits where</a>).</li>
+  </ul>
+  <p>What was on the forms matters too: the 2025 form listed his family real estate companies, seven entities in Item 2A and two water and sewer boards, and he filed a special disclosure in 2022 once the question was raised.</p>
+</section>
+<section class="section" id="news">
+  <h2>What the news reported</h2>
+  <p class="lead">Added Oct. 18, 2026. Each article below was opened and read for this update. Oldest first.</p>
+  <ul class="hs-upd"><li><span class="d">Aug. 16, 2022</span><b>Standard-Examiner (Tim Vandenack), &ldquo;Weber County officials OK code changes for Nordic Valley ski village.&rdquo;</b> Commissioners voted 2&ndash;0 on code changes, &ldquo;with Commissioner Gage Froerer recusing himself.&rdquo; It reported he had been involved in the trust that owns the land &ldquo;for 20 or so years.&rdquo;<span class="s">Source: <a href="https://www.standard.net/news/government/2022/aug/16/weber-county-officials-ok-code-changes-for-nordic-valley-ski-village/">Read the article</a></span></li><li><span class="d">Dec. 19, 2022</span><b>Standard-Examiner (Tim Vandenack), &ldquo;As Nordic Valley ski village plans edge ahead, Froerer&rsquo;s involvement scrutinized.&rdquo;</b> A family trust held a 16% stake in Nordic Valley Land Associates; Froerer said his interest in the trust was 20%, a personal stake of about 3.3%. It said the stake had been public knowledge &ldquo;at least since 2018.&rdquo; County Attorney Chris Allred wrote: &ldquo;The law anticipates that one who has made the disclosure may continue to participate in discussing and voting on the matter.&rdquo;<span class="s">Source: <a href="https://www.standard.net/news/business/2022/dec/19/as-nordic-valley-ski-village-plans-edge-ahead-froerers-involvement-scrutinized">Read the article</a></span></li><li><span class="d">Dec. 26, 2022</span><b>KSL.com (NewsRadioKSL), &ldquo;Ski village with homes and commercial space coming to Nordic Valley.&rdquo;</b> It reported Froerer &ldquo;did not cast any votes for the project&rdquo; and &ldquo;also released a formal disclosure detailing any potential conflicts of interest,&rdquo; filed with the county on Nov. 20.<span class="s">Source: <a href="https://www.ksl.com/article/news/utah/counties/weber/ski-village-with-homes-and-commercial-space-coming-to-nordic-valley/50546375">Read the article</a></span></li><li><span class="d">Apr. 4, 2023</span><b>Standard-Examiner (Tim Vandenack), &ldquo;Weber County commissioner reports he no longer holds stake in ski village land.&rdquo;</b> A handwritten note dated March 20 on his disclosure read &ldquo;Disclosed no longer owner as of February 2023.&rdquo; A county attorney said state law is &ldquo;all about disclosure&rdquo; and does not require recusal.<span class="s">Source: <a href="https://www.standard.net/news/government/2023/apr/04/weber-county-commissioner-reports-he-no-longer-holds-stake-in-ski-village-land">Read the article</a></span></li><li><span class="d">June 2023</span><b>The Salt Lake Tribune (Jacob Scholl), &ldquo;In Weber County, officials say a commissioner&rsquo;s financial disclosure was appropriate. Others disagree.&rdquo;</b> The county attorney&rsquo;s office said Froerer followed state law: &ldquo;once a matter is presented before the deciding body, that&rsquo;s when the obligation is triggered.&rdquo; A BYU law professor said, &ldquo;He eventually disclosed, he did recuse, so good on him for that.&rdquo;<span class="s">Source: <a href="https://www.sltrib.com/news/politics/2023/06/09/weber-county-officials-say">Read the article</a></span></li><li><span class="d">June 13, 2023</span><b>Utah Public Radio (Jacob Scholl), &ldquo;A Weber County commissioner&rsquo;s former land ownership draws scrutiny.&rdquo;</b> &ldquo;NVLA is included in Froerer&rsquo;s 2018 conflict of interest disclosure when he served in the Utah House as a representative,&rdquo; without his share. It reported he said &ldquo;he was one of five people in the trust.&rdquo; A county attorney said &ldquo;state law also doesn&rsquo;t require someone to recuse themselves, as Froerer did,&rdquo; and that the state auditor&rsquo;s office said &ldquo;there is no active investigation and the matter is now considered closed.&rdquo;<span class="s">Source: <a href="https://www.upr.org/utah-news/2023-06-13/a-weber-county-commissioners-former-land-ownership-draws-scrutiny">Read the article</a></span></li><li><span class="d">Oct. 13, 2026</span><b>The Weber County Hive, &ldquo;Elected by Voters, Hidden by a Checkbox.&rdquo;</b> The records appeal over his 2025 and 2026 county forms, and the item-by-item comparison of what the forms list.<span class="s">Source: <a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">Read the article</a></span></li></ul>
+  <div class="callout"><strong>In plain words:</strong> the county attorney's office told reporters in 2022 and 2023 that state law required him to disclose the interest, but did not require him to recuse; his recusals were his own choice. Reporters also noted he did recuse from the votes.</div>
+  <p class="hs-updates">No news coverage of H.B. 504 or of at-risk redactions on officials' forms, in Weber County or statewide, was found in searches on Oct. 18, 2026. Searched: &ldquo;at-risk&rdquo; government employee conflict of interest redact employer H.B. 504 news; Utah officials conflict of interest forms employer redacted at-risk checkbox (Tribune, Deseret News, KSL); Gage Froerer disclosure 2026.</p>
+</section>
+<section class="section" id="penalties">
+  <h2>What happens when a form is incomplete</h2>
+  <p class="lead">Added Oct. 18, 2026. The rules as written, then what has happened in practice. This describes the rules and outcomes, not anyone's motives.</p>
+  <h3>The rules as written</h3>
+  <ul class="plain">
+    <li><b>The penalty is for not filing or not responding.</b> The top of Froerer's 2025 county form says: &ldquo;An elected officer who fails to respond to the notice is guilty of a class B misdemeanor and the county clerk must impose a civil fine of $100.&rdquo; (<a href="froerer-2025-coi-form.pdf">2025 form</a>, page 1.)</li>
+    <li><b>The state law sets the same steps.</b> Utah Code 20A-11-1605 (<a href="https://le.utah.gov/xcode/Title20A/Chapter11/C20A-11-S1605_2025050720250507.pdf">posted version effective May 7, 2025</a>, read Oct. 18, 2026 through a text copy) calls for a review &ldquo;Within 60 calendar days&rdquo; after the filing deadline; notice to an officeholder who did not file or whose form does not meet Section 1604, with a direction to file an amended report; and, for anyone who does not file or amend &ldquo;within seven calendar days after the day on which the regulated officeholder receives the notice,&rdquo; a class B misdemeanor and &ldquo;a civil fine of $100.&rdquo; The section names the lieutenant governor as the reviewing officer; the Hive's Housing Authority case describes the same steps for county forms.</li>
+    <li><b>Accuracy is examined after a written complaint.</b> Under the same section, a &ldquo;written complaint alleging a violation of Section 20A-11-1604&rdquo; leads to &ldquo;notice and an opportunity to be heard&rdquo; before a decision. In the text read, no separate penalty is listed for a form found to be inaccurate; the listed penalties apply to not filing or not amending within seven days. (Checked from a text copy of the posted section, not page images.)</li>
+    <li><b>The checkbox has no review step.</b> The filing officer &ldquo;shall redact&rdquo; once the request is made (finding 8). At the Oct. 12, 2026 hearing, the county said it does not check whether an official qualifies, because the statute does not require it.</li>
+    <li><b>Disclosure, not recusal.</b> The county attorney's office told reporters the law required disclosure, not recusal (<a href="https://www.standard.net/news/government/2023/apr/04/weber-county-commissioner-reports-he-no-longer-holds-stake-in-ski-village-land">Standard-Examiner, 2023</a>; <a href="https://www.upr.org/utah-news/2023-06-13/a-weber-county-commissioners-former-land-ownership-draws-scrutiny">UPR, 2023</a>). The county's ethics act itself (Utah Code 17-16a) would not load on Oct. 18, 2026, so this page relies on those published statements.</li>
+    <li><b>The county act's stronger penalty.</b> Weber County's acknowledgment of the County Officers and Employees Disclosure Act says knowingly and intentionally violating it is a class A misdemeanor and requires removal from office (<a href="weber-housing-authority.html#checked">Housing Authority case</a>).</li>
+  </ul>
+  <h3>What has happened in practice</h3>
+  <p>The Hive's <a href="weber-hive-enforcement-gap.html">Enforcement Gap case</a> found the same path in three Utah cases: question &rarr; complaint &rarr; review &rarr; updated or defended report &rarr; no public penalty. For Froerer in 2022, it reported: &ldquo;Froerer filed an updated disclosure in November 2022. The Weber County Attorney's Office subsequently said the updated disclosure satisfied state law.&rdquo;</p>
+  <div class="hs-fig"><h3>The 2022 Nordic Valley question, start to finish</h3><p class="sub">From the Enforcement Gap case and the news reports above.</p>
+  <div class="mermaid">
+flowchart TD
+  A["Question raised<br>Ogden Valley resident"] --> B["Complaint<br>county attorney<br>and state auditor"]
+  B --> C["County attorney<br>meets with him"]
+  C --> D["Updated form<br>Nov. 20, 2022"]
+  D --> E["Matter closed<br>no public penalty"]
+  </div></div>
+  <p>The Hive's Oct. 13 report describes the 2022 county review as the only formal review it cites, and it was about the Nordic Valley disclosure (<a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">The Weber County Hive, Oct. 13, 2026</a>). No review of his 2025 or 2026 county forms was found in the sources read for this update.</p>
+  <div class="callout"><strong>Where the process worked:</strong> he filed a special disclosure in November 2022 and recused from the Nordic Valley votes on the record; the county attorney and state auditor responded to the complaint; and in 2026 the appeals board heard the records appeal in public and ordered the 2025 employer lines released.</div>
+</section>
+<section class="section" id="who">
+  <h2>Who checked the box in Weber County</h2>
+  <p class="lead">The Hive compared the 2026 conflict-of-interest forms of eight Weber County elected officials posted by the county (as reported in <a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">The Weber County Hive, Oct. 13, 2026</a>).</p>
+  <table class="ledger"><thead><tr><th>Official</th><th>Job named on the at-risk list?</th><th>2026 employer line</th></tr></thead><tbody><tr><td><b>Sheriff Arbon</b></td><td><span class="pill navy">Yes &mdash; peace officer</span></td><td><span class="pill green">Shown in full</span></td></tr><tr><td><b>County Attorney Allred</b></td><td><span class="pill navy">Yes &mdash; county attorney</span></td><td><span class="pill red">Redacted</span></td></tr><tr><td><b>Commissioner Froerer</b></td><td><span class="pill soft">No</span></td><td><span class="pill red">Redacted</span></td></tr><tr><td><b>Commissioner Harvey</b></td><td><span class="pill soft">No</span></td><td><span class="pill red">Redacted</span></td></tr><tr><td><b>Commissioner Bolos</b></td><td><span class="pill soft">No</span></td><td><span class="pill green">Shown in full</span></td></tr><tr><td><b>Assessor Preisler</b></td><td><span class="pill soft">No</span></td><td><span class="pill green">Shown in full</span></td></tr><tr><td><b>Recorder Rahimzadegan</b></td><td><span class="pill soft">No</span></td><td><span class="pill green">Shown in full</span></td></tr><tr><td><b>Treasurer Jensen</b></td><td><span class="pill soft">No</span></td><td><span class="pill green">Shown in full</span></td></tr></tbody></table>
+  <div class="hs-fig"><h3>2026 employer lines, eight Weber County officials</h3><p class="sub">From the comparison above.</p><div class="hs-bars"><div class="lab">Shown in full</div><div class="tr"><div class="fl" style="width:66.0%"></div><span class="v">5 of 8 forms</span></div><div class="lab">Redacted</div><div class="tr"><div class="fl alt" style="width:39.6%"></div><span class="v">3 of 8 forms</span></div></div></div>
+  <ul class="plain">
+    <li><b>County Attorney Allred's</b> redaction matches a named category: county attorneys are &ldquo;law enforcement officials&rdquo; under Utah Code 53-5a-311.</li>
+    <li><b>Sheriff Arbon</b> holds a named job (sheriffs are peace officers) and chose not to redact.</li>
+    <li><b>Commissioners Froerer and Harvey</b> hold a job that is not a named category. Item (ix) could still apply; the public forms do not say.</li>
+    <li><b>Commissioner Harvey's 2025 form</b>, dated Jan. 2, 2025, showed &ldquo;Weber County&rdquo; and &ldquo;Weber County Commissioner &ndash; seat C&rdquo; with nothing removed. That form, like Froerer's, was filed before the law took effect.</li>
+  </ul>
+  <div class="flag"><div class="tag">Fair reading</div>Checking the box is allowed by law. Not checking it is also allowed. Nothing on this page says any official acted improperly; it shows where the box was used and what the public copy no longer shows.</div>
+</section>
+<section class="section" id="elsewhere">
+  <h2>The same information elsewhere</h2>
+  <p class="lead">Froerer also sits as a trustee of the Weber Basin Water Conservancy District, which posts its own trustee conflict-of-interest forms.</p>
+  <p>His &ldquo;Annual Trustee Conflict of Interest Disclosure,&rdquo; completed Jan. 12, 2026, lists his employer as &ldquo;Weber County Corp&rdquo; with the job &ldquo;County Commissioner,&rdquo; and lists real estate entities described as &ldquo;Real estate brokerage and management.&rdquo; Nothing on it is redacted, and it has no at-risk box (<a href="https://weberbasin.gov/Docs/Gage_Froerer_01-12-26.pdf">Weber Basin Water Conservancy District, posted form</a>).</p>
+  <p>At the hearing, the county said the water district &ldquo;probably did not get a form&rdquo; claiming at-risk status (<a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">The Weber County Hive, Oct. 13, 2026</a>).</p>
+  <div class="callout"><strong>Why it matters:</strong> the same employer information for the same official, from the same month, is redacted on one government's website and posted in full on another's. The redaction law applies to the filing officer who receives the request.</div>
+</section>
+<section class="section" id="checked">
+  <h2>How these forms are checked</h2>
+  <p class="lead">The only person who fills out a conflict-of-interest form is the official it describes. Here is what happens to the at-risk box after the form is turned in.</p>
+  <div class="hs-fig"><h3>The path of a checked box</h3><p class="sub">From Utah Code 20A-11-1604(7), the Oct. 13, 2026 Decision and Order, and Utah Code 20A-11-1605.</p>
+  <div class="mermaid">
+flowchart TD
+  A["The official fills out<br>and signs the form"] --> B["The official checks<br>the at-risk box"]
+  B --> C["Filing officer<br>#quot;shall redact#quot;"]
+  C --> D["The public sees<br>blacked-out employer lines"]
+  D --> E["Only path to review:<br>a records request<br>and an appeal"]
+  </div></div>
+  <ul class="plain">
+    <li><b>The official signs; no one else confirms.</b> The form asks the official to state that it is &ldquo;true and accurate to the best of&rdquo; their knowledge (Utah Code 20A-11-1604; the same words appear on Froerer's <a href="froerer-2025-coi-form.pdf">2025 form</a>).</li>
+    <li><b>The review checks that forms were filed, not whether they are right.</b> The filing officer reviews whether each required person filed and whether the form has the required information (Utah Code 20A-11-1605).</li>
+    <li><b>The box triggers a duty, not a review.</b> The appeals board found the filing officer had to redact because the law &ldquo;uses mandatory language triggered by receipt of a redaction request&rdquo; (Decision, finding 8). The decision does not describe a step where anyone checks eligibility, and at the Oct. 12, 2026 hearing the county said it does not check whether an official qualifies, because the statute does not require it.</li>
+    <li><b>Accuracy is examined only after a complaint.</b> A written complaint leads to notice and a hearing before the filing officer decides whether there was a violation (Utah Code 20A-11-1605). The Hive's <a href="weber-housing-authority.html#checked">Weber Housing Authority case</a> walks through this in more detail.</li>
+  </ul>
+</section>
+<section class="section" id="crossref">
+  <h2>The out-of-date cross-reference</h2>
+  <p class="lead">The checkbox law borrows its definition of &ldquo;at-risk government employee&rdquo; from another part of the code. That other part moved.</p>
+  <div class="hs-fig"><h3>Where the definition points</h3><p class="sub">From the Decision and Order, finding 3, and H.B. 450 (2026).</p>
+  <div class="mermaid">
+flowchart TD
+  A["Checkbox law<br>20A-11-1604(7)(a)"] -->|"still points to"| B["Section 63G-2-303<br>#quot;no longer exists#quot;"]
+  B -->|"renumbered May 6, 2026"| C["Section 63A-19-408<br>same definition"]
+  </div></div>
+  <p>At the Oct. 12, 2026 hearing, the appellant told the board she could not find the section the law cites for the at-risk definition, Section 63G-2-303. The board's written decision explains why. The board wrote: &ldquo;Section 63A-19-408 was renumbered from 63G-2-303 as of May 6, 2026, but it appears that the Legislature has not yet updated &sect; 20A-11-1604(7)(a) to reflect that numbering change; &sect; 20A-11-1604(7)(a) still refers to &sect; 63G-2-303, which no longer exists. The applicable portions of &sect; 63A-19-408 have remained the same at all times relevant to this appeal&rdquo; (Decision, finding 3).</p>
+  <p>Froerer's 2026 form uses the old reference too. The board's finding 7 says the form's box stated he was &ldquo;an at-risk government employee . . . as that term is defined in Subsection 63G-2-303(1)(a).&rdquo;</p>
+  <p>Because the wording of the definition stayed the same, the board quoted and applied the definition as it now appears in Section 63A-19-408(1) (&ldquo;formerly found in &sect; 63G-2-303(1)&rdquo;, finding 6). The out-of-date number did not change the outcome: the board upheld the 2026 redaction.</p>
+  <p><b>In plain words:</b> it is like a sign that gives an old street address. The building moved, the people inside did not change, and the board read the law as meaning the new address.</p>
+  <p><b>Where the move came from.</b> The renumbering was done by H.B. 450 (2026), &ldquo;Data Privacy Amendments&rdquo; &mdash; primary sponsor Rep. David Shallenberger, Senate sponsor Sen. Kirk A. Cullimore, signed March 19, 2026 (<a href="https://legiscan.com/UT/bill/HB0450/2026">LegiScan</a>). One earlier draft, the <a href="https://le.utah.gov/Session/2026/bills/introduced/HB0450S05.pdf">5th Substitute</a>, also updated the checkbox law to point to the new section. The <a href="https://le.utah.gov/Session/2026/bills/enrolled/HB0450.pdf">enrolled (final) copy</a>'s list of amended sections, read Oct. 17, 2026, does not include 20A-11-1604. The record read for this page does not say why that change was dropped.</p>
+</section>
+<section class="section" id="voters">
+  <h2>What this means for voters</h2>
+  <ul class="plain">
+    <li><b>The form is still filed.</b> Every official in the comparison filed a 2026 form. What changes with the box is how much of Item 1 the public copy shows.</li>
+    <li><b>The rule is the same for everyone who qualifies.</b> The law applies to officials and candidates whose household includes an at-risk government employee, in every county and city covered.</li>
+    <li><b>Some information can still be found.</b> Other filings, such as business entity listings on the same form or forms for other boards, may still show it. The Weber Basin trustee form is one example.</li>
+    <li><b>Old forms are covered by old rules.</b> The board found the law cannot be applied to forms filed before May 7, 2025.</li>
+    <li><b>Changes to the law are up to the Legislature.</b> The appeals board said it was bound by the statute as written.</li>
+  </ul>
+</section>
+<section class="section" id="ask">
+  <h2>Questions to ask, and whom to ask</h2>
+  <p>These are questions any reader can ask at a public meeting or by contacting the office.</p>
+  <div class="hs-qa"><div><b>Weber County Clerk/Auditor and elections office</b>When an official checks the at-risk box, is any record kept of which part of the definition they relied on? Is the redaction reviewed again each year?</div><div><b>Weber County Commission</b>Would the commission support a county policy that explains publicly, without personal details, which category an official is relying on when they redact?</div><div><b>Lt. Governor's elections office</b>Does the state give county and city filing officers any guidance on the at-risk box, and does it apply the same rule to statewide and legislative forms?</div><div><b>Your state legislators</b>Should the checkbox law be updated to point to Section 63A-19-408? Should a filing officer be able to ask for a short statement of the basis for a redaction?</div><div><b>Utah Government Records Office</b>How have records appeals involving redacted conflict-of-interest forms been decided elsewhere in the state?</div><div><b>Your state legislators (added Oct. 18, 2026)</b>Should elected officials be able to use the at-risk redaction, and if so, who should confirm the risk?</div><div><b>Your state legislators (added Oct. 18, 2026)</b>Why can employer lines, the purpose of the form, be redacted?</div><div><b>Your state legislators (added Oct. 18, 2026)</b>When will the out-of-date section number in 20A-11-1604(7)(a) be corrected?</div><div><b>Your state legislators (added Oct. 18, 2026)</b>The $100 fine and class B misdemeanor apply when a form is not filed or not corrected after notice. Should there also be a consequence when a filed form is later shown to leave out a board seat or business interest?</div><div><b>Your state legislators (added Oct. 18, 2026)</b>Should filing officers compare conflict-of-interest forms against public records, such as corporate filings and board rosters, instead of waiting for a written complaint?</div></div>
+</section>
+<section class="section" id="updates">
+  <h2>Updates since Oct. 12</h2>
+  <ul class="hs-upd"><li><span class="d">Oct. 13, 2026</span>The Weber County GRAMA Appeals Board issued its written Decision and Order (dated Oct. 13, 2026, signed by Chair Tanya Strong): 2026 redaction upheld; 2025 redaction reversed, with release after the appeal period.<span class="s">Source: <a href="weber-grama-26-1348-decision.pdf">Decision and Order, appeal re: GRAMA request #26-1348 (PDF)</a></span></li><li><span class="d">Oct. 13, 2026</span>The Hive published its report on the hearing, including the county's statements and the comparison of 2026 forms.<span class="s">Source: <a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">The Weber County Hive, Oct. 13, 2026: &ldquo;Elected by Voters, Hidden by a Checkbox&rdquo;</a></span></li><li><span class="d">Oct. 17, 2026 (Hive records check)</span>The current state copy of Section 63A-19-408 shows it was &ldquo;Renumbered and Amended by Chapter 202, 2026 General Session,&rdquo; effective May 6, 2026. The enrolled copy of H.B. 450 (2026) does not list 20A-11-1604 among the sections it amends, which matches the board's finding that the cross-reference was not updated.<span class="s">Source: <a href="https://le.utah.gov/xcode/Title63A/Chapter19/C63A-19-S408_2026050620260506.pdf">Utah Code 63A-19-408</a>; <a href="https://le.utah.gov/Session/2026/bills/enrolled/HB0450.pdf">H.B. 450 enrolled copy</a></span></li></ul>
+  <p class="hs-updates">Oct. 18, 2026: searches again found no outside news coverage of the hearing or of at-risk redactions statewide; earlier news on Froerer's disclosures (2022&ndash;2023) is now in <a href="#news">What the news reported</a>.</p>
+  <p class="hs-updates">No outside news coverage of the Weber County hearing, and no 2027 bill file or interim committee item on 20A-11-1604 or 63A-19-408, was found in searches on Oct. 17, 2026. Searched: &ldquo;at-risk government employee&rdquo; conflict of interest redaction 2026; Weber County Froerer conflict of interest form GRAMA appeal; Utah interim committee 2026 conflict of interest 20A-11-1604 redaction 2027; &ldquo;63A-19-408&rdquo; at-risk; Utah officials redact employer at-risk checkbox news; Weber County GRAMA appeals board October 2026.</p>
+</section>
+<section class="section" id="words">
+  <h2>Words to know</h2>
+  <p>Tap a card to see what it means.</p>
+  <div class="hs-flips"><button class="hs-flip" aria-expanded="false"><div class="ft">At-risk government employee</div><div class="fh">Tap to see</div><div class="fd">A public employee whose job, or a recent credible threat, could put them in real danger if their personal information were shared. The law lists judges, peace officers and certain prosecutors by name.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Redact</div><div class="fh">Tap to see</div><div class="fd">To black out or remove information from the copy the public sees.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Filing officer</div><div class="fh">Tap to see</div><div class="fd">The office that receives the forms. For Weber County officials, it is the county's elections office.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">GRAMA</div><div class="fh">Tap to see</div><div class="fd">Utah's Government Records Access and Management Act, the law that lets the public ask for government records.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Appeals board</div><div class="fh">Tap to see</div><div class="fd">A county panel that hears appeals when a records request is denied. Weber County's voted 3&ndash;0 on Oct. 12, 2026.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Cross-reference</div><div class="fh">Tap to see</div><div class="fd">A spot in one law that points to another law for a definition. When the other law is renumbered, the pointer can go out of date.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Retroactively</div><div class="fh">Tap to see</div><div class="fd">Applying a new rule to something done before the rule existed. The board said the county could not do that to the 2025 form.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Recusal</div><div class="fh">Tap to see</div><div class="fd">When an official steps aside from a vote or discussion because of a personal or financial tie. In the 2022 and 2023 news reports, the county attorney's office said state law required disclosure, not recusal.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Class B misdemeanor</div><div class="fh">Tap to see</div><div class="fd">A lower-level crime under Utah law. The conflict-of-interest law ties it, with a $100 civil fine, to not filing or not correcting a form within seven days after notice.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Special disclosure</div><div class="fh">Tap to see</div><div class="fd">A separate conflict-of-interest statement filed when a matter comes up, outside the yearly form. Froerer filed one on Nov. 20, 2022.</div></button></div>
+</section>
+<section class="section" id="connected">
+  <h2>Connected Hive work</h2>
+  <p>People named on this page and where else they appear: <b>Commissioner Gage Froerer</b> is the official whose forms were appealed; his board seats and the Housing Authority payments are in the <a href="weber-housing-authority.html">Weber Housing Authority case</a>; the 2022 Nordic Valley disclosure review is in the <a href="weber-hive-enforcement-gap.html#sec-froerer">Enforcement Gap case</a>; the land and entity records are in <a href="https://weber-county-hive.github.io/followthedeed/weber-hive-nordic-village-froerer.html">Follow the Deed Case 05</a>. <b>Commissioner Harvey</b> also checked the at-risk box in 2026. <b>Rep. Lisa Shepherd</b> was H.B. 504's primary sponsor. <b>Chair Tanya Strong</b> signed the decision.</p>
+  <div class="hs-cards"><a href="weber-housing-authority.html"><b>Weber Housing Authority</b><span>CASE 2026-WHA-01, the paired case: Froerer's board seats and how these forms are checked</span></a><a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox"><b>Elected by Voters, Hidden by a Checkbox</b><span>Substack, Oct. 13, 2026: the hearing as it happened</span></a><a href="weber-hive-blank-box.html"><b>The Blank Box</b><span>Transparency: three disclosure forms, one pattern</span></a><a href="weber-hive-enforcement-gap.html"><b>Utah's Campaign-Finance Enforcement Gap</b><span>Transparency: complaints filed, few penalties</span></a><a href="https://weber-county-hive.github.io/followthedeed/weber-hive-nordic-village-froerer.html"><b>The Trustee Signed His Own Deal</b><span>Follow the Deed Case 05: the Nordic Valley land and entity timeline</span></a><a href="matt-brower.html"><b>Matt Brower</b><span>Transparency: the board seat that never came up</span></a><a href="https://weber-county-hive.github.io/candidates2026/weber-2026-voter-guide.html"><b>Weber County Voter Guide 2026</b><span>candidates2026: Weber County races on the ballot</span></a><a href="index.html"><b>Transparency docket</b><span>Every Transparency case file</span></a></div>
+</section>
+<section class="section" id="behind">
+  <h2>Behind this piece</h2>
+  <div class="hs-counter"><div><div class="n">2</div><div class="l">Primary records read page by page (decision, 2025 form)</div></div><div><div class="n">8</div><div class="l">2026 county forms compared</div></div><div><div class="n">7</div><div class="l">State code sections and bill copies opened</div></div><div><div class="n">1</div><div class="l">Water district form checked</div></div><div><div class="n">6</div><div class="l">Searches run for updates (estimate)</div></div><div><div class="n">3</div><div class="l">Vote records checked</div></div><div><div class="n">6</div><div class="l">News articles opened and read (added Oct. 18)</div></div><div><div class="n">3</div><div class="l">State code sections opened Oct. 18 (one would not load)</div></div><div><div class="n">8</div><div class="l">Searches run for the Oct. 18 update (estimate)</div></div><div><div class="n">3</div><div class="l">Hive case files reused (Housing Authority, Enforcement Gap, Follow the Deed)</div></div></div>
+  <p class="hs-updates">Posted Oct. 17, 2026. Updated Oct. 17, 2026: first version, with the Oct. 13 decision and the released 2025 form. No earlier facts changed.</p>
+  <p class="hs-updates">Updated Oct. 18, 2026: added &ldquo;An elected official, a list he is not on, and a box no one checks,&rdquo; why the 2025 form was redacted too, a year-by-year table of what his forms listed, what the news reported, and what happens when a form is incomplete; added the county's statement at the Oct. 12 hearing that it does not check whether an official qualifies; new words, questions and sources. No earlier facts or figures changed.</p>
+</section>
+<section class="section" id="sources" style="border-bottom:none;">
+  <h2>Sources</h2>
+  <details class="full-sources">
+    <summary>Open every source (tap)</summary>
+    <div class="full-sources-body">
+      <h4>Primary records</h4>
+      <p><a href="weber-grama-26-1348-decision.pdf">Weber County GRAMA Appeals Board, Decision and Order</a>, Shauna Miller v. Weber County, appeal re: GRAMA request #26-1348; hearing Oct. 12, 2026; signed by Chair Tanya Strong, dated Oct. 13, 2026 (5 pages, read as rendered pages).</p>
+      <p><a href="froerer-2025-coi-form.pdf">Gage Froerer, Weber Elections Conflict of Interest form</a>, dated Friday, January 24, 2025, unredacted (3 pages, read as rendered pages). Items 1A and 1B quoted; household items not reproduced.</p>
+      <p><a href="https://weberbasin.gov/Docs/Gage_Froerer_01-12-26.pdf">Gage Froerer, Weber Basin Water Conservancy District Annual Trustee Conflict of Interest Disclosure</a>, completed Jan. 12, 2026.</p>
+      <h4>Law and bills</h4>
+      <p><a href="https://le.utah.gov/Session/2025/bills/enrolled/HB0504.pdf">H.B. 504 (2025), Financial and Conflict of Interest Disclosures by Candidates Amendments, enrolled copy</a> (primary sponsor Lisa Shepherd; Senate sponsor Ronald M. Winterton; highlighted provisions).</p>
+      <p><a href="https://legiscan.com/UT/bill/HB0504/2025">LegiScan, Utah H.B. 504 (2025)</a> (sponsors, history, roll calls; signed March 24, 2025).</p>
+      <p><a href="https://le.utah.gov/xcode/Title20A/Chapter11/C20A-11-S1604_2025050720250507.pdf">Utah Code 20A-11-1604, version effective May 7, 2025</a> (subsection (7)).</p>
+      <p><a href="https://le.utah.gov/xcode/Title63A/Chapter19/C63A-19-S408_2026050620260506.pdf">Utah Code 63A-19-408, version effective May 6, 2026</a> (at-risk definition; renumbered by Chapter 202, 2026 General Session).</p>
+      <p><a href="https://le.utah.gov/xcode/Title53/Chapter5A/C53-5a-S311_2025050720250507.pdf">Utah Code 53-5a-311</a> (&ldquo;law enforcement official,&rdquo; including county attorneys) and <a href="https://le.utah.gov/xcode/Title53/Chapter13/C53-13-S103_2025050720250507.pdf">Utah Code 53-13-103</a> (sheriffs as law enforcement officers).</p>
+      <p><a href="https://le.utah.gov/Session/2026/bills/enrolled/HB0450.pdf">H.B. 450 (2026), Data Privacy Amendments, enrolled copy</a>; <a href="https://le.utah.gov/Session/2026/bills/introduced/HB0450S05.pdf">5th Substitute</a>; <a href="https://legiscan.com/UT/bill/HB0450/2026">LegiScan page</a>.</p>
+      <p>Utah Code 20A-11-1605 (filing officer review, complaints and penalties), as summarized on the <a href="weber-housing-authority.html#checked">Weber Housing Authority case page</a>.</p>
+      <h4>Reporting</h4>
+      <p><a href="https://webercountyhive.substack.com/p/elected-by-voters-hidden-by-a-checkbox">The Weber County Hive, Oct. 13, 2026: &ldquo;Elected by Voters, Hidden by a Checkbox&rdquo;</a> (hearing statements, closed sessions, vote, board member quote, 2026 forms comparison, Harvey 2025 form, Senate no votes).</p>
+      <h4>Added Oct. 18, 2026</h4>
+      <p>Decision and Order, findings 6&ndash;12, re-read as rendered page images (pages 3&ndash;4).</p>
+      <p><a href="froerer-2025-coi-form.pdf">Froerer 2025 county form</a>, all three pages re-read as rendered page images: form header (class B misdemeanor and $100 fine), Items 2A, 5A, 6A and 8.</p>
+      <p><a href="https://le.utah.gov/xcode/Title63A/Chapter19/C63A-19-S408_2026050620260506.pdf">Utah Code 63A-19-408(1)(a)(i)&ndash;(ix)</a>, read Oct. 18, 2026 through a text copy.</p>
+      <p><a href="https://le.utah.gov/xcode/Title20A/Chapter11/C20A-11-S1605_2025050720250507.pdf">Utah Code 20A-11-1605, version effective May 7, 2025</a>, read Oct. 18, 2026 through a text copy. Utah Code 17-16a (county officers' ethics act) would not load and was not used.</p>
+      <p><a href="https://www.standard.net/news/government/2022/aug/16/weber-county-officials-ok-code-changes-for-nordic-valley-ski-village/">Standard-Examiner, &ldquo;Weber County officials OK code changes for Nordic Valley ski village,&rdquo; Aug. 16, 2022</a>.</p>
+      <p><a href="https://www.standard.net/news/business/2022/dec/19/as-nordic-valley-ski-village-plans-edge-ahead-froerers-involvement-scrutinized">Standard-Examiner, &ldquo;As Nordic Valley ski village plans edge ahead, Froerer&rsquo;s involvement scrutinized,&rdquo; Dec. 19, 2022</a>.</p>
+      <p><a href="https://www.ksl.com/article/news/utah/counties/weber/ski-village-with-homes-and-commercial-space-coming-to-nordic-valley/50546375">KSL.com, &ldquo;Ski village with homes and commercial space coming to Nordic Valley,&rdquo; Dec. 26, 2022</a>.</p>
+      <p><a href="https://www.standard.net/news/government/2023/apr/04/weber-county-commissioner-reports-he-no-longer-holds-stake-in-ski-village-land">Standard-Examiner, &ldquo;Weber County commissioner reports he no longer holds stake in ski village land,&rdquo; Apr. 4, 2023</a>.</p>
+      <p><a href="https://www.sltrib.com/news/politics/2023/06/09/weber-county-officials-say">The Salt Lake Tribune, &ldquo;In Weber County, officials say a commissioner&rsquo;s financial disclosure was appropriate. Others disagree,&rdquo; June 2023</a>.</p>
+      <p><a href="https://www.upr.org/utah-news/2023-06-13/a-weber-county-commissioners-former-land-ownership-draws-scrutiny">Utah Public Radio, &ldquo;A Weber County commissioner&rsquo;s former land ownership draws scrutiny,&rdquo; June 13, 2023</a>.</p>
+      <p>Hive case files: <a href="weber-housing-authority.html">Weber Housing Authority (CASE 2026-WHA-01)</a>; <a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap (CASE 2026-ENF-01)</a>; <a href="https://weber-county-hive.github.io/followthedeed/weber-hive-nordic-village-froerer.html">Follow the Deed Case 05</a>.</p>
+    </div>
+  </details>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>THE WEBER COUNTY HIVE · TRANSPARENCY</div>
+    <div class="sub">Independent accountability journalism. Public records only. We report; you decide.</div>
+  </div>
+</footer>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"Arial, sans-serif",fontSize:'22px',primaryColor:'#F2F5FA',primaryTextColor:'#0F1F3D',primaryBorderColor:'#1D4ED8',lineColor:'#1E3A8A',edgeLabelBackground:'#FFFFFF'},flowchart:{curve:'basis',padding:18,useMaxWidth:true}});}catch(e){}</script>
+</body>
+</html>
