@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What the Privacy Office Can and Can't Do, in Plain Words | Utah Hive Politics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Serif+4:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --paper-card:#F2F5FA;
+    --paper-card-2:#F2F5FA;
+    --ink:#14213D;
+    --ink-dim:#3E4C66;
+    --ink-dimmer:#3E4C66;
+    --rust:#1D4ED8;
+    --amber:#1D4ED8;
+    --border:#D5DCE8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--paper);color:var(--ink);font-family:'Source Serif 4', serif;line-height:1.65;font-size:19px;}
+  a{color:var(--rust);}
+  .wrap{max-width:780px;margin:0 auto;padding:0 24px;}
+
+  header{
+    background:linear-gradient(160deg, #16294D 0%, #0F1F3D 100%);
+    padding:64px 24px 50px;
+    border-bottom:4px solid var(--amber);
+  }
+  .header-inner{max-width:780px;margin:0 auto;}
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:13px; letter-spacing:3px;
+    color:#93C5FD; text-transform:uppercase;
+    margin-bottom:12px;
+  }
+  h1{
+    font-family:'Playfair Display', serif;
+    font-weight:800;
+    font-size:clamp(2rem, 5vw, 3rem);
+    color:#FFFFFF;
+    line-height:1.12;
+    max-width:660px;
+  }
+  .dek{
+    font-family:'Inter',sans-serif;
+    font-size:19px;
+    color:#E6ECF7;
+    margin-top:18px;
+    max-width:620px;
+    line-height:1.5;
+  }
+
+  section{padding:10px 0 40px;}
+  h2{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    font-size:24px;
+    border-bottom:2px solid var(--amber);
+    padding-bottom:10px;
+    margin-bottom:18px;
+    color:var(--ink);
+  }
+  p{margin-bottom:15px;}
+  ul{margin:0 0 15px 22px;}
+  li{margin-bottom:8px;}
+
+  .qa{
+    background:var(--paper-card);
+    border:1px solid var(--border);
+    margin:0 0 14px;
+  }
+  .qa summary{
+    list-style:none;
+    cursor:pointer;
+    padding:14px 44px 14px 20px;
+    position:relative;
+    font-family:'Inter',sans-serif;
+  }
+  .qa summary::-webkit-details-marker{display:none;}
+  .qa summary::after{
+    content:"+";
+    position:absolute;
+    right:18px;
+    top:50%;
+    transform:translateY(-50%);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:18px;
+    color:var(--rust);
+  }
+  .qa[open] summary::after{content:"–";}
+  .qa .date{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--ink-dimmer);
+    display:block;
+    margin-bottom:4px;
+  }
+  .qa .q-text{font-size:17px;color:var(--ink-dim);}
+  .qa .q-text strong{color:var(--ink);font-weight:600;}
+  .qa .qa-body{border-top:1px solid var(--border);padding:16px 20px 18px;}
+  .qa blockquote{
+    font-style:italic;
+    color:var(--ink);
+    padding:0 0 14px;
+    margin:0;
+  }
+  .qa .note{
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    color:var(--ink-dimmer);
+  }
+
+  details.diagram{border:1px solid var(--border);background:var(--paper-card);margin:16px 0;}
+  details.diagram summary{
+    list-style:none;
+    cursor:pointer;
+    padding:12px 44px 12px 16px;
+    position:relative;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:14px;
+    letter-spacing:.03em;
+    color:var(--rust);
+  }
+  details.diagram summary::-webkit-details-marker{display:none;}
+  details.diagram summary::after{
+    content:"+";
+    position:absolute;
+    right:16px;
+    top:50%;
+    transform:translateY(-50%);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:16px;
+    color:var(--rust);
+  }
+  details.diagram[open] summary::after{content:"–";}
+  details.diagram[open] summary{border-bottom:1px solid var(--border);}
+  details.diagram svg{display:block;padding:12px 16px 16px;margin:0 !important;}
+
+  details.sources-toggle summary{
+    list-style:none;
+    cursor:pointer;
+    position:relative;
+    padding-right:36px;
+    border-bottom:2px solid var(--amber);
+    padding-bottom:10px;
+    margin-bottom:18px;
+  }
+  details.sources-toggle summary::-webkit-details-marker{display:none;}
+  details.sources-toggle summary::after{
+    content:"+";
+    position:absolute;
+    right:6px;
+    top:0;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:20px;
+    color:var(--rust);
+  }
+  details.sources-toggle[open] summary::after{content:"–";}
+  details.sources-toggle[open] summary{margin-bottom:14px;}
+
+  .questions-box{
+    background:#0F1F3D;
+    padding:26px 28px 22px;
+    margin:22px 0;
+    border-left:6px solid var(--rust);
+  }
+  .questions-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:#93C5FD;
+    margin-bottom:16px;
+  }
+  .questions-list{margin:0;padding:0;counter-reset:q;list-style:none;}
+  .questions-list li{
+    position:relative;
+    padding-left:38px;
+    margin-bottom:16px;
+    font-family:'Source Serif 4',serif;
+    font-size:19px;
+    color:#E6ECF7;
+    counter-increment:q;
+  }
+  .questions-list li:last-child{margin-bottom:0;}
+  .questions-list li::before{
+    content:counter(q);
+    position:absolute;
+    left:0;
+    top:0;
+    font-family:'Playfair Display',serif;
+    font-weight:800;
+    font-size:19px;
+    color:#93C5FD;
+  }
+
+  .callout{
+    background:var(--paper-card-2);
+    border:1px solid var(--border);
+    padding:18px 22px;
+    margin:20px 0;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    color:var(--ink-dim);
+  }
+  .callout strong{color:var(--ink);}
+
+  footer{background:#0F1F3D;color:#E6ECF7;padding:36px 0 46px;margin-top:20px;}
+  footer .sub{color:#C7D2E6;font-size:14px;margin-top:6px;}
+  footer a{color:#93C5FD;}
+
+  @media(max-width:600px){
+    header{padding:44px 16px 34px;}
+    .wrap{padding:0 16px;}
+    .questions-box{padding:20px 18px 18px;}
+  }
+  .hs-partline{font-family:'Inter',sans-serif;font-size:21px;font-weight:600;color:#93C5FD;margin:12px 0 0;}
+  .hs-note{font-family:'Inter',sans-serif;font-size:17px;background:#F2F5FA;border-left:4px solid #1D4ED8;padding:12px 16px;margin:14px 0;color:#14213D;}
+  .hs-note b{color:#1D4ED8;}
+  .hs-src-added li{font-size:17px;margin-bottom:8px;}
+  header .hs-date{color:#E6ECF7;}
+  header + .wrap{padding-top:28px;}
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-parts{background:#F2F5FA;border:2px solid #1D4ED8;border-radius:6px;padding:14px 16px;margin:0 0 24px;font-family:Arial,sans-serif}
+.hs-parts .lab{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:bold;color:#14213D;margin:0 0 8px}
+.hs-parts ol{margin:0 0 10px;padding-left:24px;font-size:1rem;line-height:1.45}
+.hs-parts li.cur{font-weight:bold}
+.hs-parts li.cur a{color:#14213D;text-decoration:none}
+.hs-parts .nav{display:flex;flex-wrap:wrap;gap:10px}
+.hs-parts .nav a{display:inline-block;background:#1D4ED8;color:#fff;text-decoration:none;font-weight:bold;padding:10px 16px;border-radius:5px;font-size:1rem}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
+</style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">In plain words · Office of Data Privacy</div>
+    <h1>What the Privacy Office Can and Can't Do, in Plain Words</h1>
+    <p class="dek">The short, simple version of our two-part case file.</p>
+    <p class="hs-date">CASE 2026-ODP-01 · Plain words · Posted Oct. 17, 2026 · Updated Oct. 17, 2026</p>
+  </div>
+</header>
+<div class="wrap" style="padding-top:22px;">
+<div class="hs-plain">Want every detail and source? <a class="hs-btn" href="bramwell-odp-enforcement.html">Read the full case file</a></div>
+<details class="hs-pages"><summary>Transparency pages (26) · tap to open</summary><ol><li><a href="index.html">Transparency docket</a><small>Every case file, searchable</small></li><li><a href="utah-amendments-2026.html">The 2026 Amendments</a> · <a href="utah-amendments-2026-plain.html">plain words</a><small>Amendments A and B on your ballot</small></li><li><a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> · <a href="amendment-b-myth-vs-fact-plain.html">plain words</a><small>Claims checked against the record</small></li><li><a href="amendment-b-quiz.html">Amendment B Quiz</a><small>Test what you know</small></li><li><a href="weber-housing-authority.html">Weber Housing Authority</a> · <a href="weber-housing-authority-plain.html">plain words</a><small>A commissioner, his wife and the authority that pays their company</small></li><li class=cur><a href="bramwell-odp-enforcement.html">What the Privacy Office Can and Can't Do</a> · <a href="bramwell-odp-enforcement-plain.html">plain words</a><small>Utah's Chief Privacy Officer</small></li><li><a href="counting-the-jobs.html">Counting the Jobs</a> · <a href="counting-the-jobs-plain.html">plain words</a><small>Job promises and what was reported</small></li><li><a href="matt-brower.html">Matt Brower</a> · <a href="matt-brower-plain.html">plain words</a><small>The board seat that never came up</small></li><li><a href="nilson-foundation.html">Ten Days</a> · <a href="nilson-foundation-plain.html">plain words</a><small>The Nilson Foundation's 501(c)(3) claim</small></li><li><a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> · <a href="sb258-preliminary-municipalities-plain.html">plain words</a><small>S.B. 258 and preliminary municipalities</small></li><li><a href="sitla-county-zoning-exemption.html">The Land Counties Can't Zone</a> · <a href="sitla-county-zoning-exemption-plain.html">plain words</a><small>Trust land and county zoning</small></li><li><a href="weber-hive-sitla-explainer.html">SITLA: The Land Nobody Zones</a> · <a href="weber-hive-sitla-explainer-plain.html">plain words</a><small>Who answers for trust land</small></li><li><a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> · <a href="tyson-eagle-mountain-closure-plain.html">plain words</a><small>Five years after opening</small></li><li><a href="utah-judicial-oversight.html">Behind the Bench</a> · <a href="utah-judicial-oversight-plain.html">plain words</a><small>Judge and lawyer complaints in Utah</small></li><li><a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> · <a href="waldrip-funding-threat-plain.html">plain words</a><small>A housing adviser in Heber City</small></li><li><a href="weber-county-tax-increases-since-2019.html">Every Weber County Property Tax Increase Since 2019</a> · <a href="weber-county-tax-increases-since-2019-plain.html">plain words</a><small>The full list</small></li><li><a href="weber-fire-district-annexation.html">A New Line on the Bill</a> · <a href="weber-fire-district-annexation-plain.html">plain words</a><small>Roy and Riverdale fire annexation</small></li><li><a href="weber-fire-district-growth.html">Paying for the Next Station</a> · <a href="weber-fire-district-growth-plain.html">plain words</a><small>How Weber Fire District funds growth</small></li><li><a href="weber-hive-5th5th-sales-tax.html">Weber County's New Sales Tax</a> · <a href="weber-hive-5th5th-sales-tax-plain.html">plain words</a><small>A public vote, but no vote by the public</small></li><li><a href="weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> · <a href="weber-hive-bait-and-switch-plain.html">plain words</a><small>Bait and switch, 2018 to 2026</small></li><li><a href="weber-hive-blank-box.html">The Blank Box</a> · <a href="weber-hive-blank-box-plain.html">plain words</a><small>Three disclosure forms, one pattern</small></li><li><a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> · <a href="weber-hive-enforcement-gap-plain.html">plain words</a><small>Complaints filed, few penalties</small></li><li><a href="weber-hive-gsl-two-money-pots.html">One Lake, Two Money Pots</a> · <a href="weber-hive-gsl-two-money-pots-plain.html">plain words</a><small>The Great Salt Lake Trust Council</small></li><li><a href="weber-hive-powder-mountain-water.html">Wells at the Top</a> · <a href="weber-hive-powder-mountain-water-plain.html">plain words</a><small>Powder Mountain's water</small></li><li><a href="weber-hive-then-vs-now.html">Then vs. Now</a> · <a href="weber-hive-then-vs-now-plain.html">plain words</a><small>Earlier plans and later approvals in Ogden Valley</small></li><li><a href="west-haven-energy-tax.html">West Haven's 6% Energy Tax</a> · <a href="west-haven-energy-tax-plain.html">plain words</a><small>A new line on the power bill</small></li></ol></details>
+
+</div>
+<div class="wrap">
+  <section>
+  <h2>What this is about</h2>
+  <p>Utah has an office that helps government agencies protect your personal data. It is the Office of Data Privacy. Christopher Bramwell runs it. Gov. Spencer Cox named him the state's first Chief Privacy Officer in August 2021.</p>
+  <p>This case file does not accuse anyone of wrongdoing. It lays out what the office can do, in records and in his own words.</p>
+  </section>
+  <section>
+  <h2>What the office does</h2>
+  <p>The office writes a privacy framework, trains workers, gives advice and takes complaints. Its own list of duties does not include enforcement or audits.</p>
+  <p>If you have a complaint about an agency, you go to that agency first. If it is not fixed, an ombuds can help both sides talk it out. That is mediation, not a fine.</p>
+  <div class="hs-fig"><h3>Where a complaint goes</h3><p class="sub">From the office's "Privacy for Individuals" page.</p><pre class="mermaid">
+flowchart TD
+  A["You have a complaint<br/>about a government agency"] --> B["Step 1: the agency's<br/>Chief Administrative Officer"]
+  B -->|"if not resolved"| C["Step 2: Data Privacy Ombuds<br/>mediation"]
+  C -.->|"enforcement, if any"| D["State Auditor or<br/>Attorney General"]
+</pre></div>
+  <p>The law names the State Auditor and the Attorney General to enforce it. Both are elected separately.</p>
+  </section>
+  <section>
+  <h2>Who watches the office</h2>
+  <p>Bramwell reports to Marvin Dodge, head of the Department of Government Operations. Dodge also chairs a five-member board. One of that board's jobs is to look at how the privacy office is set up and what power it has.</p>
+  <p>A 2026 law, H.B. 450, moved support for a second group, the Utah Privacy Commission, from the State Auditor's office to the privacy office.</p>
+  </section>
+  <section>
+  <h2>The report you can't read</h2>
+  <p>Every agency must file a yearly report with the office. It lists the personal data the agency shares, sells or buys. That report is a protected record. The office can ask for it. The public cannot. The first reports are due by Dec. 31, 2026.</p>
+  <p><a href="bramwell-odp-enforcement.html">Part 1: The office, and how a complaint moves</a> has the details.</p>
+  </section>
+  <section>
+  <h2>In his own words</h2>
+  <p>In spring 2025, Bramwell answered eight questions in a public Facebook group. He wrote that his office "is NOT an enforcement mechanism." He said the state had no official policy yet on selling anonymized data. His personal opinion, he said, is that governments should not sell personal data.</p>
+  <p>Utah's privacy law for businesses has a fine of up to $7,500 for each violation. The law for government agencies does not appear to name a dollar amount.</p>
+  </section>
+  <section>
+  <h2>Health records and breaches</h2>
+  <p>Health records follow a federal law, HIPAA. Most Utah hospitals share records through a private nonprofit exchange. The state privacy office does not oversee it. You can opt out with a notarized form.</p>
+  <p>The University of Utah has had several data breaches, including four in 2023 from one software flaw.</p>
+  </section>
+  <section>
+  <h2>Who can check</h2>
+  <p>The State Auditor has a State Privacy Auditor. Those audits are public. A 2023 review of 1,617 agencies found most had not posted a privacy policy statement on their website.</p>
+  <div class="hs-fig"><h3>Did agencies post a privacy policy? (FY2023)</h3><p class="sub">1,617 agencies reviewed. State Privacy Officer Annual Report FY2023.</p><div class="hs-bars"><div class="lab">Posted a privacy policy</div><div class="tr"><div class="fl" style="width:22.4%;background:#1E7B3C"></div><span class="v">34%</span></div><div class="lab">Did not</div><div class="tr"><div class="fl" style="width:43.6%;background:#B42318"></div><span class="v">66%</span></div></div></div>
+  <p>The next year's report said this improved by over 20%.</p>
+  <p><a href="bramwell-odp-enforcement-part-2.html">Part 2: His answers, incidents and checks</a> has his full answers and the audits.</p>
+  </section>
+  <section>
+  <h2>What's new</h2>
+  <p>In August 2026, Gov. Cox asked the privacy board and commission to review rules on license plate cameras. In September, a commission task force drafted ideas, such as a person checking every camera alert before police act.</p>
+  <div class="hs-plain">Ready for the details? <a class="hs-btn" href="bramwell-odp-enforcement.html">Read the full case file</a></div>
+  </section>
+</div>
+<footer>
+  <div class="wrap">
+    <div>THE WEBER COUNTY HIVE · TRANSPARENCY</div>
+    <div class="sub">Independent accountability journalism. Public records only. We report; you decide.</div>
+  </div>
+</footer>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"Arial, sans-serif",fontSize:'22px',primaryColor:'#F2F5FA',primaryTextColor:'#0F1F3D',primaryBorderColor:'#1D4ED8',lineColor:'#1E3A8A',edgeLabelBackground:'#FFFFFF'},flowchart:{curve:'basis',padding:18,useMaxWidth:true}});}catch(e){}</script>
+</body>
+</html>
