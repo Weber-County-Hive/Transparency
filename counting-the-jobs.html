@@ -5,64 +5,63 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Counting the Jobs | The Weber County Hive</title>
 <meta name="description" content="Utah's biggest data center deals were promoted on jobs. What the draft agreements require, what public support comes with them, and who the official job numbers leave out.">
-<link rel="icon" type="image/png" href="hive-bee.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <style>
-  :root{--black:#FAF7F2;--gold:#D4AF37;--warm-gold:#96723F;--cream:#111008;--gray:#6B6355;--line:rgba(212,175,55,0.35);}
+  :root{--black:#FFFFFF;--gold:#1D4ED8;--warm-gold:#1D4ED8;--cream:#14213D;--gray:#3E4C66;--line:#D5DCE8;}
   *{box-sizing:border-box;} html{scroll-behavior:smooth;}
-  body{margin:0;background:var(--black);color:var(--cream);font-family:'Source Serif 4',Georgia,'Times New Roman',serif;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  body{margin:0;background:var(--black);color:var(--cream);font-family:'Source Serif 4',Georgia,'Times New Roman',serif;line-height:1.7;font-size:19px;-webkit-font-smoothing:antialiased;}
   a{color:var(--warm-gold);} a:hover{color:var(--gold);}
   .wrap{max-width:820px;margin:0 auto;padding:0 24px;}
   .masthead{padding:56px 24px 40px;text-align:center;}
   .hexagon{width:44px;height:44px;margin:0 auto 14px;}
   .lockup{font-family:'Playfair Display',serif;}
   .lockup .hive{color:var(--gold);font-size:22px;letter-spacing:.18em;font-weight:700;text-transform:uppercase;}
-  .lockup .county{display:block;color:var(--gray);font-size:12px;letter-spacing:.32em;text-transform:uppercase;margin-top:4px;}
+  .lockup .county{display:block;color:var(--gray);font-size:12px;letter-spacing:.32em;text-transform:uppercase;margin-top:4px;font-size:13px;}
   .eyebrow-link{display:inline-block;margin-top:22px;font-style:italic;font-size:14px;color:var(--warm-gold);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;}
   .hero-stat{padding:8px 24px 44px;text-align:center;max-width:760px;margin:0 auto;}
   .hs-number{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(38px,7vw,64px);color:var(--gold);line-height:1.05;margin:0 0 8px;}
   .hs-sub{font-family:'Playfair Display',serif;font-weight:600;font-style:italic;font-size:clamp(18px,3vw,24px);color:var(--warm-gold);margin:0 0 20px;}
-  .hs-support{font-size:17px;color:#242017;line-height:1.6;max-width:520px;margin:0 auto;}
+  .hs-support{font-size:19px;color:#14213D;line-height:1.6;max-width:520px;margin:0 auto;}
   .article-header{padding:8px 24px 44px;text-align:center;border-bottom:1px solid var(--line);}
   .kicker{font-style:italic;color:var(--warm-gold);font-size:15px;margin-bottom:18px;}
   h1{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(28px,4.2vw,44px);line-height:1.18;margin:0 0 14px;}
   .subhead{font-family:'Playfair Display',serif;font-style:italic;font-weight:600;font-size:19px;color:var(--warm-gold);margin:0 0 20px;}
-  .dek{font-style:italic;color:var(--warm-gold);font-size:18px;line-height:1.55;max-width:620px;margin:0 auto;}
+  .dek{font-style:italic;color:var(--warm-gold);font-size:19px;line-height:1.55;max-width:620px;margin:0 auto;}
   .byline{margin-top:26px;color:var(--gray);font-size:13px;letter-spacing:.06em;text-transform:uppercase;}
   article{padding:52px 24px 20px;}
-  article p,article li{font-size:18px;color:#242017;}
+  article p,article li{font-size:19px;color:#14213D;}
   article p{margin:0 0 24px;}
   article h2{font-family:'Playfair Display',serif;font-weight:600;font-style:italic;color:var(--gold);font-size:27px;margin:52px 0 22px;padding-bottom:14px;border-bottom:1px solid var(--line);}
-  .part-banner{margin:60px 0 10px;padding:18px 22px;background:#111008;color:#FAF7F2;font-family:'Playfair Display',serif;font-size:22px;}
-  .part-banner small{display:block;font-family:'Source Serif 4',serif;font-size:15px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}
+  .part-banner{margin:60px 0 10px;padding:18px 22px;background:#0F1F3D;color:#FFFFFF;font-family:'Playfair Display',serif;font-size:22px;}
+  .part-banner small{display:block;font-family:'Source Serif 4',serif;font-size:15px;color:#93C5FD;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;}
   .lede{font-size:20px;}
-  .figure-line{margin:32px 0;padding:22px 26px;border-left:3px solid var(--gold);background:rgba(212,175,55,.06);}
-  .figure-line p{margin:0;font-size:18px;color:var(--cream);} .figure-line p+p{margin-top:12px;}
-  .callout{margin:36px 0;padding:24px 28px;border:1px solid var(--line);background:rgba(212,175,55,.03);}
+  .figure-line{margin:32px 0;padding:22px 26px;border-left:3px solid var(--gold);background:#F2F5FA;}
+  .figure-line p{margin:0;font-size:19px;color:var(--cream);} .figure-line p+p{margin-top:12px;}
+  .callout{margin:36px 0;padding:24px 28px;border:1px solid var(--line);background:#F2F5FA;}
   .callout .label{display:block;color:var(--warm-gold);font-size:13px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;}
-  .callout p{margin:0;font-size:17px;} .callout p+p{margin-top:14px;}
-  .callout ul{margin:0;padding-left:20px;} .callout li{font-size:17px;margin-bottom:8px;}
-  .draft-tag{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--warm-gold);color:var(--warm-gold);padding:1px 8px;margin-left:6px;vertical-align:middle;}
-  .signed-tag{display:inline-block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:#111008;padding:2px 8px;margin-left:6px;vertical-align:middle;}
+  .callout p{margin:0;font-size:18px;} .callout p+p{margin-top:14px;}
+  .callout ul{margin:0;padding-left:20px;} .callout li{font-size:18px;margin-bottom:8px;}
+  .draft-tag{display:inline-block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--warm-gold);color:var(--warm-gold);padding:1px 8px;margin-left:6px;vertical-align:middle;}
+  .signed-tag{display:inline-block;font-size:13px;letter-spacing:.12em;text-transform:uppercase;background:var(--gold);color:#FFFFFF;padding:2px 8px;margin-left:6px;vertical-align:middle;}
   .divider{width:56px;height:1px;background:var(--gold);margin:56px auto;}
-  .viz-block{margin:44px 0;padding:30px 26px;border:1px solid var(--line);background:rgba(212,175,55,.04);}
+  .viz-block{margin:44px 0;padding:30px 26px;border:1px solid var(--line);background:#F2F5FA;}
   .viz-title{font-style:italic;color:var(--warm-gold);font-size:14px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 20px;}
   .viz-caption{font-size:15px;color:var(--gray);font-style:italic;margin:16px 0 0;}
   .mermaid{display:flex;justify-content:center;}
   .mermaid svg{max-width:100% !important;height:auto;}
   .data-table{width:100%;border-collapse:collapse;table-layout:fixed;}
-  .data-table th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--warm-gold);font-weight:400;padding:0 12px 10px 0;border-bottom:1px solid var(--gold);}
-  .data-table td{overflow-wrap:anywhere;font-size:16px;color:#242017;padding:12px 12px 12px 0;border-bottom:1px solid rgba(0,0,0,.08);vertical-align:top;}
+  .data-table th{text-align:left;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--warm-gold);font-weight:400;padding:0 12px 10px 0;border-bottom:1px solid var(--gold);}
+  .data-table td{overflow-wrap:anywhere;font-size:16px;color:#14213D;padding:12px 12px 12px 0;border-bottom:1px solid rgba(0,0,0,.08);vertical-align:top;}
   .data-table td.num{font-family:'Playfair Display',serif;font-weight:700;color:var(--warm-gold);}
   .glossary{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 8px;}
-  .glossary details{border:1px solid var(--line);background:rgba(212,175,55,.04);}
+  .glossary details{border:1px solid var(--line);background:#F2F5FA;}
   .glossary summary{cursor:pointer;list-style:none;padding:9px 16px;font-size:15px;color:var(--warm-gold);}
   .glossary summary::-webkit-details-marker{display:none;}
   .glossary summary::before{content:"+ ";color:var(--gold);font-weight:700;}
   .glossary details[open] summary::before{content:"− ";}
-  .glossary p{margin:0;padding:12px 16px 14px;font-size:15px;color:#242017;max-width:520px;}
+  .glossary p{margin:0;padding:12px 16px 14px;font-size:15px;color:#14213D;max-width:520px;}
   .quicknav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:18px 0 0;border-top:1px solid var(--line);}
   .quicknav a{font-size:13px;color:var(--warm-gold);text-decoration:none;border:1px solid var(--line);padding:6px 12px;}
   .sources{padding:20px 0 8px;border-top:1px solid var(--line);margin-top:20px;}
@@ -71,11 +70,11 @@
   .sources summary::before{content:"› ";color:var(--gold);}
   .sources ul{margin:12px 0 0;padding:0;list-style:none;}
   .sources li{font-size:15px;color:var(--gray);padding:9px 0;border-bottom:1px solid rgba(0,0,0,.08);}
-  .method-note{margin-top:20px;font-size:14px;font-style:italic;color:var(--gray);}
+  .method-note{margin-top:20px;font-size:15px;font-style:italic;color:var(--gray);}
   #map{height:420px;border:1px solid var(--line);}
   .est{display:grid;gap:18px;}
-  .est label{display:block;font-size:16px;color:#242017;margin-bottom:6px;}
-  .est input[type=range]{width:100%;accent-color:#96723F;}
+  .est label{display:block;font-size:16px;color:#14213D;margin-bottom:6px;}
+  .est input[type=range]{width:100%;accent-color:#1D4ED8;}
   .est-row{display:flex;flex-wrap:wrap;gap:10px;}
   .est-row button{font-family:inherit;font-size:15px;padding:8px 14px;border:1px solid var(--warm-gold);background:#fff;color:var(--warm-gold);cursor:pointer;}
   .est-row button.on{background:var(--warm-gold);color:#fff;}
@@ -89,33 +88,33 @@
   .person{border-left:3px solid var(--gold);padding:6px 0 6px 16px;}
   .person strong{font-size:18px;} .person p{font-size:16px !important;margin:4px 0 0 !important;}
   footer{text-align:center;padding:56px 24px 64px;}
-  .footer-line{color:var(--gold);font-size:12px;letter-spacing:.28em;text-transform:uppercase;margin-bottom:10px;}
+  .footer-line{color:var(--gold);font-size:13px;letter-spacing:.28em;text-transform:uppercase;margin-bottom:10px;}
   .footer-url{color:var(--gray);font-size:13px;}
-  @media (max-width:520px){article p,article li,.lede{font-size:17px;} .callout,.viz-block{padding:20px 16px;} #map{height:340px;}}
+  @media (max-width:520px){article p,article li,.lede{font-size:18px;} .data-table th,.data-table td{padding-right:6px;} .data-table td{font-size:15px;} .callout,.viz-block{padding:20px 16px;} #map{height:340px;}}
 
-  .plus{color:#3F6B3F;font-weight:600;} .minus{color:#8C3B44;font-weight:600;}
+  .plus{color:#1E7B3C;font-weight:600;} .minus{color:#B42318;font-weight:600;}
   .bill{border:1px solid var(--line);background:#fff;padding:18px 20px;margin:0 0 16px;}
   .bill h4{margin:0 0 4px;font-family:'Playfair Display',serif;font-size:20px;color:var(--cream);}
-  .bill .who{font-size:14px;color:var(--gray);margin-bottom:8px;}
+  .bill .who{font-size:15px;color:var(--gray);margin-bottom:8px;}
   .bill p{font-size:16px !important;margin:6px 0 0 !important;}
   .lifespan{display:grid;gap:14px;margin-top:6px;}
   .ls-row{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:12px;align-items:center;}
-  .ls-label{font-size:16px;color:#242017;line-height:1.3;}
+  .ls-label{font-size:16px;color:#14213D;line-height:1.3;}
   .ls-track{position:relative;height:30px;background:rgba(0,0,0,.05);}
-  .ls-bar{position:absolute;top:0;bottom:0;left:0;display:flex;align-items:center;padding-left:10px;font-size:15px;font-weight:600;color:#111008;white-space:nowrap;}
-  .ls-bar.eq{background:#E8D49A;} .ls-bar.bld{background:#C9A575;} .ls-bar.deal{background:#111008;color:#FAF7F2;}
+  .ls-bar{position:absolute;top:0;bottom:0;left:0;display:flex;align-items:center;padding-left:10px;font-size:15px;font-weight:600;color:#0F1F3D;white-space:nowrap;}
+  .ls-bar.eq{background:#93C5FD;} .ls-bar.bld{background:#1D4ED8;color:#FFFFFF;} .ls-bar.deal{background:#0F1F3D;color:#FFFFFF;}
   .ls-axis{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:12px;font-size:13px;color:var(--gray);}
   .ls-axis div:last-child{display:flex;justify-content:space-between;}
   @media(max-width:520px){.ls-row,.ls-axis{grid-template-columns:1fr;gap:4px;} .ls-axis div:first-child{display:none;}}
-  .quick30{margin:36px 0;padding:24px 26px;background:#111008;color:#FAF7F2;}
-  .quick30 .label{display:block;color:var(--gold);font-size:14px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;}
-  .quick30 ol{margin:0;padding-left:22px;} .quick30 li{font-size:18px;color:#FAF7F2;margin-bottom:10px;line-height:1.5;}
+  .quick30{margin:36px 0;padding:24px 26px;background:#0F1F3D;color:#FFFFFF;}
+  .quick30 .label{display:block;color:#93C5FD;font-size:14px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:12px;}
+  .quick30 ol{margin:0;padding-left:22px;} .quick30 li{font-size:19px;color:#FFFFFF;margin-bottom:10px;line-height:1.5;}
   .draftbox{margin:30px 0;padding:22px 24px;border:2px dashed var(--warm-gold);background:#fff;}
   .draftbox .label{display:block;color:var(--warm-gold);font-size:14px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px;}
-  .draftbox p{font-size:18px !important;margin:0 0 10px !important;} .draftbox p:last-child{margin:0 !important;}
+  .draftbox p{font-size:19px !important;margin:0 0 10px !important;} .draftbox p:last-child{margin:0 !important;}
   .stack{display:flex;height:64px;border:1px solid var(--line);margin:8px 0 14px;}
   .stack div{display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:17px;padding:0 4px;line-height:1.15;}
-  .legend{display:grid;gap:8px;} .legend div{display:flex;gap:10px;align-items:center;font-size:17px;color:#242017;}
+  .legend{display:grid;gap:8px;} .legend div{display:flex;gap:10px;align-items:center;font-size:17px;color:#14213D;}
   .legend i{display:inline-block;width:18px;height:18px;flex:none;border:1px solid rgba(0,0,0,.2);}
   .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 16px;}
   .tabs button{font-family:inherit;font-size:16px;padding:10px 14px;border:1px solid var(--warm-gold);background:#fff;color:var(--warm-gold);cursor:pointer;}
@@ -123,40 +122,106 @@
   .placecard{display:none;} .placecard.on{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
   .placecard .half{padding:16px 18px;border:1px solid var(--line);background:#fff;}
   .placecard .half h4{margin:0 0 8px;font-size:15px;letter-spacing:.12em;text-transform:uppercase;}
-  .placecard .runs h4{color:#3F6B3F;} .placecard .empty h4{color:#8C3B44;}
-  .placecard .runs{border-top:5px solid #3F6B3F;} .placecard .empty{border-top:5px solid #8C3B44;}
+  .placecard .runs h4{color:#1E7B3C;} .placecard .empty h4{color:#B42318;}
+  .placecard .runs{border-top:5px solid #1E7B3C;} .placecard .empty{border-top:5px solid #B42318;}
   .placecard p{font-size:17px !important;margin:0 !important;}
   .tl{position:relative;margin:10px 0 24px;padding-left:40px;}
   .tl::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;background:var(--gold);}
   .tl-i{position:relative;margin-bottom:18px;}
   .mk{display:inline-flex;width:28px;height:28px;border-radius:50%;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;flex:none;}
   .tl-i .mk{position:absolute;left:-40px;top:0;}
-  .mk.up{background:#3F6B3F;} .mk.down{background:#8C3B44;} .mk.both{background:#96723F;font-size:11px;} .mk.mid{background:#6B6355;}
+  .mk.up{background:#1E7B3C;} .mk.down{background:#B42318;} .mk.both{background:#1D4ED8;font-size:13px;letter-spacing:-2px;} .mk.mid{background:#3E4C66;}
   .tl-i .yr{font-weight:700;font-size:15px;color:var(--warm-gold);letter-spacing:.06em;}
   .tl-i .nm{font-family:'Playfair Display',serif;font-size:19px;color:var(--cream);}
-  .tl-i .ds{font-size:16px;color:#242017;}
+  .tl-i .ds{font-size:16px;color:#14213D;}
   .asks{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:24px 0;}
   .ask{background:#fff;border:1px solid var(--line);border-top:5px solid var(--gold);padding:16px;text-align:center;}
   .ask .ic{font-size:34px;line-height:1;margin-bottom:8px;} .ask strong{display:block;font-size:18px;margin-bottom:4px;} .ask span{font-size:15px;color:var(--gray);}
-  .ok{color:#3F6B3F;font-weight:700;} .no{color:#8C3B44;font-weight:700;} .part{color:#96723F;font-weight:700;}
-  @media(max-width:600px){.placecard.on{grid-template-columns:1fr;} .stack div{font-size:14px;}}
-  /* Utah Hive Politics brand bar and bee footer */
-  .hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
-  .hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
-  .hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
-  .hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
-  .hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
-  .hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
-  .hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
-  .hb-foot .hb-name{font-size:14px;}
-  .hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
-  @media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+  .ok{color:#1E7B3C;font-weight:700;} .no{color:#B42318;font-weight:700;} .part{color:#1D4ED8;font-weight:700;}
+  @media(max-width:600px){.placecard.on{grid-template-columns:1fr;} .stack div{font-size:15px;}}
+  .hs-partline{font-family:Arial,sans-serif;font-weight:bold;font-size:1.05rem;color:#0F1F3D;background:#F2F5FA;border:1px solid #D5DCE8;display:inline-block;padding:6px 14px;border-radius:999px;margin:0 0 16px;}
+  .article-header .hs-date{color:#3E4C66;}
+  .jobs-added{margin:18px 0 26px;padding:16px 20px;background:#F2F5FA;border-left:5px solid #1D4ED8;}
+  .jobs-added p{margin:0 !important;}
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-parts{background:#F2F5FA;border:2px solid #1D4ED8;border-radius:6px;padding:14px 16px;margin:0 0 24px;font-family:Arial,sans-serif}
+.hs-parts .lab{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:bold;color:#14213D;margin:0 0 8px}
+.hs-parts ol{margin:0 0 10px;padding-left:24px;font-size:1rem;line-height:1.45}
+.hs-parts li.cur{font-weight:bold}
+.hs-parts li.cur a{color:#14213D;text-decoration:none}
+.hs-parts .nav{display:flex;flex-wrap:wrap;gap:10px}
+.hs-parts .nav a{display:inline-block;background:#1D4ED8;color:#fff;text-decoration:none;font-weight:bold;padding:10px 16px;border-radius:5px;font-size:1rem}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
 </style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
 <div class="masthead">
-  <div class="hexagon" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 93,27 93,73 50,96 7,73 7,27" stroke="#D4AF37" stroke-width="3"/><circle cx="30" cy="24" r="4" fill="#D4AF37"/></svg></div>
+  <div class="hexagon" aria-hidden="true"><svg viewBox="0 0 100 100" fill="none"><polygon points="50,4 93,27 93,73 50,96 7,73 7,27" stroke="#1D4ED8" stroke-width="3"/><circle cx="30" cy="24" r="4" fill="#1D4ED8"/></svg></div>
   <div class="lockup"><span class="hive">The Hive</span><span class="county">Weber County</span></div>
   <a class="eyebrow-link" href="index.html">← Transparency: Accountability Case Files</a>
 </div>
@@ -170,18 +235,26 @@
 <div class="article-header wrap">
   <div class="kicker">Transparency · Data Centers · CASE 2026-JOBS-01</div>
   <h1>Counting the Jobs</h1>
+  <p class="hs-partline">Part 1 of 2: The projects and the promises</p>
   <p class="subhead">What Utah's data center deals promise, what the agreements require, and who the official numbers leave out</p>
   <p class="dek">Part 1 checks the two largest Great Salt Lake data center proposals against their own documents. Part 2 asks who measures whether people can get work at all.</p>
   <div class="byline">The Weber County Hive · We report public records. You decide.</div>
+  <p class="hs-date">CASE 2026-JOBS-01 · Posted Oct. 5, 2026 · Updated Oct. 17, 2026</p>
 </div>
 
+<div class="wrap" style="padding-top:22px;">
+<nav class="hs-parts" aria-label="Parts of this series"><p class="lab">Part 1 of 2</p><ol><li class=cur><a href="counting-the-jobs.html">The projects and the promises</a></li><li><a href="counting-the-jobs-part-2.html">AI, jobs and who's measuring</a></li></ol><div class="nav"><a href="counting-the-jobs-part-2.html">Next: Part 2 &rarr;</a></div></nav>
+<div class="hs-plain">New to this? <a class="hs-btn" href="counting-the-jobs-plain.html">Read it in plain words</a> One short page for both parts, with simple charts.</div>
+<nav class="hs-toc" aria-label="On this page"><b style="width:100%;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;">On this page</b><a href="#intro">Introduction</a><a href="#short">Short version</a><a href="#map-sec">Where the two projects are</a><a href="#promoted">What was promoted</a><a href="#benchmarks">What the benchmarks show</a><a href="#require">What the agreements require</a><a href="#support">What public support comes with the projects</a><a href="#techchange">If the technology changes</a><a href="#taxes">How taxes change, place by place</a><a href="#bills">Bills that changed the picture</a><a href="#updates">Updates since this was posted</a><a href="#words">Words to know</a><a href="#questions">Questions to ask</a><a href="#connected">Connected Hive work</a><a href="#behind">Behind this piece</a><a href="#sources">Sources</a></nav>
+<details class="hs-pages"><summary>Transparency pages (26) · tap to open</summary><ol><li><a href="index.html">Transparency docket</a><small>Every case file, searchable</small></li><li><a href="utah-amendments-2026.html">The 2026 Amendments</a> · <a href="utah-amendments-2026-plain.html">plain words</a><small>Amendments A and B on your ballot</small></li><li><a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> · <a href="amendment-b-myth-vs-fact-plain.html">plain words</a><small>Claims checked against the record</small></li><li><a href="amendment-b-quiz.html">Amendment B Quiz</a><small>Test what you know</small></li><li><a href="weber-housing-authority.html">Weber Housing Authority</a> · <a href="weber-housing-authority-plain.html">plain words</a><small>A commissioner, his wife and the authority that pays their company</small></li><li><a href="bramwell-odp-enforcement.html">What the Privacy Office Can and Can't Do</a> · <a href="bramwell-odp-enforcement-plain.html">plain words</a><small>Utah's Chief Privacy Officer</small></li><li class=cur><a href="counting-the-jobs.html">Counting the Jobs</a> · <a href="counting-the-jobs-plain.html">plain words</a><small>Job promises and what was reported</small></li><li><a href="matt-brower.html">Matt Brower</a> · <a href="matt-brower-plain.html">plain words</a><small>The board seat that never came up</small></li><li><a href="nilson-foundation.html">Ten Days</a> · <a href="nilson-foundation-plain.html">plain words</a><small>The Nilson Foundation's 501(c)(3) claim</small></li><li><a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> · <a href="sb258-preliminary-municipalities-plain.html">plain words</a><small>S.B. 258 and preliminary municipalities</small></li><li><a href="sitla-county-zoning-exemption.html">The Land Counties Can't Zone</a> · <a href="sitla-county-zoning-exemption-plain.html">plain words</a><small>Trust land and county zoning</small></li><li><a href="weber-hive-sitla-explainer.html">SITLA: The Land Nobody Zones</a> · <a href="weber-hive-sitla-explainer-plain.html">plain words</a><small>Who answers for trust land</small></li><li><a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> · <a href="tyson-eagle-mountain-closure-plain.html">plain words</a><small>Five years after opening</small></li><li><a href="utah-judicial-oversight.html">Behind the Bench</a> · <a href="utah-judicial-oversight-plain.html">plain words</a><small>Judge and lawyer complaints in Utah</small></li><li><a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> · <a href="waldrip-funding-threat-plain.html">plain words</a><small>A housing adviser in Heber City</small></li><li><a href="weber-county-tax-increases-since-2019.html">Every Weber County Property Tax Increase Since 2019</a> · <a href="weber-county-tax-increases-since-2019-plain.html">plain words</a><small>The full list</small></li><li><a href="weber-fire-district-annexation.html">A New Line on the Bill</a> · <a href="weber-fire-district-annexation-plain.html">plain words</a><small>Roy and Riverdale fire annexation</small></li><li><a href="weber-fire-district-growth.html">Paying for the Next Station</a> · <a href="weber-fire-district-growth-plain.html">plain words</a><small>How Weber Fire District funds growth</small></li><li><a href="weber-hive-5th5th-sales-tax.html">Weber County's New Sales Tax</a> · <a href="weber-hive-5th5th-sales-tax-plain.html">plain words</a><small>A public vote, but no vote by the public</small></li><li><a href="weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> · <a href="weber-hive-bait-and-switch-plain.html">plain words</a><small>Bait and switch, 2018 to 2026</small></li><li><a href="weber-hive-blank-box.html">The Blank Box</a> · <a href="weber-hive-blank-box-plain.html">plain words</a><small>Three disclosure forms, one pattern</small></li><li><a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> · <a href="weber-hive-enforcement-gap-plain.html">plain words</a><small>Complaints filed, few penalties</small></li><li><a href="weber-hive-gsl-two-money-pots.html">One Lake, Two Money Pots</a> · <a href="weber-hive-gsl-two-money-pots-plain.html">plain words</a><small>The Great Salt Lake Trust Council</small></li><li><a href="weber-hive-powder-mountain-water.html">Wells at the Top</a> · <a href="weber-hive-powder-mountain-water-plain.html">plain words</a><small>Powder Mountain's water</small></li><li><a href="weber-hive-then-vs-now.html">Then vs. Now</a> · <a href="weber-hive-then-vs-now-plain.html">plain words</a><small>Earlier plans and later approvals in Ogden Valley</small></li><li><a href="west-haven-energy-tax.html">West Haven's 6% Energy Tax</a> · <a href="west-haven-energy-tax-plain.html">plain words</a><small>A new line on the power bill</small></li></ol></details>
+</div>
 <div class="wrap">
   <details class="sources" style="margin-top:0;">
     <summary>Explain this simply</summary>
-    <p style="font-size:18px;color:#242017;">Picture a town that gives a big company a tax deal because it promises lots of jobs. Now picture the written contract. If the contract never says how many jobs, and never says what happens if they don't show up, then the jobs are a hope, not a promise anyone can enforce.</p>
-    <p style="font-size:18px;color:#242017;">That's what this case file checks. It also asks a second question: when people can't get hired, do the official numbers even notice? Often they don't. Someone who gives up looking, or who starts their own business because nobody called back, doesn't show up as unemployed.</p>
-    <p style="font-size:18px;color:#242017;">It also looks ahead. The computer chips inside a data center get replaced every few years, but the deals around the buildings last 25 to 50 years. If the technology changes, what's left is a building, and the question of who pays for it.</p>
-    <p style="font-size:18px;color:#242017;">And it follows the money. Some governments collect more from these projects, some collect less, and some depend on the campus actually running. The "Taxes by place" section shows each one.</p>
+    <p style="font-size:19px;color:#14213D;">Picture a town that gives a big company a tax deal because it promises lots of jobs. Now picture the written contract. If the contract never says how many jobs, and never says what happens if they don't show up, then the jobs are a hope, not a promise anyone can enforce.</p>
+    <p style="font-size:19px;color:#14213D;">That's what this case file checks. It also asks a second question: when people can't get hired, do the official numbers even notice? Often they don't. Someone who gives up looking, or who starts their own business because nobody called back, doesn't show up as unemployed.</p>
+    <p style="font-size:19px;color:#14213D;">It also looks ahead. The computer chips inside a data center get replaced every few years, but the deals around the buildings last 25 to 50 years. If the technology changes, what's left is a building, and the question of who pays for it.</p>
+    <p style="font-size:19px;color:#14213D;">And it follows the money. Some governments collect more from these projects, some collect less, and some depend on the campus actually running. The "Taxes by place" section shows each one.</p>
   </details>
   <div class="glossary">
     <details><summary>Draft vs. signed</summary><p>MIDA has signed only two Stratos documents. The development agreement, the county agreement and the standards are posted as "draft and unsigned." This page labels every term by which kind it comes from.</p></details>
@@ -198,7 +271,7 @@
     <details><summary>Labor force</summary><p>People who are working or actively looking. Someone who stops looking is "not in the labor force" and isn't counted as unemployed.</p></details>
   </div>
   <div class="quicknav">
-    <a href="#intro">Introduction</a><a href="#map-sec">Map</a><a href="#promoted">What was promoted</a><a href="#benchmarks">Benchmarks</a><a href="#estimator">Try the math</a><a href="#require">What the drafts require</a><a href="#support">Public support</a><a href="#techchange">If the tech changes</a><a href="#hundred">Where $100 goes</a><a href="#taxes">Taxes by place</a><a href="#bills">Bills</a><a href="#nocpj">No cost-per-job yet</a><a href="#part2">Part 2: Who's counting</a><a href="#pace">Replacing vs. creating</a><a href="#conclusion">Conclusion</a><a href="#people">People</a><a href="#ask">Questions to ask</a>
+    <a href="#intro">Introduction</a><a href="#map-sec">Map</a><a href="#promoted">What was promoted</a><a href="#benchmarks">Benchmarks</a><a href="#estimator">Try the math</a><a href="#require">What the drafts require</a><a href="#support">Public support</a><a href="#techchange">If the tech changes</a><a href="#hundred">Where $100 goes</a><a href="#taxes">Taxes by place</a><a href="#bills">Bills</a><a href="counting-the-jobs-part-2.html#nocpj">No cost-per-job yet</a><a href="counting-the-jobs-part-2.html#part2">Part 2: Who's counting</a><a href="counting-the-jobs-part-2.html#pace">Replacing vs. creating</a><a href="counting-the-jobs-part-2.html#conclusion">Conclusion</a><a href="counting-the-jobs-part-2.html#people">People</a><a href="counting-the-jobs-part-2.html#ask">Questions to ask</a>
   </div>
 </div>
 
@@ -209,7 +282,7 @@
 <p>Data centers are sold to Utah communities on two promises: tax revenue and jobs. When a community gives up land, water and tax dollars in exchange, the public can fairly ask what it gets in writing.</p>
 <p><strong>Part 1</strong> checks the two largest Great Salt Lake proposals, the Stratos Project in Box Elder County and the Tooele Valley project in Tooele County, against their own documents: what was promoted, what the agreements require, who collects or gives up which taxes, what happens if the technology moves on, and which laws changed the rules. <strong>Part 2</strong> asks who measures whether people can get work at all, how fast technology is replacing jobs compared with creating them, and who the official numbers leave out.</p>
 
-<div class="quick30"><span class="label">The 30-second version</span><ol>
+<div class="quick30" id="short"><span class="label">The 30-second version</span><ol>
 <li>Stratos was promoted on <strong>2,000 permanent jobs</strong>.</li>
 <li>The draft agreements require a <strong>3-gigawatt power plant</strong> in five years. In the sections reviewed, they set <strong>no number of jobs</strong>.</li>
 <li>The yearly job count must be reported, but it <strong>can be marked confidential</strong>.</li>
@@ -240,6 +313,7 @@
 <tr><td>Tooele Valley (Zenith, 500 MW)</td><td>not found</td><td>not found</td><td>Inland Port Authority records reviewed; project paused</td></tr>
 <tr><td>All of Utah by 2030</td><td>—</td><td class="num">2,000–3,250</td><td>GOED, Aug. 19, 2026 (citing Gardner Institute)</td></tr>
 </table>
+<div class="jobs-added"><p><strong>Added Oct. 17, 2026:</strong> A Stratos water rights change application filed with the Utah Division of Water Rights on Oct. 15, 2026, lists <strong>4,850 employees</strong>: 400 for each of 11 data center clusters and 30 for each of fifteen 500-megawatt power blocks, according to the Deseret News (Oct. 16, 2026). This is a water filing, not one of the MIDA agreements reviewed on this page. The figures above are unchanged. <a href="https://www.deseret.com/utah/2026/10/16/stratos-project-water-application-reveals-new-details-on-massive-data-center/">Deseret News →</a></p></div>
 
 <div class="viz-block">
   <p class="viz-title">Permanent jobs: promised vs. estimates</p>
@@ -315,14 +389,14 @@ flowchart TD
 <div class="viz-block" id="hundred">
   <p class="viz-title">Where $100 of the building payment goes <span class="draft-tag">Draft</span></p>
   <div class="stack" role="img" aria-label="Of every 100 dollars: 22.75 back to the company, 61.80 to the developer, 15.45 to MIDA, 0 to the county">
-    <div style="width:22.75%;background:#C9A575;">$22.75</div>
-    <div style="width:61.8%;background:#111008;color:#FAF7F2;">$61.80</div>
-    <div style="width:15.45%;background:#D4AF37;">$15.45</div>
+    <div style="width:22.75%;background:#93C5FD;color:#0F1F3D;">$22.75</div>
+    <div style="width:61.8%;background:#0F1F3D;color:#FFFFFF;">$61.80</div>
+    <div style="width:15.45%;background:#1D4ED8;color:#FFFFFF;">$15.45</div>
   </div>
   <div class="legend">
-    <div><i style="background:#C9A575"></i><span><strong>$22.75 back to the company</strong> that pays it (the amount above Box Elder's 0.927% rate)</span></div>
-    <div><i style="background:#111008"></i><span><strong>$61.80 to the master developer</strong> (80% of the rest)</span></div>
-    <div><i style="background:#D4AF37"></i><span><strong>$15.45 to MIDA</strong> (20% of the rest; part to the state, the rest for military uses)</span></div>
+    <div><i style="background:#93C5FD"></i><span><strong>$22.75 back to the company</strong> that pays it (the amount above Box Elder's 0.927% rate)</span></div>
+    <div><i style="background:#0F1F3D"></i><span><strong>$61.80 to the master developer</strong> (80% of the rest)</span></div>
+    <div><i style="background:#1D4ED8"></i><span><strong>$15.45 to MIDA</strong> (20% of the rest; part to the state, the rest for military uses)</span></div>
     <div><i style="background:#fff"></i><span><strong>$0 to Box Elder County</strong> from this payment</span></div>
   </div>
   <p class="viz-caption">For servers and chips, the whole payment goes back to the company within 30 days. Hive calculation from draft MDA §13, using the 1.2% LOC rate and the 0.927% county rate stated in the draft. The county's money comes separately (see "To the county" above).</p>
@@ -423,111 +497,30 @@ flowchart TD
 <div class="bill"><h4>S.B. 277 (2025) · Records appeals</h4><div class="who">Sen. Mike McKell</div><p>Replaced the seven-member citizen State Records Committee with a single-director Government Records Office. If yearly job counts are marked confidential, an appeal goes there.</p></div>
 <div class="bill"><h4>H.B. 76 (2026) · Data center water reporting</h4><p>The Stratos draft ties its yearly employee and energy reporting to this law.</p></div>
 
-<h2 id="nocpj">Why there's no cost-per-job number yet</h2>
-<div class="figure-line"><p>Cost per job = public support ÷ verified permanent jobs.</p><p>Neither number exists yet for either project. Stratos has no tenant announced and no jobs reported, and Tooele Valley has no job figure on record and is paused. The Hive will run it, with each kind of support kept separate, when real counts are public.</p></div>
-
-<div class="part-banner" id="part2"><small>Part 2</small>Who's counting the people looking for work?</div>
-
-<h2>What employers say about AI</h2>
-<p>Challenger, Gray &amp; Christmas counted 116,175 U.S. job cuts from January to August 2026 where employers named AI as the reason, up from 54,836 in all of 2025. Those are announced reasons, not proven causes. Only 1% of laid-off workers in a Gallup survey said AI was the main reason, and Yale's Budget Lab found job churn still within historical ranges. The Bureau of Labor Statistics attributes no job loss to AI.</p>
-
-<h2 id="pace">Replacing and creating: how fast?</h2>
-<p><strong>Measured so far.</strong> Employers named AI in 54,836 announced U.S. job cuts in all of 2025, and in 116,175 in the first eight months of 2026, more than double in less than a year. Those are announcements, not proven causes. Stanford's 2026 AI Index found employment of software developers aged 22 to 25 down about 20% since 2024.</p>
-<div class="viz-block">
-  <p class="viz-title">U.S. job cuts where employers named AI</p>
-  <div class="lifespan">
-    <div class="ls-row"><div class="ls-label">All of 2025 (12 months)</div><div class="ls-track"><div class="ls-bar bld" style="width:47.2%">54,836</div></div></div>
-    <div class="ls-row"><div class="ls-label">Jan.–Aug. 2026 (8 months)</div><div class="ls-track"><div class="ls-bar deal" style="width:100%">116,175</div></div></div>
-  </div>
-  <p class="viz-caption">Challenger, Gray &amp; Christmas counts of announced cuts. These are reasons employers gave, not proven causes.</p>
-</div>
-<div class="viz-block">
-  <p class="viz-title">Forecast, worldwide, by 2030</p>
-  <div class="lifespan">
-<div class="ls-row"><div class="ls-label">Jobs created</div><div class="ls-track"><div class="ls-bar eq" style="width:100.0%">170 million</div></div></div>
-<div class="ls-row"><div class="ls-label">Jobs displaced</div><div class="ls-track"><div class="ls-bar deal" style="width:54.1%">92 million</div></div></div>
-<div class="ls-row"><div class="ls-label">Net</div><div class="ls-track"><div class="ls-bar bld" style="width:45.9%">78 million</div></div></div>
-  </div>
-  <p class="viz-caption">World Economic Forum, Future of Jobs Report 2025 (survey of 1,000+ employers in 55 economies). A forecast, not a count. In the same survey, 41% of employers said they plan to cut staff because of AI automation.</p>
-</div>
-<div class="callout"><span class="label">Who the new jobs are for</span>
-<p><strong>Growing fastest:</strong> farmworkers, delivery drivers, construction workers, nurses, secondary teachers, AI and renewable energy specialists. <strong>Declining fastest:</strong> cashiers, administrative assistants, graphic designers.</p>
-<p>A net gain worldwide doesn't mean the same people move into the new jobs. An administrative assistant whose job disappears doesn't automatically become a nurse or an AI specialist. PwC's 2026 AI Jobs Barometer found entry-level roles exposed to AI are seven times more likely to ask for senior-level skills.</p></div>
-<p>Data centers follow the same pattern on a small scale: thousands of construction jobs that end, then far fewer permanent, specialized ones. The forecasts are global and long-range. The Hive has not found a Utah agency count of how many jobs AI has replaced or created in the state.</p>
-
-<h2>Where the pressure shows</h2>
-<table class="data-table">
-<tr><th>Group</th><th>Figure</th><th>Source</th></tr>
-<tr><td>Recent grads, 22–27</td><td class="num">5.6% unemployed · 42% underemployed</td><td>NY Fed, Q2 2026</td></tr>
-<tr><td>All workers</td><td class="num">~4.2%</td><td>NY Fed / BLS</td></tr>
-<tr><td>People with a disability</td><td class="num">8.3% (about double)</td><td>BLS, 2025</td></tr>
-<tr><td>All veterans</td><td class="num">3.5%</td><td>BLS, 2025</td></tr>
-<tr><td>Post-9/11 vets rated 60%+ vs. under 30%</td><td class="num">64.7% vs. 85.1% in labor force</td><td>BLS, Aug. 2025</td></tr>
-<tr><td>Applicants disclosing a disability</td><td class="num">26% fewer responses</td><td>Rutgers/Syracuse experiment</td></tr>
-</table>
-
-<div class="viz-block">
-  <p class="viz-title">Who the unemployment rate counts</p>
-  <div class="mermaid">
-flowchart TD
-    A["Qualified person<br/>applies for jobs"] --> B{"Gets a callback?"}
-    B -->|Yes| C["Hired<br/><b>Counted: employed</b>"]
-    B -->|No| D["Keeps applying<br/><b>Counted: unemployed</b>"]
-    D --> E["Stops looking<br/><b>Not counted</b>"]
-    D --> F["Starts own business<br/><b>Counted: employed</b>"]
-    D --> G["Takes a job below training<br/><b>Counted: employed</b>"]
-  </div>
-  <p class="viz-caption">No population-wide count exists of qualified people who applied and never got an interview. More than two-thirds of U.S. entrepreneurs in Babson's 2024 survey named job scarcity as one reason they started a business.</p>
-</div>
-
-<h2>Who is measuring, and who isn't</h2>
-<table class="data-table">
-<tr><th>Question</th><th>Measured?</th></tr>
-<tr><td>Layoffs employers blame on AI</td><td><span class="ok">✓</span> Yes, privately, from announcements</td></tr>
-<tr><td>Whether AI caused them</td><td><span class="no">✗</span> No official measure</td></tr>
-<tr><td>Callbacks for qualified applicants</td><td><span class="part">◐</span> Only in limited experiments</td></tr>
-<tr><td>Veterans who are also disabled, callbacks</td><td><span class="no">✗</span> No study found</td></tr>
-<tr><td>How many Utah data center workers are local</td><td><span class="no">✗</span> No Utah record found (<a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-national-math.html">see Data Centers case file</a>)</td></tr>
-<tr><td>Stratos yearly employee counts</td><td><span class="part">◐</span> Required in draft, can be marked confidential</td></tr>
-</table>
-<div class="callout"><span class="label">The other side</span><ul>
-<li>Some rural officials prefer data centers because they bring tax revenue without large population growth.</li>
-<li>Utah contractors and suppliers have won construction work.</li>
-<li>Eagle Mountain's mayor says data centers fund the city's general budget. <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-meta-eagle-mountain.html">Meta case file →</a></li>
-<li>Brookings found counties gain roughly 100–200 jobs from a first major data center; wages didn't change and home prices rose 2–5%.</li>
-</ul></div>
-
-<h2 id="conclusion">Conclusion</h2>
-<p>The Stratos drafts do several things the public can check: they promise the county upfront and minimum payments, require yearly employee counts and set a hard power deadline. What they don't do, in the language reviewed, is require any number of jobs, allow recovery of money if the jobs don't appear, or say what happens to the buildings if the technology moves on. And the job count they do require can be kept out of public view.</p>
-<p>Laws since 2020 push both ways. S.B. 206 now requires a public meeting and a 40-year comparison before new increment deals, and H.B. 507 limits new local data center incentives from May 2027. But S.B. 114 exempts every round of equipment from sales tax with no jobs condition, H.B. 507 grandfathers deals signed before its limit and adds a new protected records category, and S.B. 225 removed a statewide water limit on Inland Port incentives.</p>
-<p>Nationally, the people most affected by a changing job market are the hardest to see in the numbers. Forecasts say technology will create more jobs than it removes worldwide, but different jobs, often needing different training.</p>
-<div class="figure-line"><p>Whether these campuses become steady employers and taxpayers, or large buildings that outlast the equipment inside them, isn't settled by any document reviewed. The drafts include no job number, no money damages and no cleanup requirement for the developer. The terms that would change that are ones the public can ask for by name: a job number, a way to recover money, public job counts, and a plan for the buildings when the technology moves on.</p></div>
-<div class="asks">
-  <div class="ask"><div class="ic">🔢</div><strong>A job number</strong><span>written into the agreement</span></div>
-  <div class="ask"><div class="ic">↩️</div><strong>A way to recover money</strong><span>if the jobs don't come</span></div>
-  <div class="ask"><div class="ic">📢</div><strong>Public job counts</strong><span>not marked confidential</span></div>
-  <div class="ask"><div class="ic">🏗️</div><strong>A cleanup plan</strong><span>for when the technology moves on</span></div>
-</div>
-
-<div class="divider"></div>
-
-<h2 id="people">People in this record</h2>
-<div class="people">
-  <div class="person"><strong>Kevin O'Leary</strong><p>Investor behind Stratos; public source of the 10,000 / 4,000 construction and 2,000 permanent job figures. <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-stratos-land.html">Stratos case file →</a></p></div>
-  <div class="person"><strong>Sen. J. Stuart Adams</strong><p>Chaired the MIDA board when it unanimously approved the Stratos documents April 24, 2026, and signed the adopted resolution and ordinance. <a href="weber-hive-enforcement-gap.html">Enforcement gap case file →</a></p></div>
-  <div class="person"><strong>Sen. Kirk Cullimore</strong><p>Primary sponsor of S.B. 114 (2020), the data center sales tax exemption with no jobs requirement. <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-sb114.html">S.B. 114 →</a></p></div>
-  <div class="person"><strong>Ben Hart</strong><p>Executive director, Utah Inland Port Authority, which holds the Tooele Valley project area. <a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb507.html">H.B. 507 case file →</a></p></div>
-  <div class="person"><strong>Chuck Akerlow</strong><p>Zenith Development; told the Tribune the Tooele Valley project would not be possible without port authority financing.</p></div>
-</div>
-<p style="margin-top:22px;">Related: <a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> (a jobs-based incentive when the jobs leave) · <a href="https://weber-county-hive.github.io/PIDS-Utah/who-holds-the-risk.html">Who Holds the Risk? PIDs, Tax Breaks and the Public</a></p>
-
-<h2 id="ask">Questions to ask, and to whom</h2>
-<div class="callout"><span class="label">MIDA board and executive director</span><ul><li>Has any version of the Stratos development or interlocal agreement been signed?</li><li>Does any Stratos agreement require a minimum number of permanent jobs? What happens if it isn't met?</li><li>Will yearly employee counts be published, or marked confidential?</li><li>If part of the campus stops operating or sits empty, who is responsible for the buildings and equipment, and who pays for removal?</li><li>Will signing the Stratos agreements or forming its public infrastructure districts trigger S.B. 206's public meeting and 40-year comparison?</li></ul></div>
-<div class="callout"><span class="label">Box Elder County Commission</span><ul><li>Will the county publish the employee numbers MIDA reports?</li><li>How many jobs are expected to go to Box Elder residents?</li><li>If little power is sold, how will the $10,000-per-megawatt minimum be paid?</li></ul></div>
-<div class="callout"><span class="label">Utah Inland Port Authority and Tooele County</span><ul><li>What permanent job figure, if any, was presented for the Tooele Valley data center?</li><li>If financing is reconsidered, will job requirements be part of it?</li></ul></div>
-<div class="callout"><span class="label">Workforce Services and GOEO</span><ul><li>Does Utah track job seekers, including veterans and people with disabilities, who apply without getting interviews?</li><li>Does the 2,000–3,250 forecast count Utah residents or everyone on site?</li></ul></div>
-<div class="callout"><span class="label">Your state legislators and congressional delegation</span><ul><li>Should data center incentives require job numbers, public reporting, where workers live, and recovery of money?</li><li>Should federal labor statistics track whether AI is changing who gets hired?</li><li>Should Utah require decommissioning plans and money set aside for cleanup, as Michigan's H.B. 6142 proposes?</li></ul></div>
-
+<section id="updates">
+<h2>Updates since this was posted</h2>
+<p>News and records found online after Oct. 5, 2026, with dates.</p>
+<ul class="hs-upd"><li><span class="d">Oct. 8, 2026</span>The Tooele County Planning Commission voted unanimously to table Chapter 34, the county's draft data center ordinance, until it can define what a data center is. An assistant county manager said the County Council will not accept a data center application until Chapter 34 is complete. The next planning commission meeting was set for Oct. 28.<span class="s">Source: <a href="https://www.ksl.com/article/51633969/tooele-county-planning-commission-votes-to-table-draft-of-data-center-ordinance">KSL, Oct. 8, 2026</a></span></li><li><span class="d">Oct. 14, 2026</span>KSL reported the Stratos water permit application, once expected by the end of August, had not yet reached the Utah Division of Water Rights. The developer said it was complete and would be filed "shortly."<span class="s">Source: <a href="https://www.ksl.com/article/51636537/water-permit-application-for-stratos-data-center-expected-to-be-filed-shortly">KSL, Oct. 14, 2026</a></span></li><li><span class="d">Oct. 15–16, 2026</span>The Stratos water rights change application was filed. It lists 4,850 employees (400 for each of 11 data center clusters, 30 for each of fifteen 500-megawatt power blocks) and a 7.5-gigawatt power facility. The Division of Water Rights will advertise it for two weeks, followed by a 20-day protest period. The job figure is in a water filing, not in the MIDA agreements.<span class="s">Source: <a href="https://www.deseret.com/utah/2026/10/16/stratos-project-water-application-reveals-new-details-on-massive-data-center/">Deseret News, Oct. 16, 2026</a></span></li><li><span class="d">Sept. 3, 2026 (link added for an existing source)</span>Utah News Dispatch reported Tooele Valley on pause. Inland Port Authority Executive Director Ben Hart said the authority had nothing on its agenda for the project: "I don't consider it alive right now, that's for sure." Tooele County paused data center applications while it reviews an ordinance.<span class="s">Source: <a href="https://utahnewsdispatch.com/2026/09/03/concerns-swirl-over-a-developers-push-for-a-tooele-valley-data-center-but-plans-are-on-pause/">Utah News Dispatch, Sept. 3, 2026</a></span></li><li><span class="d">Not found as of Oct. 17, 2026</span>News searches on Oct. 17, 2026 found no report that the Stratos development agreement or county interlocal agreement has been signed, and no court ruling yet on the referendum group's lawsuit (FOX 13 reported Aug. 3 that the county and O'Leary had asked the court to dismiss it). MIDA's own document page was not rechecked for this update.<span class="s">Source: Hive web searches, Oct. 17, 2026; <a href="https://www.fox13now.com/news/local-news/box-elder-county/oleary-box-elder-county-ask-for-dismissal-of-lawsuit-over-citizen-referendum">FOX 13, Aug. 3, 2026</a></span></li></ul>
+</section>
+<section id="words">
+<h2>Words to know</h2>
+<p>Tap a card to see what it means. The page's original glossary is near the top of this part.</p>
+<div class="hs-flips"><button class="hs-flip" aria-expanded="false"><div class="ft">MIDA</div><div class="fh">Tap to see</div><div class="fd">The Military Installation Development Authority, a state authority. Its board approved the Stratos documents in April 2026 and holds the Stratos project area.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Utah Inland Port Authority</div><div class="fh">Tap to see</div><div class="fd">A state authority that holds the Tooele Valley project area and made the $4.875M infrastructure loan listed on this page.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Development agreement (MDA)</div><div class="fh">Tap to see</div><div class="fd">The contract between MIDA and the developer that sets deadlines and duties. The Stratos one is posted as a draft.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Interlocal agreement</div><div class="fh">Tap to see</div><div class="fd">A written agreement between two governments. In Stratos, the draft one is between MIDA and Box Elder County.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Project area</div><div class="fh">Tap to see</div><div class="fd">The land where MIDA or the Inland Port Authority can use its special tax and land-use tools.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Referendum</div><div class="fh">Tap to see</div><div class="fd">A petition to put a government decision on the ballot so voters can decide it. Box Elder County rejected the Stratos referendum applications; the sponsors went to court.</div></button></div>
+</section>
+<section id="questions">
+<h2>Questions to ask, and whom to ask</h2>
+<p>More questions, by agency, are in <a href="counting-the-jobs-part-2.html#ask">Part 2</a>.</p>
+<div class="hs-qa"><div><b>MIDA board and executive director</b>Has any version of the Stratos development agreement been signed, and does it now include a job number?</div><div><b>MIDA</b>Does the 4,850-employee figure in the Oct. 15 water rights filing appear in any agreement MIDA has approved?</div><div><b>Box Elder County Commission</b>When MIDA reports the yearly employee count, will the county post it for the public?</div><div><b>Utah Inland Port Authority</b>If Tooele Valley financing comes back to the board, will a job figure be presented with it?</div><div><b>Tooele County Planning Commission</b>Will Chapter 34 address what happens to a data center site if it closes?</div></div>
+</section>
+<section id="connected">
+<h2>Connected Hive work</h2>
+<div class="hs-cards"><a href="index.html"><b>Transparency docket</b><span>Every Transparency case file</span></a><a href="tyson-eagle-mountain-closure.html"><b>Tyson Leaves Eagle Mountain</b><span>Transparency: a jobs-based incentive when the jobs leave</span></a><a href="https://weber-county-hive.github.io/PIDS-Utah/who-holds-the-risk.html"><b>Who Holds the Risk?</b><span>PIDS-Utah: PIDs, tax breaks and data center closures</span></a><a href="https://weber-county-hive.github.io/PIDS-Utah/stratos-ruby-pipeline-mida.html"><b>Stratos, the Ruby Pipeline and MIDA</b><span>PIDS-Utah: Box Elder County explanation</span></a><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-datacenters-bills-docket.html"><b>Data Center Bills Docket</b><span>Bill-Tracker</span></a><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb507.html"><b>H.B. 507</b><span>Bill-Tracker: limits on local data center incentives</span></a><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-sb206.html"><b>S.B. 206</b><span>Bill-Tracker: tax increment disclosure</span></a><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-sb225.html"><b>S.B. 225</b><span>Bill-Tracker: Inland Port water and incentives</span></a><a href="https://weber-county-hive.github.io/Unelected-Power/dan-hemmert.html"><b>Dan Hemmert</b><span>Unelected-Power: MIDA executive director</span></a><a href="https://weber-county-hive.github.io/candidates2026/sd7-hollist-rushforth-ostler.html"><b>SD-7: Hollist vs. Rushforth vs. Ostler</b><span>candidates2026: the seat Sen. Stuart Adams held</span></a><a href="weber-hive-enforcement-gap.html"><b>Utah's Campaign-Finance Enforcement Gap</b><span>Transparency</span></a><a href="weber-hive-bait-and-switch.html"><b>Bills That Did the Opposite</b><span>Transparency: bait and switch, 2018 to 2026</span></a></div>
+</section>
+<section id="behind">
+<h2>Behind this piece</h2>
+<div class="hs-counter"><div><div class="n">5</div><div class="l">MIDA Stratos documents read (2 signed, 3 draft)</div></div><div><div class="n">7</div><div class="l">Hive bill case files used</div></div><div><div class="n">33</div><div class="l">Sources listed (both parts)</div></div><div><div class="n">3</div><div class="l">Inland Port Authority records read</div></div><div><div class="n">4</div><div class="l">News reports added for the Oct. 17 update</div></div><div><div class="n">16</div><div class="l">Searches run for the Oct. 17 update (estimate)</div></div></div><p class="hs-updates">Posted Oct. 5, 2026. Updated Oct. 17, 2026: split into two linked parts; new White and navy colors and larger print; a plain-words page, updates, words to know, questions to ask and links to related Hive pages. Newer figures were added next to the old ones and dated: the 4,850-employee figure in the Stratos water filing (Part 1) and Challenger's Jan.–Sept. 2026 AI count (Part 2). A link was added for the Utah News Dispatch Sept. 3 source. No original wording or earlier facts changed.</p>
+</section>
+<h2 id="sources">Sources</h2>
 <details class="sources">
 <summary>Sources and how they were read</summary>
 <ul>
@@ -551,7 +544,7 @@ flowchart TD
 <li>The Current GA, revised Georgia audit, Jan. 15, 2026 — <a href="https://thecurrentga.org/2026/01/15/revised-audit-reveals-georgia-data-centers-economic-impact-overstated/">thecurrentga.org</a></li>
 <li>Quartz, data center jobs and incentives — <a href="https://qz.com/data-center-jobs-employment-investment-economic-development-051326">qz.com</a></li>
 <li>Utah Inland Port Authority: Tooele Valley Project Area Plan Amendment 2 (June 25, 2026); 2024 Annual Report; "Who Qualifies for AIB Loans" — inlandportauthority.utah.gov</li>
-<li>Utah News Dispatch, Sept. 3, 2026 (Tooele Valley paused)</li>
+<li>Utah News Dispatch, Sept. 3, 2026 (Tooele Valley paused) — <a href="https://utahnewsdispatch.com/2026/09/03/concerns-swirl-over-a-developers-push-for-a-tooele-valley-data-center-but-plans-are-on-pause/">utahnewsdispatch.com</a> (link added Oct. 17, 2026)</li>
 <li>Challenger, Gray &amp; Christmas figures as summarized by <a href="https://secondtalent.com/resources/ai-impact-job-market/">Second Talent</a> and <a href="https://www.outlookbusiness.com/corporate/ai-overtakes-all-other-reasons-for-us-job-cuts-as-layoffs-surge-in-2026">Outlook Business</a></li>
 <li>Forkast, citing Gallup Q1 2026 — <a href="https://forkast.news/?p=128176">forkast.news</a></li>
 <li>Federal Reserve Bank of New York, Labor Market for Recent College Graduates — <a href="https://www.newyorkfed.org/research/college-labor-market">newyorkfed.org</a></li>
@@ -565,26 +558,39 @@ flowchart TD
 <li>Babson College, GEM 2024 U.S. report — <a href="https://www.newsfilecorp.com/release/246145/New-Global-Entrepreneurship-Monitor-GEM-Report-from-Babson-College-Reveals-U.S.-Entrepreneurial-Activity-at-a-Historic-High">newsfilecorp.com</a></li>
 <li>The Weber County Hive, "The National Math Behind Utah's Data Center Bets" (Brookings, KUTV, Utah Business, Tribune sources) — <a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-national-math.html">Data Centers repo</a></li>
 </ul>
+<p style="font-family:Arial,sans-serif;font-weight:bold;margin:18px 0 6px;">Added Oct. 17, 2026</p>
+<ul>
+<li>KSL, "Tooele County Planning Commission votes to table draft of data center ordinance," Oct. 8, 2026 — <a href="https://www.ksl.com/article/51633969/tooele-county-planning-commission-votes-to-table-draft-of-data-center-ordinance">ksl.com</a></li>
+<li>KSL, "Water permit application for Stratos data center expected to be filed 'shortly'," Oct. 14, 2026 — <a href="https://www.ksl.com/article/51636537/water-permit-application-for-stratos-data-center-expected-to-be-filed-shortly">ksl.com</a></li>
+<li>Deseret News, "Stratos Project water application reveals new details on massive data center," Oct. 16, 2026 — <a href="https://www.deseret.com/utah/2026/10/16/stratos-project-water-application-reveals-new-details-on-massive-data-center/">deseret.com</a></li>
+<li>Challenger, Gray &amp; Christmas, "Job Cuts Fall in September; Hiring Plans Up 3% Over 2025 On Weak Early Seasonal Hiring," Oct. 1, 2026 — <a href="https://www.challengergray.com/blog/job-cuts-fall-in-september-hiring-plans-up-3-over-2025-on-weak-early-seasonal-hiring/">challengergray.com</a></li>
+<li>FOX 13, "O'Leary, Box Elder County ask for dismissal of lawsuit over citizen referendum," Aug. 3, 2026 — <a href="https://www.fox13now.com/news/local-news/box-elder-county/oleary-box-elder-county-ask-for-dismissal-of-lawsuit-over-citizen-referendum">fox13now.com</a></li>
+<li>Box Elder County, "Stratos Project Referendum" page (County Attorney's May 28, 2026 decision, Resolutions 26-11 and 26-12, Agreement 26-15) — <a href="https://www.boxeldercountyut.gov/666/Stratos-Project-Referendum">boxeldercountyut.gov</a></li>
+</ul>
+<p class="method-note">Links could not be confirmed for the Salt Lake Tribune (May 8, 2026), Forbes (June 9, 2026) and Tribune data center map (Sept. 25, 2026) items, so they are still listed without links.</p>
 <p class="method-note">Method note: "no job requirement" and "no clawback" describe the sections of the draft agreements the Hive has read, not a word search of every page. Several national figures come through summary sites; the original reports are named so they can be checked. The estimator uses an industry staffing range for illustration only.</p>
 </details>
+<div style="margin-top:34px;"><nav class="hs-parts" aria-label="Parts of this series"><p class="lab">Part 1 of 2</p><ol><li class=cur><a href="counting-the-jobs.html">The projects and the promises</a></li><li><a href="counting-the-jobs-part-2.html">AI, jobs and who's measuring</a></li></ol><div class="nav"><a href="counting-the-jobs-part-2.html">Next: Part 2 &rarr;</a></div></nav>
+</div>
 </article>
 
 <footer><div class="footer-line">Independent · Accountability · Journalism</div><div class="footer-url">webercountyhive.substack.com · Tips and corrections: webercountyhive@gmail.com</div></footer>
-
 <div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
 <script>
-try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"'Source Serif 4', Georgia, serif",fontSize:'20px',primaryColor:'#F4E9DD',primaryTextColor:'#111008',primaryBorderColor:'#D4AF37',lineColor:'#96723F',secondaryColor:'#FAF7F2',tertiaryColor:'#FAF7F2',edgeLabelBackground:'#FAF7F2'},flowchart:{curve:'basis',padding:16,useMaxWidth:true}});}catch(e){}
+try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"Arial, sans-serif",fontSize:'22px',primaryColor:'#F2F5FA',primaryTextColor:'#0F1F3D',primaryBorderColor:'#1D4ED8',lineColor:'#1E3A8A',secondaryColor:'#FFFFFF',tertiaryColor:'#FFFFFF',edgeLabelBackground:'#FFFFFF'},flowchart:{curve:'basis',padding:18,useMaxWidth:true}});}catch(e){}
 try{
 var map=L.map('map',{scrollWheelZoom:false}).setView([41.25,-112.5],8);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:12,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
-L.circleMarker([41.797,-112.611],{radius:12,color:'#96723F',fillColor:'#D4AF37',fillOpacity:.85}).addTo(map).bindPopup('<b>Stratos Project</b><br>Hansel Valley, Box Elder County (approx.)<br>MIDA · O\'Leary Digital<br>2,000 permanent jobs promised<br>Drafts unsigned');
-L.circleMarker([40.72,-112.37],{radius:12,color:'#111008',fillColor:'#6B6355',fillOpacity:.85}).addTo(map).bindPopup('<b>Tooele Valley Project Area</b><br>Northern Tooele County (approx.)<br>Inland Port Authority · Zenith<br>500 MW · paused<br>No job figure found');
+L.circleMarker([41.797,-112.611],{radius:12,color:'#1D4ED8',fillColor:'#1D4ED8',fillOpacity:.85}).addTo(map).bindPopup('<b>Stratos Project</b><br>Hansel Valley, Box Elder County (approx.)<br>MIDA · O\'Leary Digital<br>2,000 permanent jobs promised<br>Drafts unsigned');
+L.circleMarker([40.72,-112.37],{radius:12,color:'#0F1F3D',fillColor:'#3E4C66',fillOpacity:.85}).addTo(map).bindPopup('<b>Tooele Valley Project Area</b><br>Northern Tooele County (approx.)<br>Inland Port Authority · Zenith<br>500 MW · paused<br>No job figure found');
 }catch(e){}
 (function(){
  var gw=1,s=document.getElementById('staff');
+ if(!s)return;
  function upd(){document.getElementById('staffval').textContent=s.value;document.getElementById('estout').textContent=Math.round(gw*10*s.value).toLocaleString();}
  document.querySelectorAll('#gwbtns button').forEach(function(b){b.addEventListener('click',function(){document.querySelectorAll('#gwbtns button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');gw=parseFloat(b.dataset.gw);upd();});});
  s.addEventListener('input',upd);upd();
@@ -595,5 +601,6 @@ L.circleMarker([40.72,-112.37],{radius:12,color:'#111008',fillColor:'#6B6355',fi
 })();
 </script>
 <script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
 </body>
 </html>
