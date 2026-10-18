@@ -24,7 +24,8 @@ const CASES = [
     officials: ["Stuart Adams", "Mike Schultz", "Gage Froerer"],
     status: "documented",
     published: "Aug 19, 2026",
-    updated: "Aug 19, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
     link: "weber-hive-enforcement-gap.html"
   },
   {
@@ -36,6 +37,7 @@ const CASES = [
     status: "documented",
     published: "Aug 22, 2026",
     updated: "Oct 17, 2026",
+    plain: true,
     link: "waldrip-funding-threat.html",
     pairWith: "CASE 2026-SB258-01"
   },
@@ -48,6 +50,7 @@ const CASES = [
     status: "documented",
     published: "Aug 22, 2026",
     updated: "Oct 17, 2026",
+    plain: true,
     link: "sb258-preliminary-municipalities.html",
     pairWith: "CASE 2026-WAL-01"
   },
@@ -60,6 +63,7 @@ const CASES = [
     status: "documented",
     published: "Aug 23, 2026",
     updated: "Oct 17, 2026",
+    plain: true,
     link: "sitla-county-zoning-exemption.html",
     pairWith: "CASE 2026-WAL-01"
   },
@@ -72,6 +76,7 @@ const CASES = [
     status: "documented",
     published: "Aug 23, 2026",
     updated: "Oct 17, 2026",
+    plain: true,
     link: "weber-hive-sitla-explainer.html",
     pairWith: "CASE 2026-SITLA-01"
   },
@@ -84,6 +89,7 @@ const CASES = [
     status: "documented",
     published: "Aug 30, 2026",
     updated: "Oct 17, 2026",
+    plain: true,
     link: "weber-hive-blank-box.html"
   },
   {
@@ -95,6 +101,7 @@ const CASES = [
     status: "documented",
     published: "Sep 3, 2026",
     updated: "Oct 17, 2026",
+    plain: true,
     link: "matt-brower.html",
     pairWith: "CASE 2026-COI-01"
   },
@@ -107,6 +114,7 @@ const CASES = [
     status: "documented",
     published: "Aug 31, 2026",
     updated: "Oct 17, 2026",
+    plain: true,
     link: "weber-housing-authority.html"
   },
   {
@@ -117,7 +125,9 @@ const CASES = [
     officials: ["Christopher Bramwell", "Marvin Dodge", "Kirk Cullimore"],
     status: "documented",
     published: "Aug 31, 2026",
-    updated: "Aug 31, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
+    parts: 2,
     link: "bramwell-odp-enforcement.html"
   },
   {
@@ -129,6 +139,7 @@ const CASES = [
     status: "documented",
     published: "Sept 3, 2026",
     updated: "Oct 17, 2026",
+    plain: true,
     link: "nilson-foundation.html"
   },
   {
@@ -139,7 +150,9 @@ const CASES = [
     officials: ["Mike Schultz", "Scott Sandall", "Keven Stratton", "Timothy Hawkes", "Rex Shipp"],
     status: "documented",
     published: "Sep 8, 2026",
-    updated: "Sep 13, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
+    parts: 2,
     link: "weber-hive-bait-and-switch.html",
     pairWith: "CASE 2026-GSL-01"
   },
@@ -151,8 +164,8 @@ const CASES = [
     officials: ["Mike Schultz", "Scott Sandall", "Timothy Hawkes", "Brian Steed"],
     status: "documented",
     published: "Sep 8, 2026",
-    updated: "Sep 8, 2026",
-    link: "weber-hive-gsl-two-money-pots.html",
+    updated: "Oct 17, 2026",
+    link: "https://weber-county-hive.github.io/Great-Salt-Lake/weber-gsl-two-money-pots.html",
     pairWith: "CASE 2026-BSW-01"
   },
   {
@@ -163,7 +176,9 @@ const CASES = [
     officials: ["Gage Froerer", "Weber County Commission"],
     status: "documented",
     published: "Sep 11, 2026",
-    updated: "Sep 11, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
+    parts: 3,
     link: "weber-hive-5th5th-sales-tax.html"
   },
   {
@@ -174,7 +189,8 @@ const CASES = [
     officials: ["Tom Westmoreland", "Abby Ivory"],
     status: "documented",
     published: "Sep 11, 2026",
-    updated: "Sep 11, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
     link: "tyson-eagle-mountain-closure.html"
   },
   {
@@ -185,7 +201,9 @@ const CASES = [
     officials: ["Weber Fire District Board", "Chief Britt Clark", "Roy City Council", "Riverdale City Council"],
     status: "documented",
     published: "Sep 24, 2026",
-    updated: "Sep 29, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
+    parts: 2,
     link: "weber-fire-district-annexation.html",
     pairWith: "CASE 2026-STAX-01"
   },
@@ -197,7 +215,9 @@ const CASES = [
     officials: ["Weber Fire District Board", "Chief Britt Clark", "Community Reinvestment Agency of Weber County"],
     status: "documented",
     published: "Sep 25, 2026",
-    updated: "Sep 29, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
+    parts: 4,
     link: "weber-fire-district-growth.html",
     pairWith: "CASE 2026-WFD-01"
   },
@@ -209,7 +229,9 @@ const CASES = [
     officials: ["Weber County Commission", "Weber County Planning Commission", "Nordic Village PID Board", "Summit Mountain Holding Group"],
     status: "documented",
     published: "Sep 29, 2026",
-    updated: "Sep 29, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
+    parts: 2,
     link: "weber-hive-then-vs-now.html",
     pairWith: "CASE 2026-WFD-02"
   },
@@ -221,7 +243,8 @@ const CASES = [
     officials: ["Powder Mountain Water and Sewer Improvement District Board", "Utah Division of Water Rights", "Jim Harvey"],
     status: "pending",
     published: "Sep 29, 2026",
-    updated: "Sep 29, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
     link: "weber-hive-powder-mountain-water.html",
     pairWith: "CASE 2026-WFD-03"
   },
@@ -234,6 +257,7 @@ const CASES = [
     status: "documented",
     published: "Sep 26, 2026",
     updated: "Oct 17, 2026",
+    plain: true,
     link: "weber-county-tax-increases-since-2019.html",
     pairWith: "CASE 2026-WFD-02"
   },
@@ -245,7 +269,9 @@ const CASES = [
     officials: ["Judicial Conduct Commission", "Office of Professional Conduct", "Jordan Teuscher", "Brady Brammer"],
     status: "documented",
     published: "Sep 24, 2026",
-    updated: "Sep 24, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
+    parts: 2,
     link: "utah-judicial-oversight.html"
   },
   {
@@ -256,7 +282,8 @@ const CASES = [
     officials: ["Rob Vanderwood", "Kim Dixon", "Ryan Swapp", "Ryan Saunders", "Carrie Call", "Nina Morse"],
     status: "documented",
     published: "Sep 30, 2026",
-    updated: "Sep 30, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
     link: "west-haven-energy-tax.html",
     pairWith: "CASE 2026-STAX-01"
   },
@@ -279,7 +306,9 @@ const CASES = [
     officials: ["MIDA", "Utah Inland Port Authority", "Stuart Adams", "Kevin O'Leary", "Box Elder County"],
     status: "documented",
     published: "Oct 5, 2026",
-    updated: "Oct 5, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
+    parts: 2,
     link: "counting-the-jobs.html",
     pairWith: "CASE 2026-TYS-01"
     },
@@ -291,8 +320,22 @@ const CASES = [
     officials: ["Lincoln Fillmore", "Jason B. Kyle"],
     status: "documented",
     published: "Oct 6, 2026",
-    updated: "Oct 6, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
+    parts: 2,
     link: "amendment-b-myth-vs-fact.html"
+  },
+  {
+    caseNumber: "CASE 2026-AMB-02",
+    title: "Amendment B Quiz",
+    category: "Elections & Ballot Measures",
+    summary: "12 quick questions on Utah's 2026 Amendments A and B, each answered from the public record. Explains what the amendments do; doesn't tell you how to vote.",
+    officials: ["Lincoln Fillmore", "Jason B. Kyle"],
+    status: "documented",
+    published: "Oct 8, 2026",
+    updated: "Oct 17, 2026",
+    link: "amendment-b-quiz.html",
+    pairWith: "CASE 2026-AMB-01"
   },
   {
     caseNumber: "CASE 2026-AMD-01",
@@ -302,7 +345,9 @@ const CASES = [
     officials: ["Anthony Loubet", "Lincoln Fillmore", "Jason B. Kyle", "Wayne Harper", "Jerry Stevenson", "Dan McCay"],
     status: "documented",
     published: "Oct 7, 2026",
-    updated: "Oct 7, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
+    parts: 4,
     link: "utah-amendments-2026.html",
     pairWith: "CASE 2026-AMB-01"
   }
