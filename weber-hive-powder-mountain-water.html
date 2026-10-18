@@ -10,12 +10,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    --black:#FAF7F2;
-    --gold:#D4AF37;
-    --warm-gold:#96723F;
-    --cream:#111008;
-    --gray:#6B6355;
-    --line:rgba(212,175,55,0.35);
+    --black:#FFFFFF;
+    --gold:#1D4ED8;
+    --warm-gold:#1D4ED8;
+    --cream:#14213D;
+    --gray:#3E4C66;
+    --line:#D5DCE8;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -25,6 +25,7 @@
     color:var(--cream);
     font-family:'Source Serif 4', Georgia, 'Times New Roman', serif;
     line-height:1.7;
+    font-size:19px;
     -webkit-font-smoothing:antialiased;
   }
   a{color:var(--warm-gold);}
@@ -49,14 +50,14 @@
   .lockup .county{
     display:block;
     color:var(--gray);
-    font-size:12px;letter-spacing:0.32em;
+    font-size:13px;letter-spacing:0.32em;
     text-transform:uppercase;
     margin-top:4px;
   }
   .eyebrow-link{
     display:inline-block;margin-top:22px;
     font-family:'Source Serif 4', Georgia, serif;
-    font-style:italic;font-size:14px;color:var(--warm-gold);
+    font-style:italic;font-size:16px;color:var(--warm-gold);
     text-decoration:none;border-bottom:1px solid var(--line);
     padding-bottom:2px;
   }
@@ -67,7 +68,7 @@
   .kicker{
     font-family:'Source Serif 4', Georgia, serif;
     font-style:italic;color:var(--warm-gold);
-    font-size:15px;letter-spacing:0.02em;margin-bottom:18px;
+    font-size:16px;letter-spacing:0.02em;margin-bottom:18px;
   }
   h1{
     font-family:'Playfair Display', serif;
@@ -80,7 +81,7 @@
   .dek{
     font-family:'Source Serif 4', Georgia, serif;
     font-style:italic;color:var(--warm-gold);
-    font-size:18px;line-height:1.55;
+    font-size:19px;line-height:1.55;
     max-width:600px;margin:0 auto;
   }
   .byline{
@@ -92,7 +93,7 @@
   .hero-svg{
     margin:36px auto 0;max-width:700px;
     border:1px solid var(--line);
-    background:rgba(212,175,55,0.04);
+    background:rgba(29,78,216,0.04);
     padding:20px 10px;
   }
   .hero-svg svg{width:100%;height:auto;display:block;}
@@ -100,7 +101,7 @@
   /* Body */
   article{padding:52px 24px 20px;}
   article p{
-    font-size:18px;color:#242017;margin:0 0 24px;
+    font-size:19px;color:#14213D;margin:0 0 24px;
   }
   article h2{
     font-family:'Playfair Display', serif;
@@ -116,25 +117,25 @@
   .figure-line{
     margin:32px 0;padding:22px 26px;
     border-left:2px solid var(--gold);
-    background:rgba(212,175,55,0.05);
+    background:rgba(29,78,216,0.05);
   }
-  .figure-line p{margin:0;font-size:17px;color:var(--cream);}
+  .figure-line p{margin:0;font-size:18px;color:var(--cream);}
   .figure-line p + p{margin-top:12px;}
   .callout{
     margin:36px 0;padding:24px 28px;
     border:1px solid var(--line);
-    background:rgba(212,175,55,0.03);
+    background:rgba(29,78,216,0.03);
   }
   .callout .label{
     display:block;color:var(--warm-gold);
-    font-size:12px;letter-spacing:0.18em;text-transform:uppercase;
+    font-size:13px;letter-spacing:0.18em;text-transform:uppercase;
     margin-bottom:12px;
   }
-  .callout p{margin:0;font-size:16px;color:#242017;}
+  .callout p{margin:0;font-size:17px;color:#14213D;}
   .callout p + p{margin-top:14px;}
-  .callout ul{margin:14px 0;padding-left:20px;font-size:16px;color:#242017;}
+  .callout ul{margin:14px 0;padding-left:20px;font-size:17px;color:#14213D;}
   .callout li + li{margin-top:6px;}
-  h3.sub{font-family:'Playfair Display', serif;font-size:20px;color:#242017;margin:36px 0 12px;}
+  h3.sub{font-family:'Playfair Display', serif;font-size:20px;color:#14213D;margin:36px 0 12px;}
   .divider{
     width:56px;height:1px;background:var(--gold);
     margin:56px auto;
@@ -154,14 +155,14 @@
     font-family:'Source Serif 4', Georgia, serif;
     font-style:italic;font-weight:400;
     color:var(--warm-gold);
-    font-size:14px;letter-spacing:0.12em;text-transform:uppercase;
+    font-size:16px;letter-spacing:0.12em;text-transform:uppercase;
     margin:0 0 18px;
   }
   .sources summary{
     font-family:'Source Serif 4', Georgia, serif;
     font-style:italic;font-weight:400;cursor:pointer;
     color:var(--warm-gold);
-    font-size:14px;letter-spacing:0.12em;text-transform:uppercase;
+    font-size:16px;letter-spacing:0.12em;text-transform:uppercase;
     margin:0 0 4px;list-style:none;
     padding:6px 0;
     display:flex;align-items:center;gap:10px;
@@ -170,7 +171,7 @@
   .sources summary::before{
     content:"›";
     display:inline-block;
-    font-size:18px;color:var(--gold);
+    font-size:19px;color:var(--gold);
     transform:rotate(0deg);
     transition:transform 0.18s ease;
   }
@@ -179,7 +180,7 @@
   .sources ul{margin-top:18px;}
   .sources ul{margin:0;padding:0;list-style:none;}
   .sources li{
-    font-size:14px;color:var(--gray);
+    font-size:16px;color:var(--gray);
     padding:9px 0;border-bottom:1px solid rgba(0,0,0,0.08);
   }
   .sources li:last-child{border-bottom:none;}
@@ -194,7 +195,7 @@
   }
   .footer-line{
     color:var(--gold);
-    font-size:12px;letter-spacing:0.28em;text-transform:uppercase;
+    font-size:13px;letter-spacing:0.28em;text-transform:uppercase;
     margin-bottom:10px;
   }
   .footer-url{
@@ -202,7 +203,7 @@
   }
 
   @media (max-width:520px){
-    article p, .lede{font-size:17px;}
+    article p, .lede{font-size:18px;}
     .figure-line{padding:18px 18px;}
     .callout{padding:20px 18px;}
   }
@@ -215,7 +216,7 @@
   .viz-block{
     margin:44px 0;padding:30px 26px;
     border:1px solid var(--line);
-    background:rgba(212,175,55,0.04);
+    background:rgba(29,78,216,0.04);
   }
   .viz-title{
     font-family:'Source Serif 4', Georgia, serif;
@@ -224,7 +225,7 @@
     margin:0 0 20px;
   }
   .viz-caption{
-    font-size:14px;color:var(--gray);font-style:italic;
+    font-size:16px;color:var(--gray);font-style:italic;
     margin:16px 0 0;
   }
   .mermaid{
@@ -239,20 +240,20 @@
   .bar-row:last-child{margin-bottom:0;}
   .bar-row .bar-meta{
     display:flex;justify-content:space-between;align-items:baseline;
-    font-size:14px;color:var(--cream);margin-bottom:6px;
+    font-size:16px;color:var(--cream);margin-bottom:6px;
   }
   .bar-row .bar-meta .amt{
     font-family:'Playfair Display', serif;font-weight:700;
-    color:var(--cream);font-size:15px;
+    color:var(--cream);font-size:16px;
   }
   .bar-track{
     width:100%;height:14px;background:rgba(0,0,0,0.06);
     position:relative;
   }
   .bar-fill{height:100%;}
-  .bar-fill.cat-differential{background:#D4AF37;}
-  .bar-fill.cat-bond{background:#8B6F2E;}
-  .bar-fill.cat-infra{background:#C9A575;}
+  .bar-fill.cat-differential{background:#1D4ED8;}
+  .bar-fill.cat-bond{background:#0F1F3D;}
+  .bar-fill.cat-infra{background:#93C5FD;}
 
   .legend{
     display:flex;flex-wrap:wrap;gap:18px;
@@ -264,9 +265,9 @@
     font-size:13px;color:var(--gray);
   }
   .legend-swatch{width:12px;height:12px;flex-shrink:0;}
-  .legend-swatch.cat-differential{background:#D4AF37;}
-  .legend-swatch.cat-bond{background:#8B6F2E;}
-  .legend-swatch.cat-infra{background:#C9A575;}
+  .legend-swatch.cat-differential{background:#1D4ED8;}
+  .legend-swatch.cat-bond{background:#0F1F3D;}
+  .legend-swatch.cat-infra{background:#93C5FD;}
 
   /* Stacked split bar */
   .split-bar{
@@ -278,10 +279,10 @@
     font-size:13px;font-weight:600;letter-spacing:0.02em;
   }
   .split-seg.project-area{
-    width:75%;background:#D4AF37;color:#1A1408;
+    width:75%;background:#1D4ED8;color:#FFFFFF;
   }
   .split-seg.pass-through{
-    width:25%;background:#F0E4CC;color:#3A2E14;
+    width:25%;background:#E6ECF7;color:#14213D;
   }
   .split-labels{
     display:flex;justify-content:space-between;
@@ -291,17 +292,17 @@
   .outlier-badge{
     margin:0 0 26px;padding:18px 22px;
     border:1px dashed var(--gold);
-    background:rgba(212,175,55,0.06);
+    background:rgba(29,78,216,0.06);
     display:flex;justify-content:space-between;align-items:baseline;
     flex-wrap:wrap;gap:10px;
   }
-  .outlier-badge .oname{font-size:15px;color:var(--cream);}
+  .outlier-badge .oname{font-size:16px;color:var(--cream);}
   .outlier-badge .oamt{
     font-family:'Playfair Display', serif;font-weight:700;
     font-size:22px;color:var(--gold);
   }
   .status-tag{
-    font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+    font-size:13px;letter-spacing:0.08em;text-transform:uppercase;
     color:var(--gray);font-style:italic;
   }
   .panel-label{
@@ -318,7 +319,7 @@
   }
   .glossary details{
     border:1px solid var(--line);
-    background:rgba(212,175,55,0.04);
+    background:rgba(29,78,216,0.04);
   }
   .glossary summary{
     cursor:pointer;list-style:none;
@@ -334,7 +335,7 @@
   .glossary details[open] summary{border-bottom:1px solid var(--line);}
   .glossary p{
     margin:0;padding:12px 16px 14px;
-    font-size:14px;color:#242017;line-height:1.6;
+    font-size:16px;color:#14213D;line-height:1.6;
   }
 
   /* Quick nav */
@@ -344,7 +345,7 @@
     border-top:1px solid var(--line);
   }
   .quicknav a{
-    font-size:12px;letter-spacing:0.04em;
+    font-size:13px;letter-spacing:0.04em;
     color:var(--warm-gold);text-decoration:none;
     border:1px solid var(--line);
     padding:6px 12px;
@@ -355,12 +356,12 @@
   /* Data table */
   .data-table{width:100%;border-collapse:collapse;margin:0;}
   .data-table th{
-    text-align:left;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;
+    text-align:left;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;
     color:var(--warm-gold);font-weight:400;
     padding:0 12px 10px 0;border-bottom:1px solid var(--gold);
   }
   .data-table td{
-    font-size:15px;color:#242017;
+    font-size:16px;color:#14213D;
     padding:12px 12px 12px 0;
     border-bottom:1px solid rgba(0,0,0,0.08);
     vertical-align:top;
@@ -381,11 +382,11 @@
   .split-col{background:var(--black);padding:24px 22px;}
   .split-col h4{
     font-family:'Playfair Display', serif;font-style:italic;font-weight:600;
-    color:var(--gold);font-size:16px;margin:0 0 14px;
+    color:var(--gold);font-size:17px;margin:0 0 14px;
   }
   .split-col ul{margin:0;padding:0;list-style:none;}
   .split-col li{
-    font-size:15px;color:#242017;line-height:1.6;
+    font-size:16px;color:#14213D;line-height:1.6;
     padding:0 0 14px 18px;position:relative;
   }
   .split-col li:last-child{padding-bottom:0;}
@@ -404,7 +405,7 @@
   .calc-item{
     flex:1 1 140px;
     border:1px solid var(--line);
-    background:rgba(212,175,55,0.04);
+    background:rgba(29,78,216,0.04);
     padding:18px 16px;text-align:center;
   }
   .calc-item .spend{font-size:13px;color:var(--gray);margin-bottom:8px;}
@@ -424,7 +425,7 @@
     display:grid;grid-template-columns:1fr 1fr;gap:1px;
     background:var(--line);border:1px solid var(--line);
   }
-  .hero-panel{background:#F6F0E4;padding:24px 22px;text-align:center;}
+  .hero-panel{background:#F2F5FA;padding:24px 22px;text-align:center;}
   .hero-panel h3{
     font-family:'Playfair Display', serif;font-weight:700;letter-spacing:0.06em;
     font-size:19px;color:var(--warm-gold);margin:0 0 14px;
@@ -436,18 +437,18 @@
     color:var(--warm-gold);text-align:center;border-bottom:1px solid var(--gold);
     padding-bottom:8px;margin-bottom:8px;
   }
-  .hero-panel .row{display:flex;justify-content:space-between;font-size:16px;color:#242017;padding:3px 0;}
+  .hero-panel .row{display:flex;justify-content:space-between;font-size:17px;color:#14213D;padding:3px 0;}
   .hero-panel .row b{color:var(--warm-gold);}
-  .hero-panel .line{font-size:16px;color:#242017;text-align:center;padding:3px 0;}
-  .hero-panel .foot{font-size:15px;color:var(--gray);margin:14px 0 0;}
+  .hero-panel .line{font-size:17px;color:#14213D;text-align:center;padding:3px 0;}
+  .hero-panel .foot{font-size:16px;color:var(--gray);margin:14px 0 0;}
 
   .flow{display:flex;flex-direction:column;align-items:stretch;gap:0;}
   .flow-node{
-    border:1px solid var(--gold);background:#F4E9DD;
-    padding:14px 16px;font-size:16px;color:#111008;text-align:center;line-height:1.5;
+    border:1px solid var(--gold);background:#F2F5FA;
+    padding:14px 16px;font-size:17px;color:#14213D;text-align:center;line-height:1.5;
   }
   .flow-node.q{background:#FFF;border-style:dashed;font-weight:600;}
-  .flow-node.end{background:rgba(122,32,32,0.08);border-color:#7A2020;font-weight:600;}
+  .flow-node.end{background:rgba(180,35,24,0.08);border-color:#B42318;font-weight:600;}
   .flow-arrow{text-align:center;color:var(--warm-gold);font-size:22px;line-height:1;padding:6px 0;}
   .flow-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   .flow-col{display:flex;flex-direction:column;}
@@ -455,21 +456,21 @@
     align-self:center;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;
     color:#FFF;background:var(--warm-gold);padding:3px 12px;margin-bottom:6px;
   }
-  .flow-tag.yes{background:#7A2020;}
+  .flow-tag.yes{background:#B42318;}
 
   .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
   .tool-card{border:1px solid var(--line);background:#FFF;padding:18px 16px;display:flex;flex-direction:column;}
   .tool-num{
-    width:34px;height:34px;border-radius:50%;color:#FAF7F2;
-    font-family:'Playfair Display', serif;font-weight:700;font-size:18px;
+    width:34px;height:34px;border-radius:50%;color:#FFFFFF;
+    font-family:'Playfair Display', serif;font-weight:700;font-size:19px;
     display:flex;align-items:center;justify-content:center;margin-bottom:10px;
   }
-  .tool-card h4{font-family:'Playfair Display', serif;font-size:18px;margin:0 0 10px;color:#111008;line-height:1.3;}
+  .tool-card h4{font-family:'Playfair Display', serif;font-size:19px;margin:0 0 10px;color:#14213D;line-height:1.3;}
   .tool-card svg{width:100%;max-width:150px;height:70px;margin:4px 0 12px;}
-  .tool-card p{font-size:16px;margin:0;color:#242017;line-height:1.55;}
+  .tool-card p{font-size:17px;margin:0;color:#14213D;line-height:1.55;}
   .shared-q{
-    margin-top:14px;padding:12px 16px;border:1px solid var(--gold);background:rgba(212,175,55,0.12);
-    font-family:'Playfair Display', serif;font-style:italic;font-weight:700;font-size:17px;text-align:center;color:#111008;
+    margin-top:14px;padding:12px 16px;border:1px solid var(--gold);background:rgba(29,78,216,0.12);
+    font-family:'Playfair Display', serif;font-style:italic;font-weight:700;font-size:18px;text-align:center;color:#14213D;
   }
 
   .big-split{display:flex;width:100%;min-height:64px;border:1px solid var(--line);}
@@ -481,104 +482,104 @@
   .big-split .lbl{font-size:13px;letter-spacing:0.06em;text-transform:uppercase;}
   .split-figs{display:grid;gap:12px;margin-top:14px;}
   .split-figs .fig{border-left:4px solid var(--gold);padding:6px 12px;}
-  .split-figs .fig b{font-family:'Playfair Display', serif;font-size:22px;color:#111008;display:block;}
-  .split-figs .fig span{font-size:15px;color:#242017;}
+  .split-figs .fig b{font-family:'Playfair Display', serif;font-size:22px;color:#14213D;display:block;}
+  .split-figs .fig span{font-size:16px;color:#14213D;}
 
   .dmap-source{
-    border:2px solid var(--warm-gold);background:#F4E9DD;padding:16px;text-align:center;
-    font-size:17px;color:#111008;font-weight:600;
+    border:2px solid var(--warm-gold);background:#F2F5FA;padding:16px;text-align:center;
+    font-size:18px;color:#14213D;font-weight:600;
   }
-  .dmap-source small{display:block;font-weight:400;font-size:15px;color:var(--gray);margin-top:4px;}
-  .dmap-arrow{text-align:center;font-size:15px;color:var(--warm-gold);font-style:italic;padding:10px 0;}
+  .dmap-source small{display:block;font-weight:400;font-size:16px;color:var(--gray);margin-top:4px;}
+  .dmap-arrow{text-align:center;font-size:16px;color:var(--warm-gold);font-style:italic;padding:10px 0;}
   .dmap-arrow::after{content:"\2193";display:block;font-size:24px;font-style:normal;line-height:1.1;}
   .dmap-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   .dmap-group{border:1px dashed var(--gold);padding:12px;background:#FFF;}
   .dmap-group .gname{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gold);margin-bottom:8px;}
-  .dmap-item{border:1px solid var(--line);background:#FAF7F2;padding:10px 12px;font-size:16px;color:#111008;line-height:1.45;}
+  .dmap-item{border:1px solid var(--line);background:#FFFFFF;padding:10px 12px;font-size:17px;color:#14213D;line-height:1.45;}
   .dmap-item + .dmap-item{margin-top:8px;}
-  .dmap-item .amt{display:block;font-family:'Playfair Display', serif;font-weight:700;font-size:18px;color:var(--warm-gold);}
+  .dmap-item .amt{display:block;font-family:'Playfair Display', serif;font-weight:700;font-size:19px;color:var(--warm-gold);}
   .dmap-item.child{margin-left:14px;border-left:3px solid var(--gold);}
 
   .window{display:flex;width:100%;border:1px solid var(--line);margin-top:6px;}
-  .window > div{padding:12px;font-size:15px;color:#111008;line-height:1.45;}
-  .window .w1{flex:3;background:#D4AF37;}
-  .window .w2{flex:2;background:#F0E4CC;}
+  .window > div{padding:12px;font-size:16px;color:#14213D;line-height:1.45;}
+  .window .w1{flex:3;background:#1D4ED8;}
+  .window .w2{flex:2;background:#E6ECF7;}
   .window b{display:block;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;}
 
   .ctl-row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;}
   .seg-btn{
-    font-family:inherit;font-size:15px;padding:8px 14px;cursor:pointer;
+    font-family:inherit;font-size:16px;padding:8px 14px;cursor:pointer;
     border:1px solid var(--warm-gold);background:#FFF;color:var(--warm-gold);
   }
   .seg-btn[aria-pressed="true"]{background:var(--warm-gold);color:#FFF;}
-  .seg-btn:focus-visible,.hive-input:focus-visible{outline:3px solid #7A2020;outline-offset:2px;}
+  .seg-btn:focus-visible,.hive-input:focus-visible{outline:3px solid #B42318;outline-offset:2px;}
 
   .hbar{display:grid;grid-template-columns:minmax(118px,34%) 1fr;gap:4px 12px;align-items:center;}
-  .hbar .n{font-size:15px;color:#111008;line-height:1.3;}
+  .hbar .n{font-size:16px;color:#14213D;line-height:1.3;}
   .hbar .t{position:relative;height:28px;background:rgba(0,0,0,0.05);}
-  .hbar .f{height:100%;background:#D4AF37;transition:width .35s ease;}
-  .hbar .f.hl{background:#7A2020;}
+  .hbar .f{height:100%;background:#1D4ED8;transition:width .35s ease;}
+  .hbar .f.hl{background:#B42318;}
   .hbar .v{
     position:absolute;top:50%;transform:translateY(-50%);
-    font-family:'Playfair Display', serif;font-weight:700;font-size:15px;color:#111008;white-space:nowrap;
+    font-family:'Playfair Display', serif;font-weight:700;font-size:16px;color:#14213D;white-space:nowrap;
   }
-  .hbar .na{font-size:14px;color:var(--gray);font-style:italic;}
+  .hbar .na{font-size:16px;color:var(--gray);font-style:italic;}
 
-  .city-tool label{display:block;font-size:15px;color:var(--gray);margin:0 0 6px;}
+  .city-tool label{display:block;font-size:16px;color:var(--gray);margin:0 0 6px;}
   .hive-input{
-    font-family:inherit;font-size:17px;padding:10px 12px;width:100%;
-    border:1px solid var(--warm-gold);background:#FFF;color:#111008;
+    font-family:inherit;font-size:18px;padding:10px 12px;width:100%;
+    border:1px solid var(--warm-gold);background:#FFF;color:#14213D;
   }
   .city-tool .inputs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;}
   .result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
   .result{border:1px solid var(--line);background:#FFF;padding:14px;}
-  .result .k{font-size:14px;color:var(--gray);line-height:1.35;}
+  .result .k{font-size:16px;color:var(--gray);line-height:1.35;}
   .result .val{font-family:'Playfair Display', serif;font-weight:700;font-size:26px;color:var(--warm-gold);line-height:1.2;margin-top:4px;}
-  .result .sub{font-size:14px;color:#242017;margin-top:2px;}
+  .result .sub{font-size:16px;color:#14213D;margin-top:2px;}
 
-  .rate-table td,.rate-table th{font-size:16px;}
+  .rate-table td,.rate-table th{font-size:17px;}
 
   .tl-years{display:flex;gap:4px;align-items:flex-end;margin:0 0 20px;overflow-x:auto;padding-bottom:4px;}
   .tl-years .yr{flex:1 1 0;min-width:0;text-align:center;}
   .tl-years .dots{display:flex;flex-direction:column-reverse;align-items:center;gap:3px;min-height:20px;}
   .tl-years .dot{width:13px;height:13px;border-radius:50%;}
   .tl-years .lab{font-size:13px;color:var(--gray);margin-top:6px;}
-  .cat-dev{background:#D4AF37;}
-  .cat-tax{background:#7A2020;}
-  .cat-vote{background:#3F5B73;}
+  .cat-dev{background:#1D4ED8;}
+  .cat-tax{background:#B42318;}
+  .cat-vote{background:#0F1F3D;}
   .tl{position:relative;margin:0;padding:0 0 0 22px;list-style:none;border-left:2px solid var(--line);}
   .tl li{position:relative;padding:0 0 18px 8px;}
   .tl li::before{
     content:"";position:absolute;left:-31px;top:6px;width:14px;height:14px;border-radius:50%;
-    background:var(--c,#D4AF37);border:2px solid #FAF7F2;
+    background:var(--c,#1D4ED8);border:2px solid #FFFFFF;
   }
-  .tl .d{font-size:14px;font-weight:600;color:var(--warm-gold);letter-spacing:0.04em;}
+  .tl .d{font-size:16px;font-weight:600;color:var(--warm-gold);letter-spacing:0.04em;}
   .tl .tag{
-    display:inline-block;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;
+    display:inline-block;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;
     color:#FFF;padding:1px 8px;margin-left:6px;vertical-align:1px;
   }
-  .tl .txt{font-size:16px;color:#111008;line-height:1.5;margin-top:2px;}
+  .tl .txt{font-size:17px;color:#14213D;line-height:1.5;margin-top:2px;}
   .tl li[hidden]{display:none;}
   .legend-item .legend-swatch{border-radius:50%;}
 
   .crt .inputs{display:grid;gap:16px;margin-bottom:20px;}
-  .crt input[type=range]{width:100%;accent-color:#96723F;height:28px;}
+  .crt input[type=range]{width:100%;accent-color:#1D4ED8;height:28px;}
   .crt .rv{font-family:'Playfair Display', serif;font-weight:700;color:var(--warm-gold);}
   .stack-row{margin-bottom:14px;}
-  .stack-row .sl{font-size:15px;color:#111008;margin-bottom:6px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+  .stack-row .sl{font-size:16px;color:#14213D;margin-bottom:6px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;}
   .stack{display:flex;height:34px;background:rgba(0,0,0,0.05);}
   .stack > span{height:100%;transition:width .3s ease;}
-  .s-exist{background:#96723F;}
-  .s-new{background:#D4AF37;}
-  .s-div{background:repeating-linear-gradient(45deg,#7A2020 0 6px,#A04848 6px 12px);}
+  .s-exist{background:#1D4ED8;}
+  .s-new{background:#1D4ED8;}
+  .s-div{background:repeating-linear-gradient(45deg,#B42318 0 6px,#E5534B 6px 12px);}
 
   .fire-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
   .fire-card{border:1px solid var(--line);background:#FFF;padding:16px;}
-  .fire-card .k{font-size:14px;color:var(--gray);line-height:1.35;}
+  .fire-card .k{font-size:16px;color:var(--gray);line-height:1.35;}
   .fire-card .val{font-family:'Playfair Display', serif;font-weight:700;font-size:28px;color:var(--warm-gold);margin:6px 0 2px;}
-  .fire-card .sub{font-size:14px;color:#242017;line-height:1.4;}
-  .fire-card.warn{border-color:#7A2020;}
-  .fire-card.warn .val{color:#7A2020;}
+  .fire-card .sub{font-size:16px;color:#14213D;line-height:1.4;}
+  .fire-card.warn{border-color:#B42318;}
+  .fire-card.warn .val{color:#B42318;}
 
   @media (max-width:640px){
     .hero-duo{grid-template-columns:1fr;}
@@ -589,179 +590,256 @@
     .fire-cards{grid-template-columns:1fr;}
     .hbar{grid-template-columns:minmax(104px,38%) 1fr;}
     .big-split .pct{font-size:20px;}
-    .big-split .lbl{font-size:11px;}
+    .big-split .lbl{font-size:13px;}
   }
   /* minimum label size for readability */
   .data-table th{font-size:13px;}
+  .data-table td{font-size:17px;}
+  @media (max-width:640px){ .data-table td{padding:8px 6px 8px 0;} .viz-block{padding:20px 12px;} }
   .status-tag{font-size:13px !important;}
   .tl .tag{font-size:13px;}
   .big-split .lbl{font-size:13px;}
-  @media (max-width:640px){ .big-split .lbl{font-size:12.5px;letter-spacing:0.02em;} }
-  blockquote{margin:28px 0;padding:20px 24px;border-left:3px solid var(--warm-gold);background:rgba(212,175,55,0.06);font-style:italic;font-size:17px;color:#242017;line-height:1.7;}
-  .bill{border:1px solid #BFB6A3;background:#FFF;padding:16px 16px 12px;}
+  @media (max-width:640px){ .big-split .lbl{font-size:13px;letter-spacing:0.02em;} }
+  blockquote{margin:28px 0;padding:20px 24px;border-left:3px solid var(--warm-gold);background:rgba(29,78,216,0.06);font-style:italic;font-size:18px;color:#14213D;line-height:1.7;}
+  .bill{border:1px solid #D5DCE8;background:#FFF;padding:16px 16px 12px;}
   .bill .bl > span:last-child{text-align:right;white-space:nowrap;font-weight:700;}
-  .bill small{display:block;font-size:14px;line-height:1.4;}
-  .bill h4{font-family:'Source Serif 4',Georgia,serif;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gold);margin:0 0 10px;text-align:center;}
-  .bill .bl{display:flex;justify-content:space-between;gap:10px;font-size:15px;color:#111008;padding:7px 0;border-bottom:1px dashed #D8CFBE;}
+  .bill small{display:block;font-size:16px;line-height:1.4;}
+  .bill h4{font-family:'Source Serif 4',Georgia,serif;font-size:16px;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gold);margin:0 0 10px;text-align:center;}
+  .bill .bl{display:flex;justify-content:space-between;gap:10px;font-size:16px;color:#14213D;padding:7px 0;border-bottom:1px dashed #D5DCE8;}
   .bill .bl:last-child{border-bottom:none;}
-  .bill .bl.new{background:rgba(122,32,32,0.07);font-weight:700;}
-  .bill .bl.cut{background:rgba(63,91,115,0.08);}
+  .bill .bl.new{background:rgba(180,35,24,0.07);font-weight:700;}
+  .bill .bl.cut{background:rgba(29,78,216,0.08);}
   .bill .muted{color:var(--gray);}
   .bills{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
   .seats{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
-  .seat{flex:1 1 140px;border:1px solid var(--line);background:#FFF;padding:10px 12px;font-size:15px;color:#111008;}
-  .seat b{display:block;font-size:12.5px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gold);font-weight:400;}
-  .seat.q{border:2px dashed #7A2020;background:rgba(122,32,32,0.05);}
+  .seat{flex:1 1 140px;border:1px solid var(--line);background:#FFF;padding:10px 12px;font-size:16px;color:#14213D;}
+  .seat b{display:block;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gold);font-weight:400;}
+  .seat.q{border:2px dashed #B42318;background:rgba(180,35,24,0.05);}
   .qa details{border:1px solid var(--line);background:#FFF;margin:0 0 10px;}
-  .qa summary{cursor:pointer;padding:14px 16px;font-size:17px;font-weight:600;color:#111008;list-style:none;}
+  .qa summary{cursor:pointer;padding:14px 16px;font-size:18px;font-weight:600;color:#14213D;list-style:none;}
   .qa summary::-webkit-details-marker{display:none;}
   .qa summary::before{content:"+ ";color:var(--warm-gold);}
   .qa details[open] summary::before{content:"\2212\00a0";}
-  .qa .ans{padding:0 16px 14px;font-size:16px;color:#242017;line-height:1.6;}
-  .qa .ask{margin-top:10px;padding:10px 12px;border-left:3px solid #3F5B73;background:rgba(63,91,115,0.07);font-size:15px;}
-  .qa .ask b{color:#3F5B73;}
+  .qa .ans{padding:0 16px 14px;font-size:17px;color:#14213D;line-height:1.6;}
+  .qa .ask{margin-top:10px;padding:10px 12px;border-left:3px solid #0F1F3D;background:rgba(29,78,216,0.07);font-size:16px;}
+  .qa .ask b{color:#0F1F3D;}
   @media (max-width:640px){ .bills{grid-template-columns:1fr;} }
   .data-table td{overflow-wrap:anywhere;}
   .gcard{border:1px solid var(--line);background:#FFF;padding:16px;margin:0 0 16px;}
-  .gcard h4{font-family:'Playfair Display',serif;font-size:19px;margin:0 0 10px;color:#111008;}
-  .grow{display:grid;grid-template-columns:150px 64px 1fr;gap:10px;align-items:start;padding:10px 0;border-top:1px dashed #D8CFBE;}
+  .gcard h4{font-family:'Playfair Display',serif;font-size:19px;margin:0 0 10px;color:#14213D;}
+  .grow{display:grid;grid-template-columns:150px 64px 1fr;gap:10px;align-items:start;padding:10px 0;border-top:1px dashed #D5DCE8;}
   .grow .c{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gold);padding-top:4px;}
-  .grow .g{font-family:'Playfair Display',serif;font-weight:700;font-size:28px;line-height:1;color:#111008;text-align:center;}
+  .grow .g{font-family:'Playfair Display',serif;font-weight:700;font-size:28px;line-height:1;color:#14213D;text-align:center;}
   .grow .g.na{font-size:13px;font-family:inherit;font-weight:400;color:var(--gray);padding-top:6px;}
-  .grow .w{font-size:15.5px;color:#242017;line-height:1.55;}
+  .grow .w{font-size:16px;color:#14213D;line-height:1.55;}
   @media (max-width:640px){ .grow{grid-template-columns:1fr 56px;} .grow .w{grid-column:1 / -1;} }
   /* ===== Growth case file additions ===== */
   .tabs{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 18px;}
-  .tabs button{font-family:inherit;font-size:14px;padding:8px 14px;border:1px solid var(--line);background:transparent;color:#242017;cursor:pointer;}
-  .tabs button[aria-selected="true"]{background:#D4AF37;color:#1A1408;border-color:#D4AF37;font-weight:600;}
+  .tabs button{font-family:inherit;font-size:16px;padding:8px 14px;border:1px solid var(--line);background:transparent;color:#14213D;cursor:pointer;}
+  .tabs button[aria-selected="true"]{background:#1D4ED8;color:#FFFFFF;border-color:#1D4ED8;font-weight:600;}
   .tabpanel[hidden]{display:none;}
   .tabpanel h4{font-family:'Playfair Display', serif;font-size:20px;margin:0 0 6px;color:var(--cream);}
   .tabpanel .big{font-family:'Playfair Display', serif;font-weight:700;font-size:34px;color:var(--warm-gold);line-height:1.1;margin:6px 0 4px;}
-  .tabpanel .meta{font-size:14px;color:var(--gray);margin:0 0 12px;}
-  .tabpanel p{font-size:16px;color:#242017;margin:0 0 12px;}
-  .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px;margin:10px 0 0;}
+  .tabpanel .meta{font-size:16px;color:var(--gray);margin:0 0 12px;}
+  .tabpanel p{font-size:17px;color:#14213D;margin:0 0 12px;}
+  .kv{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:16px;margin:10px 0 0;}
   .kv dt{color:var(--gray);}
-  .kv dd{margin:0;color:#242017;font-weight:600;}
-  .said{border:1px solid var(--line);margin:0 0 10px;background:#FFFDF8;}
-  .said summary{cursor:pointer;padding:14px 16px;font-size:16px;list-style:none;display:flex;gap:12px;align-items:flex-start;}
+  .kv dd{margin:0;color:#14213D;font-weight:600;}
+  .said{border:1px solid var(--line);margin:0 0 10px;background:#FFFFFF;}
+  .said summary{cursor:pointer;padding:14px 16px;font-size:17px;list-style:none;display:flex;gap:12px;align-items:flex-start;}
   .said summary::-webkit-details-marker{display:none;}
-  .said summary .who{flex:0 0 auto;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gold);border:1px solid var(--line);padding:2px 6px;margin-top:3px;}
-  .said summary .q{font-style:italic;color:#242017;}
-  .said .rec{padding:0 16px 16px 16px;font-size:15.5px;color:#242017;border-top:1px dashed var(--line);}
-  .said .rec b.v{display:inline-block;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;padding:2px 7px;margin:12px 0 6px;color:#fff;}
-  .v.ok{background:#3F6B3B;} .v.part{background:#96723F;} .v.gap{background:#7A2020;}
+  .said summary .who{flex:0 0 auto;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gold);border:1px solid var(--line);padding:2px 6px;margin-top:3px;}
+  .said summary .q{font-style:italic;color:#14213D;}
+  .said .rec{padding:0 16px 16px 16px;font-size:16px;color:#14213D;border-top:1px dashed var(--line);}
+  .said .rec b.v{display:inline-block;font-size:13px;letter-spacing:0.1em;text-transform:uppercase;padding:2px 7px;margin:12px 0 6px;color:#fff;}
+  .v.ok{background:#1E7B3C;} .v.part{background:#1D4ED8;} .v.gap{background:#B42318;}
   .seg-bar{display:flex;width:100%;height:40px;border:1px solid var(--line);margin:8px 0 6px;}
-  .seg-bar div{display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:600;overflow:hidden;white-space:nowrap;transition:width .4s;}
+  .seg-bar div{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;overflow:hidden;white-space:nowrap;transition:width .4s;}
   .ent-row{margin:0 0 16px;}
-  .ent-row .top{display:flex;justify-content:space-between;font-size:14px;margin-bottom:4px;gap:10px;}
+  .ent-row .top{display:flex;justify-content:space-between;font-size:16px;margin-bottom:4px;gap:10px;}
   .ent-row .top b{font-family:'Playfair Display', serif;}
-  .ent-row.hl .top span:first-child{font-weight:700;color:#111008;}
+  .ent-row.hl .top span:first-child{font-weight:700;color:#14213D;}
   .toggle{display:inline-flex;border:1px solid var(--line);margin:0 0 18px;}
-  .toggle button{font-family:inherit;font-size:13px;padding:6px 12px;border:0;background:transparent;cursor:pointer;color:#242017;}
-  .toggle button[aria-pressed="true"]{background:#D4AF37;color:#1A1408;font-weight:600;}
+  .toggle button{font-family:inherit;font-size:13px;padding:6px 12px;border:0;background:transparent;cursor:pointer;color:#14213D;}
+  .toggle button[aria-pressed="true"]{background:#1D4ED8;color:#FFFFFF;font-weight:600;}
   .stations{list-style:none;margin:0;padding:0;}
-  .stations li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.08);font-size:15px;color:#242017;}
+  .stations li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.08);font-size:16px;color:#14213D;}
   .stations li:last-child{border-bottom:none;}
   .stations li[hidden]{display:none;}
-  .stations .st{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;white-space:nowrap;align-self:flex-start;}
-  .st.now{background:rgba(0,0,0,0.06);color:#4A443A;}
-  .st.new{background:#D4AF37;color:#1A1408;}
-  .st.dev{background:#3F6B3B;color:#fff;}
-  .st.open{border:1px dashed #7A2020;color:#7A2020;}
+  .stations .st{font-size:13px;letter-spacing:0.08em;text-transform:uppercase;padding:2px 7px;white-space:nowrap;align-self:flex-start;}
+  .st.now{background:rgba(0,0,0,0.06);color:#3E4C66;}
+  .st.new{background:#1D4ED8;color:#FFFFFF;}
+  .st.dev{background:#1E7B3C;color:#fff;}
+  .st.open{border:1px dashed #B42318;color:#B42318;}
   .fil{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px;}
-  .fil button{font-family:inherit;font-size:13px;padding:5px 10px;border:1px solid var(--line);background:transparent;cursor:pointer;color:#242017;}
-  .fil button[aria-pressed="true"]{background:#111008;color:#FAF7F2;}
-  .link-card{display:block;border:1px solid var(--gold);padding:16px 18px;margin:14px 0;text-decoration:none;background:rgba(212,175,55,0.06);}
-  .link-card .lk{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-gold);}
-  .link-card .lt{display:block;font-family:'Playfair Display', serif;font-size:18px;color:var(--cream);margin-top:4px;}
-  .link-card .ld{display:block;font-size:14.5px;color:#4A443A;margin-top:4px;}
+  .fil button{font-family:inherit;font-size:13px;padding:5px 10px;border:1px solid var(--line);background:transparent;cursor:pointer;color:#14213D;}
+  .fil button[aria-pressed="true"]{background:#14213D;color:#FFFFFF;}
+  .link-card{display:block;border:1px solid var(--gold);padding:16px 18px;margin:14px 0;text-decoration:none;background:rgba(29,78,216,0.06);}
+  .link-card .lk{font-size:13px;letter-spacing:0.12em;text-transform:uppercase;color:var(--warm-gold);}
+  .link-card .lt{display:block;font-family:'Playfair Display', serif;font-size:19px;color:var(--cream);margin-top:4px;}
+  .link-card .ld{display:block;font-size:16px;color:#3E4C66;margin-top:4px;}
   @media (max-width:640px){
     table.cardtbl tr:first-child{display:none;}
     table.cardtbl tr{display:block;padding:12px 0;border-bottom:1px solid var(--line);}
     table.cardtbl td{display:block;border:none;padding:3px 0;}
-    table.cardtbl td[data-l]:not([data-l=""])::before{content:attr(data-l);display:block;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gold);}
+    table.cardtbl td[data-l]:not([data-l=""])::before{content:attr(data-l);display:block;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gold);}
   }
   .house-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
   @media (max-width:640px){.house-grid{grid-template-columns:1fr;}}
-  .house{border:1px solid var(--line);background:#FFFDF8;padding:16px;}
-  .h-name{font-family:'Playfair Display',serif;font-weight:700;font-size:16px;color:#111008;}
-  .h-bill{font-size:14px;color:var(--gray);margin:2px 0 10px;}
+  .house{border:1px solid var(--line);background:#FFFFFF;padding:16px;}
+  .h-name{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:#14213D;}
+  .h-bill{font-size:16px;color:var(--gray);margin:2px 0 10px;}
   .h-bar{display:flex;gap:2px;height:44px;}
   .h-bar .seg{display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:600;border-radius:4px;text-align:center;line-height:1.2;padding:0 4px;}
-  .seg.kept{background:#A07A1A;} .seg.cra{background:#A8392E;}
-  .h-note{font-size:14.5px;color:#242017;margin-top:10px;line-height:1.5;}
+  .seg.kept{background:#1D4ED8;} .seg.cra{background:#B42318;}
+  .h-note{font-size:16px;color:#14213D;margin-top:10px;line-height:1.5;}
   .yr-chart{display:flex;align-items:flex-end;gap:14px;height:260px;border-bottom:1px solid rgba(0,0,0,0.25);}
   .yr-col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;cursor:pointer;}
-  .yr-col .val{font-size:13px;font-weight:600;color:#111008;text-align:center;margin-bottom:4px;}
+  .yr-col .val{font-size:13px;font-weight:600;color:#14213D;text-align:center;margin-bottom:4px;}
   .yr-col .stackb{display:flex;flex-direction:column;gap:2px;}
   .yr-col .stackb div:first-child{border-radius:4px 4px 0 0;}
-  .yr-col:hover .stackb, .yr-col:focus .stackb{outline:2px solid #111008;outline-offset:2px;}
+  .yr-col:hover .stackb, .yr-col:focus .stackb{outline:2px solid #14213D;outline-offset:2px;}
   .yr-labels{display:flex;gap:14px;margin-top:6px;}
-  .yr-labels div{flex:1;text-align:center;font-size:12.5px;color:var(--gray);line-height:1.35;}
-  .yr-tip{margin-top:12px;font-size:15px;color:#242017;min-height:44px;}
+  .yr-labels div{flex:1;text-align:center;font-size:13px;color:var(--gray);line-height:1.35;}
+  .yr-tip{margin-top:12px;font-size:16px;color:#14213D;min-height:44px;}
   .rate-chart{display:flex;align-items:flex-end;gap:10px;height:250px;border-bottom:1px solid rgba(0,0,0,0.25);}
-  .rate-chart .yr-col .val{font-size:12.5px;}
+  .rate-chart .yr-col .val{font-size:13px;}
   .rate-labels{display:flex;gap:10px;margin-top:6px;}
-  .rate-labels div{flex:1;text-align:center;font-size:12px;color:var(--gray);line-height:1.3;}
+  .rate-labels div{flex:1;text-align:center;font-size:13px;color:var(--gray);line-height:1.3;}
   .split-grid.three{grid-template-columns:1fr 1fr 1fr;}
   @media (max-width:640px){.split-grid.three{grid-template-columns:1fr;}}
-  .hive-field label{display:block;font-size:15px;color:#242017;margin-bottom:6px;}
-  input[type=range]{accent-color:#A07A1A;}
+  .hive-field label{display:block;font-size:16px;color:#14213D;margin-bottom:6px;}
+  input[type=range]{accent-color:#1D4ED8;}
   .pie-wrap{display:flex;gap:22px;align-items:center;}
   .pie{flex:0 0 220px;}
   @media (max-width:640px){.pie-wrap{flex-direction:column;}.pie{flex:none;}}
-  .kid-steps{margin:0;padding-left:20px;font-size:16px;color:#242017;line-height:1.55;}
+  .kid-steps{margin:0;padding-left:20px;font-size:17px;color:#14213D;line-height:1.55;}
   .kid-steps li{margin-bottom:10px;}
   .kid-steps .sw{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:middle;}
-  .shortv{border:2px solid #D4AF37;background:#FFFDF6;padding:20px 22px;margin:8px 0 26px;}
-  .shortv-h{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;color:#111008;margin-bottom:10px;}
-  .shortv ol{margin:0;padding-left:22px;font-size:16.5px;color:#242017;line-height:1.55;}
+  .shortv{border:2px solid #1D4ED8;background:#F2F5FA;padding:20px 22px;margin:8px 0 26px;}
+  .shortv-h{font-family:'Playfair Display',serif;font-weight:700;font-size:20px;color:#14213D;margin-bottom:10px;}
+  .shortv ol{margin:0;padding-left:22px;font-size:17px;color:#14213D;line-height:1.55;}
   .shortv li{margin-bottom:8px;}
-  .shortv-f{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:15px;color:#3A3428;}
+  .shortv-f{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:16px;color:#3E4C66;}
   .rel-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
   .rel-grid .link-card{margin:0;}
   @media (max-width:640px){.rel-grid{grid-template-columns:1fr;}}
   .pj-chart{display:flex;align-items:flex-end;gap:4px;height:220px;border-bottom:1px solid rgba(0,0,0,0.25);margin-top:14px;}
-  .pj-chart div{flex:1;background:#A07A1A;border-radius:3px 3px 0 0;position:relative;}
-  .pj-chart div:first-child{background:#3A342A;}
+  .pj-chart div{flex:1;background:#1D4ED8;border-radius:3px 3px 0 0;position:relative;}
+  .pj-chart div:first-child{background:#0F1F3D;}
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-parts{background:#F2F5FA;border:2px solid #1D4ED8;border-radius:6px;padding:14px 16px;margin:0 0 24px;font-family:Arial,sans-serif}
+.hs-parts .lab{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:bold;color:#14213D;margin:0 0 8px}
+.hs-parts ol{margin:0 0 10px;padding-left:24px;font-size:1rem;line-height:1.45}
+.hs-parts li.cur{font-weight:bold}
+.hs-parts li.cur a{color:#14213D;text-decoration:none}
+.hs-parts .nav{display:flex;flex-wrap:wrap;gap:10px}
+.hs-parts .nav a{display:inline-block;background:#1D4ED8;color:#fff;text-decoration:none;font-weight:bold;padding:10px 16px;border-radius:5px;font-size:1rem}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
+  section > .wrap{padding:8px 24px 20px;}
+  section h2{font-family:'Playfair Display', serif;font-weight:600;font-style:italic;color:#1D4ED8;font-size:26px;margin:44px 0 18px;padding-bottom:12px;border-bottom:1px solid var(--line);}
 </style>
 
 <style>
   /* interactive additions */
   .ix-bars .row{margin:0 0 14px;}
-  .ix-bars .top{display:flex;justify-content:space-between;gap:10px;font-size:15px;color:#242017;margin-bottom:5px;}
-  .ix-bars .top b{font-family:'Playfair Display',serif;color:#111008;white-space:nowrap;}
+  .ix-bars .top{display:flex;justify-content:space-between;gap:10px;font-size:16px;color:#14213D;margin-bottom:5px;}
+  .ix-bars .top b{font-family:'Playfair Display',serif;color:#14213D;white-space:nowrap;}
   .ix-bars .bar-track{height:20px;}
-  .ix-bars .bar-fill{height:100%;background:#D4AF37;transition:width .6s ease;}
-  .ix-bars .bar-fill.now{background:#7A2020;}
-  .ix-bars .na{font-size:14px;color:var(--gray);font-style:italic;}
+  .ix-bars .bar-fill{height:100%;background:#1D4ED8;transition:width .6s ease;}
+  .ix-bars .bar-fill.now{background:#B42318;}
+  .ix-bars .na{font-size:16px;color:var(--gray);font-style:italic;}
   .stack-bar{display:flex;height:26px;border:1px solid var(--line);background:#FFF;margin:6px 0 4px;}
   .stack-bar span{display:block;height:100%;}
-  .countdown{border:2px solid #7A2020;background:#FFF;padding:16px 18px;margin:0 0 24px;text-align:center;}
-  .countdown .n{font-family:'Playfair Display',serif;font-weight:700;font-size:44px;color:#7A2020;line-height:1;}
-  .countdown .l{font-size:15px;color:#242017;margin-top:6px;}
+  .countdown{border:2px solid #B42318;background:#FFF;padding:16px 18px;margin:0 0 24px;text-align:center;}
+  .countdown .n{font-family:'Playfair Display',serif;font-weight:700;font-size:44px;color:#B42318;line-height:1;}
+  .countdown .l{font-size:16px;color:#14213D;margin-top:6px;}
   .wl-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:0 0 14px;}
-  .wl-tools input{font-family:inherit;font-size:15px;padding:8px 10px;border:1px solid var(--line);background:#FFF;color:#111008;flex:1 1 220px;min-width:0;}
+  .wl-tools input{font-family:inherit;font-size:16px;padding:8px 10px;border:1px solid var(--line);background:#FFF;color:#14213D;flex:1 1 220px;min-width:0;}
   tr[hidden]{display:none;}
-  .wl-count{font-size:14px;color:var(--gray);margin:0 0 10px;}
+  .wl-count{font-size:16px;color:var(--gray);margin:0 0 10px;}
   .next-box{border:1px solid var(--line);background:#FFF;padding:18px 20px;margin:0 0 20px;}
-  .next-box h4{font-family:'Playfair Display',serif;font-size:20px;margin:0 0 10px;color:#111008;}
-  .next-box ol{margin:0;padding-left:22px;font-size:16px;color:#242017;}
+  .next-box h4{font-family:'Playfair Display',serif;font-size:20px;margin:0 0 10px;color:#14213D;}
+  .next-box ol{margin:0;padding-left:22px;font-size:17px;color:#14213D;}
   .next-box li + li{margin-top:6px;}
-  .tip-box{border:2px solid #D4AF37;background:rgba(212,175,55,0.08);padding:18px 20px;margin:0 0 28px;text-align:center;}
-  .tip-box p{margin:0;font-size:17px;color:#111008;}
+  .tip-box{border:2px solid #1D4ED8;background:rgba(29,78,216,0.08);padding:18px 20px;margin:0 0 28px;text-align:center;}
+  .tip-box p{margin:0;font-size:18px;color:#14213D;}
   .tip-box a{font-weight:600;}
   .conv{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
   @media (max-width:600px){.conv{grid-template-columns:1fr;}}
 </style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
+<div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
 <div class="masthead">
   <div class="hexagon" aria-hidden="true">
     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <polygon points="50,4 93,27 93,73 50,96 7,73 7,27" stroke="#D4AF37" stroke-width="3" fill="none"/>
-      <circle cx="30" cy="24" r="4" fill="#D4AF37"/>
+      <polygon points="50,4 93,27 93,73 50,96 7,73 7,27" stroke="#1D4ED8" stroke-width="3" fill="none"/>
+      <circle cx="30" cy="24" r="4" fill="#1D4ED8"/>
     </svg>
   </div>
   <div class="lockup">
@@ -777,6 +855,7 @@
   <p class="dek">A new application seeks 1,000 acre-feet from nine wells in the Powder Mountain area, with protests due Oct. 7. An earlier one, for five new mountaintop wells and snowmaking, had its hearing in February 2024 and is currently listed in final review, and the public district behind it has owners in the resort's own development on its board.</p>
   <div class="byline">The Weber County Hive <span>·</span> Independent Accountability Journalism</div>
   <div class="byline" style="margin-top:6px;">Published Sep. 29, 2026 <span>·</span> Updated Sep. 29, 2026</div>
+  <p class="hs-date">CASE 2026-WTR-01 · Posted Sep. 29, 2026 · Updated Oct. 17, 2026</p>
 
   <div class="hero-duo" role="img" aria-label="Powder Mountain water application">
     <div class="hero-panel">
@@ -798,16 +877,17 @@
         <div class="row"><span>Tracker status</span><b>final review</b></div>
       </div>
       <p class="foot">Utah Division of Water Rights tracker</p>
+      <p class="foot" style="text-align:left;">Added Oct. 17, 2026: the state's correspondence log for E6560 lists 11 protest entries from 9 filers (two filed twice), more than the five protestors named in news reports. Three of them filed a withdrawal on March 19, 2024. The tracker still shows the hearing held and no decision.</p>
     </div>
   </div>
 
   <details class="sources" style="margin-top:0;">
     <summary>Explain this simply</summary>
     <div style="padding-top:4px;">
-      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">Water in Utah is owned as rights, and older rights come first when there isn't enough.</p>
-      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">Powder Mountain's public water district asked the state to combine rights, drill five new wells on top of the mountain and add snowmaking.</p>
-      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0 0 20px;">Its plan would also cut back water it had agreed to supply to Wolf Creek Irrigation, whose rights date to 1861. Five neighbors protested.</p>
-      <p style="font-size:17px;color:#242017;line-height:1.75;margin:0;">The state held a hearing in February 2024; its tracker still lists the application in final review. In August 2026 the resort's developer filed a second application, for 1,000 acre-feet from nine wells, with protests due Oct. 7. Meanwhile, the district's board, which includes owners in the resort's development, voted to hand all its operations to a contractor, with the resort as the expected bidder.</p>
+      <p style="font-size:18px;color:#14213D;line-height:1.75;margin:0 0 20px;">Water in Utah is owned as rights, and older rights come first when there isn't enough.</p>
+      <p style="font-size:18px;color:#14213D;line-height:1.75;margin:0 0 20px;">Powder Mountain's public water district asked the state to combine rights, drill five new wells on top of the mountain and add snowmaking.</p>
+      <p style="font-size:18px;color:#14213D;line-height:1.75;margin:0 0 20px;">Its plan would also cut back water it had agreed to supply to Wolf Creek Irrigation, whose rights date to 1861. Five neighbors protested.</p>
+      <p style="font-size:18px;color:#14213D;line-height:1.75;margin:0;">The state held a hearing in February 2024; its tracker still lists the application in final review. In August 2026 the resort's developer filed a second application, for 1,000 acre-feet from nine wells, with protests due Oct. 7. Meanwhile, the district's board, which includes owners in the resort's development, voted to hand all its operations to a contractor, with the resort as the expected bidder.</p>
     </div>
   </details>
 
@@ -820,8 +900,17 @@
     <details><summary>Protest</summary><p>A written objection to a water application, filed with the Division of Water Rights by the deadline in the notice.</p></details>
   </div>
 
-  <div class="quicknav">
-    <a href="#e6863">New: E6863</a>
+</div>
+<div class="wrap" style="padding-top:22px;">
+<div class="hs-plain">New to this? <a class="hs-btn" href="weber-hive-powder-mountain-water-plain.html">Read it in plain words</a> About 500 words, with simple charts.</div>
+<div class="hs-short" id="short"><b style="display:block;font-size:1.1rem;margin-bottom:8px;">Short version</b><ul>
+<li>Summit Mountain Holding Group LLC, Powder Mountain's developer, filed E6863 on Aug. 21, 2026, for 1,000 acre-feet from nine wells. The protest period ended Oct. 7, 2026.</li>
+<li>The public water district's earlier application, E6560, would combine over 600 acre-feet, add five mountaintop wells and snowmaking, and cut mitigation water to Wolf Creek Irrigation by about 38%.</li>
+<li>E6560's hearing was held Feb. 22, 2024. The state tracker still lists it in final review, with no decision posted.</li>
+<li>Board members of the water district own real estate in the resort's development. In April 2026 the board voted to hire a private contractor for all operations, with the resort as the expected bidder.</li>
+<li>The protest and hearing steps state law provides were followed. This page lays out the records; it does not say any rule was broken.</li>
+</ul></div>
+<nav class="hs-toc" aria-label="On this page"><b style="width:100%;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;">On this page</b><a href="#short">Short version</a><a href="#e6863">New: E6863</a>
     <a href="#e6560">E6560</a>
     <a href="#protests">Who protested</a>
     <a href="#supply">Supply</a>
@@ -830,8 +919,8 @@
     <a href="#grades">Grades</a>
     <a href="#record">What was done, what's open</a>
     <a href="#questions">Questions to ask</a>
-    <a href="#next">What's next</a>
-  </div>
+    <a href="#next">What's next</a><a href="#updates">Updates since this was posted</a><a href="#words">Words to know</a><a href="#connected">Connected Hive work</a><a href="#behind">Behind this piece</a><a href="#sources">Sources</a></nav>
+<details class="hs-pages"><summary>Transparency pages (26) · tap to open</summary><ol><li><a href="index.html">Transparency docket</a><small>Every case file, searchable</small></li><li><a href="utah-amendments-2026.html">The 2026 Amendments</a> · <a href="utah-amendments-2026-plain.html">plain words</a><small>Amendments A and B on your ballot</small></li><li><a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> · <a href="amendment-b-myth-vs-fact-plain.html">plain words</a><small>Claims checked against the record</small></li><li><a href="amendment-b-quiz.html">Amendment B Quiz</a><small>Test what you know</small></li><li><a href="weber-housing-authority.html">Weber Housing Authority</a> · <a href="weber-housing-authority-plain.html">plain words</a><small>A commissioner, his wife and the authority that pays their company</small></li><li><a href="bramwell-odp-enforcement.html">What the Privacy Office Can and Can't Do</a> · <a href="bramwell-odp-enforcement-plain.html">plain words</a><small>Utah's Chief Privacy Officer</small></li><li><a href="counting-the-jobs.html">Counting the Jobs</a> · <a href="counting-the-jobs-plain.html">plain words</a><small>Job promises and what was reported</small></li><li><a href="matt-brower.html">Matt Brower</a> · <a href="matt-brower-plain.html">plain words</a><small>The board seat that never came up</small></li><li><a href="nilson-foundation.html">Ten Days</a> · <a href="nilson-foundation-plain.html">plain words</a><small>The Nilson Foundation's 501(c)(3) claim</small></li><li><a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> · <a href="sb258-preliminary-municipalities-plain.html">plain words</a><small>S.B. 258 and preliminary municipalities</small></li><li><a href="sitla-county-zoning-exemption.html">The Land Counties Can't Zone</a> · <a href="sitla-county-zoning-exemption-plain.html">plain words</a><small>Trust land and county zoning</small></li><li><a href="weber-hive-sitla-explainer.html">SITLA: The Land Nobody Zones</a> · <a href="weber-hive-sitla-explainer-plain.html">plain words</a><small>Who answers for trust land</small></li><li><a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> · <a href="tyson-eagle-mountain-closure-plain.html">plain words</a><small>Five years after opening</small></li><li><a href="utah-judicial-oversight.html">Behind the Bench</a> · <a href="utah-judicial-oversight-plain.html">plain words</a><small>Judge and lawyer complaints in Utah</small></li><li><a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> · <a href="waldrip-funding-threat-plain.html">plain words</a><small>A housing adviser in Heber City</small></li><li><a href="weber-county-tax-increases-since-2019.html">Every Weber County Property Tax Increase Since 2019</a> · <a href="weber-county-tax-increases-since-2019-plain.html">plain words</a><small>The full list</small></li><li><a href="weber-fire-district-annexation.html">A New Line on the Bill</a> · <a href="weber-fire-district-annexation-plain.html">plain words</a><small>Roy and Riverdale fire annexation</small></li><li><a href="weber-fire-district-growth.html">Paying for the Next Station</a> · <a href="weber-fire-district-growth-plain.html">plain words</a><small>How Weber Fire District funds growth</small></li><li><a href="weber-hive-5th5th-sales-tax.html">Weber County's New Sales Tax</a> · <a href="weber-hive-5th5th-sales-tax-plain.html">plain words</a><small>A public vote, but no vote by the public</small></li><li><a href="weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> · <a href="weber-hive-bait-and-switch-plain.html">plain words</a><small>Bait and switch, 2018 to 2026</small></li><li><a href="weber-hive-blank-box.html">The Blank Box</a> · <a href="weber-hive-blank-box-plain.html">plain words</a><small>Three disclosure forms, one pattern</small></li><li><a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> · <a href="weber-hive-enforcement-gap-plain.html">plain words</a><small>Complaints filed, few penalties</small></li><li><a href="weber-hive-gsl-two-money-pots.html">One Lake, Two Money Pots</a> · <a href="weber-hive-gsl-two-money-pots-plain.html">plain words</a><small>The Great Salt Lake Trust Council</small></li><li class=cur><a href="weber-hive-powder-mountain-water.html">Wells at the Top</a> · <a href="weber-hive-powder-mountain-water-plain.html">plain words</a><small>Powder Mountain's water</small></li><li><a href="weber-hive-then-vs-now.html">Then vs. Now</a> · <a href="weber-hive-then-vs-now-plain.html">plain words</a><small>Earlier plans and later approvals in Ogden Valley</small></li><li><a href="west-haven-energy-tax.html">West Haven's 6% Energy Tax</a> · <a href="west-haven-energy-tax-plain.html">plain words</a><small>A new line on the power bill</small></li></ol></details>
 </div>
 
 <article class="wrap">
@@ -878,6 +967,22 @@
   </div>
 
   <h2 id="e6560">The earlier application: E6560</h2>
+  <div class="hs-fig"><h3>Two applications, one district</h3><p class="sub">From the state's tracker and advertising list and the Standard-Examiner's reporting, as described on this page.</p>
+  <div class="mermaid">
+flowchart TD
+  SM["Summit Mountain<br>Holding Group<br>(the resort's developer)"]
+  D["Powder Mountain Water<br>and Sewer District<br>(public)"]
+  A1["E6560, filed 2023<br>600+ acre-feet<br>5 new wells, snowmaking"]
+  A2["E6863, filed 2026<br>1,000 acre-feet<br>9 wells"]
+  ST["Utah State Engineer<br>decides both"]
+  WC["Wolf Creek Irrigation<br>mitigation cut about 38%"]
+  D --> A1
+  SM --> A2
+  A1 --> ST
+  A2 --> ST
+  A1 --> WC
+  SM -. "expected bidder to<br>run the district" .-> D
+  </div></div>
 
   <p>In late November 2023, the Powder Mountain Water and Sewer Improvement District filed an exchange application with the Utah Division of Water Rights. The Standard-Examiner reported it would:</p>
   <ul>
@@ -901,20 +1006,21 @@
 
   <h3 class="sub" id="protests">Who protested</h3>
   <p>The Standard-Examiner's February 2024 reporting identified five protestors: Wolf Creek Irrigation Co., Wolf Creek Water &amp; Sewer Improvement District, Eden Water Works, Gay Browning of Bar B Ranch, and Middle Fork Irrigation Co. The hearing was held Feb. 22, 2024, at the North Ogden City Offices. The protest-and-hearing process is what state law provides, and it was followed.</p>
+  <p><b>Added Oct. 17, 2026:</b> The state's online correspondence log for E6560 (read as page text on Oct. 17, 2026) lists 11 entries labeled as protests, from 9 filers, between Dec. 21, 2023, and March 14, 2024. Besides the groups named above, they include PacifiCorp, a business, a family trust and individual residents. Two of the filings, from Eden Water Works and the Wolf Creek Water &amp; Sewer district, are marked late. On March 19, 2024, Middle Fork Irrigation Co., Bar B Ranch and the family trust filed a protest withdrawal; Bar B Ranch sent a letter of concern two days later. The log's last entry is dated April 4, 2024, and it shows no decision. <a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=E6560" target="_blank" rel="noopener">E6560 correspondence log</a>.</p>
 
   <h2 id="supply">What the records show about supply</h2>
   <p>The records reviewed describe a valley where water is already limited:</p>
   <ul>
     <li><b>Wolf Creek Irrigation Co.</b> holds senior rights dating to 1861 and an allocation of 9.85 cubic feet per second, but receives about 4 cubic feet per second in summer months, the Standard-Examiner reported in 2024.</li>
     <li><b>Eden Crossing</b> had an earlier water application denied by the state in March 2025, per the Hive's Eden Crossing files. That is a different filing from its current exchange application, E6743.</li>
-    <li><b>Liberty Pipeline Company</b> says on its own website that it isn't issuing new shares, citing drought and repairs.</li>
+    <li><b>Liberty Pipeline Company</b> says on its own website that it isn't issuing new shares, citing drought and repairs. <i>Added Oct. 17, 2026:</i> posts on the company's site dated June 30 and Aug. 2, 2026, ask shareholders to conserve water during "this year of severe drought."</li>
   </ul>
 
   <div class="viz-block">
     <p class="viz-title">Wolf Creek Irrigation: allocation vs. summer flow</p>
     <div class="bar-chart">
       <div class="bar-row"><div class="bar-meta"><span>Allocation (rights dating to 1861)</span><span class="amt">9.85 cfs</span></div><div class="bar-track" style="height:24px;"><div class="bar-fill cat-infra" style="width:100%"></div></div></div>
-      <div class="bar-row"><div class="bar-meta"><span>What it receives in summer months</span><span class="amt">about 4 cfs</span></div><div class="bar-track" style="height:24px;"><div class="bar-fill" style="width:40.6%;background:#7A2020;"></div></div></div>
+      <div class="bar-row"><div class="bar-meta"><span>What it receives in summer months</span><span class="amt">about 4 cfs</span></div><div class="bar-track" style="height:24px;"><div class="bar-fill" style="width:40.6%;background:#B42318;"></div></div></div>
     </div>
     <p class="viz-caption">Cubic feet per second, as reported by the <a href="https://www.standard.net/news/local/2024/feb/09/powder-mountain-development-prompts-concern-for-limited-water-supply/" target="_blank" rel="noopener">Standard-Examiner, Feb. 9, 2024</a>.</p>
   </div>
@@ -931,6 +1037,7 @@
       <li><span class="d">July 14, 2026</span><div class="txt">State hearings on E6743 and E6757.</div></li>
       <li><span class="d">Aug. 21, 2026</span><div class="txt">Summit Mountain Holding Group files E6863: 1,000 acre-feet, nine wells.</div></li>
       <li><span class="d">Oct. 7, 2026</span><div class="txt">Protest deadline for E6863.</div></li>
+      <li><span class="d">Added Oct. 17, 2026</span><div class="txt">Later entries: the water district's Aug. 6, 2026, special meeting agenda listed an RFP evaluation memo and a Master Services Agreement "to be signed." The state log for E6863 shows the notice published Sept. 10 and 17, 2026, and an "Answer to Protest" from the applicant on Oct. 6, 2026. See "Updates since this was posted" below.</div></li>
   </ul>
 
   <h2 id="snow">Why make snow on a powder mountain?</h2>
@@ -954,8 +1061,9 @@
     <li>On April 3, 2026, the board "voted unanimously to issue a Request for Proposals seeking a private contractor to take over all day-to-day operations," and approved the RFP and a contract of services in one motion. The district had five employees; the RFP set a 90-day transition "after which the district would have no employees."</li>
     <li>"The developer now owns the ground under the district's sewer lagoons, owns the district's only functioning water source, and stands as the expected respondent to an RFP for all remaining operations."</li>
   </ul>
-  <blockquote>The resort, as the district's largest customer, "could from time to time act in its own interests to the detriment of other customers."<br><span style="font-size:14px;font-style:normal;color:var(--gray);">District attorney Ari Bruening, in writing, as reported by the Standard-Examiner. He also wrote that an arrangement with the resort "would likely generate significant efficiencies."</span></blockquote>
+  <blockquote>The resort, as the district's largest customer, "could from time to time act in its own interests to the detriment of other customers."<br><span style="font-size:16px;font-style:normal;color:var(--gray);">District attorney Ari Bruening, in writing, as reported by the Standard-Examiner. He also wrote that an arrangement with the resort "would likely generate significant efficiencies."</span></blockquote>
   <p>Whether the contract was awarded, and to whom, wasn't found in the records reviewed.</p>
+  <p><b>Added Oct. 17, 2026:</b> Later public meeting notices show the step moved forward. The district's Aug. 6, 2026, special meeting agenda listed an "RFP/MSA evaluation memo," an "MSA contract to be signed" and "a resolution to be signed," and the notice now carries an attachment titled "Resolution 2026-04_Approved &amp; Fully Executed." The Sept. 15, 2026, agenda listed a "Master Services Agreement transition update." Neither agenda names the contractor. The resolution is posted as a scanned image that could not be read for this update, so who holds the contract is still not confirmed here. <a href="https://www.utah.gov/pmn/sitemap/notice/1099627.html" target="_blank" rel="noopener">Aug. 6 notice</a>; <a href="https://www.utah.gov/pmn/sitemap/notice/1108619.html" target="_blank" rel="noopener">Sept. 15 notice</a>.</p>
 
 
   <h2 id="next">What we're looking at next</h2>
@@ -1016,21 +1124,54 @@
     <details><summary>Who runs the water district now?</summary><div class="ans">In April 2026 the board voted to seek a private contractor for all operations. The outcome wasn't found in the records reviewed.<div class="ask"><b>Ask the Powder Mountain Water and Sewer Improvement District board:</b> "Who was awarded the operations contract, on what terms, and where is it posted?"</div></div></details>
   </div>
 
-  <details class="sources">
-    <summary>Sources</summary>
+</article>
+<section id="updates"><div class="wrap">
+<h2>Updates since this was posted</h2>
+<p>Records and news found online after Sept. 29, 2026, plus earlier records that answer questions this page listed as open. Each is dated.</p>
+<ul class="hs-upd"><li><span class="d">Oct. 6, 2026</span>The state's correspondence log for E6863 shows Summit Mountain Holding Group filed an "Answer to Protest," which confirms at least one protest was received. The log also shows a provisional well request logged Sept. 1, 2026, and the legal notice published in the Standard-Examiner on Sept. 10 and 17, 2026.<span class="s">Source: <a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=35-14844" target="_blank" rel="noopener">Utah Division of Water Rights, E6863 (35-14844) correspondence log</a>, read Oct. 17, 2026</span></li><li><span class="d">Oct. 7, 2026</span>The protest period for E6863 closed. On Oct. 17, 2026, E6863 was no longer on the state's advertising list and was not yet on the Exchange Application Tracker. The state's record search lists its base water right as 35-827.<span class="s">Source: <a href="https://www.waterrights.utah.gov/forms/advertListByCounty.asp?Startup=NowRepublishing" target="_blank" rel="noopener">Advertising list</a>; <a href="https://waterrights.utah.gov/applicationsrecords/exAppTracker.asp" target="_blank" rel="noopener">Exchange Application Tracker</a>; <a href="https://waterrights.utah.gov/search/?q=35-14844" target="_blank" rel="noopener">record search, 35-14844</a></span></li><li><span class="d">Oct. 17, 2026 (Hive records check)</span>E6560 is still listed with its hearing held and no decision. Its correspondence log has no entry after April 4, 2024. E6743 (Eden Crossing) and E6757 (Wolf Creek Water &amp; Sewer) have post-hearing filings from Sept. and Oct. 2026, including a request for additional information on E6743 logged Oct. 8, 2026; neither log shows a decision.<span class="s">Source: <a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=E6560" target="_blank" rel="noopener">E6560 log</a>; <a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=35-14682" target="_blank" rel="noopener">E6743 log</a>; <a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=35-14700" target="_blank" rel="noopener">E6757 log</a></span></li><li><span class="d">Sept. 15, 2026</span>The water district's board agenda listed a "Master Services Agreement transition update," a boil order incident report and Resolution 2026-07 on the Bloomington Well bill of sale. Its Sept. 11 notice lists the trustees as James Harvey, Andrew Stark (chair), Xavier Helgesen, Michael Mayra, William Donovan and James Strong.<span class="s">Source: <a href="https://www.utah.gov/pmn/sitemap/notice/1108619.html" target="_blank" rel="noopener">Utah Public Notice, Sept. 15, 2026</a>; <a href="https://www.utah.gov/pmn/sitemap/notice/1107357.html" target="_blank" rel="noopener">Sept. 11, 2026</a></span></li><li><span class="d">Aug. 6, 2026 (found Oct. 17)</span>A special board meeting agenda listed an "RFP/MSA evaluation memo," an "MSA contract to be signed" and a resolution to be signed. An attachment titled "Resolution 2026-04_Approved &amp; Fully Executed" was added Aug. 7. It is a scanned image and could not be read for this update.<span class="s">Source: <a href="https://www.utah.gov/pmn/sitemap/notice/1099627.html" target="_blank" rel="noopener">Utah Public Notice, Aug. 6, 2026</a></span></li><li><span class="d">June to Aug. 2026 (found Oct. 17)</span>District agendas listed a "Snow Making Memo" (June 23), an "Aquifer Health Report" (July 21) and an update on the "Snowmaking Pipeline and Mary's Tank" (Aug. 18). The agendas do not give amounts or details.<span class="s">Source: <a href="https://www.utah.gov/pmn/sitemap/notice/1090821.html" target="_blank" rel="noopener">June 23</a>; <a href="https://www.utah.gov/pmn/sitemap/notice/1096775.html" target="_blank" rel="noopener">July 21</a>; <a href="https://www.utah.gov/pmn/sitemap/notice/1102369.html" target="_blank" rel="noopener">Aug. 18</a></span></li><li><span class="d">April 9, 2026 (added for context)</span>The district's RFP covers operations, maintenance, water rights and permits, billing, finance records and board support under a multi-year contract; the board keeps policy, budget and rate approval and ownership of assets. The document is dated April 9 with proposals due April 30, 2026. The state U3P listing (RA26-121), as shown on a procurement site, gives April 7 and May 7.<span class="s">Source: <a href="https://pmwsid.gov/wp-content/uploads/2026/04/RFP-for-operations-maintenance-capital-facilities-and-administrative-services-7-1.pdf" target="_blank" rel="noopener">PMWSID RFP</a>; <a href="https://app.govly.com/public/opportunities/16367959" target="_blank" rel="noopener">U3P RA26-121 listing</a></span></li><li><span class="d">July 25, 2026 (added for context)</span>The Ogden Valley News reported on the July 14 hearings. E6757 would exchange up to 303 acre-feet from Pineview Reservoir using 16 wells and five springs; the district called it mostly "housekeeping." Eden Crossing's current filing is its second; the paper reported the state rejected the first after data showed its artesian well interfered with senior rights at Patio Springs. No decision had been made on either.<span class="s">Source: <a href="https://www.ogdenvalleynews.com/water-rights-hearings.html" target="_blank" rel="noopener">Ogden Valley News, July 25, 2026</a></span></li><li><span class="d">Oct. 6 and 7, 2026</span>Season-preview stories on Powder Mountain report a new triple chair for the DMI area beneath James Peak, a Sundown lift upgrade and a Dec. 11 opening. Neither mentions snowmaking at Powder Mountain.<span class="s">Source: <a href="https://www.deseret.com/lifestyle/2026/10/07/utah-ski-resorts-opening-dates-new-terrain-upgraded-chairlifts/" target="_blank" rel="noopener">Deseret News, Oct. 7, 2026</a>; <a href="https://kutv.com/news/local/utah-ski-resorts-add-terrain-lifts-snowmaking-ahead-of-new-season" target="_blank" rel="noopener">KUTV, Oct. 6, 2026</a></span></li></ul>
+</div></section>
+<section id="words"><div class="wrap">
+<h2>Words to know</h2>
+<p>Tap a card to see what it means.</p>
+<div class="hs-flips"><button class="hs-flip" aria-expanded="false"><div class="ft">Acre-foot</div><div class="fh">Tap to see</div><div class="fd">About 325,851 gallons: enough to cover one acre of land one foot deep.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Exchange application</div><div class="fh">Tap to see</div><div class="fd">A request to the state to take water at a new place or in a new way, in return for replacing it somewhere else. The numbers start with "E."</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">State engineer</div><div class="fh">Tap to see</div><div class="fd">The head of the Utah Division of Water Rights, who approves or rejects water applications.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Senior right</div><div class="fh">Tap to see</div><div class="fd">An older water right. When there is not enough water, older rights are filled first.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Mitigation water</div><div class="fh">Tap to see</div><div class="fd">Water a user agrees to supply so a new use does not hurt other rights holders.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Master Services Agreement (MSA)</div><div class="fh">Tap to see</div><div class="fd">A contract that hands a list of services, here the district's day-to-day operations, to an outside company.</div></button></div>
+</div></section>
+<section id="connected"><div class="wrap">
+<h2>Connected Hive work</h2>
+<div class="hs-cards"><a href="index.html"><b>Transparency docket</b><span>Every Transparency case file</span></a><a href="weber-hive-then-vs-now.html"><b>Then vs. Now</b><span>Transparency: earlier plans and later approvals in Ogden Valley, including Powder Mountain</span></a><a href="weber-fire-district-growth.html"><b>Paying for the Next Station</b><span>Transparency: the Powder Mountain fire station and how Weber Fire District pays for growth</span></a><a href="https://weber-county-hive.github.io/PIDS-Utah/ogden-valley-boundary-exclusion.html"><b>The Boundary That Left Them Out</b><span>PIDS-Utah: Ogden Valley</span></a><a href="https://weber-county-hive.github.io/PIDS-Utah/nordic-village-case-file.html"><b>Case File: Nordic Village</b><span>PIDS-Utah: another Ogden Valley resort</span></a><a href="https://weber-county-hive.github.io/followthedeed/weber-hive-schultz-water-rights.html"><b>The Applicant Holds Those Rights</b><span>Follow the Deed: a water rights case file</span></a><a href="https://weber-county-hive.github.io/Bill-Tracker/water-land-property-rights-local-power-bills.html"><b>Water, Land, Property Rights &amp; Local Power</b><span>Bill-Tracker: the state bills behind these rules</span></a></div>
+</div></section>
+<section id="behind"><div class="wrap">
+<h2>Behind this piece</h2>
+<div class="hs-counter"><div><div class="n">3</div><div class="l">State water application records read (tracker, advertising list, record search)</div></div><div><div class="n">5</div><div class="l">State correspondence logs read for the Oct. 17 update</div></div><div><div class="n">8</div><div class="l">Water district meeting notices read</div></div><div><div class="n">6</div><div class="l">News articles cited</div></div><div><div class="n">3</div><div class="l">Studies and agency reports on snowmaking</div></div><div><div class="n">1</div><div class="l">District RFP document read</div></div><div><div class="n">14</div><div class="l">Searches run for the Oct. 17 update (estimate)</div></div></div>
+<p class="hs-updates">Posted Sept. 29, 2026. Updated Oct. 17, 2026: new layout and colors, larger print, a short version, a diagram of the two applications, a plain-words page, updates from state water records and district meeting notices, words to know, related Hive pages, and links for two sources that had none. Added notes are dated and sit next to the original text. No earlier facts or wording changed.</p>
+</div></section>
+<article class="wrap" style="padding-top:8px;">
+  <details class="sources" id="sources">
+    <summary>Sources (tap to open)</summary>
     <ul>
       <li><a href="https://www.waterrights.utah.gov/forms/advertListByCounty.asp?Startup=NowRepublishing" target="_blank" rel="noopener">Utah Division of Water Rights, advertising list by county</a>, checked Sept. 29, 2026: E6863, water right <a href="https://waterrights.utah.gov/search/?q=35-14844" target="_blank" rel="noopener">35-14844</a>, Summit Mountain Holding Group LLC, 1,000 acre-feet, 9 wells, filed Aug. 21, 2026, protest deadline Oct. 7, 2026. Read via summarized capture of the posted list.</li>
-      <li><a href="https://waterrights.utah.gov/applicationsrecords/exAppTracker.asp" target="_blank" rel="noopener">Utah Division of Water Rights, Exchange Application Tracker</a>, checked Sept. 29, 2026: <a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=E6560" target="_blank" rel="noopener">E6560</a> (<a href="https://waterrights.utah.gov/search/?q=35-14408" target="_blank" rel="noopener">35-14408</a>), <a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=E6743" target="_blank" rel="noopener">E6743</a> (<a href="https://waterrights.utah.gov/search/?q=35-14682" target="_blank" rel="noopener">35-14682</a>), E6757 (<a href="https://waterrights.utah.gov/search/?q=35-14700" target="_blank" rel="noopener">35-14700</a>). E6863 not yet listed there.</li>
+      <li><a href="https://waterrights.utah.gov/applicationsrecords/exAppTracker.asp" target="_blank" rel="noopener">Utah Division of Water Rights, Exchange Application Tracker</a>, checked Sept. 29, 2026: <a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=E6560" target="_blank" rel="noopener">E6560</a> (<a href="https://waterrights.utah.gov/search/?q=35-14408" target="_blank" rel="noopener">35-14408</a>), <a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=E6743" target="_blank" rel="noopener">E6743</a> (<a href="https://waterrights.utah.gov/search/?q=35-14682" target="_blank" rel="noopener">35-14682</a>), E6757 (<a href="https://waterrights.utah.gov/search/?q=35-14700" target="_blank" rel="noopener">35-14700</a>). E6863 not yet listed there. <i>Link added Oct. 17, 2026:</i> <a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=35-14700" target="_blank" rel="noopener">E6757 correspondence log</a>.</li>
       <li><a href="https://www.standard.net/news/local/2024/feb/09/powder-mountain-development-prompts-concern-for-limited-water-supply/" target="_blank" rel="noopener">Standard-Examiner (Cathy McKitrick), "Powder Mountain development prompts concern for limited water supply," Feb. 9, 2024</a>. Read as article text; quoted passages returned verbatim.</li>
       <li><a href="https://www.standard.net/news/local/2026/apr/11/powder-mountains-water-district-voted-to-outsource-all-operations-and-eliminate-5-district-jobs/" target="_blank" rel="noopener">Standard-Examiner (Mariah Tyler Moore), "Powder Mountain's water district voted to outsource all operations and eliminate 5 district jobs," April 11, 2026</a>. Read as article text; quoted passages returned verbatim.</li>
       <li><a href="https://www.deseret.com/2021/11/23/22778885/the-complicated-ethics-of-creating-fake-snow-snowbird-deer-valley-utah-skiing-park-city/" target="_blank" rel="noopener">Deseret News (Frederick Reimers), "The complicated ethics of creating fake snow," November 2021</a>. Read as article text.</li>
       <li><a href="https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2019.00078/full" target="_blank" rel="noopener">Wolfsperger, F. and Grünewald, T., "Water Losses During Technical Snow Production: Results From Field Experiments," Frontiers in Earth Science, 2019</a>.</li>
       <li><a href="https://www.anses.fr/en/content/artificial-snow" target="_blank" rel="noopener">ANSES (French Agency for Food, Environmental and Occupational Health &amp; Safety), "Artificial snow"</a>.</li>
       <li><a href="https://libertypipelinecompany.com" target="_blank" rel="noopener">Liberty Pipeline Company website</a>, status of new shares.</li>
-      <li>Eden Crossing water application denial, March 2025. From the Hive's Eden Crossing files; application number still being confirmed.</li>
+      <li>Eden Crossing water application denial, March 2025. From the Hive's Eden Crossing files; application number still being confirmed. <i>Link added Oct. 17, 2026:</i> <a href="https://www.kuer.org/business-economy/2025-05-08/as-utah-pushes-to-build-more-conflicts-over-water-rights-are-anticipated-to-follow" target="_blank" rel="noopener">KUER (Macy Lipkin), "As Utah pushes to build, more conflicts over water rights are anticipated to follow," May 8, 2025</a>, which reports the March denial and links the state's <a href="https://waterrights.utah.gov/docImport/0669/06692931.pdf" target="_blank" rel="noopener">order document</a> (a scanned file; the application number could not be read from it for this update).</li>
       <li><a href="weber-hive-then-vs-now.html" target="_blank" rel="noopener">The Weber County Hive, "Then vs. Now" (CASE 2026-WFD-03)</a> and the collective rubric.</li>
     </ul>
-    <p style="font-size:14px;color:var(--gray);font-style:italic;margin:14px 0 0;">Public records only. No comment requested.</p>
+    <h3 style="margin-top:22px;">Added Oct. 17, 2026</h3>
+    <ul>
+      <li><a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=E6560" target="_blank" rel="noopener">Utah Division of Water Rights, E6560 (35-14408) correspondence log</a>, read as page text Oct. 17, 2026.</li>
+      <li><a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=35-14844" target="_blank" rel="noopener">E6863 (35-14844) correspondence log</a>, read Oct. 17, 2026; <a href="https://waterrights.utah.gov/search/?q=35-14844" target="_blank" rel="noopener">record search</a>.</li>
+      <li><a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=35-14682" target="_blank" rel="noopener">E6743 (35-14682) correspondence log</a> and <a href="https://www.waterrights.utah.gov/mailLog/mlwrn.asp?wrn=35-14700" target="_blank" rel="noopener">E6757 (35-14700) correspondence log</a>, read Oct. 17, 2026.</li>
+      <li>Powder Mountain Water and Sewer Improvement District meeting notices on the Utah Public Notice Website: <a href="https://www.utah.gov/pmn/sitemap/publicbody/4785.html" target="_blank" rel="noopener">all notices</a>; <a href="https://www.utah.gov/pmn/sitemap/notice/1081887.html" target="_blank" rel="noopener">May 21</a>, <a href="https://www.utah.gov/pmn/sitemap/notice/1090821.html" target="_blank" rel="noopener">June 23</a>, <a href="https://www.utah.gov/pmn/sitemap/notice/1096775.html" target="_blank" rel="noopener">July 21</a>, <a href="https://www.utah.gov/pmn/sitemap/notice/1099627.html" target="_blank" rel="noopener">Aug. 6</a>, <a href="https://www.utah.gov/pmn/sitemap/notice/1102369.html" target="_blank" rel="noopener">Aug. 18</a>, <a href="https://www.utah.gov/pmn/sitemap/notice/1107357.html" target="_blank" rel="noopener">Sept. 11</a> and <a href="https://www.utah.gov/pmn/sitemap/notice/1108619.html" target="_blank" rel="noopener">Sept. 15, 2026</a>.</li>
+      <li><a href="https://pmwsid.gov/wp-content/uploads/2026/04/RFP-for-operations-maintenance-capital-facilities-and-administrative-services-7-1.pdf" target="_blank" rel="noopener">PMWSID, Request for Proposals for Comprehensive Operations, Maintenance, Capital Facilities, Management, and Administrative Services, April 9, 2026</a>; <a href="https://app.govly.com/public/opportunities/16367959" target="_blank" rel="noopener">U3P RA26-121 listing</a>.</li>
+      <li><a href="https://www.ogdenvalleynews.com/water-rights-hearings.html" target="_blank" rel="noopener">Ogden Valley News, "Utah Division of Water Rights Hearings on Three Ogden Valley Applications," July 25, 2026</a>.</li>
+      <li><a href="https://www.deseret.com/lifestyle/2026/10/07/utah-ski-resorts-opening-dates-new-terrain-upgraded-chairlifts/" target="_blank" rel="noopener">Deseret News (Dennis Romboy), Oct. 7, 2026</a>; <a href="https://kutv.com/news/local/utah-ski-resorts-add-terrain-lifts-snowmaking-ahead-of-new-season" target="_blank" rel="noopener">KUTV (Jim Spiewak), Oct. 6, 2026</a>.</li>
+      <li><a href="https://libertypipelinecompany.com" target="_blank" rel="noopener">Liberty Pipeline Company website</a>, posts dated June 30 and Aug. 2, 2026, read Oct. 17, 2026.</li>
+      <li>Searches run Oct. 17, 2026, for later news on E6863, E6560, the district's operations contract and Powder Mountain snowmaking found no news story on the contract award or on any state decision.</li>
+    </ul>
+    <p style="font-size:16px;color:var(--gray);font-style:italic;margin:14px 0 0;">Public records only. No comment requested.</p>
   </details>
 
 </article>
@@ -1039,6 +1180,8 @@
   <div class="footer-line">Independent · Accountability · Journalism</div>
   <div class="footer-url">webercountyhive.substack.com</div>
 </footer>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+
 
 <script>
 
@@ -1063,5 +1206,8 @@
 
 </script>
 <script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"Arial, sans-serif",fontSize:'22px',primaryColor:'#F2F5FA',primaryTextColor:'#0F1F3D',primaryBorderColor:'#1D4ED8',lineColor:'#1E3A8A',edgeLabelBackground:'#FFFFFF'},flowchart:{curve:'basis',padding:18,useMaxWidth:true}});}catch(e){}</script>
 </body>
 </html>

@@ -7,12 +7,11 @@
 <meta name="description" content="Does Amendment B do what you think? 12 quick questions on Utah's 2026 Amendments A and B, each answered from the public record.">
 <meta property="og:title" content="Does Amendment B do what you think? Take the quiz.">
 <meta property="og:description" content="12 quick questions on Utah's 2026 Amendments A and B, each answered from the public record.">
-<link rel="icon" type="image/png" href="hive-bee.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#FFFFFF;--soft:#F2F5FA;--navy:#0F1F3D;--ink:#14213D;--ink-soft:#3E4C66;--blue:#1D4ED8;--blue-dark:#1E3A8A;--line:#D5DCEA;--myth:#B42318;--fact:#1E7B3C;--max:760px;}
+  :root{--bg:#FFFFFF;--soft:#F2F5FA;--navy:#0F1F3D;--ink:#14213D;--ink-soft:#3E4C66;--blue:#1D4ED8;--blue-dark:#1E3A8A;--line:#D5DCE8;--myth:#B42318;--fact:#1E7B3C;--max:760px;}
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:'Source Sans 3',Arial,sans-serif;font-size:20px;line-height:1.55;}
   a{color:var(--blue);}
@@ -50,16 +49,103 @@
   ul.sum{padding-left:22px;} ul.sum li{margin-bottom:8px;}
   footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:16px;color:var(--ink-soft);}
   [hidden]{display:none!important;}
+  .hs-sec{padding:30px 0;border-top:1px solid var(--line);}
+  .hs-sec h2{font-size:30px;margin-bottom:12px;}
+  .hs-before{background:var(--soft);border-left:6px solid var(--blue);padding:16px 18px;margin:0 0 22px;border-radius:0 8px 8px 0;}
+  .hs-before b.t{display:block;font-family:'Fraunces',Georgia,serif;font-size:24px;color:var(--navy);margin-bottom:6px;}
+  .hs-before p{margin:6px 0 0;}
+  .hs-src ol{padding-left:24px;margin:8px 0 18px;} .hs-src li{margin-bottom:8px;font-size:18px;}
+  .hs-src h3{font-size:20px;margin:16px 0 4px;}
+  .hs-src summary{cursor:pointer;font-weight:800;padding:10px 0;}
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-parts{background:#F2F5FA;border:2px solid #1D4ED8;border-radius:6px;padding:14px 16px;margin:0 0 24px;font-family:Arial,sans-serif}
+.hs-parts .lab{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:bold;color:#14213D;margin:0 0 8px}
+.hs-parts ol{margin:0 0 10px;padding-left:24px;font-size:1rem;line-height:1.45}
+.hs-parts li.cur{font-weight:bold}
+.hs-parts li.cur a{color:#14213D;text-decoration:none}
+.hs-parts .nav{display:flex;flex-wrap:wrap;gap:10px}
+.hs-parts .nav a{display:inline-block;background:#1D4ED8;color:#fff;text-decoration:none;font-weight:bold;padding:10px 16px;border-radius:5px;font-size:1rem}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
 </style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
 <div class="topbar"><a href="index.html">The Weber County Hive · Transparency</a><a href="utah-amendments-2026.html">Full case file: Amendments A &amp; B →</a></div>
 <header><div class="wrap">
   <h1>Does Amendment B do what you think?</h1>
   <p>12 quick questions. Every answer comes from the public record, with the source named. This quiz explains what the amendments do; it doesn't tell you how to vote.</p>
+  <p class="hs-date">Posted Oct. 8, 2026 · Updated Oct. 17, 2026</p>
 </div></header>
 
 <main><div class="wrap">
+  <div class="hs-before"><b class="t">Before you start</b>
+  <p>This quiz is a short companion to two longer Hive case files. <a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> has the full amendment text, what a YES or a NO vote does, and public claims checked against the record. <a href="utah-amendments-2026.html">The 2026 Amendments</a> covers both Amendment A and Amendment B and how they got on the ballot.</p>
+  <p>The official ballot title for each amendment is in the state's <a href="https://vote.utah.gov/wp-content/uploads/2026/09/2026-Voter-Information-Pamphlet.pdf" target="_blank" rel="noopener">2026 Voter Information Pamphlet</a> from the Lieutenant Governor's Office.</p></div>
+<details class="hs-pages"><summary>Transparency pages (26) · tap to open</summary><ol><li><a href="index.html">Transparency docket</a><small>Every case file, searchable</small></li><li><a href="utah-amendments-2026.html">The 2026 Amendments</a> · <a href="utah-amendments-2026-plain.html">plain words</a><small>Amendments A and B on your ballot</small></li><li><a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> · <a href="amendment-b-myth-vs-fact-plain.html">plain words</a><small>Claims checked against the record</small></li><li class=cur><a href="amendment-b-quiz.html">Amendment B Quiz</a><small>Test what you know</small></li><li><a href="weber-housing-authority.html">Weber Housing Authority</a> · <a href="weber-housing-authority-plain.html">plain words</a><small>A commissioner, his wife and the authority that pays their company</small></li><li><a href="bramwell-odp-enforcement.html">What the Privacy Office Can and Can't Do</a> · <a href="bramwell-odp-enforcement-plain.html">plain words</a><small>Utah's Chief Privacy Officer</small></li><li><a href="counting-the-jobs.html">Counting the Jobs</a> · <a href="counting-the-jobs-plain.html">plain words</a><small>Job promises and what was reported</small></li><li><a href="matt-brower.html">Matt Brower</a> · <a href="matt-brower-plain.html">plain words</a><small>The board seat that never came up</small></li><li><a href="nilson-foundation.html">Ten Days</a> · <a href="nilson-foundation-plain.html">plain words</a><small>The Nilson Foundation's 501(c)(3) claim</small></li><li><a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> · <a href="sb258-preliminary-municipalities-plain.html">plain words</a><small>S.B. 258 and preliminary municipalities</small></li><li><a href="sitla-county-zoning-exemption.html">The Land Counties Can't Zone</a> · <a href="sitla-county-zoning-exemption-plain.html">plain words</a><small>Trust land and county zoning</small></li><li><a href="weber-hive-sitla-explainer.html">SITLA: The Land Nobody Zones</a> · <a href="weber-hive-sitla-explainer-plain.html">plain words</a><small>Who answers for trust land</small></li><li><a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> · <a href="tyson-eagle-mountain-closure-plain.html">plain words</a><small>Five years after opening</small></li><li><a href="utah-judicial-oversight.html">Behind the Bench</a> · <a href="utah-judicial-oversight-plain.html">plain words</a><small>Judge and lawyer complaints in Utah</small></li><li><a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> · <a href="waldrip-funding-threat-plain.html">plain words</a><small>A housing adviser in Heber City</small></li><li><a href="weber-county-tax-increases-since-2019.html">Every Weber County Property Tax Increase Since 2019</a> · <a href="weber-county-tax-increases-since-2019-plain.html">plain words</a><small>The full list</small></li><li><a href="weber-fire-district-annexation.html">A New Line on the Bill</a> · <a href="weber-fire-district-annexation-plain.html">plain words</a><small>Roy and Riverdale fire annexation</small></li><li><a href="weber-fire-district-growth.html">Paying for the Next Station</a> · <a href="weber-fire-district-growth-plain.html">plain words</a><small>How Weber Fire District funds growth</small></li><li><a href="weber-hive-5th5th-sales-tax.html">Weber County's New Sales Tax</a> · <a href="weber-hive-5th5th-sales-tax-plain.html">plain words</a><small>A public vote, but no vote by the public</small></li><li><a href="weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> · <a href="weber-hive-bait-and-switch-plain.html">plain words</a><small>Bait and switch, 2018 to 2026</small></li><li><a href="weber-hive-blank-box.html">The Blank Box</a> · <a href="weber-hive-blank-box-plain.html">plain words</a><small>Three disclosure forms, one pattern</small></li><li><a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> · <a href="weber-hive-enforcement-gap-plain.html">plain words</a><small>Complaints filed, few penalties</small></li><li><a href="weber-hive-gsl-two-money-pots.html">One Lake, Two Money Pots</a> · <a href="weber-hive-gsl-two-money-pots-plain.html">plain words</a><small>The Great Salt Lake Trust Council</small></li><li><a href="weber-hive-powder-mountain-water.html">Wells at the Top</a> · <a href="weber-hive-powder-mountain-water-plain.html">plain words</a><small>Powder Mountain's water</small></li><li><a href="weber-hive-then-vs-now.html">Then vs. Now</a> · <a href="weber-hive-then-vs-now-plain.html">plain words</a><small>Earlier plans and later approvals in Ogden Valley</small></li><li><a href="west-haven-energy-tax.html">West Haven's 6% Energy Tax</a> · <a href="west-haven-energy-tax-plain.html">plain words</a><small>A new line on the power bill</small></li></ol></details>
   <div class="progress"><div class="bar" id="bar"></div></div>
   <div class="count" id="count"></div>
   <div class="card" id="card">
@@ -89,10 +175,52 @@
     <button class="next" id="again" type="button">Take it again</button>
   </div>
 </div></main>
+<section class="hs-sec" id="words"><div class="wrap">
+<h2>Words to know</h2>
+<p>Tap a card to see what it means.</p>
+<div class="hs-flips"><button class="hs-flip" aria-expanded="false"><div class="ft">Citizen initiative</div><div class="fh">Tap to see</div><div class="fd">A law proposed by voters. Supporters gather signatures to put it on the ballot. Amendment B is about statewide initiatives that include a tax increase.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Simple majority</div><div class="fh">Tap to see</div><div class="fd">More than half of the votes cast. Today a statewide initiative passes with a simple majority. Amendment B would raise that to 60% for initiatives that include a tax increase.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Referendum</div><div class="fh">Tap to see</div><div class="fd">A public vote, started by signatures, on a law the Legislature already passed. Amendment B does not change referendums.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Truth in Taxation</div><div class="fh">Tap to see</div><div class="fd">The process local boards use to raise property taxes. The rate normally falls as home values rise, unless the board holds a public hearing and votes to keep it higher. There is no public vote.</div></button></div>
+</div></section>
+<section class="hs-sec" id="connected"><div class="wrap">
+<h2>Connected Hive work</h2>
+<div class="hs-cards"><a href="index.html"><b>Transparency docket</b><span>Every Transparency case file</span></a><a href="amendment-b-myth-vs-fact.html"><b>Amendment B: Myth vs. Fact</b><span>Transparency: claims checked against the record</span></a><a href="utah-amendments-2026.html"><b>The 2026 Amendments</b><span>Transparency: Amendments A and B, and how we got here</span></a><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-sb2001-hb185.html"><b>S.B. 2001 and H.B. 185</b><span>Bill-Tracker: the 2019 food tax, repealed before the referendum</span></a><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-sb169.html"><b>S.B. 169 (2024)</b><span>Bill-Tracker: the MIDA bill behind the lodging tax question</span></a><a href="https://weber-county-hive.github.io/Taxation/taxation-for-beginners.html"><b>Taxation for Beginners</b><span>Taxation: how taxes are set in Utah</span></a><a href="https://weber-county-hive.github.io/Taxation/utah-state-laws-local-taxes.html"><b>State Laws, Local Taxes</b><span>Taxation: who used the power, and what it cost</span></a></div>
+</div></section>
+<section class="hs-sec" id="behind"><div class="wrap">
+<h2>Behind this piece</h2>
+<div class="hs-counter"><div><div class="n">12</div><div class="l">Quiz questions, plus a warm-up</div></div><div><div class="n">8</div><div class="l">Source groups named on the quiz</div></div><div><div class="n">14</div><div class="l">Source links opened and confirmed for the Oct. 17 update</div></div><div><div class="n">2</div><div class="l">Web searches run for the Oct. 17 update</div></div></div>
+<p class="hs-updates">Posted Oct. 8, 2026. Updated Oct. 17, 2026: new Utah Hive Politics bar and footer, a date line, the list of Transparency pages, a "Before you start" note, words to know, connected Hive work, this counter and a sources dropdown with links. The quiz questions, answers, scoring and explanations did not change. No earlier facts changed.</p>
+</div></section>
+<section class="hs-sec" id="sources"><div class="wrap">
+<h2>Sources</h2>
+<details class="hs-src"><summary>Show all sources (tap to open)</summary>
+<h3>Sources named on the quiz, with links</h3>
+<ol>
+<li><a href="https://le.utah.gov/Session/2025/bills/enrolled/SJR002.pdf" target="_blank" rel="noopener">S.J.R. 2 (2025), Proposal to Amend Utah Constitution - Statewide Initiatives, enrolled text</a> (Amendment B, Parts A to D; applies to votes after Nov. 1, 2026)</li>
+<li><a href="https://le.utah.gov/Session/2025/bills/enrolled/HJR010.pdf" target="_blank" rel="noopener">H.J.R. 10 (2025), Proposal to Amend Utah Constitution - Publication Amendments, enrolled text</a> (Amendment A)</li>
+<li><a href="https://le.utah.gov/constitutionalAmendment/2026/constitutionalamendments.pdf" target="_blank" rel="noopener">2026 Proposed Constitutional Amendments, le.utah.gov</a></li>
+<li><a href="https://le.utah.gov/xcode/constitution.html" target="_blank" rel="noopener">Utah Constitution, Art. VI, Sec. 22 and Art. XXIII, Sec. 1 (le.utah.gov index)</a></li>
+<li><a href="https://le.utah.gov/~2025/bills/static/HB0481.html" target="_blank" rel="noopener">H.B. 481 (2025), Ballot Proposition Requirements</a></li>
+<li><a href="https://le.utah.gov/xcode/Title63G/Chapter30/63G-30-S102.html" target="_blank" rel="noopener">Utah Code 63G-30-102</a></li>
+<li><a href="https://le.utah.gov/~2015/bills/static/HB0362.html" target="_blank" rel="noopener">H.B. 362 (2015), Transportation Infrastructure Funding</a> (final votes 44-29 House, 20-8 Senate)</li>
+<li><a href="https://le.utah.gov/~2024/bills/static/SB0169.html" target="_blank" rel="noopener">S.B. 169 (2024), Military Installation Development Authority Modifications</a> (20-4 Senate, 65-2 House)</li>
+<li>S.B. 2001 (2019): <a href="https://news.ballotpedia.org/2020/01/27/utah-legislature-to-repeal-tax-bill-after-signatures-filed-for-veto-referendum/" target="_blank" rel="noopener">Ballotpedia News, Jan. 27, 2020</a> (about 152,000 signatures; repeal announced for Jan. 27, 2020). The le.utah.gov bill page could not be opened on Oct. 17, 2026.</li>
+<li><a href="https://www.ksl.com/article/51606015/67-utah-taxing-entities-seeking-9358m-in-tax-hikes-between-them-taxpayers-group-says" target="_blank" rel="noopener">KSL, Aug. 4, 2026: 67 Utah taxing entities seeking $93.58M in tax hikes</a></li>
+<li><a href="https://ballotpedia.org/Utah_Proposition_3,_Medicaid_Expansion_Initiative_(2018)" target="_blank" rel="noopener">Ballotpedia: Utah Proposition 3, Medicaid Expansion Initiative (2018)</a> (53.32% yes; 0.15 point sales tax increase)</li>
+<li>Prop 4 (2018): Ballotpedia blocked automated reading on Oct. 17, 2026, so the 50.34% figure was checked on <a href="https://en.wikipedia.org/wiki/2018_Utah_Proposition_4" target="_blank" rel="noopener">Wikipedia: 2018 Utah Proposition 4</a> (50.34% yes).</li>
+</ol>
+<h3>Added Oct. 17, 2026</h3>
+<ol>
+<li><a href="https://vote.utah.gov/wp-content/uploads/2026/09/2026-Voter-Information-Pamphlet.pdf" target="_blank" rel="noopener">2026 Utah Voter Information Pamphlet, Office of the Lieutenant Governor</a>. It includes Constitutional Amendment A (publication of proposed amendments) and Constitutional Amendment B (statewide initiatives that increase taxes), with the official ballot titles. Link found through <a href="https://www.kpcw.org/state-regional/2026-10-14/heres-what-utah-amendments-a-b-on-your-ballot-are-asking-of-voters" target="_blank" rel="noopener">KPCW, Oct. 14, 2026</a>.</li>
+<li><a href="amendment-b-myth-vs-fact.html">The Weber County Hive, Amendment B: Myth vs. Fact</a> (full sources list for the amendment)</li>
+<li><a href="utah-amendments-2026.html">The Weber County Hive, The 2026 Amendments</a></li>
+</ol>
+</details>
+</div></section>
 
 <footer><div class="wrap">
   Sources: S.J.R. 2 (2025) and H.J.R. 10 (2025), 2026 constitutional amendment text, le.utah.gov; Utah Const. Art. VI, Sec. 22 and Art. XXIII, Sec. 1; H.B. 481 (2025) and Utah Code 63G-30-102; H.B. 362 (2015); S.B. 169 (2024); S.B. 2001 (2019) and Ballotpedia; KSL, Aug. 4, 2026; Prop 3 and Prop 4 (2018), Ballotpedia. No names or personal information are collected. We count only how many people finish and their scores.
 </div></footer>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+
 
 <script>
 (function(){
@@ -164,5 +292,6 @@
 })();
 </script>
 <script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
 </body>
 </html>
