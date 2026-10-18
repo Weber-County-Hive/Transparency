@@ -4,118 +4,220 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Transparency — The Weber County Hive</title>
-<link rel="icon" type="image/png" href="hive-bee.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --paper:#F3ECE0; --paper-dim:#E9E0D0; --void:#181210; --void-2:#241A17;
-    --maroon:#6E1F2B; --maroon-dim:#8C3B44; --ink:#211714; --ink-soft:#4A3B35;
-    --line:#C9BBA4; --gold:#B4863C; --max:900px;
-    --status-doc:#3F6B3F; --status-pending:#B4863C; --status-disputed:#8C3B44;
-  }
-  *{box-sizing:border-box;}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Source Sans 3',sans-serif;font-size:17px;line-height:1.62;}
-  ::selection{background:var(--maroon);color:var(--paper);}
-  a{color:var(--maroon);}
-  a:hover{color:var(--maroon-dim);}
-  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);margin:0;}
-  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
-  .mono{font-family:'IBM Plex Mono',monospace;}
+  :root{--paper:#FFFFFF;--soft:#F2F5FA;--ink:#14213D;--muted:#3E4C66;--line:#D5DCE8;--band:#0F1F3D;--accent:#1D4ED8;--light:#93C5FD;
+    --doc:#1E7B3C;--doc-bg:#E8F5EC;--pend:#8A5A00;--pend-bg:#FFF4D6;--disp:#B42318;--disp-bg:#FDECEA;--max:1040px}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:1.6}
+  a{color:var(--accent)}
+  .ui{font-family:Arial,Helvetica,sans-serif}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+  header.masthead{background:var(--band);color:#fff;padding:44px 0 36px}
+  header.masthead .eyebrow{font-family:Arial,sans-serif;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--light);margin:0 0 10px;font-weight:bold}
+  header.masthead h1{font-size:clamp(40px,7vw,64px);line-height:1.05;margin:0;color:#fff}
+  header.masthead h1 em{color:var(--light)}
+  header.masthead .dek{font-size:20px;color:#E6ECF7;max-width:720px;margin:16px 0 0}
+  header.masthead .hs-date{color:#E6ECF7}
+  main{padding:28px 0 60px}
+  section{margin:0 0 40px}
+  h2.sec{font-size:28px;margin:0 0 6px;color:var(--ink)}
+  p.sub{color:var(--muted);margin:0 0 18px;font-size:18px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:0 0 30px}
+  .stat{background:var(--soft);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+  .stat .n{font-family:Arial,sans-serif;font-size:34px;font-weight:bold;color:var(--ink);line-height:1.1}
+  .stat .l{font-family:Arial,sans-serif;font-size:15px;color:var(--muted)}
+  .ballot{background:var(--soft);border:2px solid var(--accent);border-radius:8px;padding:20px}
+  .ballot h2{margin:0 0 4px;font-size:26px}
+  .ballot .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+  .ballot a{display:block;background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px;text-decoration:none;color:var(--ink)}
+  .ballot a b{display:block;font-size:19px;color:var(--accent)}
+  .ballot a span{display:block;font-family:Arial,sans-serif;font-size:15px;color:var(--muted);margin-top:4px}
+  .tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 12px}
+  .tools input{flex:1 1 260px;min-width:0;padding:14px 16px;font-size:18px;border:2px solid var(--line);border-radius:6px;font-family:Arial,sans-serif;color:var(--ink);background:#fff}
+  .tools input:focus,.tools select:focus{outline:3px solid var(--light);border-color:var(--accent)}
+  .tools select{padding:13px 12px;font-size:17px;border:2px solid var(--line);border-radius:6px;font-family:Arial,sans-serif;background:#fff;color:var(--ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
+  .chip{font-family:Arial,sans-serif;font-size:15px;padding:8px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);cursor:pointer}
+  .chip[aria-pressed="true"]{background:var(--band);color:#fff;border-color:var(--band)}
+  .search-count{font-family:Arial,sans-serif;font-size:16px;color:var(--muted);margin:0 0 16px}
+  .docket{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+  .card{background:#fff;border:1px solid var(--line);border-top:5px solid var(--band);border-radius:6px;padding:20px;display:flex;flex-direction:column;min-width:0}
+  .card.paired{border-top-color:var(--accent)}
+  .case-row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px}
+  .case-number{font-family:Arial,sans-serif;font-size:14px;font-weight:bold;letter-spacing:.04em;color:var(--muted)}
+  .status-stamp{font-family:Arial,sans-serif;font-size:13px;font-weight:bold;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:4px;white-space:nowrap}
+  .status-documented{color:var(--doc);background:var(--doc-bg)}
+  .status-pending{color:var(--pend);background:var(--pend-bg)}
+  .status-disputed{color:var(--disp);background:var(--disp-bg)}
+  .category{font-family:Arial,sans-serif;font-size:14px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:6px}
+  .card h3{font-size:23px;line-height:1.22;margin:0 0 8px}
+  .card h3 a{color:var(--ink);text-decoration:none}
+  .card h3 a:hover{color:var(--accent);text-decoration:underline}
+  .summary{font-size:17px;color:var(--muted);margin:0 0 12px;flex-grow:1}
+  .officials{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+  .official-tag{font-family:Arial,sans-serif;font-size:14px;background:var(--soft);border:1px solid var(--line);border-radius:4px;padding:2px 8px;color:var(--ink)}
+  .paired-note{font-family:Arial,sans-serif;font-size:15px;color:var(--accent);margin-bottom:10px}
+  .btns{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 10px}
+  .btns a{font-family:Arial,sans-serif;font-size:16px;font-weight:bold;text-decoration:none;padding:9px 14px;border-radius:5px}
+  .btns a.full{background:var(--accent);color:#fff}
+  .btns a.plain{background:#fff;color:var(--accent);border:2px solid var(--accent)}
+  .dates{font-family:Arial,sans-serif;font-size:14px;color:var(--muted)}
+  .dates .new{color:var(--disp);font-weight:bold}
+  .parts-note{font-family:Arial,sans-serif;font-size:14px;color:var(--muted);margin-bottom:8px}
+  .no-results{font-family:Arial,sans-serif;font-size:17px;color:var(--muted);display:none;padding:10px 0 30px}
+  .how{background:var(--soft);border-left:5px solid var(--band);padding:18px 20px;border-radius:0 6px 6px 0}
+  .how ul{margin:8px 0 0;padding-left:22px}
+  .how li{margin:4px 0}
+  footer.site-footer{background:var(--band);color:#E6ECF7;padding:34px 0 40px}
+  footer.site-footer h3{color:#fff;font-size:22px;margin:0 0 8px}
+  footer.site-footer p{color:#E6ECF7;font-size:17px;max-width:640px;margin:0}
+  footer.site-footer .links{margin-top:12px}
+  footer.site-footer a{color:var(--light);font-family:Arial,sans-serif;font-size:16px}
+  @media(max-width:600px){body{font-size:18px}header.masthead{padding:32px 0 28px}.card{padding:16px}.docket{grid-template-columns:1fr}}
 
-  .topbar{background:var(--void);color:var(--paper-dim);padding:12px 24px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
-  .topbar a{color:var(--paper-dim);text-decoration:none;opacity:.8;}
-  .topbar a:hover{opacity:1;color:#fff;}
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
 
-  header.masthead{padding:72px 24px 40px;border-bottom:3px solid var(--void);max-width:var(--max);margin:0 auto;}
-  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--maroon);margin-bottom:18px;display:flex;align-items:center;gap:10px;}
-  .eyebrow::before{content:"";width:28px;height:2px;background:var(--maroon);display:inline-block;}
-  h1.title{font-size:clamp(34px,5.8vw,58px);line-height:1.06;letter-spacing:-0.01em;max-width:760px;}
-  h1.title em{font-style:italic;color:var(--maroon);}
-  .dek{font-size:19px;color:var(--ink-soft);max-width:680px;margin-top:20px;line-height:1.5;}
-
-  .search-bar{max-width:var(--max);margin:0 auto;padding:32px 24px 0;display:flex;gap:16px;flex-wrap:wrap;align-items:center;}
-  .search-bar input{flex:1;min-width:220px;max-width:420px;padding:12px 16px;font-family:'Source Sans 3',sans-serif;font-size:15px;border:1px solid var(--line);background:#fff;color:var(--ink);outline:none;}
-  .search-bar input:focus{border-color:var(--maroon);}
-  .search-bar input::placeholder{color:var(--ink-soft);opacity:.7;}
-  .search-bar select{padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:13px;border:1px solid var(--line);background:#fff;color:var(--ink);outline:none;}
-  .search-count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);width:100%;margin-top:6px;}
-
-  .docket{max-width:var(--max);margin:0 auto;padding:24px 24px 80px;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;}
-  .card{background:#fff;border:1px solid var(--line);border-left:4px solid var(--maroon);padding:26px 26px 24px;display:flex;flex-direction:column;text-decoration:none;color:var(--ink);transition:transform .15s ease, box-shadow .15s ease;position:relative;}
-  .card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(24,18,16,.10);}
-  .card.paired{border-left-color:var(--gold);}
-  .card .case-row{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;gap:10px;}
-  .card .case-number{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--maroon);}
-  .status-stamp{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border:1px solid;white-space:nowrap;}
-  .status-documented{color:var(--status-doc);border-color:var(--status-doc);}
-  .status-pending{color:var(--status-pending);border-color:var(--status-pending);}
-  .status-disputed{color:var(--status-disputed);border-color:var(--status-disputed);}
-  .card .category{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px;}
-  .card h2{font-size:21px;line-height:1.2;margin-bottom:10px;color:var(--ink);}
-  .card p.summary{font-size:14.5px;color:var(--ink-soft);line-height:1.5;margin:0 0 14px;flex-grow:1;}
-  .card .officials{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
-  .card .official-tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;background:var(--paper-dim);border:1px solid var(--line);padding:3px 8px;color:var(--ink-soft);}
-  .card .paired-note{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--gold);margin-bottom:12px;}
-  .card .meta-row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;}
-  .card .read{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--maroon);}
-  .card .updated{font-family:'IBM Plex Mono',monospace;font-size:10.5px;color:var(--ink-soft);opacity:.75;}
-  .card .updated-flag{color:#C0392B;font-weight:600;opacity:1;}
-
-  .no-results{max-width:var(--max);margin:0 auto;padding:0 24px 60px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink-soft);display:none;}
-
-  footer.site-footer{background:var(--void);color:var(--paper-dim);padding:40px 24px 50px;}
-  footer.site-footer .wrap{display:flex;flex-direction:column;gap:14px;}
-  footer.site-footer h3{color:#fff;font-size:20px;}
-  footer.site-footer p{color:#B8A899;font-size:14px;max-width:560px;line-height:1.6;margin:0;}
-  footer.site-footer .links{display:flex;gap:22px;flex-wrap:wrap;margin-top:8px;}
-  footer.site-footer a{color:var(--gold);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.03em;}
-  footer.site-footer a:hover{color:#fff;}
-
-  @media(max-width:600px){header.masthead{padding:48px 18px 32px;}.search-bar{padding:24px 18px 0;}.docket{padding:16px 18px 60px;}}
-  /* Utah Hive Politics brand bar and bee footer */
-  .hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
-  .hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
-  .hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
-  .hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
-  .hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
-  .hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
-  .hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
-  .hb-foot .hb-name{font-size:14px;}
-  .hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
-  @media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-parts{background:#F2F5FA;border:2px solid #1D4ED8;border-radius:6px;padding:14px 16px;margin:0 0 24px;font-family:Arial,sans-serif}
+.hs-parts .lab{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:bold;color:#14213D;margin:0 0 8px}
+.hs-parts ol{margin:0 0 10px;padding-left:24px;font-size:1rem;line-height:1.45}
+.hs-parts li.cur{font-weight:bold}
+.hs-parts li.cur a{color:#14213D;text-decoration:none}
+.hs-parts .nav{display:flex;flex-wrap:wrap;gap:10px}
+.hs-parts .nav a{display:inline-block;background:#1D4ED8;color:#fff;text-decoration:none;font-weight:bold;padding:10px 16px;border-radius:5px;font-size:1rem}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
 </style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
 <div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
-
-<div class="topbar">
-  <span>The Weber County Hive · Transparency</span>
-  <a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener">webercountyhive.substack.com ↗</a>
-</div>
-
 <header class="masthead">
-  <div class="eyebrow">Case Docket</div>
-  <h1 class="title">Transparency<em>.</em></h1>
-  <p class="dek">Cross-official accountability records — comparing how conflicts of interest, campaign finance, and public disclosure actually get handled once a complaint is filed. Built exclusively from primary documents.</p>
+  <div class="wrap">
+    <p class="eyebrow">Case Docket</p>
+    <h1>Transparency<em>.</em></h1>
+    <p class="dek">Cross-official accountability records — comparing how conflicts of interest, campaign finance, and public disclosure actually get handled once a complaint is filed. Built exclusively from primary documents.</p>
+    <p class="hs-date">The Weber County Hive · Transparency · Posted Aug. 19, 2026 · Updated Oct. 17, 2026</p>
+  </div>
 </header>
+<main class="wrap">
+<div class="hs-short"><b style="display:block;margin-bottom:6px">The short version</b><ul>
+<li>This docket lists every Transparency case file: how Utah officials and agencies handle conflicts of interest, campaign finance, public money and disclosure.</li>
+<li>Every case comes from public records and published reports, with the sources linked on each page.</li>
+<li>Most cases have a short plain-words version. Long cases are split into parts.</li>
+<li>Every page shows when it was posted and last updated, and lists what changed since.</li>
+</ul></div>
+<nav class="hs-toc"><b>On this page:</b> <a href="#ballot">On your ballot</a> · <a href="#cases">Every case file</a> · <a href="#how">How these are built</a> · <a href="#words">Words to know</a> · <a href="#connected">Other Hive work</a></nav>
+<details class="hs-pages"><summary>Transparency pages (26) · tap to open</summary><ol><li class=cur><a href="index.html">Transparency docket</a><small>Every case file, searchable</small></li><li><a href="utah-amendments-2026.html">The 2026 Amendments</a> · <a href="utah-amendments-2026-plain.html">plain words</a><small>Amendments A and B on your ballot</small></li><li><a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> · <a href="amendment-b-myth-vs-fact-plain.html">plain words</a><small>Claims checked against the record</small></li><li><a href="amendment-b-quiz.html">Amendment B Quiz</a><small>Test what you know</small></li><li><a href="weber-housing-authority.html">Weber Housing Authority</a> · <a href="weber-housing-authority-plain.html">plain words</a><small>A commissioner, his wife and the authority that pays their company</small></li><li><a href="bramwell-odp-enforcement.html">What the Privacy Office Can and Can't Do</a> · <a href="bramwell-odp-enforcement-plain.html">plain words</a><small>Utah's Chief Privacy Officer</small></li><li><a href="counting-the-jobs.html">Counting the Jobs</a> · <a href="counting-the-jobs-plain.html">plain words</a><small>Job promises and what was reported</small></li><li><a href="matt-brower.html">Matt Brower</a> · <a href="matt-brower-plain.html">plain words</a><small>The board seat that never came up</small></li><li><a href="nilson-foundation.html">Ten Days</a> · <a href="nilson-foundation-plain.html">plain words</a><small>The Nilson Foundation's 501(c)(3) claim</small></li><li><a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> · <a href="sb258-preliminary-municipalities-plain.html">plain words</a><small>S.B. 258 and preliminary municipalities</small></li><li><a href="sitla-county-zoning-exemption.html">The Land Counties Can't Zone</a> · <a href="sitla-county-zoning-exemption-plain.html">plain words</a><small>Trust land and county zoning</small></li><li><a href="weber-hive-sitla-explainer.html">SITLA: The Land Nobody Zones</a> · <a href="weber-hive-sitla-explainer-plain.html">plain words</a><small>Who answers for trust land</small></li><li><a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> · <a href="tyson-eagle-mountain-closure-plain.html">plain words</a><small>Five years after opening</small></li><li><a href="utah-judicial-oversight.html">Behind the Bench</a> · <a href="utah-judicial-oversight-plain.html">plain words</a><small>Judge and lawyer complaints in Utah</small></li><li><a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> · <a href="waldrip-funding-threat-plain.html">plain words</a><small>A housing adviser in Heber City</small></li><li><a href="weber-county-tax-increases-since-2019.html">Every Weber County Property Tax Increase Since 2019</a> · <a href="weber-county-tax-increases-since-2019-plain.html">plain words</a><small>The full list</small></li><li><a href="weber-fire-district-annexation.html">A New Line on the Bill</a> · <a href="weber-fire-district-annexation-plain.html">plain words</a><small>Roy and Riverdale fire annexation</small></li><li><a href="weber-fire-district-growth.html">Paying for the Next Station</a> · <a href="weber-fire-district-growth-plain.html">plain words</a><small>How Weber Fire District funds growth</small></li><li><a href="weber-hive-5th5th-sales-tax.html">Weber County's New Sales Tax</a> · <a href="weber-hive-5th5th-sales-tax-plain.html">plain words</a><small>A public vote, but no vote by the public</small></li><li><a href="weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> · <a href="weber-hive-bait-and-switch-plain.html">plain words</a><small>Bait and switch, 2018 to 2026</small></li><li><a href="weber-hive-blank-box.html">The Blank Box</a> · <a href="weber-hive-blank-box-plain.html">plain words</a><small>Three disclosure forms, one pattern</small></li><li><a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> · <a href="weber-hive-enforcement-gap-plain.html">plain words</a><small>Complaints filed, few penalties</small></li><li><a href="weber-hive-gsl-two-money-pots.html">One Lake, Two Money Pots</a> · <a href="weber-hive-gsl-two-money-pots-plain.html">plain words</a><small>The Great Salt Lake Trust Council</small></li><li><a href="weber-hive-powder-mountain-water.html">Wells at the Top</a> · <a href="weber-hive-powder-mountain-water-plain.html">plain words</a><small>Powder Mountain's water</small></li><li><a href="weber-hive-then-vs-now.html">Then vs. Now</a> · <a href="weber-hive-then-vs-now-plain.html">plain words</a><small>Earlier plans and later approvals in Ogden Valley</small></li><li><a href="west-haven-energy-tax.html">West Haven's 6% Energy Tax</a> · <a href="west-haven-energy-tax-plain.html">plain words</a><small>A new line on the power bill</small></li></ol></details>
 
-<div class="search-bar">
-  <input type="text" id="caseSearch" placeholder="Search by title, official, or category…" autocomplete="off">
-  <select id="statusFilter">
-    <option value="">All statuses</option>
-    <option value="documented">Documented</option>
-    <option value="pending">Pending</option>
-    <option value="disputed">Disputed</option>
-  </select>
-  <div class="search-count mono" id="searchCount"></div>
-</div>
+<div class="stats" id="stats"></div>
 
-<div class="docket" id="docket"></div>
-<div class="no-results" id="noResults">No cases match that search.</div>
+<section id="ballot" class="ballot">
+  <h2>On your Nov. 3 ballot</h2>
+  <p class="sub" style="margin:0">What these measures and races do, from the public record. These pages explain; they do not tell you how to vote.</p>
+  <div class="grid">
+    <a href="utah-amendments-2026.html"><b>The 2026 Amendments</b><span>Amendments A and B, in 4 parts</span></a>
+    <a href="amendment-b-myth-vs-fact.html"><b>Amendment B: Myth vs. Fact</b><span>Claims checked against the record</span></a>
+    <a href="amendment-b-quiz.html"><b>Amendment B Quiz</b><span>12 quick questions</span></a>
+    <a href="utah-judicial-oversight.html"><b>Behind the Bench</b><span>Judges on the retention ballot, and who oversees them</span></a>
+  </div>
+</section>
 
+<section id="cases">
+  <h2 class="sec">Every case file</h2>
+  <p class="sub">Search by name, place or topic. Each case has a full case file, and most have a short plain-words version.</p>
+  <div class="tools">
+    <input type="text" id="caseSearch" placeholder="Search by title, official, or category…" autocomplete="off" aria-label="Search case files">
+    <select id="statusFilter" aria-label="Filter by status">
+      <option value="">All statuses</option>
+      <option value="documented">Documented</option>
+      <option value="pending">Pending</option>
+      <option value="disputed">Disputed</option>
+    </select>
+  </div>
+  <div class="chips" id="chips" aria-label="Filter by topic"></div>
+  <div class="search-count" id="searchCount"></div>
+  <div class="docket" id="docket"></div>
+  <div class="no-results" id="noResults">No cases match that search.</div>
+</section>
+
+<section id="how">
+  <h2 class="sec">How these case files are built</h2>
+  <div class="how">
+    <ul>
+      <li>Every fact comes from a public record or a published news report, linked in the Sources section at the bottom of each page.</li>
+      <li>Money figures are a snapshot as of the date on the page. When newer numbers come out, they are added next to the old ones with a date, so you can see what changed.</li>
+      <li>Each page shows when it was posted and when it was last updated, and lists the updates found since it was posted.</li>
+      <li>Long case files are split into parts, with Next and Back buttons, so each one is easy to read on a phone.</li>
+      <li>Status labels: <b>Documented</b> means the main facts are confirmed in records. <b>Pending</b> means a decision or record is still outstanding. <b>Disputed</b> means a key fact is contested.</li>
+    </ul>
+  </div>
+</section>
+<section id="words"><h2 class="sec">Words to know</h2><div class="hs-flips"><button class="hs-flip" aria-expanded="false"><div class="ft">Docket</div><div class="fh">Tap to see</div><div class="fd">The list of every case file in this series, newest first.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Case number</div><div class="fh">Tap to see</div><div class="fd">A label like CASE 2026-WHA-01: the year, a short topic code, and the order it was posted.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Primary source</div><div class="fh">Tap to see</div><div class="fd">The original record itself, such as a meeting agenda, a filed form, a bill or a budget, rather than someone describing it.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Plain words</div><div class="fh">Tap to see</div><div class="fd">A short version of a case file, about a page long, for readers who want the main points first.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Paired case</div><div class="fh">Tap to see</div><div class="fd">Two case files that cover the same subject from different angles. Each links to the other.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Snapshot</div><div class="fh">Tap to see</div><div class="fd">A figure as of the date it was published. Newer figures are added beside it with their own date.</div></button></div></section>
+
+<section id="connected"><h2 class="sec">Other Hive work</h2><p class="sub">The same names and money often show up in more than one place. These are the other Hive dockets.</p><div class="hs-cards"><a href="https://weber-county-hive.github.io/-weber-county-hive-index/"><b>The Weber County Hive — Master Index</b><span>Every Hive repo in one place</span></a><a href="https://weber-county-hive.github.io/Bill-Tracker/"><b>The Legislative Docket</b><span>Bills, sponsors and votes</span></a><a href="https://weber-county-hive.github.io/Unelected-Power/"><b>Unelected Power</b><span>Appointed boards and the people on them</span></a><a href="https://weber-county-hive.github.io/candidates2026/"><b>2026 Candidates</b><span>Race case files and voter guides</span></a><a href="https://weber-county-hive.github.io/Taxation/"><b>Taxation</b><span>How your taxes are set</span></a><a href="https://weber-county-hive.github.io/PIDS-Utah/"><b>PID Research</b><span>Public infrastructure districts and their debt</span></a><a href="https://weber-county-hive.github.io/followthedeed/"><b>Follow the Deed</b><span>Land and corporate records</span></a></div></section>
+
+
+</main>
 <footer class="site-footer">
   <div class="wrap">
     <h3>The Weber County Hive · Transparency</h3>
@@ -125,77 +227,77 @@
     </div>
   </div>
 </footer>
-
 <div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
 
-<script src="weber-hive-transparency-data.js?v=16"></script>
+<script src="weber-hive-transparency-data.js?v=17"></script>
 <script>
-  const docket = document.getElementById('docket');
-  const searchInput = document.getElementById('caseSearch');
-  const statusFilter = document.getElementById('statusFilter');
-  const searchCount = document.getElementById('searchCount');
-  const noResults = document.getElementById('noResults');
-
-  const byCaseNumber = {};
-  CASES.forEach(c => byCaseNumber[c.caseNumber] = c);
-
-  function statusLabel(s) {
-    return s.charAt(0).toUpperCase() + s.slice(1);
+(function(){
+  const docket=document.getElementById('docket'), searchInput=document.getElementById('caseSearch'),
+        statusFilter=document.getElementById('statusFilter'), searchCount=document.getElementById('searchCount'),
+        noResults=document.getElementById('noResults'), chipsEl=document.getElementById('chips');
+  const byCaseNumber={}; CASES.forEach(c=>byCaseNumber[c.caseNumber]=c);
+  const esc=s=>String(s).replace(/&(?!amp;)/g,'&amp;');
+  function statusLabel(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+  function topic(c){return c.category.split(' — ')[0];}
+  function parseD(s){const t=Date.parse(String(s).replace('Sept','Sep'));return isNaN(t)?0:t;}
+  // stats (computed live from the data file)
+  const latest=CASES.reduce((m,c)=>Math.max(m,parseD(c.updated||c.published)),0);
+  const parts=CASES.reduce((n,c)=>n+(c.parts||1),0);
+  const plains=CASES.filter(c=>c.plain).length;
+  const fmt=t=>new Date(t).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+  document.getElementById('stats').innerHTML=
+    `<div class="stat"><div class="n">${CASES.length}</div><div class="l">case files</div></div>`+
+    `<div class="stat"><div class="n">${parts}</div><div class="l">pages and parts to read</div></div>`+
+    `<div class="stat"><div class="n">${plains}</div><div class="l">plain-words versions</div></div>`+
+    `<div class="stat"><div class="n" style="font-size:24px">${latest?fmt(latest):''}</div><div class="l">last updated</div></div>`;
+  // topic chips
+  const topics=[...new Set(CASES.map(topic))].sort();
+  let activeTopic='';
+  chipsEl.innerHTML=['All topics',...topics].map((t,i)=>`<button type="button" class="chip" aria-pressed="${i===0}" data-t="${i===0?'':esc(t)}">${esc(t)}</button>`).join('');
+  chipsEl.addEventListener('click',e=>{const b=e.target.closest('.chip'); if(!b) return; activeTopic=b.dataset.t.replace(/&amp;/g,'&');
+    chipsEl.querySelectorAll('.chip').forEach(x=>x.setAttribute('aria-pressed',x===b)); applyFilters();});
+  function cardHTML(c){
+    const officials=c.officials.map(o=>`<span class="official-tag">${o}</span>`).join('');
+    const pairedNote=c.pairWith&&byCaseNumber[c.pairWith]?`<div class="paired-note">↔ Paired with "${byCaseNumber[c.pairWith].title}"</div>`:'';
+    const dateLine=c.published&&c.updated&&c.published!==c.updated
+      ?`Posted ${c.published} <span class="new">· Updated ${c.updated}</span>`:`Posted ${c.published||c.updated}`;
+    const local=!/^https?:/.test(c.link);
+    const plain=c.plain&&local?`<a class="plain" href="${c.link.replace(/\.html$/,'-plain.html')}">Plain words</a>`:'';
+    const partsNote=c.parts?`<div class="parts-note">${c.parts} parts, with Next and Back buttons</div>`:'';
+    return `<article class="card ${c.pairWith?'paired':''}">
+      <div class="case-row"><span class="case-number">${c.caseNumber}</span><span class="status-stamp status-${c.status}">${statusLabel(c.status)}</span></div>
+      <div class="category">${c.category}</div>
+      <h3><a href="${c.link}">${c.title}</a></h3>
+      <p class="summary">${c.summary}</p>
+      <div class="officials">${officials}</div>
+      ${pairedNote}${partsNote}
+      <div class="btns"><a class="full" href="${c.link}">${local?'Full case file':'Open case file ↗'}</a>${plain}</div>
+      <div class="dates">${dateLine}</div>
+    </article>`;
   }
-
-  function cardHTML(c) {
-    const officials = c.officials.map(o => `<span class="official-tag">${o}</span>`).join('');
-    const pairedNote = c.pairWith && byCaseNumber[c.pairWith]
-      ? `<div class="paired-note">↔ Paired with "${byCaseNumber[c.pairWith].title}"</div>`
-      : '';
-    const dateLine = c.published && c.updated && c.published !== c.updated
-      ? `Published ${c.published} <span class="updated-flag">· Updated ${c.updated}</span>`
-      : `Published ${c.published || c.updated}`;
-    return `
-      <a class="card ${c.pairWith ? 'paired' : ''}" href="${c.link}">
-        <div class="case-row">
-          <span class="case-number">${c.caseNumber}</span>
-          <span class="status-stamp status-${c.status}">${statusLabel(c.status)}</span>
-        </div>
-        <div class="category">${c.category}</div>
-        <h2>${c.title}</h2>
-        <p class="summary">${c.summary}</p>
-        <div class="officials">${officials}</div>
-        ${pairedNote}
-        <div class="meta-row">
-          <div class="read">Read case →</div>
-          <div class="updated">${dateLine}</div>
-        </div>
-      </a>`;
+  function render(list){
+    docket.innerHTML=list.map(cardHTML).join('');
+    noResults.style.display=list.length===0?'block':'none';
+    docket.style.display=list.length===0?'none':'grid';
+    searchCount.textContent=list.length===CASES.length?`${list.length} cases`:`${list.length} of ${CASES.length} cases`;
   }
-
-  function render(list) {
-    docket.innerHTML = list.map(cardHTML).join('');
-    noResults.style.display = list.length === 0 ? 'block' : 'none';
-    docket.style.display = list.length === 0 ? 'none' : 'grid';
-    searchCount.textContent = list.length === CASES.length
-      ? `${list.length} cases`
-      : `${list.length} of ${CASES.length} cases`;
+  function applyFilters(){
+    const q=searchInput.value.trim().toLowerCase(), status=statusFilter.value;
+    render(sorted.filter(c=>{
+      if(status&&c.status!==status) return false;
+      if(activeTopic&&topic(c)!==activeTopic) return false;
+      if(!q) return true;
+      return [c.caseNumber,c.title,c.category,c.summary,...c.officials].join(' ').toLowerCase().includes(q);
+    }));
   }
-
-  function applyFilters() {
-    const q = searchInput.value.trim().toLowerCase();
-    const status = statusFilter.value;
-    const filtered = CASES.filter(c => {
-      const matchesStatus = !status || c.status === status;
-      if (!matchesStatus) return false;
-      if (!q) return true;
-      const haystack = [c.title, c.category, c.summary, ...c.officials].join(' ').toLowerCase();
-      return haystack.includes(q);
-    });
-    render(filtered);
-  }
-
-  searchInput.addEventListener('input', applyFilters);
-  statusFilter.addEventListener('change', applyFilters);
-  render(CASES);
+  // newest posted first
+  const sorted=CASES.slice().sort((a,b)=>parseD(b.published)-parseD(a.published));
+  searchInput.addEventListener('input',applyFilters);
+  statusFilter.addEventListener('change',applyFilters);
+  render(sorted);
+})();
 </script>
-
 <script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
 </body>
 </html>
