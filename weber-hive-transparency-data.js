@@ -106,6 +106,19 @@ const CASES = [
     pairWith: "CASE 2026-COI-01"
   },
   {
+    caseNumber: "CASE 2026-COI-03",
+    title: "The Checkbox: Who Decides What Voters See",
+    category: "Conflict of Interest",
+    summary: "A 2025 law (H.B. 504) lets an official whose job, or whose spouse's job, counts as an at-risk government employee ask to have employer details removed from the public conflict-of-interest form, and the filing officer \"shall redact\" on request. On Oct. 12, 2026, Weber County's records appeals board upheld Commissioner Froerer's 2026 redaction and ordered his 2025 employer lines released.",
+    officials: ["Gage Froerer", "Jim Harvey", "Chris Allred", "Rep. Lisa Shepherd", "Sen. Ronald M. Winterton"],
+    status: "documented",
+    published: "Oct 17, 2026",
+    updated: "Oct 17, 2026",
+    plain: true,
+    link: "weber-hive-at-risk-checkbox.html",
+    pairWith: "CASE 2026-WHA-01"
+  },
+  {
     caseNumber: "CASE 2026-WHA-01",
     title: "In His Portfolio",
     category: "Conflict of Interest",
