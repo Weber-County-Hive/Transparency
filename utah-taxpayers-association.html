@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who Sits at the Utah Taxpayers Association's Table | Utah Hive Politics</title>
+<meta name="description" content="Leaders, registered lobbyists and 2026 sponsors of the Utah Taxpayers Association, the companies they work for, and where that money goes. Public records only.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root{
+  --paper:#FFFFFF; --paper-2:#F2F5FA; --ink:#14213D; --ink-soft:#3E4C66;
+  --band:#0F1F3D; --band-2:#1E3A8A;
+  --rust:#1D4ED8; --rust-dark:#0F1F3D;
+  --amber:#1D4ED8; --amber-bg:#E6ECF7;
+  --line:#D5DCE8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',sans-serif;line-height:1.65;font-size:19px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+a{color:var(--rust);}
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--ink);}
+
+.topbar{background:var(--ink);color:var(--amber-bg);padding:10px 0;font-family:'IBM Plex Mono',monospace;font-size:12px;}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;}
+.topbar a{color:var(--amber-bg);text-decoration:none;opacity:.85;}
+.topbar a:hover{opacity:1;text-decoration:underline;}
+
+header.band{background:linear-gradient(135deg,var(--band),var(--band-2));color:#f0ece0;padding:38px 0 32px;border-bottom:5px solid var(--amber);}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#93C5FD;margin-bottom:10px;}
+h1.title{font-size:clamp(28px,5vw,42px);color:#fff;line-height:1.18;font-weight:700;}
+.dek{margin-top:14px;font-size:19px;color:#E6ECF7;max-width:660px;}
+.caselabel{display:inline-block;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;color:#0F1F3D;background:#93C5FD;padding:5px 14px;border-radius:20px;}
+
+.section{padding:36px 0;border-bottom:1px solid var(--line);}
+.section h2{font-size:25px;margin-bottom:14px;}
+.section .lead{font-size:17px;color:var(--ink-soft);margin-bottom:16px;}
+.section p{margin:0 0 14px;}
+
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:18px 0;}
+.stat{background:var(--paper-2);border:1px solid var(--line);border-top:3px solid var(--amber);padding:16px 18px;}
+.stat .num{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--amber);line-height:1.15;}
+.stat .label{margin-top:6px;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.03em;}
+
+table.ledger{width:100%;border-collapse:collapse;margin:16px 0;font-size:17px;}
+table.ledger th{background:var(--band);color:#f0ece0;text-align:left;padding:9px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;}
+table.ledger td{padding:9px 12px;border-bottom:1px solid var(--line);}
+table.ledger tr:nth-child(even) td{background:var(--paper-2);}
+table.ledger td.amt{text-align:right;font-family:'IBM Plex Mono',monospace;color:var(--rust-dark);font-weight:600;}
+
+.chain{background:#fff;border:1px solid var(--line);padding:22px 24px;margin:16px 0;}
+.chain-step{display:flex;gap:16px;padding:11px 0;border-bottom:1px dashed var(--line);}
+.chain-step:last-child{border-bottom:none;}
+.chain-step .role{font-family:'IBM Plex Mono',monospace;color:var(--amber);font-size:12px;font-weight:600;flex-shrink:0;width:110px;}
+.chain-step .txt strong{color:var(--rust-dark);}
+
+.callout{background:var(--paper-2);border-left:4px solid var(--amber);padding:16px 20px;margin:16px 0;font-size:18px;}
+.callout strong{color:var(--rust-dark);}
+.flag{background:#fff;border:1px dashed var(--ink-soft);padding:13px 18px;margin:14px 0;font-size:14px;color:var(--ink-soft);}
+.flag .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+
+.full-sources{border:1px solid var(--line);background:#fff;margin:26px 0 0;}
+.full-sources summary{cursor:pointer;list-style:none;padding:15px 22px;background:var(--paper-2);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--rust-dark);}
+.full-sources summary::-webkit-details-marker{display:none;}
+.full-sources-body{padding:18px 24px 24px;font-size:16px;}
+.full-sources-body a{color:var(--rust);}
+.full-sources-body h4{font-family:'Playfair Display',serif;font-size:14px;margin:16px 0 6px;padding-top:10px;border-top:1px solid var(--line);}
+.full-sources-body p{margin:0;color:var(--ink-soft);}
+
+footer{padding:28px 0 48px;color:var(--ink-soft);font-size:15px;}
+.section{max-width:860px;margin:0 auto;padding-left:24px;padding-right:24px;}
+.stat .label{font-size:14px !important;}
+@media(max-width:640px){table.ledger{font-size:15px;}.chain-step{flex-wrap:wrap;}.chain-step .role{width:100%;}}
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-parts{background:#F2F5FA;border:2px solid #1D4ED8;border-radius:6px;padding:14px 16px;margin:0 0 24px;font-family:Arial,sans-serif}
+.hs-parts .lab{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:bold;color:#14213D;margin:0 0 8px}
+.hs-parts ol{margin:0 0 10px;padding-left:24px;font-size:1rem;line-height:1.45}
+.hs-parts li.cur{font-weight:bold}
+.hs-parts li.cur a{color:#14213D;text-decoration:none}
+.hs-parts .nav{display:flex;flex-wrap:wrap;gap:10px}
+.hs-parts .nav a{display:inline-block;background:#1D4ED8;color:#fff;text-decoration:none;font-weight:bold;padding:10px 16px;border-radius:5px;font-size:1rem}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
+
+.hs-partline{font-family:Arial,sans-serif;font-size:1rem;margin-top:8px;color:#E6ECF7}
+.lob{border:1px solid #D5DCE8;background:#fff;margin:0 0 12px}
+.lob summary{cursor:pointer;padding:14px 18px;font-weight:bold;font-size:1.05rem;list-style:none;border-left:6px solid #1D4ED8}
+.lob summary::-webkit-details-marker{display:none}
+.lob summary small{display:block;font-weight:normal;font-size:.9rem;color:#3E4C66}
+.lob .in{padding:6px 18px 16px}
+.lob table.ledger{font-size:15px}
+.find{width:100%;font-size:1.05rem;padding:12px 14px;border:2px solid #1D4ED8;border-radius:6px;margin:6px 0 16px;font-family:Arial,sans-serif}
+.tag-s{display:inline-block;background:#E6ECF7;color:#0F1F3D;font-family:Arial,sans-serif;font-size:.78rem;padding:2px 8px;border-radius:10px}
+.mapimg{width:100%;height:auto;border:1px solid #D5DCE8;margin:10px 0}
+</style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
+
+<div class="topbar"><div class="wrap"><span>TRANSPARENCY · CASE FILE</span><a href="index.html">← Case Files</a></div></div>
+<header class="band"><div class="wrap">
+<div class="kicker">Transparency · Case File · Statewide</div>
+<h1 class="title">Who Sits at the Utah Taxpayers Association's Table, and Who They Work For</h1>
+<p class="dek">News stories often quote the Association's tax numbers as plain information, and it is backing Amendment B. Its donors are not public. Its leaders, lobbyists and sponsors are, and so is where those sponsors send their political money.</p>
+<span class="caselabel">Statewide</span>
+<p class="hs-date">CASE 2026-UTA-01 · Posted Oct. 21, 2026 · Updated Oct. 21, 2026</p>
+<p class="hs-partline">Part 1 of 2: Who sits at the table, and where the money goes</p>
+</div></header>
+<div class="wrap">
+<div class="hs-plain">New to this? <a class="hs-btn" href="utah-taxpayers-association-plain.html">Read it in plain words</a> About 500 words, with simple charts.</div>
+<nav class="hs-parts" aria-label="Parts of this series"><p class="lab">Part 1 of 2</p><ol><li class=cur><a href="utah-taxpayers-association.html">Who sits at the table, and where the money goes</a></li><li><a href="utah-taxpayers-association-part-2.html">Every client of every lobbyist, and the board check</a></li></ol><div class="nav"><a href="utah-taxpayers-association-part-2.html">Next: Part 2 &rarr;</a></div></nav>
+<nav class="hs-toc" aria-label="On this page"><b style="width:100%;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;">On this page</b><a href="#short">The short version</a><a href="#what">What it is</a><a href="#partisan">Is it partisan?</a><a href="#table">The people at the table</a><a href="#lobbyists">Its own lobbyists</a><a href="#shared">Shared clients</a><a href="#sponsors">The sponsors' money</a><a href="#lands">Where the money lands</a><a href="#amendment">The Amendment B link</a><a href="#notshown">What the records don't show</a><a href="#updates">Updates</a><a href="#words">Words to know</a><a href="#ask">Questions to ask</a><a href="#connected">Connected Hive work</a><a href="#behind">Behind this piece</a><a href="#sources">Sources</a></nav>
+<details class="hs-pages"><summary>Transparency pages (27) · tap to open</summary><ol><li><a href="index.html">Transparency docket</a><small>Every case file, searchable</small></li><li><a href="utah-amendments-2026.html">The 2026 Amendments</a> · <a href="utah-amendments-2026-plain.html">plain words</a><small>Amendments A and B on your ballot</small></li><li><a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> · <a href="amendment-b-myth-vs-fact-plain.html">plain words</a><small>Claims checked against the record</small></li><li><a href="amendment-b-quiz.html">Amendment B Quiz</a><small>Test what you know</small></li><li class=cur><a href="utah-taxpayers-association.html">Who Sits at the Taxpayers Association's Table</a> · <a href="utah-taxpayers-association-plain.html">plain words</a><small>Its leaders, lobbyists, sponsors and their money</small></li><li><a href="weber-housing-authority.html">Weber Housing Authority</a> · <a href="weber-housing-authority-plain.html">plain words</a><small>A commissioner, his wife and the authority that pays their company</small></li><li><a href="bramwell-odp-enforcement.html">What the Privacy Office Can and Can't Do</a> · <a href="bramwell-odp-enforcement-plain.html">plain words</a><small>Utah's Chief Privacy Officer</small></li><li><a href="counting-the-jobs.html">Counting the Jobs</a> · <a href="counting-the-jobs-plain.html">plain words</a><small>Job promises and what was reported</small></li><li><a href="matt-brower.html">Matt Brower</a> · <a href="matt-brower-plain.html">plain words</a><small>The board seat that never came up</small></li><li><a href="nilson-foundation.html">Ten Days</a> · <a href="nilson-foundation-plain.html">plain words</a><small>The Nilson Foundation's 501(c)(3) claim</small></li><li><a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> · <a href="sb258-preliminary-municipalities-plain.html">plain words</a><small>S.B. 258 and preliminary municipalities</small></li><li><a href="sitla-county-zoning-exemption.html">The Land Counties Can't Zone</a> · <a href="sitla-county-zoning-exemption-plain.html">plain words</a><small>Trust land and county zoning</small></li><li><a href="weber-hive-sitla-explainer.html">SITLA: The Land Nobody Zones</a> · <a href="weber-hive-sitla-explainer-plain.html">plain words</a><small>Who answers for trust land</small></li><li><a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> · <a href="tyson-eagle-mountain-closure-plain.html">plain words</a><small>Five years after opening</small></li><li><a href="utah-judicial-oversight.html">Behind the Bench</a> · <a href="utah-judicial-oversight-plain.html">plain words</a><small>Judge and lawyer complaints in Utah</small></li><li><a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> · <a href="waldrip-funding-threat-plain.html">plain words</a><small>A housing adviser in Heber City</small></li><li><a href="weber-county-tax-increases-since-2019.html">Every Weber County Property Tax Increase Since 2019</a> · <a href="weber-county-tax-increases-since-2019-plain.html">plain words</a><small>The full list</small></li><li><a href="weber-fire-district-annexation.html">A New Line on the Bill</a> · <a href="weber-fire-district-annexation-plain.html">plain words</a><small>Roy and Riverdale fire annexation</small></li><li><a href="weber-fire-district-growth.html">Paying for the Next Station</a> · <a href="weber-fire-district-growth-plain.html">plain words</a><small>How Weber Fire District funds growth</small></li><li><a href="weber-hive-5th5th-sales-tax.html">Weber County's New Sales Tax</a> · <a href="weber-hive-5th5th-sales-tax-plain.html">plain words</a><small>A public vote, but no vote by the public</small></li><li><a href="weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> · <a href="weber-hive-bait-and-switch-plain.html">plain words</a><small>Bait and switch, 2018 to 2026</small></li><li><a href="weber-hive-blank-box.html">The Blank Box</a> · <a href="weber-hive-blank-box-plain.html">plain words</a><small>Three disclosure forms, one pattern</small></li><li><a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> · <a href="weber-hive-enforcement-gap-plain.html">plain words</a><small>Complaints filed, few penalties</small></li><li><a href="weber-hive-gsl-two-money-pots.html">One Lake, Two Money Pots</a> · <a href="weber-hive-gsl-two-money-pots-plain.html">plain words</a><small>The Great Salt Lake Trust Council</small></li><li><a href="weber-hive-powder-mountain-water.html">Wells at the Top</a> · <a href="weber-hive-powder-mountain-water-plain.html">plain words</a><small>Powder Mountain's water</small></li><li><a href="weber-hive-then-vs-now.html">Then vs. Now</a> · <a href="weber-hive-then-vs-now-plain.html">plain words</a><small>Earlier plans and later approvals in Ogden Valley</small></li><li><a href="west-haven-energy-tax.html">West Haven's 6% Energy Tax</a> · <a href="west-haven-energy-tax-plain.html">plain words</a><small>A new line on the power bill</small></li></ol></details>
+</div>
+<section class="section" id="short"><h2>The short version</h2>
+<div class="hs-short"><ul>
+<li>The Utah Taxpayers Association is a 501(c)(4) nonprofit. Most of its money comes from members and donors whose names are not public: <b>72%</b> of 2024 revenue, reported as contributions. From 2020 to 2023 its filings reported most revenue as membership dues instead.</li>
+<li>Its 2025 scorecard listed S.J.R. 2, the bill that became <b>Amendment B</b>, as a "double-weighted, high-priority bill" it supported.</li>
+<li>Board member <b>Steve Young</b> and longtime board member <b>Mark Buchi</b> are registered lobbyists for Holland &amp; Hart and Intermountain Power Agency, both 2026 sponsors. Young also lobbies for Clyde Companies and EnergySolutions.</li>
+<li>Four more board members share names with registered lobbyists for 2026 sponsors: Merit Medical, Rocky Mountain Power, Intermountain Healthcare and Comcast. No record ties those lobbyists to the board seats. Board member Cameron Cowan shares a name with the person the business registry lists as owner of the "Intermountain Power Agency" assumed name.</li>
+<li>The 28 sponsors in our pull gave about <b>$4.3 million</b> to Utah candidates, PACs and parties from 2018 to 2026. Gov. Spencer Cox is the top recipient for most of them.</li>
+<li>Most of its donors are not public. Two grants are: $15,000 from Americans for Tax Reform (2022) and $9,100 from IHC Health Services (2018).</li>
+</ul></div>
+<div class="stat-row">
+<div class="stat"><div class="num">72%</div><div class="label">Share of 2024 revenue from members and donors not named publicly</div></div>
+<div class="stat"><div class="num">13</div><div class="label">People registered to lobby for the Association since 2012</div></div>
+<div class="stat"><div class="num">6</div><div class="label">Board members with a matching name in the lobbyist registry</div></div>
+<div class="stat"><div class="num">$4.3M</div><div class="label">Political giving by 28 of its 2026 sponsors, 2018–2026</div></div>
+</div></section>
+<section class="section" id="what"><h2>What the Association is</h2>
+<ul style="padding-left:22px;margin:0 0 14px">
+<li style="margin-bottom:10px"><b>A nonprofit since 1945.</b> Utah's business registry lists it as a domestic nonprofit corporation, entity #658683-0140. Its federal filings show it has been tax-exempt since May 1945.</li>
+<li style="margin-bottom:10px"><b>A 501(c)(4).</b> That type of nonprofit can lobby and does not have to make its donors public.</li>
+<li style="margin-bottom:10px"><b>Mostly donor-funded.</b> Its 2024 Form 990 reports $656,435 in revenue. Contributions were $470,510 of that. Donor names are blacked out on public copies, as federal law allows.</li>
+<li style="margin-bottom:10px"><b>Two funders are public.</b> Grants made by other nonprofits show up on the givers' own tax filings. Candid's profile of the Association, which draws on those filings, lists two: <b>$15,000 from Americans for Tax Reform</b>, a Washington, D.C. 501(c)(4), in fiscal 2022 for "general support," and <b>$9,100 from IHC Health Services</b> (Intermountain Health), a Salt Lake City 501(c)(3), in fiscal 2018 to "support community health." Together, $24,100.</li>
+<li style="margin-bottom:10px"><b>A 20-member board.</b> Its 2024 Form 990 lists 20 board members as of Dec. 31, 2024, with Shawn Jensen as chair, Erin Barry vice chair, Jennifer Somers past chair, Keith Pitchford secretary, Nicole Lengel treasurer and Thom Carter legislative chair.</li>
+<li style="margin-bottom:10px"><b>Its stated purpose</b> includes developing "friendly relations" between people "lawfully engaged in business in the State of Utah" and state and local governments, school districts and other taxing units (its purpose and objectives page).</li>
+<li style="margin-bottom:10px"><b>Its stated position on taxes.</b> Its 2025 scorecard says: "Your Utah Taxpayers Association supports legislation which makes it more difficult to increase taxes."</li>
+</ul>
+<div class="hs-fig"><h3>Where its 2024 money came from</h3><p class="sub">2024 Form 990 (via ProPublica and Candid). Total revenue $656,435.</p><div class="hs-bars"><div class="lab">Contributions (donors not public)</div><div class="tr"><div class="fl" style="width:70.0%"></div><span class="v">$470,510</span></div><div class="lab">Program services (such as events and fees)</div><div class="tr"><div class="fl" style="width:26.0%"></div><span class="v">$174,465</span></div><div class="lab">Special events</div><div class="tr"><div class="fl" style="width:2.0%"></div><span class="v">$11,438</span></div><div class="lab">Investments</div><div class="tr"><div class="fl" style="width:2.0%"></div><span class="v">$22</span></div></div></div>
+<div class="hs-fig"><h3>Five years of revenue</h3><p class="sub">Forms 990, via Candid's financial trends table (Nonprofit Finance Fund analysis). Shares are of total revenue.</p>
+<table class="ledger"><tr><th>Year</th><th style="text-align:right">Total revenue</th><th style="text-align:right">Membership dues</th><th style="text-align:right">Other grants and contributions</th><th style="text-align:right">Program services</th></tr>
+<tr><td>2020</td><td class="amt">$554,705</td><td class="amt">75.9%</td><td class="amt">4.6%</td><td class="amt">19.5%</td></tr>
+<tr><td>2021</td><td class="amt">$520,583</td><td class="amt">85.8%</td><td class="amt">4.7%</td><td class="amt">9.4%</td></tr>
+<tr><td>2022</td><td class="amt">$547,147</td><td class="amt">84.0%</td><td class="amt">6.4%</td><td class="amt">9.5%</td></tr>
+<tr><td>2023</td><td class="amt">$700,350</td><td class="amt">63.1%</td><td class="amt">4.3%</td><td class="amt">32.5%</td></tr>
+<tr><td>2024</td><td class="amt">$656,435</td><td class="amt">0.0%</td><td class="amt">73.4%</td><td class="amt">26.6%</td></tr></table>
+<p class="sub" style="margin-top:10px">In 2024 the membership-dues line drops to zero and the contributions line rises to about the same share. The filings do not say why, and we have not found an explanation. Either way, the payers' names are not public. The Association says it has more than 2,500 business and individual members.</p></div>
+<div class="hs-fig"><h3>What the 2024 return itself shows</h3><p class="sub">Form 990 for 2024 (file 870189230_2024_202513159349302046_990.pdf), read as rendered pages Oct. 21, 2026.</p>
+<table class="ledger"><tr><th>Line on the return</th><th style="text-align:right">Amount</th></tr>
+<tr><td>Contributions reported on the "Federated campaigns" line (1a)</td><td class="amt">$460,510</td></tr>
+<tr><td>All other contributions, gifts and grants (1f)</td><td class="amt">$10,000</td></tr>
+<tr><td>Membership dues (1b)</td><td class="amt">blank</td></tr>
+<tr><td>Program revenue: Special Projects</td><td class="amt">$74,600</td></tr>
+<tr><td>Program revenue: Taxes Now Conference</td><td class="amt">$50,009</td></tr>
+<tr><td>Program revenue: Legislative Outlook Conference</td><td class="amt">$35,750</td></tr>
+<tr><td>Program revenue: "PAC Donations"</td><td class="amt">$14,106</td></tr>
+<tr><td>Fundraising events: $32,902 raised, $21,464 in direct costs</td><td class="amt">$11,438 net</td></tr></table>
+<p class="sub" style="margin-top:10px">The return describes its one program as "Tax seminars, budget analysis &amp; legislative activities" ($525,094 in expenses). It answers "No" to spending on political campaigns for or against candidates. On Schedule C it answers "No" to whether 90% or more of members' dues were nondeductible, and "No" to whether its in-house lobbying was $2,000 or less; the dollar lines that follow are blank on the public copy. The return does not explain what "PAC Donations" means as program revenue.</p></div>
+<p>In 2024 the Association reported $617,757 in expenses ($525,094 for programs, $92,663 for administration, nothing for fundraising), $108,541 in assets (mostly $104,989 in cash) and $10,200 in liabilities, leaving net assets of $98,341 at year's end. Its 990 lists an independent audit, prepared by Skidmore &amp; Olausson PLLC of North Salt Lake.</p>
+<p>For the longer view, Candid's charts of the Association's 990s from 2011 to 2024 show yearly revenue between roughly $430,000 and $700,000, with the high point in 2023. Total assets peaked near $200,000 in the mid-2010s and fell to about $35,000 around 2021 before recovering to $108,541 in 2024. (Those older figures are read from Candid's bar charts, so they are approximate.)</p>
+</section>
+<section class="section" id="partisan"><h2>Is it partisan?</h2>
+<p class="lead">No record ties the Association to a political party. Its political action committee is where its politics show up in the records.</p>
+<p>The <b>Utah Taxpayers Association PAC</b> (created 2008, president and treasurer Billy Hesterman) reported giving $57,125 from November 2021 to Oct. 7, 2026. The recipients in the reports we read are all Republicans:</p>
+<div class="hs-fig"><h3>Who the Association's PAC gave to</h3><p class="sub">PAC reports, Nov. 2021 to Oct. 7, 2026, disclosures.utah.gov.</p><div class="hs-bars"><div class="lab">Sen. Lincoln Fillmore</div><div class="tr"><div class="fl" style="width:70.0%"></div><span class="v">$6,500</span></div><div class="lab">Sen. Dan McCay</div><div class="tr"><div class="fl" style="width:32.3%"></div><span class="v">$3,000</span></div><div class="lab">Gov. Spencer Cox</div><div class="tr"><div class="fl" style="width:20.2%"></div><span class="v">$1,875</span></div><div class="lab">Sen. Kirk Cullimore</div><div class="tr"><div class="fl" style="width:16.2%"></div><span class="v">$1,500</span></div><div class="lab">Rep. Ryan Wilcox</div><div class="tr"><div class="fl" style="width:16.2%"></div><span class="v">$1,500</span></div><div class="lab">Sen. Wayne Harper</div><div class="tr"><div class="fl" style="width:10.8%"></div><span class="v">$1,000</span></div><div class="lab">Rep. Jim Dunnigan</div><div class="tr"><div class="fl" style="width:6.5%"></div><span class="v">$600</span></div><div class="lab">Rep. Anthony Loubet</div><div class="tr"><div class="fl" style="width:5.4%"></div><span class="v">$500</span></div><div class="lab">Rep. Jason Kyle</div><div class="tr"><div class="fl" style="width:2.2%"></div><span class="v">$200</span></div><div class="lab">Rep. Jon Hawkins</div><div class="tr"><div class="fl" style="width:2.2%"></div><span class="v">$200</span></div></div></div>
+<h3>How the Association describes itself to new members</h3>
+<p>Its member brochure, "Introduction to UTA" (a PowerPoint saved as PDF on May 26, 2021, with Rusty Cannon listed as president), says:</p>
+<ul>
+<li>It is "the only statewide, nonpartisan organization" focused only on Utah's tax structure.</li>
+<li>Its staff has "unparalleled access to state and local elected officials," and lawmakers "actively seek out" its staff.</li>
+<li>It reviews the budgets of every county and school district and Utah's 50 largest cities each year. It takes a support, neutral or oppose position on every tax bill and gives a yearly "Friend of the Taxpayer" award based on lawmakers' votes.</li>
+<li>Its endorsements come from the Heritage Foundation's Stephen Moore, from Jonathan Williams of the American Legislative Exchange Council (ALEC), and from Frank Pignanelli, who called it "the most powerful business association in Utah."</li>
+</ul>
+<p>The brochure asks readers to "join," but it does not list members, membership levels or dues.</p>
+<p>Its LinkedIn company page (viewed Oct. 21, 2026) says it operates "as a 501c4," lists Draper as its location and 2 to 10 employees, and says: "Members of the association include over 1,000 dues paying individuals, small businesses and many of the largest employers in the state." That page still describes members as dues-paying, while the 2024 tax return leaves the dues line blank. The page does not name any members.</p>
+<h3>Why member names are not public: the 2015 lawsuit</h3>
+<p>In November 2015 the Association, the Utah Taxpayers Legal Foundation and Libertas Institute sued Lt. Gov. Spencer Cox, Attorney General Sean Reyes and two county attorneys in federal court over H.B. 43 (2013). That law required nonprofits that spent $750 or more a year on political activity or ballot issues to report the names and addresses of people who gave them money, <b>including membership dues</b>, for publication online.</p>
+<ul>
+<li>In the lawsuit backgrounder, the Association described itself as having "over 1,000 members." It said its work included "intervening in political campaigns – local and statewide," and that in 2014 it spent 16% of its budget urging people how to vote on two ballot issues. Howard Stephenson was its president.</li>
+<li>On July 14, 2016, U.S. District Judge Dale A. Kimball approved a consent decree. The state agreed not to enforce the law against nonprofits doing what the decree calls constitutionally protected political and issues advocacy, and agreed to update its guidance. The Association's own release says the state "agreed that the law is unconstitutional when applied to these organizations."</li>
+</ul>
+<p>That settlement is part of why no list of the Association's members or dues payers appears in state records.</p>
+<div class="flag"><div class="tag">For fairness</div>The groups argued, citing <i>NAACP v. Alabama</i> (1958), that the First Amendment protects the privacy of people who support advocacy groups. The case ended in a settlement, not a court ruling on the merits.</div>
+<h3>Who the Association named "Friends of the Taxpayer" in 2026</h3>
+<p>On March 19, 2026, the Association released its 2026 Legislative Scorecard. It tracked 53 bills and scored lawmakers on 10 votes. Anyone who voted with the Association at least 85% of the time, meaning on all but one scored bill, was named a "Friend of the Taxpayer." <b>34 lawmakers</b> made the list: 30 in the House (40% of the House) and 4 in the Senate (14% of the Senate).</p>
+<ul>
+<li><b>House:</b> Ken Ivory, Mark Strong, Jake Sawyer, Logan Monson, Tiara Auxier, Trevor Lee, Rex Shipp, Walt Brooks, Karianne Lisonbee, Stephanie Gricius, Jill Koford, Ryan Wilcox, Mike Kohler, Matt MacPherson, Jason Kyle, Christine Watkins, Mike Petersen, Ariel Defay, Norman Thurston, Lisa Shepherd, Katy Hall, Calvin Roberts, Raymond Ward, Nelson Abbott, Jon Hawkins, Cory Maloy, Kristen Chevrier, Karen Peterson, Carl Albrecht and Candice Pierucci.</li>
+<li><b>Senate:</b> Lincoln Fillmore, John D. Johnson, Dan McCay and Brady Brammer.</li>
+</ul>
+<p>All 34 are Republicans. The scorecard does not print party; we checked each name against the Legislature's current membership, and Trevor Lee against his 2026 session seat. <b>Five of the ten lawmakers who received money from the Association's PAC are on the list:</b> Fillmore, McCay, Wilcox, Kyle and Hawkins.</p>
+<h3>The Senate committee that hears tax bills</h3>
+<p>The minutes of the Feb. 11, 2026 meeting list the seven members of the <b>Senate Revenue and Taxation Committee</b>: Sen. Dan McCay (chair), Brady Brammer, Luz Escamilla, Lincoln Fillmore, Wayne Harper, Kirk Cullimore and Chris Wilson.</p>
+<ul>
+<li><b>Four of the seven</b> received money from the Association's PAC: McCay, Fillmore, Harper and Cullimore.</li>
+<li><b>Three of the seven</b> were named 2026 Friends of the Taxpayer: McCay, Fillmore and Brammer.</li>
+<li>At that meeting, Association president Billy Hesterman "spoke to" S.B. 247, Road Funding Amendments. The minutes do not say whether he spoke for or against it. The committee also passed H.B. 272, one of the 10 bills on the Association's 2026 scorecard.</li>
+</ul>
+<p class="sub">The minutes list every member under each vote without marking who voted which way, so we do not report individual votes from them.</p>
+<div class="flag"><div class="tag">For fairness</div>The scorecard grades votes, not party. Republicans hold about 61 of the 75 House seats and 22 of the 29 Senate seats, so roughly half of House Republicans and most Senate Republicans did <i>not</i> make the list. The scorecard does not say why no Democrat reached 85%.</div>
+<div class="callout"><strong>For fairness:</strong> the Legislature has a large Republican majority, so a PAC that gives to bill sponsors and committee leaders will mostly be giving to Republicans. The Association's sponsors also gave to Democratic caucus committees. Its positions have cut both ways too. It supported the 2019 tax package that raised the sales tax on food while cutting the income tax, and it opposed redevelopment-agency retail subsidies and government-backed bonds for UTOPIA.</div>
+</section>
+<section class="section" id="table"><h2>The people at the table</h2>
+<p class="lead">Officers and directors come from Utah's business registry (updated Nov. 17, 2025), the 2024 Form 990 and the Association's website. We checked each name against the state lobbyist registry.</p>
+<div class="hs-fig"><h3>Who sits at the table, and who they lobby for</h3><p class="sub">* = same name in the lobbyist registry; not tied by a record to the board seat.</p>
+<div class="mermaid">
+flowchart LR
+  U["Utah Taxpayers<br>Association"] --> Y["Steve Young<br>board"]
+  U --> M["Mark Buchi<br>board"]
+  U --> H["Billy Hesterman<br>president"]
+  U --> C["Rusty Cannon<br>past president"]
+  U --> E["Erin Barry*<br>vice chair"]
+  U --> T["Thom Carter*<br>legislative chair"]
+  U --> D["Alan Dayton*<br>board"]
+  U --> W["Cameron Cowan*<br>board"]
+  Y --> HH["Holland & Hart"]
+  M --> HH
+  H --> HH
+  Y --> CL["Clyde Companies"]
+  Y --> ES["EnergySolutions"]
+  M --> IPA["Intermountain<br>Power Agency"]
+  Y --> IPA
+  C --> CU["Utah's Credit Unions"]
+  C --> SH["Taxpayer Shield PAC<br>backs Amendment B"]
+  H --> SH
+  E --> MM["Merit Medical"]
+  T --> RMP["Rocky Mountain Power"]
+  D --> CO["Comcast"]
+  W --> IPA
+</div></div>
+<table class="ledger"><tr><th>Person</th><th>Role</th><th>What the registries show</th></tr>
+<tr><td><b>Steve Young</b></td><td>Board member (his Holland &amp; Hart bio)</td><td>Registered lobbyist for Holland &amp; Hart, Clyde Companies, Staker Parson, EnergySolutions, Utah Petroleum Association, Intermountain Power Agency, Cargill and the Association itself</td></tr>
+<tr><td><b>Mark Buchi</b></td><td>Board member (the Association says since 1990)</td><td>Holland &amp; Hart and Intermountain Power Agency since Dec. 18, 2012</td></tr>
+<tr><td><b>Billy Hesterman</b></td><td>President since July 2024</td><td>The Association since 2019; Holland &amp; Hart from Oct. 29, 2018 to Aug. 12, 2024</td></tr>
+<tr><td><b>Rusty Cannon</b></td><td>Past president (paid $95,397 in 2024)</td><td>The Association 2018–2024; now the Utah Credit Union Association, which he leads</td></tr>
+<tr><td><b>Erin Barry</b></td><td>Vice chair (2024 Form 990)</td><td>A lobbyist named Erin Barry: Merit Medical since 2016</td></tr>
+<tr><td><b>Thom Carter</b></td><td>Legislative chair</td><td>A lobbyist named Thomas Carter: PacifiCorp/Rocky Mountain Power since 2022</td></tr>
+<tr><td><b>Alan Dayton</b></td><td>Board member</td><td>A lobbyist named Alan Dayton: Intermountain Healthcare and Comcast since 2013</td></tr>
+<tr><td><b>Jennifer Somers</b></td><td>Past chair (2024 Form 990); director (business registry)</td><td>A lobbyist named Jennifer Somers: Comcast since 2016</td></tr>
+<tr><td><b>Cameron Cowan</b></td><td>Board member (2024 Form 990)</td><td>Not in the lobbyist registry. Utah's business registry lists a Cameron Cowan as owner and registered agent of the assumed name "Intermountain Power Agency" (#7036642-0151), at the agency's South Jordan address, updated May 27, 2026</td></tr>
+</table>
+<div class="flag"><div class="tag">Not confirmed</div>For Barry, Carter, Dayton, Somers and Cowan the match is on name, and the employers match public job listings for those names. No record we found states the lobbyist and the board member are the same person. A "Casey Hill" appears on every Association board list in its Form 990s from 2013 to 2024. Whether that is lobbyist Casey Hill of Lincoln Hill Partners is not confirmed. The full registry check is in <a href="utah-taxpayers-association-part-2.html#board">Part 2</a>.</div>
+</section>
+<section class="section" id="lobbyists"><h2>The Association's own lobbyists</h2>
+<p class="lead">Thirteen people have registered to lobby for the Association since 2012. Several also represent other clients.</p>
+<table class="ledger"><tr><th>Lobbyist</th><th>Registered for the Association</th><th>Some other clients</th></tr><tr><td><b>Steve Young</b></td><td>2014– and 2022– (still active)</td><td>Holland &amp; Hart, Clyde Companies, EnergySolutions, IPA</td></tr><tr><td><b>Billy Hesterman</b></td><td>2019– (still active)</td><td>Holland &amp; Hart, IPA, AES, Salt Lake City</td></tr><tr><td><b>Rusty Cannon</b></td><td>2018–2024</td><td>Utah Credit Union Association</td></tr><tr><td><b>Howard Stephenson</b></td><td>2019–2022</td><td>Scrible, Arizona State University; Association president about 1990–2021</td></tr><tr><td><b>Kate Bradshaw</b></td><td>2016–2020, 2021–2023</td><td>Holland &amp; Hart, IPA, Intermountain Health Care, 1-800 Contacts</td></tr><tr><td><b>Royce Van Tassell</b></td><td>2013–2016</td><td>IPA, Utah Association of Public Charter Schools</td></tr><tr><td><b>Chase Everton</b></td><td>2012–2014</td><td>Meta, 1-800 Contacts, Qualtrics; partner, Lincoln Hill Partners</td></tr><tr><td><b>Spencer Nitz</b></td><td>2015–2022</td><td>None other</td></tr><tr><td><b>Malah Armstrong</b></td><td>2022–</td><td>None other</td></tr><tr><td><b>Heidi Erickson</b></td><td>2014–</td><td>None other</td></tr><tr><td><b>Maxwell Miller</b></td><td>2013–</td><td>None other</td></tr><tr><td><b>Bren Robinson</b></td><td>2018–2020</td><td>Utah Mining Association</td></tr><tr><td><b>Kelsey White</b></td><td>2014–</td><td>None other</td></tr></table>
+<p style="font-size:15px;color:var(--ink-soft)">Dates come from each person's registry folder. Where a folder lists a start date and no end date, we show only the start. Every client and date is in <a href="utah-taxpayers-association-part-2.html">Part 2</a>.</p>
+<div class="callout"><strong>Howard Stephenson</strong> was the Association's president from about 1990 to 2021, during his years as a state senator (1992–2018). He was then a registered lobbyist for the Association from 2019 to 2022.</div>
+</section>
+<section class="section" id="shared"><h2>Clients they share</h2>
+<p class="lead">We compared the Association's lobbyists with lobbyists from Lincoln Hill Partners, Capitol Hill Advisors (a 2026 conference sponsor), Dan Hemmert and the Hartley brothers. These clients have three or more of them.</p>
+<table class="ledger"><tr><th>Client</th><th style="text-align:right">Lobbyists</th><th>Who</th></tr><tr><td>Intermountain Power Agency</td><td class="amt">6</td><td>Steve Young, Billy Hesterman, Kate Bradshaw, Royce Van Tassell, Lincoln Shurtz, Dan Hemmert</td></tr><tr><td>1-800 Contacts</td><td class="amt">5</td><td>Kate Bradshaw, Chase Everton, Lincoln Shurtz, Greg Hartley, Jeff Hartley</td></tr><tr><td>Salt Lake City</td><td class="amt">5</td><td>Billy Hesterman, Kate Bradshaw, Casey Hill, Lincoln Shurtz, Dan Hemmert</td></tr><tr><td>Tooele County</td><td class="amt">5</td><td>Chase Everton, Lincoln Shurtz, Dan Hemmert, Greg Hartley, Jeff Hartley</td></tr><tr><td>UVBA (Utah Vapor Business Association)</td><td class="amt">5</td><td>Chase Everton, Casey Hill, Lincoln Shurtz, Greg Hartley, Jeff Hartley</td></tr><tr><td>A-1 Driving School</td><td class="amt">4</td><td>Chase Everton, Brian Allen, Chantel Nate, Lincoln Shurtz</td></tr><tr><td>Dakota Pacific Real Estate</td><td class="amt">4</td><td>Casey Hill, Dan Hemmert, Greg Hartley, Jeff Hartley</td></tr><tr><td>NAVCP</td><td class="amt">4</td><td>Chase Everton, Brian Allen, Chantel Nate, Lincoln Shurtz</td></tr><tr><td>Turo</td><td class="amt">4</td><td>Steve Young, Chase Everton, Dan Hemmert, Matthew Lusty</td></tr><tr><td>Acadia Healthcare</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>Air Methods</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>Beaver County</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>Compass Pathways</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>EnergySolutions</td><td class="amt">3</td><td>Steve Young, Casey Hill, Jeff Hartley</td></tr><tr><td>Gainwell</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>Holland &amp; Hart</td><td class="amt">3</td><td>Steve Young, Billy Hesterman, Kate Bradshaw</td></tr><tr><td>Intermountain Health Care</td><td class="amt">3</td><td>Steve Young, Kate Bradshaw, Greg Hartley</td></tr><tr><td>Ivory Homes</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>Kane Creek Preservation and Development</td><td class="amt">3</td><td>Chase Everton, Lincoln Shurtz, Dan Hemmert</td></tr><tr><td>Koda Holdings</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>Myriad Genetics</td><td class="amt">3</td><td>Steve Young, Billy Hesterman, Kate Bradshaw</td></tr><tr><td>Qualtrics</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>Questar / Dominion</td><td class="amt">3</td><td>Steve Young, Kate Bradshaw, Jeff Hartley</td></tr><tr><td>Sellers Dorsey</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>Siemens</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>Silicon Slopes Commons</td><td class="amt">3</td><td>Chase Everton, Lincoln Shurtz, Greg Hartley</td></tr><tr><td>Uintah Basin Medical Center</td><td class="amt">3</td><td>Steve Young, Billy Hesterman, Kate Bradshaw</td></tr><tr><td>Unite Us</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>Utah Association of Public Charter Schools</td><td class="amt">3</td><td>Billy Hesterman, Kate Bradshaw, Royce Van Tassell</td></tr><tr><td>Utah Energy</td><td class="amt">3</td><td>Chase Everton, Casey Hill, Lincoln Shurtz</td></tr><tr><td>Utah Medical Association</td><td class="amt">3</td><td>Casey Hill, Dan Hemmert, Jeff Hartley</td></tr><tr><td>Utah Petroleum Association</td><td class="amt">3</td><td>Steve Young, Billy Hesterman, Kate Bradshaw</td></tr><tr><td>Utah Society of Anesthesiologists</td><td class="amt">3</td><td>Casey Hill, Greg Hartley, Jeff Hartley</td></tr></table>
+<div class="callout"><strong>Intermountain Power Agency</strong> is a registered client of six people in this research, is a 2026 sponsor, and gives to the Association's own PAC ($4,893 from 2022 to 2026). The business registry also lists a Cameron Cowan, the same name as an Association board member, as owner of the agency's assumed name.</div>
+</section>
+<section class="section" id="sponsors"><h2>The sponsors, and their money</h2>
+<p class="lead">The Association lists its sponsors on boards for its 2026 Legislative Outlook Conference and its "Teed Off On Taxes" golf tournament. We pulled 2018–2026 campaign finance reports for those names from disclosures.utah.gov.</p>
+<div class="hs-fig"><h3>Sponsor checks to the Association's own PAC, 2022–2026</h3><p class="sub">$25,714.57 in all. Top 10 givers shown.</p><div class="hs-bars"><div class="lab">Merit Medical</div><div class="tr"><div class="fl" style="width:70.0%"></div><span class="v">$10,000</span></div><div class="lab">Intermountain Power</div><div class="tr"><div class="fl" style="width:34.3%"></div><span class="v">$4,893</span></div><div class="lab">Enbridge</div><div class="tr"><div class="fl" style="width:14.3%"></div><span class="v">$2,050</span></div><div class="lab">Maverik</div><div class="tr"><div class="fl" style="width:8.8%"></div><span class="v">$1,250</span></div><div class="lab">Dominion Energy</div><div class="tr"><div class="fl" style="width:7.2%"></div><span class="v">$1,025</span></div><div class="lab">Swire Coca-Cola</div><div class="tr"><div class="fl" style="width:5.8%"></div><span class="v">$824</span></div><div class="lab">Mountain America CU</div><div class="tr"><div class="fl" style="width:5.3%"></div><span class="v">$763</span></div><div class="lab">Nucor</div><div class="tr"><div class="fl" style="width:5.1%"></div><span class="v">$725</span></div><div class="lab">Intermountain Health Care</div><div class="tr"><div class="fl" style="width:4.8%"></div><span class="v">$680</span></div><div class="lab">AES</div><div class="tr"><div class="fl" style="width:4.2%"></div><span class="v">$596</span></div></div></div>
+<table class="ledger"><tr><th>Sponsor</th><th style="text-align:right">Given, 2018–2026</th><th>Biggest recipient</th></tr><tr><td>Comcast</td><td class="amt">$483,800</td><td>Gov. Cox $68,500</td></tr><tr><td>Reynolds American / RAI</td><td class="amt">$396,115</td><td>AG Derek Brown $105,000</td></tr><tr><td>1-800 Contacts</td><td class="amt">$388,698</td><td>AG Derek Brown $63,132</td></tr><tr><td>Nucor</td><td class="amt">$366,527</td><td>Senate GOP committee $57,250</td></tr><tr><td>WCF Insurance</td><td class="amt">$359,248</td><td>Gov. Cox $102,000</td></tr><tr><td>Gold Cross</td><td class="amt">$349,185</td><td>Senate GOP committee $89,500</td></tr><tr><td>Utah&#x27;s credit unions</td><td class="amt">$330,328</td><td>Senate GOP committee $28,250</td></tr><tr><td>Maverik</td><td class="amt">$302,254</td><td>Senate GOP committee $44,250</td></tr><tr><td>AT&amp;T</td><td class="amt">$253,690</td><td>Gov. Cox $58,000</td></tr><tr><td>Holland &amp; Hart</td><td class="amt">$220,125</td><td>Gov. Cox $33,000</td></tr><tr><td>Regence</td><td class="amt">$215,750</td><td>Senate GOP committee $28,250</td></tr><tr><td>Dominion Energy</td><td class="amt">$156,796</td><td>Gov. Cox $72,500</td></tr><tr><td>Merit Medical</td><td class="amt">$156,334</td><td>Gov. Cox $41,084</td></tr></table>
+<p style="font-size:15px;color:var(--ink-soft)">Totals are contributions reported by the people and committees who received them, matched on the donor's name and with gifts to a company's own PAC left out. Fifteen smaller sponsors are in the workbook. Rocky Mountain Power, Zions, Chevron, Lumen and EnergySolutions come from earlier Hive pulls and are in the next section.</p>
+</section>
+<section class="section" id="lands"><h2>Where the money lands</h2>
+<p class="lead">Fifteen companies and PACs tied to the Association's people and sponsors, added together. These are partial totals: only these companies, and only what is on file.</p>
+<div class="hs-fig"><h3>Top recipients</h3><p class="sub">Clyde Companies, Rocky Mountain Power, Utah Realtors PAC, Larry H. Miller Co., Lincoln Hill PAC, Lincoln Hill Partners PAC, Utah Bankers PAC, EnergySolutions, Utah Petroleum Association PAC, Chevron, Lumen, Zions PAC, Ivory Homes, Union Pacific and the Association's PAC.</p><div class="hs-bars"><div class="lab">Gov. Spencer Cox</div><div class="tr"><div class="fl" style="width:70.0%"></div><span class="v">about $982,000</span></div><div class="lab">House Republican Election Committee</div><div class="tr"><div class="fl" style="width:24.9%"></div><span class="v">about $350,000</span></div><div class="lab">Senate Republican campaign committee</div><div class="tr"><div class="fl" style="width:17.8%"></div><span class="v">about $249,000</span></div><div class="lab">House Speaker Leadership PAC</div><div class="tr"><div class="fl" style="width:16.2%"></div><span class="v">$227,000</span></div><div class="lab">AG Derek Brown</div><div class="tr"><div class="fl" style="width:5.7%"></div><span class="v">about $80,000</span></div><div class="lab">Adams Leadership PAC</div><div class="tr"><div class="fl" style="width:4.5%"></div><span class="v">$63,500</span></div></div></div>
+<table class="ledger"><tr><th>Company</th><th>Tie to the Association</th><th style="text-align:right">To Gov. Cox</th></tr>
+<tr><td>Clyde Companies</td><td>Steve Young lobbies for it (since 2023)</td><td class="amt">$228,347</td></tr>
+<tr><td>Utah Realtors PAC</td><td>2026 sponsor</td><td class="amt">$225,500</td></tr>
+<tr><td>Rocky Mountain Power</td><td>2026 sponsor; Thom Carter (name match) lobbies for it</td><td class="amt">$105,000</td></tr>
+<tr><td>Larry H. Miller Co.</td><td>2026 sponsor</td><td class="amt">$103,000</td></tr>
+<tr><td>Lincoln Hill Partners PAC</td><td>Firm of Chase Everton</td><td class="amt">$82,500+</td></tr>
+<tr><td>Lincoln Hill PAC</td><td>Firm of Chase Everton</td><td class="amt">$80,000</td></tr>
+<tr><td>Comcast</td><td>2026 sponsor; Alan Dayton and Jennifer Somers (name matches) lobby for it</td><td class="amt">$68,500</td></tr>
+</table>
+<div class="hs-fig"><h3>The map</h3><p class="sub">People, the companies they lobby for, and money on file to Gov. Cox (gold) and the Republican caucus committees, 2018–2026.</p><img class="mapimg" src="uta-connections-map.png" alt="Diagram: Association board members and leaders, the companies they lobby for, and those companies' political giving to Gov. Cox and the Republican campaign committees"></div>
+</section>
+<section class="section" id="amendment"><h2>The Amendment B link</h2>
+<ul style="padding-left:22px;margin:0 0 14px">
+<li style="margin-bottom:10px"><b>Taxpayer Shield PAC</b> lists Sen. Lincoln Fillmore, the primary sponsor of S.J.R. 2, as chairman and Rusty Cannon as vice chairman. Billy Hesterman is on its board, with Bankers PAC president Howard Headlee. As of its last report it had one $2,000 loan in and $1,812.66 out, including $1,050 to the Utah Republican Party. No Amendment B spending is reported.</li>
+<li style="margin-bottom:10px"><b>The Association's PAC</b> gave Fillmore $6,500, the most of any recipient.</li>
+<li style="margin-bottom:10px"><b>Americans for Prosperity</b> paid for a statewide mailer supporting Amendment B (FOX 13, Oct. 9, 2026). AFP Utah is a 2026 golf sponsor.</li>
+<li style="margin-bottom:10px"><b>Axios</b> (Oct. 7, 2026) named the Association and Taxpayer Shield PAC as backers of Amendment B.</li>
+</ul>
+<div class="callout"><strong>What we did not find:</strong> no record of the Association or its PAC giving to Taxpayer Shield PAC or paying for Amendment B ads.</div>
+<p>For what Amendment B does, see <a href="utah-amendments-2026.html">The 2026 Amendments</a> and <a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a>.</p>
+</section>
+<section class="section" id="notshown"><h2>What the records do not show</h2>
+<ul style="padding-left:22px;margin:0 0 14px">
+<li style="margin-bottom:8px">Who gives the Association most of its money. Only two grants are public ($24,100 in all); its 2024 contributions alone were $470,510.</li>
+<li style="margin-bottom:8px">Whether the same-name board members and lobbyists are the same people.</li>
+<li style="margin-bottom:8px">Whether the Casey Hill on the board is lobbyist Casey Hill.</li>
+<li style="margin-bottom:8px">Philip Morris International's giving. Almost nothing is reported under that name.</li>
+</ul>
+<p>Having lobbyists on a nonprofit's board is legal. The registry and the disclosure reports exist so the public can see these relationships. This page shows them side by side.</p>
+</section>
+<section class="section" id="updates"><h2>Updates since this was posted</h2><p class="lead">None yet. New records will be added here with their dates.</p></section>
+<section class="section" id="words"><h2>Words to know</h2><p>Tap a card to see what it means.</p><div class="hs-flips"><button class="hs-flip" aria-expanded="false"><div class="ft">501(c)(4)</div><div class="fh">Tap to see</div><div class="fd">A type of nonprofit that can lobby and take part in some political activity. It does not have to make its donors public.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Registered lobbyist</div><div class="fh">Tap to see</div><div class="fd">Someone paid to talk to lawmakers for a client. Utah requires them to register and list each client, called a principal.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Principal</div><div class="fh">Tap to see</div><div class="fd">The person or group a lobbyist works for.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Form 990</div><div class="fh">Tap to see</div><div class="fd">The yearly tax return a nonprofit files with the IRS. Public copies show money and leaders, not donor names.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">PAC</div><div class="fh">Tap to see</div><div class="fd">A political action committee. It collects money and gives it to candidates or causes, and must report both publicly.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Caucus committee</div><div class="fh">Tap to see</div><div class="fd">A party's campaign committee for one chamber, such as the House Republican Election Committee. It helps elect that party's members.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Scorecard</div><div class="fh">Tap to see</div><div class="fd">A list of bills an outside group graded, used to rate how lawmakers voted.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Sponsor (event)</div><div class="fh">Tap to see</div><div class="fd">A company that pays to have its name on a group's event, such as a conference or golf tournament.</div></button></div></section>
+<section class="section" id="ask"><h2>Questions to ask, and whom to ask</h2><div class="hs-qa"><div><b>Utah Taxpayers Association</b>Would it publish its members or largest donors, the way its PAC's donors are public?</div><div><b>News outlets that quote the Association</b>When its numbers run in a story, should the story say who sits on its board and who sponsors it?</div><div><b>Your state legislators</b>Should lobbyist registrations list the nonprofit boards a lobbyist sits on?</div><div><b>Lieutenant Governor's Office</b>Could the lobbyist registry and campaign finance search be linked, so a client's political giving shows beside its lobbyists?</div><div><b>Yourself, before you vote on Amendment B</b>Who is paying for the messages you see, and does it change how you read them?</div></div></section>
+<section class="section" id="connected"><h2>Connected Hive work</h2><div class="hs-cards"><a href="utah-taxpayers-association-part-2.html"><b>Part 2: Every client of every lobbyist</b><span>Searchable, with dates, plus the board check</span></a><a href="utah-amendments-2026.html"><b>The 2026 Amendments</b><span>Transparency: Amendments A and B, and who funds the PACs</span></a><a href="amendment-b-myth-vs-fact.html"><b>Amendment B: Myth vs. Fact</b><span>Transparency: claims checked against the record</span></a><a href="https://weber-county-hive.github.io/-weber-county-hive-ledger/clyde-companies-giving.html"><b>Clyde Companies' political giving</b><span>Ledger: $461,104.81, 2018–2026</span></a><a href="https://weber-county-hive.github.io/-weber-county-hive-ledger/taxpayers-pac-ogden-2025.html"><b>Taxpayers PAC and the 2025 Ogden races</b><span>Ledger: a different PAC with a similar name</span></a><a href="weber-hive-enforcement-gap.html"><b>Utah's Campaign-Finance Enforcement Gap</b><span>Transparency: complaints filed, few penalties</span></a></div></section>
+<section class="section" id="behind"><h2>Behind this piece</h2>
+<div class="hs-counter"><div><div class="n">80</div><div class="l">Records read, including 33 lobbyist registry folders and 36 yearly statewide campaign finance files (estimate)</div></div><div><div class="n">6,400</div><div class="l">Transactions and line items checked: 5,183 sponsor contributions and about 1,200 lobbying registrations</div></div><div><div class="n">20</div><div class="l">Records checked but not used (estimate)</div></div><div><div class="n">120</div><div class="l">Searches run (estimate)</div></div></div>
+<p class="hs-updates">Posted Oct. 21, 2026.</p></section>
+<section class="section" id="sources" style="border-bottom:none;"><details class="full-sources"><summary>Full sources</summary><div class="full-sources-body">
+<h4>The Association</h4>
+<p>Utah Division of Corporations business registry, Utah Taxpayers Association, entity #658683-0140 (principals updated Nov. 17, 2025).</p>
+<p><a href="https://projects.propublica.org/nonprofits/organizations/870189230">ProPublica Nonprofit Explorer: Utah Taxpayers Association Form 990s</a> (2024 revenue, officers, board lists FY2013–FY2024).</p>
+<p><a href="https://utahtaxpayers.org/about/purpose-and-objectives/">Utah Taxpayers Association, purpose and objectives</a>; <a href="https://utahtaxpayers.org/wp-content/uploads/2025/03/Legislative-Scorecard-2025-100.pdf">2025 Legislative Scorecard</a> (read Oct. 21, 2026); 2026 Legislative Outlook Conference and golf tournament sponsor boards, utahtaxpayers.org (read as images Oct. 20, 2026).</p>
+<p><a href="https://utahtaxpayers.org/wp-content/uploads/2026/03/Legislative-Scorecard-2026-v2.pdf">Utah Taxpayers Association, 2026 Legislative Scorecard</a>, and its March 19, 2026 news release naming the 2026 Friends of the Taxpayer (copy from Utah Policy shared with the Hive Oct. 21, 2026). Party checked against Wikipedia's current Utah House and Senate member lists, Oct. 21, 2026.</p>
+<p>Minutes of the Senate Revenue and Taxation Standing Committee, Feb. 11, 2026 (le.utah.gov; text shared with the Hive Oct. 21, 2026).</p>
+<p><a href="https://www.ifs.org/wp-content/uploads/2015/11/2015-11-16_Litigation-Backgrounder_Utah-Taxpayers-Association-Et-Al-v.-Cox-Et-Al.pdf">Institute for Free Speech, litigation backgrounder, Utah Taxpayers Association et al. v. Cox et al.</a> (Nov. 17, 2015); <a href="https://ifs.org/?p=3703">Institute for Free Speech, settlement report</a> (July 14, 2016); <a href="https://utahtaxpayers.org/?p=7824">Utah Taxpayers Association, "State Agrees to Free Speech Protection"</a> (July 14, 2016).</p>
+<p>Utah Taxpayers Association company page, LinkedIn (linkedin.com/company/utah-taxpayers-association), text shared with the Hive Oct. 21, 2026.</p>
+<p>Utah Taxpayers Association, "Introduction to UTA" member brochure (8 pages, PDF created May 26, 2021; copy shared with the Hive Oct. 21, 2026; read from rendered pages and text).</p>
+<p>Candid (GuideStar) profile, revenue, expense, asset and liability charts from Form 990 filings 2011–2024 (screenshot shared with the Hive, Oct. 21, 2026).</p>
+<p>Utah business registry, "Intermountain Power Agency" assumed name, #7036642-0151 (pasted as text by the Hive, Oct. 21, 2026).</p>
+<p>Utah Taxpayers Association Form 990 for 2024 (file 870189230_2024_202513159349302046_990.pdf, sent by Shauna Oct. 21, 2026; Part VIII, Part III and Schedules C and O read as rendered pages).</p>
+<p>Candid (candid.org) profile of the Utah Taxpayers Association: grants received (Americans for Tax Reform, EIN 52-1403587, $15,000, FY2022; IHC Health Services Inc, EIN 94-2854057, $9,100, FY2018; profile updated Sept. 10, 2026) and board list as of Dec. 31, 2024 from the Form 990 (profile updated Jan. 15, 2026). Pasted from Candid by the Hive, Oct. 21, 2026.</p>
+<h4>Lobbyists</h4>
+<p><a href="https://lobbyist.utah.gov">Utah Lobbyist Registry</a>: each person's folder, read Oct. 20, 2026. Folder numbers are in Part 2.</p>
+<h4>Political money</h4>
+<p><a href="https://disclosures.utah.gov">Utah campaign finance disclosures</a>: yearly candidate, PAC, party and corporation reports, 2018–2026, pulled Oct. 20, 2026; Utah Taxpayers Association PAC and Taxpayer Shield PAC statements of organization and reports. Earlier Hive pulls for Clyde Companies, Rocky Mountain Power/PacifiCorp, EnergySolutions, Zions PAC, Chevron, Lumen, Utah Realtors PAC, Larry H. Miller Co., Lincoln Hill PAC, Utah Bankers PAC, Utah Petroleum Association PAC, Ivory Homes and Union Pacific.</p>
+<h4>News</h4>
+<p><a href="https://www.axios.com/local/salt-lake-city/2026/10/07/amendment-b-utah-legislature-taxes-raise-thresehold-ballot-initatives">Axios Salt Lake City, Oct. 7, 2026</a>; <a href="https://www.fox13now.com/news/politics/the-battle-has-begun-over-utahs-amendment-b-on-your-ballot">FOX 13, Oct. 9, 2026</a>.</p>
+</div></details></section>
+<footer>
+  <div class="wrap">
+    <div>THE WEBER COUNTY HIVE · TRANSPARENCY</div>
+    <div class="sub">Independent accountability journalism. Public records only. We report; you decide.</div>
+  </div>
+</footer>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"Arial, sans-serif",fontSize:'22px',primaryColor:'#F2F5FA',primaryTextColor:'#0F1F3D',primaryBorderColor:'#1D4ED8',lineColor:'#1E3A8A',edgeLabelBackground:'#FFFFFF'},flowchart:{curve:'basis',padding:18,useMaxWidth:true}});}catch(e){}</script>
+</body>
+</html>

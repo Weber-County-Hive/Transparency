@@ -363,5 +363,19 @@ const CASES = [
     parts: 4,
     link: "utah-amendments-2026.html",
     pairWith: "CASE 2026-AMB-01"
+  },
+  {
+    caseNumber: "CASE 2026-UTA-01",
+    title: "Who Sits at the Utah Taxpayers Association's Table, and Who They Work For",
+    category: "Elections & Ballot Measures",
+    summary: "The Association's leaders, 13 registered lobbyists, board members checked against the lobbyist registry, its 2026 sponsors and their $4.3 million in political giving, every client of every lobbyist, and its ties to Amendment B. Its donors are not public; these records are.",
+    officials: ["Lincoln Fillmore", "Spencer Cox", "Derek Brown"],
+    status: "documented",
+    published: "Oct 21, 2026",
+    updated: "Oct 21, 2026",
+    plain: true,
+    parts: 2,
+    link: "utah-taxpayers-association.html",
+    pairWith: "CASE 2026-AMB-01"
   }
 ];

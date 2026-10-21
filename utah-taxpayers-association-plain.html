@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Utah Taxpayers Association, in Plain Words | Utah Hive Politics</title>
+<meta name="description" content="The short, simple version of who sits at the Utah Taxpayers Association&#x27;s table and where the money goes.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root{
+  --paper:#FFFFFF; --paper-2:#F2F5FA; --ink:#14213D; --ink-soft:#3E4C66;
+  --band:#0F1F3D; --band-2:#1E3A8A;
+  --rust:#1D4ED8; --rust-dark:#0F1F3D;
+  --amber:#1D4ED8; --amber-bg:#E6ECF7;
+  --line:#D5DCE8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',sans-serif;line-height:1.65;font-size:21px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+a{color:var(--rust);}
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--ink);}
+
+.topbar{background:var(--ink);color:var(--amber-bg);padding:10px 0;font-family:'IBM Plex Mono',monospace;font-size:12px;}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;}
+.topbar a{color:var(--amber-bg);text-decoration:none;opacity:.85;}
+.topbar a:hover{opacity:1;text-decoration:underline;}
+
+header.band{background:linear-gradient(135deg,var(--band),var(--band-2));color:#f0ece0;padding:38px 0 32px;border-bottom:5px solid var(--amber);}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#93C5FD;margin-bottom:10px;}
+h1.title{font-size:clamp(28px,5vw,42px);color:#fff;line-height:1.18;font-weight:700;}
+.dek{margin-top:14px;font-size:21px;color:#E6ECF7;max-width:660px;}
+.caselabel{display:inline-block;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;color:#0F1F3D;background:#93C5FD;padding:5px 14px;border-radius:20px;}
+
+.section{padding:36px 0;border-bottom:1px solid var(--line);}
+.section h2{font-size:25px;margin-bottom:14px;}
+.section .lead{font-size:17px;color:var(--ink-soft);margin-bottom:16px;}
+.section p{margin:0 0 14px;}
+
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:18px 0;}
+.stat{background:var(--paper-2);border:1px solid var(--line);border-top:3px solid var(--amber);padding:16px 18px;}
+.stat .num{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--amber);line-height:1.15;}
+.stat .label{margin-top:6px;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.03em;}
+
+table.ledger{width:100%;border-collapse:collapse;margin:16px 0;font-size:17px;}
+table.ledger th{background:var(--band);color:#f0ece0;text-align:left;padding:9px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;}
+table.ledger td{padding:9px 12px;border-bottom:1px solid var(--line);}
+table.ledger tr:nth-child(even) td{background:var(--paper-2);}
+table.ledger td.amt{text-align:right;font-family:'IBM Plex Mono',monospace;color:var(--rust-dark);font-weight:600;}
+
+.chain{background:#fff;border:1px solid var(--line);padding:22px 24px;margin:16px 0;}
+.chain-step{display:flex;gap:16px;padding:11px 0;border-bottom:1px dashed var(--line);}
+.chain-step:last-child{border-bottom:none;}
+.chain-step .role{font-family:'IBM Plex Mono',monospace;color:var(--amber);font-size:12px;font-weight:600;flex-shrink:0;width:110px;}
+.chain-step .txt strong{color:var(--rust-dark);}
+
+.callout{background:var(--paper-2);border-left:4px solid var(--amber);padding:16px 20px;margin:16px 0;font-size:18px;}
+.callout strong{color:var(--rust-dark);}
+.flag{background:#fff;border:1px dashed var(--ink-soft);padding:13px 18px;margin:14px 0;font-size:14px;color:var(--ink-soft);}
+.flag .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+
+.full-sources{border:1px solid var(--line);background:#fff;margin:26px 0 0;}
+.full-sources summary{cursor:pointer;list-style:none;padding:15px 22px;background:var(--paper-2);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--rust-dark);}
+.full-sources summary::-webkit-details-marker{display:none;}
+.full-sources-body{padding:18px 24px 24px;font-size:16px;}
+.full-sources-body a{color:var(--rust);}
+.full-sources-body h4{font-family:'Playfair Display',serif;font-size:14px;margin:16px 0 6px;padding-top:10px;border-top:1px solid var(--line);}
+.full-sources-body p{margin:0;color:var(--ink-soft);}
+
+footer{padding:28px 0 48px;color:var(--ink-soft);font-size:15px;}
+.section{max-width:860px;margin:0 auto;padding-left:24px;padding-right:24px;}
+.stat .label{font-size:14px !important;}
+@media(max-width:640px){table.ledger{font-size:15px;}.chain-step{flex-wrap:wrap;}.chain-step .role{width:100%;}}
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-parts{background:#F2F5FA;border:2px solid #1D4ED8;border-radius:6px;padding:14px 16px;margin:0 0 24px;font-family:Arial,sans-serif}
+.hs-parts .lab{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:bold;color:#14213D;margin:0 0 8px}
+.hs-parts ol{margin:0 0 10px;padding-left:24px;font-size:1rem;line-height:1.45}
+.hs-parts li.cur{font-weight:bold}
+.hs-parts li.cur a{color:#14213D;text-decoration:none}
+.hs-parts .nav{display:flex;flex-wrap:wrap;gap:10px}
+.hs-parts .nav a{display:inline-block;background:#1D4ED8;color:#fff;text-decoration:none;font-weight:bold;padding:10px 16px;border-radius:5px;font-size:1rem}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
+
+.hs-partline{font-family:Arial,sans-serif;font-size:1rem;margin-top:8px;color:#E6ECF7}
+.lob{border:1px solid #D5DCE8;background:#fff;margin:0 0 12px}
+.lob summary{cursor:pointer;padding:14px 18px;font-weight:bold;font-size:1.05rem;list-style:none;border-left:6px solid #1D4ED8}
+.lob summary::-webkit-details-marker{display:none}
+.lob summary small{display:block;font-weight:normal;font-size:.9rem;color:#3E4C66}
+.lob .in{padding:6px 18px 16px}
+.lob table.ledger{font-size:15px}
+.find{width:100%;font-size:1.05rem;padding:12px 14px;border:2px solid #1D4ED8;border-radius:6px;margin:6px 0 16px;font-family:Arial,sans-serif}
+.tag-s{display:inline-block;background:#E6ECF7;color:#0F1F3D;font-family:Arial,sans-serif;font-size:.78rem;padding:2px 8px;border-radius:10px}
+.mapimg{width:100%;height:auto;border:1px solid #D5DCE8;margin:10px 0}
+</style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="uhp-badge.png" alt="Utah Hive Politics logo"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span></span></a></div>
+
+<div class="topbar"><div class="wrap"><span>TRANSPARENCY · IN PLAIN WORDS</span><a href="index.html">← Case Files</a></div></div>
+<header class="band"><div class="wrap">
+<div class="kicker">In plain words · Statewide</div>
+<h1 class="title">The Group Behind Many Tax Numbers, and Who Sits at Its Table</h1>
+<p class="dek">The short, simple version of our Utah Taxpayers Association case file.</p>
+<p class="hs-date">CASE 2026-UTA-01 · Plain words · Posted Oct. 21, 2026 · Updated Oct. 21, 2026</p>
+</div></header>
+<div class="wrap">
+<div class="hs-plain">Want every detail and source? <a class="hs-btn" href="utah-taxpayers-association.html">Read the full case file</a></div>
+<details class="hs-pages"><summary>Transparency pages (27) · tap to open</summary><ol><li><a href="index.html">Transparency docket</a><small>Every case file, searchable</small></li><li><a href="utah-amendments-2026.html">The 2026 Amendments</a> · <a href="utah-amendments-2026-plain.html">plain words</a><small>Amendments A and B on your ballot</small></li><li><a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> · <a href="amendment-b-myth-vs-fact-plain.html">plain words</a><small>Claims checked against the record</small></li><li><a href="amendment-b-quiz.html">Amendment B Quiz</a><small>Test what you know</small></li><li class=cur><a href="utah-taxpayers-association.html">Who Sits at the Taxpayers Association's Table</a> · <a href="utah-taxpayers-association-plain.html">plain words</a><small>Its leaders, lobbyists, sponsors and their money</small></li><li><a href="weber-housing-authority.html">Weber Housing Authority</a> · <a href="weber-housing-authority-plain.html">plain words</a><small>A commissioner, his wife and the authority that pays their company</small></li><li><a href="bramwell-odp-enforcement.html">What the Privacy Office Can and Can't Do</a> · <a href="bramwell-odp-enforcement-plain.html">plain words</a><small>Utah's Chief Privacy Officer</small></li><li><a href="counting-the-jobs.html">Counting the Jobs</a> · <a href="counting-the-jobs-plain.html">plain words</a><small>Job promises and what was reported</small></li><li><a href="matt-brower.html">Matt Brower</a> · <a href="matt-brower-plain.html">plain words</a><small>The board seat that never came up</small></li><li><a href="nilson-foundation.html">Ten Days</a> · <a href="nilson-foundation-plain.html">plain words</a><small>The Nilson Foundation's 501(c)(3) claim</small></li><li><a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> · <a href="sb258-preliminary-municipalities-plain.html">plain words</a><small>S.B. 258 and preliminary municipalities</small></li><li><a href="sitla-county-zoning-exemption.html">The Land Counties Can't Zone</a> · <a href="sitla-county-zoning-exemption-plain.html">plain words</a><small>Trust land and county zoning</small></li><li><a href="weber-hive-sitla-explainer.html">SITLA: The Land Nobody Zones</a> · <a href="weber-hive-sitla-explainer-plain.html">plain words</a><small>Who answers for trust land</small></li><li><a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> · <a href="tyson-eagle-mountain-closure-plain.html">plain words</a><small>Five years after opening</small></li><li><a href="utah-judicial-oversight.html">Behind the Bench</a> · <a href="utah-judicial-oversight-plain.html">plain words</a><small>Judge and lawyer complaints in Utah</small></li><li><a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> · <a href="waldrip-funding-threat-plain.html">plain words</a><small>A housing adviser in Heber City</small></li><li><a href="weber-county-tax-increases-since-2019.html">Every Weber County Property Tax Increase Since 2019</a> · <a href="weber-county-tax-increases-since-2019-plain.html">plain words</a><small>The full list</small></li><li><a href="weber-fire-district-annexation.html">A New Line on the Bill</a> · <a href="weber-fire-district-annexation-plain.html">plain words</a><small>Roy and Riverdale fire annexation</small></li><li><a href="weber-fire-district-growth.html">Paying for the Next Station</a> · <a href="weber-fire-district-growth-plain.html">plain words</a><small>How Weber Fire District funds growth</small></li><li><a href="weber-hive-5th5th-sales-tax.html">Weber County's New Sales Tax</a> · <a href="weber-hive-5th5th-sales-tax-plain.html">plain words</a><small>A public vote, but no vote by the public</small></li><li><a href="weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> · <a href="weber-hive-bait-and-switch-plain.html">plain words</a><small>Bait and switch, 2018 to 2026</small></li><li><a href="weber-hive-blank-box.html">The Blank Box</a> · <a href="weber-hive-blank-box-plain.html">plain words</a><small>Three disclosure forms, one pattern</small></li><li><a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> · <a href="weber-hive-enforcement-gap-plain.html">plain words</a><small>Complaints filed, few penalties</small></li><li><a href="weber-hive-gsl-two-money-pots.html">One Lake, Two Money Pots</a> · <a href="weber-hive-gsl-two-money-pots-plain.html">plain words</a><small>The Great Salt Lake Trust Council</small></li><li><a href="weber-hive-powder-mountain-water.html">Wells at the Top</a> · <a href="weber-hive-powder-mountain-water-plain.html">plain words</a><small>Powder Mountain's water</small></li><li><a href="weber-hive-then-vs-now.html">Then vs. Now</a> · <a href="weber-hive-then-vs-now-plain.html">plain words</a><small>Earlier plans and later approvals in Ogden Valley</small></li><li><a href="west-haven-energy-tax.html">West Haven's 6% Energy Tax</a> · <a href="west-haven-energy-tax-plain.html">plain words</a><small>A new line on the power bill</small></li></ol></details>
+</div>
+<section class="section"><h2>What is it?</h2>
+<p>The Utah Taxpayers Association is a nonprofit group. News stories often use its numbers on taxes. This fall it supports <b>Amendment B</b>, which would make some citizen tax measures need 60% of the vote.</p>
+<p>Most of its money comes from members and donors. The law does not make it share their names.</p></section>
+<section class="section"><h2>Who runs it?</h2>
+<p>We checked its board against the state's list of lobbyists. A lobbyist is someone paid to talk to lawmakers for a company.</p>
+<div class="hs-fig"><h3>Board members and the companies they lobby for</h3><p class="sub">From the state lobbyist registry. * = same name; not proven to be the same person.</p><div class="mermaid">
+flowchart LR
+  U["Utah Taxpayers<br>Association board"] --> A["Steve Young and Mark Buchi<br>Holland & Hart,<br>Intermountain Power"]
+  U --> B["Erin Barry*<br>Merit Medical"]
+  U --> C["Thom Carter*<br>Rocky Mountain Power"]
+  U --> D["Alan Dayton* and<br>Jennifer Somers*<br>Comcast"]
+</div></div>
+<p>Every one of those companies also sponsored the Association's events in 2026.</p></section>
+<section class="section"><h2>Where does the sponsors' money go?</h2>
+<p>We looked up the political donations of 28 sponsors from 2018 to 2026. Together they gave about <b>$4.3 million</b> to Utah candidates, PACs and parties.</p>
+<div class="hs-fig"><h3>Top places the money went</h3><p class="sub">Companies tied to the Association's people and sponsors, money on file.</p><div class="hs-bars"><div class="lab">Gov. Spencer Cox</div><div class="tr"><div class="fl" style="width:70.0%"></div><span class="v">about $982,000</span></div><div class="lab">House Republican campaign committee</div><div class="tr"><div class="fl" style="width:24.9%"></div><span class="v">about $350,000</span></div><div class="lab">Senate Republican campaign committee</div><div class="tr"><div class="fl" style="width:17.8%"></div><span class="v">about $249,000</span></div><div class="lab">House Speaker&#x27;s PAC</div><div class="tr"><div class="fl" style="width:16.2%"></div><span class="v">$227,000</span></div></div></div></section>
+<section class="section"><h2>What about Amendment B?</h2>
+<p>A PAC called Taxpayer Shield backs Amendment B. Its chairman is Sen. Lincoln Fillmore, the bill's primary sponsor. Two Association leaders, Rusty Cannon and Billy Hesterman, are also officers of it.</p>
+<p>We found no record of the Association itself paying for Amendment B ads.</p></section>
+<section class="section"><h2>Is this against the law?</h2>
+<p>No. This page does not say anyone broke a rule. Lobbyists can sit on nonprofit boards. Public records exist so you can see these ties and decide what they mean.</p></section>
+<section class="section" style="border-bottom:none;"><div class="hs-plain">Ready for the details? <a class="hs-btn" href="utah-taxpayers-association.html">Read the full case file</a> It has every lobbyist's clients, the money tables, sources and questions to ask.</div></section>
+
+<footer>
+  <div class="wrap">
+    <div>THE WEBER COUNTY HIVE · TRANSPARENCY</div>
+    <div class="sub">Independent accountability journalism. Public records only. We report; you decide.</div>
+  </div>
+</footer>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent · Accountability · Journalism</span></div>
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"Arial, sans-serif",fontSize:'22px',primaryColor:'#F2F5FA',primaryTextColor:'#0F1F3D',primaryBorderColor:'#1D4ED8',lineColor:'#1E3A8A',edgeLabelBackground:'#FFFFFF'},flowchart:{curve:'basis',padding:18,useMaxWidth:true}});}catch(e){}</script>
+</body>
+</html>
