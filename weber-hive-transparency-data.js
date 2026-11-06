@@ -377,5 +377,17 @@ const CASES = [
     parts: 2,
     link: "utah-taxpayers-association.html",
     pairWith: "CASE 2026-AMB-01"
+  },
+  {
+    caseNumber: "CASE 2026-CCE-01",
+    title: "The Clean Energy Charge on Your Power Bill",
+    category: "Utilities & Rates",
+    summary: "Starting Jan. 1, 2027, Rocky Mountain Power customers in 16 Utah communities, including Ogden, are enrolled in the Community Clean Energy Program unless they opt out: $4 a month for homes, a usage charge for businesses, and a fee to leave after May 1. Who decided, where the money goes, who set the leaving fee, the opt-in version of H.B. 238 that was drafted and dropped, and the energy money behind it.",
+    officials: ["Carl Albrecht", "Evan Vickers", "Spencer Cox", "Jerry Fenn", "Richard Hyer"],
+    status: "documented",
+    published: "Nov 6, 2026",
+    updated: "Nov 6, 2026",
+    plain: true,
+    link: "clean-energy-charge.html"
   }
 ];

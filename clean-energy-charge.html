@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Clean Energy Charge</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<style>
+  :root{
+    --navy:#1b2a4a; --blue:#1f5fbf; --light:#eef3fb; --line:#cfd9ea;
+    --ink:#1b2a4a; --muted:#4a5a78; --ok:#1e7a46; --okbg:#e7f5ec; --open:#8a5a00; --openbg:#fff4dc;
+    --bg:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;font-size:20px;line-height:1.6}
+  header.top{background:var(--navy);color:#fff;padding:18px 16px}
+  header.top .brand{font-family:Arial,Helvetica,sans-serif;font-size:15px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+  header.top h1{margin:6px 0 4px;font-size:34px;line-height:1.2}
+  header.top .sub{font-size:19px;opacity:.95}
+  .dates{font-family:Arial,Helvetica,sans-serif;font-size:15px;margin-top:10px;opacity:.85}
+  main{max-width:900px;margin:0 auto;padding:0 16px 40px}
+  h2{font-size:28px;margin:44px 0 10px;padding-bottom:6px;border-bottom:3px solid var(--blue)}
+  h3{font-size:22px;margin:26px 0 8px}
+  a{color:var(--blue)}
+  .plain{background:var(--light);border-left:6px solid var(--blue);padding:14px 16px;margin:14px 0;border-radius:4px}
+  .plain b.lbl{display:block;font-family:Arial,Helvetica,sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);margin-bottom:4px}
+  .key{border:2px solid var(--navy);padding:14px 16px;border-radius:6px;margin:16px 0}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:18px}
+  th,td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+  th{background:var(--navy);color:#fff;font-family:Arial,Helvetica,sans-serif;font-size:16px}
+  tr:nth-child(even) td{background:#f7f9fd}
+  .tablewrap{overflow-x:auto}
+  .tag{display:inline-block;font-family:Arial,Helvetica,sans-serif;font-size:14px;font-weight:bold;padding:2px 8px;border-radius:10px;white-space:nowrap}
+  .tag.doc{background:var(--okbg);color:var(--ok)}
+  .tag.open{background:var(--openbg);color:var(--open)}
+  .pending{background:var(--openbg);border:1px dashed var(--open);padding:12px 14px;border-radius:4px;font-family:Arial,Helvetica,sans-serif;font-size:16px}
+  .counter{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+  .counter div{flex:1 1 150px;background:var(--light);border:1px solid var(--line);border-radius:6px;padding:10px;text-align:center;font-family:Arial,Helvetica,sans-serif}
+  .counter b{display:block;font-size:30px;color:var(--navy)}
+  .counter span{font-size:14px;color:var(--muted)}
+  #map{height:420px;border:2px solid var(--navy);border-radius:6px;margin:12px 0}
+  .mermaid{background:#fff;border:1px solid var(--line);border-radius:6px;padding:10px;margin:14px 0;text-align:center}
+  .checker{border:2px solid var(--blue);border-radius:8px;padding:16px;margin:16px 0;background:#fbfdff}
+  .checker label{display:block;font-family:Arial,Helvetica,sans-serif;font-size:17px;font-weight:bold;margin:12px 0 4px}
+  .checker select{width:100%;font-size:18px;padding:8px;border:1px solid var(--line);border-radius:4px}
+  .checker button{margin-top:14px;font-size:19px;padding:10px 18px;background:var(--blue);color:#fff;border:0;border-radius:6px;cursor:pointer}
+  #result{margin-top:14px;font-size:19px}
+  details{border:1px solid var(--line);border-radius:6px;margin:12px 0;padding:8px 14px}
+  summary{cursor:pointer;font-weight:bold;font-size:20px}
+  .gloss dt{font-weight:bold;margin-top:12px}
+  .gloss dd{margin:2px 0 0 0}
+  .small{font-size:16px;color:var(--muted)}
+  footer{background:var(--navy);color:#fff;padding:18px 16px;font-family:Arial,Helvetica,sans-serif;font-size:15px;text-align:center}
+  footer a{color:#cfe0ff}
+  ol.steps li{margin-bottom:10px}
+.hbx-top{margin:0}
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;display:block;margin-top:2px}
+.hb-line-top{font-family:Georgia,serif;color:#e8d9b5;font-size:12.5px;display:block;margin-top:3px;line-height:1.4}
+.hbx-slim{background:#0e2438;color:#dbe7f0;font:600 14px/1.4 Arial,sans-serif;padding:7px 20px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.hbx-slim a{color:#F3E3B3;text-decoration:underline}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;line-height:1.5}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px}
+.hb-foot .hb-name,.hb-foot .hb-sub{display:block}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block}
+.hb-line{max-width:720px;margin:14px auto 0;color:#e8d9b5;font-size:15.5px;line-height:1.5}
+.hb-tips{margin:16px 0 4px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hb-btn{display:inline-block;border:2px solid #d4af37;background:#d4af37;color:#0d0b0a!important;font:700 15px Georgia,serif;padding:10px 18px;border-radius:6px;text-decoration:none!important}
+.hb-btn2{background:transparent;color:#d4af37!important}
+.hb-small{font-size:12.5px;color:#8a7650;margin:6px 0 0}
+.hb-small a{color:#d4af37;text-decoration:underline}
+.hb-foot p{max-width:720px;margin-left:auto!important;margin-right:auto!important}
+.hbx-tools{max-width:980px;margin:14px auto 4px;padding:0 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;font-family:Arial,sans-serif;position:relative;z-index:2}
+.hbx-tool{display:inline-block;font:700 15px Arial,sans-serif;color:#13233F!important;background:#fff;border:1px solid #c8cfd6;border-radius:6px;padding:9px 13px;text-decoration:none!important;cursor:pointer;line-height:1.2}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
+.hs-toc a{font:600 15px Arial,sans-serif;background:#eef3fb;border:1px solid #cfd9ea;border-radius:6px;padding:6px 10px;text-decoration:none;color:#1b2a4a}
+</style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hbx-top"><div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="hive-bee.png" alt="The Hive bee seal"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-line-top">The people's publication. We investigate what's best for the public as a whole, not any party or special interest.</span></span></a></div>
+<div class="hbx-slim"><span>Transparency · Case File · Statewide</span><span><a href="index.html">← Transparency home</a> · <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">← Hive library (every repo)</a></span></div></div>
+
+<header class="top">
+  <div class="brand">Transparency · Case File · Statewide</div>
+  <h1>The Clean Energy Charge on Your Power Bill</h1>
+  <div class="sub">What the Community Clean Energy Program is, who pays, where the money goes, and how the opt-in version of the law was dropped — explained from the ground up.</div>
+  <div class="dates">CASE 2026-CCE-01 · Posted Nov. 6, 2026 · Updated Nov. 6, 2026 · Research continuing; open items are marked</div>
+</header>
+
+<main>
+<nav class="hs-toc" aria-label="On this page"><a href="#s1">The basics</a><a href="#s2">Timeline</a><a href="#s3">What you pay</a><a href="#s4">Am I enrolled?</a><a href="#s5">Who's covered</a><a href="#s5b">Ogden</a><a href="#s5c">The agency's money</a><a href="#s6">Where the $4 goes</a><a href="#s7">The dropped opt-in</a><a href="#s8">Rooftop solar</a><a href="#s9">The PSC</a><a href="#s9b">Energy money</a><a href="#s9c">Who it helps</a><a href="#s10">Auditor's checklist</a><a href="#s11">Questions to ask</a><a href="#s12">Words</a></nav>
+
+<div class="counter" aria-label="Behind this piece">
+  <div><b>90+</b><span>records read</span></div>
+  <div><b>5</b><span>versions of H.B. 238 compared</span></div>
+  <div><b>25+</b><span>records checked but not used</span></div>
+  <div><b>120+</b><span>searches run</span></div>
+</div>
+<p class="small" style="text-align:center">Behind this piece — counts are an estimate and will grow as research continues.</p>
+
+<div class="key">
+  <b>The short version.</b> If you get a Rocky Mountain Power bill at a home or business in one of 16 Utah communities, a new charge starts January 1, 2027 — unless you opt out. Homes pay a flat $4 a month. Businesses pay by how much power they use. You can leave free until May 1, 2027. After that, homes pay $30 to leave. A version of the 2026 bill that would have made this sign-up-only (opt-in) was drafted, but the version that passed kept automatic enrollment.
+</div>
+
+<!-- ============ 1 ============ -->
+<h2 id="s1">1. Start here: the basics</h2>
+
+<div class="plain"><b class="lbl">In plain words</b>
+Rocky Mountain Power is a private company — it is owned by PacifiCorp, which is owned by Berkshire Hathaway. It is the only company allowed to sell electricity to most homes in northern and central Utah, so customers cannot shop around. Because there is no competition, a state board decides what it may charge.</div>
+
+<div class="tablewrap"><table>
+<tr><th>Who</th><th>What they do</th></tr>
+<tr><td>Rocky Mountain Power</td><td>Sells the power and sends the bill. Collects the new charge.</td></tr>
+<tr><td>Public Service Commission (PSC)</td><td>Created by the Legislature in the Public Utilities Act of 1917 (signed March 8, 1917; organized April 3, 1917), first named the Public Utilities Commission of Utah. Made an independent state agency in 1983. Three commissioners, appointed by the governor and confirmed by the Utah Senate, serve staggered six-year terms; no more than two may belong to the same political party; the governor names the chair and can remove a commissioner only for cause. Regulates electric, natural gas, telephone and water/sewer utilities and sets their rates. Approved this program March 4, 2026.</td></tr>
+<tr><td>Division of Public Utilities</td><td>State office that argues for the public interest at the PSC.</td></tr>
+<tr><td>Office of Consumer Services</td><td>State office that argues for homes and small businesses at the PSC.</td></tr>
+<tr><td>Utah Renewable Communities (legal name: Community Renewable Energy Agency)</td><td>A government agency formed by the participating cities and counties to run the program with Rocky Mountain Power.</td></tr>
+<tr><td>Your city council or county commission</td><td>Voted in spring 2026 whether to keep its residents in the program.</td></tr>
+</table></div>
+
+<h3>Opt-in vs. opt-out</h3>
+<div class="plain"><b class="lbl">In plain words</b>
+<b>Opt-in</b> means you are not in unless you sign up. <b>Opt-out</b> means you are in unless you say no. This program is opt-out: if you do nothing, you are enrolled and you pay.</div>
+
+<!-- ============ 2 ============ -->
+<h2 id="s2">2. How it happened, step by step</h2>
+
+<div class="mermaid">
+flowchart TD
+  A["2019: Legislature passes H.B. 411<br/>(Community Renewable Energy Act)"] --> B["2020–2022: Cities and counties form<br/>Utah Renewable Communities"]
+  B --> C["2024: Law renamed Community Clean Energy Act;<br/>'clean' now includes nuclear, storage, carbon capture"]
+  C --> D["2025: Rocky Mountain Power asks PSC to approve;<br/>agency asks developers for projects"]
+  D --> E["Feb 2026: H.B. 238 — opt-in draft dropped;<br/>opt-out check box added"]
+  E --> F["March 4, 2026: PSC approves; sets $4/month"]
+  F --> G["April 8 – June 2, 2026:<br/>16 councils vote to stay in, 3 do not"]
+  G --> H["Nov 2, 2026: Opt-out notices mailed"]
+  H --> I["Jan 1, 2027: Charge starts on bills"]
+  I --> J["May 1, 2027: Last day to leave free"]
+  J --> K["2028–2030: First new project hoped online"]
+</div>
+
+<!-- ============ 3 ============ -->
+<h2 id="s3">3. What you pay</h2>
+
+<div class="tablewrap"><table>
+<tr><th>Customer</th><th>Monthly charge</th><th>Fee to leave after May 1, 2027</th></tr>
+<tr><td>Home (most homes)</td><td>$4.00 flat — includes a $0.10 surcharge for low-income credits</td><td>$30</td></tr>
+<tr><td>Low-income home (Rocky Mountain Power Schedule 3)</td><td>$0.00 — a $4 charge offset by a $4 credit</td><td>$0</td></tr>
+<tr><td>Home with older rooftop solar (Schedule 135)</td><td>Not enrolled — excluded by state law</td><td>—</td></tr>
+<tr><td>Home with newer rooftop solar (Schedules 136, 137)</td><td>$4.00 flat</td><td>$30</td></tr>
+<tr><td>Small business (Schedule 23), irrigation (Schedule 10)</td><td>0.609¢ per kilowatt-hour + $0.12</td><td>$30</td></tr>
+<tr><td>General and large business (Schedules 6, 6A, 8, 9, 9A)</td><td>0.609¢ per kilowatt-hour + $0.12</td><td>$6 per average kW</td></tr>
+<tr><td>Street and security lights (Schedules 7, 11, 12)</td><td>0.609¢ per kilowatt-hour, per lamp</td><td>$0.15 per lamp</td></tr>
+</table></div>
+<p class="small">Source: Rocky Mountain Power compliance tariff filing, Aug. 7, 2026 (proposed; final approval being confirmed). Rates were set by the PSC order of March 4, 2026.</p>
+
+<h3>Why is there a fee to leave?</h3>
+<div class="plain"><b class="lbl">In plain words</b>
+The fee is written into state law. The 2019 law (Utah Code 54-17-905) says that after the free window closes, a customer who leaves must give notice and pay a termination charge set by the PSC. The law says the charge may include the cost of power projects bought for the program that are no longer being used by participants, so those costs do not shift to other customers. In other words: the program signs long-term contracts based on how many people are in it, and the fee is meant to cover the share of those contracts a departing customer leaves behind.</div>
+<ul>
+<li>The law requires a free window of at least three billing cycles. The PSC extended it to six months for current customers (through May 1, 2027) at the communities' request.</li>
+<li>No fee for: low-income Schedule 3 homes; customers who move out of a participating community; customers who close their account; anyone enrolled by mistake (who also get a refund of up to one year).</li>
+<li>An unpaid fee cannot be used to shut off a home's power (tariff special condition 3).</li>
+<li>The PSC can change the fee amount.</li>
+</ul>
+<h3>Who set the $30 — and where the fee money goes</h3>
+<div class="plain"><b class="lbl">In plain words</b>
+The leaving fees were set by the communities' agency, not by Rocky Mountain Power. The agency's board adopted them unanimously on Oct. 7, 2024. When a board member asked whether any technical or financial analysis backed the numbers, the minutes record no analysis — only that the committee wanted the home fee to be affordable. When state regulators asked Rocky Mountain Power how the fees were figured, the company said the agency developed them and that it does not have the justification for the amounts. No record found says which fund the fee money goes into.</div>
+<div class="tablewrap"><table>
+<tr><th>Date</th><th>What the record shows</th><th>Record</th></tr>
+<tr><td>Oct. 7, 2024</td><td>Agency board adopts Resolution 24-08 setting the fee schedule: $30 homes and small businesses, $6 per average kW for larger businesses, $0 low-income. Moved by Silvestrini, seconded by Quinn, unanimous. Stated goals: encourage stable participation, avoid undue burden, and reflect larger customers' bigger effect on rates. A board member asked for the technical or financial analysis; none is recorded.</td><td>Agency minutes and board packet</td></tr>
+<tr><td>July 2025</td><td>Agency testimony: the fee should be high enough to discourage leaving but low enough not to discourage joining. No calculation given.</td><td>Christopher Thomas direct testimony</td></tr>
+<tr><td>Oct. 2025</td><td>Division of Public Utilities asked Rocky Mountain Power for the derivation of the fees. The company answered that the agency developed them and "does not possess the justification for the amounts." It also said it had not proposed any limit on how many times a customer can join and leave.</td><td>RMP response to data request 1.4, DPU Exhibit 2.2</td></tr>
+<tr><td>Aug. 2026</td><td>Rocky Mountain Power changed the streetlight fee to $0.15 per lamp, the only fee with posted math (a usage workpaper).</td><td>Compliance tariff filing</td></tr>
+</table></div>
+<ul>
+<li><b>Where fee money goes:</b> The tariff counts fees as part of "Program Rates," which are spent in the set order (start-up, administration, low-income fund, resource fund). No record names a specific account for fee money. The agency's testimony said fees from people who leave would be available to help cover the costs of shutting the program down. The Division of Public Utilities said the tariff gives no more detail than that, and expects it in future reports.</li>
+<li><b>Where program money is held:</b> Rocky Mountain Power proposed a balancing account earning interest, and two restricted reserve funds held in escrow by the agency, with a proposed 1.5% escrow fee. The PSC's March 4 order does not mention escrow.</li>
+<li><b>If participants don't pay a fee:</b> The utility agreement says unpaid fees are not Rocky Mountain Power's obligation; they are recovered through program rates — meaning other participants.</li>
+</ul>
+<p class="small"><span class="tag open">To verify</span> The "no account named" findings come from text reads of the documents; confirm against the rendered PDFs before publishing.</p>
+
+<h3>Why doesn't the power company pay for it?</h3>
+<div class="plain"><b class="lbl">In plain words</b>
+Two reasons appear in the records. First, a regulated power company does not pay for power plants out of its own pocket in the end — customers pay through rates for whatever the PSC approves. Second, this program buys clean power <i>beyond</i> what Rocky Mountain Power plans to buy for all customers, because these 16 communities asked for more. The 2019 law says the extra cost must be paid by the customers in those communities and must not shift to anyone else. So the law itself puts the cost on participants, not on the company or its shareholders.</div>
+<ul>
+<li>Rocky Mountain Power's testimony says participants pay all of the extra resource and administrative costs.</li>
+<li>The projects are owned by private developers and bought under contracts, not built by Rocky Mountain Power. That is different from a company-owned plant, where the company can earn an approved return.</li>
+<li>Rocky Mountain Power's own costs to run the program — including a full-time administrator — are charged to the program, not absorbed by the company.</li>
+</ul>
+<p class="small"><span class="tag open">Open</span> No record read shows Rocky Mountain Power contributing any of its own money, or earning a profit on the program. Neither is confirmed either way.</p>
+
+<h3>Can the amount change?</h3>
+<div class="plain"><b class="lbl">In plain words</b>
+Yes. The PSC can change the rates and the leaving fee. Rocky Mountain Power files a rate update every year. Its own projections show the rate dropping after the first few years and going below zero around 2043–2049, when savings would be returned to participants. Those are projections, not promises. The low-income surcharge cannot go above $0.70 a month.</div>
+
+<!-- ============ 4 ============ -->
+<h2 id="s4">4. Am I enrolled? Try it</h2>
+
+<div class="checker">
+  <label for="place">Where is your power meter?</label>
+  <select id="place">
+    <option value="">— choose —</option>
+    <optgroup label="Participating (16)">
+      <option value="in">Salt Lake City</option><option value="in">Ogden</option><option value="in">Park City</option>
+      <option value="in">Millcreek</option><option value="in">Holladay</option><option value="in">Midvale</option>
+      <option value="in">Emigration Canyon</option><option value="in">Alta</option><option value="in">Moab</option>
+      <option value="in">Castle Valley</option><option value="in">Springdale</option><option value="in">Francis</option>
+      <option value="in">Oakley</option>
+      <option value="in">Unincorporated Salt Lake County</option><option value="in">Unincorporated Summit County</option><option value="in">Unincorporated Grand County</option>
+    </optgroup>
+    <optgroup label="Chose not to join">
+      <option value="out">Coalville</option><option value="out">Cottonwood Heights</option><option value="out">Kearns</option>
+    </optgroup>
+    <optgroup label="Not part of the program">
+      <option value="no">Anywhere in Weber County outside Ogden (North Ogden, Roy, Ogden Valley, etc.)</option>
+      <option value="no">Any other Utah city or county</option>
+    </optgroup>
+  </select>
+  <label for="type">Is this a home or a business?</label>
+  <select id="type"><option value="home">Home</option><option value="biz">Business, farm, or government account</option></select>
+  <label for="solar">Rooftop solar?</label>
+  <select id="solar"><option value="none">No solar</option><option value="135">Yes — connected before Nov. 15, 2017 (Schedule 135)</option><option value="new">Yes — connected after that (Schedule 136 or 137)</option><option value="unsure">Yes — not sure which</option></select>
+  <label for="li">On Rocky Mountain Power's low-income Schedule 3?</label>
+  <select id="li"><option value="no">No</option><option value="yes">Yes</option></select>
+  <button onclick="checkMe()">Check</button>
+  <div id="result" aria-live="polite"></div>
+  <p class="small">What counts is where the meter is, not your mailing address. Power from a city-owned utility is not part of this program. This tool is a guide only — your opt-out notice from Rocky Mountain Power is the official word.</p>
+</div>
+
+<!-- ============ 5 ============ -->
+<h2 id="s5">5. Who is covered — map and list</h2>
+<div class="plain"><b class="lbl">In plain words</b>
+It is not by whole county. When a county joined, it covers only the areas outside any city. Weber County did not join — only Ogden City did. So North Ogden, Roy, South Ogden and the Ogden Valley are not in it.</div>
+<div id="map" role="img" aria-label="Map of the 16 participating communities"></div>
+<p class="small">Markers show town centers, not boundaries. Blue = participating city or town. Navy squares = county (unincorporated areas only). Gray = chose not to join.</p>
+
+<div class="tablewrap"><table>
+<tr><th>Community</th><th>Ordinance adopted (2026)</th></tr>
+<tr><td>Springdale</td><td>April 8</td></tr><tr><td>Summit County (unincorporated)</td><td>April 15</td></tr>
+<tr><td>Salt Lake City</td><td>April 21</td></tr><tr><td>Emigration Canyon</td><td>April 21</td></tr>
+<tr><td>Moab</td><td>April 28</td></tr><tr><td>Park City</td><td>April 30</td></tr>
+<tr><td><b>Ogden</b></td><td><b>May 5</b></td></tr><tr><td>Alta</td><td>May 13</td></tr>
+<tr><td>Francis</td><td>May 14</td></tr><tr><td>Grand County (unincorporated)</td><td>May 19</td></tr>
+<tr><td>Salt Lake County (unincorporated)</td><td>May 19</td></tr><tr><td>Castle Valley</td><td>May 20</td></tr>
+<tr><td>Holladay</td><td>May 21</td></tr><tr><td>Millcreek</td><td>May 26</td></tr>
+<tr><td>Oakley</td><td>May 27</td></tr><tr><td>Midvale</td><td>June 2 (last day)</td></tr>
+</table></div>
+<p class="small">Dates as listed by Utah Renewable Communities. Did not adopt: Coalville, Cottonwood Heights, Kearns.</p>
+<p class="small"><span class="tag open">Open</span> Magna, White City and Copperton: a 2024 state law (H.B. 35) turned Salt Lake County's metro townships into cities, and these three never joined the program. That suggests they are not part of "unincorporated Salt Lake County" — but no program record states it, and the boundary maps were not found. Salt Lake and Summit counties told the agency in October 2026 they were working with PacifiCorp on accurate unincorporated boundaries.</p>
+
+<h3>The three that said no — and why</h3>
+<div class="tablewrap"><table>
+<tr><th>Community</th><th>Vote</th><th>Reasons stated</th></tr>
+<tr><td>Coalville</td><td>Voted no May 26, 2026</td><td>Automatic enrollment; the $4 charge and added business cost; rates regulators could change; not knowing where projects would be built. One council member said it felt like an additional tax.</td></tr>
+<tr><td>Cottonwood Heights</td><td>Ordinance failed May 19, 2026</td><td>Earlier council comments called it a voluntary rate increase and the opt-out "an illusion of choice"; one member preferred opt-in. Vote count not posted.</td></tr>
+<tr><td>Kearns</td><td>Voted no May 11, again May 29, 2026</td><td>Cost for a lower-income community; automatic enrollment. Mayor said residents were not ready. A council member asked why it could not be opt-in.</td></tr>
+</table></div>
+<p class="small">Sources: KPCW (Coalville), Cottonwood Heights Jan. 20, 2026 minutes, FOX13 and Kearns May 29 minutes.</p>
+
+<!-- ============ Ogden ============ -->
+<h2 id="s5b">5b. Ogden: the Weber County piece</h2>
+<div class="plain"><b class="lbl">In plain words</b>
+Ogden is the only part of Weber County in the program. The council voted 6-1 to stay in on May 5, 2026. The city is paying $51,774 of its own money for the opt-out mailings, and it has paid more than $71,000 over the years to the agency that runs the program.</div>
+
+<h3>The May 5, 2026 vote (Ordinance 2026-7)</h3>
+<div class="tablewrap"><table>
+<tr><th>Yes (6)</th><th>No (1)</th></tr>
+<tr><td>Flor Lopez, Kevin Lundell, Shaun Myers, Ken Richey, Alicia Washington, Vice Chair Dave Graf (moved it; Lundell seconded)</td><td>Chair Richard A. Hyer</td></tr>
+</table></div>
+<ul>
+<li>Public comment: 23 spoke in support, 3 opposed. Those opposed raised the opt-out design, unnamed project partners and speculative projections.</li>
+<li>KSL reported Chair Hyer said the opt-out design relies on people who will never notice.</li>
+<li>Council Member Richey said outreach commitments largely answered his opt-out concerns.</li>
+<li>The minutes do not record Chair Hyer's reasons for his no vote.</li>
+</ul>
+
+<h3>What Ogden taxpayers have paid</h3>
+<div class="tablewrap"><table>
+<tr><th>Date</th><th>Payment</th><th>Record</th></tr>
+<tr><td>2021 (Phase 1)</td><td>$35,738 to the agency</td><td>Ogden's program page</td></tr>
+<tr><td>July 2022 (Phase 2)</td><td>$35,737.26 to the agency — 10.65% of all member payments</td><td>Agency treasurer's report</td></tr>
+<tr><td>2027 (invoice expected Jan.–Feb.)</td><td>$51,774 to Rocky Mountain Power for the two opt-out mailings</td><td>May 5, 2026 council minutes</td></tr>
+</table></div>
+<p class="small">State law puts the cost of the notices on the participating communities, not the program. <span class="tag open">Open</span> No Ogden budget line item for the $51,774 was found.</p>
+
+<h3>How Ogden got here</h3>
+<div class="tablewrap"><table>
+<tr><th>Date</th><th>Action</th><th>Vote</th></tr>
+<tr><td>Dec. 3, 2019</td><td>Joint resolution with Mayor Caldwell setting the goal</td><td>5-2</td></tr>
+<tr><td>July 13, 2021</td><td>Interlocal agreement joining the agency, with $35,738</td><td>5-2 (Hyer no, per the Standard-Examiner)</td></tr>
+<tr><td>Nov. 14, 2023</td><td>Resolution 2023-21 letting the mayor sign the agreement with Rocky Mountain Power</td><td>5-1</td></tr>
+<tr><td>Jan. 12, 2024</td><td>Mayor Nadolski signs the agreement</td><td>—</td></tr>
+<tr><td>May 5, 2026</td><td>Ordinance 2026-7 keeps Ogden in</td><td>6-1 (Hyer no)</td></tr>
+</table></div>
+<p class="small">Ogden's representatives on the agency board: Vice Chair Dave Graf and Sustainability Coordinator Lorenzo Long. <span class="tag open">Open</span> Names behind the 2019, 2021 and 2023 votes other than Hyer are not yet confirmed.</p>
+
+<!-- ============ Agency money ============ -->
+<h2 id="s5c">5c. The agency and its money</h2>
+<div class="plain"><b class="lbl">In plain words</b>
+Utah Renewable Communities has no staff of its own — workers from member cities run it, and Millcreek acts as treasurer. It has raised about $1 million, mostly from member cities, and paid it out to lawyers and consultants to build the program. No audit of the agency was found posted.</div>
+<div class="tablewrap"><table>
+<tr><th>Money in</th><th>Amount</th></tr>
+<tr><td>Member community payments</td><td>$722,084.20</td></tr>
+<tr><td>Bid fees from developers</td><td>$200,000</td></tr>
+<tr><td>Grants (Stewardship Utah $50,000; SustainEnergyFinance $50,000)</td><td>$100,000</td></tr>
+<tr><td><b>Total</b></td><td><b>$1,022,084.20</b></td></tr>
+<tr><td>Spent</td><td>About $969,938</td></tr>
+</table></div>
+<p class="small">From the agency's treasurer's report (Aug. 3, 2026 packet). A separate $118,879 state grant was paid directly to vendors. The October packet gives two different remaining balances ($52,146.27 and $39,588.52). Going forward, about $150,000 a year in agency costs is to be built into program rates. <span class="tag open">To verify</span> these figures against the rendered PDF pages before publishing.</p>
+<div class="tablewrap"><table>
+<tr><th>Role</th><th>Who</th></tr>
+<tr><td>Board chair</td><td>Dan Dugan, Salt Lake City Council</td></tr>
+<tr><td>Vice chair</td><td>David Brems, Emigration Canyon</td></tr>
+<tr><td>Treasurer</td><td>Cheri Jackson, Millcreek</td></tr>
+<tr><td>Secretary</td><td>Emily Quinton, Summit County</td></tr>
+<tr><td>Legal and technical counsel</td><td>James Dodge Russell &amp; Stephens P.C. (Phillip J. Russell)</td></tr>
+<tr><td>Technical consultants</td><td>Energy Strategies (Kevin Higgins, Brendan Acord)</td></tr>
+<tr><td>Communications</td><td>Penna Powers (capped at $66,000)</td></tr>
+<tr><td>Transmission studies</td><td>Options Transmission Consulting</td></tr>
+</table></div>
+<p class="small">Salt Lake City backs about $902,185 in start-up costs, to be repaid from program revenue.</p>
+
+<!-- ============ 6 ============ -->
+<h2 id="s6">6. Where the $4 goes</h2>
+<div class="plain"><b class="lbl">In plain words</b>
+You do not get different electricity. Everyone gets the same power through the same wires. The money goes into a pot. Private companies build new solar, wind or geothermal plants, and Rocky Mountain Power agrees to buy their power. The pot backs those deals. Before a power contract can take effect, the pot must hold enough to cover about 12½ years of that plant's power.</div>
+
+<div class="mermaid">
+flowchart TD
+  A["Your monthly charge<br/>($4 home / per-kWh business)"] --> B["1. Start-up costs"]
+  B --> C["2. Running the program<br/>+ administrative reserve"]
+  C --> D["3. Low-income fund<br/>(lets Schedule 3 homes join free)"]
+  D --> E["4. Clean energy resource fund"]
+  E --> F["Backs contracts with private developers<br/>who build and own the plants"]
+</div>
+<p class="small">Order of spending from the Schedule 100 tariff. Rocky Mountain Power was approved to hire a full-time program administrator, paid from program costs.</p>
+
+<h3>Which projects?</h3>
+<div class="plain"><b class="lbl">In plain words</b>
+As of the latest records, no developer has been publicly named and no power contract has been sent to the PSC. The projects are known only by code names. The agency's board picked two solar-plus-battery projects in September 2026 to negotiate final contracts.</div>
+<div class="tablewrap"><table>
+<tr><th>Date</th><th>What happened</th><th>Record</th></tr>
+<tr><td>May 22, 2025</td><td>Agency asks developers for project bids</td><td>Resolution 26-02</td></tr>
+<tr><td>By July 2025</td><td>14 qualifying bids received</td><td>Board minutes, Aug. 3, 2026</td></tr>
+<tr><td>Feb. 2, 2026</td><td>Short list of 6, then 4 picked to negotiate: code names PV+BESS_2, _3, _4, _7 ("PV+BESS" = solar plus battery storage). The resolution says this is not a winning bid.</td><td>Resolution 26-02</td></tr>
+<tr><td>Sept. 14, 2026</td><td>Board picks 2 projects, PV+BESS_3 and PV+BESS_4, for final contract talks with PacifiCorp. No names, sizes or locations given. Any contract comes back to the board.</td><td>Resolution 26-08</td></tr>
+<tr><td>Oct. 29, 2026</td><td>Salt Lake City says two solar projects were chosen; first projects expected on the grid 2028–2030</td><td>Salt Lake City press release</td></tr>
+</table></div>
+<p class="small">A news report said Rocky Mountain Power selected three developers. The public records found say four on the short list, then two.</p>
+
+<h3>Who owns the plants, and does Rocky Mountain Power profit?</h3>
+<div class="plain"><b class="lbl">In plain words</b>
+Private developers build and own the plants. Rocky Mountain Power buys their power under long-term contracts, and the program's savings pot backs those contracts. Every record read so far describes the program as cost recovery — participants pay its costs. No record read says whether Rocky Mountain Power earns a profit on it, so that question is still open, not answered.</div>
+<p class="small"><span class="tag open">Open</span> Profit or return to Rocky Mountain Power — not addressed either way in the PSC order or testimony read.</p>
+
+<h3>How much money?</h3>
+<p>No yearly revenue total appears in the PSC order or Rocky Mountain Power's testimony. Rocky Mountain Power's 2025 projections (made before the PSC switched homes to a flat $4) assumed:</p>
+<div class="tablewrap"><table>
+<tr><th>Assumption in Rocky Mountain Power's 2025 testimony</th><th>Figure</th></tr>
+<tr><td>Participating customers</td><td>About 203,403</td></tr>
+<tr><td>Homes assumed to opt out (share of electricity use)</td><td>20%</td></tr>
+<tr><td>Small and general businesses assumed to opt out (Schedules 6, 6A, 8, 10, 23)</td><td>70%</td></tr>
+<tr><td>Large high-voltage customers assumed to opt out (Schedules 9, 9A, 31)</td><td>95%</td></tr>
+<tr><td>Start-up costs</td><td>$820,169</td></tr>
+<tr><td>Yearly running costs</td><td>$1,014,847</td></tr>
+<tr><td>Projected reserve, end of 2026</td><td>$6.54 million</td></tr>
+<tr><td>Projected reserve, end of 2027</td><td>$20.38 million</td></tr>
+<tr><td>Projected reserve, 2030–2042</td><td>About $40.8 million</td></tr>
+</table></div>
+<p class="small">Salt Lake City's April 2026 presentation put start-up costs near $900,000, fronted by Salt Lake City and repaid from program revenue. The two start-up figures come from different documents and dates.</p>
+
+<h3>The three phases</h3>
+<div class="tablewrap"><table>
+<tr><th>Phase</th><th>Years</th><th>What happens</th></tr>
+<tr><td>Build-up</td><td>2026–2029</td><td>Highest rates; savings pot is filled</td></tr>
+<tr><td>Maintenance</td><td>2030–2042</td><td>Lower rates pay the extra cost of the clean power</td></tr>
+<tr><td>Draw-down</td><td>2043–2049</td><td>Rates projected to go below zero as savings are paid back to participants</td></tr>
+</table></div>
+<p class="small">If the program ends early, the PSC order says Rocky Mountain Power must decide whether ending or keeping each power contract is cheapest for ratepayers, and the reserve first covers what is owed to the developer.</p>
+
+<!-- ============ 7 ============ -->
+<h2 id="s7">7. The opt-in version that was dropped (H.B. 238, 2026)</h2>
+<div class="plain"><b class="lbl">In plain words</b>
+In February 2026 a draft of House Bill 238 would have changed the program to sign-up-only. That draft was replaced the next day by a version that kept automatic enrollment and added a simple opt-out check box. The final law is opt-out. No record found so far shows a vote on the opt-in draft or explains why it was dropped.</div>
+
+<p>Primary sponsor: Rep. Carl R. Albrecht. Senate sponsor: Sen. Evan J. Vickers. Each substitute is labeled "Carl R. Albrecht proposes the following substitute bill."</p>
+
+<div class="tablewrap"><table>
+<tr><th>Version</th><th>Date stamp</th><th>Opt-in or opt-out?</th><th>What happened</th></tr>
+<tr><td>Original H.B. 238</td><td>Feb. 5</td><td>Did not touch the program</td><td>House passed it Feb. 5</td></tr>
+<tr><td>1st Substitute</td><td>Feb. 10</td><td>Did not touch the program</td><td>No vote found</td></tr>
+<tr><td><b>2nd Substitute</b></td><td>Feb. 11, 9:10 a.m.</td><td><b>Opt-in</b> — "requires customers to affirmatively elect to participate"</td><td>No vote found; replaced next day</td></tr>
+<tr><td>3rd Substitute</td><td>Feb. 12, 2:03 p.m.</td><td><b>Opt-out kept</b> — adds a simple opt-out method on the notice</td><td>Senate committee recommended 5-0-2 (Feb. 12); Senate passed Feb. 19; House concurred Feb. 20</td></tr>
+<tr><td>Final law (enrolled)</td><td>—</td><td><b>Opt-out</b></td><td>Took effect May 6, 2026</td></tr>
+</table></div>
+
+<h3>The exact change</h3>
+<div class="tablewrap"><table>
+<tr><th>2nd Substitute (opt-in)</th><th>Final law (opt-out)</th></tr>
+<tr><td>A participating customer is one who has "affirmatively elected to participate."</td><td>A customer "may elect to not participate" and keep paying existing rates.</td></tr>
+<tr><td>A customer "may elect to participate" by notifying the utility.</td><td>The notice must include a simple opt-out method, "such as checking a box."</td></tr>
+<tr><td>New customers who move in later may choose to join.</td><td>New customers who move in later are enrolled unless they opt out.</td></tr>
+</table></div>
+
+<p><b>Important:</b> The House's Feb. 5 vote was on the original bill, which had nothing about this program. The House voted on the opt-out language only when it agreed to the Senate's version on Feb. 20.</p>
+
+<h3>The Feb. 12, 2026 Senate committee meeting</h3>
+<div class="plain"><b class="lbl">In plain words</b>
+The Senate Natural Resources, Agriculture, and Environment Committee voted to replace the original bill with the 3rd Substitute, the opt-out version. The opt-in 2nd Substitute was never brought up for a vote. The official minutes do not mention opt-in, opt-out, or the clean energy program at all.</div>
+<ul>
+<li>The 3rd Substitute is time-stamped 2:03 p.m. on Feb. 12. The meeting was called to order at 2:09 p.m.</li>
+<li>Sen. David Hinkins chaired during H.B. 238.</li>
+<li>Rep. Albrecht presented, assisted by PSC Chair Jerry Fenn and Jon Cox (no affiliation listed in the minutes).</li>
+<li>Spoke in favor: Dan Dugan (chair, Utah Renewable Communities); Thom Carter (vice president of government affairs, Rocky Mountain Power); Nathaniel Johnson (Utah Rural Electric Cooperative Association); Cottonwood Heights Mayor Gay Lynn Bennion. Two residents spoke without a stated position.</li>
+</ul>
+<div class="tablewrap"><table>
+<tr><th>Motion (both by Sen. Nate Blouin)</th><th>Result</th><th>Yes</th><th>Listed under "Abs"</th></tr>
+<tr><td>Replace the original bill with the 3rd Substitute</td><td>Passed 4-0-3</td><td>Blouin, Hinkins, Sandall, Stevenson</td><td>Grover, Owens, Stratton</td></tr>
+<tr><td>Pass the 3rd Substitute out favorably</td><td>Passed 5-0-2</td><td>Blouin, Hinkins, Owens, Sandall, Stratton</td><td>Grover, Stevenson</td></tr>
+</table></div>
+<p class="small">The minutes print "Abs" and do not say whether that means absent or abstaining.</p>
+
+<h3>Why was opt-in dropped?</h3>
+<div class="plain"><b class="lbl">In plain words</b>
+No legislative record found explains it. One news report does: KPCW reported on April 17, 2026 that H.B. 238 would have made the program opt-in, and that Rep. Albrecht changed course after pushback from environmental groups, telling the committee he listens to constituents. Utah Clean Energy's session wrap-up said advocacy got problem provisions in H.B. 238 changed, without naming them. The committee video is the record that would confirm what was said.</div>
+<p class="small"><span class="tag open">To confirm</span> Watch the H.B. 238 portion of the Feb. 12 committee video (linked in Sources) for Rep. Albrecht's exact words.</p>
+
+<h3>Floor votes</h3>
+<div class="tablewrap"><table>
+<tr><th>Vote</th><th>Date</th><th>Result</th><th>No votes</th></tr>
+<tr><td>House passage (original bill — nothing on this program)</td><td>Feb. 5</td><td>68-1-6</td><td>Rep. Hansen</td></tr>
+<tr><td>Senate 3rd reading (3rd Substitute)</td><td>Feb. 19</td><td>24-0-5</td><td>None</td></tr>
+<tr><td>House agrees to Senate version</td><td>Feb. 20</td><td>69-1-5</td><td>Rep. Hansen</td></tr>
+</table></div>
+<p class="small">Floor counts from third-party trackers (FastDemocracy, PolicyRisk); the official vote pages could not be opened. The governor's bill page lists H.B. 238 under March 25, 2026.</p>
+
+<h3>Background: this was not the first opt-in attempt</h3>
+<ul>
+<li><b>2019, H.B. 411</b> (primary sponsor Rep. Stephen Handy, Senate sponsor Sen. Daniel Hemmert): opt-in vs. opt-out was debated in committee. A 3rd Substitute by Rep. Kay Christofferson would have had existing customers elect to participate; the bill page lists it as not adopted. In the March 7, 2019 House committee vote, Reps. Albrecht, Chew, Christofferson and Stratton voted no. The House passed it 48-24-3 and the Senate 23-6-0.</li>
+<li><b>2024, H.B. 241</b> (Rep. Albrecht, Sen. Owens): renamed the law and added nuclear, geothermal, pumped storage and carbon capture to "clean."</li>
+<li><b>2024, S.B. 214</b> (Sen. Hinkins, Rep. Trevor Lee): removed the requirement that communities adopt a 100%-by-2030 goal. No change to opt-out.</li>
+<li>No other 2025 or 2026 bill was found that tried to change the program to opt-in.</li>
+</ul>
+
+<!-- ============ 8 ============ -->
+<h2 id="s8">8. Rooftop solar homes (net metering)</h2>
+<div class="plain"><b class="lbl">In plain words</b>
+Net metering is how Rocky Mountain Power credits homes with solar panels for extra power they send back to the grid. Utah has three versions, depending on when the solar was hooked up. Only the oldest one is left out of this program.</div>
+<div class="tablewrap"><table>
+<tr><th>Solar program</th><th>Who is on it</th><th>Credit for power sent back</th><th>Runs until</th><th>In the clean energy program?</th></tr>
+<tr><td>Schedule 135</td><td>Hooked up before Nov. 15, 2017</td><td>Full retail rate</td><td>Jan. 1, 2036</td><td><b>Homes excluded by law.</b> Businesses not excluded.</td></tr>
+<tr><td>Schedule 136</td><td>Nov. 15, 2017 – Oct. 2020</td><td>About 90–92.5% of retail</td><td>Jan. 1, 2033</td><td>Homes enrolled, pay $4</td></tr>
+<tr><td>Schedule 137</td><td>After Oct. 2020 (current)</td><td>Fixed rate, about 4–4.9¢/kWh</td><td>No end date</td><td>Homes enrolled, pay $4</td></tr>
+</table></div>
+<p class="small">The exclusion is in Utah Code 54-17-905(5). <span class="tag open">Open</span> No record found so far explains why lawmakers excluded Schedule 135 homes, or what happens to them after 2036.</p>
+
+<!-- ============ 9 ============ -->
+<h2 id="s9">9. Who decided — and what the PSC said</h2>
+<p>The PSC order of March 4, 2026 (Docket 25-035-06) was signed by Chair Jerry D. Fenn, Commissioner David R. Clark and Commissioner John S. Harvey, Ph.D. No dissent appears in the order.</p>
+<ul>
+<li>Rocky Mountain Power, the Division of Public Utilities and the Office of Consumer Services recommended waiting until a power contract was signed. The PSC approved the program effective immediately, citing expiring federal tax credits.</li>
+<li>Rocky Mountain Power and the Office of Consumer Services opposed a flat fee for homes. The PSC accepted the communities' request for a flat $4.</li>
+<li>The PSC wrote that it is generally not its role to protect residents from the decisions of their local elected leaders.</li>
+<li>The PSC found the record did not support Rocky Mountain Power's method for valuing projects, and left that question for a later proceeding.</li>
+</ul>
+<h3>What the state's consumer advocates warned</h3>
+<div class="plain"><b class="lbl">In plain words</b>
+Neither state office asked the PSC to reject the program, but both raised risks. The Office of Consumer Services said customers would be paying before anyone knew what the power would cost. The Division of Public Utilities warned that if many people opt out, the program could struggle to keep going.</div>
+<div class="tablewrap"><table>
+<tr><th>Office</th><th>Concern raised in testimony</th></tr>
+<tr><td>Office of Consumer Services (Anthony Sandonato, Oct. 2025)</td><td>Until a power contract is signed, the rate is speculative; recommended no notices or charges until then. Participants pay into reserves in advance, and a project could end early or never be built. Real costs could end up higher than estimated. Preferred charging by usage over a flat fee, saying a flat fee makes low-use homes pay more for what they get.</td></tr>
+<tr><td>Office of Consumer Services (rebuttal, Nov. 2025)</td><td>Rocky Mountain Power had no defined way to value projects, so no one could check that non-participants were protected.</td></tr>
+<tr><td>Division of Public Utilities (Robert Davis, Oct. 2025)</td><td>Gave "measured support." Warned opt-outs could create a revenue spiral. Said the program rested largely on hypotheticals. Doubted tax-credit deadlines could be met given equipment and grid-connection delays. Asked for a reporting workgroup and yearly accounting.</td></tr>
+<tr><td>Division of Public Utilities (Timothy Lenell, Daymark, Nov. 2025)</td><td>Argued for a 2-year administrative reserve, which the PSC adopted. Warned that spreading costs evenly can still shift some year-to-year costs onto non-participants.</td></tr>
+</table></div>
+
+<h3>The federal tax credit deadline</h3>
+<p>At the Dec. 16, 2025 hearing, Rocky Mountain Power's witness agreed developers needed to start construction before July 4, 2026 to keep federal production tax credits. That date comes from the 2025 federal law (P.L. 119-21). <span class="tag open">Open</span> Whether either chosen project actually started construction in time is not shown in records found.</p>
+
+<h3>Still being decided at the PSC</h3>
+<ul>
+<li><b>Docket 26-035-38</b> (reporting and how projects are valued): opened Aug. 25, 2026. The PSC ordered Rocky Mountain Power to file proposed reporting requirements by <b>Dec. 31, 2026</b>, with a comment period after.</li>
+<li><b>Oct. 26, 2026 order:</b> the PSC approved a change so customers who move no longer carry their enrollment to the new address.</li>
+<li><b>Residential surcharge:</b> a PSC clarification on June 12, 2026 set the low-income surcharge inside the $4 at $0.10 for homes. Ogden's May 5 minutes describe it as $3.88 + $0.12; the $0.12 figure now applies to businesses only.</li>
+</ul>
+
+<h3>Public comments to the PSC</h3>
+<p>The hearing transcript counts 41 public comments as of Dec. 16, 2025. Several comment files came through an online letter tool sent on behalf of people associated with the Sierra Club Utah Chapter, mostly supporting the program while objecting to parts of Rocky Mountain Power's plan. One commenter asked for a "will not exceed" rate so customers would know the most they could pay.</p>
+
+<!-- ============ 9b Ledger ============ -->
+<h2 id="s9b">9b. Energy money: what our Ledger shows</h2>
+<div class="plain"><b class="lbl">In plain words</b>
+Rocky Mountain Power's parent company, PacifiCorp, gives to Utah political campaigns every year. Our Ledger has itemized its giving from 2018 through 2026. Many of the people who wrote, changed, voted on or signed the laws behind this program received PacifiCorp contributions. Campaign contributions are legal and publicly disclosed. These records show who gave and who received — they do not show why anyone voted the way they did.</div>
+
+<div class="counter">
+  <div><b>$453,150</b><span>PacifiCorp to Utah campaigns, 2018–2026</span></div>
+  <div><b>$105,000</b><span>to Gov. Spencer Cox, every year 2018–2026</span></div>
+  <div><b>$12,500</b><span>Edison Electric Institute (utility trade group) to Cox, 2020 and 2024</span></div>
+</div>
+
+<h3>People in this story who received PacifiCorp contributions</h3>
+<div class="tablewrap"><table>
+<tr><th>Person</th><th>Role in this story</th><th>PacifiCorp contributions on file</th></tr>
+<tr><td>Gov. Spencer Cox</td><td>Signed H.B. 238 (2026)</td><td>$105,000 (2018–2026)</td></tr>
+<tr><td>Rep. Carl Albrecht</td><td>Primary sponsor, H.B. 238 (2026) and H.B. 241 (2024); voted no on H.B. 411 in 2019 committee</td><td>$500 (2018), $1,000 (2022) itemized; Ledger reconstruction lists $2,000</td></tr>
+<tr><td>Sen. Evan Vickers</td><td>Senate sponsor, H.B. 238 (2026); voted no on H.B. 411 in 2019</td><td>$3,000 (2018, 2020, 2021)</td></tr>
+<tr><td>Sen. David Hinkins</td><td>Chaired the Feb. 12 committee during H.B. 238; voted yes; sponsor of S.B. 214 (2024)</td><td>$2,000 (2018, 2020, 2023, 2024)</td></tr>
+<tr><td>Sen. Scott Sandall</td><td>Committee member; voted yes</td><td>$4,500 (2018, 2020, 2021, 2022, 2023, 2025)</td></tr>
+<tr><td>Sen. Keven Stratton</td><td>Committee member; voted yes on final passage</td><td>$2,000 (2019, 2020, 2022)</td></tr>
+<tr><td>Sen. Derrin Owens</td><td>Committee chair; voted yes on final passage; Senate sponsor of H.B. 241 (2024)</td><td>$1,000 (2019, 2020)</td></tr>
+<tr><td>Sen. Jerry Stevenson</td><td>Committee member; voted yes on the substitution</td><td>$2,000 (2018, 2019)</td></tr>
+<tr><td>Sen. Keith Grover</td><td>Committee member; listed under "Abs"</td><td>$500 (2018)</td></tr>
+<tr><td>Sen. Nate Blouin</td><td>Made both committee motions</td><td>None on file</td></tr>
+<tr><td>Rep. Colin Jack</td><td>Chaired the House committee that passed the original H.B. 238, 10-0-2</td><td>$1,000 (2025, 2026)</td></tr>
+<tr><td>Rep. Stephen Handy</td><td>Primary sponsor, H.B. 411 (2019)</td><td>$2,000 (2018, 2019, 2020)</td></tr>
+<tr><td>Daniel Hemmert</td><td>Senate sponsor, H.B. 411 (2019)</td><td>$5,500 (2018–2020)</td></tr>
+<tr><td>Rep. Kay Christofferson</td><td>Offered the opt-in substitute to H.B. 411 in 2019</td><td>$1,750 (2018, 2020)</td></tr>
+</table></div>
+
+<h3>Party and leadership committees</h3>
+<div class="tablewrap"><table>
+<tr><th>Recipient</th><th>PacifiCorp total on file</th></tr>
+<tr><td>Utah House Republican Election Committee</td><td>$59,500</td></tr>
+<tr><td>Utah Republican Senate Campaign Committee</td><td>$54,500</td></tr>
+<tr><td>Adams Leadership PAC (Senate President)</td><td>$25,000</td></tr>
+<tr><td>House Speaker Leadership PAC</td><td>$18,500</td></tr>
+<tr><td>Governors Leadership PAC</td><td>$11,000</td></tr>
+</table></div>
+
+<h3>Connections on the record</h3>
+<ul>
+<li><b>Jon Cox</b> presented H.B. 238 alongside Rep. Albrecht on Feb. 12, 2026; the minutes list no affiliation. In 2019 he testified on H.B. 411 for Rocky Mountain Power, and a 2021 PacifiCorp contribution in the state database lists the filer as "Jon Cox/Pacificorp."</li>
+<li><b>Thom Carter</b>, Rocky Mountain Power's vice president of government affairs, spoke in favor of the 3rd Substitute.</li>
+<li><b>PSC Chair Jerry Fenn</b> assisted in presenting the bill. The PSC is the agency that approved the program and sets Rocky Mountain Power's rates.</li>
+</ul>
+<h3>Rocky Mountain Power's registered lobbyists (from Hive lobbyist research)</h3>
+<div class="tablewrap"><table>
+<tr><th>Lobbyist</th><th>Rocky Mountain Power registration</th><th>Other connections on record</th></tr>
+<tr><td>Carl Cox — Utah Public Affairs / Bankhead Strategies LLC</td><td>10/18/2016 to present</td><td>Also registered for the Utah Rural Electric Cooperative Association (since 1/16/2022), whose director spoke for H.B. 238 on Feb. 12, and for Kern River Transmission, EnergySolutions, TerraPower and Torus. Paid vendor to Gov. Cox's campaign, $16,682.75 in 2023–2024. Bankhead Strategies gave $15,000 to Lincoln Hill PAC. No record found on whether he is related to Gov. Cox.</td></tr>
+<tr><td>Jeff Hartley — Sage Government Solutions</td><td>1/2/2013 to 7/12/2022</td><td>Co-founder of H3 PAC (created 2023, dissolved July 2026).</td></tr>
+</table></div>
+<p class="small">Source: lobbyist.utah.gov client rosters as pulled in Hive research (Carl Cox, August 2026; Jeff Hartley, folder 1412048, October 2026). Not to be confused: Carl Cox the lobbyist is a different person from an Ogden jeweler of the same name, and from Jon Cox, who presented H.B. 238 with Rep. Albrecht.</p>
+
+<h3>The Beehive Energy Alliance</h3>
+<p>H.B. 238's primary sponsor, Rep. Carl Albrecht, and Rep. Colin Jack, who chaired the House committee that first passed the bill, are both listed on the board of the Beehive Energy Alliance, a Utah nonprofit that says it connects private energy companies, investors and government, and hosts an invite-only legislative dinner. Its vice chairman is listed as Utah GOP chairman Rob Axson.</p>
+<p class="small">Source: Beehive Energy Alliance board page as recorded in Hive research, August 2026.</p>
+
+<h3>The other side: environmental groups</h3>
+<ul>
+<li>The Sierra Club Utah Chapter runs a political action committee that says it supports endorsed candidates with direct contributions or volunteer campaigns. Its page gives no names or amounts.</li>
+<li>Its 2026 general-election endorsements include Angela Choberka (House District 9). Choberka earlier represented Ogden on the Utah Renewable Communities board and served as its vice chair; Ogden's council replaced her as its representative in December 2025. Endorsements are not contributions — whether money went to her or others is not yet checked.</li>
+<li>None of the legislators who carried or voted on H.B. 238 appear on the Sierra Club's 2026 general-election endorsement list.</li>
+</ul>
+<p class="small"><span class="tag open">Open</span> Not yet checked: lobbyists registered for the Sierra Club, HEAL Utah, Utah Clean Energy or Utah Renewable Communities' member cities on this issue; campaign giving by environmental groups that pushed for the program (Sierra Club, HEAL Utah; Utah Clean Energy is a nonprofit), the federal PacifiCorp PAC (FEC C00082800), and Ogden City Council campaign filings, which are filed with the city, not the state database. The project developers cannot be checked until they are named.</p>
+<p class="small">Source: The Weber County Hive Ledger, PacifiCorp itemized research file (disclosures.utah.gov Advanced Search, 2018–2026, last cross-checked Oct. 3, 2026). <span class="tag open">To verify</span> per-person totals against the published Ledger pages before posting.</p>
+
+<!-- ============ 9c Sides ============ -->
+<h2 id="s9c">9c. Who it helps, who it costs, and what could have been done differently</h2>
+<div class="plain"><b class="lbl">In plain words</b>
+Every group involved gains or gives up something. This table lays out each side from the records, including what each did by the rules and what the record shows could have been done another way.</div>
+<div class="tablewrap"><table>
+<tr><th>Who</th><th>What they gain</th><th>What they risk or pay</th><th>What the record shows was done by the rules</th><th>What could have been done differently</th></tr>
+<tr><td>Homes that stay in</td><td>New clean power added to the grid in their name; projected lower rates later and refunds around 2043–2049</td><td>$4 a month before any power contract is signed; rates can change; $30 to leave after May 1, 2027</td><td>Two notices required; six-month free exit; flat fee that is easy to check</td><td>A "will not exceed" rate, as one public commenter asked; waiting for a signed contract, as three parties urged</td></tr>
+<tr><td>People who don't notice the notice</td><td>Same as above, without choosing it</td><td>Pay by default</td><td>Opt-out is what the 2019 law set; check box added in 2026</td><td>Opt-in, as the 2026 2nd Substitute and a 2019 substitute proposed</td></tr>
+<tr><td>Low-income homes (Schedule 3)</td><td>Join free; no fee to leave</td><td>Credits depend on available program funds</td><td>Credit built into the tariff</td><td>—</td></tr>
+<tr><td>Businesses</td><td>Count toward clean-energy goals</td><td>Charge grows with usage; leaving fee by size. Rocky Mountain Power assumed 70–95% would opt out</td><td>In-person notice for the largest users</td><td>Clearer cost examples per business size in the notice</td></tr>
+<tr><td>Customers outside the program</td><td>Nothing directly</td><td>Must not pay program costs — but the valuation method that protects them is not yet approved</td><td>State law bars cost shifting; PSC opened a reporting docket</td><td>Approve the valuation method before collecting money, as the Office of Consumer Services urged</td></tr>
+<tr><td>Rocky Mountain Power / PacifiCorp</td><td>New clean power on its grid backed by customers' reserve, not its own capital; contracts with developers</td><td>A program to administer; no profit line found in records read</td><td>Opposed the flat fee and recommended waiting for a signed contract</td><td>Name the developers and publish projected costs</td></tr>
+<tr><td>Developers (not yet named)</td><td>Long-term contracts backed by up to 12½ years of reserves; federal tax credits if deadlines are met</td><td>Contract not enforceable until reserve fills</td><td>Competitive bids; 14 bids, scored and narrowed</td><td>—</td></tr>
+<tr><td>City governments (Ogden: $51,774 for notices)</td><td>Meet climate goals; city's own power costs may fall (Ogden's municipal building estimate: $650 to $327 a month vs. Blue Sky)</td><td>Taxpayer money for notices and agency dues; any city accounts left enrolled pay the charge</td><td>Public hearings, ordinances, public comment</td><td>Publish total city costs; say whether city accounts were opted out; post agency audits</td></tr>
+<tr><td>The agency (Utah Renewable Communities)</td><td>Runs a first-of-its-kind program</td><td>About $970,000 spent; about $150,000 a year going forward from rates</td><td>Public board meetings, posted packets and resolutions</td><td>Post an audit; name developers when contracts are signed</td></tr>
+<tr><td>Consultants and lawyers</td><td>Paid work (part of about $970,000 spent)</td><td>—</td><td>Contracts approved in board packets</td><td>—</td></tr>
+<tr><td>Environmental groups</td><td>A policy goal they backed for seven years</td><td>—</td><td>Public comments, testimony</td><td>—</td></tr>
+<tr><td>Legislature</td><td>—</td><td>—</td><td>Committee hearing, public speakers, floor votes</td><td>Vote on the opt-in version openly; record a reason in the minutes for dropping it</td></tr>
+<tr><td>Public Service Commission</td><td>—</td><td>—</td><td>Hearings, public witness hearing, written order with reasons</td><td>Wait for a signed contract and approve a valuation method first, as Rocky Mountain Power, the Division and the Office recommended</td></tr>
+</table></div>
+<p class="small">"Could have been done differently" lists only alternatives that appear in the records — proposals made by legislators, state offices, the utility or public commenters.</p>
+
+<!-- ============ 10 ============ -->
+<h2 id="s10">10. What an auditor would check</h2>
+<div class="tablewrap"><table>
+<tr><th>#</th><th>Area</th><th>Question</th><th>Status</th></tr>
+<tr><td>1</td><td>Legal authority</td><td>Did every community pass its ordinance on time, and did the PSC application include what the law requires?</td><td><span class="tag doc">Documented</span> (dates from URC; PSC found application complete)</td></tr>
+<tr><td>2</td><td>Governance</td><td>Who sits on the agency board, who are its consultants, and are there any ties to bidding developers?</td><td><span class="tag doc">Board and consultants documented</span> · ties to developers open (developers not yet named)</td></tr>
+<tr><td>3</td><td>Money in</td><td>Do bills match the tariff? Are the right meters enrolled? Do city-paid accounts pay the charge?</td><td><span class="tag open">Open</span></td></tr>
+<tr><td>4</td><td>Money out</td><td>How much goes to start-up and administration vs. new power? Where is the reserve held?</td><td><span class="tag open">Open</span></td></tr>
+<tr><td>5</td><td>Taxpayer costs</td><td>What did each city pay for notices, outreach and agency dues? (State law puts notice costs on the communities.)</td><td><span class="tag doc">Ogden documented</span> ($51,774 notices; $71,475 to the agency) · other cities partly open · no agency audit found</td></tr>
+<tr><td>6</td><td>Notice and opt-out</td><td>Were two notices mailed within 60 days, separate from the bill, with a prominent check box? Were opt-outs honored?</td><td><span class="tag doc">Rules documented</span> · compliance open</td></tr>
+<tr><td>7</td><td>No cost shift</td><td>Are customers outside the program protected from its costs, as the law requires?</td><td><span class="tag open">Open</span> — valuation method not yet approved</td></tr>
+<tr><td>8</td><td>Contracts</td><td>Who bid, how were they scored, who was picked, and what do the power contracts say?</td><td><span class="tag doc">Process documented</span> (14 bids, 4, then 2 code-named projects) · names and contracts not yet public</td></tr>
+<tr><td>9</td><td>If it ends</td><td>What happens to money already collected?</td><td><span class="tag open">Open</span></td></tr>
+<tr><td>10</td><td>Results</td><td>How much new clean power actually comes online compared with money collected?</td><td><span class="tag open">Not yet measurable</span></td></tr>
+</table></div>
+
+<!-- ============ 11 ============ -->
+<h2 id="s11">11. Questions to ask — and who to ask</h2>
+<div class="tablewrap"><table>
+<tr><th>Question</th><th>Who to ask</th></tr>
+<tr><td>Did the city opt its own accounts (streetlights, buildings) out, and what will the city pay if it did not?</td><td>Your city council</td></tr>
+<tr><td>How much did our city pay for notices, outreach and agency dues?</td><td>Your city council or finance office</td></tr>
+<tr><td>Why was the opt-in version of H.B. 238 dropped?</td><td>Your state senator and representative; the bill sponsors</td></tr>
+<tr><td>How much of the money has gone to administration so far?</td><td>Utah Renewable Communities board (public meetings)</td></tr>
+<tr><td>Which projects were chosen, and what will the power cost?</td><td>Utah Renewable Communities; PSC dockets</td></tr>
+<tr><td>Is my account enrolled, and did my opt-out go through?</td><td>Rocky Mountain Power customer service</td></tr>
+</table></div>
+
+<!-- ============ 12 ============ -->
+<h2 id="s12">12. Words you will see</h2>
+<dl class="gloss">
+<dt>Tariff / Schedule</dt><dd>The official price sheet the PSC approves. This program is "Schedule 100."</dd>
+<dt>Docket</dt><dd>A case file at the PSC, with a number like 25-035-06.</dd>
+<dt>PPA (power purchase agreement)</dt><dd>A contract to buy power from a plant at a set price for many years.</dd>
+<dt>Developer</dt><dd>The private company that builds and owns the power plant.</dd>
+<dt>Reserve</dt><dd>The savings pot built from customers' monthly charges.</dd>
+<dt>Net-100%</dt><dd>Over a year, enough clean power is added to the grid to equal what participants use. Your power still comes from the normal mix.</dd>
+<dt>Unincorporated</dt><dd>Areas outside any city, run by the county.</dd>
+<dt>Kilowatt-hour (kWh)</dt><dd>The unit your power use is measured in on your bill.</dd>
+<dt>Production tax credit</dt><dd>A federal tax break for clean energy projects, with deadlines.</dd>
+<dt>Termination fee</dt><dd>The fee to leave after the free window closes.</dd>
+<dt>Substitute bill</dt><dd>A rewritten version of a bill that replaces the earlier version.</dd>
+</dl>
+
+<!-- ============ Sources ============ -->
+<h2>Sources</h2>
+<details>
+<summary>Show all sources and how each was read</summary>
+<ul>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/3441662503506oapwm3-4-2026.pdf">PSC Order Approving Program with Modifications, Docket 25-035-06, March 4, 2026</a> — 3441662503506oapwm3-4-2026.pdf, full text read</li>
+<li><a href="https://pscdocs.utah.gov/electric/26docs/26035T09/346371Trf8-7-2026.pdf">Rocky Mountain Power compliance tariff filing, Docket 26-035-T09, Aug. 7, 2026</a> — 346371Trf8-7-2026.pdf, full text read (proposed version)</li>
+<li><a href="https://www.utah.gov/pmn/files/1472471.pdf">Draft Schedule 100 tariff</a> — utah.gov public notice file 1472471.pdf, full text read (marked DRAFT)</li>
+<li><a href="https://www.utah.gov/pmn/files/1472473.pdf">Draft opt-out notice</a> — utah.gov public notice file 1472473.pdf, search excerpt read</li>
+<li><a href="https://le.utah.gov/Session/2026/bills/introduced/HB0238.pdf">H.B. 238 original</a> — full text read</li>
+<li><a href="https://le.utah.gov/Session/2026/bills/introduced/HB0238S01.pdf">H.B. 238 1st Substitute</a> — full text read</li>
+<li><a href="https://le.utah.gov/Session/2026/bills/introduced/HB0238S02.pdf">H.B. 238 2nd Substitute (opt-in)</a> — full text read</li>
+<li><a href="https://le.utah.gov/Session/2026/bills/introduced/HB0238S03.pdf">H.B. 238 3rd Substitute</a> — full text read</li>
+<li><a href="https://le.utah.gov/Session/2026/bills/enrolled/HB0238.pdf">H.B. 238 enrolled</a> — full text read</li>
+<li><a href="https://pf.utleg.gov/public-web/sessions/2026GS/comreport/HB0238S02.pdf">Senate committee report, Feb. 12, 2026</a> — full text read</li>
+<li><a href="https://pf.utleg.gov/public-web/transmittal-letters/2026GS-HB0238-H-1.pdf">House passage letter, Feb. 5, 2026</a> — search excerpt read</li>
+<li><a href="https://pf.utleg.gov/public-web/transmittal-letters/2026GS-HB0238S03-S-1.pdf">Senate passage letter, Feb. 19, 2026</a> — search excerpt read</li>
+<li><a href="https://pf.utleg.gov/public-web/transmittal-letters/2026GS-HB0238S03-H-2.pdf">House concurrence letter, Feb. 20, 2026</a> — search excerpt read</li>
+<li><a href="https://www.utahrenewablecommunities.org/meet-the-16-communities-of-urc/">Utah Renewable Communities: Meet the 16 Communities</a> — search excerpt read</li>
+<li><a href="https://www.utahrenewablecommunities.org/about/timeline/">Utah Renewable Communities: Program Timeline</a> — full page read</li>
+<li><a href="https://www.ksl.com/article/51508501/16-utah-locales-opt-to-take-part-in-program-meant-to-bolster-renewable-energy-use">KSL, June 8, 2026: 16 Utah locales opt to take part</a> — full page read</li>
+<li><a href="https://www.ksl.com/article/51474090/utah-regulators-ok-program-meant-to-promote-increased-use-of-renewable-energy">KSL: Utah regulators OK program</a> — search excerpt read</li>
+<li><a href="https://www.slc.gov/sustainability/100-renewable-energy-community-goal/">Salt Lake City program page</a> — search excerpt read</li>
+<li><a href="https://hub.utahcleanenergy.org/solar-power/connect-to-the-grid/">Utah Clean Energy: Connecting solar to the grid</a> — full page read</li>
+<li><a href="https://psc.utah.gov/commissioners">PSC commissioners page</a> — search excerpt read</li>
+<li><a href="https://le.utah.gov/interim/2026/html/00001652.htm">Senate NRAE Committee minutes, Feb. 12, 2026</a> — HTML page read; votes confirmed directly</li>
+<li><a href="https://le.utah.gov/Session/2026/agenda/snae0212.ag.pdf">Senate NRAE Committee agenda, Feb. 12, 2026</a> — snae0212.ag.pdf, text extraction</li>
+<li><a href="https://www.utleg.gov/event-streaming/committee/timeline/296893">Committee meeting video page, Feb. 12, 2026</a> — page read; video not yet watched</li>
+<li><a href="https://www.kpcw.org/summit-county/2026-04-17/summit-county-enrolls-in-utahs-new-renewable-energy-program">KPCW, April 17, 2026 (opt-in reversal report)</a> — HTML summary read</li>
+<li><a href="https://utahcleanenergy.org/?p=11343">Utah Clean Energy session wrap-up, April 2, 2026</a> — HTML summary read</li>
+<li><a href="https://fastdemocracy.com/bill-search/ut/2026/bills/UTB00014565">FastDemocracy H.B. 238 roll calls</a> — third-party tracker, HTML summary read</li>
+<li><a href="https://governor.utah.gov/bills/">Governor's bill actions page</a> — HTML summary read</li>
+<li><a href="https://le.utah.gov/~2019/bills/static/HB0411.html">2019 H.B. 411 bill page</a> and committee minutes — HTML summary read</li>
+<li><a href="https://le.utah.gov/~2019/bills/hbillint/HB0411S03.pdf">2019 H.B. 411 3rd Substitute (Christofferson, opt-in)</a> — text extraction</li>
+<li><a href="https://le.utah.gov/~2024/bills/static/SB0214.html">2024 S.B. 214</a> — HTML summary read</li>
+<li><a href="https://www.utah.gov/pmn/files/1444075.pdf">Ogden City Council minutes, May 5, 2026</a> — 1444075.pdf, text extraction; vote and cost confirmed directly</li>
+<li><a href="https://www.utah.gov/pmn/files/1436463.pdf">Ogden work session minutes, April 21, 2026</a> — 1436463.pdf, text extraction summary</li>
+<li><a href="https://www.utah.gov/pmn/files/1428727.pdf">Ogden work session minutes, April 7, 2026</a> — 1428727.pdf, text extraction summary</li>
+<li><a href="https://bids.ogdencity.com/1605/Community-Renewable-Energy-Program">Ogden City program page (history and payments)</a> — HTML summary read</li>
+<li><a href="https://www.ksl.com/article/51494173/ogden-opts-to-take-part-in-renewable-energy-program-joining-6-other-utah-locales">KSL, May 7, 2026: Ogden opts in</a> — HTML summary read</li>
+<li><a href="https://www.standard.net/news/2021/aug/18/ogden-leaders-still-seeking-answers-about-renewable-energy-initiative/">Standard-Examiner, Aug. 18, 2021</a> — HTML summary read</li>
+<li><a href="https://www.utah.gov/pmn/files/1459757.pdf">Agency board packet, July 13, 2026</a> — 1459757.pdf, text extraction summary</li>
+<li><a href="https://www.utah.gov/pmn/files/1467549.pdf">Agency board packet with treasurer's report, Aug. 3, 2026</a> — 1467549.pdf, text extraction summary</li>
+<li><a href="https://www.utah.gov/pmn/files/1491297.pdf">Agency board minutes, Aug. 3, 2026</a> — 1491297.pdf, text extraction summary</li>
+<li><a href="https://www.utah.gov/pmn/files/1495347.pdf">Agency board packet, Oct. 5, 2026</a> — 1495347.pdf, text extraction summary</li>
+<li><a href="https://www.utah.gov/pmn/files/1387795.pdf">Agency Resolution 26-02, Feb. 2, 2026 (short list)</a> — 1387795.pdf, text extraction summary</li>
+<li><a href="https://www.utah.gov/pmn/files/1491303.pdf">Agency Resolution 26-08, Sept. 14, 2026 (two projects)</a> — 1491303.pdf, text extraction summary</li>
+<li><a href="https://slcgreenblog.slc.gov/2026/10/29/press-release-powering-the-future-ccep-launch/">Salt Lake City press release, Oct. 29, 2026</a> — HTML summary read</li>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/342199DirTstmnyAnthonySandonatoOCS10-10-2025.pdf">OCS direct testimony, Anthony Sandonato, Oct. 10, 2025</a> — full text summary</li>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/342685RbtlTstmnyAnthonySandonatoOCS11-13-2025.pdf">OCS rebuttal testimony, Nov. 13, 2025</a> — full text summary</li>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/342222DirTstmnyRobertADavisDPU10-10-2025.pdf">DPU direct testimony, Robert Davis, Oct. 10, 2025</a> — full text summary</li>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/342694RbtlTstmnyTimothyLenellDPU11-13-2025.pdf">DPU rebuttal testimony, Timothy Lenell, Nov. 13, 2025</a> — full text summary</li>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/340042RMPDirTstimnyRobertMMeredith6-4-2025.pdf">RMP direct testimony, Robert Meredith, June 4, 2025</a> — full text summary</li>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/343265RprtrTrnscrptDec162025Hrng1-2-2026.pdf">PSC hearing transcript, Dec. 16, 2025</a> — full text summary</li>
+<li><a href="https://pscdocs.utah.gov/electric/26docs/2603538/3470722603538odrmptsprranoasc9-14-2026.pdf">PSC order, Docket 26-035-38, Sept. 14, 2026</a> — full text summary</li>
+<li>PSC Notice of Clarification, June 12, 2026 (3457722503506noc6-12-2026.pdf) and Order Approving Waiver, Oct. 26, 2026 (3476482503506oaw10-26-2026.pdf), Docket 25-035-06 — full text summaries</li>
+<li><a href="https://www.kpcw.org/summit-county/2026-05-28/coalville-says-no-to-utahs-renewable-energy-program">KPCW, May 28, 2026: Coalville says no</a> — HTML summary read</li>
+<li><a href="https://www.fox13now.com/news/local-news/salt-lake-county/kearns-officials-decide-against-renewable-energy-program-amid-financial-concerns">FOX13: Kearns decides against</a> — HTML summary read</li>
+<li><a href="https://www.cottonwoodheights.utah.gov/home/showpublisheddocument/10897/639082295610330000">Cottonwood Heights minutes, Jan. 20, 2026</a> — HTML summary read</li>
+<li><a href="https://www.utahrenewablecommunities.org/faqs/">Utah Renewable Communities FAQ</a> — HTML summary read</li>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/342227DPUExhbt2.2RMPRspnsDRs10-10-2025.pdf">RMP responses to DPU data requests (DPU Exhibit 2.2), Oct. 10, 2025</a> — 342227DPUExhbt2.2RMPRspnsDRs10-10-2025.pdf, text extraction; data request 1.4 confirmed directly</li>
+<li><a href="https://www.utah.gov/pmn/files/1197763.pdf">Agency board minutes, Oct. 7, 2024 (Resolution 24-08)</a> — 1197763.pdf, text extraction; vote confirmed directly</li>
+<li><a href="https://www.utah.gov/pmn/files/1178447.pdf">Agency board packet with Resolution 24-08 fee schedule</a> — 1178447.pdf, text extraction summary</li>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/342697RbtlTstmnyChristopherThomasCREA11-13-2025.pdf">Christopher Thomas rebuttal testimony, Nov. 13, 2025</a> — text extraction summary</li>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/340040RMPDirTstimnyCraigMEller6-4-2025.pdf">Craig Eller direct testimony, June 4, 2025 (balancing account, escrow)</a> — text extraction summary</li>
+<li><a href="https://www.utah.gov/pmn/files/1042355.pdf">Utility Agreement template (2023)</a> — 1042355.pdf, text extraction summary</li>
+<li><a href="https://www.law.cornell.edu/regulations/utah/Utah-Admin-Code-R746-314-306">Utah Admin. Code R746-314-306 (termination fee rule)</a> — HTML read</li>
+<li><a href="https://sierraclub.org/utah/political-action-committee">Sierra Club Utah Chapter political action committee page</a> — HTML summary read</li>
+<li><a href="https://www.sierraclub.org/utah/blog/2026/06/sierra-club-utah-chapter-announces-endorsements-2026-general-election">Sierra Club Utah Chapter 2026 general-election endorsements</a> — HTML summary read</li>
+<li><a href="https://www.everycrsreport.com/files/2026-07-08_IN12701_e182f2c1e35fc6f85700331da060892d1722941f.html">Congressional Research Service on 2025 tax credit deadlines</a> — HTML summary read</li>
+</ul>
+<p class="small">"Summary" means the document was read through a tool that returns a summary of its text, not by viewing rendered pages. Figures marked "to verify" should be checked against the rendered PDF before publishing.</p>
+</details>
+
+</main>
+
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent &middot; Accountability &middot; Journalism</span><p class="hb-line">The Weber County Hive and Utah Hive Politics: the people's publication. We investigate what's best for the public as a whole, not for any party or special interest group. We report public records. You decide.</p><p class="hb-tips"><a class="hb-btn" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">Send a tip</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html">Tips we checked</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">See a mistake? Tell us</a></p><p class="hb-small">Independent accountability journalism. Public records only. We report; you decide.</p><p class="hb-small">We never name tipsters. When we correct a page, the fix and its date are shown on the page.</p><p class="hb-small"><a href="index.html">Transparency home</a> · <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">Master Index (Hive library)</a> · <a href="https://webercountyhive.substack.com/">Read on Substack</a></p></div>
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+<script>
+mermaid.initialize({startOnLoad:true, theme:'base', themeVariables:{fontSize:'20px', primaryColor:'#eef3fb', primaryBorderColor:'#1b2a4a', primaryTextColor:'#1b2a4a', lineColor:'#1f5fbf'}, flowchart:{useMaxWidth:true, htmlLabels:true}});
+
+function checkMe(){
+  const p=document.getElementById('place').value, t=document.getElementById('type').value,
+        s=document.getElementById('solar').value, li=document.getElementById('li').value,
+        r=document.getElementById('result');
+  if(!p){r.innerHTML='Please choose where your meter is.';return;}
+  if(p==='out'){r.innerHTML='<b>Not enrolled.</b> Your community chose not to join.';return;}
+  if(p==='no'){r.innerHTML='<b>Not enrolled.</b> Your area is not part of the program.';return;}
+  if(t==='home'){
+    if(s==='135'){r.innerHTML='<b>Not enrolled.</b> State law excludes homes on the original net-metering program (Schedule 135).';return;}
+    if(li==='yes'){r.innerHTML='<b>Enrolled, but you pay $0.</b> Low-income Schedule 3 customers get a $4 credit, and pay no fee to leave.';return;}
+    let m='<b>Enrolled unless you opt out.</b> You will pay $4 a month starting Jan. 1, 2027. Leave free by May 1, 2027; after that, $30.';
+    if(s==='unsure') m+=' <br>If your solar was connected before Nov. 15, 2017, you may be excluded — check the rate schedule on your bill.';
+    r.innerHTML=m;return;
+  }
+  r.innerHTML='<b>Enrolled unless you opt out.</b> Businesses, farms and government accounts pay 0.609¢ per kilowatt-hour plus 12¢ a month. Leave free by May 1, 2027; after that the fee depends on your rate schedule.';
+}
+
+(function(){
+  const map=L.map('map',{scrollWheelZoom:false}).setView([39.6,-111.4],7);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:18,attribution:'&copy; OpenStreetMap contributors'}).addTo(map);
+  const cities=[["Salt Lake City",40.7608,-111.8910],["Ogden",41.2230,-111.9738],["Park City",40.6461,-111.4980],["Millcreek",40.6869,-111.8755],["Holladay",40.6688,-111.8247],["Midvale",40.6111,-111.8999],["Emigration Canyon",40.7700,-111.7400],["Alta",40.5884,-111.6386],["Moab",38.5733,-109.5498],["Castle Valley",38.6430,-109.4076],["Springdale",37.1889,-112.9986],["Francis",40.6111,-111.2827],["Oakley",40.7136,-111.3002]];
+  const counties=[["Salt Lake County (unincorporated areas)",40.62,-112.05],["Summit County (unincorporated areas)",40.87,-111.05],["Grand County (unincorporated areas)",38.98,-109.65]];
+  const out=[["Coalville — chose not to join",40.9180,-111.3999],["Cottonwood Heights — chose not to join",40.6197,-111.8102],["Kearns — chose not to join",40.6600,-111.9963]];
+  cities.forEach(c=>L.circleMarker([c[1],c[2]],{radius:8,color:'#1f5fbf',fillColor:'#1f5fbf',fillOpacity:.85}).addTo(map).bindPopup('<b>'+c[0]+'</b><br>Participating'));
+  counties.forEach(c=>L.marker([c[1],c[2]],{icon:L.divIcon({className:'',html:'<div style="width:16px;height:16px;background:#1b2a4a;border:2px solid #fff"></div>'})}).addTo(map).bindPopup('<b>'+c[0]+'</b><br>Participating — areas outside cities only'));
+  out.forEach(c=>L.circleMarker([c[1],c[2]],{radius:7,color:'#777',fillColor:'#999',fillOpacity:.8}).addTo(map).bindPopup('<b>'+c[0]+'</b>'));
+})();
+</script>
+</body>
+</html>
