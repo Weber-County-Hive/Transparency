@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lost Ideals: What Utah Promised Its Voters | Utah Hive Politics</title>
+<meta name="description" content="Utah's founding promises to voters in their own words, from 1895 and 1900 to today's open-records law, and what has changed since.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+:root{
+  --paper:#FFFFFF; --paper-2:#F2F5FA; --ink:#14213D; --ink-soft:#3E4C66;
+  --band:#0F1F3D; --band-2:#1E3A8A;
+  --rust:#1D4ED8; --rust-dark:#0F1F3D;
+  --amber:#1D4ED8; --amber-bg:#E6ECF7;
+  --line:#D5DCE8;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--paper);color:var(--ink);font-family:'Source Sans 3',sans-serif;line-height:1.65;font-size:19px;}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px;}
+a{color:var(--rust);}
+h1,h2,h3{font-family:'Playfair Display',serif;color:var(--ink);}
+
+.topbar{background:var(--ink);color:var(--amber-bg);padding:10px 0;font-family:'IBM Plex Mono',monospace;font-size:12px;}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;}
+.topbar a{color:var(--amber-bg);text-decoration:none;opacity:.85;}
+.topbar a:hover{opacity:1;text-decoration:underline;}
+
+header.band{background:linear-gradient(135deg,var(--band),var(--band-2));color:#f0ece0;padding:38px 0 32px;border-bottom:5px solid var(--amber);}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#93C5FD;margin-bottom:10px;}
+h1.title{font-size:clamp(28px,5vw,42px);color:#fff;line-height:1.18;font-weight:700;}
+.dek{margin-top:14px;font-size:19px;color:#E6ECF7;max-width:660px;}
+.caselabel{display:inline-block;margin-top:18px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;letter-spacing:.1em;color:#0F1F3D;background:#93C5FD;padding:5px 14px;border-radius:20px;}
+
+.section{padding:36px 0;border-bottom:1px solid var(--line);}
+.section h2{font-size:25px;margin-bottom:14px;}
+.section .lead{font-size:17px;color:var(--ink-soft);margin-bottom:16px;}
+.section p{margin:0 0 14px;}
+
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:18px 0;}
+.stat{background:var(--paper-2);border:1px solid var(--line);border-top:3px solid var(--amber);padding:16px 18px;}
+.stat .num{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--amber);line-height:1.15;}
+.stat .label{margin-top:6px;font-size:12.5px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.03em;}
+
+table.ledger{width:100%;border-collapse:collapse;margin:16px 0;font-size:17px;}
+table.ledger th{background:var(--band);color:#f0ece0;text-align:left;padding:9px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.04em;text-transform:uppercase;}
+table.ledger td{padding:9px 12px;border-bottom:1px solid var(--line);}
+table.ledger tr:nth-child(even) td{background:var(--paper-2);}
+table.ledger td.amt{text-align:right;font-family:'IBM Plex Mono',monospace;color:var(--rust-dark);font-weight:600;}
+
+.chain{background:#fff;border:1px solid var(--line);padding:22px 24px;margin:16px 0;}
+.chain-step{display:flex;gap:16px;padding:11px 0;border-bottom:1px dashed var(--line);}
+.chain-step:last-child{border-bottom:none;}
+.chain-step .role{font-family:'IBM Plex Mono',monospace;color:var(--amber);font-size:12px;font-weight:600;flex-shrink:0;width:110px;}
+.chain-step .txt strong{color:var(--rust-dark);}
+
+.callout{background:var(--paper-2);border-left:4px solid var(--amber);padding:16px 20px;margin:16px 0;font-size:18px;}
+.callout strong{color:var(--rust-dark);}
+.flag{background:#fff;border:1px dashed var(--ink-soft);padding:13px 18px;margin:14px 0;font-size:14px;color:var(--ink-soft);}
+.flag .tag{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+
+.full-sources{border:1px solid var(--line);background:#fff;margin:26px 0 0;}
+.full-sources summary{cursor:pointer;list-style:none;padding:15px 22px;background:var(--paper-2);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--rust-dark);}
+.full-sources summary::-webkit-details-marker{display:none;}
+.full-sources-body{padding:18px 24px 24px;font-size:16px;}
+.full-sources-body a{color:var(--rust);}
+.full-sources-body h4{font-family:'Playfair Display',serif;font-size:14px;margin:16px 0 6px;padding-top:10px;border-top:1px solid var(--line);}
+.full-sources-body p{margin:0;color:var(--ink-soft);}
+
+footer{padding:28px 0 48px;color:var(--ink-soft);font-size:15px;}
+.section{max-width:860px;margin:0 auto;padding-left:24px;padding-right:24px;}
+.stat .label{font-size:14px !important;}
+@media(max-width:640px){table.ledger{font-size:15px;}.chain-step{flex-wrap:wrap;}.chain-step .role{width:100%;}}
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-parts{background:#F2F5FA;border:2px solid #1D4ED8;border-radius:6px;padding:14px 16px;margin:0 0 24px;font-family:Arial,sans-serif}
+.hs-parts .lab{font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;font-weight:bold;color:#14213D;margin:0 0 8px}
+.hs-parts ol{margin:0 0 10px;padding-left:24px;font-size:1rem;line-height:1.45}
+.hs-parts li.cur{font-weight:bold}
+.hs-parts li.cur a{color:#14213D;text-decoration:none}
+.hs-parts .nav{display:flex;flex-wrap:wrap;gap:10px}
+.hs-parts .nav a{display:inline-block;background:#1D4ED8;color:#fff;text-decoration:none;font-weight:bold;padding:10px 16px;border-radius:5px;font-size:1rem}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
+
+.hs-partline{font-family:Arial,sans-serif;font-size:1rem;margin-top:8px;color:#E6ECF7}
+.lob{border:1px solid #D5DCE8;background:#fff;margin:0 0 12px}
+.lob summary{cursor:pointer;padding:14px 18px;font-weight:bold;font-size:1.05rem;list-style:none;border-left:6px solid #1D4ED8}
+.lob summary::-webkit-details-marker{display:none}
+.lob summary small{display:block;font-weight:normal;font-size:.9rem;color:#3E4C66}
+.lob .in{padding:6px 18px 16px}
+.lob table.ledger{font-size:15px}
+.find{width:100%;font-size:1.05rem;padding:12px 14px;border:2px solid #1D4ED8;border-radius:6px;margin:6px 0 16px;font-family:Arial,sans-serif}
+.tag-s{display:inline-block;background:#E6ECF7;color:#0F1F3D;font-family:Arial,sans-serif;font-size:.78rem;padding:2px 8px;border-radius:10px}
+.mapimg{width:100%;height:auto;border:1px solid #D5DCE8;margin:10px 0}
+.hbx-top{margin:0}
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;display:block;margin-top:2px}
+.hb-line-top{font-family:Georgia,serif;color:#e8d9b5;font-size:12.5px;display:block;margin-top:3px;line-height:1.4}
+.hbx-slim{background:#0e2438;color:#dbe7f0;font:600 14px/1.4 Arial,sans-serif;padding:7px 20px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.hbx-slim a{color:#F3E3B3;text-decoration:underline}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;line-height:1.5}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px}
+.hb-foot .hb-name,.hb-foot .hb-sub{display:block}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block}
+.hb-line{max-width:720px;margin:14px auto 0;color:#e8d9b5;font-size:15.5px;line-height:1.5}
+.hb-tips{margin:16px 0 4px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hb-btn{display:inline-block;border:2px solid #d4af37;background:#d4af37;color:#0d0b0a!important;font:700 15px Georgia,serif;padding:10px 18px;border-radius:6px;text-decoration:none!important}
+.hb-btn2{background:transparent;color:#d4af37!important}
+.hb-small{font-size:12.5px;color:#8a7650;margin:6px 0 0}
+.hb-small a{color:#d4af37;text-decoration:underline}
+.hb-foot p{max-width:720px;margin-left:auto!important;margin-right:auto!important}
+.hbx-tools{max-width:980px;margin:14px auto 4px;padding:0 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;font-family:Arial,sans-serif;position:relative;z-index:2}
+.hbx-tool{display:inline-block;font:700 15px Arial,sans-serif;color:#13233F!important;background:#fff;border:1px solid #c8cfd6;border-radius:6px;padding:9px 13px;text-decoration:none!important;cursor:pointer;line-height:1.2}
+.hbx-tool:hover{border-color:#13233F}.hbx-cnchip b{color:#1f5f9e;font-family:ui-monospace,Menlo,monospace}
+.hbx-jump{flex-basis:100%;order:5;border:1px solid #c8cfd6;border-radius:6px;background:#fff;color:#13233F}.hbx-jump summary{cursor:pointer;padding:9px 13px;font:700 15px Arial,sans-serif}
+.hbx-jump ol{margin:0;padding:4px 16px 12px 36px}.hbx-jump li{margin:6px 0;font-size:16.5px}.hbx-jump a{color:#13233F}
+.hbx-shelfwrap{background:#0e2438;color:#dbe7f0;padding:26px 20px 30px;font:16px/1.5 Arial,sans-serif;margin-top:48px;position:relative;z-index:1}
+.hbx-shelfwrap .in{max-width:900px;margin:0 auto}
+.hbx-shelf{border:2px dashed #9fd0ee;border-radius:10px;padding:16px 18px}
+.hbx-cn-big{font:600 17px ui-monospace,Menlo,monospace;margin-bottom:12px;color:#fff}.hbx-cn-big b{color:#9fd0ee}
+.hbx-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.hbx-nav-btn{flex:1;min-width:220px;background:#12304a;border:1px solid #4d86ad;border-radius:8px;padding:12px 14px;color:#fff!important;text-decoration:none!important;font-size:16px}.hbx-nav-btn b{color:#9fd0ee;font-family:ui-monospace,Menlo,monospace}.hbx-off{opacity:.5}
+.hbx-list summary{cursor:pointer;font-weight:700;padding:6px 0}.hbx-list ol{list-style:none;margin:6px 0 0;padding:0}.hbx-list li{padding:6px 0;border-bottom:1px solid #2b4a63}.hbx-list a{color:#fff!important;text-decoration:none}
+.hbx-shelf-head{color:#9fd0ee;font:600 13px ui-monospace,Menlo,monospace;letter-spacing:.1em}.hbx-cn{font-family:ui-monospace,Menlo,monospace;color:#9fd0ee;margin-right:6px}
+.hbx-find{margin:14px 0 4px}.hbx-find label{display:block;font-weight:700;margin-bottom:6px}.hbx-find div{display:flex;gap:8px;flex-wrap:wrap}.hbx-find input{flex:1;min-width:0;width:100%;padding:12px 14px;font-size:17px;border:2px solid #4d86ad;border-radius:6px;color:#13233F;background:#fff}.hbx-find button{padding:12px 18px;font-size:16px;font-weight:700;background:#9fd0ee;color:#0e2438;border:0;border-radius:6px;cursor:pointer}
+.hbx-search{font-size:15px;margin-top:12px}.hbx-search a,.hbx-search b{color:#9fd0ee}
+.hbx-totop{display:none;position:fixed;right:16px;bottom:16px;z-index:50;background:#0e2438;color:#fff!important;border:2px solid #9fd0ee;border-radius:24px;padding:10px 16px;font:700 15px Arial,sans-serif;text-decoration:none!important;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.hbx-dates{font-family:ui-monospace,Menlo,monospace;font-size:13px}
+@media(max-width:600px){.hb-bar img{width:38px;height:38px}.hb-line-top{font-size:11.5px}}
+@media print{.hbx-tools,.hbx-totop{display:none}}
+/* Hive library standard (Nov. 2, 2026) */
+.hb-foot .hb-name{font-size:16px}
+.hb-foot .hb-sub{font-size:12.5px}
+.hbx-tools{margin-top:16px;margin-bottom:14px}
+.hbx-shelfwrap+.hb-foot{margin-top:0}
+.hbx-shelf details.hbx-list li,.hbx-shelf details.hbx-list p{font-size:16px!important}
+.hb-bar img[src="hive-bee.png"]{border-radius:50%}
+.hexagon img{width:100%;height:100%;display:block;border-radius:50%}
+.bm-bee{width:26px;height:26px;vertical-align:middle;margin-right:8px;display:inline-block;border-radius:50%}
+li a,td a,p a{overflow-wrap:anywhere}
+@media(max-width:700px){.mermaid,.hs-fig{overflow-x:auto;max-width:100%}table.ledger{display:block;overflow-x:auto;max-width:100%}}
+@media(max-width:700px){main table,.wrap table,section table{display:block;overflow-x:auto;max-width:100%}main svg,section svg{max-width:100%;height:auto}}
+</style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hbx-top"><div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="hive-bee.png" alt="The Hive bee seal"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-line-top">The people's publication. We investigate what's best for the public as a whole, not any party or special interest.</span></span></a></div>
+<div class="hbx-slim"><span>Transparency · TR 300.29</span><span><a href="index.html">← Transparency home</a> · <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">← Hive library (every repo)</a></span></div></div>
+
+
+<header class="band"><div class="wrap">
+<div class="kicker">Transparency · Case File · Statewide</div>
+<h1 class="title">Lost Ideals: What Utah Promised Its Voters</h1>
+<p class="dek">Utah's constitution and laws promise that power belongs to the people, that elections are free and that government works in the open. Here is each promise in its own words, and what has changed.</p>
+<span class="caselabel">Statewide</span>
+<p class="hs-date">CASE 2026-WGS-04 · Posted Nov. 8, 2026 · Updated Nov. 8, 2026</p>
+</div></header>
+<div class="wrap">
+<div class="hs-plain">New to this? <a class="hs-btn" href="lost-ideals-plain.html">Read it in plain words</a> About 500 words, with simple charts.</div>
+<nav class="hs-parts" aria-label="Parts of this series"><p class="lab">Who Gets a Say series · Part 4 of 6</p><ol><li><a href="who-gets-a-say.html">Who Gets a Say</a></li><li><a href="holding-power.html">Holding Power</a></li><li><a href="selling-the-vote.html">Selling the Vote</a></li><li><a href="lost-ideals.html">Lost Ideals</a></li><li><a href="the-fracture.html">The Fracture</a></li><li><a href="it-happened-before.html">It Happened Before</a></li></ol><div class="nav"><a href="the-fracture.html">Next: The Fracture &rarr;</a></div></nav>
+<nav class="hs-toc" aria-label="On this page"><b style="width:100%;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;">On this page</b><a href="#short">The short version</a><a href="#promises">What Utah promised</a><a href="#1900">1900</a><a href="#changed">The promise and what changed</a><a href="#turnout">Who voted</a><a href="#sides">Each side</a><a href="#bills">Bills we've graded</a><a href="#people">People</a><a href="#notshown">What the records don't show</a><a href="#words">Words to know</a><a href="#ask">Questions to ask</a><a href="#connected">Connected Hive work</a><a href="#sources">Sources</a></nav>
+<details class="hs-pages"><summary>Transparency pages (33) · tap to open</summary><ol><li><a href="index.html">Transparency docket</a><small>Every case file, searchable</small></li><li><a href="who-gets-a-say.html">Who Gets a Say</a> · <a href="who-gets-a-say-plain.html">plain words</a><small>Utah's primary and map rules, 2018–2026</small></li><li><a href="holding-power.html">Holding Power</a> · <a href="holding-power-plain.html">plain words</a><small>How the rules kept one party in charge</small></li><li><a href="selling-the-vote.html">Selling the Vote</a> · <a href="selling-the-vote-plain.html">plain words</a><small>The business of political marketing in Utah</small></li><li class=cur><a href="lost-ideals.html">Lost Ideals</a> · <a href="lost-ideals-plain.html">plain words</a><small>What Utah promised its voters</small></li><li><a href="the-fracture.html">The Fracture</a> · <a href="the-fracture-plain.html">plain words</a><small>Why Utahns say no party represents them</small></li><li><a href="it-happened-before.html">It Happened Before</a> · <a href="it-happened-before-plain.html">plain words</a><small>Utah controversies and how they ended</small></li><li><a href="utah-amendments-2026.html">The 2026 Amendments</a> · <a href="utah-amendments-2026-plain.html">plain words</a><small>Amendments A and B on your ballot</small></li><li><a href="amendment-b-myth-vs-fact.html">Amendment B: Myth vs. Fact</a> · <a href="amendment-b-myth-vs-fact-plain.html">plain words</a><small>Claims checked against the record</small></li><li><a href="amendment-b-quiz.html">Amendment B Quiz</a><small>Test what you know</small></li><li><a href="utah-taxpayers-association.html">Who Sits at the Taxpayers Association's Table</a> · <a href="utah-taxpayers-association-plain.html">plain words</a><small>Its leaders, lobbyists, sponsors and their money</small></li><li><a href="weber-housing-authority.html">Weber Housing Authority</a> · <a href="weber-housing-authority-plain.html">plain words</a><small>A commissioner, his wife and the authority that pays their company</small></li><li><a href="bramwell-odp-enforcement.html">What the Privacy Office Can and Can't Do</a> · <a href="bramwell-odp-enforcement-plain.html">plain words</a><small>Utah's Chief Privacy Officer</small></li><li><a href="counting-the-jobs.html">Counting the Jobs</a> · <a href="counting-the-jobs-plain.html">plain words</a><small>Job promises and what was reported</small></li><li><a href="matt-brower.html">Matt Brower</a> · <a href="matt-brower-plain.html">plain words</a><small>The board seat that never came up</small></li><li><a href="nilson-foundation.html">Ten Days</a> · <a href="nilson-foundation-plain.html">plain words</a><small>The Nilson Foundation's 501(c)(3) claim</small></li><li><a href="sb258-preliminary-municipalities.html">One Vote, Four Checks</a> · <a href="sb258-preliminary-municipalities-plain.html">plain words</a><small>S.B. 258 and preliminary municipalities</small></li><li><a href="sitla-county-zoning-exemption.html">The Land Counties Can't Zone</a> · <a href="sitla-county-zoning-exemption-plain.html">plain words</a><small>Trust land and county zoning</small></li><li><a href="weber-hive-sitla-explainer.html">SITLA: The Land Nobody Zones</a> · <a href="weber-hive-sitla-explainer-plain.html">plain words</a><small>Who answers for trust land</small></li><li><a href="tyson-eagle-mountain-closure.html">Tyson Leaves Eagle Mountain</a> · <a href="tyson-eagle-mountain-closure-plain.html">plain words</a><small>Five years after opening</small></li><li><a href="utah-judicial-oversight.html">Behind the Bench</a> · <a href="utah-judicial-oversight-plain.html">plain words</a><small>Judge and lawyer complaints in Utah</small></li><li><a href="waldrip-funding-threat.html">Wrong Room, Right Message</a> · <a href="waldrip-funding-threat-plain.html">plain words</a><small>A housing adviser in Heber City</small></li><li><a href="weber-county-tax-increases-since-2019.html">Every Weber County Property Tax Increase Since 2019</a> · <a href="weber-county-tax-increases-since-2019-plain.html">plain words</a><small>The full list</small></li><li><a href="weber-fire-district-annexation.html">A New Line on the Bill</a> · <a href="weber-fire-district-annexation-plain.html">plain words</a><small>Roy and Riverdale fire annexation</small></li><li><a href="weber-fire-district-growth.html">Paying for the Next Station</a> · <a href="weber-fire-district-growth-plain.html">plain words</a><small>How Weber Fire District funds growth</small></li><li><a href="weber-hive-5th5th-sales-tax.html">Weber County's New Sales Tax</a> · <a href="weber-hive-5th5th-sales-tax-plain.html">plain words</a><small>A public vote, but no vote by the public</small></li><li><a href="weber-hive-bait-and-switch.html">Bills That Did the Opposite</a> · <a href="weber-hive-bait-and-switch-plain.html">plain words</a><small>Bait and switch, 2018 to 2026</small></li><li><a href="weber-hive-blank-box.html">The Blank Box</a> · <a href="weber-hive-blank-box-plain.html">plain words</a><small>Three disclosure forms, one pattern</small></li><li><a href="weber-hive-enforcement-gap.html">Utah's Campaign-Finance Enforcement Gap</a> · <a href="weber-hive-enforcement-gap-plain.html">plain words</a><small>Complaints filed, few penalties</small></li><li><a href="weber-hive-gsl-two-money-pots.html">One Lake, Two Money Pots</a> · <a href="weber-hive-gsl-two-money-pots-plain.html">plain words</a><small>The Great Salt Lake Trust Council</small></li><li><a href="weber-hive-powder-mountain-water.html">Wells at the Top</a> · <a href="weber-hive-powder-mountain-water-plain.html">plain words</a><small>Powder Mountain's water</small></li><li><a href="weber-hive-then-vs-now.html">Then vs. Now</a> · <a href="weber-hive-then-vs-now-plain.html">plain words</a><small>Earlier plans and later approvals in Ogden Valley</small></li><li><a href="west-haven-energy-tax.html">West Haven's 6% Energy Tax</a> · <a href="west-haven-energy-tax-plain.html">plain words</a><small>A new line on the power bill</small></li></ol></details>
+</div><div class="wrap"><div class="flag"><div class="tag">Still being checked</div>Constitution and statute text is quoted from le.utah.gov. Historical quotes are as quoted in the Utah Supreme Court's 2024 opinion or the 1895 convention record. Some news quotes come from page summaries and are being checked word for word.</div></div>
+
+<section class="section" id="short"><h2>The short version</h2>
+<div class="hs-short"><ul>
+<li>Utah's 1895 constitution says "All political power is inherent in the people." In 1900, voters added the power to pass laws themselves by initiative and to send laws to a public vote by referendum, 71% to 29%.</li>
+<li>Utah's own statutes promise open meetings and "easy and reasonable access" to public records, and favor access "when... countervailing interests are of equal weight."</li>
+<li>Since 2011, the Legislature has narrowed records access several times, changed or replaced all three 2018 voter initiatives, limited some local referendums, and gained the power to call itself into session.</li>
+<li>Voters and courts have pushed back: the 2011 records law was repealed within three weeks, and the Utah Supreme Court said in 2024 that the people's reform power is "protected from government infringement."</li>
+</ul></div>
+<div class="stat-row">
+<div class="stat"><div class="num">71%</div><div class="label">Voted yes for initiative and referendum, 1900</div></div>
+<div class="stat"><div class="num">1960</div><div class="label">First statewide initiative to pass</div></div>
+<div class="stat"><div class="num">17+</div><div class="label">Special sessions listed, 2018&ndash;2025</div></div>
+<div class="stat"><div class="num">80%</div><div class="label">Adults who voted for president in Utah, 1960 (highest in the nation)</div></div>
+</div></section>
+
+<section class="section" id="promises"><h2>What Utah promised, in its own words</h2>
+<div class="callout"><strong>Utah Constitution, Article I, Section 2 (1895)</strong><br>"All political power is inherent in the people; and all free governments are founded on their authority for their equal protection and benefit, and they have the right to alter or reform their government as the public welfare may require." (<a href="https://le.utah.gov/xcode/ArticleI/UC_AI_S2_1800010118000101.html">le.utah.gov</a>)</div>
+<div class="callout"><strong>Article I, Section 17 (1895)</strong><br>"All elections shall be free, and no power, civil or military, shall at any time interfere to prevent the free exercise of the right of suffrage." (<a href="https://le.utah.gov/xcode/ArticleI/UC_AI_S17_1800010118000101.html">le.utah.gov</a>)</div>
+<div class="callout"><strong>Article IV, Section 1 (1895)</strong><br>"Both male and female citizens of this State shall enjoy equally all civil, political and religious rights and privileges." (<a href="https://le.utah.gov/xcode/ArticleIV/UC_AIV_S1_1800010118000101.html">le.utah.gov</a>)</div>
+<div class="callout"><strong>Open and Public Meetings Act, Utah Code 52-4-102</strong><br>"The state, its agencies and political subdivisions, exist to aid in the conduct of the people's business... take their actions openly; and conduct their deliberations openly." (<a href="https://le.utah.gov/xcode/Title52/Chapter4/C52-4-S102_1800010118000101.html">le.utah.gov</a>)</div>
+<div class="callout"><strong>Government Records Access and Management Act (GRAMA), Utah Code 63G-2-102</strong><br>"Promote the public's right of easy and reasonable access to unrestricted public records... favor public access when, in the application of this act, countervailing interests are of equal weight." (<a href="https://le.utah.gov/xcode/Title63G/Chapter2/C63G-2-S102_1800010118000101.html">le.utah.gov</a>)</div>
+<p style="font-size:15px">At the 1895 convention, delegate Heber Wells said it was "very pertinent to provide that all political power is inherent in the people" (as quoted in the Utah Supreme Court's 2024 opinion). Equal suffrage passed the convention 75&ndash;14 on April 5, 1895 (<a href="https://utahwomenshistory.org/2020/04/suffrage-in-utahs-constitutional-convention/">Utah Women's History</a>).</p>
+</section>
+
+<section class="section" id="1900"><h2>1900: the people's lawmaking power</h2>
+<p class="lead">Utah was the second state, after South Dakota, to give voters initiative and referendum.</p>
+<ul style="padding-left:22px">
+<li><b>The vote:</b> Nov. 6, 1900. Yes 19,219 (71.17%), no 7,786 (28.83%) (<a href="https://ballotpedia.org/Utah_Initiative_and_Referendum_Amendment_(1900)">Ballotpedia</a>).</li>
+<li><b>Who pushed it:</b> Rep. Sherman S. Smith of Ogden, the Legislature's lone Populist, is described as the person most responsible (<a href="https://www.deseret.com/utah/2020/1/29/21112612/120-years-later-people-power-still-thrives-in-utah">Deseret News, 2020</a>).</li>
+<li><b>The text then:</b> voters "may initiate any desired legislation" or require any law, except those passed by two-thirds, "to be submitted to the voters of the State before such law shall take effect." That wording has changed very little; the main change was a 1998 two-thirds rule for wildlife initiatives (<a href="https://lwv.org/sites/default/files/2024-07/2024-07-11_Utah-SCt_opinion-reinstate-count-v.pdf">2024 UT 21, fn. 28</a>).</li>
+<li><b>The wait:</b> the enabling law came years later (1917 per Ballotpedia; <i>being confirmed</i>). Its first version required signers to sign in front of an officer who could give oaths. The first statewide initiative to pass was in 1960.</li>
+</ul>
+<div class="callout"><strong>Both sides in 1900.</strong> For: with adoption, "the people of the State would be rulers of the State, which they were not now" (Kate S. Hilliard, Salt Lake Tribune, Oct. 28, 1900). Against: the amendment would "cause a great departure from our legislative system" (Deseret Evening News, Nov. 3, 1900). Both as quoted in 2024 UT 21.</div>
+</section>
+
+<section class="section" id="changed"><h2>The promise and what changed</h2>
+<table class="ledger"><tr><th>The promise</th><th>What changed</th><th>The pushback</th></tr>
+<tr><td><b>Voters can make laws</b> (Art. VI, Sec. 1)</td><td>All three 2018 initiatives changed or replaced (H.B. 3001, S.B. 96, S.B. 200). In 2024, lawmakers proposed Amendment D to let them change any initiative.</td><td>The Utah Supreme Court (July 2024): the people's reform power is "protected from government infringement." Courts voided Amendment D.</td></tr>
+<tr><td><b>Voters can send a law to a vote</b> (referendum)</td><td>Some local land use laws made not referable (H.B. 462, 2022; S.B. 199, 2023). A referendum is void if lawmakers repeal the law first (H.B. 75, 2020).</td><td>Referendum drives led lawmakers to repeal laws in 2011, 2020 and 2025.</td></tr>
+<tr><td><b>"Easy and reasonable access" to records</b> (GRAMA)</td><td>2011 HB477 restricted records access. 2025: the seven-member State Records Committee replaced by one director the governor appoints (S.B. 277); court costs for winning records appeals limited to "bad faith" cases (H.B. 69); university president finalists kept private (S.B. 282). New exemptions in H.B. 61, H.B. 491 and H.B. 575.</td><td>HB477 repealed March 25, 2011 (House 60&ndash;3, Senate 19&ndash;5). The Society of Professional Journalists gave the Legislature its 2025 "Black Hole Award."</td></tr>
+<tr><td><b>Actions taken openly</b> (Open Meetings Act)</td><td>A fix for public infrastructure district board meetings left a new loophole (H.B. 17, 2026).</td><td>Bills to post PID board disclosures (H.B. 422) and bar secret data-center deals (S.B. 318) died in 2026.</td></tr>
+<tr><td><b>A part-time citizen Legislature</b> (45-day session, Art. VI, Sec. 16)</td><td>2018 Amendment C (about 63% yes) let lawmakers call themselves into session with two-thirds for an emergency. At least 17 special sessions are listed from 2018 to 2025.</td><td>Gov. Herbert opposed Amendment C: "They can define 'emergency' themselves." Sponsor Brad Wilson said it would "probably be very rarely used."</td></tr>
+<tr><td><b>Public notice</b></td><td>Initiative hearing notices left the newspaper (S.B. 43, 2023). Amendment A (passed Nov. 3, 2026) removes the newspaper-publication requirement for amendments.</td><td>Amendment D was voided in 2024 partly because its text wasn't published in newspapers.</td></tr>
+<tr><td><b>Local voters decide local matters</b></td><td>A handful of landowners can form a new town with no county say (S.B. 258, 2024). Small unincorporated islands join a city with no resident vote (H.B. 457, 2026).</td><td>A 2026 county-oversight reform (H.B. 510) failed in the Senate by one vote.</td></tr></table>
+<p style="font-size:15px">Sources: the bill case files below; <a href="https://le.utah.gov/~2011/bills/static/hb0477.html">HB477</a> and <a href="https://le.utah.gov/~2011S1/bills/static/HB1001.html">its repeal</a>; <a href="https://www.deseret.com/politics/2025/03/14/utah-legislature-transparency-difficult-government-records-access">Deseret News (3/14/2025)</a>; <a href="https://www.ksl.com/article/51256910">KSL on H.B. 69</a>; <a href="https://www.heraldextra.com/news/local/2025/mar/23/disregard-for-transparency-utah-legislatures-public-records-laws-earn-it-a-black-hole-award/">Daily Herald (3/23/2025)</a>; <a href="https://www.kuer.org/utah-politics/2018-11-23/whats-so-special-about-amendment-c-lawmakers-newfound-power-in-utah">KUER on Amendment C</a>; <a href="https://le.utah.gov/sessions/sessions.jsp">le.utah.gov sessions list</a>.</p>
+</section>
+
+<section class="section" id="turnout"><h2>Who voted, then and now</h2>
+<div class="hs-fig"><h3>Utah turnout for president, share of adults</h3><p class="sub">Voting-age population through 2008; eligible voters for 2020 and 2024. The two measures are close but not identical.</p><div class="hs-bars">
+<div class="lab">1960</div><div class="tr"><div class="fl" style="width:80.1%"></div><span class="v">80.1%</span></div>
+<div class="lab">1964</div><div class="tr"><div class="fl" style="width:79%"></div><span class="v">nearly 79%</span></div>
+<div class="lab">1976</div><div class="tr"><div class="fl" style="width:70%"></div><span class="v">70%</span></div>
+<div class="lab">1992</div><div class="tr"><div class="fl" style="width:67%"></div><span class="v">67%</span></div>
+<div class="lab">1996</div><div class="tr"><div class="fl" style="width:52%"></div><span class="v">52%</span></div>
+<div class="lab">2008</div><div class="tr"><div class="fl" style="width:50%"></div><span class="v">50%</span></div>
+<div class="lab">2020</div><div class="tr"><div class="fl" style="width:67.2%"></div><span class="v">67.2%</span></div>
+<div class="lab">2024</div><div class="tr"><div class="fl" style="width:64.7%"></div><span class="v">64.7%</span></div></div>
+<p class="sub">Sources: 1960/1964 news item via <a href="https://newspapers.lib.utah.edu/details?id=4422611">Utah Digital Newspapers</a> (Utah was highest in the nation); <a href="https://www.utahfoundation.org/uploads/rr710.pdf">Utah Foundation Report 710</a> (1972&ndash;2008; 2008 was "a four-decade low"); <a href="https://election.lab.ufl.edu/">UF Election Lab</a> (2020, 2024).</p></div>
+</section>
+
+<section class="section" id="sides"><h2>Each side, in its own words</h2>
+<div class="callout"><strong>The court (2024).</strong> "The people's constitutional right to alter or reform their government is protected from government infringement" (2024 UT 21).</div>
+<div class="callout"><strong>Legislative leaders.</strong> On the Amendment D ruling, Senate President Stuart Adams and Speaker Mike Schultz called it "unprecedented and troubling" (<a href="https://www.deseret.com/politics/2024/09/25/amendment-d-ruling/">Deseret News, 9/25/2024</a>). Later, Schultz: "I made some mistakes, and I'll own that." Adams: "we all can do better" (<a href="https://standard.net/news/government/2024/nov/08/utah-legislative-leaders-express-regret-over-amendment-ds-misleading-ballot-language">Utah News Dispatch, 11/8/2024</a>).</div>
+<div class="callout"><strong>Voters' groups.</strong> Katharine Biele, League of Women Voters of Utah: "I hope the legislature understands they represent us." Emma Petty Addams, Mormon Women for Ethical Government: "constitutional checks and balances exist for a reason" (Deseret News, 9/25/2024).</div>
+<div class="callout"><strong>A legislator on raising the bar for lawmakers.</strong> Rep. Norm Thurston (R) wrote in a public comment on Oct. 9, 2026: "I do agree that the Legislature should also have a higher bar." He said that if Amendment B passed, he would pursue a two-thirds vote for tax increases in both chambers. Amendment B failed.</div>
+<div class="callout"><strong>On records (2011 and 2025).</strong> Gov. Herbert on repealing HB477: "It was the right thing to do as a first step to restore public confidence" (<a href="https://www.ksl.com/article/14876351/utah-lawmakers-repeal-controversial-open-records-law">KSL</a>). Rep. Stephanie Gricius said H.B. 69 "does not restrict access"; the Utah Media Coalition said it "weakens GRAMA" (KSL, 2/19/2025).</div>
+</section>
+
+<section class="section" id="bills"><h2>Bills we've graded</h2>
+<p class="lead">Grades are from each Bill-Tracker case file.</p>
+<table class="ledger"><tr><th>Bill</th><th>Our grade</th><th>What it did</th><th>How it connects</th></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2025-sb277.html"><b>S.B. 277 (2025)</b></a><br><span style="font-size:14px">Senate 21–8–0 · House 44–23–8 · Senate concurs 18–6–5 · Signed Mar 27, 2025</span></td><td style="text-align:center;font-weight:700;font-size:20px">C-</td><td><b>Seven seats became one.</b> S.B. 277 repealed the seven-member State Records Committee, which had heard public records appeals since 1992, and gave those appeals to one director appointed by the governor with Senate consent.</td><td>Records appeals moved from a seven-member committee to one appointed director.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb61.html"><b>H.B. 61</b></a><br><span style="font-size:14px">Committee 9–0–2 · Signed Mar 23, 2026</span></td><td style="text-align:center;font-weight:700;font-size:20px">&mdash;</td><td><b>Less Detail, No Records.</b> A new GRAMA exemption closes off public records on how the Navajo Trust Fund invests its money — and the Navajo Nation's own annual report gets less detailed too, with no record of tribal consultation before the bill advanced.</td><td>New records exemption for the Navajo Trust Fund.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb491.html"><b>H.B. 491 (2023)</b></a><br><span style="font-size:14px">House Cmte 12–0–2 · Senate Cmte 5–0–3 · Signed Mar 14, 2023</span></td><td style="text-align:center;font-weight:700;font-size:20px">F</td><td><b>Bait-and-Switch: The Great Salt Lake Bill That Helped Its Own Sponsor.</b> Created the Great Salt Lake Commissioner position and a new GRAMA exemption for the Commissioner's water-related records — added in the Senate substitute Sen.</td><td>New records exemption for the Great Salt Lake Commissioner.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2026-hb575.html"><b>H.B. 575 (2026)</b></a><br><span style="font-size:14px">House 67–2–6 · Senate 24–1–4 · Signed Mar 23, 2026</span></td><td style="text-align:center;font-weight:700;font-size:20px">D</td><td><b>A Gas Tax Cut, and Refinery Numbers Sealed Off.</b> Cut the state gas tax to a flat $0.319 a gallon for the second half of 2026.</td><td>Refinery reports made confidential.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb17.html"><b>H.B. 17</b></a><br><span style="font-size:14px">House 70–0–5 · Senate 26–0–3 · Signed May 6, 2026</span></td><td style="text-align:center;font-weight:700;font-size:20px">F</td><td><b>The Loophole That Replaced the Loophole.</b> A rule requiring public infrastructure district board meetings inside their own district looked like a real fix once the old "annual retreat" exception was removed — but what replaced it lets a board meet anywhere in the much larger city or county that created it, with no limit on how often, and nothing that requires anyone to say when they've used it.</td><td>Open-meetings fix for PID boards with a new loophole.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-hb457.html"><b>H.B. 457</b></a><br><span style="font-size:14px">House 62–2 · Senate 25–1 · House concurrence 61–6 · Signed Mar 26, 2026</span></td><td style="text-align:center;font-weight:700;font-size:20px">D</td><td><b>County Islands and the County Auditor.</b> Small unincorporated islands in second-class counties, including Weber, join the surrounding city on July 1, 2027 with no resident vote, unless the county commission exempts them.</td><td>Islands join a city with no resident vote.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-sb258.html"><b>S.B. 258</b></a><br><span style="font-size:14px">Senate 29–0–0 · House 71–1–3 · Signed Mar 21, 2024</span></td><td style="text-align:center;font-weight:700;font-size:20px">D</td><td><b>Municipal Incorporation Amendments.</b> Lets as few as one landowner turn their own land into a brand-new town, no county approval required.</td><td>New towns with no county approval.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2023-sb43.html"><b>S.B. 43 (2023)</b></a><br><span style="font-size:14px">House 67-0-8 · Senate 26-0-3 · Signed Mar 20, 2023</span></td><td style="text-align:center;font-weight:700;font-size:20px">C-</td><td><b>Hearing Notices Leave the Newspaper.</b> Created class A and class B public notices.</td><td>Hearing notices leave the newspaper.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2019-hb119.html"><b>H.B. 119 (2019)</b></a><br><span style="font-size:14px">House 64-7-4 (3/5/19); Senate 21-1-7 (3/14/19); House concurred 59-12-4 (3/14/19) · Signed 3/25/2019; effective 5/14/2019 (Chapter 203)</span></td><td style="text-align:center;font-weight:700;font-size:20px">D</td><td><b>The Rewrite: Local Initiatives and Referendums After 2018.</b> H.B. 119 (2019), primary sponsor Rep.</td><td>Rewrote local initiative and referendum rules after 2018.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2023-sb199.html"><b>S.B. 199 (2023)</b></a><br><span style="font-size:14px">Senate committee 4-1-1 (2/13/23); Senate 18-6-5 (2nd reading, 2/14/23) and 19-5-5 (3rd reading, 2/17/23); House committee 5-4-2 (2/22/23); House 55-15-5 after a floor amendment (3/1/23); Senate concurred 16-9-4 (3/2/23) · Signed 3/23/2023</span></td><td style="text-align:center;font-weight:700;font-size:20px">D</td><td><b>Two-Thirds, Then Unanimous: The Land Use Referendum Rule.</b> As introduced, S.B. 199 (2023) made any local land use law passed by a two-thirds vote not referable to voters.</td><td>Limited referendums on some local land use laws.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2022-hb462.html"><b>H.B. 462 (2022)</b></a><br><span style="font-size:14px">House 56-18-1 (3/1/22); Senate 24-3-2 (3/3/22); House concurred 61-11-3 (3/3/22) · Signed 3/24/2022</span></td><td style="text-align:center;font-weight:700;font-size:20px">D</td><td><b>Added on the Floor: The Transit-Area Referendum Limits.</b> H.B. 462 (2022) was a large housing bill: station area plans around transit stops, moderate income housing plans, a Rural Housing Fund and more.</td><td>Transit-area land use referendum limits added on the floor.</td></tr></table>
+<h3 style="font-size:20px;margin:16px 0 8px">Bills that would have widened access, and died</h3>
+<table class="ledger"><tr><th>Bill</th><th>Our grade</th><th>What it did</th><th>How it connects</th></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2026-sb318.html"><b>S.B. 318 (2026)</b></a><br><span style="font-size:14px">No committee hearing · No votes · Died Mar 6, 2026</span></td><td style="text-align:center;font-weight:700;font-size:20px">A-</td><td><b>No Secret Deals with Data Centers.</b> Would have barred state agencies, cities, towns and counties from signing non-disclosure agreements with prospective data centers of 20 megawatts or more, made such agreements void, required them to be posted online, and let any Utah resident sue.</td><td>Would have barred secret deals with data centers.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2026-hb422.html"><b>H.B. 422 (2026)</b></a><br><span style="font-size:14px">House 66-1-8 · Senate committee 5-0-2 · No Senate floor vote · Died Mar 6, 2026</span></td><td style="text-align:center;font-weight:700;font-size:20px">A</td><td><b>PID Board Disclosures, and a Way to Close a PID.</b> Would have required appointed public infrastructure district board members to file and post conflict-of-interest disclosures on the Utah Public Notice Website, and required a district to dissolve once its debts were paid and its projects handed over.</td><td>Would have required PID board disclosures.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2006-hb120.html"><b>H.B. 120 (2006)</b></a><br><span style="font-size:14px">House committee 8-0-3 · House 27-46-2 · Died Feb. 13, 2006</span></td><td style="text-align:center;font-weight:700;font-size:20px">B</td><td><b>Hold the Law Until the Vote.</b> Would have kept a city or county law from taking effect while a referendum against it was pending, replacing a code sentence that said the law stays in effect until voters repeal it.</td><td>Would have paused a local law while its referendum was pending.</td></tr><tr><td><a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-2013-sb66.html"><b>S.B. 66 (2013)</b></a><br><span style="font-size:14px">Senate 27-1-1 · House: enacting clause struck, no vote · Died Mar. 14, 2013</span></td><td style="text-align:center;font-weight:700;font-size:20px">B</td><td><b>Passed the Senate, Never Voted On in the House.</b> Would have kept a challenged city or county law on hold until voters approved it, and required a budget officer's fiscal and legal estimate of repeal plus a public hearing.</td><td>Same idea; passed the Senate, never voted on in the House.</td></tr></table>
+</section>
+
+<section class="section" id="people"><h2>People in this part</h2><p class="lead">Where each person appears elsewhere in the Hive. Being named here does not mean anyone did anything wrong.</p><table class="ledger"><tr><th>Who</th><th>Why they are here</th><th>Other Hive pages</th></tr><tr><td><b>Stuart Adams</b></td><td>Senate President (R); lost his 2026 primary</td><td><a href="https://weber-county-hive.github.io/pac/adams-leadership-pac.html">Adams Leadership PAC</a><br><a href="https://weber-county-hive.github.io/Transparency/weber-hive-enforcement-gap.html">Enforcement Gap</a></td></tr><tr><td><b>Mike Schultz</b></td><td>House Speaker (R)</td><td><a href="https://weber-county-hive.github.io/candidates2026/hd12-graff-schultz.html">HD-12 race file</a><br><a href="https://weber-county-hive.github.io/pac/house-speaker-leadership-pac.html">House Speaker Leadership PAC</a><br><a href="https://weber-county-hive.github.io/followthedeed/weber-hive-schultz-water-rights.html">Schultz water rights</a><br><a href="https://webercountyhive-coder.github.io/Data-Centers/weber-hive-dc-stratos-land.html">Stratos land</a></td></tr><tr><td><b>Matt MacPherson</b></td><td>Rep. (R); House sponsor of the 2025 GRAMA intent change</td><td><a href="https://weber-county-hive.github.io/candidates2026/hd26-macpherson-finch.html">HD-26 race file</a></td></tr><tr><td><b>Calvin Musselman</b></td><td>Sen. (R); Senate sponsor of H.B. 242</td><td><a href="https://webercountyhive-coder.github.io/GOVERNMENT-IN-COURT/utah-political-watch-v-legislature.html">Utah Political Watch v. Musselman</a></td></tr><tr><td><b>Jordan Teuscher</b></td><td>Rep. (R); primary sponsor of the party-switch laws and the union law</td><td><a href="https://weber-county-hive.github.io/Utah-House/weber-hive-teuscher.html">House profile</a><br><a href="https://weber-county-hive.github.io/pac/checks-and-balances-pac.html">Checks & Balances PAC</a></td></tr></table></section>
+<section class="section" id="notshown"><h2>What the records do not show</h2>
+<ul style="padding-left:22px">
+<li>Why any lawmaker voted as they did. Stated reasons are quoted where reported.</li>
+<li>The exact year of the first initiative enabling law (1917 per one secondary source).</li>
+<li>Whether a 2025 proposal to remove "two constitutional rights" from GRAMA's intent section passed. The official code page still shows the original wording.</li>
+<li>How many of the special sessions lawmakers called themselves.</li>
+</ul></section>
+
+<section class="section" id="words"><h2>Words to know</h2><p>Tap a card to see what it means.</p><div class="hs-flips">
+<button class="hs-flip" aria-expanded="false"><div class="ft">Initiative</div><div class="fh">Tap to see</div><div class="fd">A law written and put on the ballot by voters through a petition.</div></button>
+<button class="hs-flip" aria-expanded="false"><div class="ft">Referendum</div><div class="fh">Tap to see</div><div class="fd">A petition that sends a law the Legislature passed to a public vote before it takes effect.</div></button>
+<button class="hs-flip" aria-expanded="false"><div class="ft">GRAMA</div><div class="fh">Tap to see</div><div class="fd">Utah's public records law, the Government Records Access and Management Act.</div></button>
+<button class="hs-flip" aria-expanded="false"><div class="ft">Populist</div><div class="fh">Tap to see</div><div class="fd">The People's Party of the 1890s, which pushed for direct democracy like initiative and referendum.</div></button>
+<button class="hs-flip" aria-expanded="false"><div class="ft">Special session</div><div class="fh">Tap to see</div><div class="fd">A meeting of the Legislature outside its 45-day general session.</div></button>
+</div></section>
+
+<section class="section" id="ask"><h2>Questions to ask, and whom to ask</h2><div class="hs-qa">
+<div><b>Your legislators</b>Should changing a voter-passed initiative require a two-thirds vote?</div>
+<div><b>Your legislators</b>Should the State Records Committee's seven seats be restored?</div>
+<div><b>The governor's office</b>How many records appeals has the new Government Records Office decided, and how many for the public?</div>
+<div><b>Senate President and House Speaker</b>Which special sessions since 2018 did the Legislature call itself, and for what emergency?</div>
+<div><b>Yourself</b>Read Article I, Section 2 of the Utah Constitution. What does "inherent in the people" mean to you?</div>
+</div></section>
+
+<section class="section" id="connected"><h2>Connected Hive work</h2><div class="hs-cards">
+<a href="who-gets-a-say.html"><b>Who Gets a Say</b><span>Part 1</span></a>
+<a href="holding-power.html"><b>Holding Power</b><span>Part 2</span></a>
+<a href="https://weber-county-hive.github.io/Bill-Tracker/weber-hive-petition-laws-2016-2026.html"><b>Ten Years of Petition Laws</b><span>Bill-Tracker</span></a>
+<a href="utah-amendments-2026.html"><b>The 2026 Amendments</b><span>Transparency: Amendments A and B</span></a>
+<a href="weber-hive-at-risk-checkbox.html"><b>The Checkbox</b><span>Transparency: disclosure redactions</span></a>
+<a href="https://weber-county-hive.github.io/then-and-now/state-records-committee.html"><b>Seven Citizens, Then One Director</b><span>Then and Now</span></a><a href="https://weber-county-hive.github.io/Surveillance/weber-hive-grama-gap.html"><b>The GRAMA Gap</b><span>Surveillance repo</span></a><a href="https://webercountyhive-coder.github.io/referendum/pid-mida-referendums-blocked.html"><b>Two Referendums, Zero Votes</b><span>Referendums repo</span></a></div></section>
+
+<section class="section" id="behind"><h2>Behind this piece</h2>
+<div class="hs-counter"><div><div class="n">55</div><div class="l">Constitution sections, statutes, court opinions, convention records and reports read (estimate)</div></div><div><div class="n">15</div><div class="l">Graded bills connected</div></div><div><div class="n">90</div><div class="l">Searches run (estimate)</div></div></div>
+<p class="hs-updates">Posted Nov. 8, 2026.</p></section>
+
+<section class="section" id="sources" style="border-bottom:none;"><details class="full-sources"><summary>Full sources</summary><div class="full-sources-body">
+<h4>Constitution and statutes</h4><p>Utah Constitution <a href="https://le.utah.gov/xcode/ArticleI/UC_AI_S2_1800010118000101.html">Art. I, Sec. 2</a>, Art. I, Sec. 4, Art. I, Sec. 17, <a href="https://le.utah.gov/xcode/ArticleIV/UC_AIV_S1_1800010118000101.html">Art. IV, Sec. 1</a>, <a href="https://le.utah.gov/xcode/ArticleVI/UC_AVI_S1_1800010118000101.html">Art. VI, Sec. 1</a>, <a href="https://le.utah.gov/xcode/ArticleVI/UC_AVI_S2_2020051220210101.html">Art. VI, Sec. 2</a>, <a href="https://le.utah.gov/xcode/ArticleVI/UC_AVI_S16_2020051220210101.html">Art. VI, Sec. 16</a>; <a href="https://le.utah.gov/xcode/Title52/Chapter4/C52-4-S102_1800010118000101.html">Utah Code 52-4-102</a>; <a href="https://le.utah.gov/xcode/Title63G/Chapter2/C63G-2-S102_1800010118000101.html">Utah Code 63G-2-102</a>.</p>
+<h4>History</h4><p>1900 amendment notice, <a href="https://newspapers.lib.utah.edu/details?id=4691632">Utah Digital Newspapers</a>; <a href="https://ballotpedia.org/Utah_Initiative_and_Referendum_Amendment_(1900)">Ballotpedia, 1900 vote</a>; <a href="https://ballotpedia.org/History_of_Initiative_&_Referendum_in_Utah">Ballotpedia, history</a>; <a href="https://initiativeandreferenduminstitute.org/utah">Initiative &amp; Referendum Institute</a>; 1895 convention record, <a href="https://le.utah.gov/documents/conconv/27.htm">Day 27</a> and <a href="https://le.utah.gov/documents/conconv/30.htm">Day 30</a>; <a href="https://utahwomenshistory.org/2020/04/suffrage-in-utahs-constitutional-convention/">Utah Women's History</a>; <a href="https://www.deseret.com/utah/2020/1/29/21112612/120-years-later-people-power-still-thrives-in-utah">Deseret (1/29/2020)</a>; <a href="https://www.deseret.com/opinion/2024/07/11/people-power-takes-a-big-step-in-utah/">Deseret (7/11/2024)</a>.</p>
+<h4>Courts</h4><p><a href="https://lwv.org/sites/default/files/2024-07/2024-07-11_Utah-SCt_opinion-reinstate-count-v.pdf">League of Women Voters of Utah v. Utah State Legislature, 2024 UT 21</a>.</p>
+<h4>Records and sessions</h4><p><a href="https://le.utah.gov/~2011/bills/static/hb0477.html">HB477 (2011)</a>; <a href="https://le.utah.gov/~2011S1/bills/static/HB1001.html">HB1001 (2011 S1)</a>; <a href="https://www.ksl.com/article/14876351/utah-lawmakers-repeal-controversial-open-records-law">KSL (3/25/2011)</a>; <a href="https://www.ksl.com/article/51256910">KSL (2/19/2025)</a>; <a href="https://www.deseret.com/politics/2025/03/14/utah-legislature-transparency-difficult-government-records-access">Deseret (3/14/2025)</a>; <a href="https://www.heraldextra.com/news/local/2025/mar/23/disregard-for-transparency-utah-legislatures-public-records-laws-earn-it-a-black-hole-award/">Daily Herald (3/23/2025)</a>; <a href="https://le.utah.gov/sessions/sessions.jsp">le.utah.gov sessions list</a>; <a href="https://www.kuer.org/utah-politics/2018-11-23/whats-so-special-about-amendment-c-lawmakers-newfound-power-in-utah">KUER (11/23/2018)</a>.</p>
+<h4>Turnout</h4><p><a href="https://newspapers.lib.utah.edu/details?id=4422611">Utah Digital Newspapers (1964&ndash;65 item)</a>; <a href="https://www.utahfoundation.org/uploads/rr710.pdf">Utah Foundation Report 710</a>; <a href="https://election.lab.ufl.edu/">UF Election Lab</a>.</p>
+<h4>Quotes</h4><p><a href="https://www.deseret.com/politics/2024/09/25/amendment-d-ruling/">Deseret (9/25/2024)</a>; <a href="https://standard.net/news/government/2024/nov/08/utah-legislative-leaders-express-regret-over-amendment-ds-misleading-ballot-language">Utah News Dispatch via Standard-Examiner (11/8/2024)</a>.</p>
+</div></details></section>
+<div class="hbx-shelfwrap"><div class="in"><div class="hbx-shelf" id="hbx-shelf"></div></div></div>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent &middot; Accountability &middot; Journalism</span><p class="hb-line">The Weber County Hive and Utah Hive Politics: the people's publication. We investigate what's best for the public as a whole, not for any party or special interest group. We report public records. You decide.</p><p class="hb-tips"><a class="hb-btn" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">Send a tip</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html">Tips we checked</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">See a mistake? Tell us</a></p><p class="hb-small">Independent accountability journalism. Public records only. We report; you decide.</p><p class="hb-small">We never name tipsters. When we correct a page, the fix and its date are shown on the page.</p><p class="hb-small"><a href="index.html">Transparency home</a> · <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">Master Index (Hive library)</a> · <a href="https://webercountyhive.substack.com/">Read on Substack</a></p></div>
+<script src="tr-shelf.js?v=1"></script>
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"Arial, sans-serif",fontSize:'22px',primaryColor:'#F2F5FA',primaryTextColor:'#0F1F3D',primaryBorderColor:'#1D4ED8',lineColor:'#1E3A8A',edgeLabelBackground:'#FFFFFF'},flowchart:{curve:'basis',padding:18,useMaxWidth:true}});}catch(e){}</script>
+</body>
+</html>
