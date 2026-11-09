@@ -17,6 +17,78 @@
 // old one.
 const CASES = [
   {
+    caseNumber: "CASE 2026-WGS-01",
+    title: "Who Gets a Say: Utah's Primary and Map Rules, 2018\u20132026",
+    category: "Elections & Voting",
+    summary: "Part 1 of 6. How the congressional map and party-primary rules changed from 2018 to 2026, who paid on each side, and what taxpayers paid.",
+    officials: ["Jordan Teuscher", "Stuart Adams", "Mike Schultz", "Rob Axson", "Elizabeth Rasmussen", "Ben McAdams", "Dianna Gibson"],
+    status: "documented",
+    published: "Nov 8, 2026",
+    updated: "Nov 8, 2026",
+    plain: true,
+    link: "who-gets-a-say.html"
+  },
+  {
+    caseNumber: "CASE 2026-WGS-02",
+    title: "Holding Power: How the Rules Kept One Party in Charge",
+    category: "Elections & Voting",
+    summary: "Part 2 of 6. Maps, petition rules, voter-passed laws, the courts and 13 new appointed boards, with the votes and each side's words.",
+    officials: ["Stuart Adams", "Mike Schultz", "Gov. Spencer Cox", "Jefferson Moss", "Aaron Starks", "47G", "MIDA"],
+    status: "documented",
+    published: "Nov 8, 2026",
+    updated: "Nov 8, 2026",
+    plain: true,
+    link: "holding-power.html"
+  },
+  {
+    caseNumber: "CASE 2026-WGS-03",
+    title: "Selling the Vote: The Business of Political Marketing in Utah",
+    category: "Campaign Finance & Ethics",
+    summary: "Part 3 of 6. Ads, party postage, paid signature gathering, vendors and polls, plus bills whose titles promised one thing while the law did another.",
+    officials: ["Utah Republican Party", "Patriot Grassroots", "Better Boundaries", "Jim Alvey", "Americans for Prosperity Utah"],
+    status: "documented",
+    published: "Nov 8, 2026",
+    updated: "Nov 8, 2026",
+    plain: true,
+    link: "selling-the-vote.html"
+  },
+  {
+    caseNumber: "CASE 2026-WGS-04",
+    title: "Lost Ideals: What Utah Promised Its Voters",
+    category: "Open Government",
+    summary: "Part 4 of 6. Utah's 1895 and 1900 promises in their own words, the open-records and open-meetings laws, and what has changed.",
+    officials: ["Sherman S. Smith", "Stuart Adams", "Mike Schultz", "Gov. Gary Herbert"],
+    status: "documented",
+    published: "Nov 8, 2026",
+    updated: "Nov 8, 2026",
+    plain: true,
+    link: "lost-ideals.html"
+  },
+  {
+    caseNumber: "CASE 2026-WGS-05",
+    title: "The Fracture: Why Utahns Say No Party Represents Them",
+    category: "Elections & Voting",
+    summary: "Part 5 of 6. Unaffiliated voters by county, trust polls, turnout, and where the public and the Legislature split.",
+    officials: ["Gov. Spencer Cox", "Phil Lyman", "Rob Axson", "Brian King", "Emily Buss"],
+    status: "documented",
+    published: "Nov 8, 2026",
+    updated: "Nov 8, 2026",
+    plain: true,
+    link: "the-fracture.html"
+  },
+  {
+    caseNumber: "CASE 2026-WGS-06",
+    title: "It Happened Before: Cox's Two Races, Utah Controversies and How They Ended",
+    category: "Elections & Voting",
+    summary: "Part 6 of 6. Cox's 2020 and 2024 races, a county map of the 2024 primary, controversies from both parties with their outcomes, and earlier times Utah fought these fights.",
+    officials: ["Gov. Spencer Cox", "Phil Lyman", "Deidre Henderson", "John Swallow", "Sean Reyes", "Diana Hagen"],
+    status: "documented",
+    published: "Nov 8, 2026",
+    updated: "Nov 8, 2026",
+    plain: true,
+    link: "it-happened-before.html"
+  },
+  {
     caseNumber: "CASE 2026-ENF-01",
     title: "Utah's Campaign-Finance Enforcement Gap",
     category: "Campaign Finance & Ethics",

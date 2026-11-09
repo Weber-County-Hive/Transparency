@@ -301,6 +301,66 @@ var HBX = {
       "callNumber": "TR 300.22",
       "slug": "utah-taxpayers-association-plain",
       "name": "The Utah Taxpayers Association, in Plain Words"
+    },
+    {
+      "callNumber": "TR 300.23",
+      "slug": "who-gets-a-say",
+      "name": "Who Gets a Say: Utah's Primary and Map Rules, 2018-2026"
+    },
+    {
+      "callNumber": "TR 300.24",
+      "slug": "who-gets-a-say-plain",
+      "name": "Who Gets a Say, in Plain Words"
+    },
+    {
+      "callNumber": "TR 300.25",
+      "slug": "holding-power",
+      "name": "Holding Power: How the Rules Kept One Party in Charge"
+    },
+    {
+      "callNumber": "TR 300.26",
+      "slug": "holding-power-plain",
+      "name": "Holding Power, in Plain Words"
+    },
+    {
+      "callNumber": "TR 300.27",
+      "slug": "selling-the-vote",
+      "name": "Selling the Vote: The Business of Political Marketing in Utah"
+    },
+    {
+      "callNumber": "TR 300.28",
+      "slug": "selling-the-vote-plain",
+      "name": "Selling the Vote, in Plain Words"
+    },
+    {
+      "callNumber": "TR 300.29",
+      "slug": "lost-ideals",
+      "name": "Lost Ideals: What Utah Promised Its Voters"
+    },
+    {
+      "callNumber": "TR 300.30",
+      "slug": "lost-ideals-plain",
+      "name": "Lost Ideals, in Plain Words"
+    },
+    {
+      "callNumber": "TR 300.31",
+      "slug": "the-fracture",
+      "name": "The Fracture: Why Utahns Say No Party Represents Them"
+    },
+    {
+      "callNumber": "TR 300.32",
+      "slug": "the-fracture-plain",
+      "name": "The Fracture, in Plain Words"
+    },
+    {
+      "callNumber": "TR 300.33",
+      "slug": "it-happened-before",
+      "name": "It Happened Before: Cox's Two Races and Utah Controversies"
+    },
+    {
+      "callNumber": "TR 300.34",
+      "slug": "it-happened-before-plain",
+      "name": "It Happened Before, in Plain Words"
     }
   ],
   "shelves": {
