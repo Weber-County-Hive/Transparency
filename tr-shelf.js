@@ -93,6 +93,16 @@ var HBX = {
       "name": "Paying for the Next Station, in Plain Words"
     },
     {
+      "callNumber": "TR 100.17",
+      "slug": "weber-county-2027-budget",
+      "name": "What to Watch in Weber County's 2027 Budget"
+    },
+    {
+      "callNumber": "TR 100.18",
+      "slug": "weber-county-2027-budget-plain",
+      "name": "Weber County's 2027 Budget, in Plain Words"
+    },
+    {
       "callNumber": "TR 200.01",
       "slug": "weber-hive-sitla-explainer",
       "name": "SITLA: The Land Nobody Zones"

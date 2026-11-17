@@ -89,6 +89,18 @@ const CASES = [
     link: "it-happened-before.html"
   },
   {
+    caseNumber: "CASE 2026-BUD-01",
+    title: "What to Watch in Weber County's 2027 Budget",
+    category: "Public Finance",
+    summary: "The 2027 tentative budget adds $9.7 million from the new 0.20% sales tax, moves about the same amount out to building projects and paramedics, plans $34 million for the Weber Center remodel and a jail medical and mental health expansion, and has several funds spending savings. Public hearing Nov. 24, 6 p.m.; final vote Dec. 15.",
+    officials: ["Weber County Commission", "Weber County Clerk/Auditor"],
+    status: "documented",
+    published: "Nov 5, 2026",
+    updated: "Nov 17, 2026",
+    plain: true,
+    link: "weber-county-2027-budget.html"
+  },
+  {
     caseNumber: "CASE 2026-ENF-01",
     title: "Utah's Campaign-Finance Enforcement Gap",
     category: "Campaign Finance & Ethics",
