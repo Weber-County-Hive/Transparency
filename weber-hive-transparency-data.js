@@ -470,7 +470,7 @@ const CASES = [
     officials: ["Carl Albrecht", "Evan Vickers", "Spencer Cox", "Jerry Fenn", "Richard Hyer"],
     status: "documented",
     published: "Nov 6, 2026",
-    updated: "Nov 6, 2026",
+    updated: "Nov 17, 2026",
     plain: true,
     link: "clean-energy-charge.html"
   }

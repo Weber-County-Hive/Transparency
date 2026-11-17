@@ -103,6 +103,16 @@ var HBX = {
       "name": "Weber County's 2027 Budget, in Plain Words"
     },
     {
+      "callNumber": "TR 100.19",
+      "slug": "clean-energy-charge",
+      "name": "The Clean Energy Charge on Your Power Bill"
+    },
+    {
+      "callNumber": "TR 100.20",
+      "slug": "clean-energy-charge-plain",
+      "name": "The Clean Energy Charge, in Plain Words"
+    },
+    {
       "callNumber": "TR 200.01",
       "slug": "weber-hive-sitla-explainer",
       "name": "SITLA: The Land Nobody Zones"

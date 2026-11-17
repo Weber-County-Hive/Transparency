@@ -79,6 +79,30 @@
 .hbx-tool{display:inline-block;font:700 15px Arial,sans-serif;color:#13233F!important;background:#fff;border:1px solid #c8cfd6;border-radius:6px;padding:9px 13px;text-decoration:none!important;cursor:pointer;line-height:1.2}
 .hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 6px}
 .hs-toc a{font:600 15px Arial,sans-serif;background:#eef3fb;border:1px solid #cfd9ea;border-radius:6px;padding:6px 10px;text-decoration:none;color:#1b2a4a}
+.hbx-tools{max-width:980px;margin:14px auto 4px;padding:0 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;font-family:Arial,sans-serif;position:relative;z-index:2}
+.hbx-tool{display:inline-block;font:700 15px Arial,sans-serif;color:#13233F!important;background:#fff;border:1px solid #c8cfd6;border-radius:6px;padding:9px 13px;text-decoration:none!important;cursor:pointer;line-height:1.2}
+.hbx-tool:hover{border-color:#13233F}.hbx-cnchip b{color:#1f5f9e;font-family:ui-monospace,Menlo,monospace}
+.hbx-jump{flex-basis:100%;order:5;border:1px solid #c8cfd6;border-radius:6px;background:#fff;color:#13233F}.hbx-jump summary{cursor:pointer;padding:9px 13px;font:700 15px Arial,sans-serif}
+.hbx-jump ol{margin:0;padding:4px 16px 12px 36px}.hbx-jump li{margin:6px 0;font-size:16.5px}.hbx-jump a{color:#13233F}
+.hbx-shelfwrap{background:#0e2438;color:#dbe7f0;padding:26px 20px 30px;font:16px/1.5 Arial,sans-serif;margin-top:48px;position:relative;z-index:1}
+.hbx-shelfwrap .in{max-width:900px;margin:0 auto}
+.hbx-shelf{border:2px dashed #9fd0ee;border-radius:10px;padding:16px 18px}
+.hbx-cn-big{font:600 17px ui-monospace,Menlo,monospace;margin-bottom:12px;color:#fff}.hbx-cn-big b{color:#9fd0ee}
+.hbx-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.hbx-nav-btn{flex:1;min-width:220px;background:#12304a;border:1px solid #4d86ad;border-radius:8px;padding:12px 14px;color:#fff!important;text-decoration:none!important;font-size:16px}.hbx-nav-btn b{color:#9fd0ee;font-family:ui-monospace,Menlo,monospace}.hbx-off{opacity:.5}
+.hbx-list summary{cursor:pointer;font-weight:700;padding:6px 0}.hbx-list ol{list-style:none;margin:6px 0 0;padding:0}.hbx-list li{padding:6px 0;border-bottom:1px solid #2b4a63}.hbx-list a{color:#fff!important;text-decoration:none}
+.hbx-shelf-head{color:#9fd0ee;font:600 13px ui-monospace,Menlo,monospace;letter-spacing:.1em}.hbx-cn{font-family:ui-monospace,Menlo,monospace;color:#9fd0ee;margin-right:6px}
+.hbx-find{margin:14px 0 4px}.hbx-find label{display:block;font-weight:700;margin-bottom:6px}.hbx-find div{display:flex;gap:8px;flex-wrap:wrap}.hbx-find input{flex:1;min-width:0;width:100%;padding:12px 14px;font-size:17px;border:2px solid #4d86ad;border-radius:6px;color:#13233F;background:#fff}.hbx-find button{padding:12px 18px;font-size:16px;font-weight:700;background:#9fd0ee;color:#0e2438;border:0;border-radius:6px;cursor:pointer}
+.hbx-search{font-size:15px;margin-top:12px}.hbx-search a,.hbx-search b{color:#9fd0ee}
+.hbx-totop{display:none;position:fixed;right:16px;bottom:16px;z-index:50;background:#0e2438;color:#fff!important;border:2px solid #9fd0ee;border-radius:24px;padding:10px 16px;font:700 15px Arial,sans-serif;text-decoration:none!important;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.hbx-dates{font-family:ui-monospace,Menlo,monospace;font-size:13px}
+@media print{.hbx-tools,.hbx-totop{display:none}}
+/* Hive library standard (Nov. 2, 2026) */
+.hbx-tools{margin-top:16px;margin-bottom:14px}
+.hbx-shelfwrap+.hb-foot{margin-top:0}
+.hbx-shelf details.hbx-list li,.hbx-shelf details.hbx-list p{font-size:16px!important}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
 </style>
 <link rel="icon" type="image/png" href="hive-bee.png">
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
@@ -91,11 +115,11 @@
   <div class="brand">Transparency · Case File · Statewide</div>
   <h1>The Clean Energy Charge on Your Power Bill</h1>
   <div class="sub">What the Community Clean Energy Program is, who pays, where the money goes, and how the opt-in version of the law was dropped — explained from the ground up.</div>
-  <div class="dates">CASE 2026-CCE-01 · Posted Nov. 6, 2026 · Updated Nov. 6, 2026 · Research continuing; open items are marked</div>
+  <div class="dates">CASE 2026-CCE-01 · Call number TR 100.19 · Posted Nov. 6, 2026 · Updated Nov. 17, 2026 · Research continuing; open items are marked</div>
 </header>
 
 <main>
-<nav class="hs-toc" aria-label="On this page"><a href="#s1">The basics</a><a href="#s2">Timeline</a><a href="#s3">What you pay</a><a href="#s4">Am I enrolled?</a><a href="#s5">Who's covered</a><a href="#s5b">Ogden</a><a href="#s5c">The agency's money</a><a href="#s6">Where the $4 goes</a><a href="#s7">The dropped opt-in</a><a href="#s8">Rooftop solar</a><a href="#s9">The PSC</a><a href="#s9b">Energy money</a><a href="#s9c">Who it helps</a><a href="#s9d">Nuclear</a><a href="#s10">Auditor's checklist</a><a href="#s11">Questions to ask</a><a href="#s12">Words</a></nav>
+<nav class="hs-toc" aria-label="On this page"><a href="#s1">The basics</a><a href="#s2">Timeline</a><a href="#s3">What you pay</a><a href="#s4">Am I enrolled?</a><a href="#s4b">How to opt out</a><a href="#s5">Who's covered</a><a href="#s5b">Ogden</a><a href="#s5c">The agency's money</a><a href="#s6">Where the $4 goes</a><a href="#s7">The dropped opt-in</a><a href="#s8">Rooftop solar</a><a href="#s9">The PSC</a><a href="#s9b">Energy money</a><a href="#s9c">Who it helps</a><a href="#s9d">Nuclear</a><a href="#s10">Auditor's checklist</a><a href="#s11">Questions to ask</a><a href="#s12">Words</a></nav>
 
 <div class="counter" aria-label="Behind this piece">
   <div><b>110+</b><span>records read</span></div>
@@ -106,8 +130,12 @@
 <p class="small" style="text-align:center">Behind this piece — counts are an estimate and will grow as research continues.</p>
 
 <div class="key">
-  <b>The short version.</b> If you get a Rocky Mountain Power bill at a home or business in one of 16 Utah communities, a new charge starts January 1, 2027 — unless you opt out. Homes pay a flat $4 a month. Businesses pay by how much power they use. You can leave free until May 1, 2027. After that, homes pay $30 to leave. A version of the 2026 bill that would have made this sign-up-only (opt-in) was drafted, but the version that passed kept automatic enrollment.
+  <b>The short version.</b> If you get a Rocky Mountain Power bill at a home or business in one of 16 Utah communities, a new charge starts January 1, 2027 — unless you opt out. Most homes pay a flat $4 a month (low-income Schedule 3 homes pay $0; homes on the original rooftop-solar program, Schedule 135, are not enrolled). Businesses pay by how much power they use. Opt out by Dec. 31, 2026 and you are never charged. From Jan. 1 through May 1, 2027, you can still leave with no exit fee, but you pay for the months you were enrolled. After that, homes pay $30 to leave. A version of the 2026 bill that would have made this sign-up-only (opt-in) was drafted, but the version that passed kept automatic enrollment.
 </div>
+<div class="hs-plain">New to this? <a class="hs-btn" href="clean-energy-charge-plain.html">Read it in plain words</a> One short page, large print: what it costs, the two deadlines and how to opt out.</div>
+<div class="pending" style="background:#eef3fb;border-color:#1f5fbf;color:#1b2a4a">
+<b>Update, Nov. 17, 2026.</b> Added from records checked today: how to opt out (Rocky Mountain Power's live program page: online, phone and mailing address) and the two deadlines (notice period ends Dec. 31; no exit fee through May 1) in a new section 4b; the current Schedule 100 tariff as the rate source; a renter answer (Utah Renewable Communities FAQ); exit fees for every account type; Ogden's May 5 minutes read directly (vote, speakers listed, the $51,774 as a one-time reimbursement); the exact opt-out wording in the final law; the 12&frac12;-year reserve described as a negotiable estimate; the PSC quote placed in its context; and a "what hasn't been checked yet" list; what happens when you move (PSC order, Oct. 26, 2026); the full federal tax-credit rule; the checker now says "generally eligible" and that its dates apply to customers with service at launch. Earlier lines corrected, with the old wording shown where it appears: "leave free until May 1" (leaving between Jan. 1 and May 1 has no exit fee, but enrolled months are billed) "invoice expected Jan.–Feb." for Ogden's $51,774 (not in the minutes; removed); "never brought up for a vote" (now: no vote found in the records reviewed); the general "out of its own pocket" reason; and "Public records only" in the footer. Each change is marked <span class="tag doc">Updated Nov. 17</span>.<br>
+<b>Opt-Out Series on Substack:</b> Part 1, <i>You're In Unless You Say No</i> (Nov. 19) · Part 2, <i>The Opt-In Draft That Never Reached a Recorded Vote</i> (Dec. 3) · Part 3, <i>Follow the Energy Money</i> (December). <a href="https://webercountyhive.substack.com/">Read on Substack</a></div>
 
 <!-- ============ 1 ============ -->
 <h2 id="s1">1. Start here: the basics</h2>
@@ -127,13 +155,13 @@ Rocky Mountain Power is a private company — it is owned by PacifiCorp, which i
 
 <h3>What is this program, and why are they doing it?</h3>
 <div class="plain"><b class="lbl">In plain words</b>
-It is a way for a group of cities and counties to buy more clean power for their own residents than Rocky Mountain Power plans to buy for everyone. Each home and business chips in a small monthly amount. That money backs long-term contracts for new solar, wind or geothermal plants added to Rocky Mountain Power's grid. Over a year, the goal is to add enough clean power to equal what participants use — called "net-100%." Your electricity still comes through the same wires from the same mix.</div>
+It is a way for a group of cities and counties to buy more clean power for their own residents than Rocky Mountain Power plans to buy for everyone. Each home and business chips in a small monthly amount. That money backs long-term contracts for new solar, wind or geothermal plants added to Rocky Mountain Power's grid. Over a year, the goal is to add enough clean power to equal what participants use — called "net-100%." Your electricity still comes through the same wires from the same mix.<br><span class="tag doc">Updated Nov. 17</span> More exactly: you keep Rocky Mountain Power as your utility and get power through the same grid. The program adds clean energy resources over time, likely in phases through several projects (Rocky Mountain Power program page); it does not send a separate stream of renewable power to your home.</div>
 <div class="tablewrap"><table>
 <tr><th>Who</th><th>The reason they give, in the record</th><th>Record</th></tr>
 <tr><td>Rocky Mountain Power's opt-out notice</td><td>To build new clean energy resources on the grid to reduce fossil fuel dependence, improve air quality and limit greenhouse gases.</td><td>Draft opt-out notice, Nov. 2, 2026</td></tr>
 <tr><td>The participating communities</td><td>Most adopted goals around 2019 of net-100% renewable electricity by 2030. The program lets a city act on that goal for its residents, through the power company everyone already uses. Salt Lake City's own goal dates to a 2016 resolution.</td><td>Utah Renewable Communities; Salt Lake City program page</td></tr>
 <tr><td>Why "together"</td><td>A single home cannot build a large solar or wind plant. Pooling many customers' payments is meant to fund utility-scale projects. Program staff told a mayor the opt-out design was meant to let communities and smaller customers act collectively.</td><td>Kearns council minutes, May 29, 2026</td></tr>
-<tr><td>Why now</td><td>Federal production tax credits for new projects had deadlines (construction by July 4, 2026 under the 2025 federal law). The PSC cited those expiring credits when it approved the program right away.</td><td>PSC order, March 4, 2026, p. 25</td></tr>
+<tr><td>Why now</td><td>Federal production tax credits for new projects had deadlines (construction by July 4, 2026 under the 2025 federal law). The PSC cited those expiring credits when it approved the program right away. <span class="tag doc">Updated Nov. 17</span> More exactly: under the 2025 law, wind and solar projects placed in service after Dec. 31, 2027 lose the credits unless construction began by July 4, 2026. Projects placed in service by the end of 2027 have a separate route, subject to other rules.</td><td>PSC order, March 4, 2026, p. 25</td></tr>
 <tr><td>Ogden's city staff</td><td>The city's municipal building would pay about $327 a month in the program, compared with $650 a month it was paying for Rocky Mountain Power's Blue Sky program.</td><td>Ogden work session minutes, April 7, 2026</td></tr>
 </table></div>
 <p class="small">Advocacy groups also said Rocky Mountain Power had slowed its own clean energy buying; that is their characterization, not a finding here. The 2030 goal was later relaxed — a 2024 law (S.B. 214) removed the requirement that communities adopt it.</p>
@@ -170,7 +198,7 @@ flowchart TD
   F --> G["April 8 – June 2, 2026:<br/>16 councils vote to stay in, 3 do not"]
   G --> H["Nov 2, 2026: Opt-out notices mailed"]
   H --> I["Jan 1, 2027: Charge starts on bills"]
-  I --> J["May 1, 2027: Last day to leave free"]
+  I --> J["May 1, 2027: Last day to leave<br/>without an exit fee"]
   J --> K["2028–2030: First new project hoped online"]
 </div>
 
@@ -187,7 +215,7 @@ flowchart TD
 <tr><td>General and large business (Schedules 6, 6A, 8, 9, 9A)</td><td>0.609¢ per kilowatt-hour + $0.12</td><td>$6 per average kW</td></tr>
 <tr><td>Street and security lights (Schedules 7, 11, 12)</td><td>0.609¢ per kilowatt-hour, per lamp</td><td>$0.15 per lamp</td></tr>
 </table></div>
-<p class="small">Source: Rocky Mountain Power compliance tariff filing, Aug. 7, 2026 (proposed; final approval being confirmed). Rates were set by the PSC order of March 4, 2026.</p>
+<p class="small"><span class="tag doc">Updated Nov. 17</span> Source: Rocky Mountain Power's current Schedule 100 tariff (sheets filed Aug. 7 and Sept. 1, 2026; effective Nov. 2, 2026), which confirms these rates. Rates were set by the PSC order of March 4, 2026. <i>(Earlier version of this line: "compliance tariff filing, Aug. 7, 2026 (proposed; final approval being confirmed).")</i></p>
 
 <h3>Why is there a fee to leave?</h3>
 <div class="plain"><b class="lbl">In plain words</b>
@@ -198,9 +226,9 @@ The fee is written into state law. The 2019 law (Utah Code 54-17-905) says that 
 <li>An unpaid fee cannot be used to shut off a home's power (tariff special condition 3).</li>
 <li>The PSC can change the fee amount.</li>
 </ul>
-<h3>Who set the $30 — and where the fee money goes</h3>
+<h3>Who chose the $30, who approved it — and where the fee money goes</h3>
 <div class="plain"><b class="lbl">In plain words</b>
-The leaving fees were set by the communities' agency, not by Rocky Mountain Power. The agency's board adopted them unanimously on Oct. 7, 2024. When a board member asked whether any technical or financial analysis backed the numbers, the minutes record no analysis — only that the committee wanted the home fee to be affordable. When state regulators asked Rocky Mountain Power how the fees were figured, the company said the agency developed them and that it does not have the justification for the amounts. No record found says which fund the fee money goes into.</div>
+The leaving fees were set by the communities' agency, not by Rocky Mountain Power. The agency's board adopted them unanimously on Oct. 7, 2024. When a board member asked whether any technical or financial analysis backed the numbers, the minutes record no analysis — only that the committee wanted the home fee to be affordable. When state regulators asked Rocky Mountain Power how the fees were figured, the company said the agency developed them and that it does not have the justification for the amounts. No record found says which fund the fee money goes into.<br><span class="tag doc">Updated Nov. 17</span> The agency drew up the fee amounts; Rocky Mountain Power filed them in its tariff; the PSC approves the tariff. Rocky Mountain Power not having the justification does not show that none exists elsewhere.</div>
 <div class="tablewrap"><table>
 <tr><th>Date</th><th>What the record shows</th><th>Record</th></tr>
 <tr><td>Oct. 7, 2024</td><td>Agency board adopts Resolution 24-08 setting the fee schedule: $30 homes and small businesses, $6 per average kW for larger businesses, $0 low-income. Moved by Silvestrini, seconded by Quinn, unanimous. Stated goals: encourage stable participation, avoid undue burden, and reflect larger customers' bigger effect on rates. A board member asked for the technical or financial analysis; none is recorded.</td><td>Agency minutes and board packet</td></tr>
@@ -215,9 +243,10 @@ The leaving fees were set by the communities' agency, not by Rocky Mountain Powe
 </ul>
 <p class="small"><span class="tag open">To verify</span> The "no account named" findings come from text reads of the documents; confirm against the rendered PDFs before publishing.</p>
 
-<h3>Why doesn't the power company pay for it?</h3>
+<h3>Why participating customers pay the program's additional costs</h3>
+<p class="small"><span class="tag doc">Updated Nov. 17</span> Heading changed from "Why doesn't the power company pay for it?" The first reason below is a general description of how regulated utilities recover approved costs; the records for this program show cost recovery from participants.</p>
 <div class="plain"><b class="lbl">In plain words</b>
-Two reasons appear in the records. First, a regulated power company does not pay for power plants out of its own pocket in the end — customers pay through rates for whatever the PSC approves. Second, this program buys clean power <i>beyond</i> what Rocky Mountain Power plans to buy for all customers, because these 16 communities asked for more. The 2019 law says the extra cost must be paid by the customers in those communities and must not shift to anyone else. So the law itself puts the cost on participants, not on the company or its shareholders.</div>
+<span style="text-decoration:line-through;opacity:.7">Two reasons appear in the records. First, a regulated power company does not pay for power plants out of its own pocket in the end — customers pay through rates for whatever the PSC approves. Second,</span> <span class="tag doc">Updated Nov. 17</span> <i>Earlier wording struck through above; the first reason was a general description, not a record about this program.</i> What the records for this program show: this program buys clean power <i>beyond</i> what Rocky Mountain Power plans to buy for all customers, because these 16 communities asked for more. The 2019 law says the extra cost must be paid by the customers in those communities and must not shift to anyone else. So the law itself puts the cost on participants, not on the company or its shareholders.</div>
 <ul>
 <li>Rocky Mountain Power's testimony says participants pay all of the extra resource and administrative costs.</li>
 <li>The projects are owned by private developers and bought under contracts, not built by Rocky Mountain Power. That is different from a company-owned plant, where the company can earn an approved return.</li>
@@ -231,6 +260,7 @@ Yes. The PSC can change the rates and the leaving fee. Rocky Mountain Power file
 
 <!-- ============ 4 ============ -->
 <h2 id="s4">4. Am I enrolled? Try it</h2>
+<p class="small"><span class="tag doc">Updated Nov. 17</span> This checker gives a <b>general</b> answer for customers who had service when the program launched. It cannot tell whether you already opted out, or the dates for someone who started service later (they get their own 60-day notice period). Your Rocky Mountain Power notice and account are the official word.</p>
 
 <div class="checker">
   <label for="place">Where is your power meter?</label>
@@ -262,6 +292,49 @@ Yes. The PSC can change the rates and the leaving fee. Rocky Mountain Power file
   <div id="result" aria-live="polite"></div>
   <p class="small">What counts is where the meter is, not your mailing address. Power from a city-owned utility is not part of this program. This tool is a guide only — your opt-out notice from Rocky Mountain Power is the official word.</p>
 </div>
+
+<!-- ============ 4b ============ -->
+<h2 id="s4b">4b. How to opt out, and the two deadlines</h2>
+<p class="small"><span class="tag doc">Added Nov. 17</span></p>
+<div class="key">
+<b>Two deadlines, two different things.</b>
+<ul>
+<li><b>By Dec. 31, 2026:</b> opt out during the notice period (Nov. 2 – Dec. 31) and you are never charged. The charge starts on bills Jan. 1.</li>
+<li><b>Jan. 1 – May 1, 2027:</b> you can still leave with no exit fee, but the months you were enrolled are billed. Leaving in this window is not free; it just has no exit fee.</li>
+<li><b>From May 2, 2027:</b> exit fees apply.</li>
+</ul>
+Customers who move into a participating community later get their own 60-day notice period and dates (Schedule 100 table).
+</div>
+<h3>Three ways to opt out</h3>
+<ol class="steps">
+<li><b>Online:</b> sign in at RockyMountainPower.net. On the <b>Opt Out</b> tab, select the service(s) to opt out and click Submit.</li>
+<li><b>Phone:</b> 1-800-895-0614 (Rocky Mountain Power's program line).</li>
+<li><b>Mail:</b> the completed opt-out form to Rocky Mountain Power, Community Clean Energy Program, PO Box 25308, Salt Lake City, UT 84125-0308.</li>
+</ol>
+<p><b>More than one account or service? Check each one.</b></p>
+<div class="plain"><b class="lbl">Moving?</b>Your enrollment does not follow you. Under a PSC order of Oct. 26, 2026, a participating customer who moves, within a participating community or to another one, leaves the program with no exit fee. At the new address you get a new notice period and can opt out, or do nothing and be enrolled again. Rocky Mountain Power filed the matching tariff change Nov. 2, 2026 (Docket 26-035-T12).</div>
+<div class="plain"><b class="lbl">Renting?</b>If the Rocky Mountain Power account is in your name, you decide whether to stay enrolled. If your landlord holds and pays the account, the landlord decides, and decides whether to pass the cost on to renters. When a unit is empty and service goes back to the landlord, both get notices.</div>
+<h3>Exit fees after May 1, 2027, by account</h3>
+<div class="tablewrap"><table>
+<tr><th>Account</th><th>One-time exit fee</th></tr>
+<tr><td>Homes (Schedule 1) and homes with newer rooftop solar (136, 137)</td><td>$30</td></tr>
+<tr><td>Low-income homes (Schedule 3)</td><td>$0</td></tr>
+<tr><td>Small business (23) and irrigation (10)</td><td>$30</td></tr>
+<tr><td>Larger business (6, 6A, 8, 9, 9A)</td><td>$6 per average kW over the prior 12 months</td></tr>
+<tr><td>Security and street lighting (7, 11, 12)</td><td>$0.15 per lamp</td></tr>
+<tr><td>Traffic and signal systems, customer-owned (15)</td><td>$0.96 per average kW</td></tr>
+<tr><td>Schedules 31, 32 and non-residential 135, 136, 137</td><td>By the calculation method for that schedule</td></tr>
+</table></div>
+<p class="small">Sources: Rocky Mountain Power Community Clean Energy Program page and Schedule 100 tariff (current version); Utah Renewable Communities FAQ. Business and government fees depend on the account's rate schedule; check Schedule 100 before estimating.</p>
+
+<h3>What hasn't been checked yet</h3>
+<ul>
+<li><b>No audit</b> of Utah Renewable Communities has been posted.</li>
+<li><b>Protecting customers outside the program:</b> the project-valuation method that would show costs aren't shifting to them hasn't been approved. The Office of Consumer Services urged approving it before money was collected. It is in PSC Docket 26-035-38; Rocky Mountain Power's reporting plan is due Dec. 31, 2026.</li>
+<li><b>Where the reserve is held:</b> Rocky Mountain Power proposed escrow; the PSC's March 4 order doesn't say.</li>
+<li><b>Money in vs. power built:</b> no developer has been named and no power contract filed.</li>
+<li><b>Why opt-in was dropped:</b> only a news report (KPCW) explains it; the committee video would confirm.</li>
+</ul>
 
 <!-- ============ 5 ============ -->
 <h2 id="s5">5. Who is covered — map and list</h2>
@@ -304,7 +377,7 @@ Ogden is the only part of Weber County in the program. The council voted 6-1 to 
 <tr><td>Flor Lopez, Kevin Lundell, Shaun Myers, Ken Richey, Alicia Washington, Vice Chair Dave Graf (moved it; Lundell seconded)</td><td>Chair Richard A. Hyer</td></tr>
 </table></div>
 <ul>
-<li>Public comment: 23 spoke in support, 3 opposed. Those opposed raised the opt-out design, unnamed project partners and speculative projections.</li>
+<li>Public comment: the minutes list 23 people under support and 3 under opposition (<span class="tag doc">Updated Nov. 17</span> read directly in the May 5 minutes). Those opposed raised the opt-out design, unnamed project partners and speculative projections.</li>
 <li>KSL reported Chair Hyer said the opt-out design relies on people who will never notice.</li>
 <li>Council Member Richey said outreach commitments largely answered his opt-out concerns.</li>
 <li>The minutes do not record Chair Hyer's reasons for his no vote.</li>
@@ -315,7 +388,8 @@ Ogden is the only part of Weber County in the program. The council voted 6-1 to 
 <tr><th>Date</th><th>Payment</th><th>Record</th></tr>
 <tr><td>2021 (Phase 1)</td><td>$35,738 to the agency</td><td>Ogden's program page</td></tr>
 <tr><td>July 2022 (Phase 2)</td><td>$35,737.26 to the agency — 10.65% of all member payments</td><td>Agency treasurer's report</td></tr>
-<tr><td>2027 (invoice expected Jan.–Feb.)</td><td>$51,774 to Rocky Mountain Power for the two opt-out mailings</td><td>May 5, 2026 council minutes</td></tr>
+<tr><td>One-time</td><td>$51,774 to reimburse Rocky Mountain Power for mailing the two opt-out notices</td><td>May 5, 2026 council minutes <span class="tag doc">Updated Nov. 17</span> (earlier version said "2027 (invoice expected Jan.–Feb.)"; that timing is not in the minutes)</td></tr>
+<tr><td><b>Total</b></td><td><b>$71,475.26 to the agency, plus $51,774 for notices</b></td><td>Above records</td></tr>
 </table></div>
 <p class="small">State law puts the cost of the notices on the participating communities, not the program. <span class="tag open">Open</span> No Ogden budget line item for the $51,774 was found.</p>
 
@@ -359,7 +433,7 @@ Utah Renewable Communities has no staff of its own — workers from member citie
 <!-- ============ 6 ============ -->
 <h2 id="s6">6. Where the $4 goes</h2>
 <div class="plain"><b class="lbl">In plain words</b>
-You do not get different electricity. Everyone gets the same power through the same wires. The money goes into a pot. Private companies build new solar, wind or geothermal plants, and Rocky Mountain Power agrees to buy their power. The pot backs those deals. Before a power contract can take effect, the pot must hold enough to cover about 12½ years of that plant's power.</div>
+You do not get different electricity. Everyone gets the same power through the same wires. The money goes into a pot. Private companies build new solar, wind or geothermal plants, and Rocky Mountain Power agrees to buy their power. The pot backs those deals. Before a power contract can take effect, the pot must hold enough to cover about 12½ years of that plant's power.<br><span class="tag doc">Updated Nov. 17</span> More exactly: the template contract described in the approval case said it would not take effect until the reserve covered 12.5 years of production. Rocky Mountain Power's answers to the Division of Public Utilities call that an estimate of what a developer may want, open to negotiation, and describe it as the cost above the power's "avoided cost" value, not the plant's full price. The final contracts need to be checked for the actual requirement.</div>
 
 <div class="mermaid">
 flowchart TD
@@ -417,7 +491,7 @@ Private developers build and own the plants. Rocky Mountain Power buys their pow
 <!-- ============ 7 ============ -->
 <h2 id="s7">7. The opt-in version that was dropped (H.B. 238, 2026)</h2>
 <div class="plain"><b class="lbl">In plain words</b>
-In February 2026 a draft of House Bill 238 would have changed the program to sign-up-only. That draft was replaced the next day by a version that kept automatic enrollment and added a simple opt-out check box. The final law is opt-out. No record found so far shows a vote on the opt-in draft or explains why it was dropped.</div>
+In February 2026 a draft of House Bill 238 would have changed the program to sign-up-only. That draft was replaced the next day by a version that kept automatic enrollment and required a simple way to opt out on the notice (the law's examples: "checking a box or signing a statement"). The final law is opt-out. No record found so far shows a vote on the opt-in draft or explains why it was dropped.</div>
 
 <p>Primary sponsor: Rep. Carl R. Albrecht. Senate sponsor: Sen. Evan J. Vickers. Each substitute is labeled "Carl R. Albrecht proposes the following substitute bill."</p>
 
@@ -434,7 +508,7 @@ In February 2026 a draft of House Bill 238 would have changed the program to sig
 <div class="tablewrap"><table>
 <tr><th>2nd Substitute (opt-in)</th><th>Final law (opt-out)</th></tr>
 <tr><td>A participating customer is one who has "affirmatively elected to participate."</td><td>A customer "may elect to not participate" and keep paying existing rates.</td></tr>
-<tr><td>A customer "may elect to participate" by notifying the utility.</td><td>The notice must include a simple opt-out method, "such as checking a box."</td></tr>
+<tr><td>A customer "may elect to participate" by notifying the utility.</td><td>The notice must include "a simple method, such as checking a box or signing a statement," to opt out, with instructions for sending it in.</td></tr>
 <tr><td>New customers who move in later may choose to join.</td><td>New customers who move in later are enrolled unless they opt out.</td></tr>
 </table></div>
 
@@ -442,9 +516,9 @@ In February 2026 a draft of House Bill 238 would have changed the program to sig
 
 <h3>The Feb. 12, 2026 Senate committee meeting</h3>
 <div class="plain"><b class="lbl">In plain words</b>
-The Senate Natural Resources, Agriculture, and Environment Committee voted to replace the original bill with the 3rd Substitute, the opt-out version. The opt-in 2nd Substitute was never brought up for a vote. The official minutes do not mention opt-in, opt-out, or the clean energy program at all.</div>
+The Senate Natural Resources, Agriculture, and Environment Committee voted to replace the original bill with the 3rd Substitute, the opt-out version. <span style="text-decoration:line-through;opacity:.7">The opt-in 2nd Substitute was never brought up for a vote.</span> <span class="tag doc">Updated Nov. 17</span> No vote on the opt-in 2nd Substitute was found in the records reviewed. The official minutes do not mention opt-in, opt-out, or the clean energy program at all.</div>
 <ul>
-<li>The 3rd Substitute is time-stamped 2:03 p.m. on Feb. 12. The meeting was called to order at 2:09 p.m.</li>
+<li>The 3rd Substitute is time-stamped 2:03 p.m. on Feb. 12. The meeting was called to order at 2:09 p.m. <span class="tag doc">Updated Nov. 17</span> The time stamp shows when the substitute was drafted, not when lawmakers or the public first saw it.</li>
 <li>Sen. David Hinkins chaired during H.B. 238.</li>
 <li>Rep. Albrecht presented, assisted by PSC Chair Jerry Fenn and Jon Cox (no affiliation listed in the minutes).</li>
 <li>Spoke in favor: Dan Dugan (chair, Utah Renewable Communities); Thom Carter (vice president of government affairs, Rocky Mountain Power); Nathaniel Johnson (Utah Rural Electric Cooperative Association); Cottonwood Heights Mayor Gay Lynn Bennion. Two residents spoke without a stated position.</li>
@@ -496,7 +570,7 @@ Net metering is how Rocky Mountain Power credits homes with solar panels for ext
 <ul>
 <li>Rocky Mountain Power, the Division of Public Utilities and the Office of Consumer Services recommended waiting until a power contract was signed. The PSC approved the program effective immediately, citing expiring federal tax credits.</li>
 <li>Rocky Mountain Power and the Office of Consumer Services opposed a flat fee for homes. The PSC accepted the communities' request for a flat $4.</li>
-<li>The PSC wrote that it is generally not its role to protect residents from the decisions of their local elected leaders.</li>
+<li>The PSC wrote that it is generally not its role to protect residents from the decisions of their local elected leaders. <span class="tag doc">Updated Nov. 17</span> Context: the line comes in the PSC's discussion of how costs are split among participants, right after it accepted the communities' request for a flat $4 for homes instead of charging by usage. It adds that the PSC has no jurisdiction over city-owned utilities either. It is not a general statement about protecting consumers.</li>
 <li>The PSC found the record did not support Rocky Mountain Power's method for valuing projects, and left that question for a later proceeding.</li>
 </ul>
 <h3>What the state's consumer advocates warned</h3>
@@ -511,7 +585,7 @@ Neither state office asked the PSC to reject the program, but both raised risks.
 </table></div>
 
 <h3>The federal tax credit deadline</h3>
-<p>At the Dec. 16, 2025 hearing, Rocky Mountain Power's witness agreed developers needed to start construction before July 4, 2026 to keep federal production tax credits. That date comes from the 2025 federal law (P.L. 119-21). <span class="tag open">Open</span> Whether either chosen project actually started construction in time is not shown in records found.</p>
+<p>At the Dec. 16, 2025 hearing, Rocky Mountain Power's witness agreed developers needed to start construction before July 4, 2026 to keep federal production tax credits. That date comes from the 2025 federal law (P.L. 119-21). <span class="tag doc">Updated Nov. 17</span> For wind and solar projects expected online after 2027, starting construction by July 4, 2026 was key to keeping eligibility for the federal clean-electricity credits; projects placed in service by Dec. 31, 2027 have a separate route, subject to other requirements (IRS Notice 2025-42). <span class="tag open">Open</span> Whether either chosen project actually started construction in time is not shown in records found.</p>
 
 <h3>Still being decided at the PSC</h3>
 <ul>
@@ -538,7 +612,7 @@ Rocky Mountain Power's parent company, PacifiCorp, gives to Utah political campa
 <div class="tablewrap"><table>
 <tr><th>Person</th><th>Role in this story</th><th>PacifiCorp contributions on file</th></tr>
 <tr><td>Gov. Spencer Cox</td><td>Signed H.B. 238 (2026)</td><td>$105,000 (2018–2026)</td></tr>
-<tr><td>Rep. Carl Albrecht</td><td>Primary sponsor, H.B. 238 (2026) and H.B. 241 (2024); voted no on H.B. 411 in 2019 committee</td><td>$500 (2018), $1,000 (2022) itemized; Ledger reconstruction lists $2,000</td></tr>
+<tr><td>Rep. Carl Albrecht</td><td>Primary sponsor, H.B. 238 (2026) and H.B. 241 (2024); voted no on H.B. 411 in 2019 committee</td><td>$500 (2018), $1,000 (2022) itemized; Ledger reconstruction lists $2,000 <span class="tag doc">Updated Nov. 17</span> <span class="tag open">Not reconciled</span> The $1,500 itemized and $2,000 reconstructed totals have not been reconciled; neither is presented as a verified total.</td></tr>
 <tr><td>Sen. Evan Vickers</td><td>Senate sponsor, H.B. 238 (2026); voted no on H.B. 411 in 2019</td><td>$3,000 (2018, 2020, 2021)</td></tr>
 <tr><td>Sen. David Hinkins</td><td>Chaired the Feb. 12 committee during H.B. 238; voted yes; sponsor of S.B. 214 (2024)</td><td>$2,000 (2018, 2020, 2023, 2024)</td></tr>
 <tr><td>Sen. Scott Sandall</td><td>Committee member; voted yes</td><td>$4,500 (2018, 2020, 2021, 2022, 2023, 2025)</td></tr>
@@ -816,6 +890,16 @@ Three groups put money into Natrium. Taxpayers, through the U.S. Department of E
 <details>
 <summary>Show all sources and how each was read</summary>
 <ul>
+<li><a href="https://www.rockymountainpower.net/content/dam/pcorp/documents/en/rockymountainpower/rates-regulation/utah/rates/100_Community_Clean_Energy_Program_Optional_Opt-Out_Program.pdf">Rocky Mountain Power, Schedule 100 tariff, current version (sheets filed Aug. 7 and Sept. 1, 2026; effective Nov. 2, 2026)</a> — full text read Nov. 17, 2026 (rates, notice period table, exit fees)</li>
+<li><a href="https://www.rockymountainpower.net/savings-energy-choices/blue-sky-renewable-energy/community-clean-energy-program.html">Rocky Mountain Power, Community Clean Energy Program page</a> — live page read Nov. 17, 2026 (how to opt out, phone, mailing address, exit fees)</li>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/3476482503506oaw10-26-2026.pdf">PSC Order Approving Waiver, Docket 25-035-06, Oct. 26, 2026</a> — full text read Nov. 17, 2026 (moving customers)</li>
+<li><a href="https://psc.utah.gov/2026/11/02/docket-no-26-035-t12/">PSC Docket 26-035-T12, Rocky Mountain Power tariff compliance filing, Nov. 2, 2026</a> — docket page read Nov. 17, 2026</li>
+<li><a href="https://www.eitc.irs.gov/pub/irs-drop/n-25-42.pdf">IRS Notice 2025-42</a> and summaries (Crowe; Mintz) — wind and solar credit deadlines under P.L. 119-21</li>
+<li><a href="https://www.utahrenewablecommunities.org/faqs/">Utah Renewable Communities, FAQs</a> — live page read Nov. 17, 2026 (renters and landlords)</li>
+<li><a href="https://le.utah.gov/Session/2026/bills/enrolled/HB0238.pdf">H.B. 238 (2026), enrolled</a> — opt-out notice wording read Nov. 17, 2026</li>
+<li><a href="https://pscdocs.utah.gov/electric/25docs/2503506/342227DPUExhbt2.2RMPRspnsDRs10-10-2025.pdf">Rocky Mountain Power responses to DPU data requests (DPU Exhibit 2.2)</a> — responses 1.4 and 2.10 read Nov. 17, 2026 (fees; 12.5-year reserve as an estimate)</li>
+<li><a href="https://www.utah.gov/pmn/files/1444075.pdf">Ogden City Council minutes, May 5, 2026</a> — read directly Nov. 17, 2026 (vote, speakers listed, $51,774)</li>
+<li><a href="https://www.ksl.com/article/51643489/power-customers-in-16-utah-communities-face-4-a-month-fee-hike-for-renewable-energy-program">KSL, Nov. 2026: Power customers in 16 Utah communities face fee hike</a> — notices mailed; three ways to opt out</li>
 <li><a href="https://pscdocs.utah.gov/electric/25docs/2503555/3456232503555oats6-1-2026.pdf">PSC Order Approving the Settlement, Docket 25-035-55 (Natrium), June 1, 2026</a> — 3456232503555oats6-1-2026.pdf, full text summary</li>
 <li><a href="https://pscdocs.utah.gov/electric/25docs/2503555/344332StlmntStpltn3-13-2026.pdf">Settlement stipulation, Docket 25-035-55, March 13, 2026</a> — 344332StlmntStpltn3-13-2026.pdf, full text summary</li>
 <li><a href="https://pscdocs.utah.gov/electric/25docs/2503555/344561DPUSmryDirTstmnyDWilliamsMar312026Hrng3-30-2026.pdf">Division of Public Utilities summary testimony, Docket 25-035-55, March 2026</a> — full text summary</li>
@@ -908,7 +992,9 @@ Three groups put money into Natrium. Taxpayers, through the U.S. Department of E
 
 </main>
 
-<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent &middot; Accountability &middot; Journalism</span><p class="hb-line">The Weber County Hive and Utah Hive Politics: the people's publication. We investigate what's best for the public as a whole, not for any party or special interest group. We report public records. You decide.</p><p class="hb-tips"><a class="hb-btn" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">Send a tip</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html">Tips we checked</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">See a mistake? Tell us</a></p><p class="hb-small">Independent accountability journalism. Public records only. We report; you decide.</p><p class="hb-small">We never name tipsters. When we correct a page, the fix and its date are shown on the page.</p><p class="hb-small"><a href="index.html">Transparency home</a> · <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">Master Index (Hive library)</a> · <a href="https://webercountyhive.substack.com/">Read on Substack</a></p></div>
+<div class="hbx-shelfwrap"><div class="in"><div class="hbx-shelf" id="hbx-shelf"></div></div></div>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent &middot; Accountability &middot; Journalism</span><p class="hb-line">The Weber County Hive and Utah Hive Politics: the people's publication. We investigate what's best for the public as a whole, not for any party or special interest group. We report public records. You decide.</p><p class="hb-tips"><a class="hb-btn" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">Send a tip</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html">Tips we checked</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">See a mistake? Tell us</a></p><p class="hb-small">Independent accountability journalism. Public records and attributed news reporting. We report; you decide.</p><p class="hb-small">We never name tipsters. When we correct a page, the fix and its date are shown on the page.</p><p class="hb-small"><a href="index.html">Transparency home</a> · <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">Master Index (Hive library)</a> · <a href="https://webercountyhive.substack.com/">Read on Substack</a></p></div>
+<script src="tr-shelf.js?v=2"></script>
 <script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <script>
@@ -923,12 +1009,12 @@ function checkMe(){
   if(p==='no'){r.innerHTML='<b>Not enrolled.</b> Your area is not part of the program.';return;}
   if(t==='home'){
     if(s==='135'){r.innerHTML='<b>Not enrolled.</b> State law excludes homes on the original net-metering program (Schedule 135).';return;}
-    if(li==='yes'){r.innerHTML='<b>Enrolled, but you pay $0.</b> Low-income Schedule 3 customers get a $4 credit, and pay no fee to leave.';return;}
-    let m='<b>Enrolled unless you opt out.</b> You will pay $4 a month starting Jan. 1, 2027. Leave free by May 1, 2027; after that, $30.';
+    if(li==='yes'){r.innerHTML='<b>Generally eligible, but you pay $0.</b> Low-income Schedule 3 customers get a $4 credit, and pay no fee to leave.';return;}
+    let m='<b>Generally eligible: enrolled unless you opt out.</b> You will pay $4 a month starting Jan. 1, 2027. Opt out by Dec. 31 to never be charged; no exit fee through May 1, 2027 (enrolled months are billed); after that, $30. (Dates shown are for customers with service at launch.)';
     if(s==='unsure') m+=' <br>If your solar was connected before Nov. 15, 2017, you may be excluded — check the rate schedule on your bill.';
     r.innerHTML=m;return;
   }
-  r.innerHTML='<b>Enrolled unless you opt out.</b> Businesses, farms and government accounts pay 0.609¢ per kilowatt-hour plus 12¢ a month. Leave free by May 1, 2027; after that the fee depends on your rate schedule.';
+  r.innerHTML='<b>Generally eligible: enrolled unless you opt out.</b> Businesses, farms and government accounts pay 0.609¢ per kilowatt-hour plus 12¢ a month. Opt out by Dec. 31 to never be charged; no exit fee through May 1, 2027 (enrolled months are billed); after that the fee depends on your rate schedule. (Dates shown are for customers with service at launch.)';
 }
 
 (function(){
