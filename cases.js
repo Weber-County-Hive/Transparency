@@ -171,5 +171,15 @@ const CASES = [
     status: "documented",
     updated: "Oct 7, 2026",
     link: "utah-amendments-2026.html"
+  },
+  {
+    caseNumber: "CASE 2026-WD-02",
+    title: "Who Decides, Part 2: The Courts",
+    category: "Courts & Judiciary",
+    summary: "Who picks Utah's judges and chief justice, who can move a lawsuit to a three-judge panel, and what the Legislature changed from 2023 to 2026, with the votes, each side's words and a grade for each change.",
+    officials: ["Spencer Cox", "Chris Wilson", "Brady Brammer", "Casey Snider", "Matt MacPherson", "Jordan Teuscher"],
+    status: "documented",
+    updated: "Nov 18, 2026",
+    link: "who-decides-part-2-courts.html"
   }
 ];

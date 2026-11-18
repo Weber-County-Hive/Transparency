@@ -381,6 +381,16 @@ var HBX = {
       "callNumber": "TR 300.34",
       "slug": "it-happened-before-plain",
       "name": "It Happened Before, in Plain Words"
+    },
+    {
+      "callNumber": "TR 300.35",
+      "slug": "who-decides-part-2-courts",
+      "name": "Who Decides, Part 2: The Courts"
+    },
+    {
+      "callNumber": "TR 300.36",
+      "slug": "who-decides-part-2-courts-plain",
+      "name": "Who Decides, Part 2: The Courts, in Plain Words"
     }
   ],
   "shelves": {
