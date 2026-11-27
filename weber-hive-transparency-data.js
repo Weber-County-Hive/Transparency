@@ -17,6 +17,18 @@
 // old one.
 const CASES = [
   {
+    caseNumber: "CASE 2026-POM-01",
+    title: "Sponsor and Co-Chair: The Point of the Mountain Board",
+    category: "Conflict of Interest",
+    summary: "Rep. Jordan Teuscher co-chairs the Point of the Mountain State Land Authority board and was House sponsor of the three bills (2024-2026) that reshaped it; Sen. Jerry Stevenson, also on the board, was Senate sponsor. Board minutes show Teuscher then presented S.B. 278 to the board and moved its vote to apply it.",
+    officials: ["Jordan Teuscher", "Jerry Stevenson", "Lowry Snow", "Jefferson Moss"],
+    status: "documented",
+    published: "Nov 26, 2026",
+    updated: "Nov 26, 2026",
+    plain: true,
+    link: "point-of-the-mountain-board.html"
+  },
+  {
     caseNumber: "CASE 2026-WGS-01",
     title: "Who Gets a Say: Utah's Primary and Map Rules, 2018\u20132026",
     category: "Elections & Voting",

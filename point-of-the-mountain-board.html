@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sponsor and Co-Chair: The Point of the Mountain Board | Transparency | The Weber County Hive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FFFFFF;
+    --paper-dim:#F2F5FA;
+    --void:#0F1F3D;
+    --void-2:#1E3A8A;
+    --maroon:#1D4ED8;
+    --maroon-dim:#0F1F3D;
+    --ink:#14213D;
+    --ink-soft:#3E4C66;
+    --line:#D5DCE8;
+    --gold:#93C5FD;
+    --max:900px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Sans 3',sans-serif;
+    font-size:19px;
+    line-height:1.62;
+  }
+  ::selection{background:var(--maroon);color:var(--paper);}
+  a{color:var(--maroon);}
+  a:hover{color:var(--maroon-dim);}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);margin:0;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  .topbar{
+    background:var(--void);
+    color:var(--paper-dim);
+    padding:12px 24px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .topbar a{color:var(--paper-dim);text-decoration:none;opacity:.8;}
+  .topbar a:hover{opacity:1;color:#fff;}
+
+  header.masthead{
+    padding:72px 24px 48px;
+    border-bottom:3px solid var(--void);
+    max-width:var(--max);
+    margin:0 auto;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    color:var(--maroon);
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:"";width:28px;height:2px;background:var(--maroon);display:inline-block;}
+  h1.title{
+    font-size:clamp(32px,5.4vw,52px);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+    max-width:780px;
+  }
+  h1.title em{font-style:italic;color:var(--maroon);}
+  .dek{
+    font-size:19px;
+    color:var(--ink-soft);
+    max-width:680px;
+    margin-top:20px;
+    line-height:1.5;
+  }
+  .byline{
+    margin-top:22px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.05em;
+    color:var(--ink-soft);
+  }
+
+  section.plain{
+    background:var(--paper-dim);
+    border-bottom:1px solid var(--line);
+    padding:48px 24px 52px;
+  }
+  section.plain .wrap{max-width:var(--max);}
+  section.plain .eyebrow{margin-bottom:24px;}
+  .chain{list-style:none;margin:0;padding:0;counter-reset:step;}
+  .chain li{
+    counter-increment:step;
+    position:relative;
+    padding:0 0 22px 46px;
+    font-size:19px;
+    color:var(--ink);
+  }
+  .chain li:last-child{padding-bottom:0;}
+  .chain li::before{
+    content:counter(step);
+    position:absolute;
+    left:0;top:0;
+    width:30px;height:30px;
+    border-radius:50%;
+    background:var(--maroon);
+    color:var(--paper);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .chain li::after{
+    content:"";
+    position:absolute;
+    left:14.5px;top:32px;
+    width:2px;height:calc(100% - 32px);
+    background:var(--line);
+  }
+  .chain li:last-child::after{display:none;}
+  .headline-claim{
+    margin-top:30px;
+    padding:22px 26px;
+    background:var(--void);
+    color:var(--paper);
+    font-family:'Fraunces',serif;
+    font-size:1.25rem;
+    font-style:italic;
+    border-left:5px solid var(--gold);
+  }
+
+  main{max-width:var(--max);margin:0 auto;padding:56px 24px 80px;}
+  section{margin-bottom:56px;}
+  section h2{
+    font-size:1.7rem;
+    border-bottom:2px solid var(--maroon);
+    padding-bottom:12px;
+    margin:0 0 22px;
+  }
+  section h3{
+    font-size:1.15rem;
+    font-family:'Fraunces',serif;
+    color:var(--maroon-dim);
+    margin:28px 0 10px;
+  }
+  p{margin:0 0 16px;}
+  ul{margin:0 0 16px;padding-left:24px;}
+  li{margin-bottom:6px;}
+
+  .fact{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--maroon);
+    padding:18px 22px;
+    margin:0 0 16px;
+    font-size:0.98rem;
+  }
+  .fact strong{color:var(--maroon-dim);}
+
+  table.timeline{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:0.95rem;}
+  table.timeline td{vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line);}
+  table.timeline td.date{white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:0.85rem;color:var(--maroon-dim);width:120px;}
+
+  .quote-card{
+    background:var(--void);
+    color:var(--paper);
+    padding:20px 24px;
+    margin:0 0 16px;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:1.05rem;
+  }
+  .quote-card cite{
+    display:block;
+    margin-top:12px;
+    font-style:normal;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.03em;
+    color:var(--gold);
+  }
+
+  details{
+    background:#fff;
+    border:1px solid var(--line);
+    padding:16px 20px;
+    margin-bottom:12px;
+  }
+  summary{
+    cursor:pointer;
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:0.85rem;
+    letter-spacing:.02em;
+    color:var(--maroon-dim);
+  }
+  details p{margin-top:14px;}
+
+  .support-note{
+    border:1px dashed var(--line);
+    padding:16px 20px;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+
+  .board-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:14px;
+  }
+  @media (max-width:640px){ .board-grid{grid-template-columns:1fr 1fr;} }
+  .flip-card{ perspective:1000px; height:280px; }
+  .flip-inner{
+    position:relative;
+    width:100%;height:100%;
+    transition:transform .5s;
+    transform-style:preserve-3d;
+    cursor:pointer;
+  }
+  .flip-card.is-flipped .flip-inner{transform:rotateY(180deg);}
+  .flip-front,.flip-back{
+    position:absolute;inset:0;
+    backface-visibility:hidden;
+    padding:18px;
+    display:flex;flex-direction:column;
+  }
+  .flip-front{
+    background:var(--void);
+    color:var(--paper);
+    justify-content:center;
+    border-left:4px solid var(--gold);
+  }
+  .flip-front .role-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:10px;
+  }
+  .flip-front h3.name{
+    font-family:'Fraunces',serif;
+    font-size:1.2rem;
+    font-weight:600;
+    line-height:1.2;
+    color:var(--paper);
+    margin:0;
+  }
+  .flip-front .tap{
+    margin-top:auto;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--line);
+  }
+  .flip-back{
+    background:#fff;
+    border:1px solid var(--maroon);
+    border-left:4px solid var(--maroon);
+    transform:rotateY(180deg);
+    overflow-y:auto;
+    font-size:0.9rem;
+    line-height:1.45;
+    color:var(--ink);
+  }
+  .flip-back strong{color:var(--maroon-dim);}
+
+  footer.site-footer{
+    background:var(--void);
+    color:var(--paper-dim);
+    padding:40px 24px 50px;
+  }
+  footer.site-footer .wrap{display:flex;flex-direction:column;gap:14px;}
+  footer.site-footer h3{color:#fff;font-size:20px;}
+  footer.site-footer p{color:#C7D2E6;font-size:15px;max-width:620px;line-height:1.6;margin:0;}
+  footer.site-footer .links{display:flex;gap:22px;flex-wrap:wrap;margin-top:8px;}
+  footer.site-footer a{color:var(--gold);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.03em;}
+  footer.site-footer a:hover{color:#fff;}
+
+  @media(max-width:600px){
+    header.masthead{padding:48px 18px 32px;}
+    main{padding:40px 18px 60px;}
+    section.plain{padding:36px 18px 40px;}
+    table.timeline td{padding:10px 8px;}
+    table.timeline td.date{white-space:normal;width:92px;}
+  }
+  @media(max-width:480px){ .board-grid{grid-template-columns:1fr;} .flip-card{height:250px;} }
+
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px;}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none;}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none;}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block;}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;letter-spacing:.02em;display:block;margin-top:2px;}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px;}
+.hb-foot .hb-name{font-size:14px;}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block;}
+@media(max-width:600px){.hb-bar{padding:8px 16px}.hb-bar img{width:38px;height:38px}.hb-name{font-size:13px}.hb-sub{font-size:11.5px}}
+
+html{font-size:112.5%}
+.hs-short{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:18px 22px;margin:0 0 24px}
+.hs-short ul{margin:0;padding-left:22px}
+.hs-short li{margin-bottom:8px;max-width:68ch}
+.hs-toc{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.hs-toc a{font-family:Arial,sans-serif;font-size:.85rem;padding:8px 13px;border:1px solid #D5DCE8;background:#FFFFFF;color:#14213D;text-decoration:none;border-radius:999px}
+.hs-toc a:hover{border-color:#1D4ED8}
+.hs-plain{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#F2F5FA;border:1px dashed #1D4ED8;padding:14px 18px;margin:20px 0;font-size:1rem}
+.hs-btn{display:inline-block;background:#1D4ED8;color:#fff !important;text-decoration:none;font-family:Arial,sans-serif;font-weight:bold;padding:11px 18px;border-radius:6px}
+.hs-pages{background:#FFFFFF;border:1px solid #D5DCE8;margin:0 0 24px}
+.hs-pages summary{cursor:pointer;padding:13px 18px;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:#14213D;font-weight:bold}
+.hs-pages ol{margin:0;padding:4px 18px 16px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:6px 18px}
+.hs-pages li{font-size:.95rem;line-height:1.35}
+.hs-pages li.cur{font-weight:bold}
+.hs-pages li.cur a{color:#14213D;text-decoration:none}
+.hs-pages small{display:block;font-size:.8rem;color:#3E4C66;font-weight:normal}
+.hs-flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.hs-flip{text-align:left;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;cursor:pointer;font:inherit;color:#14213D;min-height:96px}
+.hs-flip .ft{font-weight:bold;font-size:1.05rem}
+.hs-flip .fh{font-family:Arial,sans-serif;font-size:.78rem;color:#3E4C66;margin-top:6px}
+.hs-flip .fd{display:none;margin-top:8px;font-size:.95rem}
+.hs-flip[aria-expanded="true"] .fd{display:block}
+.hs-flip[aria-expanded="true"] .fh{display:none}
+.hs-qa{display:grid;gap:10px}
+.hs-qa div{background:#FFFFFF;border-left:4px solid #1D4ED8;padding:12px 16px}
+.hs-qa b{display:block;font-family:Arial,sans-serif;font-size:.88rem;color:#1D4ED8;margin-bottom:4px}
+.hs-counter{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.hs-counter div{background:#0F1F3D;color:#FFFFFF;padding:14px;text-align:center}
+.hs-counter .n{font-family:Arial,sans-serif;font-size:1.7rem;font-weight:bold}
+.hs-counter .l{font-size:.82rem}
+.hs-updates{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin-top:14px}
+.hs-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.hs-cards a{display:block;background:#FFFFFF;border:1px solid #D5DCE8;border-top:5px solid #1D4ED8;padding:14px 16px;text-decoration:none;color:#14213D}
+.hs-cards a b{display:block;margin-bottom:4px}
+.hs-cards a span{font-size:.9rem;color:#3E4C66}
+.hs-upd{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.hs-upd li{background:#FFFFFF;border:1px solid #D5DCE8;border-left:6px solid #1D4ED8;padding:12px 16px}
+.hs-upd .d{display:block;font-family:Arial,sans-serif;font-weight:bold;font-size:.85rem;color:#1D4ED8;margin-bottom:4px}
+.hs-upd .s{display:block;font-size:.85rem;color:#3E4C66;margin-top:4px}
+.hs-bars{display:grid;grid-template-columns:minmax(110px,36%) 1fr;gap:12px 12px;align-items:center;font-family:Arial,sans-serif;font-size:1rem}
+.hs-bars .lab{text-align:right}
+.hs-bars .tr{display:flex;align-items:center}
+.hs-bars .fl{height:34px;background:#1D4ED8;border-radius:0 4px 4px 0;flex-shrink:0}
+.hs-bars .fl.alt{background:#0F1F3D}
+.hs-bars .v{margin-left:8px;font-weight:bold}
+.hs-fig{background:#FFFFFF;border:1px solid #D5DCE8;padding:18px 20px;margin:0 0 24px}
+.hs-fig h3{margin:0 0 4px;font-size:1.15rem}
+.hs-fig .sub{font-family:Arial,sans-serif;font-size:.88rem;color:#3E4C66;margin:0 0 14px}
+.hs-date{font-family:Arial,sans-serif;font-size:.9rem;margin-top:14px;opacity:.95}
+.mermaid{display:flex;justify-content:center;margin:12px 0}
+.mermaid svg{max-width:100% !important;height:auto}
+@media(max-width:640px){.hs-bars{grid-template-columns:minmax(90px,40%) 1fr;font-size:.9rem}}
+.hbx-top{margin:0}
+.hb-bar{background:#0d0b0a;border-bottom:1px solid #3a2f1c;padding:10px 20px}
+.hb-bar a{display:flex;align-items:center;gap:12px;max-width:1100px;margin:0 auto;text-decoration:none}
+.hb-bar img{width:52px;height:52px;border-radius:4px;display:block;flex:none}
+.hb-name{font-family:'Cinzel','Trajan Pro',Georgia,serif;color:#d4af37;font-size:16px;letter-spacing:.14em;text-transform:uppercase;line-height:1.2;display:block}
+.hb-sub{font-family:Georgia,serif;font-style:italic;color:#b8956a;font-size:12.5px;display:block;margin-top:2px}
+.hb-line-top{font-family:Georgia,serif;color:#e8d9b5;font-size:12.5px;display:block;margin-top:3px;line-height:1.4}
+.hbx-slim{background:#0e2438;color:#dbe7f0;font:600 14px/1.4 Arial,sans-serif;padding:7px 20px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.hbx-slim a{color:#F3E3B3;text-decoration:underline}
+.hb-foot{background:#0d0b0a;color:#b8956a;text-align:center;padding:26px 20px 30px;font-family:Georgia,serif;line-height:1.5}
+.hb-foot img{width:52px;height:52px;display:block;margin:0 auto 10px}
+.hb-foot .hb-name,.hb-foot .hb-sub{display:block}
+.hb-foot .hb-tag{font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#8a7650;margin-top:8px;display:block}
+.hb-line{max-width:720px;margin:14px auto 0;color:#e8d9b5;font-size:15.5px;line-height:1.5}
+.hb-tips{margin:16px 0 4px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.hb-btn{display:inline-block;border:2px solid #d4af37;background:#d4af37;color:#0d0b0a!important;font:700 15px Georgia,serif;padding:10px 18px;border-radius:6px;text-decoration:none!important}
+.hb-btn2{background:transparent;color:#d4af37!important}
+.hb-small{font-size:12.5px;color:#8a7650;margin:6px 0 0}
+.hb-small a{color:#d4af37;text-decoration:underline}
+.hb-foot p{max-width:720px;margin-left:auto!important;margin-right:auto!important}
+.hbx-tools{max-width:980px;margin:14px auto 4px;padding:0 20px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start;font-family:Arial,sans-serif;position:relative;z-index:2}
+.hbx-tool{display:inline-block;font:700 15px Arial,sans-serif;color:#13233F!important;background:#fff;border:1px solid #c8cfd6;border-radius:6px;padding:9px 13px;text-decoration:none!important;cursor:pointer;line-height:1.2}
+.hbx-tool:hover{border-color:#13233F}.hbx-cnchip b{color:#1f5f9e;font-family:ui-monospace,Menlo,monospace}
+.hbx-jump{flex-basis:100%;order:5;border:1px solid #c8cfd6;border-radius:6px;background:#fff;color:#13233F}.hbx-jump summary{cursor:pointer;padding:9px 13px;font:700 15px Arial,sans-serif}
+.hbx-jump ol{margin:0;padding:4px 16px 12px 36px}.hbx-jump li{margin:6px 0;font-size:16.5px}.hbx-jump a{color:#13233F}
+.hbx-shelfwrap{background:#0e2438;color:#dbe7f0;padding:26px 20px 30px;font:16px/1.5 Arial,sans-serif;margin-top:48px;position:relative;z-index:1}
+.hbx-shelfwrap .in{max-width:900px;margin:0 auto}
+.hbx-shelf{border:2px dashed #9fd0ee;border-radius:10px;padding:16px 18px}
+.hbx-cn-big{font:600 17px ui-monospace,Menlo,monospace;margin-bottom:12px;color:#fff}.hbx-cn-big b{color:#9fd0ee}
+.hbx-nav{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.hbx-nav-btn{flex:1;min-width:220px;background:#12304a;border:1px solid #4d86ad;border-radius:8px;padding:12px 14px;color:#fff!important;text-decoration:none!important;font-size:16px}.hbx-nav-btn b{color:#9fd0ee;font-family:ui-monospace,Menlo,monospace}.hbx-off{opacity:.5}
+.hbx-list summary{cursor:pointer;font-weight:700;padding:6px 0}.hbx-list ol{list-style:none;margin:6px 0 0;padding:0}.hbx-list li{padding:6px 0;border-bottom:1px solid #2b4a63}.hbx-list a{color:#fff!important;text-decoration:none}
+.hbx-shelf-head{color:#9fd0ee;font:600 13px ui-monospace,Menlo,monospace;letter-spacing:.1em}.hbx-cn{font-family:ui-monospace,Menlo,monospace;color:#9fd0ee;margin-right:6px}
+.hbx-find{margin:14px 0 4px}.hbx-find label{display:block;font-weight:700;margin-bottom:6px}.hbx-find div{display:flex;gap:8px;flex-wrap:wrap}.hbx-find input{flex:1;min-width:0;width:100%;padding:12px 14px;font-size:17px;border:2px solid #4d86ad;border-radius:6px;color:#13233F;background:#fff}.hbx-find button{padding:12px 18px;font-size:16px;font-weight:700;background:#9fd0ee;color:#0e2438;border:0;border-radius:6px;cursor:pointer}
+.hbx-search{font-size:15px;margin-top:12px}.hbx-search a,.hbx-search b{color:#9fd0ee}
+.hbx-totop{display:none;position:fixed;right:16px;bottom:16px;z-index:50;background:#0e2438;color:#fff!important;border:2px solid #9fd0ee;border-radius:24px;padding:10px 16px;font:700 15px Arial,sans-serif;text-decoration:none!important;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.hbx-dates{font-family:ui-monospace,Menlo,monospace;font-size:13px}
+@media(max-width:600px){.hb-bar img{width:38px;height:38px}.hb-line-top{font-size:11.5px}}
+@media print{.hbx-tools,.hbx-totop{display:none}}
+/* Hive library standard (Nov. 2, 2026) */
+.hb-foot .hb-name{font-size:16px}
+.hb-foot .hb-sub{font-size:12.5px}
+.hbx-tools{margin-top:16px;margin-bottom:14px}
+.hbx-shelfwrap+.hb-foot{margin-top:0}
+.hbx-shelf details.hbx-list li,.hbx-shelf details.hbx-list p{font-size:16px!important}
+.hb-bar img[src="hive-bee.png"]{border-radius:50%}
+.hexagon img{width:100%;height:100%;display:block;border-radius:50%}
+.bm-bee{width:26px;height:26px;vertical-align:middle;margin-right:8px;display:inline-block;border-radius:50%}
+li a,td a,p a{overflow-wrap:anywhere}
+@media(max-width:700px){.mermaid,.hs-fig{overflow-x:auto;max-width:100%}table.ledger{display:block;overflow-x:auto;max-width:100%}}
+@media(max-width:700px){main table,.wrap table,section table{display:block;overflow-x:auto;max-width:100%}main svg,section svg{max-width:100%;height:auto}}
+</style>
+<link rel="icon" type="image/png" href="hive-bee.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="hbx-top"><div class="hb-bar"><a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener"><img src="hive-bee.png" alt="The Hive bee seal"><span><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-line-top">The people's publication. We investigate what's best for the public as a whole, not any party or special interest.</span></span></a></div>
+<div class="hbx-slim"><span>Transparency · TR 300.37</span><span><a href="index.html">← Transparency home</a> · <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">← Hive library (every repo)</a></span></div></div>
+
+
+<header class="masthead">
+  <div class="eyebrow">Case File · Point of the Mountain State Land Authority</div>
+  <h1 class="title">Sponsor and <em>Co-Chair</em></h1>
+  <p class="dek">For three sessions in a row, the House sponsor of the bills that reshaped the Point of the Mountain State Land Authority was Rep. Jordan Teuscher, who co-chairs that authority's board. The Senate sponsor, Sen. Jerry Stevenson, sits on the same board. Here is what the bills, votes and board minutes show.</p>
+  <div class="byline mono">THE WEBER COUNTY HIVE</div>
+  <p class="hs-date">CASE 2026-POM-01 · Posted Nov. 26, 2026 · Updated Nov. 26, 2026</p>
+</header>
+
+<div class="wrap" style="padding-top:22px;">
+<div class="hs-plain">New to this? <a class="hs-btn" href="point-of-the-mountain-board-plain.html">Read it in plain words</a> About 400 words.</div>
+<nav class="hs-toc" aria-label="On this page"><b style="width:100%;font-family:Arial,sans-serif;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;">On this page</b><a href="#short">Short version</a><a href="#board">The board</a><a href="#bills">The three bills</a><a href="#diagram">How it connects</a><a href="#minutes">At the board table</a><a href="#money">Board donors</a><a href="#review">Legislative review</a><a href="#law">What the law allows</a><a href="#rubric">Rubric</a><a href="#threeways">Three ways</a><a href="#ask">Questions and whom to ask</a><a href="#unconfirmed">Not yet checked</a><a href="#sources">Sources</a></nav>
+</div>
+
+<section class="plain" id="short">
+  <div class="wrap">
+    <div class="eyebrow">The short version</div>
+    <div class="hs-short"><ul>
+<li>The Point of the Mountain State Land Authority runs the redevelopment of the old state prison land in Draper, known as The Point.</li>
+<li>Rep. Jordan Teuscher has co-chaired its board since January 2023, when the House Speaker named him. Sen. Jerry Stevenson is also a board member.</li>
+<li>In January 2024 the board, with both men there, voted to support changes to its own law. Weeks later the two sponsored S.B. 198, making changes of that kind.</li>
+<li>Stevenson was the Senate sponsor and Teuscher the House sponsor of S.B. 198 (2024), S.B. 166 (2025) and S.B. 278 (2026), all changing the authority's law. All three passed and were signed.</li>
+<li>S.B. 166 rewrote how the board is made up, including the seat the House Speaker fills and how its co-chair is picked.</li>
+<li>After S.B. 278 passed, Teuscher presented it to the board, then moved the board's vote to change nine public infrastructure districts to comply with it. The minutes record no conflict statement.</li>
+<li>Stevenson's 2026 conflict-of-interest form lists his seat on the board. None of Teuscher's five forms filed 2022&ndash;2026 names the authority.</li>
+<li>This page lays out what the records show. It does not say any law was broken. Legislators serving on state boards is allowed, and these bills were public and voted on.</li>
+</ul></div>
+  </div>
+</section>
+
+<main>
+
+  <section id="board">
+    <h2>The board</h2>
+    <p>The Legislature created the authority in 2018. Its job is to plan and build on the state land where the old Utah State Prison stood in Draper. Its board decides how the land is sold, leased and built on.</p>
+    <p>The state's public meeting website lists these board members today: Jordan Teuscher, Lowry Snow, Jerry Stevenson, Jefferson Moss, Dawn Ramsey, Troy Walker, Jenny Wilson and Mike Ambre (the authority's executive director).</p>
+    <div class="fact"><strong>Co-chair since January 2023:</strong> The Jan. 10, 2023 board minutes say the House Speaker named Reps. Jeff Stenquist and Jordan Teuscher to the board, "with the latter assuming the role of co-chair." A May 2023 press release from The Point quoted "Utah State Representative Jordan Teuscher, co-chair of the Land Authority." Board minutes from Oct. 8, 2024 through 2026 list "Rep Jordan Teuscher, Chair" next to Lowry Snow.</div>
+  </section>
+
+  <section id="bills">
+    <h2>The three bills</h2>
+    <table class="ledger">
+      <thead><tr><th>Bill</th><th>What it did</th><th>Sponsors</th><th>Key votes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>S.B. 198 (2024)</strong><br>Point of the Mountain State Land Authority Amendments</td><td>Changed what counts as the authority's land; changed the yearly assessment it may charge on leased property; added rules for bonds the authority issues; changed the limits on board members; and sent part of the state sales tax from the land to the authority until bonds backed by it are paid. (From the bill's summary on the bill page.)</td><td>Senate: Stevenson<br>House floor: Teuscher (also the substitute sponsor)</td><td>House swapped in a new version (#2 to #3) by voice vote, then a floor amendment by voice vote, March 1, 2024; passed 53&ndash;13&ndash;9. Signed March 13, 2024.</td></tr>
+        <tr><td><strong>S.B. 166 (2025)</strong><br>Point of the Mountain State Land Authority Amendments</td><td>Repealed and rewrote the board section. The board went to seven voting members. The House Speaker now appoints one member "with relevant business expertise" (the old law had him appoint two House members). The Senate president and Speaker jointly pick one co-chair. Also says city and county land-use law does not apply to the land.</td><td>Senate: Stevenson<br>House floor: Teuscher</td><td>Senate 25&ndash;0&ndash;4; House 62&ndash;2&ndash;11. Signed March 12, 2025.</td></tr>
+        <tr><td><strong>S.B. 278 (2026)</strong><br>Development Authority Modifications</td><td>Lets the authority coordinate with Draper on sales; changes privilege tax and property tax shares going to the authority; reduces the share of state sales tax sent to it; requires a majority of board seats on public infrastructure districts created by a development authority to be appointed by that authority; limits those districts to one bond issue with one refinance.</td><td>Senate: Stevenson<br>House floor: Teuscher</td><td>House swapped in a new version (#2 to #4) by voice vote at 10:35 p.m. on the last night of the session; passed 54&ndash;8&ndash;13 two minutes later; Senate agreed 27&ndash;1&ndash;1 at 11:52 p.m. Signed March 18, 2026.</td></tr>
+      </tbody>
+    </table>
+    <div class="fact"><strong>In his own words:</strong> Teuscher's campaign site describes S.B. 278 as a bill that <em>"strengthens transparency and oversight for the Point of the Mountain State Land Authority."</em> The site's bill description does not mention that he co-chairs the authority's board.</div>
+  </section>
+
+  <section id="diagram">
+    <h2>How it connects</h2>
+<div class="mermaid">
+flowchart TD
+  T["Rep. Jordan Teuscher<br/>House sponsor"] --> B["S.B. 198 (2024)<br/>S.B. 166 (2025)<br/>S.B. 278 (2026)"]
+  S["Sen. Jerry Stevenson<br/>Senate sponsor"] --> B
+  B -->|"set the rules for"| A["Point of the Mountain<br/>State Land Authority board<br/>(Teuscher co-chair,<br/>Stevenson member)"]
+  A -->|"June 10, 2026<br/>motion by Teuscher"| P["9 building districts<br/>changed to follow S.B. 278"]
+</div>
+  </section>
+
+  <section id="minutes">
+    <h2>At the board table</h2>
+    <p><strong>Jan. 8, 2024 (before the session).</strong> Teuscher chaired this meeting; Stevenson was present. Under "Proposed Legislation for the 2024 Session," Stevenson and the authority's director reviewed planned changes to the authority's law. The list included making clear that "board members may lease property from developers on the same terms as anyone else," adding newly bought land to the authority's land, giving the authority state-agency services, and sending it part of the state sales tax from The Point. The board voted unanimously to support the changes. Weeks later, Stevenson and Teuscher sponsored S.B. 198 (2024), whose summary lists the same kinds of changes, including "limitations on Authority board members."</p>
+    <p>At the same meeting, the board also voted unanimously to drop a rule that required keeping a record of meetings with interested parties, "reflecting the sensitive nature of real estate negotiations." The gift rule stayed the same.</p>
+    <p><strong>March 11, 2026.</strong> Under "Legislative Updates," the minutes list Rep. Teuscher as presenter. He reported on S.B. 278 (his bill: 50 acres for for-sale housing, authority appointments to public infrastructure district boards, privilege tax changes) and on two bills he did not sponsor: H.B. 597 (alcohol rules, sponsored by Rep. Jefferson Burton with Sen. Stevenson) and H.B. 475 (economic development coordination, sponsored by Rep. Calvin Roberts and Sen. Kirk Cullimore). No vote on the bills was taken. He seconded two routine motions (minutes and financial report).</p>
+    <p><strong>June 10, 2026.</strong> Co-Chair Teuscher presented amendments to the governing documents of public infrastructure districts 1 through 9 "to comply with Senate Bill 278," adding authority representatives to those districts' boards. He moved to approve them and authorize the co-chairs to sign Resolution 2026-05. Mayor Walker seconded. The vote was unanimous.</p>
+    <div class="fact"><strong>What the minutes don't show:</strong> neither set of minutes records a conflict-of-interest statement or a recusal by Teuscher. The minutes also do not say one was required. The June 10 attendance list does not match the body of the minutes (it lists Walker and Stevenson absent, but Walker seconded a motion and Stevenson moved one), so the minutes may contain errors.</div>
+    <p class="note">How these were read: the board minutes are PDF files on the Utah Public Notice Website, read Nov. 26, 2026 using a page-reading tool that summarizes the text; the exact wording quoted here is limited to short phrases.</p>
+  </section>
+
+  <section id="money">
+    <h2>Board members who gave to his campaign</h2>
+    <p>Two of his fellow board members appear as donors on Teuscher's House campaign reports. Giving to a colleague's campaign is legal and common.</p>
+    <table class="ledger"><thead><tr><th>Donor</th><th>Lines</th><th>Total</th></tr></thead><tbody>
+    <tr><td>Jefferson Moss</td><td>$500 (Aug. 8, 2022); $250 (Sept. 18, 2022); $2,500 (Sept. 16, 2024); $1,000 (Jan. 14, 2026)</td><td>$4,250</td></tr>
+    <tr><td>Lowry Snow (board co-chair)</td><td>$300 (Sept. 3, 2024)</td><td>$300</td></tr>
+    </tbody></table>
+    <p class="note">How this was read: Teuscher's campaign report downloads on disclosures.utah.gov, 2021&ndash;2026, searched by name, Nov. 26, 2026. Moss joined the board in October 2024 (board minutes, Oct. 8, 2024); the 2022 gifts came before that.</p>
+  </section>
+
+  <section id="review">
+    <h2>The Legislature's own review</h2>
+    <p>On Oct. 21, 2026, the Economic Development and Workforce Services Interim Committee heard a staff review of the authority as part of a study of "whether and how" development authorities like MIDA, the Inland Port and The Point meet their purposes set in law. The staff brief lists the seven-member board as set by S.B. 166. The brief does not discuss board members who sponsor the authority's bills.</p>
+  </section>
+
+  <section id="law">
+    <h2>What the law allows</h2>
+    <p>Utah law lets legislators serve on state boards, and for years the authority's own law required the House Speaker to appoint House members to this board. After S.B. 166, the Speaker's seat goes to someone "with relevant business expertise"; the law does not bar a legislator from holding it.</p>
+    <p>Legislators also file a yearly conflict-of-interest form. Item 5A asks for any "paid or unpaid position on a board of directors."</p>
+    <table class="ledger"><thead><tr><th>Form</th><th>Item 5A (board seats)</th></tr></thead><tbody>
+    <tr><td>Sen. Jerry Stevenson, filed Jan. 14, 2026</td><td>Lists the Point of the Mountain State Land Authority Board ("Senate President Appointee"), along with the MIDA and Utah Inland Port Authority boards and J &amp; J Produce, Inc.</td></tr>
+    <tr><td>Rep. Jordan Teuscher, filed Jan. 2, 2026</td><td>"N/A." The authority is not named anywhere on the form. Item 8A (other possible conflicts) is blank.</td></tr>
+    <tr><td>Rep. Jordan Teuscher, four earlier forms (Jan. 2022, Jan. 2023, Jan. 2024, Jan. 2025)</td><td>None names the authority. The 2022 and 2023 forms list The Leavitt Institute for International Development in 5A; the 2024 and 2025 forms say "N/A."</td></tr>
+    </tbody></table>
+    <p class="note">How these were read: both forms were opened on disclosures.utah.gov and read from the page text, Nov. 26, 2026. The form does not say whether a state board seat must be listed in 5A; the two board members answered it differently.</p>
+  </section>
+
+  <section id="rubric">
+    <h2>Graded against the collective rubric</h2>
+    <table class="ledger">
+      <thead><tr><th>Test</th><th>What the record shows</th></tr></thead>
+      <tbody>
+        <tr><td><b>Power</b></td><td>Two board members carried the bills that set their board's make-up, money and powers, and one then led the board's vote applying the new law. Final votes in both chambers were recorded.</td></tr>
+        <tr><td><b>Transparency</b></td><td>The bills, votes and minutes are public. Two of the three bills were changed on the House floor by voice vote, so no names are attached to those changes. No conflict statement appears in the minutes reviewed.</td></tr>
+        <tr><td><b>Financial accountability</b></td><td>S.B. 278 changed how tax money flows to the authority and limited bonds by its public infrastructure districts. The page does not grade whether those changes help or hurt taxpayers.</td></tr>
+        <tr><td><b>Environmental impact</b></td><td>Not reviewed for this page.</td></tr>
+        <tr><td><b>Community impact</b></td><td>S.B. 166 says city and county land-use law does not apply to the land; S.B. 278 adds coordination with Draper. Residents' say runs through the board's public meetings.</td></tr>
+      </tbody>
+    </table>
+    <p class="note">What could have been done differently: a short statement on the bill floor, and at the board table, noting the sponsor's board seat; a roll-call vote on floor substitutes; and the board seat named in the bill descriptions on his campaign site.</p>
+  </section>
+
+  <section id="threeways">
+    <h2>Three ways to look at it</h2>
+    <p><strong>An auditor's look:</strong> The bills, votes and minutes are public. The June 10, 2026 minutes list two members as absent who are also shown making and seconding motions. So the minutes may need fixing. No conflict statement shows up in the two meetings we read.</p>
+    <p><strong>The Legislature's look:</strong> Utah law lets lawmakers sit on state boards. For years, this board's law required House members on it. Sponsors who sit on a board often know its needs best. The question is whether the public is told.</p>
+    <p><strong>The collective look:</strong> The land, its tax money and its building districts belong to the public. Readers can see the votes. Stevenson's 2026 form lists his board seat. Teuscher's lists none. The bill descriptions and minutes don't mention it.</p>
+    <p><strong>What could have been done differently:</strong> a short statement about the board seat on the floor and at the board table, and roll-call votes when a bill is swapped for a new version.</p>
+  </section>
+
+  <section id="ask">
+    <h2>Questions and whom to ask</h2>
+    <p>These are questions for readers to raise with public bodies, for example during public comment at a board meeting.</p>
+<div class="hs-qa"><div><b>Point of the Mountain State Land Authority board</b>Does the board ask members to state a conflict when they vote on matters tied to bills they sponsored? (Public comment is taken at the start of each board meeting.)</div><div><b>House Ethics Committee</b>Should legislators who sit on a state board say so on the floor when they sponsor bills about that board?</div><div><b>Speaker of the House and Senate President</b>Who did they jointly appoint as co-chair after S.B. 166, and on what date?</div><div><b>Your own state representative</b>Should floor substitutes that rewrite a bill be adopted by roll-call vote?</div></div>
+  </section>
+
+  <section id="unconfirmed">
+    <h2>Not yet checked</h2>
+    <ul>
+            <li>Board minutes from 2025 and February 2026 were not reviewed for this page; minutes from January 2023, January 2024, October 2024, and March and June 2026 were.</li>
+          </ul>
+  </section>
+
+  <section id="words">
+    <h2>Words to know</h2>
+    <p>Tap a card to see what it means.</p>
+<div class="hs-flips"><button class="hs-flip" aria-expanded="false"><div class="ft">Floor sponsor</div><div class="fh">Tap to see</div><div class="fd">The lawmaker who carries a bill in the second chamber, after it passes the first.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Voice vote</div><div class="fh">Tap to see</div><div class="fd">A vote where members call out yes or no together. It passes or fails, but no names are recorded.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Public infrastructure district</div><div class="fh">Tap to see</div><div class="fd">A special district that can borrow money and charge property owners in its area to pay for roads, pipes and other building needs.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Privilege tax</div><div class="fh">Tap to see</div><div class="fd">A tax charged when someone uses or leases tax-exempt public property, such as state land.</div></button><button class="hs-flip" aria-expanded="false"><div class="ft">Co-chair</div><div class="fh">Tap to see</div><div class="fd">One of two people who lead a board together and run its meetings.</div></button></div>
+  </section>
+  <section id="connected">
+    <h2>Connected Hive work</h2>
+<div class="hs-cards"><a href="https://weber-county-hive.github.io/Utah-House/weber-hive-teuscher.html"><b>Rep. Jordan Teuscher</b><span>Utah House Directory profile</span></a><a href="who-gets-a-say.html"><b>Who Gets a Say</b><span>Transparency: primary and map rules, 2018&ndash;2026</span></a><a href="index.html"><b>Transparency docket</b><span>Every Transparency case file</span></a></div>
+  </section>
+
+  <section id="behind">
+    <h2>Behind this piece</h2>
+<div class="hs-counter"><div><div class="n">3</div><div class="l">Enrolled bills read</div></div><div><div class="n">3</div><div class="l">Bill status pages with votes</div></div><div><div class="n">6</div><div class="l">Board minutes and agendas read</div></div><div><div class="n">2</div><div class="l">Other bills checked for sponsors</div></div><div><div class="n">2</div><div class="l">Conflict-of-interest forms read</div></div><div><div class="n">6</div><div class="l">Years of campaign reports searched</div></div></div>
+  </section>
+
+  <section id="sources">
+    <h2>Sources</h2>
+    <details><summary>Show all sources (tap to open)</summary>
+    <ul>
+      <li>S.B. 198 (2024) &mdash; <a href="https://le.utah.gov/~2024/bills/static/SB0198.html" target="_blank" rel="noopener">bill page and votes</a>; <a href="https://le.utah.gov/~2024/bills/sbillenr/SB0198.pdf" target="_blank" rel="noopener">enrolled text</a></li>
+      <li>S.B. 166 (2025) &mdash; <a href="https://le.utah.gov/~2025/bills/static/SB0166.html" target="_blank" rel="noopener">bill page and votes</a>; <a href="https://le.utah.gov/Session/2025/bills/enrolled/SB0166.pdf" target="_blank" rel="noopener">enrolled text</a> (Section 11-59-302)</li>
+      <li>S.B. 278 (2026) &mdash; <a href="https://le.utah.gov/~2026/bills/static/SB0278.html" target="_blank" rel="noopener">bill page and votes</a>; <a href="https://le.utah.gov/Session/2026/bills/enrolled/SB0278.pdf" target="_blank" rel="noopener">enrolled text</a></li>
+      <li>H.B. 597 (2026) <a href="https://le.utah.gov/Session/2026/bills/enrolled/HB0597.pdf" target="_blank" rel="noopener">enrolled text</a>; H.B. 475 (2026) <a href="https://le.utah.gov/Session/2026/bills/enrolled/HB0475.pdf" target="_blank" rel="noopener">enrolled text</a> (sponsors)</li>
+      <li>Board minutes: <a href="https://www.utah.gov/pmn/files/940689.docx" target="_blank" rel="noopener">Jan. 10, 2023</a>; <a href="https://www.utah.gov/pmn/files/1069785.docx" target="_blank" rel="noopener">Jan. 8, 2024</a>; <a href="https://www.utah.gov/pmn/files/1184459.docx" target="_blank" rel="noopener">Oct. 8, 2024</a>; <a href="https://www.utah.gov/pmn/files/1404325.pdf" target="_blank" rel="noopener">March 11, 2026</a>; <a href="https://www.utah.gov/pmn/files/1452187.pdf" target="_blank" rel="noopener">June 10, 2026</a>; agenda <a href="https://www.utah.gov/pmn/files/1376309.pdf" target="_blank" rel="noopener">Jan. 14, 2026</a> &mdash; Utah Public Notice Website</li>
+      <li><a href="https://www.utah.gov/pmn/sitemap/publicbody/6439.html" target="_blank" rel="noopener">Board member list, Utah Public Notice Website</a> (read Nov. 26, 2026)</li>
+      <li><a href="https://www.utahbusiness.com/press-releases/2023/05/09/the-point-hires-don-willie" target="_blank" rel="noopener">"The Point hires Don Willie," press release, May 9, 2023</a></li>
+      <li>Jordan Teuscher campaign report downloads, <a href="https://disclosures.utah.gov/Search/PublicSearch/FolderDetails/1415423" target="_blank" rel="noopener">disclosures.utah.gov folder</a>; conflict-of-interest forms for Teuscher (Jan. 2, 2026) and Stevenson (Jan. 14, 2026), same site (read Nov. 26, 2026)</li>
+      <li><a href="https://le.utah.gov/interim/2026/pdf/00003847.pdf" target="_blank" rel="noopener">Legislative Research staff brief, Point of the Mountain State Land Authority, Oct. 21, 2026</a></li>
+      <li><a href="https://jordanteuscher.com/2026-legislative-accomplishments" target="_blank" rel="noopener">Jordan Teuscher campaign site, 2026 Legislative Accomplishments</a></li>
+    </ul>
+    </details>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    
+    <p>Sourced from Utah Legislature bill text and votes, Point of the Mountain State Land Authority board minutes on the Utah Public Notice Website, and the sponsor's campaign website. All public records.</p>
+    <div class="links">
+      <a href="index.html">← All profiles</a>
+      <a href="https://webercountyhive.substack.com/" target="_blank" rel="noopener">webercountyhive.substack.com ↗</a>
+    </div>
+  </div>
+</footer>
+<div class="hbx-shelfwrap"><div class="in"><div class="hbx-shelf" id="hbx-shelf"></div></div></div>
+<div class="hb-foot"><img src="hive-bee.png" alt=""><span class="hb-name">Utah Hive Politics</span><span class="hb-sub">from the publisher of The Weber County Hive</span><span class="hb-tag">Independent &middot; Accountability &middot; Journalism</span><p class="hb-line">The Weber County Hive and Utah Hive Politics: the people's publication. We investigate what's best for the public as a whole, not for any party or special interest group. We report public records. You decide.</p><p class="hb-tips"><a class="hb-btn" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">Send a tip</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html">Tips we checked</a><a class="hb-btn hb-btn2" href="https://weber-county-hive.github.io/-weber-county-hive-index/tips.html#send">See a mistake? Tell us</a></p><p class="hb-small">We never name tipsters. When we correct a page, the fix and its date are shown on the page.</p><p class="hb-small"><a href="index.html">Transparency home</a> · <a href="https://weber-county-hive.github.io/-weber-county-hive-index/">Master Index (Hive library)</a> · <a href="https://webercountyhive.substack.com/">Read on Substack</a></p></div>
+<script src="tr-shelf.js?v=3"></script>
+
+
+<script data-goatcounter="https://weberhive.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script>document.querySelectorAll('.hs-flip').forEach(f=>f.addEventListener('click',()=>f.setAttribute('aria-expanded',f.getAttribute('aria-expanded')==='true'?'false':'true')));</script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>try{mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{fontFamily:"Arial, sans-serif",fontSize:'22px',primaryColor:'#F2F5FA',primaryTextColor:'#0F1F3D',primaryBorderColor:'#1D4ED8',lineColor:'#1E3A8A',edgeLabelBackground:'#FFFFFF'},flowchart:{curve:'basis',padding:18,useMaxWidth:true}});}catch(e){}</script>
+</body>
+</html>

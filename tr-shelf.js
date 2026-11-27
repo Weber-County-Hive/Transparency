@@ -391,6 +391,16 @@ var HBX = {
       "callNumber": "TR 300.36",
       "slug": "who-decides-part-2-courts-plain",
       "name": "Who Decides, Part 2: The Courts, in Plain Words"
+    },
+    {
+      "callNumber": "TR 300.37",
+      "slug": "point-of-the-mountain-board",
+      "name": "Sponsor and Co-Chair: The Point of the Mountain Board"
+    },
+    {
+      "callNumber": "TR 300.38",
+      "slug": "point-of-the-mountain-board-plain",
+      "name": "Sponsor and Co-Chair, in Plain Words"
     }
   ],
   "shelves": {
